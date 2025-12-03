@@ -8,6 +8,8 @@ This area documents CABAL's technical and algorithmic approach to solving the co
 
 - **Start here:** [approach.md](./approach.md) - High-level algorithmic approach
 - **For fundamentals:** [core-concepts.md](./core-concepts.md) - Key concepts and principles
+- **For operating principles:** [principles/README.md](./principles/README.md) - Governance, roles, artifacts, process, and quality specification
+- **For prompts & context:** [context-builder.md](./context-builder.md) - Context envelope, master prompter, and prompt structuring rules
 - **For technical depth:** [technical-specs/README.md](./technical-specs/README.md) - Detailed technical specifications
 
 ## File Descriptions
@@ -24,6 +26,16 @@ Use when you need to understand the "how" behind CABAL's solution.
 
 Use when you need deeper understanding of the technical foundations.
 
+### principles/ (folder)
+**When:** Establishing or auditing orchestration governance, roles, artifacts, round flow, and quality gates
+**What:** Restructured Unified Team Orchestration specification with stable numbering and examples
+
+Start with [principles/README.md](./principles/README.md) for navigation to governance, roles, artifacts, process, and quality files.
+
+### context-builder.md
+**When:** Building or updating the prompt system and context envelope; defining master bootstrap and step outputs
+**What:** State envelope entities, master prompter bootstrap, prompt structuring patterns, and step-specific output expectations
+
 ### technical-specs/ (folder)
 **When:** Implementing features or need detailed specifications
 **What:** Detailed technical specifications, data structures, algorithms
@@ -34,7 +46,7 @@ Use when you need implementation-level detail.
 
 ### technical-specs/
 Detailed technical specifications and implementation details.
-→ Start with [technical-specs/README.md](./technical-specs/README.md)
+-> Start with [technical-specs/README.md](./technical-specs/README.md)
 
 **Contains:**
 - Data structures
@@ -54,6 +66,7 @@ Detailed technical specifications and implementation details.
 - Implementing core features
 - Making architectural decisions
 - Need to explain technical approach
+- Auditing or updating orchestration rules and round flow
 - Optimizing or debugging algorithms
 - Writing technical documentation
 
@@ -79,4 +92,4 @@ Detailed technical specifications and implementation details.
 
 ---
 
-← Back to [Project Root](../CLAUDE.md) | [Overview](../overview/README.md)
+<- Back to [Project Root](../CLAUDE.md) | [Overview](../overview/README.md)
