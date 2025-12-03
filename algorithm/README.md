@@ -44,9 +44,9 @@ Detailed technical specifications and implementation details.
 
 ## Related Context
 
-- **Vision:** See [../vision.md](../vision.md) for the problem being solved
-- **Pitching:** See [../pitching/one-pager.md](../pitching/one-pager.md) for non-technical explanation
-- **Development:** See [/CLAUDE.md](../../CLAUDE.md) for code organization
+- **Vision:** See [overview/vision.md](../overview/vision.md) for the problem being solved
+- **Pitching:** See [overview/pitching/one-pager.md](../overview/pitching/one-pager.md) for non-technical explanation
+- **Development:** See [CLAUDE.md](../CLAUDE.md) for code organization
 
 ## When to Explore This
 
@@ -79,4 +79,4 @@ Detailed technical specifications and implementation details.
 
 ---
 
-← Back to [Overview Guide](../README.md)
+← Back to [Project Root](../CLAUDE.md) | [Overview](../overview/README.md)

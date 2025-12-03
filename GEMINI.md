@@ -2,7 +2,15 @@
 
 This project is a software application under development, with a strong emphasis on clear structure and contribution guidelines. The project appears to be set up for development using Python and/or TypeScript/JavaScript, based on the naming conventions outlined in the contribution guidelines.
 
-The project structure is designed to be organized by domain, with separate directories for source code (`src`), tests (`tests`), tooling (`tools`), and examples (`examples`).
+## Directory Layout
+
+- `protocol/` - **Core directives** (must-read at session start)
+- `algorithm/` - **Technical architecture** (core concepts, approach, specs)
+- `overview/` - Project knowledge (vision, product, legal, branding, market, pitching)
+- `src/` - Production code organized by domain
+- `tests/` - Test files mirroring `src/` structure
+- `tools/` - Developer tooling
+- `examples/` - Usage examples
 
 # Required Reading
 

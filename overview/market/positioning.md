@@ -1,204 +1,193 @@
-# Market Positioning
+# Market Positioning & Business Model
 
-**Status:** Draft - To be completed
+**Status:** Core Context - Updated 2025-12-03
 
 ## Positioning Statement
 
-[One clear statement: For [target customer], who [need/opportunity], CABAL is [category] that [key benefit]. Unlike [alternatives], CABAL [unique differentiator].]
+For **knowledge workers and teams** who need to produce **complex, multi-part deliverables**, Cabal is a **multi-agent AI collaboration engine** that **owns the process from fuzzy input to structured, defensible outputs**. Unlike generic LLM chat tools, Cabal runs a **structured project with roles, quality control, and audit trail**.
 
 ## Target Market Segments
 
-### Primary Segment
+### Primary: Knowledge Workers & Teams
 
 **Who they are:**
-[Detailed description of the primary target segment]
-
-**Characteristics:**
-- [Demographic/firmographic characteristic 1]
-- [Characteristic 2]
-- [Characteristic 3]
+- Founders, PMs, strategists, consultants
+- Analysts, marketers, ops leaders
+- Anyone producing complex text-based deliverables
 
 **Their needs:**
-- [Need 1]
-- [Need 2]
-- [Need 3]
+- Turn messy briefs into clear plans
+- Produce multi-section documents efficiently
+- Get structured options and recommendations
+- Have audit trail for decisions
 
-**Why CABAL for them:**
-[How CABAL specifically serves this segment]
+**Why Cabal:**
+- Owns the process, not just answers questions
+- Multi-agent collaboration with quality control
+- Structured outputs with rationale
+- Replayable project history
 
----
-
-### Secondary Segment
+### Secondary: Technical Teams
 
 **Who they are:**
-[Description of secondary target]
-
-**Characteristics:**
-- [Characteristic 1]
-- [Characteristic 2]
+- Dev teams doing architecture breakdowns
+- Teams producing test plans, refactor plans
+- Technical documentation creators
 
 **Their needs:**
-- [Need 1]
-- [Need 2]
+- Structured technical documents
+- Options analysis with trade-offs
+- Clear reasoning and decision records
 
-**Why CABAL for them:**
-[Value proposition for this segment]
+**Why Cabal:**
+- Handles structured text (not code execution)
+- Decision nodes capture trade-off analysis
+- Watchdog ensures technical consistency
 
-## Category Definition
+### Tertiary: Agencies & Studios
 
-**What category is CABAL in:**
-[How we define the category - e.g., "AI-powered analytics platform"]
+**Who they are:**
+- Marketing agencies
+- Strategy consultancies
+- Creative studios
 
-**Why this category:**
-[Why this framing helps position CABAL]
+**Their needs:**
+- Repeatable high-quality deliverables
+- Multi-part campaigns and strategies
+- Client-ready outputs
 
-**Category alternatives:**
-- [Alternative category framing 1]
-- [Alternative category framing 2]
+**Why Cabal:**
+- Consistent process and quality
+- Scalable without linear headcount
+- Fast iteration cycles
 
-**Why we chose our category:**
-[Rationale]
+## Business Model
 
-## Positioning Strategy
+### Offering Type
 
-### How We Position CABAL
+**Subscription-based SaaS**
 
-**Core positioning:**
-[The main positioning angle - what CABAL is and why it matters]
+Likely multiple tiers:
+- Individual / Freelancer
+- Team
+- Business / Enterprise
 
-**Supporting pillars:**
-1. **[Pillar 1 - e.g., "Innovation"]**: [How we demonstrate this]
-2. **[Pillar 2 - e.g., "Ease of Use"]**: [How we demonstrate this]
-3. **[Pillar 3 - e.g., "Results"]**: [How we demonstrate this]
+Free trial or limited free tier possible.
 
-### Positioning Evolution
+### Pricing Models
 
-**Current positioning:**
-[Where we are now]
+Billing could be:
+- **Per-seat / per-user**: Simple, predictable
+- **Usage-based**: Credits / tokens
+- **Hybrid**: Base subscription + usage
 
-**Future positioning:**
-[Where we're heading as we grow]
+### Value Positioning
 
-**Why this evolution:**
-[Strategic rationale]
+**Compared to generic LLM chat:**
+- Cabal offers **structured, multi-agent collaboration** and **replayable project history**
+- Not just answering questions—running projects
+
+**Compared to agencies or consultants:**
+- Cabal is software:
+  - Faster
+  - Cheaper at scale
+  - Always available
+  - No human schedule constraints
+
+### Investor Perspective
+
+Investors should see Cabal as:
+
+1. **A "meta-layer" on top of LLM providers**
+   - Value-added orchestration
+   - Not dependent on single provider
+   - Defensible workflow and structure
+
+2. **Potentially extensible to:**
+   - Custom models per enterprise
+   - Integration into internal tools & workflows
+   - API-first / embedded workflows inside other products
+
+3. **Strong differentiation:**
+   - Multi-agent architecture
+   - Structured output with audit trail
+   - Quality control built in
 
 ## Differentiation
 
 ### Key Differentiators
 
-**1. [Differentiator 1]**
-- **What it is:** [Description]
-- **Why it matters:** [Value to customer]
-- **Proof:** [How we demonstrate this]
+**1. Multi-Agent Collaboration**
+- Not one chatbot—a team with roles
+- Chair, Operatives, Watchdog, Envoy
+- Different perspectives, structured debate
 
-**2. [Differentiator 2]**
-- **What it is:** [Description]
-- **Why it matters:** [Value]
-- **Proof:** [Evidence]
+**2. Structured Outputs**
+- Product Tree with typed nodes
+- Content, Collections, Decisions, Orchestration
+- Version history and audit trail
 
-**3. [Differentiator 3]**
-- **What it is:** [Description]
-- **Why it matters:** [Value]
-- **Proof:** [Evidence]
+**3. Built-in Quality Control**
+- Watchdog enforces rules and DoD
+- Peer review between agents
+- Blockers require resolution before progress
+
+**4. Mission-Driven Process**
+- Messy prompt → Clear mission
+- Objectives and success criteria
+- Progress tracked against mission
 
 ### Competitive Moats
 
-[What makes our position defensible?]
+**Process IP:**
+- Prompt architecture and agent orchestration
+- Workflow and round structure
+- Context Tree optimization
 
-- **[Moat 1 - e.g., "Network effects"]**: [Description]
-- **[Moat 2 - e.g., "Proprietary technology"]**: [Description]
-- **[Moat 3 - e.g., "Brand/community"]**: [Description]
+**Network Effects (potential):**
+- Templates and playbooks
+- Agent persona libraries
+- Community-contributed workflows
+
+**Switching Costs:**
+- Session history and context
+- Custom configurations
+- Team familiarity with process
 
 ## Positioning Map
 
-[Visual or textual representation of where CABAL sits relative to competitors]
-
-**Axes:**
-- X-axis: [Dimension 1 - e.g., "Simple" vs "Powerful"]
-- Y-axis: [Dimension 2 - e.g., "Affordable" vs "Premium"]
-
-**CABAL's position:**
-[Where we sit on this map and why]
-
-**Competitors' positions:**
-- [Competitor 1]: [Their position]
-- [Competitor 2]: [Their position]
+```
+                    Structured Output
+                         ▲
+                         │
+           ┌─────────────┼─────────────┐
+           │             │       CABAL │
+           │             │        ●    │
+           │             │             │
+One-shot ──┼─────────────┼─────────────┼── Project-based
+           │             │             │
+           │    ● ChatGPT│             │
+           │    ● Claude │             │
+           │             │             │
+           └─────────────┼─────────────┘
+                         │
+                    Unstructured
+```
 
 ## Messaging Hierarchy
 
 ### Primary Message
-[The #1 thing people should remember about CABAL]
+> "From fuzzy input to structured, defensible outputs."
 
 ### Secondary Messages
-1. [Message 2]
-2. [Message 3]
-3. [Message 4]
+1. "A team of AI specialists, not one chatbot"
+2. "Quality control built in, not bolted on"
+3. "See the reasoning, not just the answer"
 
 ### Proof Points
-- [Evidence 1]
-- [Evidence 2]
-- [Evidence 3]
-
-## Positioning by Audience
-
-### For [Audience 1 - e.g., "Technical Users"]
-
-**Positioning:**
-[How we position for this audience]
-
-**Emphasis:**
-[What to emphasize]
-
----
-
-### For [Audience 2 - e.g., "Business Leaders"]
-
-**Positioning:**
-[Positioning for this audience]
-
-**Emphasis:**
-[What to emphasize]
-
----
-
-### For [Audience 3 - e.g., "Investors"]
-
-**Positioning:**
-[Positioning for this audience]
-
-**Emphasis:**
-[What to emphasize]
-
-## Positioning Risks
-
-### Risks to Current Positioning
-
-**Risk 1: [Description]**
-- **Mitigation:** [How we address this]
-
-**Risk 2: [Description]**
-- **Mitigation:** [How we address this]
-
-### Positioning Challenges
-
-[Challenges in communicating or maintaining this positioning]
-
-- [Challenge 1]
-- [Challenge 2]
-
-## Success Metrics
-
-**How we measure positioning effectiveness:**
-
-- [Metric 1 - e.g., "Unaided brand awareness in target segment"]
-- [Metric 2 - e.g., "Win rate against specific competitors"]
-- [Metric 3 - e.g., "NPS score"]
-
-**Current status:**
-[Where we are on these metrics]
-
-**Goals:**
-[Where we want to be]
+- Decision nodes show what was considered and why
+- Watchdog validation ensures consistency
+- Version history enables audit and replay
 
 ---
 

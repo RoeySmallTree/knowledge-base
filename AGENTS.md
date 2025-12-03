@@ -25,10 +25,15 @@ See `protocol/commands.md` for full documentation.
 ---
 
 ## Project Structure & Module Organization
-- Current tree is minimal; store long-form notes and diagrams in `overview/`.
-- Place production code in `src/` organized by domain (e.g., `src/api/`, `src/core/`); avoid catch-all utility folders.
-- Mirror production layout in `tests/` (e.g., `tests/api/test_routes.py`, `tests/core/test_services.ts`) to keep navigation predictable.
-- Keep developer tooling in `tools/` (formatters, data prep scripts) and examples or smoke scenarios in `examples/` when they help explain usage.
+
+### Directory Layout
+- `protocol/` - **Core directives** (must-read at session start)
+- `algorithm/` - **Technical architecture** (core concepts, approach, specs)
+- `overview/` - Project knowledge (vision, product, legal, branding, market, pitching)
+- `src/` - Production code organized by domain (e.g., `src/api/`, `src/core/`); avoid catch-all utility folders
+- `tests/` - Test files mirroring `src/` structure (e.g., `tests/api/test_routes.py`)
+- `tools/` - Developer tooling (formatters, data prep scripts)
+- `examples/` - Usage examples and smoke test scenarios
 
 ## Build, Test, and Development Commands
 - Expose entry points via `make` (or `just`) so contributors have one front door.

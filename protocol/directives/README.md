@@ -20,6 +20,8 @@ Claude Code checks this file during session initialization. If pending directive
 <!-- List recently applied directives here -->
 <!-- - [YYYY-MM-DD-name](./applied/YYYY-MM-DD-name.md) - Applied: YYYY-MM-DD - [Brief description] -->
 
+- [2025-12-03-integrate-product-overview](./applied/2025-12-03-integrate-product-overview.md) - Applied: 2025-12-03 - Integrate comprehensive Cabal product overview into overview/ structure
+- [2025-12-03-add-push-command](./applied/2025-12-03-add-push-command.md) - Applied: 2025-12-03 - Add //push command for committing and pushing changes to GitHub repository
 - [2025-12-03-centralize-commands](./applied/2025-12-03-centralize-commands.md) - Applied: 2025-12-03 - Centralize all commands in protocol/commands.md with // syntax for all AI systems
 - [2025-12-03-session-todo-management](./applied/2025-12-03-session-todo-management.md) - Applied: 2025-12-03 - Add `/todo` command for task management within sessions with progress tracking and artifact references
 - [2025-12-03-add-tldr-files](./applied/2025-12-03-add-tldr-files.md) - Applied: 2025-12-03 - Add TLDR companion files with summaries and ELI5 explanations for all session artifacts

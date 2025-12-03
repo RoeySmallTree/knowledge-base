@@ -225,6 +225,79 @@ Each command includes:
 
 ---
 
+### //push
+
+**Syntax:** `//push [commit_message]`
+
+**Purpose:** Commit and push current changes to GitHub repository.
+
+**Execution Instructions:**
+
+1. Check git status:
+   ```bash
+   git status
+   ```
+
+2. If no changes, inform user: "No changes to commit."
+
+3. If changes exist:
+   - Stage all changes:
+     ```bash
+     git add .
+     ```
+
+4. Create commit:
+   - If commit message provided by user:
+     ```bash
+     git commit -m "[user_message]
+
+     🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+     Co-Authored-By: Claude <noreply@anthropic.com>"
+     ```
+
+   - If no commit message provided, create descriptive commit based on changes:
+     - Read git diff to understand changes
+     - Categorize changes (feat/fix/docs/chore)
+     - Create concise commit message following Conventional Commits
+     - Example format:
+       ```
+       feat: add session artifact management
+
+       - Created protocol/commands.md with command registry
+       - Added //session, //todo, //directive commands
+       - Updated CLAUDE.md, GEMINI.md, AGENTS.md
+
+       🤖 Generated with [Claude Code](https://claude.com/claude-code)
+
+       Co-Authored-By: Claude <noreply@anthropic.com>
+       ```
+
+5. Push to remote:
+   ```bash
+   git push
+   ```
+
+6. Report to user:
+   - Commit hash
+   - Files changed
+   - GitHub repository URL
+
+**Examples:**
+```
+//push
+//push Add new session management features
+//push Fix directive application bug
+```
+
+**Notes:**
+- Always uses Conventional Commits format (feat:, fix:, docs:, chore:)
+- Always includes Claude Code attribution
+- Automatically determines commit type from changes
+- Pushes to 'origin' remote by default
+
+---
+
 ## Adding New Commands
 
 **Process:**

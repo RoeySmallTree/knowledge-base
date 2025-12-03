@@ -81,8 +81,10 @@ The project uses `make` as the unified interface for all development tasks:
 ### Directory Layout
 
 - `protocol/` - **Core directives** (must-read at session start)
-  - Context navigation system, working rules, maintenance procedures
-- `overview/` - Project knowledge (vision, branding, algorithms, market)
+  - Context navigation system, working rules, maintenance procedures, commands
+- `algorithm/` - **Technical architecture** (core concepts, approach, specs)
+  - How Cabal works technically
+- `overview/` - Project knowledge (vision, product, legal, branding, market)
   - Hierarchical context files with README navigation
 - `src/` - Production code organized by domain (e.g., `src/api/`, `src/core/`)
   - Avoid catch-all utility folders

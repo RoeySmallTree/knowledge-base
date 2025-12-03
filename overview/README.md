@@ -2,26 +2,46 @@
 
 ## Purpose
 
-The overview folder contains comprehensive project knowledge including vision, branding, algorithmic approach, and market positioning. This is where you'll understand what CABAL is, how it works, and how it's presented to the world.
+The overview folder contains comprehensive project knowledge including vision, product concepts, branding, and market positioning. This is where you'll understand what Cabal is, how it works, and how it's presented to the world.
 
 ## Quick Navigation
 
-- **Start here:** [vision.md](./vision.md) - High-level project vision and goals
-- **For pitching:** [pitching/README.md](./pitching/README.md) → Start with [elevator-pitch.md](./pitching/elevator-pitch.md)
-- **For branding/tone:** [branding/README.md](./branding/README.md) → Start with [vibe.md](./branding/vibe.md)
-- **For technical approach:** [algorithm/README.md](./algorithm/README.md) → Start with [approach.md](./algorithm/approach.md)
-- **For market context:** [market/README.md](./market/README.md) → Start with positioning and competitive landscape
+- **Start here:** [vision.md](./vision.md) - What Cabal is, who uses it, glossary
+- **Product:** [product/README.md](./product/README.md) - Product concepts, user experience, agents
+- **Legal:** [legal/README.md](./legal/README.md) - Data, privacy, service boundaries, IP
+- **Branding:** [branding/README.md](./branding/README.md) - Tone, voice, visual identity
+- **Market:** [market/README.md](./market/README.md) - Positioning, competitive landscape, business model
+- **Pitching:** [pitching/README.md](./pitching/README.md) - Elevator pitch, one-pager, target audience
+
+**Related top-level sections:**
+- **Algorithm:** [../algorithm/README.md](../algorithm/README.md) - Technical architecture and core concepts
+- **Protocol:** [../protocol/README.md](../protocol/README.md) - Development standards and context system
 
 ## Sub-areas
 
-### pitching/
-Pitch materials and messaging for different audiences.
-→ Start with [pitching/README.md](./pitching/README.md)
+### vision.md
+Core vision and definition of Cabal.
+- What Cabal is (plain language)
+- Who uses it and what for
+- Glossary of key terms
+
+### product/
+Product concepts and user experience.
+→ Start with [product/README.md](./product/README.md)
 
 **Contains:**
-- Elevator pitch (30-second version)
-- One-pager (detailed pitch document)
-- Target audience definitions
+- User experience (client journey)
+- Agents and roles (multi-agent system)
+- Links to technical core concepts
+
+### legal/
+Legal and compliance background for lawyers and compliance teams.
+→ Start with [legal/README.md](./legal/README.md)
+
+**Contains:**
+- Data & privacy (what data we handle)
+- Service boundaries (what we guarantee)
+- IP & ownership (conceptual framework)
 
 ### branding/
 Brand identity, tone, voice, and visual guidelines.
@@ -32,26 +52,27 @@ Brand identity, tone, voice, and visual guidelines.
 - Visual identity (colors, aesthetics)
 - Messaging guidelines
 
-### algorithm/
-Technical and algorithmic approach to solving the core problem.
-→ Start with [algorithm/README.md](./algorithm/README.md)
-
-**Contains:**
-- High-level approach
-- Core concepts
-- Technical specifications (when deeper detail needed)
-
 ### market/
 Market analysis, competitive landscape, and positioning.
 → Start with [market/README.md](./market/README.md)
 
 **Contains:**
+- Positioning & business model
 - Competitive landscape
-- Market positioning
 - Target market analysis
+
+### pitching/
+Pitch materials and messaging for different audiences.
+→ Start with [pitching/README.md](./pitching/README.md)
+
+**Contains:**
+- Elevator pitch (30-second version)
+- One-pager (detailed pitch document)
+- Target audience definitions
 
 ## Related Context
 
+- **For technical depth:** See [/algorithm/README.md](../algorithm/README.md)
 - **For working rules:** See [/protocol/rules.md](../protocol/rules.md)
 - **For development setup:** See [/CLAUDE.md](../CLAUDE.md)
 - **For context maintenance:** See [/protocol/maintenance.md](../protocol/maintenance.md)
@@ -62,7 +83,7 @@ Market analysis, competitive landscape, and positioning.
 - Starting new work and need project context
 - Writing marketing copy or user-facing content
 - Making decisions about product direction
-- Need to understand technical approach
+- Need legal background for documentation
 - Pitching to stakeholders or users
 - Ensuring brand consistency
 
@@ -72,7 +93,7 @@ Market analysis, competitive landscape, and positioning.
 - Making architectural or product decisions
 
 **Navigate to sub-areas when:**
-- Working on specific aspects (branding, algorithms, etc.)
+- Working on specific aspects (product, legal, branding, etc.)
 - Need detailed information on a specific topic
 - Writing content that needs tone/voice consistency
 
