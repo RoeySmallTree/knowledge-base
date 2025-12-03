@@ -1,0 +1,17 @@
+{
+  "name": "cabal-supabase-debug",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Local Supabase debug utilities for CABAL",
+  "type": "module",
+  "scripts": {
+    "query": "node run.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "dotenv": "^16.4.5"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}

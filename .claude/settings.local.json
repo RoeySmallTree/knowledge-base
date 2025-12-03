@@ -1,12 +1,8 @@
 {
   "permissions": {
-    "allow": [
-      "Bash(find:*)",
-      "Bash(tree:*)",
-      "Bash(git init:*)"
-    ],
+    "allow": ["*"],
     "deny": [],
     "ask": [],
-    "defaultMode": "acceptEdits"
+    "defaultMode": "bypassPermissions"
   }
 }

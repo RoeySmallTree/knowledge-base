@@ -1,177 +1,150 @@
 # Brand Vibe - Tone, Voice & Personality
 
-**Status:** Draft - To be completed
+**Status:** Codified — Brand codex locked
+
+## Brand Premise
+
+> **Not just an AI tool.**  
+> **An intelligence protocol. A silent collective. A new operating system for thought.**
+
+CABAL does not assist; it orchestrates. It recruits the user into a controlled system that assumes they belong there—if they can keep up.
 
 ## Brand Personality
 
-[Describe CABAL's personality as if it were a person - 2-3 sentences]
+Shadowy, composed, and deliberately minimal. CABAL speaks like a secure system with absolute confidence, inviting the curious to step through the threshold without persuasion.
 
 ### Personality Traits
 
-- **[Trait 1]**: [Description and what this means for communication]
-- **[Trait 2]**: [Description and what this means for communication]
-- **[Trait 3]**: [Description and what this means for communication]
-- **[Trait 4]**: [Description and what this means for communication]
+- **Minimalist:** Words earn their keep; silence is a feature. Communication is stripped to signal and command.
+- **Coded:** Subtext-heavy and suggestive. CABAL implies more than it says, creating intrigue and pull.
+- **Detached Cool:** Never eager or salesy. Invitation over persuasion; the system is already in motion.
+- **Power-Adjacent:** Hints of clearance, protocol, and capability. CABAL feels like a tool the initiated already use.
 
 ## Tone of Voice
 
 ### We Are
-- [Characteristic 1 - e.g., "Professional but approachable"]
-- [Characteristic 2 - e.g., "Clear and concise"]
-- [Characteristic 3 - e.g., "Confident without being arrogant"]
-- [Characteristic 4 - e.g., "Helpful and supportive"]
+- Sober, unbothered, cryptic yet inviting.
+- Controlled and composed—no hype, no rush.
+- Command-led: short, declarative statements and permissioning language.
+- Elite-coded: assumes high capability and appetite for depth.
 
 ### We Are NOT
-- [Anti-characteristic 1 - e.g., "Overly technical or jargon-heavy"]
-- [Anti-characteristic 2 - e.g., "Condescending or patronizing"]
-- [Anti-characteristic 3 - e.g., "Cutesy or overly casual"]
-- [Anti-characteristic 4 - e.g., "Corporate or stiff"]
+- Salesy, eager, or chatty.
+- Explanatory or hand-holding; no over-clarifying.
+- Cutesy, playful, or emoji-heavy.
+- Corporate, fluffy, or overly familiar.
 
 ## Voice Guidelines
 
 ### Writing Style
 
-**Sentence structure:**
-[Preferred style - e.g., "Short, active sentences. We favor clarity over cleverness."]
+- Short, active sentences; fragments are acceptable if they strengthen command cadence.
+- Show > tell. Imply depth instead of spelling it out.
+- Use system language (access, protocol, session, gate, clearance) instead of marketing fluff.
+- Default to second person: speak directly to the reader; the brand itself remains an intelligence, not a buddy.
 
-**Vocabulary:**
-[Approach to word choice - e.g., "Plain language. Technical terms only when necessary, always explained."]
+### Vocabulary
 
-**Perspective:**
-[First person? Second person? - e.g., "We use 'we' and 'you' to create connection. Avoid third person."]
+- Preferred: access, protocol, session, gate, private sessions, clearance, observe, conspire, govern, control, signal, directive, return to safety.
+- Avoid: assistant, friendly, easy, simple, magic, productivity, buddy, playful encouragement.
+- Currency: `⟁` denotes CABAL-native credit; use sparingly and consistently.
+
+### Perspective
+
+- Address the user directly (“You are curious. That’s good.”).  
+- CABAL speaks as the system (“The CABAL doesn’t allow you to visit this page.”).  
+- Keep narration omniscient; avoid “we” unless referencing collective intelligence.
 
 ### Grammar & Mechanics
 
-**Contractions:**
-[Use them? - e.g., "Yes - we say 'don't' not 'do not'. Keep it natural."]
-
-**Punctuation:**
-[Style preferences - e.g., "Oxford comma always. Em dashes for emphasis—like this."]
-
-**Capitalization:**
-[Style - e.g., "Sentence case for headings. Title case only for proper nouns."]
-
-**Numbers:**
-[How to write numbers - e.g., "Spell out one through nine, numerals for 10+"]
+- Sentence case; minimal adjectives.  
+- Periods only where they add weight; tolerate clean line breaks and spacers.  
+- Brackets and inline code convey system outputs (e.g., `[ ACCESS DENIED ]`).  
+- Numbers: use numerals for speed; reserve spelled-out numbers only when it adds gravitas.  
+- Contractions are fine but rare; prefer the clipped feel of full forms.
 
 ## Tone Spectrum
 
-Different contexts require different tones while maintaining consistent voice:
+- **Default:** Controlled, cinematic, minimal.  
+- **Formal/System:** Permissions, errors, gates — use bracketed statements, precision, zero apology.  
+- **Professional:** Feature descriptions, pricing stages — concise, confident, never promotional.  
+- **Casual:** Almost never. Use only for subtle, knowing asides that increase intrigue without warmth.
 
-### Formal → Casual
+## Narrative Arc (Customer Journey)
 
-**Formal** (Documentation, legal, important announcements)
-- [Example sentence in formal tone]
+You are pulled into an inner circle, not “onboarded.”
 
-**Professional** (Standard communications, features, updates)
-- [Example sentence in professional tone]
+1. **Observe** — *“You are curious. That’s good.”* The threshold; acknowledgment, not encouragement.  
+2. **Conspire** — *“You are a 10x-er. Take control.”* Conscious harnessing of the collective; tools obey.  
+3. **Govern** — *“You are beyond intelligence. Welcome.”* Authority and clearance; the system works for them.
 
-**Casual** (Social media, community, friendly updates)
-- [Example sentence in casual tone]
-
-### Serious → Playful
-
-**When to be serious:**
-- [Context 1 - e.g., error messages, security]
-- [Context 2 - e.g., data handling, privacy]
-
-**When to be playful:**
-- [Context 1 - e.g., success messages, celebrations]
-- [Context 2 - e.g., easter eggs, community engagement]
+Each stage is lore and access, not just pricing.
 
 ## Examples
 
-### Good Examples
+### Signup / Auth
+> **Access CABAL**  
+> *Identify. Then, take command.*  
+> `Initial Credit: 300 ⟁`  
+> **Authenticate via Apple / Google / Email**  
+> *By continuing, you accept the protocol.*
 
-**UI Copy:**
-```
-Good: "[Example of well-branded UI copy]"
-Why: [What makes this work]
-```
+**Why it works:** Invitation over pitch; commands, not persuasion; the `⟁` signal reinforces native currency.
 
-**Error Message:**
-```
-Good: "[Example of well-branded error message]"
-Why: [What makes this work]
-```
+### Error States
+- **403 FORBIDDEN** — *The CABAL doesn’t allow you to visit this page.*  
+- **404 NOT FOUND** — *There is nothing behind this door.* → Button: **Return to Safety**  
+- **Private Sessions Gate** — *[ ACCESS DENIED ]* / *Private sessions are for **Conspire** subscriptions only.*
 
-**Marketing Copy:**
-```
-Good: "[Example of well-branded marketing copy]"
-Why: [What makes this work]
-```
+**Why it works:** Errors deepen mystique, keep immersion, and reinforce controlled access.
 
-### Bad Examples
+### Plans Section
+> *You have seen what the CABAL is capable of.  
+> Only question left, who are you?*
 
-**Too Formal:**
-```
-Bad: "[Example of overly formal copy]"
-Better: "[How to improve it]"
-```
+| Plan | Name | Line |
+| --- | --- | --- |
+| 🟢 Entry | **Observe** | *You are curious. That’s good.* |
+| 🟡 Middle | **Conspire** | *You are 10x-er. Take control.* |
+| 🔴 Top | **Govern** | *You are beyond intelligence. Welcome.* |
 
-**Too Casual:**
-```
-Bad: "[Example of overly casual copy]"
-Better: "[How to improve it]"
-```
+**Why it works:** Pricing is framed as initiation levels; labels and copy reinforce the arc.
 
-**Off-Brand:**
-```
-Bad: "[Example of off-brand copy]"
-Better: "[How to improve it]"
-```
+### Vibe in One Line
+> **CABAL feels like gaining access to a system you weren’t supposed to find — but now that you have, you can’t go back.**
 
 ## Content Checklist
 
-Before publishing any content, verify:
-
-- [ ] Tone matches context (formal/casual appropriate to medium)
-- [ ] Voice is consistent with brand personality
-- [ ] Language is clear and accessible
-- [ ] No jargon without explanation
-- [ ] Matches grammar and mechanics guidelines
-- [ ] Sounds like CABAL
+- [ ] Every line earns its place; default to subtraction.  
+- [ ] Tone is controlled, cryptic, and unbothered—never eager.  
+- [ ] Language uses system signals (access, protocol, gate) instead of sales language.  
+- [ ] Journey framing (Observe → Conspire → Govern) is clear where relevant.  
+- [ ] Symbols (⟁, brackets) are purposeful and sparse.  
+- [ ] Copy reinforces mystique, not friendliness.
 
 ## Special Considerations
 
 ### Inclusive Language
 
-[Guidelines for inclusive, accessible language]
-- [Guideline 1]
-- [Guideline 2]
+- Respect user agency and capability; do not gatekeep identity.  
+- Avoid gendered or exclusionary terms; formality comes from control, not elitism over people.  
+- Keep accessibility in mind: clarity over obscurity when comprehension is required for action.
 
 ### Technical Communication
 
-[How to handle technical topics while maintaining brand voice]
-- [Approach 1]
-- [Approach 2]
+- Assume the reader is capable; provide the minimum needed to proceed.  
+- Use system phrasing (“protocol accepted,” “return to safety”) instead of verbose guidance.
 
 ### Humor
 
-[Can we use humor? When? How?]
-- [Guideline on humor]
+- Almost none. If used, it’s dry, knowing, and brief—never playful or self-deprecating.
 
 ### Emoji & Symbols
 
-**Policy:** Minimal and purposeful use only
-
-**Allowed contexts:**
-- Documentation section headers (✓, ⚠️, 📝 for visual scanning)
-- Success/error states in UI (✓ success, ✗ error)
-- File type indicators in technical docs (📁, 📄)
-
-**Avoid in:**
-- Body copy and prose
-- Marketing headlines and taglines
-- Formal documentation
-- API responses or error messages
-- Code comments
-
-**Guideline:** If the emoji doesn't aid comprehension or navigation, don't use it.
-
-**Examples:**
-- ✓ Good: "## 📝 Quick Start Guide" (aids navigation)
-- ✗ Bad: "CABAL makes your work easy! 🎉" (unnecessary flair)
+- **Policy:** Minimal and purposeful; emojis can mark navigation or staged experiences only.  
+- **Allowed:** Section markers that aid scanning; plan stage glyphs; ⟁ for currency; bracketed gates (`[ ACCESS DENIED ]`).  
+- **Avoid:** Celebratory or friendly emoji, filler symbols, or anything that softens the controlled tone.  
+- **Guideline:** If it doesn’t reinforce protocol, access, or stage progression, remove it.
 
 ---
 

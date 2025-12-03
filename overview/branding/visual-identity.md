@@ -1,187 +1,184 @@
 # Visual Identity
 
-**Status:** Draft - To be completed
+**Status:** Codified — Brand codex locked
 
 ## Brand Aesthetics
 
-[Overall visual direction - 2-3 sentences describing the look and feel]
+Dark, cinematic, and controlled. CABAL looks like a secure command center: blacks and deep greens with sparing crimson alerts. Surfaces are clean, with subtle signals and thresholds that feel intentional—never ornamental.
 
 ## Color Palette
 
 ### Primary Colors
 
-**[Color Name]** - `#HEXCODE`
-- **Use for:** [Primary UI elements, CTAs, etc.]
-- **Represents:** [What this color conveys]
+**Obsidian** - `#050708`  
+- **Use for:** Backgrounds, shells, overlays.  
+- **Represents:** Blacksite calm; keeps attention on signals.
 
-**[Color Name]** - `#HEXCODE`
-- **Use for:** [Secondary elements]
-- **Represents:** [What this color conveys]
+**Depth Green** - `#0D1F1A`  
+- **Use for:** Panels, cards, navigation.  
+- **Represents:** Controlled depth; subtle military precision.
 
 ### Secondary Colors
 
-**[Color Name]** - `#HEXCODE`
-- **Use for:** [Specific use case]
+**Signal Slate** - `#1E2A2F`  
+- **Use for:** Secondary surfaces, inputs, hover states.
 
-**[Color Name]** - `#HEXCODE`
-- **Use for:** [Specific use case]
+**Fog** - `#E5E9E3`  
+- **Use for:** Minimal text, dividers, and icons where clarity is critical.
 
 ### Neutral Colors
 
-**[Color Name]** - `#HEXCODE`
-- **Use for:** [Text, backgrounds, etc.]
+**Ash** - `#A3ACA7`  
+- **Use for:** Muted body text, secondary labels.
 
-**[Color Name]** - `#HEXCODE`
-- **Use for:** [Borders, dividers, etc.]
+**Graphite** - `#4C5550`  
+- **Use for:** Borders, hairlines, and subtle separators.
 
 ### Accent Colors
 
-**Success** - `#HEXCODE`
-**Warning** - `#HEXCODE`
-**Error** - `#HEXCODE`
-**Info** - `#HEXCODE`
+**Success (Silent Green)** - `#14B57A`  
+**Warning (Amber Echo)** - `#D28B24`  
+**Error / Alert (Crimson Gate)** - `#B6122F`  
+**Info (Cold Cyan)** - `#3BA2C7`
 
 ## Typography
 
 ### Primary Typeface
 
-**[Font Name]**
-- **Weights:** [Regular, Medium, Bold, etc.]
-- **Use for:** [Headings, body text, etc.]
-- **Fallback:** [System fonts]
+**Space Grotesk** (or **Söhne** if available)  
+- **Weights:** Regular, Medium, Bold.  
+- **Use for:** Headings, body, system outputs.  
+- **Fallback:** `Inter`, `system-ui` only if primary is unavailable.
 
 ### Secondary Typeface (if applicable)
 
-**[Font Name]**
-- **Weights:** [Available weights]
-- **Use for:** [Code, special elements, etc.]
+**IBM Plex Mono**  
+- **Weights:** Regular, Medium.  
+- **Use for:** Inline commands, code-like UI, access tokens, `⟁` balances.
 
 ### Type Scale
 
-- **H1:** [Size, weight, use case]
-- **H2:** [Size, weight, use case]
-- **H3:** [Size, weight, use case]
-- **Body:** [Size, weight, line height]
-- **Caption:** [Size, weight, use case]
+- **H1:** 48–56px / Semi-bold — Hero, primary statements.  
+- **H2:** 32–40px / Medium — Section intros.  
+- **H3:** 24–28px / Medium — Cards, gates.  
+- **Body:** 16–18px / Regular — Core reading.  
+- **Caption:** 13–14px / Regular — Labels, system metadata.
 
 ## Logo & Iconography
 
 ### Logo
 
-[Description of logo - what it represents, how it should be used]
+Use a minimal wordmark with ample spacing; pair with a triangular or threshold mark when space allows. The mark should be sharp and monochrome.
 
 **Logo Variations:**
-- Primary logo: [When to use]
-- Secondary logo: [When to use]
-- Logo mark: [When to use]
+- Primary: Wordmark + mark on light or dark solid backgrounds.  
+- Secondary: Mark-only for avatars or favicons.  
+- One-color inverse for overlays and watermarks.
 
 **Logo Don'ts:**
-- [What not to do - e.g., don't stretch, don't change colors]
+- Don’t add gradients, glows, or shadows.  
+- Don’t round corners or soften edges.  
+- Don’t place on busy imagery; keep backgrounds solid or subtly textured.
 
 ### Icon Style
 
-[Description of icon style - line, filled, rounded, etc.]
+Monoline, geometric, and slightly condensed. Avoid cartoonish curves; edges should feel engineered. Use limited stroke weights and consistent corner radii.
 
 **Icon Principles:**
-- [Principle 1 - e.g., "Simple and recognizable"]
-- [Principle 2 - e.g., "Consistent line weight"]
-- [Principle 3 - e.g., "Aligned to pixel grid"]
+- Use straight lines and hard angles where possible.  
+- Keep stroke weight consistent; avoid mixed fills and outlines.  
+- Align to a pixel grid; no ornamental details.
 
 ## Design Principles
 
-### [Principle 1 - e.g., "Clarity over Cleverness"]
+### Ominous Clarity
 
-[Description of what this means and how it guides design decisions]
-
-**In practice:**
-- [Example 1]
-- [Example 2]
-
-### [Principle 2 - e.g., "Purposeful White Space"]
-
-[Description]
+Controlled contrast; information is clear but framed like a system output. Remove decorative noise.
 
 **In practice:**
-- [Example 1]
-- [Example 2]
+- Use generous negative space with deliberate borders.  
+- Prefer single-column layouts with decisive hierarchy.
 
-### [Principle 3 - e.g., "Consistent & Predictable"]
+### Signals over Flourish
 
-[Description]
+Surfaces stay quiet until a signal appears; every indicator has meaning.
 
 **In practice:**
-- [Example 1]
-- [Example 2]
+- Use accent colors only for state (success, warning, error).  
+- Rely on micro-animations for reveals rather than static decoration.
+
+### Controlled Motion
+
+Motion is sparse, purposeful, and slightly delayed to feel deliberate.
+
+**In practice:**
+- Gate openings, modals, and overlays fade/scale in 180–240ms with ease-out.  
+- No bounce, no spring; favor linear-to-ease curves.
 
 ## UI/UX Guidelines
 
 ### Spacing System
 
-[Spacing scale - e.g., 4px base unit, 8px, 16px, 24px, 32px, etc.]
+4px base scale: 4 / 8 / 12 / 16 / 24 / 32 / 48. Keep padding tight; prefer vertical rhythm over dense grids.
 
 ### Border Radius
 
-- **Small elements:** [e.g., 4px]
-- **Medium elements:** [e.g., 8px]
-- **Large elements:** [e.g., 12px]
+- **Small elements:** 2px  
+- **Medium elements:** 4px  
+- **Large elements:** 6px (rare — modals, overlays)
 
 ### Shadows & Depth
 
 **Elevation levels:**
-- **Level 1:** [Shadow spec - for cards, etc.]
-- **Level 2:** [Shadow spec - for modals, etc.]
-- **Level 3:** [Shadow spec - for tooltips, etc.]
+- **Level 1:** 0 8px 24px rgba(0, 0, 0, 0.24) — cards.  
+- **Level 2:** 0 12px 32px rgba(0, 0, 0, 0.32) — modals.  
+- **Level 3:** 0 4px 12px rgba(0, 0, 0, 0.32) — tooltips.
 
 ### Buttons
 
-**Primary:**
-- [Style description]
-
-**Secondary:**
-- [Style description]
-
-**Tertiary:**
-- [Style description]
+**Primary:** Solid Depth Green or Obsidian with Fog text; no gradients; uppercase optional but sparing. Corners 4px; no outlines unless on hover.  
+**Secondary:** Ghost with Signal Slate stroke and Fog text; invert on hover with subtle fill.  
+**Tertiary:** Text-only with underline on hover; use for low-risk navigation.
 
 ### Forms
 
-[Form styling guidelines - input fields, labels, validation states]
+Inputs on Signal Slate with Fog text; 2px borders in Graphite. Focus state uses Depth Green outline; errors use Crimson Gate border and label. Inline hints are terse; avoid helper paragraphs.
 
 ## Imagery & Photography
 
 ### Photo Style
 
-[Description of preferred photo style - authentic, bright, diverse, etc.]
+If used, images should feel like surveillance stills, control rooms, or abstract signal art. High contrast, desaturated; avoid friendly faces or lifestyle shots.
 
 **Do:**
-- [Guideline 1]
-- [Guideline 2]
+- Use geometric light, grids, and redacted overlays.  
+- Keep subjects obscured or silhouetted to preserve mystique.
 
 **Don't:**
-- [Anti-guideline 1]
-- [Anti-guideline 2]
+- Use stock-office, smiling teams, or playful illustration.  
+- Use gradients or mascots to fill space.
 
 ### Illustrations
 
-[If using illustrations - style guide]
+Prefer none. If required, use minimal line work and sharp geometry; no characters or mascots.
 
 ### Image Treatment
 
-[Filters, overlays, aspect ratios]
+Apply soft noise or grain; allow subtle vignettes. Use 16:9 or 3:2 for cinematic framing; avoid circles or rounded crops.
 
 ## Animation & Motion
 
 ### Animation Principles
 
-[If applicable - how motion should feel]
+Motion should feel like doors opening or signals activating—purposeful, not decorative.
 
 **Timing:**
-- [Fast interactions: e.g., 150-200ms]
-- [Medium transitions: e.g., 250-300ms]
-- [Slow reveals: e.g., 400-500ms]
+- Fast interactions: 150–180ms  
+- Medium transitions: 200–240ms  
+- Slow reveals: 280–320ms
 
 **Easing:**
-- [Preferred easing functions]
+- Ease-out or custom cubic-bezier (0.25, 0.1, 0.25, 1); avoid bounce or overshoot.
 
 ## Accessibility
 
@@ -192,13 +189,13 @@
 
 ### Typography Accessibility
 
-- Minimum font size: [e.g., 16px for body text]
-- Line height: [e.g., 1.5 for body text]
-- Line length: [e.g., 60-75 characters optimal]
+- Minimum font size: 16px for body text
+- Line height: 1.5 for body text
+- Line length: 60–75 characters optimal
 
 ### Interactive Elements
 
-- Minimum touch target: [e.g., 44x44px]
+- Minimum touch target: 44x44px
 - Clear focus states
 - Keyboard navigable
 
@@ -206,15 +203,15 @@
 
 ### Web/Digital
 
-[Specific guidelines for web applications]
+Keep shells dark; use accent colors only as signals. Maintain immersive error overlays with “Return to Safety” as the escape hatch.
 
 ### Print/Physical
 
-[If applicable - guidelines for print materials]
+Prefer monochrome with single accent (Crimson Gate). Use ample negative space and centered marks.
 
 ### Social Media
 
-[Guidelines for social media graphics, profile images, etc.]
+Use the mark or wordmark on solid Obsidian or Fog backgrounds. Avoid gradients, memes, or playful treatments; pair copy with protocol language.
 
 ---
 

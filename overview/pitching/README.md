@@ -7,7 +7,7 @@ This area contains pitch materials and messaging for different audiences and con
 ## Quick Navigation
 
 - **Start here:** [elevator-pitch.md](./elevator-pitch.md) - 30-second pitch for quick introductions
-- **For detailed pitches:** [one-pager.md](./one-pager.md) - Comprehensive pitch document
+- **Main pitch:** [one-pager.md](./one-pager.md) - Canonical pitch text
 - **For audience context:** [target-audience.md](./target-audience.md) - Who we're pitching to and their concerns
 
 ## File Descriptions

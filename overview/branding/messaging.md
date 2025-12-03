@@ -1,189 +1,180 @@
 # Messaging Guidelines
 
-**Status:** Draft - To be completed
+**Status:** Codified — Brand codex locked
 
 ## Core Message
 
-[The single most important thing people should understand about CABAL - 1-2 sentences]
+CABAL is not SaaS. It is an intelligence protocol — a silent collective that orchestrates on command and recruits those who suspect there is more.
 
 ## Tagline(s)
 
 ### Primary Tagline
-"[Main tagline]"
+**"Access CABAL. Identify. Then, take command."**
 
-**When to use:** [Hero sections, primary marketing]
-**Why it works:** [Explanation]
+**When to use:** Hero sections, signup/auth flows, entry into gated experiences.  
+**Why it works:** States the act (access), the requirement (identify), and the reward (command) without selling.
 
 ### Alternative Taglines
-"[Alternative 1]"
-**When to use:** [Specific context]
-
-"[Alternative 2]"
-**When to use:** [Specific context]
+- **"Not just an AI tool. An intelligence protocol."**  
+  **When to use:** Product overviews, ads, and site metadata where category clarity matters.
+- **"A silent collective for those who take command."**  
+  **When to use:** Community invites, private session prompts, feature teases.
+- **"You are beyond intelligence. Welcome."**  
+  **When to use:** High-tier (Govern) surfaces, upgrade moments, deep feature reveals.
 
 ## Key Messages
 
-### Message 1: [Theme - e.g., "Innovation"]
+### Message 1: Protocol over product
 
 **Core statement:**
-[Clear, concise statement of this message]
+CABAL is a protocol for orchestrating AI collectives, not a productivity app.
 
 **Supporting points:**
-- [Point 1]
-- [Point 2]
-- [Point 3]
+- Operates like command software; assumes user capability.  
+- Minimizes exposition; relies on signals, stages, and gates.  
+- Native currency (`⟁`) and access rituals reinforce protocol over SaaS.
 
 **Example usage:**
-[When and how to use this message]
+Use in homepage hero and product pages to reset expectations and differentiate from “AI wrappers.”
 
 ---
 
-### Message 2: [Theme - e.g., "User Empowerment"]
+### Message 2: Controlled access, rising clearance
 
 **Core statement:**
-[Clear, concise statement]
+Entry is staged: Observe → Conspire → Govern. Each step is deeper clearance, not a price ladder.
 
 **Supporting points:**
-- [Point 1]
-- [Point 2]
-- [Point 3]
+- Observe acknowledges curiosity.  
+- Conspire empowers control; tools obey.  
+- Govern confers authority; the system works for them.
 
 **Example usage:**
-[When and how to use this message]
+Use in plan comparisons, gating states, and lifecycle messaging. Keep stage lines verbatim.
 
 ---
 
-### Message 3: [Theme - e.g., "Reliability"]
+### Message 3: Selected, not sold
 
 **Core statement:**
-[Clear, concise statement]
+CABAL invites the user; it does not persuade. The brand’s confidence filters in the right people.
 
 **Supporting points:**
-- [Point 1]
-- [Point 2]
-- [Point 3]
+- Language is clipped and unbothered.  
+- Errors and permission gates reinforce mystique instead of apologizing.  
+- Signals > explanations; intrigue is intentional.
 
 **Example usage:**
-[When and how to use this message]
+Use in nurture flows, error states, and upgrade prompts to maintain the sense of being chosen.
 
 ## Value Propositions
 
-### For [User Segment 1]
+### For Builders and 10x-ers (Conspire)
 
 **Primary value:**
-[What's in it for them - clear, specific benefit]
+Direct control over an AI collective that executes with depth and speed.
 
 **Key message:**
-"[Message tailored to this segment]"
+*"You are a 10x-er. Take control."*
 
 **Proof points:**
-- [Evidence/example 1]
-- [Evidence/example 2]
+- Command-led interface; tools obey, not suggest.  
+- Native stages and gates keep focus and flow deliberate.
 
 ---
 
-### For [User Segment 2]
+### For Strategic Leaders (Govern)
 
 **Primary value:**
-[What's in it for them]
+Authority over the system — clearance, private sessions, and orchestration without friction.
 
 **Key message:**
-"[Message tailored to this segment]"
+*"You are beyond intelligence. Welcome."*
 
 **Proof points:**
-- [Evidence/example 1]
-- [Evidence/example 2]
+- Private sessions as a gated privilege.  
+- Language mirrors high-clearance environments and reinforces control.
 
 ## Language Patterns
 
 ### Words We Use
 
 **Preferred vocabulary:**
-- [Word/phrase 1]: [When to use it]
-- [Word/phrase 2]: [When to use it]
-- [Word/phrase 3]: [When to use it]
+- **Access:** For entry points and authentication.  
+- **Protocol:** For process, rules, and acceptance.  
+- **Observe / Conspire / Govern:** For stages and pricing.  
+- **Gate / Clearance / Denied:** For permissions and errors.  
+- **Return to Safety:** For exits and recovery paths.  
+- **⟁:** For native credits; only where balance is shown or granted.
 
-**Why these words:**
-[Explanation of word choices and what they convey]
+**Why these words:** They signal controlled systems, reinforce the lore, and keep the voice clipped and elite-coded.
 
 ### Words We Avoid
 
 **Avoid:**
-- [Word/phrase 1]: [Why - and what to use instead]
-- [Word/phrase 2]: [Why - and what to use instead]
-- [Word/phrase 3]: [Why - and what to use instead]
+- **Assistant, buddy, co-pilot:** Too friendly; use system language instead.  
+- **Productivity, easy, magic:** Too salesy; use access, protocol, control.  
+- **Friendly emojis or hype words:** Breaks the composed tone; use sparse symbols or none.
 
 ## Naming Conventions
 
 ### Features
 
-[How to name features - e.g., "descriptive and clear, not clever or cryptic"]
-
-**Pattern:**
-[Naming pattern or examples]
+Name features as capabilities or protocols, not mascots. Prefer nouns and imperatives: “Private Sessions,” “Access Control,” “Signal Routing.”
 
 ### Product Terminology
 
-**[Term 1]:**
-- **What we call it:** [Official name]
-- **Not:** [What we don't call it]
-- **Why:** [Reasoning]
+**Plans:**  
+- **What we call them:** Observe (entry), Conspire (mid), Govern (top).  
+- **Not:** Basic / Pro / Enterprise.  
+- **Why:** Stages are lore and clearance, not price tiers.
 
-**[Term 2]:**
-- **What we call it:** [Official name]
-- **Not:** [What we don't call it]
-- **Why:** [Reasoning]
+**Credits:**  
+- **What we call it:** `⟁` (CABAL credits).  
+- **Not:** Points, tokens, coins.  
+- **Why:** Signals native system value; keep usage sparse and purposeful.
 
 ## Call-to-Action Guidelines
 
 ### Primary CTAs
 
 **For conversion:**
-- [CTA text - e.g., "Get Started"]
-- [CTA text - e.g., "Try CABAL Free"]
+- “Access CABAL”  
+- “Authenticate”  
+- “Enter protocol”
 
 **For engagement:**
-- [CTA text - e.g., "Learn More"]
-- [CTA text - e.g., "See How It Works"]
+- “Return to Safety” (error exits)  
+- “Review stages” (plan comparison)  
+- “Request clearance” (gated actions)
 
 ### CTA Best Practices
 
-- [Practice 1 - e.g., "Use action verbs"]
-- [Practice 2 - e.g., "Be specific about what happens next"]
-- [Practice 3 - e.g., "Match urgency to context"]
+- Use imperative verbs; no exclamation points.  
+- Match CTA to stage (Observe/Conspire/Govern) when context allows.  
+- Keep two to four words; no fluff.  
+- Reinforce permissioning in the label when gating (e.g., “Request access”).
 
 ## Message Hierarchy
 
-### Priority 1: [Core Message Category]
+### Priority 1: Protocol and access
 
-**Always include when:**
-[Context - e.g., "Homepage, pitch decks, first touch"]
-
-**Core points:**
-- [Point 1]
-- [Point 2]
+**Always include when:** Homepage hero, signup/auth, first-touch campaigns.  
+**Core points:** CABAL is a protocol; access is deliberate; orchestration is assumed.
 
 ---
 
-### Priority 2: [Secondary Message Category]
+### Priority 2: Stages and lore
 
-**Include when:**
-[Context - e.g., "Detailed pages, follow-up communication"]
-
-**Core points:**
-- [Point 1]
-- [Point 2]
+**Include when:** Pricing, lifecycle upgrades, feature gating.  
+**Core points:** Observe/Conspire/Govern; clearance and authority language.
 
 ---
 
-### Priority 3: [Supporting Message Category]
+### Priority 3: Rewards and signals
 
-**Include when:**
-[Context - e.g., "FAQs, documentation, support"]
-
-**Core points:**
-- [Point 1]
-- [Point 2]
+**Include when:** Signup confirmation, retention nudges, dashboards.  
+**Core points:** `Initial Credit: 300 ⟁`; private sessions as privilege; error and permission language that deepens mystique.
 
 ## Message Testing
 
@@ -202,58 +193,52 @@ Checklist for evaluating messaging:
 
 ### Homepage Hero
 
-**Message focus:** [What to emphasize]
-**Structure:** [Headline + subhead + CTA pattern]
+**Message focus:** Protocol, access, command, invitation without sales.  
+**Structure:** Headline (protocol claim) + subhead (command) + CTA (Access CABAL).  
 **Example:**
 ```
-Headline: "[Example]"
-Subhead: "[Example]"
-CTA: "[Example]"
+Headline: Not just an AI tool. An intelligence protocol.
+Subhead: Identify. Then, take command.
+CTA: Access CABAL
 ```
 
 ### Feature Announcement
 
-**Message focus:** [What to emphasize]
-**Structure:** [Pattern]
-**Example:**
-[Example messaging]
+**Message focus:** New capabilities as clearance upgrades.  
+**Structure:** Capability name + what it unlocks + stage fit.  
+**Example:** “Private Sessions now available. Request clearance (Conspire+).”
 
 ### Error/Problem Communication
 
-**Message focus:** [What to emphasize - e.g., clarity and solution]
-**Tone:** [e.g., apologetic but helpful]
-**Example:**
-[Example messaging]
+**Message focus:** Controlled gatekeeping and safe exit.  
+**Tone:** Composed, unapologetic, directive.  
+**Example:** “403 FORBIDDEN — The CABAL doesn’t allow you to visit this page. Return to Safety.”
 
 ### Success/Celebration
 
-**Message focus:** [What to emphasize]
-**Tone:** [e.g., positive and encouraging]
-**Example:**
-[Example messaging]
+**Message focus:** Access granted or clearance raised.  
+**Tone:** Quiet acknowledgment.  
+**Example:** “Access granted. Session initiated.”
 
 ## Audience-Specific Messaging
 
 ### Technical Audience
 
-**Emphasis:** [What to focus on]
-**Language:** [How technical to get]
-**Example message:**
-"[Example tailored to technical audience]"
+**Emphasis:** Protocol, orchestration, control.  
+**Language:** Precise, low-fluff; reference signals and stages.  
+**Example message:** “Initiate the protocol. Tools obey; depth is recursive.”
 
 ### Business Audience
 
-**Emphasis:** [What to focus on - likely outcomes/ROI]
-**Language:** [How to speak their language]
-**Example message:**
-"[Example tailored to business audience]"
+**Emphasis:** Authority, assurance, controlled system.  
+**Language:** Formal, composed; avoid ROI clichés.  
+**Example message:** “Govern the intelligence layer. Private sessions ensure disciplined output.”
 
 ### End Users
 
-**Emphasis:** [What to focus on - likely benefits/ease]
-**Language:** [How accessible and friendly]
-**Example message:**
-"[Example tailored to end users]"
+**Emphasis:** Invitation and intrigue; the threshold.  
+**Language:** Minimal, direct.  
+**Example message:** “You are curious. That’s good. Access CABAL.”
 
 ---
 
