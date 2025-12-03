@@ -1,0 +1,9 @@
+# Session Artifacts
+
+This directory contains timestamped session folders created by `/session` command.
+
+Each session folder contains:
+- `session-summary.md` - Session activity log
+- `session-files/` - Versioned artifacts and deliverables
+
+Session folders are permanent and serve as project history.
