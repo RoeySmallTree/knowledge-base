@@ -32,11 +32,23 @@ Each command includes:
 
 **Execution Instructions:**
 
-1. Generate ISO timestamp: `YYYY-MM-DDTHH-MM-SS`
-2. Create session folder: `arbitrary/session_<timestamp>_<description>/`
-3. Create `session-summary.md`:
+1. **Generate folder name:**
+   - If description provided: Convert to kebab-case folder name
+     - Example: "API refactoring" → `api-refactoring`
+     - Example: "debugging auth issue" → `debugging-auth-issue`
+   - If no description or unclear: Use `new-session-XXXX`
+     - XXXX = 4 random alphanumeric characters
+     - Example: `new-session-a7f2`
+
+2. **Ensure unique name:**
+   - Check if folder already exists in `arbitrary/`
+   - If exists, append `-2`, `-3`, etc. or regenerate random suffix
+
+3. Create session folder: `arbitrary/<folder-name>/`
+
+4. Create `session-summary.md`:
    ```markdown
-   # Session Summary: [description]
+   # Session: [folder-name]
 
    **Created:** <ISO-timestamp>
    **Status:** Active
@@ -57,15 +69,30 @@ Each command includes:
    [Any other relevant context]
    ```
 
-4. Create empty directory: `session-files/`
-5. Create empty directory: `todo/`
-6. Confirm to user: "Session initialized: `session_<timestamp>_<description>/`"
+5. Create empty directory: `session-files/`
+6. Create empty directory: `todo/`
+7. Confirm to user: "Session initialized: `<folder-name>/`"
+
+**Naming Guidelines:**
+- Use kebab-case (lowercase with hyphens)
+- Keep names concise but descriptive
+- Derive name from the actual task/prompt
+- No timestamps in folder names
+- No "session_" prefix
 
 **Examples:**
 ```
-//session api_refactoring
-//session debugging_auth_issue
-//session research_testing_frameworks
+//session API refactoring
+→ Creates: arbitrary/api-refactoring/
+
+//session debugging auth issue
+→ Creates: arbitrary/debugging-auth-issue/
+
+//session
+→ Creates: arbitrary/new-session-x7k2/
+
+//session research testing frameworks
+→ Creates: arbitrary/research-testing-frameworks/
 ```
 
 ---

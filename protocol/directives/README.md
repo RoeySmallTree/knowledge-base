@@ -20,6 +20,7 @@ Claude Code checks this file during session initialization. If pending directive
 <!-- List recently applied directives here -->
 <!-- - [YYYY-MM-DD-name](./applied/YYYY-MM-DD-name.md) - Applied: YYYY-MM-DD - [Brief description] -->
 
+- [2025-12-03-simplify-session-naming](./applied/2025-12-03-simplify-session-naming.md) - Applied: 2025-12-03 - Simplify session naming to kebab-case task names without timestamps
 - [2025-12-03-integrate-product-overview](./applied/2025-12-03-integrate-product-overview.md) - Applied: 2025-12-03 - Integrate comprehensive Cabal product overview into overview/ structure
 - [2025-12-03-add-push-command](./applied/2025-12-03-add-push-command.md) - Applied: 2025-12-03 - Add //push command for committing and pushing changes to GitHub repository
 - [2025-12-03-centralize-commands](./applied/2025-12-03-centralize-commands.md) - Applied: 2025-12-03 - Centralize all commands in protocol/commands.md with // syntax for all AI systems
