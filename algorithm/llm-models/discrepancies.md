@@ -1,0 +1,92 @@
+# Model Data Discrepancies Report
+
+**Total JSON Models:** 148
+**Matched IDs:** 65
+**Unmatched Models:** 83
+
+## Unmatched Models List
+The following models exist in `models.json` but could not be forcefully matched to an entry in `llm_models_rows.csv`:
+
+- [AllenAI] OLMo 3.1 32B Think
+- [AllenAI] OLMo 3 32B Think
+- [AllenAI] OLMo 3 7B Think
+- [Baidu] ERNIE 4.5 21B A3B
+- [Cohere] Command R 03-2024
+- [DeepCogito] Cogito R1 Preview
+- [DeepCogito] Cogito R1 Preview (free)
+- [DeepCogito] Cogito R1 Preview 32B
+- [DeepSeek] DeepSeek R1 Distill Qwen 7B
+- [DeepSeek] DeepSeek R1 Distill Llama 8B
+- [DeepSeek] DeepSeek R1 (free)
+- [DeepSeek] DeepSeek Chat
+- [DeepSeek] DeepSeek Coder
+- [DeepSeek] DeepSeek V2.5
+- [DeepSeek] DeepSeek V2.5 (free)
+- [EssentialAI] Rnj-1 8B
+- [Google] Gemini 3 Pro Image Preview
+- [Google] Gemini 2.5 Flash Image Preview
+- [Google] Gemini 2.0 Flash Thinking Exp 1219
+- [Google] Gemini Exp 1206
+- [Google] Gemini 1.5 Flash 8B
+- [Google] Gemini 1.5 Flash
+- [Google] Gemini 1.5 Pro
+- [Google] Gemini Pro 1.5
+- [Google] Gemini Flash 1.5
+- [Google] Gemini Flash 1.5 8B
+- [Inception] Mercury 3 Thinking
+- [Inception] Mercury 3
+- [KwaiPilot] KwaiPilot 3 32B
+- [KwaiPilot] KwaiPilot 3 7B
+- [Meta] Llama 3.1 70B Instruct
+- [Meta] Llama 3.2 3B Instruct
+- [Meta] Llama 3.2 1B Instruct
+- [Mistral] Mistral Small 3.2 2512
+- [Mistral] Mistral Small Creative
+- [Mistral] Mistral Small 2
+- [Mistral] Pixtral Large 2
+- [Mistral] Pixtral 12B 2409
+- [Mistral] Codestral Mamba
+- [Mistral] Mistral 7B Instruct
+- [Mistral] Mixtral 8x7B Instruct
+- [Mistral] Mixtral 8x7B
+- [Mistral] Mixtral 8x22B
+- [MoonshotAI] Kimi 3
+- [MoonshotAI] Moonshot V1 128K
+- [MoonshotAI] Moonshot V1 32K
+- [MoonshotAI] Moonshot V1 8K
+- [MoonshotAI] Kimi 2.5
+- [Neversleep] Llama 3.1 Lumimaid 70B
+- [Neversleep] Llama 3.1 Lumimaid 8B
+- [Nex AGI] Nex AGI 1.0
+- [NousResearch] Hermes 3 Llama 3.1 405B
+- [NousResearch] Hermes 3 Llama 3.1 70B
+- [NousResearch] Hermes 3 Llama 3.2 3B
+- [NousResearch] Hermes 2 Theta Llama 3 70B
+- [NVIDIA] Llama 3.1 Nemotron 70B Instruct
+- [OpenAI] o1 Preview
+- [Qwen] Qwen 2.5 32B Instruct
+- [Qwen] Qwen 2.5 14B Instruct
+- [Qwen] Qwen 2.5 7B Instruct
+- [Qwen] Qwen 2.5 3B Instruct
+- [Qwen] Qwen 2.5 1.5B Instruct
+- [Qwen] Qwen 2.5 0.5B Instruct
+- [Qwen] QVQ 72B Preview
+- [Qwen] Qwen 2 VL 72B Instruct
+- [Qwen] Qwen 2 VL 7B Instruct
+- [Sao10K] Llama 3.1 Euryale 70B
+- [Sao10K] Llama 3 Stheno 8B
+- [Sao10K] Fimbulvetr 11B v2
+- [StepFun AI] Step 2 16K
+- [Tencent] Hunyuan Turbo
+- [TheDrummer] Llama 3.1 Sthenorm 70B
+- [TheDrummer] Llama 3.1 Sthenorm 8B
+- [TngTech] Llama 3.1 TNG 70B
+- [TngTech] Llama 3.1 TNG 8B
+- [Undi95] Llama 3.1 Toppy 8B
+- [Venice] Venice Llama 3.3 70B
+- [X.AI] Grok 2 1212
+- [X.AI] Grok 2 Vision 1212
+- [X.AI] Grok 2
+- [X.AI] Grok 2 Vision
+- [X.AI] Grok Beta
+- [X.AI] Grok Vision Beta

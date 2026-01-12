@@ -36,16 +36,16 @@ This document defines the working rules, constraints, and standards for contribu
 **Creating Artifacts:**
 - Use artifacts for: explanations, reviews, plans, designs, any referenceable content
 - Never inline lengthy content when an artifact file is more appropriate
-- Initial version: `<name>_V1.md`
-- Always create companion file: `<name>_V1_tldr.md` with:
+- Initial version: `V1_<name>.md`
+- Always create companion file: `V1_<name>_tldr.md` with:
   - **TLDR:** Concise summary of the artifact
   - **ELI5:** Simplified explanation accessible to anyone
-- Reference format: "See `<name>_V1.md` (TLDR: `<name>_V1_tldr.md`)"
+- Reference format: "See `V1_<name>.md` (TLDR: `V1_<name>_tldr.md`)"
 
 **Iterating on Artifacts:**
-- User requests changes → Create `<name>_V2.md` (increment version)
-- Create companion: `<name>_V2_tldr.md` with updated TLDR and ELI5
-- Update `<name>_CHANGELOG.md` with concise entry:
+- User requests changes → Create `V2_<name>.md` (increment version)
+- Create companion: `V2_<name>_tldr.md` with updated TLDR and ELI5
+- Update `CHANGELOG_<name>.md` with concise entry:
   - Version number and timestamp
   - What user requested
   - What was changed
@@ -96,7 +96,7 @@ This document defines the working rules, constraints, and standards for contribu
 - [x] Completed task
   - **Completed:** 2025-12-03T14:30:00
   - **Notes:** Brief description of work done
-  - **Artifacts:** `file_V1.md`, `file_V1_tldr.md`
+  - **Artifacts:** `V1_file.md`, `V1_file_tldr.md`
 ```
 
 ### Command System

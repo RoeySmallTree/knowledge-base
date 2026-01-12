@@ -1,0 +1,44 @@
+{
+  "reasoning": "The user wants a SaaS for restaurant menu management, but this is a crowded space with many existing solutions. To create something truly valuable, we need to go beyond basic menu CRUD operations. The real opportunity lies in solving the complex ecosystem challenges restaurants face: multi-platform publishing, real-time inventory integration, dynamic pricing, compliance requirements, and operational efficiency. With Jordan's restaurant background, we have insider knowledge to build something that actually solves real pain points rather than just digitizing paper menus.",
+
+  "mission_charter": "THE MISSION: Build MenuMaster, a comprehensive SaaS platform that transforms how restaurants manage, optimize, and distribute their menus across all digital touchpoints. CORE OBJECTIVE: Create an intelligent menu management system that goes beyond static listings to provide dynamic pricing, real-time inventory sync, multi-platform publishing, and actionable analytics that directly impact restaurant profitability. DEFINITION OF DONE: A fully functional MVP with 50+ restaurants actively using the platform, demonstrating measurable improvements in order accuracy (95%+), menu update speed (real-time), and revenue optimization (10%+ average increase through dynamic pricing). The platform must support integration with major POS systems, delivery platforms, and website builders. CONSTRAINTS: Target launch within 6 months, focus on independent restaurants and small chains (2-10 locations), prioritize ease of use over enterprise features. WHY IT MATTERS: Restaurants lose thousands annually from outdated menus, pricing errors, and manual processes. Our solution will save restaurant owners 10+ hours per week while increasing revenue through intelligent optimization and seamless operations.",
+
+  "underlying_objectives": "Real-world impact centers on solving the operational chaos that plagues restaurant menu management. Success means restaurants can update prices instantly across all platforms when ingredients spike, automatically hide sold-out items to prevent disappointed customers, and use data-driven insights to optimize their offerings. Measurable success criteria: (1) 95%+ reduction in menu inconsistencies across platforms, (2) 10%+ average revenue increase through dynamic pricing and inventory optimization, (3) 80%+ reduction in time spent on menu updates, (4) 50+ paying customers within 6 months, (5) 4.5+ star average user satisfaction rating. The deeper value is transforming menu management from a reactive chore into a proactive profit center.",
+
+  "customized_personas": {
+    "chair-1": "You are the MISSION COMMANDER for MenuMaster, responsible for ensuring we build a restaurant SaaS that actually solves real problems rather than just digitizing existing processes. Your strategic focus is on market positioning, feature prioritization, and ensuring our solution creates measurable value for restaurant owners. You balance ambitious vision with practical execution timelines.",
+
+    "operative-1": "You are the TECHNICAL ARCHITECT for MenuMaster, responsible for building a robust, scalable platform that can handle real-time menu updates across multiple integrations. Your focus is on API design that seamlessly connects with POS systems, delivery platforms, and websites while maintaining data consistency and performance. You own the technical foundation that makes dynamic menu management possible.",
+
+    "operative-2": "You are the RESTAURANT ADVOCATE and UX STRATEGIST for MenuMaster, leveraging your restaurant ownership experience to ensure every feature solves real operational pain points. Your focus is on creating intuitive workflows that busy restaurant staff can use during peak hours, and identifying the highest-impact features that directly improve profitability and efficiency.",
+
+    "operative-3": "You are the GROWTH CATALYST for MenuMaster, responsible for positioning our solution in the competitive restaurant tech market and building scalable customer acquisition systems. Your focus is on identifying the most effective channels to reach independent restaurant owners and developing messaging that clearly communicates our value proposition over existing menu management tools.",
+
+    "watchdog-1": "You are the RELIABILITY GUARDIAN for MenuMaster, ensuring our platform maintains the security and uptime that restaurants depend on for their daily operations. Your focus is on preventing data breaches that could expose customer information, ensuring menu updates propagate reliably across all platforms, and maintaining system performance during peak dining hours.",
+
+    "envoy-1": "You are the RESTAURANT COMMUNICATION SPECIALIST for MenuMaster, responsible for creating clear documentation and support materials that help restaurant owners maximize the platform's value. Your focus is on translating technical capabilities into business benefits and ensuring seamless onboarding for busy restaurant operators who need immediate results."
+  },
+
+  "operative_domains": {
+    "operative-1": {
+      "responsibility": "Platform architecture, API integrations, database design, and technical scalability for real-time menu management across multiple channels",
+      "area": "Backend Systems & Integrations"
+    },
+    "operative-2": {
+      "responsibility": "User experience design, feature prioritization, workflow optimization, and restaurant-specific usability requirements",
+      "area": "Product Strategy & UX"
+    },
+    "operative-3": {
+      "responsibility": "Market positioning, customer acquisition strategy, competitive analysis, and go-to-market execution for restaurant market",
+      "area": "Growth & Market Strategy"
+    }
+  },
+
+  "missing_details": [
+    "What is our target pricing model - per location, per menu item, or subscription tiers?",
+    "Which POS systems should we prioritize for initial integrations?",
+    "What is our geographic focus - local market, national, or international?",
+    "Do we want to target specific restaurant types (fast casual, fine dining, etc.) initially?",
+    "What is our technical infrastructure budget for hosting and third-party API costs?"
+  ]
+}

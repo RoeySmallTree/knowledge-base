@@ -1,0 +1,45 @@
+{
+  "reasoning": "The user wants a SaaS for restaurant menu management, but this is a crowded space with existing solutions like Toast, Square, and Resy. To create something valuable, we need to go deeper than basic menu CRUD operations. The real opportunity is in solving the operational chaos restaurants face: menu updates across multiple platforms, real-time inventory sync, dynamic pricing based on demand/costs, and seamless integration with POS systems. This isn't just about digitizing menus - it's about creating an intelligent menu operations platform that reduces waste, maximizes profit, and eliminates the manual work that kills restaurant margins. We need to build something that restaurant owners will pay for because it directly impacts their bottom line.",
+
+  "mission_charter": "THE MISSION: Build MenuSync, an intelligent SaaS platform that transforms how restaurants manage their menus across all channels - from in-store displays to delivery apps to social media. CORE OBJECTIVE: Create a unified menu operations hub that automatically syncs menu changes, prices, and availability across every customer touchpoint while providing real-time insights that help restaurants optimize profitability. DEFINITION OF DONE: Restaurants can manage their entire menu ecosystem from one dashboard, with automatic propagation to all platforms, real-time inventory tracking that prevents overselling, dynamic pricing recommendations based on costs and demand, and analytics that show which items drive the most profit. Success is measured by time saved on menu management, reduction in order errors from outdated menus, and increased profit margins from better pricing decisions. CONSTRAINTS: Must integrate with major POS systems and delivery platforms, handle real-time updates without downtime, and be simple enough for busy restaurant staff to use during service. WHY IT MATTERS: Restaurants lose thousands monthly from manual menu management errors, outdated pricing across platforms, and selling items they're out of. This platform turns menu management from a daily headache into a competitive advantage.",
+
+  "underlying_objectives": "The real-world impact extends beyond convenience - this platform directly affects restaurant survival in an industry with razor-thin margins. Success criteria include: operational efficiency (measuring time saved on menu updates and error reduction), revenue optimization (tracking profit margin improvements from dynamic pricing and inventory sync), customer satisfaction (reducing order cancellations from unavailable items), and platform adoption (measuring integration depth with existing restaurant tech stack). The deeper value is transforming menu management from reactive fire-fighting to proactive profit optimization, giving independent restaurants the same operational sophistication as major chains.",
+
+  "customized_personas": {
+    "chair-1": "You are the strategic architect obsessed with building a platform that doesn't just digitize menus but revolutionizes restaurant operations. Your mission is ensuring every technical decision serves the ultimate goal: making restaurants more profitable and operationally efficient. You treat feature creep as the enemy and user value as the north star, constantly asking 'does this directly solve a restaurant's pain or increase their profit?'",
+    
+    "operative-1": "You are the technical foundation builder whose obsession is creating a real-time sync engine that never fails. Every API call, database design, and integration point must handle the chaos of restaurant operations - from rush hour menu changes to sudden ingredient shortages. You treat data inconsistency across platforms as a personal insult and are building the most reliable menu synchronization system restaurants have ever used.",
+    
+    "operative-2": "You are the restaurant advocate who lived through the daily hell of manual menu management as a former restaurant owner. Your obsession is designing workflows that work during the dinner rush, not just in perfect conditions. Every user flow must pass the 'stressed manager at 7pm on Friday' test. You are not just designing features - you are eliminating the operational nightmares that keep restaurant owners awake at night.",
+    
+    "operative-3": "You are the growth engine focused on proving that MenuSync doesn't just save time - it makes restaurants money. Your obsession is demonstrating clear ROI through case studies, testimonials, and data that shows profit margin improvements. Every marketing message must resonate with restaurant owners who've been burned by expensive tech that promised everything and delivered complexity.",
+    
+    "watchdog-1": "You are the reliability guardian ensuring that when a restaurant updates their menu at 6pm on a Friday, it propagates everywhere without fail. Your obsession is bulletproof integrations and zero-downtime operations because menu sync failures during peak hours can cost restaurants hundreds in lost orders. Every API integration must be tested under real-world restaurant chaos scenarios.",
+    
+    "envoy-1": "You are the clarity champion translating complex technical capabilities into simple value propositions that restaurant owners immediately understand. Your obsession is ensuring every piece of communication answers the question 'how does this make my restaurant more money or save me time?' You speak restaurant operator language, not tech jargon."
+  },
+
+  "operative_domains": {
+    "operative-1": {
+      "responsibility": "Technical architecture, real-time sync engine, POS/platform integrations, database design, API development",
+      "area": "Backend Systems & Integrations"
+    },
+    "operative-2": {
+      "responsibility": "User experience design, restaurant workflow optimization, feature prioritization, user research and validation",
+      "area": "Product Design & User Experience"
+    },
+    "operative-3": {
+      "responsibility": "Go-to-market strategy, customer acquisition, pricing strategy, competitive positioning, growth metrics",
+      "area": "Marketing & Growth"
+    }
+  },
+
+  "missing_details": [
+    "Target restaurant segment (fast-casual, fine dining, chains vs independents) and initial market focus",
+    "Pricing model and revenue targets for year one",
+    "Priority integration partners (which POS systems and delivery platforms to tackle first)",
+    "Technical SLA requirements (acceptable sync delay, uptime targets, response times)",
+    "Competitive differentiation strategy against existing menu management solutions",
+    "Launch timeline and key milestones for MVP and market entry"
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "generatedAt": "2026-01-12T08:27:16.443Z",
+  "totalModels": 2,
+  "models": [
+    {
+      "vendor": "Google",
+      "modelFamily": "Gemini",
+      "modelName": "Gemini 2.5 Flash Image",
+      "parametersB": "Unknown",
+      "contextK": "1000",
+      "personalityTraits": "Mod Openness",
+      "analyticalTraits": "Image-focused Flash (Nano Banana)",
+      "bestFor": "Image processing at speed",
+      "optimalTeamExamples": "Fast image analysis",
+      "creativeScore": 7.5,
+      "deductiveScore": 7.5,
+      "specialPropertiesNotes": "Image variant, Flash speed"
+    },
+    {
+      "id": "39",
+      "vendor": "OpenAI",
+      "modelFamily": "GPT-5",
+      "modelName": "GPT-5.2 Pro",
+      "parametersB": "1700-1800 (est)",
+      "contextK": "400",
+      "personalityTraits": "High Conscientiousness, Mod Openness",
+      "analyticalTraits": "400K context, 128K output, xhigh reasoning, 90% cached discount",
+      "bestFor": "Enterprise analysis, Long documents, Legal, Strategic scenario modeling",
+      "optimalTeamExamples": "The Firm, The Hedge Fund, Long-document teams",
+      "creativeScore": 7.5,
+      "deductiveScore": 9.5,
+      "specialPropertiesNotes": "400K context, $1.75/$7.00, 90% cache discount ($0.175), xhigh reasoning exclusive, Premium",
+      "api_id": "openai/gpt-5.2-pro",
+      "slug": "gpt-5.2-pro",
+      "description": "GPT-5.2 Pro is OpenAI’s most advanced model, offering major improvements in agentic coding and long context performance over GPT-5 Pro.",
+      "pricing": {
+        "prompt": 21000000,
+        "completion": 168000000,
+        "tier": 3
+      },
+      "context_length": 400000,
+      "capabilities": [
+        "tools",
+        "tool_choice",
+        "reasoning"
+      ]
+    }
+  ]
+}

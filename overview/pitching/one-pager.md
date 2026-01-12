@@ -1,6 +1,6 @@
 Cabal
  Command the AI Collective
-Cabal turns disconnected AI models—Ope-nAI, Anthropic, Google, Perplexity—into a coordinated team.
+Cabal turns disconnected AI models—OpenAI, Anthropic, Google, Perplexity—into a coordinated team.
 Each takes on a role. Each plays a part. Together, they work in structured rounds to think, plan, write, and review—just like a human team. Only faster.
 Why it matters
  Most AI tools today work in isolation: one prompt in, one answer out. Cabal makes them work together like a task force—reviewing each other’s work, catching mistakes, building structured outputs, and evolving projects across multiple iterations. That means fewer errors, deeper insights, and results you can actually trust.

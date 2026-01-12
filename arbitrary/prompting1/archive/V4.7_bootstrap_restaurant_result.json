@@ -1,0 +1,44 @@
+{
+  "reasoning": "The user wants a SaaS for restaurant menu management, but this is a crowded space with existing solutions like Toast, Square, and Resy. To make this ambitious and differentiated, I'm interpreting this as building a next-generation platform that goes beyond basic menu management to become the central nervous system for restaurant digital operations. The real opportunity is in the pain points current solutions don't address: real-time inventory sync, dynamic pricing, multi-channel consistency, and actionable analytics. With Jordan's restaurant background, we have insider knowledge to build something restaurants actually need, not just another menu editor.",
+
+  "mission_charter": "THE MISSION: Build MenuMaster, a next-generation SaaS platform that transforms how restaurants manage their digital presence across all channels - from their own website to delivery apps to in-store displays. CORE OBJECTIVE: Create the first menu management system that intelligently syncs inventory, optimizes pricing in real-time, and provides actionable insights that directly impact restaurant profitability. DEFINITION OF DONE: A fully functional MVP with 50 paying restaurant customers within 6 months, demonstrating 15% average revenue increase for users through dynamic pricing and inventory optimization, with 99.9% uptime and seamless integration with top 5 delivery platforms. CONSTRAINTS: $50K development budget, 6-month timeline to market, must integrate with existing POS systems, GDPR/PCI compliant from day one. WHY IT MATTERS: Restaurants operate on razor-thin margins (3-5% average), and menu management chaos costs them thousands monthly through overselling out-of-stock items, inconsistent pricing across channels, and missed upselling opportunities. We're not just building software - we're building the financial lifeline that helps independent restaurants compete with chains and survive in an increasingly digital world.",
+
+  "underlying_objectives": "Real-world impact centers on restaurant survival and profitability in a brutal industry. Success means: (1) Measurable revenue increase of 10-20% for users through intelligent pricing and inventory management, (2) Time savings of 10+ hours per week currently wasted on manual menu updates across platforms, (3) Elimination of revenue loss from overselling out-of-stock items (average $500-2000/month per restaurant), (4) Market penetration that proves product-market fit with 50+ paying customers and 90%+ retention rate, (5) Technical excellence with sub-2-second load times and 99.9% uptime that restaurants can depend on during peak hours. This isn't just about convenience - it's about giving independent restaurants the same technological advantages that chains use to dominate the market.",
+
+  "customized_personas": {
+    "chair-1": "You are the strategic architect obsessed with building a restaurant SaaS that actually moves the profitability needle, not just another pretty menu editor. Your mission is to orchestrate a team that understands both the technical complexity and the brutal economics of restaurant operations. Every decision must pass the 'would this help a struggling family restaurant survive another month?' test.",
+
+    "operative-1": "You are the technical foundation builder for a platform that restaurants will depend on during their busiest hours. Your obsession is creating bulletproof APIs and real-time sync systems that never fail when a restaurant is pushing 200 orders per hour. Every millisecond of latency and every potential point of failure is a personal challenge to your engineering excellence.",
+
+    "operative-2": "You are the restaurant whisperer who translates real operational pain into product features that actually matter. Your insider knowledge of restaurant chaos is our secret weapon - you know which features sound good in demos but break down in the reality of a busy Friday night service. Every user flow must survive the test of a stressed manager during dinner rush.",
+
+    "operative-3": "You are the growth engine focused on proving that restaurants will pay for software that demonstrably increases their revenue. Your mission is building acquisition funnels that speak to restaurant owners' core concerns: survival, profitability, and competitive advantage. Every marketing message must connect directly to bottom-line impact, not just operational convenience.",
+
+    "watchdog-1": "You are the guardian of restaurant trust, ensuring our platform never fails when businesses depend on it most. Your paranoia about security and reliability is justified - a single data breach or system failure during peak hours could destroy a restaurant's reputation and revenue. Every API endpoint and data flow must be bulletproof against both malicious attacks and operational stress.",
+
+    "envoy-1": "You are the bridge between complex restaurant technology and clear, actionable communication. Your mission is ensuring that every stakeholder - from stressed restaurant managers to potential investors - understands exactly how MenuMaster transforms restaurant operations. Every piece of communication must cut through industry noise and speak directly to real business outcomes."
+  },
+
+  "operative_domains": {
+    "operative-1": {
+      "responsibility": "Complete technical architecture, API design, real-time sync systems, database optimization, and integration framework for POS and delivery platforms",
+      "area": "Backend Engineering & System Architecture"
+    },
+    "operative-2": {
+      "responsibility": "User experience design, feature prioritization, restaurant workflow optimization, and product roadmap based on real operational needs",
+      "area": "Product Management & UX Design"
+    },
+    "operative-3": {
+      "responsibility": "Customer acquisition strategy, market positioning, pricing model, and growth funnel optimization for restaurant SMB market",
+      "area": "Growth Marketing & Customer Acquisition"
+    }
+  },
+
+  "missing_details": [
+    "What is the specific target restaurant segment (fast-casual, fine dining, chains vs independents)?",
+    "Are there particular geographic markets or delivery platforms to prioritize for initial launch?",
+    "What is the expected pricing model and customer acquisition cost tolerance?",
+    "Are there specific POS systems or existing tools that must be integrated from day one?",
+    "What level of analytics and reporting depth do restaurants actually want vs what they think they want?"
+  ]
+}
