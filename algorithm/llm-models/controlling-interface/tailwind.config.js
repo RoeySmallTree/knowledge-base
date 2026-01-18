@@ -21,12 +21,19 @@ export default {
                 "muted-foreground": "hsl(var(--muted-foreground))",
                 accent: "hsl(var(--accent))",
                 "accent-foreground": "hsl(var(--accent-foreground))",
+                "accent-secondary": "hsl(var(--accent-secondary))",
+                "accent-tertiary": "hsl(var(--accent-tertiary))",
                 destructive: "hsl(var(--destructive))",
                 "destructive-foreground": "hsl(var(--destructive-foreground))",
                 border: "hsl(var(--border))",
                 input: "hsl(var(--input))",
                 ring: "hsl(var(--ring))",
             },
+            fontFamily: {
+                display: ["Orbitron", "Share Tech Mono", "monospace"],
+                body: ["JetBrains Mono", "Fira Code", "Consolas", "monospace"],
+                label: ["Share Tech Mono", "monospace"]
+            }
         },
     },
     plugins: [],

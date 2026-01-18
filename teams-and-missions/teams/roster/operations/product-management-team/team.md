@@ -2,13 +2,6 @@
 
 > *"Every SaaS company needs this."*
 
-## Tags
-- `product`
-- `saas`
-- `prd`
-- `roadmap`
-- `high-value`
-
 ## Composition
 
 | Role | Team Role | Member File |

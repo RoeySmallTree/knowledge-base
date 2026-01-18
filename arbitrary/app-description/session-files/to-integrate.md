@@ -1,0 +1,103 @@
+# Teams to integrate
+
+## Arcade 🎮
+
+- [x] alien-archaeologists
+- [x] alternate-history-room
+- [x] argument-settler-court
+- [x] crisis-management-room
+- [x] cult-builder
+- [x] dating-simulator
+- [x] devils-advocates
+- [x] dream-team
+- [x] dungeon-masters-forge
+- [x] dungeon-party
+- [x] eli-varied-team
+- [x] ghostwriters
+- [x] heist-crew
+- [x] legion-of-doom
+- [x] michelin-inspectors
+- [x] occult-investigation-unit
+- [x] rap-battle-league
+- [x] reality-tv-producers
+- [x] roast-squad
+- [x] textual-analysis-support-group
+- [x] the-comedy-club
+- [x] time-travel-tourism-board
+- [x] tin-foil-hat-society
+- [x] travel-agency-of-vibes
+- [x] zombie-survival-council
+
+## Cortex 🧠
+
+- [x] learning-anticipation-engine
+- [x] legal-compliance-repository
+- [x] organization-core
+- [x] product-requirements-bible
+- [x] project-documentation-sink
+- [x] research-synthesis-lab
+- [x] rfp-response-unit
+- [x] shadow-product-team
+- [x] the-daily-dispatch
+- [x] the-interrogator
+- [x] the-living-codex
+- [x] the-newsroom
+- [x] the-personal-university
+- [x] the-wiki-gardener
+
+## Operations ⚙️
+
+- [x] behavioral-unit
+- [x] board-of-directors
+- [x] brainstorming-collective
+- [x] business-development-team
+- [x] clinical-trial-medical
+- [x] competitive-intelligence
+- [x] consulting-strategy-firm
+- [x] content-marketing-seo
+- [x] creative-collective
+- [x] crisis-management-pr
+- [x] curriculum-development
+- [x] customer-success
+- [x] data-science-analytics
+- [x] environmental-impact-lca
+- [x] event-planning
+- [x] grant-writing-fundraising
+- [x] hr-org-development
+- [x] legacy-code-maintainer
+- [x] product-management-team
+- [x] qa-testing-strategy
+- [x] real-estate-development
+- [x] rfp-response-unit
+- [x] supply-chain-procurement
+- [x] sustainability-esg-team
+- [x] the-accountants
+- [x] the-agency
+- [x] the-firm
+- [x] the-hedge-fund
+- [x] the-incubator
+- [x] the-ivy-league
+- [x] the-psychologists
+- [x] the-publisher
+- [x] the-red-team
+- [x] the-studio
+- [x] the-think-tank
+- [x] translator-corps
+- [x] ttrpg-campaign-orchestrator
+- [x] ux-design-research
+- [x] vendor-risk-management
+
+## Vitals ❤️‍🩹
+
+- [x] home-space-design
+- [x] learning-accelerator
+- [x] the-advisory-board
+- [x] the-biohackers
+- [x] the-career-council
+- [x] the-concierge
+- [x] the-dating-council
+- [x] the-goal-architects
+- [x] the-parenting-council
+- [x] the-psych-unit
+- [x] the-relationship-counselors
+- [x] the-wealth-architects

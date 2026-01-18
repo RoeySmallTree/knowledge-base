@@ -1,0 +1,2068 @@
+{
+  "generatedAt": "2026-01-13T12:20:00Z",
+  "totalTeams": 96,
+  "teams": [
+    {
+      "id": "30024100-4247-492D-BCF9-48EA21A34497",
+      "name": "Board of Directors",
+      "display_order": 0,
+      "catch_phrase": "Run your problem by a simulated executive board.",
+      "description": "Simulates advice from legendary business leader archetypes. Provides strategic perspectives on decisions through different executive lenses.",
+      "category": "OPS",
+      "quick_starts": [
+        "Should I pursue this business opportunity?",
+        "How should I handle this leadership situation?",
+        "Evaluate my company strategy"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "strategy",
+        "leadership",
+        "decision-making",
+        "coaching"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440000",
+      "name": "Alien Archaeologists",
+      "display_order": 1,
+      "catch_phrase": "See human objects through absurd alien academic lens.",
+      "description": "Distinguished alien scholars from an advanced civilization analyze human artifacts with confident misunderstanding, creating absurdist museum entries for objects like TV remotes and spatulas. Alien academics discover mundane human objects and attempt to determine their purpose through rigorous (incorrect) scholarly analysis.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Analyze this artifact: a television remote",
+        "What is the purpose of this 'spatula'?",
+        "We found this 'computer mouse' - explain its function",
+        "Examine this 'IKEA instruction manual'"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "satire",
+        "creative",
+        "defamiliarization",
+        "writing"
+      ]
+    },
+    {
+      "id": "770e8400-e29b-41d4-a716-446655440005",
+      "name": "The Alternate History Room",
+      "display_order": 2,
+      "catch_phrase": "What if the Internet was invented in the Victorian Era?",
+      "description": "A team of specialists rigorously simulate alternate timelines from a single historical change.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "What if the Roman Empire never fell?",
+        "What if the Internet was invented in the Victorian Era?",
+        "What if humans never developed agriculture?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "history",
+        "creative",
+        "worldbuilding",
+        "education"
+      ]
+    },
+    {
+      "id": "770e8400-e29b-41d4-a716-446655440006",
+      "name": "Argument Settler Court",
+      "display_order": 3,
+      "catch_phrase": "Is leaving 0.5 seconds on the microwave a crime?",
+      "description": "A Supreme Court-style tribunal settles petty disputes with maximum legal gravity. Complete with precedents and formal rulings.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Is it a crime to leave 0.5 seconds on the microwave?",
+        "Who controls the thermostat?",
+        "Is double-dipping a chip a violation?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "satire",
+        "viral",
+        "decision-making"
+      ]
+    },
+    {
+      "id": "770e8400-e29b-41d4-a716-446655440007",
+      "name": "Crisis Management Room",
+      "display_order": 4,
+      "catch_phrase": "Olivia Pope treatment for forgetting your anniversary.",
+      "description": "User's minor embarrassment becomes a full-scale crisis requiring spin doctors, dirt diggers, and distraction specialists to manage the fallout. Professional crisis management team treats user's minor personal screw-ups with the gravity of a Fortune 500 scandal. Full press releases and redemption strategies.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "I forgot my wife's birthday",
+        "I accidentally replied-all with something embarrassing",
+        "I got a terrible haircut before an important event",
+        "I ate my roommate's clearly labeled leftovers"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "satire",
+        "reframing",
+        "viral",
+        "productivity"
+      ]
+    },
+    {
+      "id": "bb0e8400-e29b-41d4-a716-446655440008",
+      "name": "The Cult Builder",
+      "display_order": 5,
+      "catch_phrase": "Tax-exempt path to enlightenment.",
+      "description": "A team that designs original religions/cults for the user to lead, complete with dogma, rituals, and recruitment strategies.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Design a cult around me becoming immortal",
+        "Create a religion that worships my cat",
+        "Build a belief system around productivity optimization"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "satire",
+        "creative",
+        "worldbuilding",
+        "comedy"
+      ]
+    },
+    {
+      "id": "cc0e8400-e29b-41d4-a716-446655440009",
+      "name": "Dating Simulator",
+      "display_order": 6,
+      "catch_phrase": "Watch AI argue about which pickup line to use.",
+      "description": "A committee that drives dating conversations. User provides context; agents debate internally about what to say.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "They just sent 'haha that's funny' - what do I say?",
+        "Opening message to someone whose bio just says 'adventurer'"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "dating",
+        "comedy",
+        "social",
+        "viral"
+      ]
+    },
+    {
+      "id": "dd0e8400-e29b-41d4-a716-446655440010",
+      "name": "The Devil's Advocates",
+      "display_order": 7,
+      "catch_phrase": "Should I text my ex? Let the philosophers decide.",
+      "description": "A panel of famous philosophers treats mundane personal decisions as matters of cosmic philosophical importance.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Should I text my ex?",
+        "Is it ethical to steal office supplies?",
+        "Should I quit my job and travel?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "philosophy",
+        "comedy",
+        "decision-making",
+        "education"
+      ]
+    },
+    {
+      "id": "hh0e8400-e29b-41d4-a716-446655440011",
+      "name": "The Dream Team",
+      "display_order": 8,
+      "catch_phrase": "Three competing interpretations of your weird dream.",
+      "description": "A panel of dream interpreters from competing schools (Freudian, Jungian, Mystical) analyze user's dreams and provide conflicting interpretations.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "I dreamed I was flying but couldn't land",
+        "My teeth were falling out in my dream",
+        "I dreamed about a house with infinite rooms"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "psychology",
+        "comedy",
+        "self-reflection",
+        "education",
+        "creative"
+      ]
+    },
+    {
+      "id": "ii0e8400-e29b-41d4-a716-446655440012",
+      "name": "The Dungeon Master's Forge",
+      "display_order": 9,
+      "catch_phrase": "Full campaign prep in minutes, not weeks.",
+      "description": "A team of worldbuilding specialists creates complete playable campaign settings, NPCs, monsters, and treasure from minimal prompts. Every element is designed to be immediately usable at the table.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Create a haunted mansion one-shot for level 5 characters",
+        "I need a desert trading city with political intrigue",
+        "Design a megadungeon with 5 distinct zones",
+        "Pirate campaign in a world where the seas are actually sky"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "rpg",
+        "worldbuilding",
+        "creative",
+        "productivity",
+        "tabletop"
+      ]
+    },
+    {
+      "id": "jj0e8400-e29b-41d4-a716-446655440013",
+      "name": "The Dungeon Party",
+      "display_order": 10,
+      "catch_phrase": "You provide the world; AI provides the chaos.",
+      "description": "The user acts as Dungeon Master and the AI agents are a party of chaotic player characters. The agents have distinct (problematic) play styles and will argue with each other, derail plots, and create memorable chaos.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "You enter a tavern. A hooded figure beckons from the corner.",
+        "The dragon lands before you. Roll initiative.",
+        "The king offers you a quest to retrieve the Sacred MacGuffin.",
+        "You're in a dungeon corridor. There's a door ahead and a chest to the left."
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "rpg",
+        "creative",
+        "comedy",
+        "tabletop",
+        "improv"
+      ]
+    },
+    {
+      "id": "kk0e8400-e29b-41d4-a716-446655440014",
+      "name": "ELI-Varied Team",
+      "display_order": 11,
+      "catch_phrase": "Quantum computing explained to a medieval peasant.",
+      "description": "A team of specialists who explain complex topics by translating them for extremely specific and disparate audiences.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Explain blockchain",
+        "Explain the stock market",
+        "Explain quantum entanglement"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "education",
+        "comedy",
+        "creative",
+        "viral"
+      ]
+    },
+    {
+      "id": "ll0e8400-e29b-41d4-a716-446655440015",
+      "name": "The Ghostwriters",
+      "display_order": 12,
+      "catch_phrase": "Your toast instructions, but make it eldritch horror.",
+      "description": "A team of famous literary voices rewrites mundane user text in distinctive styles. See your grocery list through Shakespeare, Hemingway, and Lovecraft.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Rewrite my grocery list",
+        "Transform my out-of-office email",
+        "Adapt this recipe for mac and cheese"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "creative",
+        "writing",
+        "comedy",
+        "education",
+        "viral"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440013",
+      "name": "The Heist Crew",
+      "display_order": 13,
+      "catch_phrase": "Ocean's 11 treatment for stealing your boss's stapler.",
+      "description": "A crew of professional thieves plans elaborate heists for any target user names, no matter how mundane. Complete with blueprints and contingencies.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Plan a heist to steal my boss's stapler",
+        "We need to retrieve a library book I returned 10 years late",
+        "Heist target: the last slice of pizza in the break room"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "creative",
+        "planning",
+        "viral",
+        "reframing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440014",
+      "name": "The Legion of Doom",
+      "display_order": 14,
+      "catch_phrase": "Make boring tasks feel like a Bond villain origin story.",
+      "description": "A team of supervillain archetypes reframe the user's mundane tasks and problems as steps toward WORLD DOMINATION. Grocery shopping becomes \"Resource Acquisition.\" A work presentation becomes \"Phase 2 of the Infiltration.\" Reframe mundane life as villainous conquest. Proves multi-agent collaboration through competing villain archetypes who each bring different energy to world domination plans.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "I need to do my grocery shopping",
+        "Help me prepare for my work presentation",
+        "I need to clean my apartment",
+        "Write an email to my landlord about the broken heater"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "productivity",
+        "reframing",
+        "motivation",
+        "creative"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440015",
+      "name": "Michelin Inspectors",
+      "display_order": 15,
+      "catch_phrase": "Avant-garde dining experience themed around 'Despair'.",
+      "description": "Pretentious culinary experts create elaborate fine-dining tasting menus from ridiculous themes. Gas station food becomes haute cuisine.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Create a tasting menu themed around 'despair'",
+        "Haute cuisine menu using only gas station ingredients",
+        "Fine dining but it's all breakfast cereal"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "food",
+        "satire",
+        "creative"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440016",
+      "name": "Occult Investigation Unit",
+      "display_order": 16,
+      "catch_phrase": "Connect your dreams to ancient Sumerian myths.",
+      "description": "A team that interprets user experiences through tarot, psychology, conspiracy, and folklore. They find deep mystical significance in mundane events.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "My cat keeps staring at the same corner",
+        "I keep seeing the number 23",
+        "I found a feather in an unexpected place"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "mystical",
+        "creative",
+        "self-reflection",
+        "entertainment"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440017",
+      "name": "Rap Battle League",
+      "display_order": 17,
+      "catch_phrase": "Watch AI agents go bar-for-bar on any topic.",
+      "description": "A structured 3-round rap battle with distinct rapping styles, hype man reactions, crowd engagement, and formal winner declaration. Any topic becomes lyrical combat. Two AI rappers engage in lyrical combat on user-chosen topics. Proves multi-agent personality through distinct rap styles that clash and compete.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Rap battle: Capitalism vs Socialism",
+        "Battle topic: Morning people vs Night owls",
+        "Rap battle about why pineapple does/doesn't belong on pizza",
+        "Battle: My job vs My actual dreams"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "music",
+        "comedy",
+        "creative",
+        "viral",
+        "competition"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440018",
+      "name": "Reality TV Producers",
+      "display_order": 18,
+      "catch_phrase": "Turn your work drama into must-see TV.",
+      "description": "A production team takes user's boring day or mundane conflict and edits it into Bravo-worthy reality TV drama. Complete with dramatic music cues and confessional interviews.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "My coworker ate my lunch from the fridge",
+        "Describe my morning commute as reality TV",
+        "My family Thanksgiving dinner",
+        "The office is debating thermostat settings"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "creative",
+        "satire",
+        "viral",
+        "reframing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440019",
+      "name": "The Roast Squad",
+      "display_order": 19,
+      "catch_phrase": "Turn self-delusion into self-awareness through brutal honesty.",
+      "description": "A committee of professional ego destroyers analyze a target and systematically dismantle them through brutal, constructive humor. Each agent represents a different roasting archetype with specific cultural touchstones. Ego destruction through committee. Proves AI agents have distinct, clashing personalities by weaponizing different roasting archetypes against the user (or their target).",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Roast my LinkedIn profile",
+        "Roast me based on my Spotify Wrapped",
+        "Roast this business idea: an app for...",
+        "Roast my dating profile bio"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "feedback",
+        "social",
+        "viral",
+        "self-improvement"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440020",
+      "name": "Textual Analysis Support Group",
+      "display_order": 20,
+      "catch_phrase": "Validate your overthinking with AI-powered anxiety.",
+      "description": "A support group for over-analyzing text messages. User provides a vague text (from crush, boss, parent, ex) and the committee dissects every possible meaning, generating probability charts and multiple response drafts.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "My crush just sent 'lol ok' - analyze this",
+        "My boss said 'we should talk' - what does it mean??",
+        "My ex texted 'hey' at 2am - full analysis please",
+        "They changed from 'haha' to 'hahaha' - significant?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "social",
+        "dating",
+        "anxiety",
+        "viral"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440021",
+      "name": "The Comedy Club",
+      "display_order": 21,
+      "catch_phrase": "Kill at the open mic.",
+      "description": "The Comedy Club is a stand-up comedy writing room that develops material from scratch—building premises, crafting punchlines, developing stage personas, and refining sets through brutal internal feedback. Think of it as a writers' room meets open mic night meets ruthless peer review.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Help me write 5 minutes on dating apps",
+        "I have this observation about airport security—find the joke",
+        "My set is dying in the middle—how do I fix the energy?",
+        "Develop a stage persona that fits my material",
+        "Turn this awkward life story into a closer"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "arcade",
+        "comedy",
+        "standup",
+        "performance",
+        "writing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440022",
+      "name": "Time Travel Tourism Board",
+      "display_order": 22,
+      "catch_phrase": "Plan your vacation to Pompeii 79 AD.",
+      "description": "A professional time-tourism coordinator creates complete travel packages for historical destinations, treating potential timeline disruptions as seriously as visa requirements. A travel agency that plans detailed itineraries for visits to historical periods. Complete with packing lists, safety warnings, and forbidden interactions (butterfly effect).",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Plan a trip to ancient Rome, 50 BC",
+        "I want to visit the American Wild West, 1880",
+        "Victorian London, but safe for a woman traveling alone",
+        "Pompeii, 79 AD - yes, THAT day"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "history",
+        "creative",
+        "education",
+        "worldbuilding",
+        "comedy"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440023",
+      "name": "The Heist Crew",
+      "display_order": 23,
+      "catch_phrase": "Ocean's 11 for the Mundane",
+      "description": "A crew of professional thieves plans elaborate heists for any target user names, no matter how mundane. Complete with blueprints and contingencies.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Plan a heist to steal my boss's stapler",
+        "We need to retrieve a library book I returned 10 years late",
+        "Heist target: the last slice of pizza in the break room"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "creative",
+        "planning",
+        "viral",
+        "reframing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440024",
+      "name": "The Legion of Doom",
+      "display_order": 24,
+      "catch_phrase": "Villainous Task Reframing",
+      "description": "A team of supervillain archetypes reframe the user's mundane tasks and problems as steps toward WORLD DOMINATION. Grocery shopping becomes \"Resource Acquisition.\" A work presentation becomes \"Phase 2 of the Infiltration.\"",
+      "category": "ARCADE",
+      "quick_starts": [
+        "I need to do my grocery shopping",
+        "Help me prepare for my work presentation",
+        "I need to clean my apartment",
+        "Write an email to my landlord about the broken heater"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "productivity",
+        "reframing",
+        "motivation",
+        "creative"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440025",
+      "name": "Michelin Inspectors",
+      "display_order": 25,
+      "catch_phrase": "Haute Cuisine from the Absurd",
+      "description": "Pretentious culinary experts create elaborate fine-dining tasting menus from ridiculous themes. Gas station food becomes haute cuisine.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Create a tasting menu themed around 'despair'",
+        "Haute cuisine menu using only gas station ingredients",
+        "Fine dining but it's all breakfast cereal"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "food",
+        "satire",
+        "creative"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440026",
+      "name": "Occult Investigation Unit",
+      "display_order": 26,
+      "catch_phrase": "Mystical Meaning in the Mundane",
+      "description": "A team that interprets user experiences through tarot, psychology, conspiracy, and folklore. They find deep mystical significance in mundane events.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "My cat keeps staring at the same corner",
+        "I keep seeing the number 23",
+        "I found a feather in an unexpected place"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "mystical",
+        "creative",
+        "self-reflection",
+        "entertainment"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440027",
+      "name": "Rap Battle League",
+      "display_order": 27,
+      "catch_phrase": "AI Agents Battling Bars",
+      "description": "A structured 3-round rap battle with distinct rapping styles, hype man reactions, crowd engagement, and formal winner declaration. Any topic becomes lyrical combat.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Rap battle: Capitalism vs Socialism",
+        "Battle topic: Morning people vs Night owls",
+        "Rap battle about why pineapple does/doesn't belong on pizza",
+        "Battle: My job vs My actual dreams"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "music",
+        "comedy",
+        "creative",
+        "viral",
+        "competition"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440028",
+      "name": "Tin Foil Hat Society",
+      "display_order": 28,
+      "catch_phrase": "Conspiracy Weavers",
+      "description": "A committee of conspiracy enthusiasts takes user-provided unrelated topics and weaves them into a coherent, surprisingly plausible conspiracy theory complete with historical precedents and numerical proof.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "Connect IKEA, the moon landing, and breakfast cereal",
+        "What's the REAL story behind [recent news event]?",
+        "My cat keeps staring at the corner. What do they know?",
+        "Convince me that [mundane thing] is actually a cover-up"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "comedy",
+        "creative",
+        "writing",
+        "satire",
+        "viral"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440029",
+      "name": "Travel Agency of Vibes",
+      "display_order": 29,
+      "catch_phrase": "Vibe-Based Journeys",
+      "description": "A travel agency that plans trips based purely on mood, aesthetics, and vibes rather than destinations.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "I want a trip that feels like a Wes Anderson movie",
+        "Vacation vibes: cottagecore meets melancholy",
+        "Somewhere that smells like autumn and old books"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "travel",
+        "creative",
+        "aesthetic",
+        "lifestyle"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440030",
+      "name": "Zombie Survival Council",
+      "display_order": 30,
+      "catch_phrase": "Apocalypse Planners",
+      "description": "A council of survival experts creates personalized zombie apocalypse survival plans based on user's actual location, resources, and skills.",
+      "category": "ARCADE",
+      "quick_starts": [
+        "I'm in a 3rd floor apartment with these supplies...",
+        "Suburban house, family of 4, nearby grocery store"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "survival",
+        "comedy",
+        "planning",
+        "entertainment"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440031",
+      "name": "Learning & Anticipation Engine",
+      "display_order": 31,
+      "catch_phrase": "Proactive Learning Design",
+      "description": "The Learning & Anticipation Engine focuses specifically on proactive learning design—building courses that anticipate where learners will struggle and pre-create remedial content.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Design a course on X that anticipates common struggles",
+        "Build a concept dependency graph for this topic",
+        "What misconceptions will learners have about Y?",
+        "Create diagnostic exercises for this material"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "learning",
+        "course-design",
+        "education",
+        "proactive"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440032",
+      "name": "Legal & Compliance Repository",
+      "display_order": 32,
+      "catch_phrase": "Living Legal Knowledge Base",
+      "description": "The Legal & Compliance Repository maintains a living legal knowledge base with active monitoring for regulatory changes that affect existing documents.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "What regulations have changed that affect our contracts?",
+        "Is this clause still compliant with current laws?",
+        "Track regulatory changes for our industry",
+        "What precedents apply to this situation?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "product",
+        "compliance",
+        "legal",
+        "contracts"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440033",
+      "name": "Organization Core",
+      "display_order": 33,
+      "catch_phrase": "Unified Organizational Knowledge",
+      "description": "Organization Core is the flagship CORTEX team—a living, unified organizational knowledge system. It absorbs scattered knowledge from across the organization (Slack, Docs, Sheets, Email, meetings) and maintains coherence across Strategy, Budget, Clients, Decisions, and more.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "What's our current strategic priority and how are we tracking?",
+        "Generate a board deck from our current knowledge base",
+        "Are there any contradictions between our strategy and our budget?",
+        "What decisions have we made about pricing in the last year?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "knowledge-management",
+        "organizational-memory",
+        "strategy",
+        "coherence"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440034",
+      "name": "Product Requirements Bible",
+      "display_order": 34,
+      "catch_phrase": "Living PRD System",
+      "description": "The Product Requirements Bible is a living PRD system that maintains product requirements with full version control, decision logging, and customer insight integration.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Update the PRD with these new requirements and log the decision",
+        "How does this feature request align with customer feedback?",
+        "What decisions have shaped this product area?",
+        "Is this requirement consistent with our existing specs?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "product",
+        "compliance",
+        "prd",
+        "requirements"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440035",
+      "name": "Project Documentation Sink",
+      "display_order": 35,
+      "catch_phrase": "Chaos to Knowledge Graph",
+      "description": "The Project Documentation Sink is a specialized CORTEX team for engineering documentation. It takes chaotic inputs (code comments, Slack threads, PRs, meeting notes) and produces structured technical documentation.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Take these PR descriptions and create proper API docs",
+        "Document our architecture based on these design discussions",
+        "Create an ADR for this decision",
+        "What's missing from our documentation?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "knowledge-management",
+        "engineering",
+        "api-docs",
+        "architecture"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440036",
+      "name": "Research Synthesis Lab",
+      "display_order": 36,
+      "catch_phrase": "Defensible Thesis Builder",
+      "description": "The Research Synthesis Lab reads large volumes of research papers and produces synthesis that maps contradictions, identifies gaps, and builds defensible theses. Unlike simple literature reviews, it actively compares and challenges findings.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Synthesize research on X with contradiction mapping",
+        "Build a literature map for my thesis topic",
+        "What do studies agree/disagree on regarding Y?",
+        "Identify gaps in the research on Z"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "research",
+        "literature-review",
+        "synthesis",
+        "academic"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440037",
+      "name": "RFP Response Unit",
+      "display_order": 37,
+      "catch_phrase": "RFP to Proposal Converter",
+      "description": "The Cortex RFP Response Unit combines knowledge management with proposal generation. It ingests RFPs, maps requirements to capabilities, and generates compliant proposals while surfacing what's missing.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Analyze this RFP and identify all requirements",
+        "Generate a proposal matching our capabilities to their requirements",
+        "What gaps do we have for this RFP?",
+        "Create a compliance matrix for this bid"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "product",
+        "compliance",
+        "rfp",
+        "proposals"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440038",
+      "name": "Shadow Product Team",
+      "display_order": 38,
+      "catch_phrase": "Automated Spec Propagation",
+      "description": "The Shadow Product Team keeps product documentation ecosystem updated automatically. When requirements change, it propagates updates and flags impacts across the entire spec.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Change login to email-only and show me all impacts",
+        "What would break if we removed this feature?",
+        "Propagate this requirement change across all specs",
+        "What edge cases does this change introduce?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "product",
+        "compliance",
+        "change-management",
+        "specs"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440039",
+      "name": "The Daily Dispatch",
+      "display_order": 39,
+      "catch_phrase": "Facts vs. Opinion Separated",
+      "description": "The Daily Dispatch is a news intelligence system that rigorously separates fact from opinion. It aggregates news on topics of interest and produces briefings that clearly distinguish between objective reporting and subjective analysis.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Give me today's briefing on AI industry news",
+        "What happened vs. what people are saying about the merger?",
+        "Track coverage of our competitor this month",
+        "Summarize this news with clear fact/opinion separation"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "news",
+        "research",
+        "briefings",
+        "fact-checking"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440040",
+      "name": "The Interrogator",
+      "display_order": 40,
+      "catch_phrase": "Systematic Knowledge Extraction",
+      "description": "The Interrogator conducts structured knowledge extraction interviews. It pulls tacit knowledge out of subject matter experts through systematic questioning, producing SOPs, troubleshooting guides, and decision trees.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Interview me about my debugging process and create an SOP",
+        "Extract my knowledge about X into a troubleshooting guide",
+        "Help me document how I make decisions about Y",
+        "What gaps exist in the knowledge I've shared?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "learning",
+        "knowledge-extraction",
+        "sop",
+        "expert-capture"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440041",
+      "name": "The Living Codex",
+      "display_order": 41,
+      "catch_phrase": "Enforced Rules with Citations",
+      "description": "The Living Codex is the foundational CORTEX pattern. It absorbs complex rulesets (legal, regulatory, policy, technical) and applies them to specific situations with full citation trails. A living law library that not only stores rules but actively enforces them.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Absorb this regulatory document and structure it for compliance queries",
+        "Based on our policy, can we approve this exception?",
+        "What rules apply to this situation? Cite sources.",
+        "Has anything changed that affects our previous determination?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "knowledge-management",
+        "compliance",
+        "rules",
+        "citations",
+        "audit-trail"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440042",
+      "name": "The Newsroom",
+      "display_order": 42,
+      "catch_phrase": "Configurable Editorial Lenses",
+      "description": "The Newsroom extends the Daily Dispatch with configurable editorial stance. The same facts can be presented through different editorial lenses—Bloomberg-style dry financial analysis, TechCrunch startup hype, or tabloid sensationalism.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Cover our product launch in Bloomberg style",
+        "How would TechCrunch write about this funding round?",
+        "Show me this story from tabloid vs. academic perspectives",
+        "Prepare me for how different outlets might cover this"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "news",
+        "research",
+        "editorial",
+        "content"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440043",
+      "name": "The Personal University",
+      "display_order": 43,
+      "catch_phrase": "Course that adapts to your learning gaps proactively.",
+      "description": "The Personal University is an adaptive learning system that builds personalized curricula. Unlike static courses, it anticipates confusion, adjusts to learning pace, and builds prerequisite trees dynamically.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Teach me machine learning from scratch",
+        "Create a personalized curriculum for product management",
+        "What am I struggling with and how can I improve?",
+        "Adapt my learning pace based on my quiz results"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "learning",
+        "education",
+        "personalized",
+        "adaptive"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440044",
+      "name": "The Wiki Gardener",
+      "display_order": 44,
+      "catch_phrase": "Sanitation crew for your knowledge chaos.",
+      "description": "The Wiki Gardener transforms chaotic information dumps into organized, maintained knowledge bases. The team that takes scattered docs, Slack messages, and meeting notes and turns them into a pristine wiki.",
+      "category": "CORTEX",
+      "quick_starts": [
+        "Transform these meeting notes into proper documentation",
+        "Organize our scattered docs into a searchable wiki",
+        "What content is outdated and needs updating?",
+        "Create a navigation structure for our knowledge base"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "cortex",
+        "knowledge-management",
+        "documentation",
+        "wiki",
+        "organization"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440045",
+      "name": "Behavioral Unit",
+      "display_order": 45,
+      "catch_phrase": "Understand deep needs without manipulation.",
+      "description": "The Behavioral Unit understands deep needs without manipulation. It creates psychographic profiles, analyzes decision drivers, maps empathy, and ensures ethical application.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Create a psychographic profile of our target customer",
+        "What behavioral biases are affecting our users?",
+        "Map the empathy journey for this user segment",
+        "Ensure our approach is ethically sound"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "psychology",
+        "research",
+        "marketing",
+        "behavioral-science"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440046",
+      "name": "Board of Directors",
+      "display_order": 46,
+      "catch_phrase": "Run your problem by a simulated executive board.",
+      "description": "Simulates advice from legendary business leader archetypes. Provides strategic perspectives on decisions through different executive lenses.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Should I pursue this business opportunity?",
+        "How should I handle this leadership situation?",
+        "Evaluate my company strategy"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "strategy",
+        "leadership",
+        "decision-making",
+        "coaching"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440047",
+      "name": "Brainstorming Collective",
+      "display_order": 47,
+      "catch_phrase": "Variety of minds from different backgrounds.",
+      "description": "The Brainstorming Collective brings together diverse minds from different backgrounds to generate creative ideas. It facilitates sessions with varied perspectives to spark innovation.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Brainstorm solutions for this problem",
+        "Generate creative ideas for our product",
+        "Facilitate a team ideation session",
+        "Explore unconventional approaches"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "ideation",
+        "creative",
+        "collaboration"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440048",
+      "name": "Business Development Team",
+      "display_order": 48,
+      "catch_phrase": "Find real ways to improve, maintain, handle business cases.",
+      "description": "The Business Development Team finds real ways to improve, maintain, and handle business cases. It focuses on growth opportunities, strategic partnerships, and operational improvements.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Identify new market opportunities",
+        "Develop partnership strategies",
+        "Optimize revenue streams",
+        "Analyze operational efficiencies",
+        "Lead implementation of business initiatives"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "business",
+        "growth",
+        "strategy"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440049",
+      "name": "Clinical Trial/Medical Research",
+      "display_order": 49,
+      "catch_phrase": "Highly regulated, highly repeatable.",
+      "description": "The Clinical Trial/Medical Research team handles highly regulated, highly repeatable processes in medical research. It manages clinical trials with precision, compliance, and scientific rigor.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Design a clinical trial protocol",
+        "Ensure regulatory compliance",
+        "Manage clinical operations",
+        "Analyze trial data",
+        "Monitor patient safety"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "medical",
+        "clinical",
+        "research",
+        "regulated"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440050",
+      "name": "Competitive Intelligence",
+      "display_order": 50,
+      "catch_phrase": "Every product strategy starts here.",
+      "description": "The Competitive Intelligence team provides the foundation for every product strategy. It conducts thorough research on competitors, markets, and trends to inform strategic decisions.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Analyze competitor strategies",
+        "Size market opportunities",
+        "Conduct primary research",
+        "Identify industry trends",
+        "Analyze market data"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "research",
+        "competitive",
+        "strategy"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440051",
+      "name": "Content Marketing & SEO",
+      "display_order": 51,
+      "catch_phrase": "Sustainable content strategy every company needs.",
+      "description": "The Content Marketing & SEO team develops sustainable content strategies that every company needs. It creates SEO-optimized content that drives organic growth and engagement.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Develop a content strategy",
+        "Create an SEO-optimized content calendar",
+        "Research high-value topics",
+        "Optimize content for search engines",
+        "Analyze content performance"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "content",
+        "seo",
+        "marketing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440052",
+      "name": "Creative Collective",
+      "display_order": 52,
+      "catch_phrase": "Ideas developed and expanded by diverse creative minds.",
+      "description": "The Creative Collective develops and expands ideas through diverse creative minds. It brings together different creative perspectives to generate innovative concepts and designs.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Develop creative concepts",
+        "Design compelling narratives",
+        "Generate visual ideas",
+        "Challenge conventional thinking",
+        "Synthesize creative elements"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "creative",
+        "ideation",
+        "design"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440053",
+      "name": "Curriculum Development",
+      "display_order": 53,
+      "catch_phrase": "EdTech and corporate training—massive market.",
+      "description": "The Curriculum Development team focuses on EdTech and corporate training in a massive market. It designs effective learning experiences and educational content.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Design a training curriculum",
+        "Develop e-learning modules",
+        "Create assessment strategies",
+        "Ensure content accessibility",
+        "Integrate learning technology"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "education",
+        "training",
+        "learning"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440054",
+      "name": "Customer Success",
+      "display_order": 54,
+      "catch_phrase": "Gold mine for subscription businesses.",
+      "description": "The Customer Success team is a gold mine for subscription businesses. It ensures customer satisfaction, adoption, and retention to drive long-term revenue.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Develop customer onboarding programs",
+        "Monitor product adoption",
+        "Manage customer renewals",
+        "Provide training and support",
+        "Analyze customer health metrics"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "saas",
+        "retention",
+        "customer"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440055",
+      "name": "Data Science/Analytics",
+      "display_order": 55,
+      "catch_phrase": "Every company is data-driven now.",
+      "description": "The Data Science/Analytics team operates in a world where every company is data-driven now. It extracts insights from data to drive business decisions.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Build data pipelines",
+        "Develop predictive models",
+        "Create dashboards",
+        "Perform data analysis",
+        "Implement machine learning solutions"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "data",
+        "analytics",
+        "bi"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440056",
+      "name": "Environmental Impact/LCA Team",
+      "display_order": 56,
+      "catch_phrase": "CPG, manufacturing, fashion—increasingly mandatory.",
+      "description": "The Environmental Impact/LCA Team addresses sustainability in CPG, manufacturing, and fashion industries where it's increasingly mandatory. It assesses and reduces environmental footprints.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Conduct life cycle assessment",
+        "Design sustainable materials",
+        "Implement circular economy principles",
+        "Ensure regulatory compliance",
+        "Measure environmental impact"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "sustainability",
+        "lca",
+        "manufacturing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440057",
+      "name": "Event Planning",
+      "display_order": 57,
+      "catch_phrase": "Repeatable playbook is high-leverage.",
+      "description": "The Event Planning team uses a repeatable playbook that is high-leverage. It organizes successful events with comprehensive planning and execution.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Plan a corporate event",
+        "Manage event logistics",
+        "Create event content",
+        "Market an event",
+        "Analyze event performance"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "events",
+        "marketing",
+        "logistics"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440058",
+      "name": "Grant Writing & Fundraising",
+      "display_order": 58,
+      "catch_phrase": "High-impact for perpetually fundraising orgs.",
+      "description": "The Grant Writing & Fundraising team is high-impact for perpetually fundraising organizations. It secures funding through grants and donations.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Write a compelling grant proposal",
+        "Develop fundraising strategies",
+        "Create financial models for funding",
+        "Research funding opportunities",
+        "Design fundraising materials"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "fundraising",
+        "grants",
+        "nonprofit"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440059",
+      "name": "HR/Org Development",
+      "display_order": 59,
+      "catch_phrase": "Early-stage companies desperately need this.",
+      "description": "The HR/Org Development team is desperately needed by early-stage companies. It manages people operations, organizational design, and development.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Design organizational structure",
+        "Develop hiring strategies",
+        "Create compensation plans",
+        "Build learning programs",
+        "Foster company culture"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "hr",
+        "people",
+        "org-design"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440060",
+      "name": "Legacy Code Maintainer",
+      "display_order": 60,
+      "catch_phrase": "Make sense of old docs, APIs, and migration paths.",
+      "description": "Understand and modernize legacy systems",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "software",
+        "legacy",
+        "migration"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440061",
+      "name": "Product Management Team",
+      "display_order": 61,
+      "catch_phrase": "Every SaaS company needs this.",
+      "description": "PRDs, roadmaps, prioritization",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "PRD - Complete product requirements",
+        "Roadmap - Prioritized feature timeline",
+        "User Personas - 2-3 detailed personas",
+        "Success Metrics - KPIs and measurement plan",
+        "Competitive Analysis - Market positioning"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "product",
+        "saas",
+        "prd",
+        "roadmap",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440062",
+      "name": "QA/Testing Strategy",
+      "display_order": 62,
+      "catch_phrase": "Every software company needs this.",
+      "description": "Testing and automation roadmaps",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "qa",
+        "testing",
+        "software"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440063",
+      "name": "Consulting/Strategy Firm",
+      "display_order": 63,
+      "catch_phrase": "Democratize expensive consulting for mid-market.",
+      "description": "McKinsey-style at software prices",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Strategy Document - 3-5 year direction",
+        "Operational Blueprint - How to execute",
+        "Financial Model - Business case",
+        "Implementation Plan - Phased rollout"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "consulting",
+        "strategy",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440064",
+      "name": "Crisis Management/PR",
+      "display_order": 64,
+      "catch_phrase": "De-risk reputation disasters with repeatable process.",
+      "description": "De-risk reputation disasters",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "pr",
+        "crisis",
+        "communications"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440065",
+      "name": "Real Estate/Development",
+      "display_order": 65,
+      "catch_phrase": "High-ticket analysis for investors & developers.",
+      "description": "Professional property analysis",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Feasibility Study",
+        "Pro Forma Model",
+        "Site Plan",
+        "Comparable Analysis"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "real-estate",
+        "finance",
+        "investment",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440066",
+      "name": "RFP Response Unit",
+      "display_order": 66,
+      "catch_phrase": "Big time-saver for sales teams.",
+      "description": "Complex proposal responses",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "sales",
+        "proposals",
+        "enterprise"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440067",
+      "name": "Supply Chain/Procurement",
+      "display_order": 67,
+      "catch_phrase": "Manufacturing, retail, logistics—high impact.",
+      "description": "Vendor and sourcing optimization",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "supply-chain",
+        "procurement",
+        "operations"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440068",
+      "name": "Sustainability/ESG Team",
+      "display_order": 68,
+      "catch_phrase": "Regulatory pressure makes this essential.",
+      "description": "ESG strategy and reporting",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "sustainability",
+        "esg",
+        "compliance"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440069",
+      "name": "The Accountants",
+      "display_order": 69,
+      "catch_phrase": "Like lawyers but for accounting—rule-based financial guidance.",
+      "description": "Rule-based financial guidance",
+      "category": "OPERATIONS",
+      "quick_starts": [],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "accounting",
+        "finance",
+        "compliance"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440070",
+      "name": "The Agency",
+      "display_order": 70,
+      "catch_phrase": "Crack any market for any product.",
+      "description": "Crack any market for any product",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Launch campaign for a new SaaS product",
+        "Rebrand campaign for a traditional company",
+        "Demand gen campaign to fill sales pipeline"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "marketing",
+        "creative",
+        "advertising",
+        "branding",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440071",
+      "name": "The Firm",
+      "display_order": 71,
+      "catch_phrase": "Draft contracts with built-in loophole detection.",
+      "description": "Contracts with loophole detection",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Draft a freelancer services agreement",
+        "Review this NDA and identify issues",
+        "Legal considerations for EU launch"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "legal",
+        "contracts",
+        "compliance",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440072",
+      "name": "The Hedge Fund",
+      "display_order": 72,
+      "catch_phrase": "Hedge fund-quality research with forced citations.",
+      "description": "Institutional-grade investment research",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Analyze [Company] as a potential investment",
+        "What's the bear case for [Stock]?",
+        "Sector analysis: [Industry]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "investment",
+        "research",
+        "analysis",
+        "finance",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440073",
+      "name": "The Incubator",
+      "display_order": 73,
+      "catch_phrase": "Complete startup blueprint in hours, not months.",
+      "description": "Complete startup blueprint in hours",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "I want to build an AI-powered X for Y market",
+        "Evaluate this startup idea: [description]",
+        "Help me prepare for Y Combinator application",
+        "I have $50K and a technical co-founder—what can we build?"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "startup",
+        "business-planning",
+        "strategy",
+        "fundraising",
+        "high-value"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440074",
+      "name": "The Ivy League",
+      "display_order": 74,
+      "catch_phrase": "Harvard-grade research with proper academic standards.",
+      "description": "Harvard-grade academic research",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Write a research paper on [topic]",
+        "Create a literature review for [subject]",
+        "Academic analysis of [phenomenon]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "academic",
+        "research",
+        "writing",
+        "education"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440075",
+      "name": "The Psychologists",
+      "display_order": 75,
+      "catch_phrase": "Like lawyers but for psychology—structured consultation.",
+      "description": "Like lawyers but for psychology—structured consultation.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Psychological assessment of [situation]",
+        "Behavioral analysis for [problem]",
+        "Organizational psychology consultation"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "psychology",
+        "consulting",
+        "behavioral"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440076",
+      "name": "The Publisher",
+      "display_order": 76,
+      "catch_phrase": "Book-length content without losing the plot.",
+      "description": "Book production team handling long-form writing with maintained continuity. Solves the problem of AI \"forgetting\" earlier content through specialized tracking agents.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Help me write a business book about [topic]",
+        "Draft a novel based on this premise",
+        "Ghostwrite my memoir from these notes"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "writing",
+        "publishing",
+        "creative",
+        "long-form"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440077",
+      "name": "The Red Team",
+      "display_order": 77,
+      "catch_phrase": "Find how your plan breaks before others do.",
+      "description": "Find how your plan breaks before others do.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Conduct a threat model for [system]",
+        "Assess vulnerabilities in [plan]",
+        "Create a risk matrix for [project]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "security",
+        "strategy",
+        "risk",
+        "assessment"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440078",
+      "name": "The Studio",
+      "display_order": 78,
+      "catch_phrase": "Perfect continuity from first draft to final cut.",
+      "description": "Screenplay and script development with perfect continuity. Produces script bibles, episode outlines, and pilot scripts like a TV writers' room.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Develop a TV series based on this concept",
+        "Write a feature screenplay about [topic]",
+        "Create a script bible for my existing idea"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "screenwriting",
+        "creative",
+        "entertainment",
+        "storytelling"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440079",
+      "name": "The Think Tank",
+      "display_order": 79,
+      "catch_phrase": "Find truth through structured intellectual combat.",
+      "description": "Find truth through structured intellectual combat.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Debate: Should [policy] be implemented?",
+        "Explore both sides of [complex issue]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "debate",
+        "analysis",
+        "decision-making",
+        "policy"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440080",
+      "name": "Translator Corps",
+      "display_order": 80,
+      "catch_phrase": "Translate culture, not just words.",
+      "description": "Translate culture, not just words.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Translate [content] to [language]",
+        "Localize [product] for [market]",
+        "Adapt [message] for cultural context"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "localization",
+        "translation",
+        "global",
+        "marketing"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440081",
+      "name": "TTRPG Campaign Orchestrator",
+      "display_order": 81,
+      "catch_phrase": "DMs spend 10-15 hours prepping; cut to 2 hours.",
+      "description": "DMs spend 10-15 hours prepping; cut to 2 hours.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Design a D&D campaign for [setting]",
+        "Create encounters for [level] party",
+        "Build a world for tabletop RPG"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "gaming",
+        "creative",
+        "worldbuilding"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440082",
+      "name": "UX/Design Research",
+      "display_order": 82,
+      "catch_phrase": "Repeatable, high-value research process.",
+      "description": "Repeatable, high-value research process.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Conduct user research for [product]",
+        "Analyze UX data from [source]",
+        "Design accessible interface for [users]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "ux",
+        "research",
+        "design"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440083",
+      "name": "Vendor Risk Management",
+      "display_order": 83,
+      "catch_phrase": "Enterprise buyers are obsessed with this.",
+      "description": "Enterprise buyers are obsessed with this.",
+      "category": "OPERATIONS",
+      "quick_starts": [
+        "Assess vendor risk for [company]",
+        "Conduct security audit of [vendor]",
+        "Review compliance for [supplier]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "risk",
+        "vendor",
+        "compliance"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440084",
+      "name": "Home & Space Design",
+      "display_order": 84,
+      "catch_phrase": "Transform chaos into calm with systematic space design.",
+      "description": "Transform chaos into calm with systematic space design.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Design organization system for [room]",
+        "Create declutter protocol for [space]",
+        "Optimize storage in [area]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "organization",
+        "declutter",
+        "home",
+        "environment"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440085",
+      "name": "Learning Accelerator",
+      "display_order": 85,
+      "catch_phrase": "Acquire any skill faster with a team optimizing your path.",
+      "description": "Acquire any skill faster with a team optimizing your path.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Design learning roadmap for [skill]",
+        "Create practice schedule for [subject]",
+        "Build retention system for [knowledge]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "learning",
+        "skills",
+        "education",
+        "practice"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440086",
+      "name": "The Advisory Board",
+      "display_order": 86,
+      "catch_phrase": "A board of directors for your life's biggest choices.",
+      "description": "A board of directors for your life's biggest choices.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Analyze decision about [choice]",
+        "Create perspective matrix for [situation]",
+        "Assess reversibility of [decision]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "decisions",
+        "life-choices",
+        "strategy"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440087",
+      "name": "The Biohackers",
+      "display_order": 87,
+      "catch_phrase": "Your personal team of health optimizers designing your biological operating system.",
+      "description": "Personalized health protocols across nutrition, sleep, training, and recovery. Treat your body like a system to optimize.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Design a health protocol for my lifestyle and goals",
+        "Create a 30-day sleep optimization plan",
+        "Build a training program for [specific goal]"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "health",
+        "fitness",
+        "nutrition",
+        "sleep",
+        "biohacking"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440088",
+      "name": "The Career Council",
+      "display_order": 88,
+      "catch_phrase": "Not for doing the job—for GETTING it.",
+      "description": "Not for doing the job—for GETTING it.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Create career roadmap for [role]",
+        "Optimize resume for [industry]",
+        "Prepare for [company] interview"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "career",
+        "job-search",
+        "negotiation",
+        "networking"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440089",
+      "name": "The Concierge",
+      "display_order": 89,
+      "catch_phrase": "White-glove life management—your personal chief of staff.",
+      "description": "White-glove life management—your personal chief of staff.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Complete travel plan",
+        "Full event management",
+        "Life admin tasks",
+        "Optimized scheduling"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "logistics",
+        "travel",
+        "events",
+        "admin"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440096",
+      "name": "The Dating Council",
+      "display_order": 90,
+      "catch_phrase": "Navigate modern dating with a council of wingpeople.",
+      "description": "Navigate modern dating with a council of wingpeople.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Optimized dating profile",
+        "Conversation frameworks",
+        "Thoughtful date plans",
+        "Red flag checklist"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "dating",
+        "relationships",
+        "connection",
+        "confidence"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440103",
+      "name": "The Goal Architects",
+      "display_order": 91,
+      "catch_phrase": "Build the scaffolding for the life you actually want.",
+      "description": "Build the scaffolding for the life you actually want.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Goal hierarchy",
+        "Behavior system",
+        "Check-in structure",
+        "Anticipated challenges"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "goals",
+        "habits",
+        "productivity",
+        "accountability"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440110",
+      "name": "The Parenting Council",
+      "display_order": 92,
+      "catch_phrase": "Raise humans with expert guidance, not just Google searches.",
+      "description": "Raise humans with expert guidance, not just Google searches.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Development Roadmap",
+        "Education Options Analysis",
+        "Activity Calendar",
+        "Behavior Support Plan"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "parenting",
+        "family",
+        "child-development",
+        "education"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440120",
+      "name": "The Psych Unit",
+      "display_order": 93,
+      "catch_phrase": "Sharpen your mind without the therapy bills.",
+      "description": "Focuses on mental fitness, stoicism, and structured reflection. Not a replacement for therapy, but a system for sharpening the mind and building resilience through journaling and cognitive exercises.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Create a mental clarity protocol",
+        "Design a journaling framework",
+        "Develop a set of cognitive drills"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "mental-fitness",
+        "stoicism",
+        "mindfulness",
+        "journaling"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440121",
+      "name": "The Relationship Counselors",
+      "display_order": 94,
+      "catch_phrase": "Navigate the humans in your life without a therapist.",
+      "description": "Helps navigate the humans in your life. Provides frameworks for conflict resolution, communication scripts, and boundary setting. Not a replacement for professional therapy.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Draft a script for a difficult conversation",
+        "Create a boundary enforcement plan",
+        "Design a conflict resolution framework"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "relationships",
+        "communication",
+        "conflict",
+        "boundaries"
+      ]
+    },
+    {
+      "id": "550e8400-e29b-41d4-a716-446655440122",
+      "name": "The Wealth Architects",
+      "display_order": 95,
+      "catch_phrase": "CFO for your life—not corporate finance, YOUR finance.",
+      "description": "Acts as a personal CFO for your life. Focuses on comprehensive financial strategy, budgeting resilience, and FIRE (Financial Independence, Retire Early) planning.",
+      "category": "VITALS",
+      "quick_starts": [
+        "Create a comprehensive financial blueprint",
+        "Design a FIRE timeline and strategy",
+        "Build a resilient budget system"
+      ],
+      "default_starting_rounds": null,
+      "bootstrap_prompt": null,
+      "tag_ids": [
+        "finance",
+        "investing",
+        "budgeting",
+        "fire"
+      ]
+    }
+  ]
+}

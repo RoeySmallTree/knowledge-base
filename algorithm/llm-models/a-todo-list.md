@@ -1,0 +1,2 @@
+
+- create duplicate button for team. it shall create a a new team with the same details as this one, along with 'originated_from_team'=the id of the team that was duplicated,create the members' duplicates but with team_id of the newly created team, and finally - it should open the edit model for the newly created team

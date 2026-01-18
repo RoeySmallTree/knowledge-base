@@ -1,32 +1,63 @@
 import React, { useState, useEffect } from 'react';
-import { LLMModel } from '../types';
+import { LLMModel, Vendor } from '../types';
 import { X, Save } from 'lucide-react';
+import { StringArrayInput } from './StringArrayInput';
+import { FallbackPicker } from './FallbackPicker';
 
 interface EditModalProps {
     isOpen: boolean;
     onClose: () => void;
     onSave: (model: LLMModel) => void;
     model: LLMModel | null;
+    vendorName: string;
+    models: LLMModel[];
+    vendorsById: Record<string, Vendor>;
+    modelsById: Record<string, LLMModel>;
 }
 
-export function EditModal({ isOpen, onClose, onSave, model }: EditModalProps) {
+export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, vendorsById, modelsById }: EditModalProps) {
     const [formData, setFormData] = useState<LLMModel | null>(null);
 
     useEffect(() => {
-        setFormData(model);
+        if (!model) {
+            setFormData(null);
+            return;
+        }
+        setFormData({
+            ...model,
+            creativeScore: model.creativeScore ?? 0,
+            deductiveScore: model.deductiveScore ?? 0,
+            efficiencyScore: model.efficiencyScore ?? 0,
+            // Ensure numeric conversions if they come in as strings/undefined
+            parameter_count_b: model.parameter_count_b ?? undefined,
+            active_parameter_count_b: model.active_parameter_count_b ?? undefined
+        });
     }, [model]);
 
     if (!isOpen || !formData) return null;
+    const displayName = formData.name_within_family?.trim() || formData.modelName;
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement> | { target: { name: string, value: string | string[] } }) => {
         const { name, value } = e.target;
         setFormData(prev => {
             if (!prev) return null;
+            // Handle array values directly if needed, or ensure they are strings for specific fields
+            const finalValue = Array.isArray(value) ? value.join(', ') : value;
+
             return {
                 ...prev,
-                [name]: name.includes('Score') ? (value === '' ? null : parseFloat(value)) : value
+                pricing: (name === 'prompt' || name === 'completion' || name === 'tier')
+                    ? { ...prev.pricing, [name]: parseFloat(finalValue) || 0 } as any
+                    : prev.pricing,
+                [name]: (name.includes('Score') || name.includes('count_b') || name === 'contextK' || name === 'display_order' || name === 'fallback_model_id')
+                    ? (finalValue === '' ? undefined : (name === 'contextK' ? finalValue : parseFloat(finalValue)))
+                    : (name === 'prompt' || name === 'completion' || name === 'tier') ? undefined : finalValue // Don't set flat pricing fields
             };
         });
+    };
+
+    const handleScoreChange = (name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore', value: number) => {
+        setFormData(prev => (prev ? { ...prev, [name]: value } : prev));
     };
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -37,44 +68,140 @@ export function EditModal({ isOpen, onClose, onSave, model }: EditModalProps) {
     };
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-            <div className="bg-card w-full max-w-3xl max-h-[90vh] overflow-y-auto rounded-2xl border border-white/10 shadow-2xl animate-in fade-in zoom-in-95 duration-200">
-                <div className="sticky top-0 z-10 flex items-center justify-between border-b border-white/10 bg-card/95 px-8 py-5 backdrop-blur-md">
-                    <h2 className="text-2xl font-semibold text-white">Edit Model</h2>
-                    <button onClick={onClose} className="text-muted-foreground hover:text-white transition-colors">
-                        <X size={28} />
+        <div
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200"
+            onClick={(event) => {
+                if (event.target === event.currentTarget) onClose();
+            }}
+        >
+            <div className="cyber-panel cyber-chamfer w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col border border-white/10 bg-black/80 backdrop-blur-xl">
+                <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-6 py-4">
+                    <div>
+                        <div className="font-label text-xs text-primary/80 tracking-widest mb-1">
+                            {formData.id ? 'EDIT_MODEL' : 'CREATE_MODEL'}
+                        </div>
+                        <h2 className="font-display text-xl text-white tracking-wide flex items-center gap-2">
+                            <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(0,255,136,0.6)]" />
+                            {displayName || <span className="text-white/30 italic">NEW_MODEL</span>}
+                        </h2>
+                    </div>
+                    <button
+                        onClick={onClose}
+                        className="group p-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 hover:text-white text-white/60 transition-all duration-300"
+                    >
+                        <X size={18} className="group-hover:rotate-90 transition-transform duration-300" />
                     </button>
                 </div>
 
-                <form onSubmit={handleSubmit} className="p-8 grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div className="space-y-6">
-                        <Input label="Vendor" name="vendor" value={formData.vendor} onChange={handleChange} />
-                        <Input label="Model Family" name="modelFamily" value={formData.modelFamily} onChange={handleChange} />
-                        <Input label="Model Name" name="modelName" value={formData.modelName} onChange={handleChange} />
-                        <Input label="Parameters (B)" name="parametersB" value={formData.parametersB} onChange={handleChange} />
-                        <Input label="Context (K)" name="contextK" value={formData.contextK} onChange={handleChange} />
-                    </div>
+                <form onSubmit={handleSubmit} className="flex flex-col flex-1 min-h-0">
+                    <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 overflow-y-auto cyber-scroll flex-1 min-h-0">
+                        <div className="space-y-4">
+                            <Input label="VENDOR" name="vendor" value={vendorName} disabled />
+                            <Input label="MODEL_FAMILY" name="modelFamily" value={formData.modelFamily} onChange={handleChange} />
+                            <Input label="FULL_NAME" name="modelName" value={formData.modelName} onChange={handleChange} />
+                            <Input label="DISPLAY_NAME" name="name_within_family" value={formData.name_within_family ?? ''} onChange={handleChange} placeholder="Optional - Overrides Full Name" />
 
-                    <div className="space-y-6">
-                        <div className="grid grid-cols-2 gap-6">
-                            <Input label="Creative Score" name="creativeScore" type="number" step="0.1" value={formData.creativeScore ?? ''} onChange={handleChange} />
-                            <Input label="Deductive Score" name="deductiveScore" type="number" step="0.1" value={formData.deductiveScore ?? ''} onChange={handleChange} />
+                            <div className="grid grid-cols-2 gap-4">
+                                <Input label="API_ID" name="api_id" value={formData.api_id ?? ''} onChange={handleChange} placeholder="provider/model-name" />
+                                <Input label="SLUG" name="slug" value={formData.slug ?? ''} onChange={handleChange} placeholder="model-slug" />
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <Input label="PARAMS (B)" name="parameter_count_b" value={formData.parameter_count_b ?? ''} onChange={handleChange} placeholder="Total" type="number" step="0.1" />
+                                <Input label="ACTIVE (B)" name="active_parameter_count_b" value={formData.active_parameter_count_b ?? ''} onChange={handleChange} placeholder="Active" type="number" step="0.1" />
+                            </div>
+
+                            <div className="grid grid-cols-2 gap-4">
+                                <Input label="CONTEXT (K)" name="contextK" value={formData.contextK} onChange={handleChange} />
+                                <Input label="DISPLAY_ORDER" name="display_order" value={formData.display_order ?? 0} onChange={handleChange} type="number" />
+                            </div>
+
+                            <div className="p-4 rounded-lg bg-white/5 border border-white/5 space-y-3">
+                                <div className="font-label text-xs text-white/40 tracking-widest">PRICING (MICRO-CENTS)</div>
+                                <div className="grid grid-cols-3 gap-3">
+                                    <Input label="PROMPT" name="prompt" value={formData.pricing?.prompt ?? 0} onChange={handleChange} type="number" />
+                                    <Input label="COMPL." name="completion" value={formData.pricing?.completion ?? 0} onChange={handleChange} type="number" />
+                                    <Input label="TIER" name="tier" value={formData.pricing?.tier ?? 1} onChange={handleChange} type="number" step="1" max="5" />
+                                </div>
+                            </div>
                         </div>
-                        <Input label="Best For" name="bestFor" value={formData.bestFor} onChange={handleChange} />
-                        <TextArea label="Personality Traits" name="personalityTraits" value={formData.personalityTraits} onChange={handleChange} />
-                        <TextArea label="Analytical Traits" name="analyticalTraits" value={formData.analyticalTraits} onChange={handleChange} />
+
+                        <div className="space-y-4">
+                            <div className="grid grid-cols-1 gap-6 p-5 rounded-xl bg-white/5 border border-white/5">
+                                <h3 className="font-label text-xs text-white/40 tracking-widest mb-2">PERFORMANCE_METRICS</h3>
+                                <ScoreSlider
+                                    label="CREATIVITY"
+                                    name="creativeScore"
+                                    value={formData.creativeScore ?? 0}
+                                    onChange={handleScoreChange}
+                                />
+                                <ScoreSlider
+                                    label="DEDUCTIVE"
+                                    name="deductiveScore"
+                                    value={formData.deductiveScore ?? 0}
+                                    onChange={handleScoreChange}
+                                />
+                                <ScoreSlider
+                                    label="EFFICIENCY"
+                                    name="efficiencyScore"
+                                    value={formData.efficiencyScore ?? 0}
+                                    onChange={handleScoreChange}
+                                />
+                            </div>
+                            <TextArea label="DESCRIPTION" name="description" value={formData.description ?? ''} onChange={handleChange} />
+                            <StringArrayInput label="BEST_FOR" name="bestFor" value={formData.bestFor} onChange={handleChange} />
+                            <StringArrayInput label="PERSONALITY" name="personalityTraits" value={formData.personalityTraits} onChange={handleChange} />
+                            <StringArrayInput label="ANALYTICAL_TRAITS" name="analyticalTraits" value={formData.analyticalTraits} onChange={handleChange} />
+                        </div>
+
+                        <div className="col-span-1 md:col-span-2 space-y-4">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <StringArrayInput label="CAPABILITIES" name="capabilities" value={formData.capabilities} onChange={handleChange} />
+                                <div className="space-y-4">
+                                    {/* Fallback Picker */}
+                                    <div className="space-y-1.5">
+                                        <label className="font-label text-xs tracking-widest text-white/40 uppercase">FALLBACK_MODEL</label>
+                                        <FallbackPicker
+                                            models={models}
+                                            vendorsById={vendorsById}
+                                            modelsById={modelsById}
+                                            value={formData.fallback_model_id ?? undefined}
+                                            favorModel={formData}
+                                            onChange={(fallbackId) => {
+                                                setFormData(prev => prev ? { ...prev, fallback_model_id: fallbackId ? Number(fallbackId) : undefined } : null);
+                                            }}
+                                        />
+                                    </div>
+
+                                    <div className="flex items-center gap-3 p-3 rounded-lg bg-white/5 border border-white/10 mt-auto">
+                                        <input
+                                            type="checkbox"
+                                            id="is_active"
+                                            checked={formData.active ?? true}
+                                            onChange={(e) => setFormData(prev => prev ? ({ ...prev, active: e.target.checked }) : null)}
+                                            className="w-5 h-5 rounded border-white/20 bg-black/40 text-primary focus:ring-primary/50"
+                                        />
+                                        <label htmlFor="is_active" className="font-label text-xs tracking-widest text-white/80 cursor-pointer select-none">IS_ACTIVE_MODEL</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="col-span-1 md:col-span-2 space-y-6">
-                        <TextArea label="Optimal Team Examples" name="optimalTeamExamples" value={formData.optimalTeamExamples} onChange={handleChange} />
-                        <TextArea label="Special Properties / Notes" name="specialPropertiesNotes" value={formData.specialPropertiesNotes} onChange={handleChange} />
-                    </div>
-
-                    <div className="col-span-1 md:col-span-2 flex justify-end gap-5 pt-6 border-t border-white/10">
-                        <button type="button" onClick={onClose} className="px-5 py-2.5 text-base font-medium text-muted-foreground hover:text-white transition-colors">Cancel</button>
-                        <button type="submit" className="flex items-center gap-2 px-8 py-2.5 text-base font-medium bg-primary text-primary-foreground rounded-xl hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-                            <Save size={18} />
-                            Save Changes
+                    <div className="px-6 pb-6 pt-4 flex justify-end gap-3 border-t border-white/10 bg-black/40">
+                        <button
+                            type="button"
+                            onClick={onClose}
+                            className="px-6 py-2.5 rounded-lg border border-white/10 text-xs font-bold tracking-widest text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                        >
+                            CANCEL
+                        </button>
+                        <button
+                            type="submit"
+                            className="px-6 py-2.5 rounded-lg bg-primary/20 border border-primary/50 text-primary text-xs font-bold tracking-widest hover:bg-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,136,0.2)]"
+                        >
+                            <Save size={14} />
+                            SAVE_CHANGES
                         </button>
                     </div>
                 </form>
@@ -83,33 +210,108 @@ export function EditModal({ isOpen, onClose, onSave, model }: EditModalProps) {
     );
 }
 
-function Input({ label, name, value, onChange, type = "text", step }: any) {
+function Input({ label, name, value, onChange, type = "text", step, disabled = false, placeholder }: any) {
     return (
-        <div className="space-y-2">
-            <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{label}</label>
+        <div className="space-y-1.5">
+            <label className="font-label text-xs tracking-widest text-white/40 uppercase">{label}</label>
             <input
                 type={type}
                 name={name}
                 value={value}
                 onChange={onChange}
                 step={step}
-                className="w-full h-11 px-4 rounded-xl bg-secondary/50 border border-white/5 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 outline-none transition-all text-base"
+                disabled={disabled}
+                placeholder={placeholder}
+                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono disabled:opacity-50 disabled:cursor-not-allowed"
             />
         </div>
-    )
+    );
 }
 
 function TextArea({ label, name, value, onChange }: any) {
     return (
-        <div className="space-y-2">
-            <label className="text-xs font-bold text-muted-foreground uppercase tracking-wider">{label}</label>
+        <div className="space-y-1.5">
+            <label className="font-label text-xs tracking-widest text-white/40 uppercase">{label}</label>
             <textarea
                 name={name}
                 value={value}
                 onChange={onChange}
                 rows={3}
-                className="w-full p-4 rounded-xl bg-secondary/50 border border-white/5 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 outline-none transition-all text-base resize-none"
+                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono resize-none"
             />
         </div>
-    )
+    );
 }
+
+function ScoreSlider({
+    label,
+    name,
+    value,
+    onChange
+}: {
+    label: string;
+    name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore';
+    value: number;
+    onChange: (name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore', value: number) => void;
+}) {
+    const clamped = Math.min(100, Math.max(0, value));
+
+    const getColor = (val: number) => {
+        if (val === 0) return 'from-white/10 to-white/20'; // Neutral for 0
+        if (val < 30) return 'from-red-500/50 to-red-500';
+        if (val < 50) return 'from-orange-500/50 to-orange-500';
+        if (val < 70) return 'from-yellow-400/50 to-yellow-400';
+        return 'from-primary/50 to-primary';
+    };
+
+    const gradientClass = getColor(clamped);
+    const percentage = clamped; // 0-100 maps directly to %
+
+    return (
+        <div className="space-y-2">
+            <div className="flex items-center justify-between text-sm">
+                <label className="font-label text-xs tracking-widest text-white/60">{label}</label>
+                <span className="text-white font-mono text-sm font-bold">{clamped === 0 ? '-' : clamped} <span className="text-white/30 text-xs font-normal">/ 100</span></span>
+            </div>
+            <div className="relative h-6 flex items-center group touch-none select-none">
+                <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    step={1}
+                    value={clamped}
+                    onChange={(e) => onChange(name, Number(e.target.value))}
+                    className="w-full h-full opacity-0 cursor-pointer absolute z-20 inset-0"
+                />
+
+                {/* Track Background */}
+                <div className="absolute inset-x-0 h-1.5 bg-white/10 rounded-full overflow-hidden">
+                    {/* Tick marks - every 10 */}
+                    <div className="absolute inset-0 flex justify-between px-[6px]">
+                        {[...Array(11)].map((_, i) => (
+                            <div key={i} className={`w-px h-full ${i === 0 || i === 10 ? 'bg-transparent' : 'bg-black/20'}`} />
+                        ))}
+                    </div>
+                </div>
+
+                {/* Filled Track */}
+                <div className="absolute left-0 h-1.5 rounded-full overflow-hidden pointer-events-none z-10"
+                    style={{ width: `${percentage}%` }}>
+                    <div className={`h-full w-full bg-gradient-to-r ${gradientClass} transition-all duration-300`} />
+                </div>
+
+
+                <div
+                    className={`absolute h-4 w-4 bg-white rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] border border-black pointer-events-none transition-all duration-75 z-20 ${clamped === 0 ? 'opacity-50 grayscale' : ''}`}
+                    style={{ left: `calc(${percentage}% - 8px)` }}
+                />
+            </div>
+        </div>
+    );
+}
+
+
+
+// ... in EditModal render:
+// <StringArrayInput label="PERSONALITY" name="personalityTraits" value={formData.personalityTraits} onChange={handleChange} />
+// <StringArrayInput label="ANALYTICAL_TRAITS" name="analyticalTraits" value={formData.analyticalTraits} onChange={handleChange} />

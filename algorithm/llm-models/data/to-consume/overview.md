@@ -1,0 +1,977 @@
+models to delete:
+- openai.md
+  - GPT-5.2 Chat: Same as GPT-5.2, just ChatGPT interface alias
+  - GPT-5.1 Chat: Same as GPT-5.1, just ChatGPT interface alias
+  - GPT-5.1-Codex: Superseded by GPT-5.1-Codex-Max
+  - GPT-5.1-Codex-Mini: Superseded by Codex Mini (latest)
+  - GPT-5 Image Mini: Image generation model, not relevant for CABAL
+  - GPT-5 Image: Image generation model, not relevant
+  - GPT-5 Codex: Superseded by GPT-5.2-Codex
+  - GPT-5 Pro: Extended reasoning variant of GPT-5, covered by GPT-5
+  - Codex Mini: Superseded by GPT-5.2-Codex
+  - GPT-4o Audio: Audio-specific model, limited structured output
+  - o3 Mini High: Superseded by o4-mini High
+  - o3 Mini: Superseded by o4-mini
+  - o1: Superseded by o3
+  - GPT-4o (all dated versions): Superseded by GPT-4.1
+  - GPT-4o-mini (all versions): Superseded by GPT-4.1 Mini
+  - GPT-4o (extended): Superseded by GPT-4.1
+  - GPT-4 Turbo (all versions): Superseded by GPT-4.1
+  - GPT-4 (all versions): Superseded by GPT-4.1
+  - GPT-3.5 Turbo (all versions): Legacy, superseded by GPT-4.1 Nano
+  - gpt-oss-120b (exacto): Same model, different quantization
+- google.md
+  - Gemini 2.5 Flash Preview 09-2025: Superseded by stable Gemini 2.5 Flash
+  - Gemini 2.5 Flash Lite Preview 09-2025: Superseded by stable 2.5 Flash Lite
+  - Gemini 2.5 Pro Preview 06-05: Superseded by stable Gemini 2.5 Pro
+  - Gemini 2.5 Pro Preview 05-06: Deprecated June 19, 2025
+  - Gemma 3 27B (free): Same model as paid - consolidate to one entry
+  - Gemini 2.0 Flash Lite: Superseded by Gemini 2.5 Flash Lite
+  - Gemini 2.0 Flash: Superseded by Gemini 2.5 Flash & 3 Flash
+- deepseek.md
+  - DeepSeek V3.1 Terminus (exacto): Same as V3.1 Terminus, different quantization
+  - DeepSeek V3.1: Superseded by V3.1 Terminus (stability improvements)
+  - DeepSeek V3 0324: Superseded by V3.1 and V3.2 series
+  - DeepSeek V3: Superseded by V3.1 Terminus and V3.2
+  - DeepSeek V3.2 Exp: Superseded by V3.2 (experimental → production)
+- llama.md
+  - Llama 3 70B Instruct: Superseded by Llama 3.3 70B (better performance, same resources)
+- mistral.md
+  - Devstral 2 2512 (free): Same model as paid, just free-tier routing
+  - Mistral Small 3.1 24B (free): Same as paid version
+  - Mistral Small 3.1 24B: Superseded by Small 3.2
+  - Mistral Small 3: Superseded by Small 3.2
+  - Mistral Medium 3: Superseded by Medium 3.1
+  - Mistral Large 2411: Superseded by Large 3 (2512)
+  - Mistral Large 2407: Superseded by Large 3 (2512)
+  - Mistral Large: Alias for older version
+  - Ministral 8B: Old version, superseded by Ministral 3 8B
+  - Ministral 3B: Old version, superseded by Ministral 3 3B
+  - Pixtral 12B: Superseded by Pixtral Large & Mistral Large 3 (native vision)
+  - Mistral Nemo: 12B model superseded by Ministral 3 14B
+  - Mixtral 8x22B Instruct: Legacy MoE, superseded by Large 3
+  - Mistral Tiny: Too small, no structured output
+  - Mistral: Saba: Regional/Arabic focus, limited structured output support
+  - Devstral Medium: Covered by Devstral 2 (123B)
+  - Devstral Small 1.1: Superseded by Devstral Small 2 (24B)
+- qwen.md
+  - Qwen3 VL 32B/8B/30B A3B variants: Covered by flagship Qwen3 VL 235B
+  - Qwen3 Coder Plus: API wrapper of open Qwen3 Coder 480B - same underlying model
+  - Qwen3 Coder 480B (exacto): Provider-specific routing variant, not a distinct model
+  - Qwen Plus 0728 (thinking/non): Proprietary API-only, covered by open Qwen3 235B
+  - Qwen3 30B/235B non-2507 versions: Superseded by July 2507 updates
+  - Qwen3 Coder 30B A3B: Covered by larger Qwen3 Coder 480B
+  - Qwen3 4B/8B/14B: Too small for enterprise use, covered by 32B dense
+  - Qwen2.5 Coder 7B: Too small, covered by 32B version
+  - Qwen2.5 VL 32B: Superseded by Qwen3 VL or Qwen2.5 VL 72B
+  - Qwen2.5 72B Instruct: Superseded by Qwen3 235B family
+- batch2.md
+  - MiniMax M2: Superseded by M2.1 (significant improvements in coding, agent tasks, same architecture)
+- batch3.md
+  - Inception: Mercury (non-coder): Chat variant still in closed beta; Mercury Coder is the publicly available product
+
+models to keep (scores):
+- batch1.md
+  - Undi95 ReMM SLERP 13B
+    - ID: #218
+    - Description: Re:MythoMax - recreation of original MythoMax with updated component models
+    - Scores: Logical 5.0/10, Creative 9.0/10, Efficiency 7.5/10
+    - Personality: Creative, Storyteller, Roleplayer, Permissive, Colloquial
+    - Professional traits: Character consistency, narrative generation, creative scenarios
+    - Best for: Roleplay, ERP, interactive fiction, creative writing
+    - Total parameters: 13B (dense, Llama 2 base)
+    - Active parameters: N/A
+  - Kwaipilot KAT-Coder-Pro V1
+    - ID: #147
+    - Description: Kuaishou's flagship agentic coding model - 73.4% SWE-bench Verified
+    - Scores: Logical 9.5/10, Creative 6.5/10, Efficiency 8.5/10
+    - Personality: Precise, Tool-Seeker, Stepwise, Deep-Thinker, Analyst
+    - Professional traits: Function calling, tool use, code generation, debugging, refactoring, agentic workflows
+    - Best for: Agentic coding, software engineering, multi-turn code generation, tool orchestration
+    - Total parameters: ~40B (MoE architecture)
+    - Active parameters: N/A
+  - NeverSleep Lumimaid v0.2 8B
+    - ID: #216
+    - Description: Specialized roleplay model with heavily curated, "slop-free" dataset
+    - Scores: Logical 5.5/10, Creative 9.0/10, Efficiency 8.5/10
+    - Personality: Creative, Roleplayer, Permissive, Colloquial, Storyteller
+    - Professional traits: Character consistency, narrative generation, minimal refusals
+    - Best for: Roleplay, creative writing, character interactions, interactive fiction
+    - Total parameters: 8B (dense, Llama 3.1 base)
+    - Active parameters: N/A
+  - NeverSleep Noromaid 20B
+    - ID: #217
+    - Description: Larger roleplay model for enhanced character coherence and narrative depth
+    - Scores: Logical 4.5/10, Creative 9.0/10, Efficiency 7.0/10
+    - Personality: Creative, Storyteller, Roleplayer, Permissive, Verbose
+    - Professional traits: Long-form narratives, character voice maintenance, creative scenarios
+    - Best for: Roleplay, ERP, interactive fiction, creative scenarios
+    - Total parameters: 20B (dense)
+    - Active parameters: N/A
+  - Nex AGI DeepSeek V3.1 Nex N1
+    - ID: #118
+    - Description: Flagship agentic model optimized for autonomous task execution and tool use
+    - Scores: Logical 9.5/10, Creative 7.0/10, Efficiency 8.0/10
+    - Personality: Tool-Seeker, Stepwise, Analyst, Long-Horizon, Assertive
+    - Professional traits: Function calling, tool use, web search, code generation, autonomous research
+    - Best for: Agentic workflows, deep research, multi-step planning, tool orchestration
+    - Total parameters: 670B total (MoE architecture)
+    - Active parameters: N/A
+  - Microsoft Phi 4
+    - ID: #212
+    - Description: State-of-the-art SLM excelling at complex reasoning, especially math
+    - Scores: Logical 9.5/10, Creative 7.0/10, Efficiency 9.0/10
+    - Personality: Deep-Thinker, Stepwise, Precise, Analyst, Assertive
+    - Professional traits: Competition math, code generation, logical reasoning, instruction following
+    - Best for: Mathematical reasoning, coding, STEM tasks, complex reasoning
+    - Total parameters: 14B (dense)
+    - Active parameters: N/A
+  - Allen AI OLMo 3 7B Instruct
+    - ID: #33
+    - Description: Fully open language model with complete transparency - data, code, checkpoints
+    - Scores: Logical 8.5/10, Creative 7.0/10, Efficiency 8.5/10
+    - Personality: Analyst, Self-Correcting, Cautious, Didactic, Tool-Seeker
+    - Professional traits: Function calling, tool use, multi-turn dialogue, instruction following
+    - Best for: Research, reproducibility, fine-tuning, RL experimentation
+    - Total parameters: 7B (dense)
+    - Active parameters: N/A
+  - Arcee AI Trinity Mini
+    - ID: #120
+    - Description: U.S.-trained open MoE for enterprise - strong reasoning with full data sovereignty
+    - Scores: Logical 8.5/10, Creative 7.5/10, Efficiency 9.5/10
+    - Personality: Precise, Tool-Seeker, Stepwise, Fast-Twitch, Assertive
+    - Professional traits: Function calling, tool use, structured outputs, multi-turn dialogue, reasoning
+    - Best for: Multi-turn agents, tool orchestration, enterprise deployment, on-prem AI
+    - Total parameters: 26B total
+    - Active parameters: 3B active per token
+- batch2.md
+  - Baidu ERNIE 4.5 300B A47B
+    - ID: #199
+    - Description: Baidu's flagship that beats DeepSeek-V3 on 22/28 benchmarks
+    - Scores: Logical 8.5/10, Creative 7.5/10, Efficiency 8.0/10
+    - Personality: Precise, Analyst, Context-Heavy, Assertive, Exploit-Focused
+    - Professional traits: Function calling, tool use, web search integration, structured output
+    - Best for: Chinese enterprise AI, instruction following, knowledge tasks, bilingual applications
+    - Total parameters: 300B
+    - Active parameters: 47B active per token
+  - ByteDance Seed 1.6
+    - ID: #2
+    - Description: Adaptive Chain-of-Thought reasoning with multimodal support
+    - Scores: Logical 9.0/10, Creative 8.0/10, Efficiency 8.5/10
+    - Personality: Deep-Thinker, Stepwise, Analyst, Self-Correcting, Long-Horizon
+    - Professional traits: Adaptive thinking, function calling, tool use, GUI-based interaction, structured output
+    - Best for: Complex reasoning, academic tasks, multimodal understanding, GUI interaction
+    - Total parameters: 230B
+    - Active parameters: 23B active per token
+  - ByteDance Seed 1.6 Flash
+    - ID: #1
+    - Description: Ultra-fast multimodal deep thinking for real-time applications
+    - Scores: Logical 7.5/10, Creative 7.0/10, Efficiency 10/10
+    - Personality: Fast-Twitch, Concise, Intuitive, Cost-Saver
+    - Professional traits: Function calling, tool use, video understanding, structured output
+    - Best for: Real-time chat, RAG backbone, low-latency applications, embedding generation
+    - Total parameters: ~230B (optimized for speed)
+    - Active parameters: N/A
+  - Alibaba Tongyi DeepResearch 30B A3B
+    - ID: #188
+    - Description: Purpose-built agentic LLM for deep research and web browsing
+    - Scores: Logical 8.0/10, Creative 6.5/10, Efficiency 9.5/10
+    - Personality: Tool-Seeker, Stepwise, Analyst, Context-Heavy, Explore-Focused
+    - Professional traits: Web search, web browsing, multi-source synthesis, ReAct reasoning, tool use
+    - Best for: Deep research, web browsing, multi-step information synthesis, autonomous research agents
+    - Total parameters: 30.5B
+    - Active parameters: 3-3.3B active per token
+  - MiniMax M2.1
+    - ID: #3
+    - Description: #1 open-source model globally with exceptional multi-language coding
+    - Scores: Logical 8.5/10, Creative 8.0/10, Efficiency 9.5/10
+    - Personality: Precise, Deep-Thinker, Tool-Seeker, Self-Correcting, Cost-Saver
+    - Professional traits: Function calling, tool use, browser control, code execution, structured output
+    - Best for: Multi-language coding, agentic workflows, IDE integration, office automation
+    - Total parameters: 230B
+    - Active parameters: 10B active per token
+  - Tencent Hunyuan A13B Instruct
+    - ID: #196
+    - Description: Dual-mode reasoning (fast/slow) with leading agent capabilities
+    - Scores: Logical 8.5/10, Creative 7.5/10, Efficiency 9.0/10
+    - Personality: Tool-Seeker, Stepwise, Analyst, Assertive, Exploit-Focused
+    - Professional traits: Dual-mode thinking, function calling, tool use, structured output
+    - Best for: Agent tasks, function calling, tool use, math/science, reasoning
+    - Total parameters: 80B
+    - Active parameters: 13B active per token
+- batch3.md
+  - NVIDIA Nemotron 3 Nano 30B A3B
+    - ID: #35
+    - Description: NVIDIA's flagship open model: hybrid architecture achieves 3.3x throughput of comparable models
+    - Scores: Logical 9.0/10, Creative 7.5/10, Efficiency 10/10
+    - Personality: Precise, Tool-Seeker, Stepwise, Long-Horizon, Fast-Twitch
+    - Professional traits: Function calling, tool use, structured outputs, reasoning budget control
+    - Best for: Agentic AI, long-context processing, RAG systems, edge deployment
+    - Total parameters: 31.6B
+    - Active parameters: 3.2-3.6B active per token
+  - NVIDIA Nemotron Nano 9B V2
+    - ID: #36
+    - Description: 3-6x faster than Qwen3-8B with comparable accuracy
+    - Scores: Logical 8.0/10, Creative 7.0/10, Efficiency 10/10
+    - Personality: Concise, Fast-Twitch, Cost-Saver, Intuitive, Tool-Seeker
+    - Professional traits: Function calling, tool use, reasoning budget control, structured outputs
+    - Best for: Edge devices, Jetson deployment, budget inference, agent steps
+    - Total parameters: 9B (dense, distilled from 12B)
+    - Active parameters: N/A
+  - OpenGVLab InternVL3 78B
+    - ID: #189
+    - Description: SOTA open-source multimodal model rivaling GPT-4o
+    - Scores: Logical 8.5/10, Creative 8.0/10, Efficiency 7.0/10
+    - Personality: Analyst, Context-Heavy, Precise, Deep-Thinker, Premium-Tier
+    - Professional traits: Image understanding, video processing, OCR, document analysis, chart interpretation, 3D vision
+    - Best for: Multimodal reasoning, document analysis, video understanding, GUI agents
+    - Total parameters: ~78B (5.5B ViT + 172M MLP + 72.7B Qwen2.5 LLM)
+    - Active parameters: N/A
+  - Prime Intellect INTELLECT-3
+    - ID: #134
+    - Description: SOTA reasoning model trained with large-scale RL on open infrastructure
+    - Scores: Logical 9.5/10, Creative 7.5/10, Efficiency 8.5/10
+    - Personality: Deep-Thinker, Stepwise, Self-Correcting, Assertive, Tool-Seeker
+    - Professional traits: Function calling, tool use, multi-turn reasoning, agentic workflows
+    - Best for: Math reasoning, coding, scientific analysis, agentic tasks
+    - Total parameters: 106B
+    - Active parameters: 12B active per token
+  - Venice Uncensored (Dolphin Mistral 24B Venice Edition)
+    - ID: #195
+    - Description: Most uncensored AI model with 2.2% refusal rate
+    - Scores: Logical 7.0/10, Creative 9.0/10, Efficiency 8.0/10
+    - Personality: Permissive, Creative, Guardrail-Lite, Colloquial, Roleplayer
+    - Professional traits: Web search, minimal content filtering, character creation
+    - Best for: Creative writing, roleplay, philosophical discussions, unrestricted brainstorming
+    - Total parameters: 24B (Mistral-based)
+    - Active parameters: N/A
+  - EssentialAI Rnj-1 Instruct
+    - ID: #119
+    - Description: 8B model that beats 32B competitors on SWE-bench
+    - Scores: Logical 8.5/10, Creative 6.5/10, Efficiency 9.0/10
+    - Personality: Precise, Tool-Seeker, Stepwise, Analyst, Cost-Saver
+    - Professional traits: Function calling, tool use, code infilling (FIM), iterative code optimization
+    - Best for: Agentic coding, software engineering, STEM problem solving, tool use
+    - Total parameters: 8B (dense)
+    - Active parameters: N/A
+  - Gryphe MythoMax L2 13B
+    - ID: #219
+    - Description: The most popular Llama 2 fine-tune for roleplay and creative writing
+    - Scores: Logical 5.5/10, Creative 9.5/10, Efficiency 8.5/10
+    - Personality: Creative, Storyteller, Roleplayer, Permissive, Verbose
+    - Professional traits: Long-form storytelling, character consistency, narrative coherence
+    - Best for: Roleplay, interactive fiction, creative writing, character-driven narratives
+    - Total parameters: 13B (dense)
+    - Active parameters: N/A
+  - Inception Mercury Coder
+    - ID: #201
+    - Description: World's first commercial diffusion LLM - 10x faster than autoregressive models
+    - Scores: Logical 8.0/10, Creative 6.5/10, Efficiency 10/10
+    - Personality: Fast-Twitch, Precise, Concise, Deterministic-Lean, Exploit-Focused
+    - Professional traits: Fill-in-the-middle (FIM), Apply-Edit, code autocomplete, Next-Edit
+    - Best for: Code generation, code completion, Apply-Edit workflows, latency-critical coding
+    - Total parameters: Not disclosed (Mini and Small variants)
+    - Active parameters: N/A
+- batch7.md
+  - Nous Hermes 4 70B
+    - ID: #191
+    - Description: Frontier hybrid-reasoning model with user alignment
+    - Scores: Logical 7.5/10, Creative 7.5/10, Efficiency 8.5/10
+    - Personality: User-Aligned, Hybrid-Reasoner, Non-Sycophantic, Steerable, Creative, Uncensored, Neutral, Anti-Lecture, Humanistic, Transparent-Thinker
+    - Professional traits: Hybrid Reasoning Mode, Think Tags, Function Calling, JSON Mode, Schema Adherence, Tool Use, Structured Outputs, RefusalBench SOTA, Reasoning Toggle
+    - Best for: Complex reasoning with transparent thought processes, math/code/STEM problems, creative writing and roleplay, agentic applications with function calling, tasks requiring schema-adherent outputs, users who want models that follow their instructions without moralizing
+    - Total parameters: 70B
+    - Active parameters: 70B
+  - Nous DeepHermes 3 Mistral 24B Preview
+    - ID: #192
+    - Description: Deep-thinking reasoning model with dual-mode operation
+    - Scores: Logical 8/10, Creative 6/10, Efficiency 7.5/10
+    - Personality: Deep-Thinker, Dual-Mode, Analytical, Function-Caller, Schema-Adherent, Methodical, Deliberate, R1-Distilled, Systematic, Problem-Solver
+    - Professional traits: Deep Thinking Mode, Think Tags (up to 13K tokens), Function Calling, JSON Mode, Schema Adherence, Multi-Turn Reasoning, R1 Distillation, Tool Use, Dual-Mode Toggle
+    - Best for: Complex mathematical problem-solving, multi-step reasoning tasks, agent-based applications requiring function calls, structured data extraction, tutoring scenarios with visible reasoning chains, analytical tasks requiring extended deliberation
+    - Total parameters: 24B
+    - Active parameters: 24B
+  - Nous Hermes 3 70B Instruct
+    - ID: #193
+    - Description: Flagship generalist with advanced agentic capabilities
+    - Scores: Logical 7/10, Creative 8/10, Efficiency 7/10
+    - Personality: Steerable, Agentic, Creative, Coherent, User-Aligned, Roleplayer, Long-Context, Multi-Turn, Tool-User, Persona-Maintainer
+    - Professional traits: Function Calling, Tool Use, ChatML Format, RAG Document Extraction, Structured JSON, Internal Monologue, Long-Context Coherence, Multi-Turn Memory, System Prompt Adherence
+    - Best for: Sophisticated AI assistants, interactive storytelling and roleplay, agentic workflows with tool use, extended multi-turn conversations, RAG applications, character-based interactions requiring consistency
+    - Total parameters: 70B
+    - Active parameters: 70B
+  - NousResearch Hermes 2 Pro - Llama-3 8B
+    - ID: #194
+    - Description: Efficient agentic model optimized for function calling
+    - Scores: Logical 7/10, Creative 6/10, Efficiency 9/10
+    - Personality: Agentic, Structured, Efficient, Versatile, Tool-Focused, Lightweight, Edge-Ready, Function-Caller, Schema-Compliant, Fast
+    - Professional traits: Function Calling (90% accuracy), JSON Mode (84% accuracy), Agentic Tokens (<tools>/<tool_call>/<tool_response>), Streaming Tool Calls, ChatML Format, Multi-Turn Function Calling, Schema Adherence
+    - Best for: AI assistants requiring function calling, structured data extraction, API integration applications, edge deployment on consumer hardware, rapid prototyping with agentic features, budget-conscious agentic workflows
+    - Total parameters: 8B
+    - Active parameters: 8B
+  - Sao10K Llama 3.3 Euryale 70B (v2.3)
+    - ID: #213
+    - Description: Premier creative roleplay model with exceptional spatial awareness
+    - Scores: Logical 6/10, Creative 9/10, Efficiency 7/10
+    - Personality: Creative, Spatial-Aware, Character-Consistent, Non-Restrictive, Immersive, Narrative-Driven, Prompt-Adherent, Uncensored, Storyteller, World-Builder
+    - Professional traits: 131K Context Window, 16K Output Tokens, Spatial Awareness, Prompt Adherence, Character Consistency, Non-Restrictive Content, Extended Narrative Coherence, Environment Tracking, Direct Training (not LoRA extracted)
+    - Best for: Immersive storytelling, character-driven roleplay, interactive fiction, creative writing assistance, text-based adventure games, extended narrative sessions, world-building, character embodiment
+    - Total parameters: 70B
+    - Active parameters: 70B
+  - Sao10K Llama 3.1 Euryale 70B v2.2
+    - ID: #214
+    - Description: Refined creative roleplay model with Claude-enhanced datasets
+    - Scores: Logical 5.5/10, Creative 8.5/10, Efficiency 6.5/10
+    - Personality: Spatial-Aware, Multi-Turn, Creative, Balanced, Adherent, Narrative-Focused, Character-Driven, Claude-Enhanced, Refined, Coherent
+    - Professional traits: 32K Context Window, Claude-Enhanced Training Data, Spatial Awareness, Reasoning Datasets, System Prompt Adherence, Multi-Turn Coherency, 55% More RP Examples, 40% More Creative Writing
+    - Best for: Extended roleplay scenarios, creative storytelling, character-based interactions, narrative content generation, multi-turn creative sessions, users who prefer 32K context over 131K
+    - Total parameters: 70B
+    - Active parameters: 70B
+  - Sao10K Llama 3 8B Lunaris
+    - ID: #215
+    - Description: Strategic 5-model merge balancing creativity and logic
+    - Scores: Logical 6/10, Creative 7.5/10, Efficiency 8.5/10
+    - Personality: Balanced, Character-Focused, Contextual, Versatile, Merged, Creative-Logical, Efficient, Persona-Maintainer, Emotionally-Deep, Generalist
+    - Professional traits: TIES Merge (5 models), Character Embodiment, Emotional Depth, Contextual Awareness, Balanced Creativity-Logic, Consumer Hardware Compatible, Multiple Quantization Options
+    - Best for: Interactive roleplay on a budget, character-driven storytelling, creative text generation, conversational AI, consumer hardware deployment, users wanting creative capabilities at 8B scale
+    - Total parameters: 8B
+    - Active parameters: 8B
+- claude.md
+  - Claude Opus 4.5
+    - ID: #135
+    - Description: Anthropic's most intelligent model - #2 globally, best for coding/agents
+    - Scores: Logical 9.5/10, Creative 8.5/10, Efficiency 8.0/10
+    - Personality: Most-Intelligent, Agentic-Master, Code-King, Safety-Leader, Self-Improving
+    - Professional traits: Tool calling, extended thinking, computer use, memory tool, prompt caching (90%), batch processing (50%), self-improving agents
+    - Best for: Enterprise agentic workflows, complex coding, computer use, research, high-stakes tasks
+    - Total parameters: Undisclosed (estimated ~200B+ based on compute)
+    - Active parameters: N/A
+  - Claude Sonnet 4.5
+    - ID: #136
+    - Description: Best coding model at mainstream pricing - 30+ hour task endurance
+    - Scores: Logical 8.5/10, Creative 7.5/10, Efficiency 9.0/10
+    - Personality: Code-Master, Workhorse, Value-Leader, Long-Running, Computer-User
+    - Professional traits: Tool calling, extended thinking, computer use (Chrome extension), memory tool, prompt caching (90%), batch processing (50%)
+    - Best for: Production coding, daily AI tasks, cost-conscious enterprise, long-running agents
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+  - Claude Opus 4.1
+    - ID: #137
+    - Description: Previous flagship - superseded by Opus 4.5 but still capable
+    - Scores: Logical 8.5/10, Creative 8.0/10, Efficiency 6.5/10
+    - Personality: Premium-Legacy, Precision-Coder, Detail-Oriented, Research-Strong
+    - Professional traits: Tool calling, extended thinking, precision debugging, agentic search
+    - Best for: Legacy integrations, users with existing contracts, specific workflows optimized for 4.1
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+- deepseek.md
+  - DeepSeek V3.2
+    - ID: #123
+    - Description: Frontier open-source with integrated thinking + tool-use
+    - Scores: Logical 9.0/10, Creative 6.5/10, Efficiency 9.5/10
+    - Personality: Deep-Thinker, Agentic, Tool-Master, Cost-Efficient, Open-Source
+    - Professional traits: Tool calling, structured outputs, thinking mode, non-thinking mode, code agents, search agents, FIM completion
+    - Best for: Agentic workflows, tool-use, cost-sensitive enterprise, self-hosting
+    - Total parameters: 685B
+    - Active parameters: ~37B (MoE)
+  - DeepSeek V3.2-Speciale
+    - ID: #122
+    - Description: Maximum reasoning - Gold medals in IMO, IOI, ICPC 2025
+    - Scores: Logical 10/10, Creative 5.0/10, Efficiency 5.0/10
+    - Personality: Ultra-Deep-Thinker, Competition-Grade, Math-Olympiad, No-Tools
+    - Professional traits: Extended thinking only - no tools, no function calling
+    - Best for: Competition math, olympiad problems, complex proofs, research-grade reasoning
+    - Total parameters: 685B
+    - Active parameters: ~37B (MoE)
+  - DeepSeek V3.1 Terminus
+    - ID: #126
+    - Description: Stabilized V3.1 with improved agentic capabilities
+    - Scores: Logical 8.5/10, Creative 6.5/10, Efficiency 8.5/10
+    - Personality: Stable, Agentic, Tool-Master, Production-Ready
+    - Professional traits: Tool calling, structured outputs, thinking mode, FIM completion, JSON output
+    - Best for: Production agentic workflows, multilingual applications, stable deployments
+    - Total parameters: 685B
+    - Active parameters: ~37B (MoE)
+  - DeepSeek R1 0528
+    - ID: #128
+    - Description: Major R1 upgrade - approaches o3 and Gemini 2.5 Pro
+    - Scores: Logical 9.0/10, Creative 5.5/10, Efficiency 7.5/10
+    - Personality: Deep-Thinker, Math-Strong, Open-Reasoning, Self-Verifying
+    - Professional traits: Chain-of-thought reasoning, JSON output, function calling, web search
+    - Best for: Complex reasoning, math, coding, research, visible thought process
+    - Total parameters: 685B
+    - Active parameters: ~37B (MoE)
+  - R1 Distill Qwen 32B
+    - ID: #130
+    - Description: Distilled R1 reasoning into Qwen 2.5 32B - beats o1-mini
+    - Scores: Logical 8.0/10, Creative 5.0/10, Efficiency 9.0/10
+    - Personality: Distilled-Reasoning, Dense, Local-Friendly
+    - Professional traits: Chain-of-thought reasoning, structured outputs
+    - Best for: Local deployment, cost-sensitive reasoning, edge inference
+    - Total parameters: 32B (Dense)
+    - Active parameters: N/A
+  - R1 Distill Llama 70B
+    - ID: #132
+    - Description: Distilled R1 reasoning into Llama 3.3 70B
+    - Scores: Logical 8.5/10, Creative 5.5/10, Efficiency 7.5/10
+    - Personality: Distilled-Reasoning, Dense, Llama-Compatible
+    - Professional traits: Chain-of-thought reasoning, tool calling, structured outputs
+    - Best for: Llama ecosystem compatibility, enterprise deployment, reasoning tasks
+    - Total parameters: 70B (Dense)
+    - Active parameters: N/A
+  - R1 Distill Qwen 14B
+    - ID: #131
+    - Description: Lightweight distilled reasoning for edge deployment
+    - Scores: Logical 7.0/10, Creative 4.5/10, Efficiency 9.5/10
+    - Personality: Compact-Reasoning, Edge-Ready, Cost-Saver
+    - Professional traits: Chain-of-thought reasoning, structured outputs
+    - Best for: Edge deployment, mobile, resource-constrained environments
+    - Total parameters: 14B (Dense)
+    - Active parameters: N/A
+- google.md
+  - Gemini 3 Pro Preview
+    - ID: #14
+    - Description: Google's most intelligent model - #1 globally on reasoning benchmarks
+    - Scores: Logical 10/10, Creative 8.5/10, Efficiency 7.0/10
+    - Personality: Most-Intelligent, Deep-Thinker, Multimodal-Master, Research-Grade
+    - Professional traits: Function calling, structured output, search grounding, code execution, Deep Think mode, image/video/audio/PDF input
+    - Best for: Research, complex reasoning, PhD-level problems, multimodal analysis, long documents
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+  - Gemini 3 Flash Preview
+    - ID: #12
+    - Description: Frontier intelligence at Flash speed - beats 2.5 Pro on 18/20 benchmarks
+    - Scores: Logical 9.0/10, Creative 7.5/10, Efficiency 10/10
+    - Personality: Speed-King, Value-Leader, Pro-Grade-Reasoning, Agentic
+    - Professional traits: Function calling, structured output, search grounding, code execution, thinking budget control
+    - Best for: Production workloads, high-volume tasks, agentic workflows, real-time apps
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+  - Gemini 2.5 Pro
+    - ID: #21
+    - Description: Stable previous-gen flagship - strong for coding and agents
+    - Scores: Logical 8.5/10, Creative 7.5/10, Efficiency 7.5/10
+    - Personality: Previous-Flagship, Stable, Long-Context, Coding-Strong
+    - Professional traits: Function calling, structured output, search grounding, code execution, thinking mode
+    - Best for: Production workloads requiring stability, coding, agentic tasks
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+  - Gemini 2.5 Flash
+    - ID: #20
+    - Description: First Flash model with thinking - great balance of price/performance
+    - Scores: Logical 8.0/10, Creative 7.0/10, Efficiency 9.0/10
+    - Personality: Balanced, Thinking-Enabled, Value-Tier
+    - Professional traits: Function calling, structured output, search grounding, code execution, thinking mode
+    - Best for: Cost-conscious production, balanced workloads, thinking-enabled tasks
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+  - Gemini 2.5 Flash Lite
+    - ID: #19
+    - Description: Lowest cost 2.5 model - optimized for high throughput
+    - Scores: Logical 7.0/10, Creative 6.0/10, Efficiency 10/10
+    - Personality: Budget-King, High-Throughput, Low-Latency
+    - Professional traits: Function calling, structured output, search grounding, code execution, optional thinking
+    - Best for: Classification, summarization at scale, high-volume simple tasks
+    - Total parameters: Undisclosed
+    - Active parameters: N/A
+  - Gemma 3 27B
+    - ID: #26
+    - Description: Best open-source multimodal model from Google
+    - Scores: Logical 7.5/10, Creative 6.5/10, Efficiency 9.0/10
+    - Personality: Open-Source, Multimodal, Local-Friendly, Vision-Enabled
+    - Professional traits: Text + image input, structured output, vision understanding
+    - Best for: Self-hosting, local deployment, privacy-sensitive applications, edge
+    - Total parameters: 27B (Dense)
+    - Active parameters: N/A
+- llama.md
+  - Llama 4 Maverick
+    - ID: #202
+    - Description: Open-source flagship that beats GPT-4o at 1/9th the cost
+    - Scores: Logical 8.5/10, Creative 8.0/10, Efficiency 9.0/10
+    - Personality: Frontier-Open, Multimodal-Native, Value-King, MoE-Architecture
+    - Professional traits: Function calling, tool use, image grounding, multilingual, structured output
+    - Best for: Enterprise AI, image understanding, creative writing, general assistant
+    - Total parameters: 400B
+    - Active parameters: 17B active per token
+  - Llama 4 Scout
+    - ID: #203
+    - Description: Industry-leading 10M context window on single H100
+    - Scores: Logical 7.5/10, Creative 7.0/10, Efficiency 10/10
+    - Personality: Efficient, Long-Context-King, Single-GPU, Multimodal
+    - Professional traits: Function calling, tool use, image understanding, 10M context retrieval
+    - Best for: Long document analysis, codebase reasoning, memory-intensive apps, edge deployment
+    - Total parameters: 109B
+    - Active parameters: 17B active per token
+  - Llama 3.3 70B Instruct
+    - ID: #204
+    - Description: 405B performance at 70B cost - last Llama 3 release
+    - Scores: Logical 8.0/10, Creative 7.5/10, Efficiency 9.0/10
+    - Personality: Balanced, Production-Ready, Cost-Effective, Text-Only
+    - Professional traits: Function calling, tool use, multilingual (8 languages), structured output
+    - Best for: Production enterprise workloads, cost-conscious deployment, text tasks
+    - Total parameters: 70B (Dense)
+    - Active parameters: N/A
+  - Llama 3.1 405B Instruct
+    - ID: #206
+    - Description: World's largest open-source LLM - rivals GPT-4 and Claude 3.5
+    - Scores: Logical 9.0/10, Creative 8.5/10, Efficiency 5.0/10
+    - Personality: Largest-Open, Teacher-Model, Frontier-Class, Synthetic-Data-Generator
+    - Professional traits: Function calling, tool use, LLM-as-judge, knowledge distillation, structured output
+    - Best for: Synthetic data generation, model distillation, R&D, maximum open-source capability
+    - Total parameters: 405B (Dense)
+    - Active parameters: N/A
+  - Llama 3.1 8B Instruct
+    - ID: #205
+    - Description: Most accessible Llama - runs on consumer hardware
+    - Scores: Logical 6.5/10, Creative 6.0/10, Efficiency 10/10
+    - Personality: Lightweight, Edge-Friendly, Fast, Accessible
+    - Professional traits: Function calling, tool use, multilingual, structured output
+    - Best for: Prototyping, edge deployment, mobile, resource-constrained environments
+    - Total parameters: 8B (Dense)
+    - Active parameters: N/A
+- mistral.md
+  - Mistral Large 3 (2512)
+    - ID: #96
+    - Description: Mistral's flagship multimodal MoE - enterprise-ready generalist
+    - Scores: Logical 8.5/10, Creative 6.5/10, Efficiency 7.5/10
+    - Personality: Precise, Analyst, Context-Heavy, Tool-Seeker, Formal, Enterprise-Grade
+    - Professional traits: Vision, function calling, structured outputs, predicted outputs, OCR, agents & conversations, prefix completion
+    - Best for: Enterprise assistants, RAG systems, scientific workloads, long document understanding, agentic workflows
+    - Total parameters: 675B
+    - Active parameters: 41B (Granular MoE)
+  - Devstral 2 (123B)
+    - ID: #91
+    - Description: Frontier agentic coding model for software engineering
+    - Scores: Logical 8.5/10, Creative 4.5/10, Efficiency 7.0/10
+    - Personality: Precise, Tool-Seeker, Stepwise, Agentic, Self-Correcting, Long-Horizon
+    - Professional traits: Code generation, tool calling, multi-file orchestration, framework dependency tracking, structured outputs
+    - Best for: Agentic coding, repository exploration, multi-file editing, bug fixing, legacy system modernization
+    - Total parameters: 123B (dense)
+    - Active parameters: N/A
+  - Mistral Medium 3.1
+    - ID: #98
+    - Description: Enterprise workhorse - 90% of Sonnet 3.7 at fraction of cost
+    - Scores: Logical 8.0/10, Creative 6.0/10, Efficiency 8.5/10
+    - Personality: Precise, Analyst, Formal, Enterprise-Grade, Cost-Saver
+    - Professional traits: Vision, function calling, structured outputs, fine-tuning support
+    - Best for: Enterprise deployments, domain-specific fine-tuning, cost-conscious production, European compliance
+    - Total parameters: ~70B (proprietary, exact undisclosed)
+    - Active parameters: N/A
+  - Mistral Small 3.2 (24B)
+    - ID: #102
+    - Description: Latency-optimized multimodal - rivals 70B models at 3x speed
+    - Scores: Logical 7.5/10, Creative 5.5/10, Efficiency 9.5/10
+    - Personality: Precise, Fast-Twitch, Tool-Seeker, Cost-Saver
+    - Professional traits: Vision, function calling, structured outputs, tool use
+    - Best for: Fast-response assistants, low-latency function calling, local deployment, fine-tuning base
+    - Total parameters: 24B (dense)
+    - Active parameters: N/A
+  - Codestral 2508
+    - ID: #99
+    - Description: Code completion specialist - FIM and autocomplete optimized
+    - Scores: Logical 7.5/10, Creative 3.5/10, Efficiency 9.0/10
+    - Personality: Precise, Stepwise, Fast-Twitch, Code-First
+    - Professional traits: FIM completion, code generation, tool calling, structured outputs
+    - Best for: IDE autocomplete, fill-in-the-middle, code correction, test generation
+    - Total parameters: ~22B (dense, code-specialized)
+    - Active parameters: N/A
+  - Ministral 3 8B (Reasoning)
+    - ID: #94
+    - Description: Balanced edge model with vision and reasoning
+    - Scores: Logical 7.0/10, Creative 4.5/10, Efficiency 9.5/10
+    - Personality: Precise, Fast-Twitch, Edge-Optimized, Cost-Saver
+    - Professional traits: Vision, reasoning, multilingual, structured outputs
+    - Best for: Mobile/edge deployment, resource-constrained environments, lightweight reasoning
+    - Total parameters: 8B (dense)
+    - Active parameters: N/A
+  - Ministral 3 3B (Reasoning)
+    - ID: #95
+    - Description: Tiny reasoning model - fits in 8GB RAM
+    - Scores: Logical 6.0/10, Creative 4.0/10, Efficiency 10/10
+    - Personality: Fast-Twitch, Edge-Optimized, Ultra-Efficient
+    - Professional traits: Vision, reasoning, multilingual, structured outputs
+    - Best for: Ultra-edge deployment, IoT, mobile, Jetson devices
+    - Total parameters: 3B (dense)
+    - Active parameters: N/A
+  - Pixtral Large 2411
+    - ID: #110
+    - Description: Frontier multimodal for documents and charts
+    - Scores: Logical 8.0/10, Creative 5.5/10, Efficiency 6.5/10
+    - Personality: Precise, Context-Heavy, Analyst, Vision-First
+    - Professional traits: Vision, document parsing, chart analysis, structured outputs, function calling
+    - Best for: Document analysis, chart interpretation, visual QA, multimodal RAG
+    - Total parameters: 124B (123B LLM + 1B vision encoder)
+    - Active parameters: N/A
+- openai.md
+  - GPT-5.2
+    - ID: #40
+    - Description: OpenAI's flagship model - SOTA knowledge work and reasoning
+    - Scores: Logical 9.5/10, Creative 7.0/10, Efficiency 7.0/10
+    - Personality: Precise, Analyst, Context-Heavy, Tool-Seeker, Enterprise-Grade, Knowledge-Worker
+    - Professional traits: Vision, tool calling, structured outputs, spreadsheets, presentations, extended reasoning (xhigh), compaction
+    - Best for: Enterprise knowledge work, complex analysis, agentic workflows, professional document generation
+    - Total parameters: Not disclosed (estimated 1.5-2T)
+    - Active parameters: N/A
+  - GPT-5.2-Codex
+    - ID: #40
+    - Description: SOTA agentic coding model with cybersecurity capabilities
+    - Scores: Logical 9.5/10, Creative 4.5/10, Efficiency 7.5/10
+    - Personality: Precise, Tool-Seeker, Agentic, Self-Correcting, Long-Horizon, Security-Aware
+    - Professional traits: Code generation, tool calling, compaction, Windows native, cybersecurity, vision (screenshots/mockups)
+    - Best for: Agentic coding, security research, large refactors, code migrations, multi-hour dev sessions
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-5.1-Codex-Max
+    - ID: #41
+    - Description: Previous frontier agentic coding - first with native compaction
+    - Scores: Logical 9.0/10, Creative 4.5/10, Efficiency 8.0/10
+    - Personality: Precise, Tool-Seeker, Agentic, Long-Horizon, Compaction-Native
+    - Professional traits: Code generation, compaction, Windows support, tool calling, structured outputs
+    - Best for: Long-running coding tasks, project-scale refactors, deep debugging
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-5.1
+    - ID: #42
+    - Description: Warmer, more conversational GPT-5 with adaptive reasoning
+    - Scores: Logical 8.5/10, Creative 7.5/10, Efficiency 8.0/10
+    - Personality: Warm, Conversational, Adaptive, Precise, Instruction-Following
+    - Professional traits: Vision, tool calling, structured outputs, style customization, adaptive reasoning
+    - Best for: Conversational AI, customer-facing applications, personalized assistants
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-5
+    - ID: #54
+    - Description: Unified reasoning system - smart router decides when to think
+    - Scores: Logical 9.0/10, Creative 7.0/10, Efficiency 7.5/10
+    - Personality: Precise, Analyst, Unified, Tool-Seeker, Health-Aware
+    - Professional traits: Vision, tool calling, structured outputs, reasoning (auto-routed), health expertise
+    - Best for: General-purpose flagship, coding, health queries, multimodal tasks
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-5 Mini
+    - ID: #55
+    - Description: Cost-efficient GPT-5 for well-defined tasks
+    - Scores: Logical 8.0/10, Creative 6.0/10, Efficiency 9.0/10
+    - Personality: Fast-Twitch, Precise, Cost-Saver, Efficient
+    - Professional traits: Vision, tool calling, structured outputs
+    - Best for: High-volume tasks, well-defined workflows, cost-sensitive applications
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-5 Nano
+    - ID: #56
+    - Description: Fastest, cheapest GPT-5 variant for simple tasks
+    - Scores: Logical 6.5/10, Creative 5.0/10, Efficiency 10/10
+    - Personality: Ultra-Fast, Cost-Saver, Classification-Focused
+    - Professional traits: Tool calling, structured outputs
+    - Best for: Classification, summarization, routing, high-volume simple tasks
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - o3
+    - ID: #63
+    - Description: OpenAI's most capable reasoning model with full tool access
+    - Scores: Logical 9.5/10, Creative 5.5/10, Efficiency 6.5/10
+    - Personality: Deep-Thinker, Precise, Stepwise, Tool-Master, Visual-Reasoner
+    - Professional traits: Vision, tool orchestration, structured outputs, image generation (via tool), web search, Python execution
+    - Best for: Complex multi-step reasoning, scientific research, hypothesis generation, visual analysis
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - o3 Pro
+    - ID: #60
+    - Description: Maximum compute o3 for highest reliability
+    - Scores: Logical 9.8/10, Creative 5.5/10, Efficiency 5.0/10
+    - Personality: Deep-Thinker, Ultra-Reliable, Mission-Critical, Slower
+    - Professional traits: Vision, tool orchestration, structured outputs, web search, Python, memory
+    - Best for: Mission-critical tasks, high-stakes decisions, scientific proofs, maximum accuracy requirements
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - o4-mini
+    - ID: #64
+    - Description: Fast, cost-efficient reasoning - SOTA on AIME
+    - Scores: Logical 8.5/10, Creative 5.0/10, Efficiency 9.5/10
+    - Personality: Fast-Twitch, Precise, Cost-Saver, Math-Strong, Visual
+    - Professional traits: Vision, tool calling, structured outputs, Python, browsing
+    - Best for: High-volume reasoning, math tasks, coding at scale, cost-sensitive reasoning
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - o4-mini High
+    - ID: #62
+    - Description: Higher reasoning effort o4-mini for complex tasks
+    - Scores: Logical 9.0/10, Creative 5.0/10, Efficiency 8.5/10
+    - Personality: Fast-Twitch, Precise, Enhanced-Reasoning
+    - Professional traits: Vision, tool calling, structured outputs
+    - Best for: Complex reasoning at scale, when accuracy matters more than speed
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - o3 Deep Research
+    - ID: #48
+    - Description: Most powerful deep research model - multi-step web research agent
+    - Scores: Logical 9.0/10, Creative 6.0/10, Efficiency 5.0/10
+    - Personality: Researcher, Synthesizer, Multi-Step, Web-Native
+    - Professional traits: Web search, synthesis, report generation, MCP integration, structured outputs
+    - Best for: Complex research tasks, market analysis, literature reviews, competitive intelligence
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - o4-mini Deep Research
+    - ID: #49
+    - Description: Faster, more affordable deep research
+    - Scores: Logical 8.0/10, Creative 5.5/10, Efficiency 8.5/10
+    - Personality: Researcher, Fast, Cost-Efficient
+    - Professional traits: Web search, synthesis, MCP integration, structured outputs
+    - Best for: High-volume research, cost-sensitive research tasks
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-4.1
+    - ID: #65
+    - Description: 1M context, instruction-following champion
+    - Scores: Logical 8.0/10, Creative 6.5/10, Efficiency 8.5/10
+    - Personality: Precise, Tool-Master, Long-Context, Instruction-Follower
+    - Professional traits: Vision, tool calling, structured outputs, 1M context
+    - Best for: Long document processing, code repositories, instruction-heavy tasks, tool calling
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-4.1 Mini
+    - ID: #66
+    - Description: Beats GPT-4o at 83% lower cost
+    - Scores: Logical 7.5/10, Creative 5.5/10, Efficiency 9.5/10
+    - Personality: Fast-Twitch, Precise, Cost-Saver, Long-Context
+    - Professional traits: Vision, tool calling, structured outputs, 1M context
+    - Best for: High-volume production, cost-sensitive pipelines, bulk processing
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - GPT-4.1 Nano
+    - ID: #67
+    - Description: Fastest, cheapest model - sub-second responses
+    - Scores: Logical 6.5/10, Creative 4.5/10, Efficiency 10/10
+    - Personality: Ultra-Fast, Classification-Focused, Cost-Saver
+    - Professional traits: Tool calling, structured outputs, 1M context
+    - Best for: Classification, autocompletion, routing, real-time applications
+    - Total parameters: Not disclosed
+    - Active parameters: N/A
+  - gpt-oss-120b
+    - ID: #57
+    - Description: OpenAI's flagship open-weight model - Apache 2.0
+    - Scores: Logical 8.5/10, Creative 5.0/10, Efficiency 9.0/10
+    - Personality: Open-Weight, Reasoning, Agentic, Tool-Native
+    - Professional traits: Function calling, web browsing, Python execution, structured outputs, full CoT visibility
+    - Best for: Self-hosted production, fine-tuning, on-premise deployments, privacy-sensitive applications
+    - Total parameters: 117B
+    - Active parameters: 5.1B (MoE)
+  - gpt-oss-20b
+    - ID: #59
+    - Description: Lightweight open-weight for edge and local
+    - Scores: Logical 7.5/10, Creative 4.5/10, Efficiency 9.5/10
+    - Personality: Open-Weight, Edge-Ready, Cost-Saver
+    - Professional traits: Function calling, structured outputs, full CoT visibility
+    - Best for: Local deployment, edge devices, rapid iteration, low-cost self-hosting
+    - Total parameters: 21B
+    - Active parameters: 3.6B (MoE)
+- qwen.md
+  - Qwen3 Coder 480B A35B
+    - ID: #170
+    - Description: Most agentic open-source coding model, comparable to Claude Sonnet 4
+    - Scores: Logical 9.0/10, Creative 4.5/10, Efficiency 8.5/10
+    - Personality: Precise, Tool-Seeker, Stepwise, Exploit-Focused, Long-Horizon, Self-Correcting, Fast-Twitch
+    - Professional traits: Code generation, tool calling, file operations, browser automation, multi-turn coding sessions, TypeScript/Python/Java/Rust/C++/Go
+    - Best for: Agentic coding workflows, repository-scale engineering, complex debugging, automated PR workflows, Cursor/Cline/Roo Code integration
+    - Total parameters: 480B
+    - Active parameters: 35B (MoE, 160 experts, 8 active)
+  - Qwen3 235B A22B Thinking 2507
+    - ID: #169
+    - Description: SOTA open-source reasoning model, rivals DeepSeek-R1 and o1
+    - Scores: Logical 9.5/10, Creative 6.5/10, Efficiency 7.5/10
+    - Personality: Precise, Deep-Thinker, Analyst, Visionary, Stepwise, Self-Correcting, Long-Horizon
+    - Professional traits: Extended reasoning traces, thinking mode, tool calling, MCP support, 119 language support
+    - Best for: Complex multi-step reasoning, mathematical proofs, scientific analysis, research tasks requiring deep thought
+    - Total parameters: 235B
+    - Active parameters: 22B (MoE)
+  - Qwen3 235B A22B Instruct 2507
+    - ID: #172
+    - Description: Flagship general-purpose model with improved instruction following
+    - Scores: Logical 8.5/10, Creative 6.0/10, Efficiency 8.5/10
+    - Personality: Precise, Analyst, Tool-Seeker, Assertive, Context-Heavy, Formal
+    - Professional traits: Fast inference, tool calling, structured outputs, 119 languages, MCP support
+    - Best for: General chat, instruction following, creative writing, multilingual tasks, enterprise deployments where speed matters
+    - Total parameters: 235B
+    - Active parameters: 22B (MoE)
+  - Qwen3 VL 235B A22B Thinking
+    - ID: #159
+    - Description: SOTA multimodal reasoning model for STEM and complex visual tasks
+    - Scores: Logical 9.0/10, Creative 6.5/10, Efficiency 7.0/10
+    - Personality: Precise, Deep-Thinker, Context-Heavy, Analyst, Visionary, Stepwise
+    - Professional traits: Vision, video (hours-long), visual agent, GUI operation, spatial reasoning, OCR, chart/diagram analysis, visual coding
+    - Best for: STEM visual reasoning, complex document analysis, visual coding, scientific image analysis, embodied AI applications
+    - Total parameters: 235B
+    - Active parameters: 22B (MoE, multimodal)
+  - Qwen3 VL 235B A22B Instruct
+    - ID: #160
+    - Description: Flagship vision-language for general perception and agent tasks
+    - Scores: Logical 8.0/10, Creative 6.0/10, Efficiency 8.0/10
+    - Personality: Precise, Context-Heavy, Tool-Seeker, Analyst, Fast-Twitch
+    - Professional traits: Vision, video, visual agent, tool use, GUI interaction, document parsing, object grounding
+    - Best for: Document parsing, VQA, chart extraction, multilingual OCR, video analysis, GUI automation, general multimodal tasks
+    - Total parameters: 235B
+    - Active parameters: 22B (MoE, multimodal)
+  - QwQ-32B
+    - ID: #181
+    - Description: Compact reasoning powerhouse rivaling DeepSeek-R1 at 1/20th size
+    - Scores: Logical 9.0/10, Creative 5.0/10, Efficiency 8.5/10
+    - Personality: Precise, Deep-Thinker, Stepwise, Self-Correcting, Analyst
+    - Professional traits: Chain-of-thought reasoning, function calling, tool use, self-correction, multilingual (29 languages)
+    - Best for: Math reasoning, coding tasks, tool-calling agents, local deployment on consumer GPUs
+    - Total parameters: 32.5B (dense)
+    - Active parameters: N/A
+  - Qwen3 30B A3B
+    - IDs: #166, #168
+    - Description: Sweet-spot MoE that outperforms QwQ-32B with fewer active params
+    - Scores: Logical 7.5/10, Creative 5.0/10, Efficiency 9.5/10
+    - Personality: Precise, Fast-Twitch, Cost-Saver, Analyst, Stepwise
+    - Professional traits: Dual-mode (thinking/non-thinking), tool calling, 119 languages
+    - Best for: Cost-sensitive production, high-volume API usage, general reasoning at scale
+    - Total parameters: 30B
+    - Active parameters: 3B (MoE)
+  - Qwen3 32B
+    - ID: #177
+    - Description: Best dense model, ideal for fine-tuning and local deployment
+    - Scores: Logical 8.0/10, Creative 5.5/10, Efficiency 7.5/10
+    - Personality: Precise, Analyst, Assertive, Stepwise, Context-Heavy
+    - Professional traits: Dual-mode, tool calling, structured outputs, fine-tuning friendly
+    - Best for: Fine-tuning base, local deployment, situations requiring dense architecture, production stability
+    - Total parameters: 32B (dense)
+    - Active parameters: N/A
+  - Qwen2.5 VL 72B Instruct
+    - ID: #184
+    - Description: Previous-gen vision flagship, battle-tested and stable
+    - Scores: Logical 7.5/10, Creative 5.5/10, Efficiency 7.0/10
+    - Personality: Precise, Context-Heavy, Analyst, Tool-Seeker
+    - Professional traits: Vision, video, OCR, visual agent, document parsing, object grounding
+    - Best for: Production vision deployments, document parsing, video analysis, GUI agent tasks
+    - Total parameters: 72B (dense, multimodal)
+    - Active parameters: N/A
+  - Qwen2.5 Coder 32B Instruct
+    - ID: #183
+    - Description: Solid previous-gen coding model, stable and well-tested
+    - Scores: Logical 7.5/10, Creative 4.0/10, Efficiency 8.0/10
+    - Personality: Precise, Stepwise, Tool-Seeker, Fast-Twitch
+    - Professional traits: Code generation, debugging, explanation, multi-language support
+    - Best for: Production coding assistants, fine-tuning base for coding, local code completion
+    - Total parameters: 32B (dense)
+    - Active parameters: N/A
+- x.md
+  - Grok 4.1 Fast
+    - ID: #138
+    - Description: Best-in-class agentic tool-calling model with 2M context and real-time search
+    - Scores: Logical 8.5/10, Creative 7.0/10, Efficiency 9.5/10
+    - Personality: Precise, Tool-Seeker, Fast-Twitch, Analyst, Long-Horizon, Context-Heavy, Assertive, Extrovert
+    - Professional traits: Tool calling, web search, X search, code execution, document retrieval, MCP integration, multimodal (images), real-time data access
+    - Best for: Enterprise agents, customer support automation, agentic search, real-time information retrieval, complex multi-step workflows, finance applications
+    - Total parameters: N/A
+    - Active parameters: ~100-200B (estimated, undisclosed MoE)
+  - Grok 4 Fast
+    - ID: #139
+    - Description: Frontier intelligence at 25-98x lower cost than competitors
+    - Scores: Logical 8.0/10, Creative 5.5/10, Efficiency 9.5/10
+    - Personality: Precise, Tool-Seeker, Fast-Twitch, Analyst, Cost-Saver, Assertive
+    - Professional traits: Tool calling, web search, X search, unified reasoning modes, massive context handling
+    - Best for: Cost-sensitive production deployments, agentic search, real-time information tasks, document reasoning, enterprise applications on a budget
+    - Total parameters: N/A
+    - Active parameters: ~100-200B (estimated, undisclosed MoE)
+  - Grok Code Fast 1
+    - ID: #140
+    - Description: Purpose-built speedster for agentic coding workflows
+    - Scores: Logical 7.5/10, Creative 4.0/10, Efficiency 9.0/10
+    - Personality: Precise, Fast-Twitch, Stepwise, Tool-Seeker, Exploit-Focused
+    - Professional traits: Fast inference, code generation, debugging, reasoning traces, tool calling, file editing commands
+    - Best for: IDE integrations (Cursor, Copilot, Cline, Roo Code), rapid code iteration, bug fixes, codebase Q&A, zero-to-one projects, developer-in-the-loop workflows
+    - Total parameters: ~314B total MoE
+    - Active parameters: estimated active ~30-50B
+  - Grok 4
+    - ID: #141
+    - Description: xAI's flagship "smartest AI in the world" reasoning model
+    - Scores: Logical 9.5/10, Creative 6.5/10, Efficiency 4.0/10
+    - Personality: Precise, Deep-Thinker, Analyst, Visionary, Assertive, Tool-Seeker, Long-Horizon
+    - Professional traits: Advanced reasoning, tool calling, multimodal input, parallel tool execution, real-time search, multi-agent coordination (Heavy variant)
+    - Best for: Complex research, heavy reasoning tasks, scientific analysis, PhD-level problem solving, business simulation, long-horizon planning
+    - Total parameters: N/A
+    - Active parameters: Unknown (frontier-scale, 100x compute vs Grok 2)
+  - Grok 3 Mini
+    - ID: #142
+    - Description: Lightweight reasoning model for logic-based tasks without deep domain knowledge
+    - Scores: Logical 7.5/10, Creative 4.0/10, Efficiency 9.0/10
+    - Personality: Precise, Stepwise, Fast-Twitch, Cost-Saver, Analyst, Obedient
+    - Professional traits: Transparent reasoning, adjustable reasoning effort, structured outputs, function calling
+    - Best for: Logic-based tasks, STEM problems, math competitions, rapid reasoning, cost-efficient deployments, educational applications
+    - Total parameters: Unknown
+    - Active parameters: smaller MoE, estimated ~20-50B active
+  - Grok 3
+    - ID: #143
+    - Description: First frontier reasoning model from xAI with "Think" capability
+    - Scores: Logical 8.5/10, Creative 5.5/10, Efficiency 5.0/10
+    - Personality: Precise, Deep-Thinker, Analyst, Visionary, Stepwise, Self-Correcting
+    - Professional traits: Chain-of-thought reasoning, tool calling, multi-step problem solving, self-correction, backtracking
+    - Best for: Complex reasoning, mathematical problem-solving, code generation, research tasks, problems requiring iterative refinement
+    - Total parameters: N/A
+    - Active parameters: Unknown (trained on Colossus with 200K H100 GPUs)
+- z.md
+  - GLM-4.7
+    - ID: #5
+    - Description: Flagship open-source coding powerhouse with state-of-the-art agentic capabilities
+    - Scores: Logical 9.0/10, Creative 5.5/10, Efficiency 9.5/10
+    - Personality: Precise, Analyst, Stepwise, Tool-Seeker, Long-Horizon, Context-Heavy, Assertive, Formal, Exploit-Focused, Self-Correcting
+    - Professional traits: Tool calling, MoE architecture, hybrid reasoning modes, code generation, SWE-bench tasks, mathematical reasoning, frontend development, search agents
+    - Best for: Agentic coding tasks, multi-file software engineering, long-horizon development workflows, terminal-based tasks, mathematical reasoning, Claude Code/Cline/Roo Code integration
+    - Total parameters: 355B total MoE
+    - Active parameters: ~32B active
+  - GLM-4.6V
+    - ID: #6
+    - Description: Vision-language model with native multimodal function calling for agentic workflows
+    - Scores: Logical 8.0/10, Creative 6.0/10, Efficiency 8.5/10
+    - Personality: Precise, Context-Heavy, Tool-Seeker, Analyst, Stepwise, Long-Horizon, Formal
+    - Professional traits: Vision understanding, video processing, native tool calling, document parsing, chart analysis, GUI agent tasks, image grounding, frontend code generation
+    - Best for: Document analysis, multimodal agents, visual web search, frontend UI replication, rich-text content creation, financial report analysis, video understanding
+    - Total parameters: 106B total MoE
+    - Active parameters: ~12B active
+  - GLM-4.6
+    - ID: #7
+    - Description: First frontier-scale fully open MIT-licensed model with near-Claude Sonnet 4 performance
+    - Scores: Logical 8.5/10, Creative 5.5/10, Efficiency 9.0/10
+    - Personality: Precise, Analyst, Tool-Seeker, Stepwise, Long-Horizon, Context-Heavy, Assertive, Formal
+    - Professional traits: Tool calling, long-context reasoning, code generation, agent frameworks, frontend development, search agents, self-hosting capability
+    - Best for: Agentic coding workflows, long-context processing, self-hosted enterprise deployments, Chinese-English bilingual tasks, code generation, tool orchestration
+    - Total parameters: 355B total MoE
+    - Active parameters: ~32B active
+  - GLM-4.6 (Exacto)
+    - ID: #8
+    - Description: Unverified variant - possibly internal/regional/custom fine-tune
+    - Scores: Logical N/A, Creative N/A, Efficiency N/A
+    - Personality: Unknown - no public documentation found
+    - Professional traits: Unknown
+    - Best for: Unknown
+    - Total parameters: N/A
+    - Active parameters: ~32B (estimated, if variant of GLM-4.6)
+  - GLM-4.5V
+    - ID: #9
+    - Description: Open-source vision-language model excelling at document and GUI understanding
+    - Scores: Logical 7.5/10, Creative 5.5/10, Efficiency 8.0/10
+    - Personality: Precise, Didactic, Context-Heavy, Tool-Seeker, Analyst, Cautious, Stepwise
+    - Professional traits: Vision understanding, video processing, GUI automation, document analysis, chart parsing, image grounding, thinking mode toggle
+    - Best for: Image/video reasoning, GUI agent tasks, document parsing, chart analysis, frontend code replication, long document interpretation
+    - Total parameters: 106B total MoE, based on GLM-4.5-Air
+    - Active parameters: ~12B active
+  - GLM-4.5
+    - ID: #10
+    - Description: Unified reasoning, coding, and agent foundation model with hybrid thinking modes
+    - Scores: Logical 8.5/10, Creative 5.0/10, Efficiency 8.5/10
+    - Personality: Precise, Analyst, Tool-Seeker, Stepwise, Long-Horizon, Assertive, Formal, Conservative-Planner
+    - Professional traits: Tool calling, hybrid reasoning, code generation, agent orchestration, multi-token prediction, PowerPoint generation
+    - Best for: Agentic applications, coding assistants, complex reasoning tasks, tool orchestration, multi-turn autonomous workflows
+    - Total parameters: 355B total MoE
+    - Active parameters: ~32B active
+  - GLM-4.5 Air
+    - ID: #11
+    - Description: Compact, cost-efficient variant of GLM-4.5 for high-volume deployments
+    - Scores: Logical 7.5/10, Creative 4.5/10, Efficiency 9.5/10
+    - Personality: Precise, Analyst, Fast-Twitch, Tool-Seeker, Stepwise, Cost-Saver
+    - Professional traits: Tool calling, hybrid reasoning, local deployment, quantization support (FP8, INT4), cost-efficient inference
+    - Best for: Cost-sensitive deployments, high-volume API usage, function calling pipelines, tool orchestration at scale, local deployment, resource-constrained environments
+    - Total parameters: 106B total MoE
+    - Active parameters: ~12B active

@@ -1,12 +1,9 @@
 import * as fs from 'fs';
 import * as path from 'path';
 
-const MODELS_JSON_PATH = path.join(process.cwd(), '../data/models.json');
-const ROWS_JSON_PATH = path.join(process.cwd(), '../data/llm_models_rows.json');
-
 interface Model {
     modelName: string;
-    vendor: string;
+    vendor_id: number | string;
     [key: string]: any;
 }
 
@@ -69,20 +66,6 @@ try {
     console.log(`\nCoverage Results:`);
     console.log(`- Present: ${presentInJson.length}`);
     console.log(`- Missing: ${missingInJson.length}`);
-
-    const reportPath = path.join(process.cwd(), '../coverage-report.md');
-    let report = `# Database Row Coverage Report\n\n`;
-    report += `**Total DB Rows:** ${rowsData.length}\n`;
-    report += `**Found in models.json:** ${presentInJson.length}\n`;
-    report += `**Missing from models.json:** ${missingInJson.length}\n\n`;
-
-    report += `## Missing Rows (Not found in models.json)\n`;
-    missingInJson.forEach(r => {
-        report += `- **[${r.display_name}]** (ID: ${r.id}, Slug: ${r.slug})\n`;
-    });
-
-    fs.writeFileSync(reportPath, report);
-    console.log(`\nReport written to ${reportPath}`);
 
 } catch (error) {
     console.error("Error:", error);
