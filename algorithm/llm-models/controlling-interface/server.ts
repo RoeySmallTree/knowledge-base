@@ -1,6 +1,6 @@
 import express from 'express';
 import cors from 'cors';
-import { existsSync, readFileSync, writeFileSync } from 'fs';
+import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -8,25 +8,44 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
 const loadEnvFromFile = () => {
-    const envPath = join(__dirname, '.env');
-    if (!existsSync(envPath)) return;
-    const content = readFileSync(envPath, 'utf-8');
-    content.split('\n').forEach(line => {
-        const trimmed = line.trim();
-        if (!trimmed || trimmed.startsWith('#')) return;
-        const delimiterIndex = trimmed.indexOf('=');
-        if (delimiterIndex === -1) return;
-        const key = trimmed.slice(0, delimiterIndex).trim();
-        let value = trimmed.slice(delimiterIndex + 1).trim();
-        if (!key || process.env[key]) return;
-        if (
-            (value.startsWith('"') && value.endsWith('"')) ||
-            (value.startsWith('\'') && value.endsWith('\''))
-        ) {
-            value = value.slice(1, -1);
+    let currentDir = __dirname;
+    // Search up to 5 levels up
+    for (let i = 0; i < 5; i++) {
+        const envPath = join(currentDir, '.env');
+        if (existsSync(envPath)) {
+            console.log(`Loading .env from ${envPath}`);
+            const content = readFileSync(envPath, 'utf-8');
+            content.split('\n').forEach(line => {
+                const trimmed = line.trim();
+                if (!trimmed || trimmed.startsWith('#')) return;
+                const delimiterIndex = trimmed.indexOf('=');
+                if (delimiterIndex === -1) return;
+                const key = trimmed.slice(0, delimiterIndex).trim();
+                let value = trimmed.slice(delimiterIndex + 1).trim();
+                // Don't overwrite existing env vars
+                if (process.env[key]) return;
+
+                if (
+                    (value.startsWith('"') && value.endsWith('"')) ||
+                    (value.startsWith("'") && value.endsWith("'"))
+                ) {
+                    value = value.slice(1, -1);
+                }
+                process.env[key] = value;
+            });
+            // We can stop after finding the first .env, or continue if we want to support cascading. 
+            // Usually finding the closest one or valid one is enough. 
+            // Let's assume the root one has what we need. 
+            // But if we find one, we should probably stop? 
+            // Actually, loading multiple might be better for cascading, but let's stick to the user's root one.
+            // If the user has one in `controlling-interface` AND root, we might want both.
+            // But the current implementation was single file. 
+            // I'll leave the loop running but continue to check parent dirs to fill in missing keys.
         }
-        process.env[key] = value;
-    });
+        const parentDir = dirname(currentDir);
+        if (parentDir === currentDir) break; // Root reached
+        currentDir = parentDir;
+    }
 };
 
 loadEnvFromFile();
@@ -99,12 +118,73 @@ const supabaseRequest = async (path: string, options: RequestInit = {}) => {
             ...options.headers
         }
     });
+
     if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(`Supabase error ${response.status}: ${errorText}`);
+        const text = await response.text();
+        throw new Error(`Supabase request failed: ${response.status} ${text}`);
     }
     return response;
 };
+
+const EXPLORE_CACHE_PATH = join(__dirname, 'settings', 'explore-cache.json');
+
+app.get('/api/explore/models', async (req, res) => {
+    try {
+        const forceRefresh = req.query.force === 'true';
+
+        // Ensure cache directory exists
+        const cacheDir = dirname(EXPLORE_CACHE_PATH);
+        if (!existsSync(cacheDir)) {
+            mkdirSync(cacheDir, { recursive: true });
+        }
+
+        // Return cache if exists and not forced
+        if (!forceRefresh && existsSync(EXPLORE_CACHE_PATH)) {
+            try {
+                const cached = JSON.parse(readFileSync(EXPLORE_CACHE_PATH, 'utf-8'));
+                // Basic validation
+                if (cached && cached.data && Array.isArray(cached.data)) {
+                    // console.log('Serving explore models from cache');
+                    return res.json(cached);
+                }
+            } catch (e) {
+                console.warn('Failed to read explore cache, fetching fresh.', e);
+            }
+        }
+
+        const apiKey = process.env.OPEN_ROUTER_API_KEY;
+        if (!apiKey) {
+            return res.status(500).json({ error: 'Missing OPEN_ROUTER_API_KEY in environment' });
+        }
+
+        // console.log('Fetching explore models from OpenRouter...');
+        const openRouterResponse = await fetch('https://openrouter.ai/api/v1/models?supported_parameters=structured_outputs', {
+            headers: {
+                'Authorization': `Bearer ${apiKey}`
+            }
+        });
+
+        if (!openRouterResponse.ok) {
+            const text = await openRouterResponse.text();
+            return res.status(openRouterResponse.status).json({ error: `OpenRouter API failed: ${text}` });
+        }
+
+        const data = await openRouterResponse.json();
+
+        // Write to cache
+        try {
+            writeFileSync(EXPLORE_CACHE_PATH, JSON.stringify(data, null, 2));
+            // console.log('Explore models cached.');
+        } catch (e) {
+            console.error('Failed to write explore cache:', e);
+        }
+
+        res.json(data);
+    } catch (err: any) {
+        console.error('Error fetching explore models:', err);
+        res.status(500).json({ error: err.message });
+    }
+});
 
 const toNumber = (value: unknown) => {
     const parsed = Number(value);
@@ -394,6 +474,71 @@ app.post('/api/models/order', async (req, res) => {
     }
 });
 
+// --- Settings Operations ---
+const SETTINGS_FILE_PATH = join(__dirname, 'settings', 'model-settings.json');
+
+const ensureSettingsDir = () => {
+    const dir = dirname(SETTINGS_FILE_PATH);
+    if (!existsSync(dir)) {
+        // use run_command logic? No, just use fs here since it is node server code
+        // But `fs` was imported from 'fs' at top. 
+        // Need to import mkdirSync if not present or use shell. 
+        // Actually I can just use fs.mkdirSync. 
+        // Let's check imports.
+        // Imports are: { existsSync, readFileSync, writeFileSync } from 'fs';
+        // efficient to add mkdirSync to imports or just assume fs? 
+        // I will add mkdirSync to imports in another edit if needed, or just import * as fs.
+        // Wait, I can't easily change imports way up top in same block without reading file.
+        // I'll assume I can add it to the import list or use a separate import line if I was replacing top.
+        // Since I'm replacing middle of file, I'll use a dynamic import or just add the endpoints and fix imports in next step?
+        // Better: I will use `fs` if available or `mkdirSync`.
+        // Let's strictly follow the file content. 
+        // I'll add the endpoints and helper functions first.
+    }
+};
+
+const readModelSettings = () => {
+    try {
+        if (!existsSync(SETTINGS_FILE_PATH)) {
+            return { irrelevant_models_api_keys: [] };
+        }
+        const content = readFileSync(SETTINGS_FILE_PATH, 'utf-8');
+        return JSON.parse(content);
+    } catch (error) {
+        console.error('Error reading settings file:', error);
+        return { irrelevant_models_api_keys: [] };
+    }
+};
+
+const writeModelSettings = (settings: any) => {
+    const dir = dirname(SETTINGS_FILE_PATH);
+    if (!existsSync(dir)) {
+        mkdirSync(dir, { recursive: true });
+    }
+    writeFileSync(SETTINGS_FILE_PATH, JSON.stringify(settings, null, 2));
+};
+
+// GET settings
+app.get('/api/settings/models', (req, res) => {
+    const settings = readModelSettings();
+    res.json(settings);
+});
+
+// POST settings
+app.post('/api/settings/models', (req, res) => {
+    try {
+        const settings = req.body;
+        if (!settings || !Array.isArray(settings.irrelevant_models_api_keys)) {
+            return res.status(400).json({ error: 'Invalid settings format' });
+        }
+        writeModelSettings(settings);
+        res.json({ success: true });
+    } catch (error) {
+        console.error('Error writing settings:', error);
+        res.status(500).json({ error: 'Failed to save settings' });
+    }
+});
+
 // GET all vendors
 app.get('/api/vendors', async (req, res) => {
     try {
@@ -562,6 +707,7 @@ type DbTeamRow = {
     bootstrap_prompt: string | null;
     is_saved: boolean;
     originated_from_team: string | null;
+    display_order: number | null;
     created_at: string;
     updated_at: string;
 };
@@ -577,6 +723,7 @@ type DbMemberRow = {
     special_orders: string | null;
     team_id: string;
     model_id: number | null; // nullable in DB schema if set null on delete
+    display_order: number | null;
     created_at: string;
     // joined fields
     llm_models?: { display_name: string } | null;
@@ -595,6 +742,7 @@ const mapDbTeamToAppTeam = (row: DbTeamRow) => ({
     bootstrap_prompt: row.bootstrap_prompt,
     is_saved: row.is_saved,
     originated_from_team: row.originated_from_team,
+    display_order: row.display_order ?? undefined,
     created_at: row.created_at,
     updated_at: row.updated_at
 });
@@ -610,6 +758,7 @@ const mapDbMemberToAppMember = (row: DbMemberRow) => ({
     special_orders: row.special_orders,
     team_id: row.team_id,
     model_id: row.model_id ?? 0,
+    display_order: row.display_order ?? undefined,
     model_name: row.llm_models?.display_name ?? '',
     created_at: row.created_at
 });
@@ -619,12 +768,220 @@ const mapDbMemberToAppMember = (row: DbMemberRow) => ({
 const fetchTeamsFromDb = async () => {
     // For now, fetching all teams. In real app, filter by user_id or is_public.
     const response = await supabaseRequest(
-        `team?select=*&order=name.asc`
+        `team?select=*&order=display_order.asc.nullslast,name.asc`
     );
     const rows = (await response.json()) as DbTeamRow[];
     return rows.map(mapDbTeamToAppTeam);
 };
 
+const updateTeamOrdersInDb = async (orders: any[]) => {
+    const updates = orders
+        .map(entry => {
+            if (!entry || !entry.id) return null;
+            const displayOrder = toInteger(entry.display_order);
+            if (displayOrder === null) return null;
+            return { id: entry.id, display_order: displayOrder };
+        })
+        .filter(Boolean) as Array<{ id: string; display_order: number }>;
+
+    await Promise.all(
+        updates.map(async update => {
+            await supabaseRequest(`team?id=eq.${update.id}`, {
+                method: 'PATCH',
+                headers: { Prefer: 'return=minimal' },
+                body: JSON.stringify({ display_order: update.display_order })
+            });
+        })
+    );
+
+    return updates.length;
+};
+
+// --- DB Types & Mappers for Users/Sessions ---
+
+type DbAppUserRow = {
+    id: string;
+    email: string;
+    display_name: string | null;
+    created_at: string;
+    chat_name: string | null;
+    community_name: string;
+    image_url: string | null;
+    location: string | null;
+    gender: string | null;
+    profession: string | null;
+    extras: string | null;
+    legion_id: string | null;
+    type: string; // user type
+    // joined billing
+    app_user_billing_state?: {
+        plan_credits_balance: number;
+        last_period_usage_usd: number;
+        no_plan_since: string | null;
+        updated_at: string;
+        billing_plan?: {
+            code: string;
+            name: string;
+        } | null;
+    } | null;
+};
+
+type DbSessionRow = {
+    id: string;
+    user_id: string;
+    name: string;
+    status: string;
+    halt_reason: string | null;
+    halted_on_step: string | null;
+    access: string | null;
+    root_product_id: string | null;
+    rounds_left: number;
+    current_round: number;
+    created_at: string;
+    updated_at: string;
+    mission_charter: string | null;
+    archived_at: string | null;
+    team_id: string;
+    error: string | null;
+    round_status: string | null;
+    legion_id: string | null;
+    repository_id: string | null;
+    // joined fields
+    app_user?: { display_name: string } | null;
+    team?: { name: string } | null;
+};
+
+const mapDbUserToAppUser = (row: DbAppUserRow) => ({
+    id: row.id,
+    email: row.email,
+    display_name: row.display_name ?? '',
+    created_at: row.created_at,
+    chat_name: row.chat_name ?? '',
+    community_name: row.community_name,
+    image_url: row.image_url ?? '',
+    location: row.location ?? '',
+    gender: row.gender ?? '',
+    profession: row.profession ?? '',
+    extras: row.extras ?? '',
+    legion_id: row.legion_id,
+    type: row.type,
+    // usage stats
+    plan_credits_balance: row.app_user_billing_state?.plan_credits_balance ?? 0,
+    last_period_usage_usd: row.app_user_billing_state?.last_period_usage_usd ?? 0,
+    last_active: row.app_user_billing_state?.updated_at ?? row.created_at,
+    // plan info
+    plan_code: row.app_user_billing_state?.billing_plan?.code ?? 'no_plan',
+    plan_name: row.app_user_billing_state?.billing_plan?.name ?? 'No Plan',
+});
+
+const mapDbSessionToAppSession = (row: DbSessionRow) => ({
+    id: row.id,
+    user_id: row.user_id,
+    name: row.name,
+    status: row.status,
+    halt_reason: row.halt_reason,
+    halted_on_step: row.halted_on_step,
+    access: row.access,
+    root_product_id: row.root_product_id,
+    rounds_left: row.rounds_left,
+    current_round: row.current_round,
+    created_at: row.created_at,
+    updated_at: row.updated_at,
+    mission_charter: row.mission_charter,
+    archived_at: row.archived_at,
+    team_id: row.team_id,
+    error: row.error,
+    round_status: row.round_status,
+    legion_id: row.legion_id,
+    repository_id: row.repository_id,
+    user_name: row.app_user?.display_name ?? 'Unknown User',
+    team_name: row.team?.name ?? 'Unknown Team'
+});
+
+// --- Users/Sessions Operations ---
+
+const fetchUsersFromDb = async () => {
+    // select=*,app_user_billing_state(plan_credits_balance,last_period_usage_usd,billing_plan(code,name))
+    // Note: billing_plan is a nested relation inside billing_state
+    const response = await supabaseRequest(
+        `app_user?select=*,app_user_billing_state(plan_credits_balance,last_period_usage_usd,updated_at,billing_plan(code,name))&order=created_at.desc`
+    );
+    const rows = (await response.json()) as DbAppUserRow[];
+    return rows.map(mapDbUserToAppUser);
+};
+
+const fetchSessionsFromDb = async () => {
+    const response = await supabaseRequest(
+        `session?select=*,app_user!session_user_id_fkey(display_name),team(name)&order=created_at.desc`
+    );
+    const rows = (await response.json()) as DbSessionRow[];
+    return rows.map(mapDbSessionToAppSession);
+};
+
+// GET all users
+app.get('/api/users', async (req, res) => {
+    try {
+        const users = await fetchUsersFromDb();
+        res.json({
+            generatedAt: new Date().toISOString(),
+            totalUsers: users.length,
+            users
+        });
+    } catch (error) {
+        console.error('Error reading users from database:', error);
+        res.status(500).json({ error: 'Failed to read users from database' });
+    }
+});
+
+const updateUserInDb = async (user: any) => {
+    const payload = {
+        display_name: user.display_name,
+        chat_name: user.chat_name || null,
+        community_name: user.community_name,
+        location: user.location || null,
+        gender: user.gender || null,
+        profession: user.profession || null,
+        extras: user.extras || null,
+        type: user.type
+    };
+
+    if (!user.id) throw new Error('Missing user id');
+
+    await supabaseRequest(`app_user?id=eq.${user.id}`, {
+        method: 'PATCH',
+        body: JSON.stringify(payload)
+    });
+};
+
+// POST update user
+app.post('/api/users/update', async (req, res) => {
+    try {
+        const user = req.body?.user ?? req.body;
+        if (!user || !user.id) {
+            return res.status(400).json({ error: 'Missing user payload' });
+        }
+        await updateUserInDb(user);
+        res.json({ success: true });
+    } catch (error) {
+        console.error('Error updating user:', error);
+        res.status(500).json({ error: 'Failed to update user' });
+    }
+});
+
+// GET all sessions
+app.get('/api/sessions', async (req, res) => {
+    try {
+        const sessions = await fetchSessionsFromDb();
+        res.json({
+            generatedAt: new Date().toISOString(),
+            totalSessions: sessions.length,
+            sessions
+        });
+    } catch (error) {
+        console.error('Error reading sessions from database:', error);
+        res.status(500).json({ error: 'Failed to read sessions from database' });
+    }
+});
 const updateTeamInDb = async (team: any) => {
     const payload = {
         name: team.name,
@@ -685,10 +1042,33 @@ const deleteTeamInDb = async (id: string) => {
 const fetchMembersFromDb = async () => {
     // Join with llm_models to get model name
     const response = await supabaseRequest(
-        `member?select=*,llm_models(display_name)&order=created_at.asc`
+        `member?select=*,llm_models(display_name)&order=display_order.asc.nullslast,created_at.asc`
     );
     const rows = (await response.json()) as DbMemberRow[];
     return rows.map(mapDbMemberToAppMember);
+};
+
+const updateMemberOrdersInDb = async (orders: any[]) => {
+    const updates = orders
+        .map(entry => {
+            if (!entry || !entry.id) return null;
+            const displayOrder = toInteger(entry.display_order);
+            if (displayOrder === null) return null;
+            return { id: entry.id, display_order: displayOrder };
+        })
+        .filter(Boolean) as Array<{ id: string; display_order: number }>;
+
+    await Promise.all(
+        updates.map(async update => {
+            await supabaseRequest(`member?id=eq.${update.id}`, {
+                method: 'PATCH',
+                headers: { Prefer: 'return=minimal' },
+                body: JSON.stringify({ display_order: update.display_order })
+            });
+        })
+    );
+
+    return updates.length;
 };
 
 const updateMemberInDb = async (member: any) => {
@@ -765,6 +1145,21 @@ app.post('/api/teams', async (req, res) => {
     } catch (error) {
         console.error('Error saving team(s):', error);
         res.status(500).json({ error: 'Failed to save team(s)' });
+    }
+});
+
+// POST update team display order only
+app.post('/api/teams/order', async (req, res) => {
+    try {
+        const { orders } = req.body ?? {};
+        if (!Array.isArray(orders)) {
+            return res.status(400).json({ error: 'Invalid data format' });
+        }
+        const updatedCount = await updateTeamOrdersInDb(orders);
+        res.json({ success: true, updated: updatedCount });
+    } catch (error) {
+        console.error('Error updating team order in database:', error);
+        res.status(500).json({ error: 'Failed to update team order' });
     }
 });
 
@@ -883,6 +1278,21 @@ app.post('/api/members', async (req, res) => {
     } catch (error) {
         console.error('Error saving member(s):', error);
         res.status(500).json({ error: 'Failed to save member(s)' });
+    }
+});
+
+// POST update member display order only
+app.post('/api/members/order', async (req, res) => {
+    try {
+        const { orders } = req.body ?? {};
+        if (!Array.isArray(orders)) {
+            return res.status(400).json({ error: 'Invalid data format' });
+        }
+        const updatedCount = await updateMemberOrdersInDb(orders);
+        res.json({ success: true, updated: updatedCount });
+    } catch (error) {
+        console.error('Error updating member order in database:', error);
+        res.status(500).json({ error: 'Failed to update member order' });
     }
 });
 

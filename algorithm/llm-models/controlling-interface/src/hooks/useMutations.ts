@@ -74,6 +74,25 @@ export const useUpdateVendors = () => {
     });
 };
 
+export const useUpdateVendorsOrder = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: async (orders: { id: number; display_order: number }[]) => {
+            const res = await fetch('/api/vendors/order', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ orders })
+            });
+            if (!res.ok) throw new Error('Failed to update vendor order');
+            return res.json();
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['vendors'] });
+            queryClient.invalidateQueries({ queryKey: ['models', 'active'] });
+        }
+    });
+};
+
 
 // --- Teams Mutations ---
 

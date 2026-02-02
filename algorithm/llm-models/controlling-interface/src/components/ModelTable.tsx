@@ -1,9 +1,28 @@
 import { useState } from 'react';
+import {
+    DndContext,
+    closestCenter,
+    KeyboardSensor,
+    PointerSensor,
+    useSensor,
+    useSensors,
+    DragEndEvent
+} from '@dnd-kit/core';
+import {
+    arrayMove,
+    SortableContext,
+    sortableKeyboardCoordinates,
+    useSortable,
+    horizontalListSortingStrategy,
+    verticalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
 
-import { ChevronDown, ChevronRight } from 'lucide-react';
+import { ChevronDown, ChevronRight, GripVertical } from 'lucide-react';
 import { LLMModel, Vendor } from '../types';
 import { getVendorIcon } from '../utils/getVendorIcon';
 import { ModelCard } from './ModelCard';
+import { useUpdateModelsOrder, useUpdateVendorsOrder } from '../hooks/useMutations';
 
 interface ModelTableProps {
     models: LLMModel[];
@@ -38,6 +57,8 @@ export function ModelTable({
     maxParams,
     maxContext
 }: ModelTableProps) {
+    const updateVendorsOrderMutation = useUpdateVendorsOrder();
+
     // Group models by vendor, then by family
     const groupedData = models.reduce((acc, model) => {
         const vendorId = String(model.vendor_id);
@@ -62,29 +83,142 @@ export function ModelTable({
         return nameA.localeCompare(nameB);
     });
 
+    const sensors = useSensors(
+        useSensor(PointerSensor, {
+            activationConstraint: {
+                distance: 8,
+            },
+        }),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
+
+    const handleVendorDragEnd = (event: DragEndEvent) => {
+        const { active, over } = event;
+
+        if (!over || active.id === over.id) return;
+
+        const oldIndex = sortedVendors.findIndex(id => id === active.id);
+        const newIndex = sortedVendors.findIndex(id => id === over.id);
+
+        if (oldIndex === -1 || newIndex === -1) return;
+
+        const reorderedVendors = arrayMove(sortedVendors, oldIndex, newIndex);
+
+        const orders = reorderedVendors.map((vendorId, index) => ({
+            id: Number(vendorId),
+            display_order: index * 10
+        }));
+
+        updateVendorsOrderMutation.mutate(orders);
+    };
+
     return (
         <div className="w-full space-y-10">
-            {sortedVendors.map((vendorId) => (
-                <VendorGroup
-                    key={vendorId}
-                    vendorId={vendorId}
-                    vendorName={vendorsById[vendorId]?.display_name ?? 'Unknown Vendor'}
-                    families={groupedData[vendorId]}
-                    allModels={allModels}
-                    vendorsById={vendorsById}
-                    modelsById={modelsById}
-                    onEdit={onEdit}
-                    onDuplicate={onDuplicate}
-                    onAdd={onAdd}
-                    onArchive={onArchive}
-                    onDelete={onDelete}
+            <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleVendorDragEnd}
+            >
+                <SortableContext
+                    items={sortedVendors}
+                    strategy={verticalListSortingStrategy}
+                >
+                    {sortedVendors.map((vendorId) => (
+                        <SortableVendorGroup
+                            key={vendorId}
+                            vendorId={vendorId}
+                            vendorName={vendorsById[vendorId]?.display_name ?? 'Unknown Vendor'}
+                            families={groupedData[vendorId]}
+                            allModels={allModels}
+                            vendorsById={vendorsById}
+                            modelsById={modelsById}
+                            onEdit={onEdit}
+                            onDuplicate={onDuplicate}
+                            onAdd={onAdd}
+                            onArchive={onArchive}
+                            onDelete={onDelete}
+                            onFallbackChange={onFallbackChange}
+                            maxPrice={maxPrice}
+                            maxParams={maxParams}
+                            maxContext={maxContext}
+                        />
+                    ))}
+                </SortableContext>
+            </DndContext>
+        </div>
+    );
+}
 
-                    onFallbackChange={onFallbackChange}
-                    maxPrice={maxPrice}
-                    maxParams={maxParams}
-                    maxContext={maxContext}
-                />
-            ))}
+function SortableVendorGroup({
+    vendorId,
+    vendorName,
+    families,
+    allModels,
+    vendorsById,
+    modelsById,
+    onEdit,
+    onDuplicate,
+    onAdd,
+    onArchive,
+    onDelete,
+    onFallbackChange,
+    maxPrice,
+    maxParams,
+    maxContext
+}: {
+    vendorId: string,
+    vendorName: string,
+    families: Record<string, LLMModel[]>,
+    allModels: LLMModel[],
+    vendorsById: Record<string, Vendor>,
+    modelsById: Record<string, LLMModel>,
+    onEdit: (model: LLMModel) => void,
+    onDuplicate: (model: LLMModel) => void,
+    onAdd: (vendorId: string, family?: string) => void,
+    onArchive: (model: LLMModel) => void,
+    onDelete: (model: LLMModel) => void,
+    onFallbackChange: (modelKey: string, fallbackId: string | null) => void,
+    maxPrice: number;
+    maxParams: number;
+    maxContext: number;
+}) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+        isDragging
+    } = useSortable({ id: vendorId });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+        opacity: isDragging ? 0.7 : 1,
+    };
+
+    return (
+        <div ref={setNodeRef} style={style}>
+            <VendorGroup
+                vendorId={vendorId}
+                vendorName={vendorName}
+                families={families}
+                allModels={allModels}
+                vendorsById={vendorsById}
+                modelsById={modelsById}
+                onEdit={onEdit}
+                onDuplicate={onDuplicate}
+                onAdd={onAdd}
+                onArchive={onArchive}
+                onDelete={onDelete}
+                onFallbackChange={onFallbackChange}
+                maxPrice={maxPrice}
+                maxParams={maxParams}
+                maxContext={maxContext}
+                dragHandleProps={{ attributes, listeners }}
+            />
         </div>
     );
 }
@@ -105,7 +239,8 @@ function VendorGroup({
     onFallbackChange,
     maxPrice,
     maxParams,
-    maxContext
+    maxContext,
+    dragHandleProps
 }: {
     vendorId: string,
     vendorName: string,
@@ -123,6 +258,10 @@ function VendorGroup({
     maxPrice: number;
     maxParams: number;
     maxContext: number;
+    dragHandleProps?: {
+        attributes: any;
+        listeners: any;
+    };
 }) {
     const [isOpen, setIsOpen] = useState(true);
 
@@ -141,6 +280,17 @@ function VendorGroup({
                 onClick={() => setIsOpen(!isOpen)}
                 className="group flex items-center gap-4 mb-4 cursor-pointer select-none"
             >
+                {/* Drag Handle */}
+                {dragHandleProps && (
+                    <div
+                        {...dragHandleProps.attributes}
+                        {...dragHandleProps.listeners}
+                        className="cursor-grab active:cursor-grabbing text-white/20 hover:text-primary/70 transition-colors p-1.5 rounded bg-black/60 backdrop-blur-sm border border-white/10"
+                        onClick={(e) => e.stopPropagation()}
+                    >
+                        <GripVertical size={18} />
+                    </div>
+                )}
                 <div className={`border border-border/70 cyber-chamfer-sm px-2 py-1 text-primary ${isOpen ? 'cyber-glow' : 'text-muted-foreground group-hover:text-primary'}`}>
                     {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
                 </div>
@@ -236,6 +386,9 @@ function FamilyGroup({
     maxContext: number;
 }) {
     const [isOpen, setIsOpen] = useState(true);
+    const [expandedModelId, setExpandedModelId] = useState<string | null>(null);
+    const updateModelsOrderMutation = useUpdateModelsOrder();
+
     const sortedModels = [...models].sort((a, b) => {
         const orderA = a.display_order ?? 0;
         const orderB = b.display_order ?? 0;
@@ -247,6 +400,39 @@ function FamilyGroup({
         return `${model.vendor_id}-${idPart}-${model.modelFamily}`;
     };
 
+    const expandedModel = expandedModelId ? models.find(m => getModelKey(m) === expandedModelId) : null;
+
+    const sensors = useSensors(
+        useSensor(PointerSensor, {
+            activationConstraint: {
+                distance: 8,
+            },
+        }),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
+
+    const handleDragEnd = (event: DragEndEvent) => {
+        const { active, over } = event;
+
+        if (!over || active.id === over.id) return;
+
+        const oldIndex = sortedModels.findIndex(m => getModelKey(m) === active.id);
+        const newIndex = sortedModels.findIndex(m => getModelKey(m) === over.id);
+
+        if (oldIndex === -1 || newIndex === -1) return;
+
+        const reorderedModels = arrayMove(sortedModels, oldIndex, newIndex);
+
+        const orders = reorderedModels.map((model, index) => ({
+            id: model.id ? String(model.id) : undefined,
+            api_id: model.api_id,
+            display_order: index * 10
+        }));
+
+        updateModelsOrderMutation.mutate(orders);
+    };
 
     return (
         <div
@@ -275,35 +461,161 @@ function FamilyGroup({
             </div>
 
             {isOpen && (
-                <div className="flex overflow-x-auto py-6 gap-6 scrollbar-hide snap-x snap-mandatory animate-in fade-in slide-in-from-top-2 duration-200">
-                    {sortedModels.map((model) => {
-                        const modelKey = getModelKey(model);
-                        return (
-                            <div
-                                key={modelKey}
-                                className="flex-none w-[320px] md:w-[360px] lg:w-[420px] snap-center transition-transform"
-                            >
-                                <ModelCard
-                                    model={model}
-                                    vendorName={vendorName}
-                                    vendorsById={vendorsById}
-                                    modelsById={modelsById}
-                                    allModels={allModels}
-                                    onFallbackChange={onFallbackChange}
-                                    modelKey={modelKey}
-                                    onEdit={onEdit}
-                                    onDuplicate={onDuplicate}
-                                    onArchive={onArchive}
-                                    onDelete={onDelete}
-                                    maxPrice={maxPrice}
-                                    maxParams={maxParams}
-                                    maxContext={maxContext}
-                                />
+                <div className="space-y-6 animate-in fade-in slide-in-from-top-2 duration-200">
+                    <DndContext
+                        sensors={sensors}
+                        collisionDetection={closestCenter}
+                        onDragEnd={handleDragEnd}
+                    >
+                        <SortableContext
+                            items={sortedModels.map(m => getModelKey(m))}
+                            strategy={horizontalListSortingStrategy}
+                        >
+                            <div className="flex overflow-x-auto py-6 gap-6 scrollbar-hide snap-x snap-mandatory">
+                                {sortedModels.map((model) => {
+                                    const modelKey = getModelKey(model);
+                                    const isActive = expandedModelId === modelKey;
+                                    return (
+                                        <SortableModelCard
+                                            key={modelKey}
+                                            model={model}
+                                            modelKey={modelKey}
+                                            vendorName={vendorName}
+                                            vendorsById={vendorsById}
+                                            modelsById={modelsById}
+                                            allModels={allModels}
+                                            onFallbackChange={onFallbackChange}
+                                            onEdit={onEdit}
+                                            onDuplicate={onDuplicate}
+                                            onArchive={onArchive}
+                                            onDelete={onDelete}
+                                            maxPrice={maxPrice}
+                                            maxParams={maxParams}
+                                            maxContext={maxContext}
+                                            isActive={isActive}
+                                            onToggleExpand={() => setExpandedModelId(isActive ? null : modelKey)}
+                                        />
+                                    );
+                                })}
                             </div>
-                        );
-                    })}
+                        </SortableContext>
+                    </DndContext>
+
+                    {/* Full Width Expanded View */}
+                    {expandedModel && (
+                        <div className="w-full animate-in fade-in zoom-in-95 duration-300">
+                            <ModelCard
+                                model={expandedModel}
+                                vendorName={vendorName}
+                                vendorsById={vendorsById}
+                                modelsById={modelsById}
+                                allModels={allModels}
+                                onFallbackChange={onFallbackChange}
+                                modelKey={getModelKey(expandedModel)}
+                                onEdit={onEdit}
+                                onDuplicate={onDuplicate}
+                                onArchive={onArchive}
+                                onDelete={onDelete}
+                                maxPrice={maxPrice}
+                                maxParams={maxParams}
+                                maxContext={maxContext}
+                                isExpanded={true}
+                                isActive={true}
+                                onToggleExpand={() => setExpandedModelId(null)}
+                            />
+                        </div>
+                    )}
                 </div>
             )}
+        </div>
+    );
+}
+
+function SortableModelCard({
+    model,
+    modelKey,
+    vendorName,
+    vendorsById,
+    modelsById,
+    allModels,
+    onFallbackChange,
+    onEdit,
+    onDuplicate,
+    onArchive,
+    onDelete,
+    maxPrice,
+    maxParams,
+    maxContext,
+    isActive,
+    onToggleExpand
+}: {
+    model: LLMModel;
+    modelKey: string;
+    vendorName: string;
+    vendorsById: Record<string, Vendor>;
+    modelsById: Record<string, LLMModel>;
+    allModels: LLMModel[];
+    onFallbackChange: (modelKey: string, fallbackId: string | null) => void;
+    onEdit: (model: LLMModel) => void;
+    onDuplicate: (model: LLMModel) => void;
+    onArchive: (model: LLMModel) => void;
+    onDelete: (model: LLMModel) => void;
+    maxPrice: number;
+    maxParams: number;
+    maxContext: number;
+    isActive: boolean;
+    onToggleExpand: () => void;
+}) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+        isDragging
+    } = useSortable({ id: modelKey });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+        opacity: isDragging ? 0.7 : 1,
+    };
+
+    return (
+        <div
+            ref={setNodeRef}
+            style={style}
+            className="flex-none w-[320px] md:w-[360px] lg:w-[420px] snap-center transition-transform relative"
+        >
+            {/* Drag Handle */}
+            <div
+                {...attributes}
+                {...listeners}
+                className="absolute top-2 left-2 z-20 cursor-grab active:cursor-grabbing text-white/20 hover:text-primary/70 transition-colors p-1 rounded bg-black/60 backdrop-blur-sm"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <GripVertical size={14} />
+            </div>
+
+            <ModelCard
+                model={model}
+                vendorName={vendorName}
+                vendorsById={vendorsById}
+                modelsById={modelsById}
+                allModels={allModels}
+                onFallbackChange={onFallbackChange}
+                modelKey={modelKey}
+                onEdit={onEdit}
+                onDuplicate={onDuplicate}
+                onArchive={onArchive}
+                onDelete={onDelete}
+                maxPrice={maxPrice}
+                maxParams={maxParams}
+                maxContext={maxContext}
+                isExpanded={false}
+                isActive={isActive}
+                onToggleExpand={onToggleExpand}
+            />
         </div>
     );
 }

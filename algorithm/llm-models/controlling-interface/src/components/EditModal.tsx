@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { LLMModel, Vendor } from '../types';
-import { X, Save } from 'lucide-react';
+import { X, Save, ChevronDown, Search } from 'lucide-react';
 import { StringArrayInput } from './StringArrayInput';
 import { FallbackPicker } from './FallbackPicker';
 
@@ -12,10 +12,103 @@ interface EditModalProps {
     vendorName: string;
     models: LLMModel[];
     vendorsById: Record<string, Vendor>;
+    vendors: Vendor[];
     modelsById: Record<string, LLMModel>;
 }
 
-export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, vendorsById, modelsById }: EditModalProps) {
+function VendorSelect({
+    vendors,
+    value,
+    onChange,
+    vendorsById
+}: {
+    vendors: Vendor[],
+    value: number | string,
+    onChange: (id: number | string) => void,
+    vendorsById: Record<string, Vendor>
+}) {
+    const [isOpen, setIsOpen] = useState(false);
+    const [search, setSearch] = useState('');
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    const activeVendor = vendorsById[value];
+    const displayName = activeVendor?.display_name || 'Unknown Vendor';
+
+    // Filter vendors
+    const filtered = vendors.filter(v =>
+        v.display_name.toLowerCase().includes(search.toLowerCase())
+    );
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+                setIsOpen(false);
+            }
+        }
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    return (
+        <div className="space-y-1.5" ref={wrapperRef}>
+            <label className="font-label text-xs tracking-widest text-white/40 uppercase">VENDOR</label>
+            <div className="relative">
+                <button
+                    type="button"
+                    onClick={() => setIsOpen(!isOpen)}
+                    className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white flex items-center justify-between hover:bg-white/5 transition-colors focus:ring-1 focus:ring-primary/50"
+                >
+                    <span className="font-mono truncate">{displayName}</span>
+                    <ChevronDown size={14} className={`text-white/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
+                </button>
+
+                {isOpen && (
+                    <div className="absolute top-full left-0 right-0 mt-1 z-50 bg-black/90 border border-white/10 rounded-lg shadow-2xl max-h-60 flex flex-col backdrop-blur-xl">
+                        <div className="p-2 border-b border-white/10">
+                            <div className="relative">
+                                <Search size={12} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-white/40" />
+                                <input
+                                    type="text"
+                                    value={search}
+                                    onChange={(e) => setSearch(e.target.value)}
+                                    placeholder="Search vendors..."
+                                    className="w-full bg-white/5 border border-white/10 rounded px-2 py-1.5 pl-8 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50"
+                                    autoFocus
+                                />
+                            </div>
+                        </div>
+                        <div className="overflow-y-auto cyber-scroll flex-1 p-1">
+                            {filtered.map(vendor => (
+                                <button
+                                    key={vendor.id}
+                                    type="button"
+                                    onClick={() => {
+                                        onChange(vendor.id);
+                                        setIsOpen(false);
+                                        setSearch('');
+                                    }}
+                                    className={`w-full text-left px-3 py-2 rounded text-xs font-mono transition-colors flex items-center justify-between group
+                                        ${String(vendor.id) === String(value) ? 'bg-primary/20 text-primary' : 'text-white/80 hover:bg-white/5 hover:text-white'}
+                                    `}
+                                >
+                                    <span>{vendor.display_name}</span>
+                                    {String(vendor.id) === String(value) && <div className="w-1.5 h-1.5 rounded-full bg-primary shadow-[0_0_5px_rgba(0,255,136,0.5)]" />}
+                                </button>
+                            ))}
+                            {filtered.length === 0 && (
+                                <div className="px-3 py-4 text-center text-white/30 text-xs font-mono">
+                                    NO_MATCHES_FOUND
+                                </div>
+                            )}
+                        </div>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
+
+export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, vendorsById, modelsById, vendors }: EditModalProps) {
     const [formData, setFormData] = useState<LLMModel | null>(null);
 
     useEffect(() => {
@@ -96,7 +189,12 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
                 <form onSubmit={handleSubmit} className="flex flex-col flex-1 min-h-0">
                     <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6 overflow-y-auto cyber-scroll flex-1 min-h-0">
                         <div className="space-y-4">
-                            <Input label="VENDOR" name="vendor" value={vendorName} disabled />
+                            <VendorSelect
+                                vendors={vendors}
+                                vendorsById={vendorsById}
+                                value={formData.vendor_id}
+                                onChange={(id) => setFormData(prev => prev ? { ...prev, vendor_id: id as any } : null)}
+                            />
                             <Input label="MODEL_FAMILY" name="modelFamily" value={formData.modelFamily} onChange={handleChange} />
                             <Input label="FULL_NAME" name="modelName" value={formData.modelName} onChange={handleChange} />
                             <Input label="DISPLAY_NAME" name="name_within_family" value={formData.name_within_family ?? ''} onChange={handleChange} placeholder="Optional - Overrides Full Name" />
@@ -117,10 +215,32 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
                             </div>
 
                             <div className="p-4 rounded-lg bg-white/5 border border-white/5 space-y-3">
-                                <div className="font-label text-xs text-white/40 tracking-widest">PRICING (MICRO-CENTS)</div>
+                                <div className="font-label text-xs text-white/40 tracking-widest">$ PER 1M TOKENS</div>
                                 <div className="grid grid-cols-3 gap-3">
-                                    <Input label="PROMPT" name="prompt" value={formData.pricing?.prompt ?? 0} onChange={handleChange} type="number" />
-                                    <Input label="COMPL." name="completion" value={formData.pricing?.completion ?? 0} onChange={handleChange} type="number" />
+                                    <Input
+                                        label="PROMPT"
+                                        name="prompt"
+                                        value={(formData.pricing?.prompt ?? 0) / 1000000}
+                                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                            const displayValue = parseFloat(e.target.value) || 0;
+                                            const microValue = Math.round(displayValue * 1000000);
+                                            handleChange({ target: { name: 'prompt', value: microValue.toString() } });
+                                        }}
+                                        type="number"
+                                        step="0.01"
+                                    />
+                                    <Input
+                                        label="COMPL."
+                                        name="completion"
+                                        value={(formData.pricing?.completion ?? 0) / 1000000}
+                                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
+                                            const displayValue = parseFloat(e.target.value) || 0;
+                                            const microValue = Math.round(displayValue * 1000000);
+                                            handleChange({ target: { name: 'completion', value: microValue.toString() } });
+                                        }}
+                                        type="number"
+                                        step="0.01"
+                                    />
                                     <Input label="TIER" name="tier" value={formData.pricing?.tier ?? 1} onChange={handleChange} type="number" step="1" max="5" />
                                 </div>
                             </div>

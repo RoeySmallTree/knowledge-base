@@ -1,10 +1,29 @@
 import { useMemo, useState, useEffect, type ReactNode } from 'react';
-import { ChevronDown, ChevronRight, Pencil, Trash2, X, Clipboard, AlertTriangle, Plus, Save, Copy } from 'lucide-react';
+import {
+    DndContext,
+    closestCenter,
+    KeyboardSensor,
+    PointerSensor,
+    useSensor,
+    useSensors,
+    DragEndEvent
+} from '@dnd-kit/core';
+import {
+    arrayMove,
+    SortableContext,
+    sortableKeyboardCoordinates,
+    useSortable,
+    horizontalListSortingStrategy,
+} from '@dnd-kit/sortable';
+import { CSS } from '@dnd-kit/utilities';
+
+import { ChevronDown, ChevronRight, Pencil, Trash2, X, Clipboard, AlertTriangle, Plus, Save, Copy, GripVertical, Users } from 'lucide-react';
 import { MarkdownEditor } from './MarkdownEditor';
 import { FallbackPicker } from './FallbackPicker';
 import { getVendorIcon } from '../utils/getVendorIcon';
 import { LLMModel, Team, TeamCategory, TeamMember, TeamRole, Vendor } from '../types';
 import { StringArrayInput } from './StringArrayInput';
+import { useUpdateMemberOrders } from '../hooks/useQueries';
 
 const CATEGORY_ORDER: TeamCategory[] = ['CORTEX', 'VITALS', 'OPS', 'ARCADE'];
 const ROLE_OPTIONS: TeamRole[] = ['Chair', 'Envoy', 'Watchdog', 'Operative'];
@@ -20,6 +39,13 @@ const COLOR_OPTIONS = [
     '#4D96FF',
     '#FF6B6B'
 ];
+
+const CATEGORY_COLORS: Record<TeamCategory, string> = {
+    'CORTEX': 'text-cyan-400 border-cyan-400/30 bg-cyan-400/5',
+    'VITALS': 'text-emerald-400 border-emerald-400/30 bg-emerald-400/5',
+    'OPS': 'text-amber-400 border-amber-400/30 bg-amber-400/5',
+    'ARCADE': 'text-fuchsia-400 border-fuchsia-400/30 bg-fuchsia-400/5'
+};
 
 const normalizeCategory = (value: TeamCategory | null | undefined): TeamCategory =>
     CATEGORY_ORDER.includes(value as TeamCategory) ? (value as TeamCategory) : 'CORTEX';
@@ -39,6 +65,8 @@ interface TeamsViewProps {
     onTeamDelete: (teamId: string) => void;
     onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
     createTeamSignal: number;
+    expandedCategories: Set<TeamCategory>;
+    onToggleCategory: (category: TeamCategory) => void;
 }
 
 export function TeamsView({
@@ -53,10 +81,13 @@ export function TeamsView({
     onMemberCreate,
     onTeamDelete,
     onTeamDuplicate,
-    createTeamSignal
+    createTeamSignal,
+    expandedCategories,
+    onToggleCategory
 }: TeamsViewProps) {
-    const [expandedCategories, setExpandedCategories] = useState<Set<TeamCategory>>(new Set());
+    // Local state expandedCategories removed, using props
     const [expandedTeams, setExpandedTeams] = useState<Set<string>>(new Set());
+    const [expandedMembers, setExpandedMembers] = useState<Set<string>>(new Set());
     const [editingTeam, setEditingTeam] = useState<Team | null>(null);
     const [editingMember, setEditingMember] = useState<TeamMember | null>(null);
     const [isCreatingTeam, setIsCreatingTeam] = useState(false);
@@ -127,20 +158,23 @@ export function TeamsView({
         setIsCreatingTeam(true);
     }, [createTeamSignal]);
 
-    const toggleCategory = (category: TeamCategory) => {
-        setExpandedCategories(prev => {
-            const next = new Set(prev);
-            if (next.has(category)) next.delete(category);
-            else next.add(category);
-            return next;
-        });
-    };
+    // toggleCategory replaced by props.onToggleCategory
+
 
     const toggleTeam = (teamId: string) => {
         setExpandedTeams(prev => {
             const next = new Set(prev);
             if (next.has(teamId)) next.delete(teamId);
             else next.add(teamId);
+            return next;
+        });
+    };
+
+    const toggleMember = (memberId: string) => {
+        setExpandedMembers(prev => {
+            const next = new Set(prev);
+            if (next.has(memberId)) next.delete(memberId);
+            else next.add(memberId);
             return next;
         });
     };
@@ -157,8 +191,10 @@ export function TeamsView({
                     vendorsById={vendorsById}
                     isExpanded={expandedCategories.has(category)}
                     expandedTeams={expandedTeams}
-                    onToggleCategory={() => toggleCategory(category)}
+                    expandedMembers={expandedMembers}
+                    onToggleCategory={() => onToggleCategory(category)}
                     onToggleTeam={toggleTeam}
+                    onToggleMember={toggleMember}
                     onTeamEdit={(team) => {
                         setEditingTeam(team);
                         setIsCreatingTeam(false);
@@ -232,8 +268,10 @@ function CategorySection({
     vendorsById,
     isExpanded,
     expandedTeams,
+    expandedMembers,
     onToggleCategory,
     onToggleTeam,
+    onToggleMember,
     onTeamEdit,
     onMemberEdit,
     onMemberAdd,
@@ -249,8 +287,10 @@ function CategorySection({
     vendorsById: Record<string, Vendor>;
     isExpanded: boolean;
     expandedTeams: Set<string>;
+    expandedMembers: Set<string>;
     onToggleCategory: () => void;
     onToggleTeam: (teamId: string) => void;
+    onToggleMember: (memberId: string) => void;
     onTeamEdit: (team: Team) => void;
     onMemberEdit: (member: TeamMember) => void;
     onMemberAdd: (teamId: string) => void;
@@ -265,26 +305,48 @@ function CategorySection({
 
     return (
         <section id={`category-${category.toLowerCase()}`} className="space-y-6 scroll-mt-28">
-            <button
-                onClick={onToggleCategory}
-                className={`cyber-panel cyber-chamfer-sm flex w-full items-center gap-4 px-4 py-3 text-left transition-all duration-300 ${isExpanded
-                    ? 'bg-black/60 border-primary/30 shadow-[0_0_15px_rgba(0,255,136,0.1)]'
-                    : 'bg-black/20 border-white/5 hover:bg-white/5 hover:border-white/10'
-                    }`}
-            >
-                <div className={`border cyber-chamfer-sm px-2 py-1 transition-colors duration-300 ${isExpanded ? 'border-primary/50 text-primary bg-primary/10' : 'border-white/10 text-white/40'}`}>
-                    {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
-                </div>
-                <div className="flex flex-1 items-center justify-between">
-                    <div>
-                        <div className={`font-display text-2xl tracking-wide transition-colors duration-300 ${isExpanded ? 'text-primary' : 'text-white/40'}`}>{category}</div>
+            <div className={`transition-all duration-300 ${!isExpanded ? 'bg-black/20 border border-white/5 rounded-lg overflow-hidden hover:bg-white/5 hover:border-white/10' : ''}`}>
+                <button
+                    onClick={onToggleCategory}
+                    className={`cyber-panel cyber-chamfer-sm flex w-full items-center gap-4 px-4 py-3 text-left transition-all duration-300 ${isExpanded
+                        ? 'bg-black/60 border-primary/30 shadow-[0_0_15px_rgba(0,255,136,0.1)]'
+                        : 'border-transparent bg-transparent shadow-none'
+                        }`}
+                >
+                    <div className={`border cyber-chamfer-sm px-2 py-1 transition-colors duration-300 ${isExpanded ? 'border-primary/50 text-primary bg-primary/10' : 'border-white/10 text-white/40'}`}>
+                        {isExpanded ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
                     </div>
-                    <span className={`text-sm transition-colors duration-300 ${isExpanded ? 'text-white/60' : 'text-white/20'}`}>{sortedTeams.length} UNITS</span>
-                </div>
-            </button>
+                    <div className="flex flex-1 items-center justify-between">
+                        <div>
+                            <div className={`font-display text-2xl tracking-wide transition-colors duration-300 ${isExpanded ? 'text-primary' : 'text-white/40'}`}>{category}</div>
+                        </div>
+                        <span className={`text-sm transition-colors duration-300 ${isExpanded ? 'text-white/60' : 'text-white/20'}`}>{sortedTeams.length} UNITS</span>
+                    </div>
+                </button>
+
+                {!isExpanded && sortedTeams.length > 0 && (
+                    <div className="px-4 pb-4 overflow-x-auto cyber-scroll">
+                        <div className="flex items-stretch gap-3 pb-2 pt-2">
+                            {sortedTeams.map(team => (
+                                <TeamStripCard
+                                    key={team.id}
+                                    team={team}
+                                    membersCount={(membersByTeam[team.id] ?? []).length}
+                                    category={category}
+                                    onClick={() => {
+                                        onToggleCategory();
+                                        // Wait for expansion animation? Or just set expanded immediately
+                                        setTimeout(() => onToggleTeam(team.id), 100);
+                                    }}
+                                />
+                            ))}
+                        </div>
+                    </div>
+                )}
+            </div>
 
             {isExpanded && (
-                <div className="space-y-8">
+                <div className="space-y-8 animate-in fade-in slide-in-from-top-4 duration-300">
                     {sortedTeams.length === 0 ? (
                         <div className="cyber-panel cyber-chamfer-sm p-6 text-base text-muted-foreground">
                             NO TEAMS IN THIS CATEGORY.
@@ -299,7 +361,9 @@ function CategorySection({
                                     modelsById={modelsById}
                                     vendorsById={vendorsById}
                                     isExpanded={expandedTeams.has(team.id)}
+                                    expandedMembers={expandedMembers}
                                     onToggle={() => onToggleTeam(team.id)}
+                                    onToggleMember={onToggleMember}
                                     onEdit={() => onTeamEdit(team)}
                                     onDelete={() => onTeamDelete(team.id)}
                                     onDuplicate={async () => {
@@ -321,13 +385,66 @@ function CategorySection({
     );
 }
 
+function TeamStripCard({
+    team,
+    membersCount,
+    category,
+    onClick
+}: {
+    team: Team;
+    membersCount: number;
+    category: TeamCategory;
+    onClick: () => void;
+}) {
+    // Note: To show missing roles properly we'd need passed members.
+    // For strip card, maybe just show count and basic info is enough.
+
+    return (
+        <button
+            onClick={(e) => {
+                e.stopPropagation();
+                onClick();
+            }}
+            className={`
+                group relative flex flex-col justify-between min-w-[200px] max-w-[200px] h-[100px] p-3 text-left
+                border border-white/10 bg-black/40 rounded-lg transition-all duration-300
+                hover:border-primary/50 hover:bg-black/60 hover:scale-[1.02] hover:shadow-[0_0_15px_rgba(0,255,136,0.1)]
+            `}
+        >
+            <div className="flex items-start justify-between w-full">
+                <span className={`text-[9px] font-bold tracking-widest px-1.5 py-0.5 rounded border ${CATEGORY_COLORS[category]}`}>
+                    {category}
+                </span>
+                <div className="flex items-center gap-1 text-white/30 group-hover:text-primary transition-colors">
+                    <span className="text-[10px] font-mono">{membersCount}</span>
+                    <Users size={10} />
+                </div>
+            </div>
+
+            <div className="mt-2">
+                <div className="font-display text-sm text-white/90 truncate group-hover:text-primary transition-colors" title={team.name}>
+                    {team.name}
+                </div>
+                <div className="text-[10px] text-white/50 truncate font-mono mt-0.5">
+                    {team.catch_phrase || 'No catch phrase'}
+                </div>
+            </div>
+
+            {/* Hover Decorator */}
+            <div className="absolute bottom-0 left-0 w-full h-[2px] bg-primary/0 group-hover:bg-primary/50 transition-all duration-300" />
+        </button>
+    );
+}
+
 function TeamCard({
     team,
     members,
     modelsById,
     vendorsById,
     isExpanded,
+    expandedMembers,
     onToggle,
+    onToggleMember,
     onEdit,
     onDelete,
     onDuplicate,
@@ -341,7 +458,9 @@ function TeamCard({
     modelsById: Record<string, LLMModel>;
     vendorsById: Record<string, Vendor>;
     isExpanded: boolean;
+    expandedMembers: Set<string>;
     onToggle: () => void;
+    onToggleMember: (memberId: string) => void;
     onEdit: () => void;
     onDelete: () => void;
     onDuplicate: () => Promise<Team | undefined>;
@@ -351,12 +470,28 @@ function TeamCard({
     onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
 }) {
     const sortedMembers = [...members].sort((a, b) => {
+        const orderA = a.display_order ?? Number.MAX_SAFE_INTEGER;
+        const orderB = b.display_order ?? Number.MAX_SAFE_INTEGER;
+        if (orderA !== orderB) return orderA - orderB;
+        // Fallback to name comparison
         const nameA = a.name ?? a.team_role ?? 'Member';
         const nameB = b.name ?? b.team_role ?? 'Member';
         return nameA.localeCompare(nameB);
     });
     const missingFields = getMissingTeamFields(team);
     const membersCount = sortedMembers.length;
+
+    // Check role composition
+    const hasChair = sortedMembers.some(m => m.role?.toLowerCase() === 'chair');
+    const hasEnvoy = sortedMembers.some(m => m.role?.toLowerCase() === 'envoy');
+    const hasWatchdog = sortedMembers.some(m => m.role?.toLowerCase() === 'watchdog');
+    const hasOperatives = sortedMembers.some(m => m.role?.toLowerCase() === 'operative');
+
+    const missingRoles: string[] = [];
+    if (!hasChair) missingRoles.push('Chair');
+    if (!hasEnvoy) missingRoles.push('Envoy');
+    if (!hasWatchdog) missingRoles.push('Watchdog');
+    if (!hasOperatives) missingRoles.push('Operatives');
 
     const handleCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -403,16 +538,26 @@ function TeamCard({
 
                     <p className="text-sm font-medium text-primary/90 leading-snug">{team.catch_phrase}</p>
 
-                    <div className="text-xs text-white/50 leading-relaxed max-w-3xl line-clamp-2 mt-2">
-                        {team.description || 'No description provided.'}
-                    </div>
+                    {!isExpanded && (
+                        <div className="text-xs text-white/50 leading-relaxed max-w-3xl line-clamp-2 mt-2">
+                            {team.description || 'No description provided.'}
+                        </div>
+                    )}
 
                     {!isExpanded && (
-                        <div className="pt-3 flex items-center gap-3">
+                        <div className="pt-3 flex items-center gap-3 flex-wrap">
                             <div className="flex items-center gap-2 px-2 py-1 rounded bg-white/5 border border-white/5">
                                 <span className="font-label text-[10px] tracking-widest text-white/40">MEMBERS</span>
                                 <span className="text-primary font-mono text-xs">{membersCount}</span>
                             </div>
+                            {missingRoles.length > 0 && (
+                                <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-amber-500/10 border border-amber-500/20">
+                                    <AlertTriangle size={11} className="text-amber-500" />
+                                    <span className="font-label text-[9px] tracking-wider text-amber-500/90">
+                                        MISSING: {missingRoles.join(', ')}
+                                    </span>
+                                </div>
+                            )}
                             {missingFields.length > 0 && (
                                 <div className="text-xs text-amber-500 font-mono flex items-center gap-1">
                                     <AlertTriangle size={12} />
@@ -471,6 +616,8 @@ function TeamCard({
                         members={sortedMembers}
                         modelsById={modelsById}
                         vendorsById={vendorsById}
+                        expandedMembers={expandedMembers}
+                        onToggleMember={onToggleMember}
                     />
                 </div>
             )}
@@ -478,6 +625,14 @@ function TeamCard({
             {isExpanded && (
                 <div className="relative px-5 pb-5 space-y-6 animate-in fade-in slide-in-from-top-2 duration-300">
                     <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+
+                    {/* Team Description - Full Text */}
+                    <div className="bg-white/5 border border-white/5 rounded-lg p-4">
+                        <div className="font-label text-[10px] tracking-widest text-white/40 mb-2">DESCRIPTION</div>
+                        <p className="text-base text-white/80 leading-relaxed whitespace-pre-line">
+                            {team.description || 'No description provided.'}
+                        </p>
+                    </div>
 
                     <div className="grid gap-4 lg:grid-cols-3">
                         <div className="bg-white/5 border border-white/5 rounded-lg p-4">
@@ -529,6 +684,8 @@ function TeamCard({
                             members={sortedMembers}
                             modelsById={modelsById}
                             vendorsById={vendorsById}
+                            expandedMembers={expandedMembers}
+                            onToggleMember={onToggleMember}
                             onMemberEdit={onMemberEdit}
                             onMemberDelete={onMemberDelete}
                             onMemberUpdate={onMemberUpdate}
@@ -541,22 +698,57 @@ function TeamCard({
 }
 
 function MembersRow({
-
     members,
     modelsById,
     vendorsById,
+    expandedMembers,
+    onToggleMember,
     onMemberEdit,
     onMemberDelete,
     onMemberUpdate
 }: {
-
     members: TeamMember[];
     modelsById: Record<string, LLMModel>;
     vendorsById: Record<string, Vendor>;
+    expandedMembers: Set<string>;
+    onToggleMember: (memberId: string) => void;
     onMemberEdit: (member: TeamMember) => void;
     onMemberDelete: (memberId: string) => void;
     onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
 }) {
+    const updateMemberOrdersMutation = useUpdateMemberOrders();
+
+    const sensors = useSensors(
+        useSensor(PointerSensor, {
+            activationConstraint: {
+                distance: 8,
+            },
+        }),
+        useSensor(KeyboardSensor, {
+            coordinateGetter: sortableKeyboardCoordinates,
+        })
+    );
+
+    const handleDragEnd = (event: DragEndEvent) => {
+        const { active, over } = event;
+
+        if (!over || active.id === over.id) return;
+
+        const oldIndex = members.findIndex(m => m.id === active.id);
+        const newIndex = members.findIndex(m => m.id === over.id);
+
+        if (oldIndex === -1 || newIndex === -1) return;
+
+        const reorderedMembers = arrayMove(members, oldIndex, newIndex);
+
+        const orders = reorderedMembers.map((member, index) => ({
+            id: member.id,
+            display_order: index * 10
+        }));
+
+        updateMemberOrdersMutation.mutate(orders);
+    };
+
     if (members.length === 0) {
         return (
             <div className="cyber-panel cyber-chamfer-sm p-4 text-sm text-muted-foreground" data-team-action>
@@ -566,37 +758,80 @@ function MembersRow({
     }
 
     const { leaders, operatives } = splitMembersByRole(members);
+
     return (
         <div data-team-action>
-            <div className="flex overflow-x-auto gap-6 pb-2 pt-1 scrollbar-hide">
-                {leaders.map(member => (
-                    <MemberCard
+            <DndContext
+                sensors={sensors}
+                collisionDetection={closestCenter}
+                onDragEnd={handleDragEnd}
+            >
+                <SortableContext
+                    items={members.map(m => m.id)}
+                    strategy={horizontalListSortingStrategy}
+                >
+                    <div className="flex overflow-x-auto gap-6 pb-2 pt-1 scrollbar-hide">
+                        {leaders.map(member => {
+                            const isExpanded = expandedMembers.has(member.id);
+                            return (
+                                <div key={member.id} className="transition-all duration-300">
+                                    <SortableMemberCard
+                                        member={member}
+                                        modelsById={modelsById}
+                                        vendorsById={vendorsById}
+                                        isExpanded={false}
+                                        isActive={isExpanded}
+                                        onToggleExpand={() => onToggleMember(member.id)}
+                                        onEdit={() => onMemberEdit(member)}
+                                        onDelete={() => onMemberDelete(member.id)}
+                                        onModelChange={(modelId) => {
+                                            onMemberUpdate({ ...member, model_id: modelId ? Number(modelId) : 0 }, member.id);
+                                        }}
+                                    />
+                                </div>
+                            );
+                        })}
+                        {leaders.length > 0 && operatives.length > 0 && (
+                            <OperativesDivider />
+                        )}
+                        {operatives.map(member => {
+                            const isExpanded = expandedMembers.has(member.id);
+                            return (
+                                <div key={member.id} className="transition-all duration-300">
+                                    <SortableMemberCard
+                                        member={member}
+                                        modelsById={modelsById}
+                                        vendorsById={vendorsById}
+                                        isExpanded={false}
+                                        isActive={isExpanded}
+                                        onToggleExpand={() => onToggleMember(member.id)}
+                                        onEdit={() => onMemberEdit(member)}
+                                        onDelete={() => onMemberDelete(member.id)}
+                                        onModelChange={(modelId) => {
+                                            onMemberUpdate({ ...member, model_id: modelId ? Number(modelId) : 0 }, member.id);
+                                        }}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+                </SortableContext>
+            </DndContext>
+
+            {/* Expanded Members View - Rendered below the strip */}
+            <div className="space-y-6">
+                {members.filter(m => expandedMembers.has(m.id)).map(member => (
+                    <div
                         key={member.id}
-                        member={member}
-                        modelsById={modelsById}
-                        vendorsById={vendorsById}
-                        onEdit={() => onMemberEdit(member)}
-                        onDelete={() => onMemberDelete(member.id)}
-                        onModelChange={(modelId) => {
-                            onMemberUpdate({ ...member, model_id: modelId ? Number(modelId) : 0 }, member.id);
-                        }}
-                    />
-                ))}
-                {leaders.length > 0 && operatives.length > 0 && (
-                    <OperativesDivider />
-                )}
-                {operatives.map(member => (
-                    <MemberCard
-                        key={member.id}
-                        member={member}
-                        modelsById={modelsById}
-                        vendorsById={vendorsById}
-                        onEdit={() => onMemberEdit(member)}
-                        onDelete={() => onMemberDelete(member.id)}
-                        onModelChange={(modelId) => {
-                            onMemberUpdate({ ...member, model_id: modelId ? Number(modelId) : 0 }, member.id);
-                        }}
-                    />
+                        className="mt-6 w-full animate-in fade-in zoom-in-95 duration-300"
+                    >
+                        <ExpandedMemberCard
+                            member={member}
+                            modelsById={modelsById}
+                            vendorsById={vendorsById}
+                            onToggleExpand={() => onToggleMember(member.id)}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
@@ -606,11 +841,15 @@ function MembersRow({
 function CollapsedMembersRow({
     members,
     modelsById,
-    vendorsById
+    vendorsById,
+    expandedMembers,
+    onToggleMember
 }: {
     members: TeamMember[];
     modelsById: Record<string, LLMModel>;
     vendorsById: Record<string, Vendor>;
+    expandedMembers: Set<string>;
+    onToggleMember: (memberId: string) => void;
 }) {
     if (members.length === 0) {
         return (
@@ -625,24 +864,55 @@ function CollapsedMembersRow({
     return (
         <div className="collapsed-operatives-strip cyber-chamfer-sm p-3" data-team-action>
             <div className="flex overflow-x-auto gap-3 scrollbar-hide">
-                {leaders.map(member => (
-                    <StripMemberCard
-                        key={member.id}
-                        member={member}
-                        modelsById={modelsById}
-                        vendorsById={vendorsById}
-                    />
-                ))}
+                {leaders.map(member => {
+                    const isExpanded = expandedMembers.has(member.id);
+                    return (
+                        <div key={member.id} className="transition-all duration-300">
+                            <StripMemberCard
+                                member={member}
+                                modelsById={modelsById}
+                                vendorsById={vendorsById}
+                                isExpanded={false}
+                                isActive={isExpanded}
+                                onToggleExpand={() => onToggleMember(member.id)}
+                            />
+                        </div>
+                    );
+                })}
                 {leaders.length > 0 && operatives.length > 0 && (
                     <OperativesDivider />
                 )}
-                {operatives.map(member => (
-                    <StripMemberCard
+                {operatives.map(member => {
+                    const isExpanded = expandedMembers.has(member.id);
+                    return (
+                        <div key={member.id} className="transition-all duration-300">
+                            <StripMemberCard
+                                member={member}
+                                modelsById={modelsById}
+                                vendorsById={vendorsById}
+                                isExpanded={false}
+                                isActive={isExpanded}
+                                onToggleExpand={() => onToggleMember(member.id)}
+                            />
+                        </div>
+                    );
+                })}
+            </div>
+
+            {/* Expanded Members View - Rendered below the strip */}
+            <div className="space-y-6">
+                {members.filter(m => expandedMembers.has(m.id)).map(member => (
+                    <div
                         key={member.id}
-                        member={member}
-                        modelsById={modelsById}
-                        vendorsById={vendorsById}
-                    />
+                        className="mt-6 w-full animate-in fade-in zoom-in-95 duration-300"
+                    >
+                        <ExpandedMemberCard
+                            member={member}
+                            modelsById={modelsById}
+                            vendorsById={vendorsById}
+                            onToggleExpand={() => onToggleMember(member.id)}
+                        />
+                    </div>
                 ))}
             </div>
         </div>
@@ -652,11 +922,17 @@ function CollapsedMembersRow({
 function StripMemberCard({
     member,
     modelsById,
-    vendorsById
+    vendorsById,
+    isExpanded,
+    onToggleExpand,
+    isActive = false
 }: {
     member: TeamMember;
     modelsById: Record<string, LLMModel>;
     vendorsById: Record<string, Vendor>;
+    isExpanded: boolean;
+    onToggleExpand: () => void;
+    isActive?: boolean;
 }) {
     const shortRole = shortenTeamRole(member.team_role);
     const displayName = member.name || shortRole || 'Team Member';
@@ -666,13 +942,31 @@ function StripMemberCard({
     const vendorName = vendor?.display_name || 'Unknown';
     const modelName = model ? (model.name_within_family?.trim() || model.modelName) : undefined;
 
+    if (isExpanded) {
+        return (
+            <div
+                onClick={onToggleExpand}
+                className="w-full cursor-pointer transition-all duration-300"
+            >
+                <ExpandedMemberCard
+                    member={member}
+                    modelsById={modelsById}
+                    vendorsById={vendorsById}
+                    onToggleExpand={onToggleExpand}
+                />
+            </div>
+        );
+    }
+
     return (
         <div
-            className="cyber-strip-card cyber-chamfer-sm min-w-[220px] max-w-[260px] px-3.5 py-3 flex flex-col justify-between h-[84px] transition-all hover:scale-[1.02]"
+            onClick={onToggleExpand}
+            className={`cyber-strip-card cyber-chamfer-sm min-w-[220px] max-w-[260px] px-3.5 py-3 flex flex-col justify-between min-h-[84px] h-auto transition-all hover:scale-[1.02] cursor-pointer
+                ${isActive ? 'ring-1 ring-primary shadow-[0_0_20px_rgba(0,255,136,0.15)] bg-black/60' : ''}`}
             style={{ '--border-color': member.color || 'var(--primary)' } as React.CSSProperties}
         >
             <div className="flex items-center justify-between gap-2 mb-1.5">
-                <span className={`font-label text-[9px] tracking-widest ${isLeader ? 'text-accent-secondary' : 'text-white/40'}`}>
+                <span className={`font-label text-xs font-bold tracking-widest ${isLeader ? 'text-accent-secondary' : 'text-white/40'}`}>
                     {member.role}
                 </span>
                 {model && (
@@ -694,11 +988,11 @@ function StripMemberCard({
                 )}
             </div>
 
-            <div className="font-display text-sm text-white/90 truncate leading-none mb-1.5" title={displayName}>
+            <div className="font-display text-sm text-white/90 leading-tight mb-1.5" title={displayName}>
                 {displayName}
             </div>
 
-            <div className="text-[10px] text-primary/70 font-mono truncate" title={member.team_role ?? ''}>
+            <div className="text-[10px] text-primary/70 font-mono leading-tight" title={member.team_role ?? ''}>
                 {member.team_role || 'No Role Assigned'}
             </div>
         </div>
@@ -707,35 +1001,115 @@ function StripMemberCard({
 
 function OperativesDivider() {
     return (
-        <div className="flex items-center gap-2 px-2 text-muted-foreground flex-shrink-0" aria-hidden="true">
-            <div className="h-10 w-px bg-border/70" />
-            <span className="font-label text-xs">OPERATIVES</span>
-            <div className="h-10 w-px bg-border/70" />
+        <div className="flex items-center gap-2 px-4 text-primary/80 flex-shrink-0" aria-hidden="true">
+            <div className="h-12 w-px bg-primary/30" />
+            <span className="font-label text-xs font-bold tracking-widest text-primary/60">OPERATIVES</span>
+            <div className="h-12 w-px bg-primary/30" />
         </div>
     );
 }
 
+const LEADER_RANK = { 'Chair': 1, 'Envoy': 2, 'Watchdog': 3 };
+
 function splitMembersByRole(members: TeamMember[]) {
-    return {
-        leaders: members.filter(member => member.role !== 'Operative'),
-        operatives: members.filter(member => member.role === 'Operative')
+    const leaders = members.filter(member => member.role !== 'Operative');
+    const operatives = members.filter(member => member.role === 'Operative');
+
+    // Sort leaders by rank
+    leaders.sort((a, b) => {
+        const rankA = LEADER_RANK[a.role as keyof typeof LEADER_RANK] ?? 99;
+        const rankB = LEADER_RANK[b.role as keyof typeof LEADER_RANK] ?? 99;
+        return rankA - rankB;
+    });
+
+    return { leaders, operatives };
+}
+
+interface SortableMemberCardProps {
+    member: TeamMember;
+    modelsById: Record<string, LLMModel>;
+    vendorsById: Record<string, Vendor>;
+    isExpanded: boolean;
+    onToggleExpand: () => void;
+    onEdit: () => void;
+    onDelete: () => void;
+    onModelChange: (modelId: string | null) => void;
+    isActive?: boolean;
+}
+
+function SortableMemberCard({
+    member,
+    modelsById,
+    vendorsById,
+    isExpanded,
+    onToggleExpand,
+    onEdit,
+    onDelete,
+    onModelChange,
+    isActive
+}: SortableMemberCardProps) {
+    const {
+        attributes,
+        listeners,
+        setNodeRef,
+        transform,
+        transition,
+        isDragging
+    } = useSortable({ id: member.id });
+
+    const style = {
+        transform: CSS.Transform.toString(transform),
+        transition,
+        opacity: isDragging ? 0.7 : 1,
     };
+
+    return (
+        <div ref={setNodeRef} style={style} className="relative">
+            {/* Drag Handle - positioned at top left of card */}
+            <div
+                {...attributes}
+                {...listeners}
+                className="absolute top-2 left-2 z-10 cursor-grab active:cursor-grabbing text-white/20 hover:text-primary/70 transition-colors p-1 rounded bg-black/60 backdrop-blur-sm"
+                onClick={(e) => e.stopPropagation()}
+            >
+                <GripVertical size={14} />
+            </div>
+
+            <MemberCard
+                member={member}
+                modelsById={modelsById}
+                vendorsById={vendorsById}
+                isExpanded={isExpanded}
+                onToggleExpand={onToggleExpand}
+                onEdit={onEdit}
+                onDelete={onDelete}
+                onModelChange={onModelChange}
+                isActive={isActive}
+            />
+        </div>
+    );
 }
 
 function MemberCard({
     member,
     modelsById,
     vendorsById,
+    isExpanded,
+    onToggleExpand,
     onEdit,
     onDelete,
-    onModelChange
+    onModelChange,
+    isActive = false
 }: {
     member: TeamMember;
     modelsById: Record<string, LLMModel>;
     vendorsById: Record<string, Vendor>;
+    isExpanded: boolean;
+    onToggleExpand: () => void;
     onEdit: () => void;
     onDelete: () => void;
     onModelChange: (modelId: string | null) => void;
+    isActive?: boolean;
 }) {
     const shortRole = shortenTeamRole(member.team_role);
     const displayName = member.name || shortRole || 'Team Member';
@@ -744,13 +1118,40 @@ function MemberCard({
     const isLeader = member.role !== 'Operative';
     const missingFields = getMissingMemberFields(member);
 
+    if (isExpanded) {
+        return (
+            <div
+                onClick={onToggleExpand}
+                className="w-full cursor-pointer transition-all duration-300"
+            >
+                <ExpandedMemberCard
+                    member={member}
+                    modelsById={modelsById}
+                    vendorsById={vendorsById}
+                    onToggleExpand={onToggleExpand}
+                />
+            </div>
+        );
+    }
+
     return (
-        <div className="group relative w-72 flex-shrink-0 bg-black/40 border border-white/10 cyber-chamfer-sm transition-all duration-300 hover:bg-black/60 hover:border-primary/50 hover:shadow-[0_0_20px_rgba(0,255,136,0.1)]">
+        <div
+            onClick={onToggleExpand}
+            className={`group relative w-72 flex-shrink-0 cyber-chamfer-sm transition-all duration-300 cursor-pointer
+                ${isActive
+                    ? 'bg-black/60 border-primary shadow-[0_0_30px_rgba(0,255,136,0.15)] ring-1 ring-primary/50'
+                    : isLeader
+                        ? 'bg-primary/5 border-primary/20 hover:bg-primary/10 hover:border-primary/40'
+                        : 'bg-black/40 border-white/10 hover:bg-black/60 hover:border-primary/50'
+                } 
+                ${!isActive && 'hover:shadow-[0_0_20px_rgba(0,255,136,0.1)]'} 
+                border`}
+        >
             <div className="p-4 space-y-4">
                 <div className="flex items-start justify-between gap-3">
                     <div className="min-w-0">
-                        <div className="flex items-center gap-2 mb-1">
-                            <span className={`font-label text-[9px] tracking-widest uppercase ${isLeader ? 'text-primary' : 'text-white/40'}`}>
+                        <div className="flex items-center gap-2 mb-1 pl-5">
+                            <span className={`font-label text-xs font-bold tracking-widest uppercase ${isLeader ? 'text-primary' : 'text-white/40'}`}>
                                 {member.role}
                             </span>
                             {member.color && (
@@ -819,13 +1220,7 @@ function MemberCard({
 
 
 
-                {/* Additional Info - Only show if space permits or on hover? keeping simple for now */}
-                {(member.life_story || member.special_orders) && (
-                    <div className="pt-2 border-t border-white/10 flex gap-2">
-                        {member.life_story && <div className="w-1.5 h-1.5 rounded-full bg-blue-400/50" title="Has Life Story" />}
-                        {member.special_orders && <div className="w-1.5 h-1.5 rounded-full bg-amber-400/50" title="Has Special Orders" />}
-                    </div>
-                )}
+
             </div>
 
             {missingFields.length > 0 && (
@@ -837,7 +1232,151 @@ function MemberCard({
     );
 }
 
+function ExpandedMemberCard({
+    member,
+    modelsById,
+    vendorsById,
+    onToggleExpand
+}: {
+    member: TeamMember;
+    modelsById: Record<string, LLMModel>;
+    vendorsById: Record<string, Vendor>;
+    onToggleExpand: () => void;
+}) {
+    const model = member.model_id ? modelsById[String(member.model_id)] : undefined;
+    const vendor = model ? vendorsById[String(model.vendor_id)] : undefined;
+    const vendorName = vendor?.display_name || 'Unknown';
+    const modelName = model ? (model.name_within_family?.trim() || model.modelName) : 'No Model Assigned';
+    const characteristics = normalizeList(member.characteristics);
+    const isLeader = member.role !== 'Operative';
 
+    return (
+        <div className="group relative overflow-hidden rounded-xl border bg-black/60 backdrop-blur-md transition-all duration-300 border-primary/30 shadow-[0_0_50px_rgba(0,0,0,0.7)] ring-1 ring-primary/20">
+            {/* Background Effects */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-10" />
+            <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20 pointer-events-none" />
+
+            <div className="relative z-10 p-6 space-y-6">
+                {/* Header Section: 3 Columns */}
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                    {/* Column 1: Identity */}
+                    <div className="space-y-4">
+                        <div className="space-y-2">
+                            <div className="flex items-center gap-3">
+                                <span className={`font-label text-xs tracking-widest uppercase px-2 py-1 rounded ${isLeader ? 'bg-primary/20 text-primary border border-primary/30' : 'bg-white/5 text-white/40 border border-white/10'}`}>
+                                    {member.role}
+                                </span>
+                                {member.color && (
+                                    <div className="flex items-center gap-2 px-2 py-1 rounded bg-white/5 border border-white/10">
+                                        <div className="w-3 h-3 rounded-full shadow-[0_0_8px_currentColor]" style={{ backgroundColor: member.color, color: member.color }} />
+                                        <span className="text-xs text-white/60 font-mono">{member.color}</span>
+                                    </div>
+                                )}
+                            </div>
+                            <h3 className="font-display text-3xl text-primary tracking-wide">
+                                {member.name || 'Unnamed Member'}
+                            </h3>
+                            <div className="text-sm text-white/70 font-medium">{member.team_role || 'No Team Role Assigned'}</div>
+                        </div>
+
+                        {/* Member ID Badge */}
+                        <div className="opacity-50 hover:opacity-100 transition-opacity">
+                            <IdBadge id={member.id} />
+                        </div>
+                    </div>
+
+                    {/* Column 2: Model Assignment */}
+                    <div className="space-y-4 p-5 rounded-xl border border-white/10 bg-white/5 h-fit">
+                        <div className="text-xs text-accent-secondary tracking-widest font-label border-b border-white/10 pb-2">
+                            MODEL ASSIGNMENT
+                        </div>
+                        {model ? (
+                            <div className="space-y-3">
+                                <div className="flex items-center gap-3">
+                                    <div className="w-10 h-10 rounded-lg overflow-hidden opacity-80 shrink-0 border border-white/10">
+                                        <img
+                                            src={getVendorIcon(vendorName, '')}
+                                            alt={vendorName}
+                                            className="w-full h-full object-contain"
+                                            onError={(e) => {
+                                                (e.target as HTMLImageElement).src = '/llm-icons/ai-placeholder.png';
+                                            }}
+                                        />
+                                    </div>
+                                    <div className="space-y-1">
+                                        <div className="text-xs text-white/40 font-mono">{vendorName}</div>
+                                        <div className="font-display text-lg text-white">{modelName}</div>
+                                    </div>
+                                </div>
+                                {model.contextK && (
+                                    <div className="text-xs text-white/50 font-mono">
+                                        Context: {model.contextK}
+                                    </div>
+                                )}
+                            </div>
+                        ) : (
+                            <div className="text-sm text-white/40 font-mono">No Model Assigned</div>
+                        )}
+                    </div>
+
+                    {/* Column 3: Stats & Indicators */}
+                    <div className="space-y-4">
+                        {characteristics.length > 0 && (
+                            <div className="p-5 rounded-xl border border-white/10 bg-white/5">
+                                <div className="text-xs text-primary tracking-widest font-label border-b border-white/10 pb-2 mb-3">
+                                    CHARACTERISTICS ({characteristics.length})
+                                </div>
+                                <div className="flex flex-wrap gap-2">
+                                    {characteristics.map((char, i) => (
+                                        <span key={i} className="px-2.5 py-1 rounded bg-white/5 border border-white/10 text-xs text-white/70 font-mono">
+                                            {char}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Status Indicators */}
+                        <div className="grid grid-cols-2 gap-2">
+                            <div className={`p-3 rounded-lg border ${member.life_story ? 'border-blue-400/30 bg-blue-400/10' : 'border-white/10 bg-white/5'}`}>
+                                <div className="text-[10px] text-white/40 font-label uppercase mb-1">Life Story</div>
+                                <div className={`text-xs font-mono ${member.life_story ? 'text-blue-400' : 'text-white/30'}`}>
+                                    {member.life_story ? '✓ SET' : '— NONE'}
+                                </div>
+                            </div>
+                            <div className={`p-3 rounded-lg border ${member.special_orders ? 'border-amber-400/30 bg-amber-400/10' : 'border-white/10 bg-white/5'}`}>
+                                <div className="text-[10px] text-white/40 font-label uppercase mb-1">Special Orders</div>
+                                <div className={`text-xs font-mono ${member.special_orders ? 'text-amber-400' : 'text-white/30'}`}>
+                                    {member.special_orders ? '✓ SET' : '— NONE'}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Life Story Section */}
+                {member.life_story && (
+                    <div className="p-6 rounded-xl border border-white/5 bg-white/5">
+                        <h4 className="text-xs text-white/50 font-label mb-3 uppercase tracking-widest">Life Story</h4>
+                        <p className="text-sm text-white/70 leading-relaxed font-mono whitespace-pre-line">
+                            {member.life_story}
+                        </p>
+                    </div>
+                )}
+
+                {/* Special Orders Section */}
+                {member.special_orders && (
+                    <div className="p-6 rounded-xl border border-white/5 bg-white/5">
+                        <h4 className="text-xs text-white/50 font-label mb-3 uppercase tracking-widest">Special Orders</h4>
+                        <p className="text-sm text-white/70 leading-relaxed font-mono whitespace-pre-line">
+                            {member.special_orders}
+                        </p>
+                    </div>
+                )}
+            </div>
+        </div>
+    );
+}
 
 
 function IdBadge({ id }: { id: string }) {

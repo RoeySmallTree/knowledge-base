@@ -1,17 +1,26 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { LLMModel, Team, TeamMember, Vendor } from './types';
-import { useModels, useArchivedModels, useVendors, useTeams, useMembers } from './hooks/useQueries';
+import { LLMModel, Team, TeamMember, Vendor, TeamCategory, AppUser } from './types';
+import { useModels, useArchivedModels, useVendors, useTeams, useMembers, useExploreModels, useSessions, useUsers, useUpdateUser } from './hooks/useQueries';
+import { useModelSettings } from './hooks/useModelSettings';
 import { useUpdateModel, useCreateModel, useArchiveRestoreModel, useDeleteModel, useUpdateModels, useCreateTeam, useUpdateTeam, useDeleteTeam, useDuplicateTeam, useCreateMember, useUpdateMember, useDeleteMember } from './hooks/useMutations';
 import { ModelTable } from './components/ModelTable';
 import { ModelSidebar } from './components/ModelSidebar';
+import { ExploreSidebar } from './components/ExploreSidebar';
+import { ExploreFilters } from './components/ExploreFilters';
 import { EditModal } from './components/EditModal';
 import { FilterPanel, FilterState } from './components/FilterPanel';
 import { ArchivedModal } from './components/ArchivedModal';
 import { TeamsView } from './components/TeamsView';
-import { Loader2, Plus, Search, Compass } from 'lucide-react';
+import { Loader2, Plus, Search, Compass, AlertTriangle, Box, LayoutGrid, Users, Activity, Tags as TagIcon } from 'lucide-react';
 import { GlitchLoader } from './components/GlitchLoader';
 import { TeamsSidebar } from './components/TeamsSidebar';
 import { ExploreView } from './components/ExploreView';
+import { UsersView } from './components/UsersView';
+import { SessionsView } from './components/SessionsView';
+import { SessionsSidebar } from './components/SessionsSidebar';
+import { CreateSessionModal } from './components/CreateSessionModal';
+import { UsersSidebar } from './components/UsersSidebar';
+
 
 const STORAGE_KEYS = {
     activeTab: 'cabal.ui.activeTab',
@@ -20,6 +29,8 @@ const STORAGE_KEYS = {
         teams: 'cabal.ui.scroll.teams'
     }
 };
+
+const CATEGORY_ORDER: TeamCategory[] = ['CORTEX', 'VITALS', 'OPS', 'ARCADE'];
 
 const readStorage = (key: string) => {
     if (typeof window === 'undefined') return null;
@@ -42,10 +53,13 @@ const writeStorage = (key: string, value: string) => {
 function App() {
     // React Query Hooks
     const { data: activeModelsData, isLoading: isLoadingModels, error: modelsError } = useModels();
+    const { data: exploreModelsData } = useExploreModels();
     const { data: archivedModelsData, isLoading: isLoadingArchived } = useArchivedModels();
     const { data: vendorsData, isLoading: isLoadingVendors } = useVendors();
     const { data: teamsData, isLoading: isLoadingTeams, error: teamsErrorObj } = useTeams();
     const { data: membersData, isLoading: isLoadingMembers, error: membersErrorObj } = useMembers();
+    const { data: sessionsData, isLoading: isLoadingSessions, error: sessionsErrorObj } = useSessions();
+    const { data: usersData, isLoading: isLoadingUsers, error: usersErrorObj } = useUsers();
 
     // Mutations
     // Mutations
@@ -64,6 +78,8 @@ function App() {
     const updateMemberMutation = useUpdateMember();
     const deleteMemberMutation = useDeleteMember();
 
+    const updateUserMutation = useUpdateUser();
+
     const archiveRestoreMutation = useArchiveRestoreModel();
     const deleteModelMutation = useDeleteModel();
 
@@ -71,16 +87,90 @@ function App() {
     const data = activeModelsData;
     const archivedData = archivedModelsData;
 
-
     // Safety checks for arrays
     const models = data?.models || [];
     const archivedModels = archivedData?.models || [];
     const vendors = vendorsData?.vendors || [];
 
-    const loading = isLoadingModels || isLoadingArchived || isLoadingVendors || isLoadingTeams || isLoadingMembers;
+    const loading = isLoadingModels || isLoadingArchived || isLoadingVendors || isLoadingTeams || isLoadingMembers || isLoadingSessions || isLoadingUsers;
     const error = modelsError ? (modelsError as Error).message : null;
     const teamsError = teamsErrorObj ? (teamsErrorObj as Error).message : null;
     const membersError = membersErrorObj ? (membersErrorObj as Error).message : null;
+    const sessionsError = sessionsErrorObj ? (sessionsErrorObj as Error).message : null;
+    const usersError = usersErrorObj ? (usersErrorObj as Error).message : null;
+
+    // Explore Logic
+    const [hideOwned, setHideOwned] = useState(true);
+    const [hideIrrelevant, setHideIrrelevant] = useState(true);
+    const [exploreSearchQuery, setExploreSearchQuery] = useState('');
+    const [createdAfter, setCreatedAfter] = useState<number | null>(null);
+
+    // Users Logic
+    const [userSearchQuery, setUserSearchQuery] = useState('');
+    const [userPlanFilter, setUserPlanFilter] = useState<string[]>([]);
+    const [userTypeFilter, setUserTypeFilter] = useState<string[]>([]);
+
+    // Sessions Logic
+    const [sessionSearchQuery, setSessionSearchQuery] = useState('');
+    const [sessionStatusFilter, setSessionStatusFilter] = useState<'all' | 'Live' | 'Pending' | 'Halted'>('all');
+    const [isCreateSessionOpen, setIsCreateSessionOpen] = useState(false);
+
+    // Settings Hook
+    const { settings: modelSettings, updateSettings } = useModelSettings();
+
+    const { ownedApiIds, exploreStats, latestOwnedDate, filteredExploreModels } = useMemo(() => {
+        const owned = new Set<string>();
+        [...models, ...archivedModels].forEach(m => {
+            if (m.api_id) owned.add(m.api_id);
+        });
+
+        const remoteModels = exploreModelsData?.data || [];
+
+        // Calculate last owned date
+        let maxOwnedDate = 0;
+        remoteModels.forEach(m => {
+            if (owned.has(m.id)) {
+                if (m.created > maxOwnedDate) maxOwnedDate = m.created;
+            }
+        });
+
+        // Helper to check match
+        const matchesSearch = (m: any) => {
+            if (!exploreSearchQuery) return true;
+            const q = exploreSearchQuery.toLowerCase();
+            return m.name.toLowerCase().includes(q) || m.id.toLowerCase().includes(q);
+        };
+
+        const matchesDate = (m: any) => {
+            if (createdAfter === null) return true;
+            return m.created >= createdAfter;
+        }
+
+        const isIrrelevant = (m: any) => {
+            if (!hideIrrelevant) return false;
+            return modelSettings?.irrelevant_models_api_keys?.includes(m.id);
+        }
+
+        const total = remoteModels.length;
+        const ownedCount = remoteModels.filter(m => owned.has(m.id)).length;
+
+        // Shown count should reflect ALL filters: hideOwned AND search AND date AND irrelevant
+        const filteredExploreModels = remoteModels.filter(m => {
+            if (hideOwned && owned.has(m.id)) return false;
+            if (isIrrelevant(m)) return false;
+            if (!matchesSearch(m)) return false;
+            if (!matchesDate(m)) return false;
+            return true;
+        });
+
+        return {
+            ownedApiIds: owned,
+            exploreStats: { total, owned: ownedCount, shown: filteredExploreModels.length },
+            latestOwnedDate: maxOwnedDate || undefined,
+            filteredExploreModels
+        };
+    }, [models, archivedModels, exploreModelsData, hideOwned, exploreSearchQuery, createdAfter, hideIrrelevant, modelSettings]);
+
 
     // Memoized Lookups
     const vendorById = useMemo(() => {
@@ -108,18 +198,20 @@ function App() {
 
     const getModelKey = (model: LLMModel) => {
         const idPart = model.id ? String(model.id) : model.modelName;
-        return `${model.vendor_id}-${idPart}-${model.modelFamily}`;
+        return `${model.vendor_id} -${idPart} -${model.modelFamily} `;
     };
 
     // UI State
     const [searchQuery, setSearchQuery] = useState('');
     const [teamSearchQuery, setTeamSearchQuery] = useState('');
     const [savedFilter, setSavedFilter] = useState<'all' | 'saved' | 'not-saved'>('saved');
+    const [missingFieldsFilter, setMissingFieldsFilter] = useState<string[]>([]);
     const [createTeamSignal, setCreateTeamSignal] = useState(0);
+    const [expandedCategories, setExpandedCategories] = useState<Set<TeamCategory>>(new Set()); // Shared state
     const [activeTab, setActiveTab] = useState<'models' | 'teams' | 'users' | 'tags' | 'sessions' | 'explore'>(() => {
         const stored = readStorage(STORAGE_KEYS.activeTab);
         // Validate stored value is one of the valid tabs, otherwise default to models
-        if (['models', 'teams', 'users', 'tags', 'sessions'].includes(stored || '')) {
+        if (['models', 'teams', 'users', 'tags', 'sessions', 'explore'].includes(stored || '')) {
             return stored as any;
         }
         return 'models';
@@ -216,6 +308,10 @@ function App() {
 
     const handleMemberCreate = (member: TeamMember) => {
         createMemberMutation.mutate(member);
+    };
+
+    const handleUserUpdate = (updatedUser: AppUser) => {
+        updateUserMutation.mutate(updatedUser);
     };
 
     const updateModelsData = async (updatedModels: LLMModel[]) => {
@@ -323,6 +419,53 @@ function App() {
         };
         setEditingModel(newModel);
         setIsModalOpen(true);
+    };
+
+    const handleHideModel = (modelId: string) => {
+        if (!modelId) {
+            console.error('handleHideModel: modelId is required');
+            return;
+        }
+
+        // Ensure modelSettings is loaded before proceeding
+        if (!modelSettings || !modelSettings.irrelevant_models_api_keys) {
+            console.error('handleHideModel: modelSettings not loaded yet');
+            return;
+        }
+
+        const currentIgnored = modelSettings.irrelevant_models_api_keys;
+
+        // Check if already in list to avoid duplicates
+        if (currentIgnored.includes(modelId)) {
+            console.log(`Model ${modelId} is already marked as irrelevant`);
+            return;
+        }
+
+        try {
+            updateSettings({
+                irrelevant_models_api_keys: [...currentIgnored, modelId]
+            });
+        } catch (err) {
+            console.error('Failed to update irrelevant models settings:', err);
+        }
+    };
+
+    const handleToggleCategory = (category: TeamCategory) => {
+        setExpandedCategories(prev => {
+            const next = new Set(prev);
+            if (next.has(category)) next.delete(category);
+            else next.add(category);
+            return next;
+        });
+    };
+
+    const handleExpandCategory = (category: TeamCategory) => {
+        setExpandedCategories(prev => {
+            if (prev.has(category)) return prev;
+            const next = new Set(prev);
+            next.add(category);
+            return next;
+        });
     };
 
 
@@ -440,6 +583,44 @@ function App() {
             teams = teams.filter(t => !t.is_public);
         }
 
+        // Apply missing fields filter
+        if (missingFieldsFilter.length > 0) {
+            teams = teams.filter(team => {
+                const teamMembers = membersData?.members.filter(m => m.team_id === team.id) || [];
+
+                // Check each selected missing field/role
+                return missingFieldsFilter.some(field => {
+                    switch (field) {
+                        case 'chair':
+                            return !teamMembers.some(m => m.role?.toLowerCase() === 'chair');
+                        case 'watchdog':
+                            return !teamMembers.some(m => m.role?.toLowerCase() === 'watchdog');
+                        case 'envoy':
+                            return !teamMembers.some(m => m.role?.toLowerCase() === 'envoy');
+                        case 'operatives':
+                            return !teamMembers.some(m => m.role?.toLowerCase() === 'operative');
+                        case 'name':
+                            return !team.name || team.name.trim() === '';
+                        case 'description':
+                            return !team.description || team.description.trim() === '';
+                        case 'catch_phrase':
+                            return !team.catch_phrase || team.catch_phrase.trim() === '';
+                        case 'category':
+                            return !team.category;
+                        case 'quick_starts':
+                            return !team.quick_starts || team.quick_starts.length === 0;
+                        case 'default_rounds':
+                            return team.default_starting_rounds === null || team.default_starting_rounds === undefined;
+                        case 'bootstrap_prompt':
+                            return !team.bootstrap_prompt || team.bootstrap_prompt.trim() === '';
+                        default:
+                            return false;
+                    }
+                });
+            });
+        }
+
+        // Apply search filter
         if (!teamSearchQuery) return teams;
 
         const query = teamSearchQuery.toLowerCase();
@@ -455,7 +636,124 @@ function App() {
                 member.team_role?.toLowerCase().includes(query)
             );
         });
-    }, [teamsData, membersData, teamSearchQuery, savedFilter]);
+    }, [teamsData, membersData, teamSearchQuery, savedFilter, publicFilter, missingFieldsFilter]);
+
+    const filteredSessions = useMemo(() => {
+        if (!sessionsData?.sessions) return [];
+
+        let sessions = sessionsData.sessions;
+
+        // Search Filter
+        if (sessionSearchQuery) {
+            const lowerQuery = sessionSearchQuery.toLowerCase();
+            sessions = sessions.filter(s =>
+                s.name.toLowerCase().includes(lowerQuery) ||
+                s.team_name.toLowerCase().includes(lowerQuery) ||
+                s.user_name.toLowerCase().includes(lowerQuery)
+            );
+        }
+
+        // Status Filter
+        if (sessionStatusFilter !== 'all') {
+            sessions = sessions.filter(s => s.status === sessionStatusFilter);
+        }
+
+        return sessions;
+    }, [sessionsData, sessionSearchQuery, sessionStatusFilter]);
+
+    const filteredUsers = useMemo(() => {
+        if (!usersData?.users) return [];
+
+        let users = usersData.users;
+
+        // Search Filter
+        if (userSearchQuery) {
+            const lowerQuery = userSearchQuery.toLowerCase();
+            users = users.filter(u =>
+                (u.display_name || '').toLowerCase().includes(lowerQuery) ||
+                u.email.toLowerCase().includes(lowerQuery)
+            );
+        }
+
+        // Plan Filter
+        if (userPlanFilter.length > 0) {
+            users = users.filter(u => userPlanFilter.includes(u.plan_name || 'No Plan'));
+        }
+
+        // Type Filter
+        if (userTypeFilter.length > 0) {
+            users = users.filter(u => userTypeFilter.includes(u.type));
+        }
+
+        return users;
+    }, [usersData, userSearchQuery, userPlanFilter, userTypeFilter]);
+
+    const handleImportModel = (model: any) => {
+        // Validate required fields
+        if (!model || !model.id) {
+            console.error('handleImportModel: model or model.id is missing');
+            return;
+        }
+
+        if (!model.pricing || typeof model.pricing.prompt === 'undefined' || typeof model.pricing.completion === 'undefined') {
+            console.error('handleImportModel: model pricing data is missing');
+            return;
+        }
+
+        if (typeof model.context_length !== 'number') {
+            console.error('handleImportModel: model.context_length is not a number');
+            return;
+        }
+
+        // Parse pricing - OpenRouter API returns prices in dollars per token (e.g., 0.00000028)
+        // For modal display, we want dollars per 1M tokens (e.g., 0.28)
+        // OpenRouter value × 1,000,000 = dollars per 1M tokens (for display in modal)
+        // Modal will multiply by 1M again when saving to get micro value for DB
+        const promptPrice = parseFloat(model.pricing.prompt) * 1000000;
+        const completionPrice = parseFloat(model.pricing.completion) * 1000000;
+
+        // Validate parsed prices
+        if (!Number.isFinite(promptPrice) || !Number.isFinite(completionPrice)) {
+            console.error('handleImportModel: Invalid pricing values', { promptPrice, completionPrice });
+            return;
+        }
+
+        const contextK = Math.round(model.context_length / 1024).toString();
+
+        // Extract vendor from model ID
+        const modelIdParts = model.id.split('/');
+        if (modelIdParts.length < 2) {
+            console.error('handleImportModel: Invalid model.id format, expected "vendor/model"');
+            return;
+        }
+
+        const vendorId = modelIdParts[0];
+        const matchingVendor = vendors.find(v => v.display_name.toLowerCase() === vendorId.toLowerCase());
+
+        const newModel: LLMModel = {
+            vendor_id: matchingVendor ? matchingVendor.id : '', // User can select
+            modelFamily: '',
+            modelName: model.name || '',
+            name_within_family: model.name || '',
+            display_order: 0,
+            description: model.description || '',
+            contextK: contextK,
+            personalityTraits: '',
+            analyticalTraits: '',
+            bestFor: '',
+            optimalTeamExamples: '',
+            creativeScore: 0,
+            deductiveScore: 0,
+            efficiencyScore: 0,
+            specialPropertiesNotes: '',
+            pricing: { prompt: promptPrice, completion: completionPrice, tier: 1 },
+            active: true,
+            api_id: model.id,
+            slug: modelIdParts.pop() || '' // suggested slug
+        };
+        setEditingModel(newModel);
+        setIsModalOpen(true);
+    };
 
     if (loading) {
         return <GlitchLoader />;
@@ -481,27 +779,35 @@ function App() {
                     </div>
 
                     {/* Navigation Tabs */}
-                    <nav className="flex items-center h-full gap-1 ml-12">
+                    <nav className="flex items-center h-full gap-2 ml-12">
                         {[
-                            { id: 'models', label: 'MODELS' },
-                            ...(activeTab === 'explore' ? [{ id: 'explore', label: '', icon: Compass }] : []),
-                            { id: 'teams', label: 'TEAMS' },
-                            { id: 'users', label: 'USERS' },
-                            { id: 'tags', label: 'TAGS' },
-                            { id: 'sessions', label: 'SESSIONS' }
+                            { id: 'models', label: 'MODELS', icon: Box },
+                            { id: 'explore', label: 'EXPLORE', icon: Compass },
+                            { id: 'teams', label: 'TEAMS', icon: LayoutGrid },
+                            { id: 'users', label: 'USERS', icon: Users },
+                            { id: 'sessions', label: 'SESSIONS', icon: Activity },
+                            { id: 'tags', label: 'TAGS', icon: TagIcon }
                         ].map(tab => (
                             <button
                                 key={tab.id}
                                 onClick={() => setActiveTab(tab.id as any)}
                                 className={`
-                                    h-full px-6 font-label text-sm tracking-widest transition-all duration-200 relative
-                                    flex items-center justify-center
-                                    ${activeTab === tab.id ? 'cyber-tab-active' : 'cyber-tab-inactive'}
-                                `}
+                                relative h-10 px-4 rounded transition-all duration-300 group
+                                flex items-center gap-2
+                                ${activeTab === tab.id
+                                        ? 'text-primary bg-primary/10 border border-primary/20 shadow-[0_0_10px_rgba(0,255,136,0.15)]'
+                                        : 'text-white/40 hover:text-white hover:bg-white/5 border border-transparent'}
+                            `}
                             >
-                                {tab.icon ? <tab.icon size={24} className="animate-pulse text-primary" /> : tab.label}
+                                <tab.icon
+                                    size={14}
+                                    className={`transition-transform duration-300 ${activeTab === tab.id ? 'scale-110' : 'group-hover:scale-110'}`}
+                                />
+                                <span className="font-label text-xs tracking-widest">{tab.label}</span>
+
+                                {/* Active Indicator (Bottom Glow) */}
                                 {activeTab === tab.id && (
-                                    <span className="absolute bottom-0 left-0 w-full h-[1px] bg-primary shadow-[0_0_10px_rgba(0,255,136,0.8)]" />
+                                    <div className="absolute -bottom-[13px] left-1/2 -translate-x-1/2 w-12 h-[2px] bg-primary shadow-[0_0_8px_rgba(0,255,136,0.8)]" />
                                 )}
                             </button>
                         ))}
@@ -522,7 +828,7 @@ function App() {
                 {/* Left Sidebar */}
                 <aside className="hidden lg:flex flex-col min-h-0 border-r border-white/10 bg-black/40 backdrop-blur-sm">
                     <div ref={leftPanelRef} className="flex-1 overflow-y-auto cyber-scroll p-4">
-                        {(activeTab === 'models' || activeTab === 'explore') && !loading && data && vendorsData && (
+                        {activeTab === 'models' && !loading && data && vendorsData && (
                             <ModelSidebar
                                 models={filteredModels}
                                 vendorsById={vendorById}
@@ -532,9 +838,16 @@ function App() {
                                 totalModels={data.totalModels}
                                 archivedCount={archivedData?.totalModels || 0}
                                 onOpenArchive={() => setIsArchiveOpen(true)}
-                                onExplore={() => setActiveTab('explore')} // Added onExplore prop
+                                onExplore={() => setActiveTab('explore')}
                                 scrollRootRef={scrollRootRef}
+                            />
+                        )}
 
+                        {activeTab === 'explore' && !loading && (
+                            <ExploreSidebar
+                                total={exploreStats.total}
+                                shown={exploreStats.shown}
+                                owned={exploreStats.owned}
                             />
                         )}
 
@@ -542,13 +855,36 @@ function App() {
                             <TeamsSidebar
                                 teams={filteredTeams}
                                 members={membersData.members}
+                                expandedCategories={expandedCategories}
+                                onToggleCategory={handleToggleCategory}
+                                onExpandCategory={handleExpandCategory}
                                 scrollRootRef={scrollRootRef}
                                 navRootRef={leftPanelRef}
+
+                            />
+                        )}
+
+                        {activeTab === 'sessions' && !loading && sessionsData && (
+                            <SessionsSidebar
+                                totalSessions={sessionsData.sessions.length}
+                                searchQuery={sessionSearchQuery}
+                                onSearchChange={setSessionSearchQuery}
+                                statusFilter={sessionStatusFilter}
+                                onStatusChange={setSessionStatusFilter}
+                                onNewSession={() => setIsCreateSessionOpen(true)}
+                            />
+                        )}
+
+                        {activeTab === 'users' && !loading && usersData && (
+                            <UsersSidebar
+                                users={filteredUsers}
+                                activeUserSearchQuery={userSearchQuery}
+                                onUserSearchQueryChange={setUserSearchQuery}
                             />
                         )}
 
                         {/* Placeholders for new tabs sidebar content - or empty if none needed yet */}
-                        {(activeTab === 'users' || activeTab === 'tags' || activeTab === 'sessions') && (
+                        {(activeTab === 'tags') && (
                             <div className="p-4 text-white/30 font-mono text-xs text-center border border-white/5 rounded-lg border-dashed">
                                 NO_INDEXING_DATA
                             </div>
@@ -593,9 +929,14 @@ function App() {
                                     </div>
                                 )}
                             </div>
-                        ) : activeTab === 'explore' ? ( // Added ExploreView rendering
+                        ) : activeTab === 'explore' ? (
                             <div className="h-full">
-                                <ExploreView />
+                                <ExploreView
+                                    activeModels={filteredExploreModels}
+                                    ownedApiIds={ownedApiIds}
+                                    onHideModel={handleHideModel}
+                                    onImportModel={handleImportModel}
+                                />
                             </div>
                         ) : activeTab === 'teams' ? (
                             <div className="min-h-[50vh] max-w-7xl mx-auto">
@@ -620,6 +961,8 @@ function App() {
                                             members={membersData?.members ?? []}
                                             modelsById={modelsById}
                                             vendorsById={vendorById}
+                                            expandedCategories={expandedCategories}
+                                            onToggleCategory={handleToggleCategory}
                                             onTeamUpdate={handleTeamUpdate}
                                             onTeamCreate={handleTeamCreate}
                                             onTeamDelete={handleTeamDelete}
@@ -632,19 +975,45 @@ function App() {
                                     </>
                                 )}
                             </div>
+                        ) : activeTab === 'users' ? (
+                            <div className="min-h-[50vh] max-w-7xl mx-auto">
+                                {!loading && usersData ? (
+                                    <UsersView
+                                        users={filteredUsers}
+                                        activeUserSearchQuery={userSearchQuery}
+                                        filters={{
+                                            plans: userPlanFilter,
+                                            types: userTypeFilter
+                                        }}
+                                        onUpdateUser={handleUserUpdate}
+                                    />
+                                ) : (
+                                    <div className="flex h-64 items-center justify-center text-primary">
+                                        <Loader2 className="animate-spin" size={32} />
+                                    </div>
+                                )}
+                            </div>
+                        ) : activeTab === 'tags' ? (
+                            <div className="flex h-64 items-center justify-center text-white/30 font-mono">
+                                COMPONENT_NOT_MOUNTED
+                            </div>
+                        ) : activeTab === 'sessions' ? (
+                            <div className="h-full">
+                                {loading ? (
+                                    <div className="flex h-64 items-center justify-center text-primary">
+                                        <Loader2 className="animate-spin" size={32} />
+                                    </div>
+                                ) : sessionsError ? (
+                                    <div className="cyber-panel cyber-chamfer-sm border border-destructive/40 p-6 text-destructive">
+                                        ERROR: {sessionsError}
+                                    </div>
+                                ) : (
+                                    <SessionsView sessions={filteredSessions} />
+                                )}
+                            </div>
                         ) : (
-                            <div className="flex items-center justify-center h-full">
-                                <div className="text-center space-y-4">
-                                    <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white/5 border border-white/10 mb-2">
-                                        <div className="w-8 h-8 rounded-full bg-white/10 animate-pulse" />
-                                    </div>
-                                    <div className="font-display text-2xl text-white/40 tracking-widest">
-                                        SECTION_UNDER_CONSTRUCTION
-                                    </div>
-                                    <div className="font-mono text-xs text-primary/60">
-                                        MODULE: {activeTab.toUpperCase()} // STATUS: PENDING implementation
-                                    </div>
-                                </div>
+                            <div className="flex h-64 items-center justify-center text-white/30 font-mono">
+                                COMPONENT_NOT_MOUNTED
                             </div>
                         )}
                     </div>
@@ -663,9 +1032,45 @@ function App() {
                             />
                         )}
 
+                        {activeTab === 'explore' && !loading && (
+                            <ExploreFilters
+                                hideOwned={hideOwned}
+                                onToggleHideOwned={setHideOwned}
+                                hideIrrelevant={hideIrrelevant}
+                                onToggleHideIrrelevant={setHideIrrelevant}
+                                onClear={() => {
+                                    setHideOwned(false);
+                                    setExploreSearchQuery('');
+                                    setCreatedAfter(null);
+                                    setHideIrrelevant(true);
+                                }}
+                                searchQuery={exploreSearchQuery}
+                                onSearchChange={setExploreSearchQuery}
+                                createdAfter={createdAfter}
+                                onCreatedAfterChange={setCreatedAfter}
+                                lastOwnedDate={latestOwnedDate}
+                            />
+                        )}
+
                         {activeTab === 'teams' && !loading && teamsData && membersData && (
                             <div className="space-y-6">
-                                <div className="font-label text-xs text-secondary tracking-widest pl-1">TEAM_INTEL</div>
+
+                                <div className="flex items-center justify-between">
+                                    <div className="font-label text-xs text-secondary tracking-widest pl-1">TEAM_INTEL</div>
+                                    {(teamSearchQuery || savedFilter !== 'saved' || publicFilter !== 'all' || missingFieldsFilter.length > 0) && (
+                                        <button
+                                            onClick={() => {
+                                                setTeamSearchQuery('');
+                                                setSavedFilter('saved');
+                                                setPublicFilter('all');
+                                                setMissingFieldsFilter([]);
+                                            }}
+                                            className="text-[10px] text-destructive hover:text-destructive/80 font-bold tracking-wider transition-colors border-b border-destructive/30 hover:border-destructive/60 pb-0.5"
+                                        >
+                                            CLEAR_FILTERS
+                                        </button>
+                                    )}
+                                </div>
 
                                 <button
                                     onClick={() => setCreateTeamSignal(prev => prev + 1)}
@@ -765,18 +1170,134 @@ function App() {
                                         })}
                                     </div>
                                 </div>
+
+                                <div className="bg-black/40 border border-white/10 cyber-chamfer-sm p-4 space-y-3">
+                                    <div className="font-label text-xs text-amber-500/80 tracking-widest mb-1 flex items-center gap-2">
+                                        <AlertTriangle size={12} />
+                                        DATA_QUALITY
+                                    </div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {[
+                                            { id: 'chair', label: 'NO_CHAIR' },
+                                            { id: 'watchdog', label: 'NO_WATCHDOG' },
+                                            { id: 'envoy', label: 'NO_ENVOY' },
+                                            { id: 'operatives', label: 'NO_OPS' },
+                                            { id: 'name', label: 'NO_NAME' },
+                                            { id: 'description', label: 'NO_DESC' },
+                                            { id: 'catch_phrase', label: 'NO_PHRASE' },
+                                            { id: 'bootstrap_prompt', label: 'NO_PROMPT' }
+                                        ].map(filter => {
+                                            const isActive = missingFieldsFilter.includes(filter.id);
+                                            return (
+                                                <button
+                                                    key={filter.id}
+                                                    onClick={() => {
+                                                        if (isActive) {
+                                                            setMissingFieldsFilter(current => current.filter(f => f !== filter.id));
+                                                        } else {
+                                                            setMissingFieldsFilter(current => [...current, filter.id]);
+                                                        }
+                                                    }}
+                                                    className={`
+                                                        py-2 px-2 rounded border text-[9px] font-bold tracking-wider transition-all
+                                                        flex items-center justify-center text-center
+                                                        ${isActive
+                                                            ? 'bg-amber-500/10 border-amber-500 text-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.2)]'
+                                                            : 'bg-white/5 border-white/5 text-white/40 hover:bg-white/10 hover:text-white/60'}
+                                                    `}
+                                                >
+                                                    {filter.label}
+                                                </button>
+                                            );
+                                        })}
+                                    </div>
+                                </div>
                             </div>
                         )}
 
-                        {(activeTab === 'users' || activeTab === 'tags' || activeTab === 'sessions') && (
-                            <div className="p-4 text-white/30 font-mono text-xs text-center">
-                                AWAITING_MODULE_LOAD...
+                        {activeTab === 'users' && (
+                            <div className="space-y-6">
+                                {/* Search */}
+                                <div className="space-y-2">
+                                    <div className="flex items-center gap-2 text-xs font-bold text-primary/60 tracking-widest">
+                                        <Search size={14} />
+                                        SEARCH_USERS
+                                    </div>
+                                    <input
+                                        type="text"
+                                        value={userSearchQuery}
+                                        onChange={(e) => setUserSearchQuery(e.target.value)}
+                                        placeholder="SEARCH_NAME_EMAIL..."
+                                        className="w-full bg-black/60 border border-white/10 rounded-lg pl-3 pr-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono cyber-chamfer-sm"
+                                    />
+                                </div>
+
+                                {/* Plan Filter */}
+                                <div className="space-y-3">
+                                    <div className="text-[10px] font-bold text-white/40 mb-1">PLAN_TYPE</div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {['Free', 'Pro', 'Team', 'Enterprise', 'No Plan'].map(plan => (
+                                            <button
+                                                key={plan}
+                                                onClick={() => {
+                                                    if (userPlanFilter.includes(plan)) {
+                                                        setUserPlanFilter(prev => prev.filter(p => p !== plan));
+                                                    } else {
+                                                        setUserPlanFilter(prev => [...prev, plan]);
+                                                    }
+                                                }}
+                                                className={`
+                                                    px-2 py-1.5 text-[10px] font-mono border rounded transition-colors text-left truncate
+                                                    ${userPlanFilter.includes(plan)
+                                                        ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-400'
+                                                        : 'border-white/10 text-white/40 hover:border-white/20 hover:text-white/60'}
+                                                `}
+                                            >
+                                                {plan.toUpperCase()}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Role Filter */}
+                                <div className="space-y-3">
+                                    <div className="text-[10px] font-bold text-white/40 mb-1">USER_ROLE</div>
+                                    <div className="grid grid-cols-2 gap-2">
+                                        {['client', 'admin', 'moderator'].map(type => (
+                                            <button
+                                                key={type}
+                                                onClick={() => {
+                                                    if (userTypeFilter.includes(type)) {
+                                                        setUserTypeFilter(prev => prev.filter(t => t !== type));
+                                                    } else {
+                                                        setUserTypeFilter(prev => [...prev, type]);
+                                                    }
+                                                }}
+                                                className={`
+                                                    px-2 py-1.5 text-[10px] font-mono border rounded transition-colors text-left
+                                                    ${userTypeFilter.includes(type)
+                                                        ? 'border-indigo-500/50 bg-indigo-500/10 text-indigo-400'
+                                                        : 'border-white/10 text-white/40 hover:border-white/20 hover:text-white/60'}
+                                                `}
+                                            >
+                                                {type.toUpperCase()}
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {(activeTab === 'tags' || activeTab === 'sessions') && (
+                            <div className="p-4 text-white/30 font-mono text-xs text-center border border-white/5 rounded-lg border-dashed">
+                                NO_INDEXING_DATA
                             </div>
                         )}
                     </div>
                 </aside>
-            </div >
-            {/* Modals - Rendered at root level for z-index correctness */}
+            </div>
+
+            {/* Modals */}
             <EditModal
                 isOpen={isModalOpen}
                 onClose={() => setIsModalOpen(false)}
@@ -786,6 +1307,7 @@ function App() {
                 models={data?.models ?? []}
                 vendorsById={vendorById}
                 modelsById={modelsById}
+                vendors={vendors}
             />
 
             <ArchivedModal
@@ -798,8 +1320,19 @@ function App() {
                     setIsArchiveOpen(false);
                 }}
             />
-        </div >
+
+            <CreateSessionModal
+                isOpen={isCreateSessionOpen}
+                onClose={() => setIsCreateSessionOpen(false)}
+                teams={teamsData?.teams || []}
+                models={data?.models || []}
+                onSessionCreated={() => {
+                    // Refetch sessions (query invalidation would be better but simple reload works for now)
+                    window.location.reload();
+                }}
+            />
+        </div>
     );
 }
 
-export default App
+export default App;

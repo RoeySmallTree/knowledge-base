@@ -1,0 +1,8 @@
+{
+  "irrelevant_models_api_keys": [
+    "arcee-ai/trinity-mini",
+    "arcee-ai/trinity-mini:free",
+    "deepseek/deepseek-v3.2-exp",
+    "deepseek/deepseek-v3.1-terminus:exacto"
+  ]
+}
