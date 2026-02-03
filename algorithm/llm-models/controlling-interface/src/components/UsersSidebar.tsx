@@ -1,14 +1,13 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { AppUser } from '../types';
 import { ChevronRight } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 interface UsersSidebarProps {
     users: AppUser[];
-    activeUserSearchQuery: string;
-    onUserSearchQueryChange: (query: string) => void;
 }
 
-export function UsersSidebar({ users, activeUserSearchQuery, onUserSearchQueryChange }: UsersSidebarProps) {
+export function UsersSidebar({ users }: UsersSidebarProps) {
     const [expandedPlans, setExpandedPlans] = useState<Set<string>>(new Set(['Free', 'Pro', 'Team', 'Enterprise', 'No Plan']));
 
     // Group users by plan
@@ -56,9 +55,9 @@ export function UsersSidebar({ users, activeUserSearchQuery, onUserSearchQueryCh
         <div className="flex flex-col h-full bg-black/40 border-r border-white/10 w-80 flex-shrink-0">
             {/* Header / Stats */}
             <div className="p-4 border-b border-white/10 space-y-4">
-                <div className="font-label text-sm text-primary">USER_DIRECTORY</div>
+                <div className={`font-label ${FONT_SIZE.SM} text-primary`}>USER_DIRECTORY</div>
                 <div className="cyber-panel cyber-chamfer-sm p-4 space-y-3">
-                    <div className="flex items-center justify-between text-base">
+                    <div className={`flex items-center justify-between ${FONT_SIZE.MD}`}>
                         <span className="text-muted-foreground">TOTAL USERS</span>
                         <span className="text-primary">{users.length}</span>
                     </div>
@@ -75,13 +74,13 @@ export function UsersSidebar({ users, activeUserSearchQuery, onUserSearchQueryCh
                         <div key={plan} className="space-y-2">
                             <button
                                 onClick={() => togglePlan(plan)}
-                                className={`w-full flex items-center justify-between px-3 py-2 font-label text-sm border border-border/70 cyber-chamfer-sm transition-colors ${isExpanded ? 'text-primary border-primary/60' : 'text-muted-foreground hover:text-primary'}`}
+                                className={`w-full flex items-center justify-between px-3 py-2 font-label ${FONT_SIZE.SM} border border-border/70 cyber-chamfer-sm transition-colors ${isExpanded ? 'text-primary border-primary/60' : 'text-muted-foreground hover:text-primary'}`}
                             >
                                 <div className="flex items-center gap-2">
                                     <ChevronRight size={14} className={`transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
                                     {plan.toUpperCase()}
                                 </div>
-                                <span className="text-sm text-muted-foreground">{planUsers.length}</span>
+                                <span className={`${FONT_SIZE.SM} text-muted-foreground`}>{planUsers.length}</span>
                             </button>
 
                             {isExpanded && (
@@ -90,7 +89,7 @@ export function UsersSidebar({ users, activeUserSearchQuery, onUserSearchQueryCh
                                         <button
                                             key={user.id}
                                             onClick={() => scrollToUser(user.id)}
-                                            className="w-full text-left px-3 py-1.5 text-xs text-muted-foreground hover:text-primary hover:bg-white/5 rounded transition-colors truncate"
+                                            className={`w-full text-left px-3 py-1.5 ${FONT_SIZE.XS} text-muted-foreground hover:text-primary hover:bg-white/5 rounded transition-colors truncate`}
                                         >
                                             {user.display_name || user.email}
                                         </button>

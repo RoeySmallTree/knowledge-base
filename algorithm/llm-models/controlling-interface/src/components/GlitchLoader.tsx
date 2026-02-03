@@ -1,3 +1,4 @@
+import { FONT_SIZE } from '../constants';
 
 // import { useEffect, useState } from 'react';
 
@@ -13,7 +14,7 @@ export function GlitchLoader() {
                 <div className="glitch-image" />
             </div>
 
-            <div className="absolute bottom-20 left-1/2 -translate-x-1/2 font-label text-xs tracking-[0.5em] text-primary/70 animate-pulse">
+            <div className={`absolute bottom-20 left-1/2 -translate-x-1/2 font-label ${FONT_SIZE.XS} tracking-[0.5em] text-primary/70 animate-pulse`}>
                 INITIALIZING...
             </div>
         </div>

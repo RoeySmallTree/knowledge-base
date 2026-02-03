@@ -1,0 +1,133 @@
+{
+  "team_id": "ee4a825f-122f-4dba-b43a-47676ea7674a",
+  "team_name": "The Happiness Architects",
+  "folder": "vitals",
+  "file": "happiness-architects.md",
+  "members": [
+    {
+      "name": "Compass",
+      "role": "Session Lead",
+      "function": "Leads sessions, asks guiding questions, synthesizes understanding, ensures person feels heard",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#135",
+      "alternative_name": "Claude Opus 4.5",
+      "logic": 10.0,
+      "creative": 8.5,
+      "efficiency": 7.0,
+      "traits": [
+        "Most-Intelligent",
+        "Deep-Thinker",
+        "Research-Grade",
+        "Multimodal-Master"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "deep-think",
+        "multimodal",
+        "long-context"
+      ]
+    },
+    {
+      "name": "Pathfinder",
+      "role": "Direction Specialist",
+      "function": "Explores possibilities, clarifies options, helps find the path",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Nous Hermes 4 70B",
+      "logic": 7.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Immersive",
+        "World-Builder",
+        "Character-Consistent",
+        "Spatial-Aware"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "character-consistency",
+        "long-context",
+        "non-restrictive"
+      ]
+    },
+    {
+      "name": "Blueprint",
+      "role": "Design Specialist",
+      "function": "Creates plans, designs habits, sets milestones, tracks progress",
+      "importance": "Critical",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 9.0,
+      "creative": 7.5,
+      "efficiency": 9.5,
+      "traits": [
+        "Deep-Thinker",
+        "Agentic",
+        "Tool-Master",
+        "Long-Horizon"
+      ],
+      "special_capabilities": [
+        "long-horizon-planning",
+        "systematic-design",
+        "constraint-satisfaction",
+        "self-hostable"
+      ]
+    },
+    {
+      "name": "Spark",
+      "role": "Motivation Specialist",
+      "function": "Maintains energy, reframes setbacks, celebrates wins",
+      "importance": "Medium",
+      "model_id": "#216",
+      "model_name": "Lumimaid v0.2 8B",
+      "alternative_id": "#215",
+      "alternative_name": "Lunaris 8B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 8.5,
+      "traits": [
+        "Authentic",
+        "Slop-Free",
+        "Budget-Friendly",
+        "Emotionally-Resonant"
+      ],
+      "special_capabilities": [
+        "genuine-encouragement",
+        "minimal-refusals",
+        "anti-corporate-voice",
+        "natural-reframing"
+      ]
+    },
+    {
+      "name": "Root",
+      "role": "Analysis Specialist",
+      "function": "Identifies patterns, catches concerns, provides reality checks",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 6.5,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Deep-Thinker",
+        "Self-Correcting",
+        "Visible-CoT"
+      ],
+      "special_capabilities": [
+        "pattern-detection",
+        "visible-reasoning",
+        "assumption-checking",
+        "reality-validation"
+      ]
+    }
+  ]
+}

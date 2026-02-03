@@ -1,0 +1,209 @@
+{
+  "team_id": "5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe",
+  "team_name": "The Production",
+  "folder": "ops",
+  "file": "the-production.md",
+  "members": [
+    {
+      "name": "Stage",
+      "role": "Event Director/Chair",
+      "function": "Own event vision and timeline, manage stakeholder communication, synthesize all workstreams, ensure business objectives drive decisions",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 7.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Long-Running",
+        "Structured-Thinking",
+        "Self-Correcting",
+        "Production-Grade",
+        "Workhorse"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "production-reliability",
+        "stakeholder-coordination"
+      ]
+    },
+    {
+      "name": "Script",
+      "role": "Programming Lead",
+      "function": "Develop agenda and content strategy, manage speaker relationships, create speaker briefs, ensure content quality",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "agenda-development",
+        "speaker-management"
+      ]
+    },
+    {
+      "name": "Amp",
+      "role": "Promotion Lead",
+      "function": "Build marketing strategy and calendar, manage all communications, drive registration, measure marketing effectiveness",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel",
+        "event-research",
+        "social-listening"
+      ]
+    },
+    {
+      "name": "Ops",
+      "role": "Logistics Lead",
+      "function": "Manage venue relationships, coordinate vendors, build operational timelines, execute day-of logistics",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 4.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "browser-control",
+        "venue-research",
+        "vendor-management"
+      ]
+    },
+    {
+      "name": "Dollar",
+      "role": "Budget Manager",
+      "function": "Track all budget and expenses, manage contracts and payments, provide fiscal accountability, model budget scenarios",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 9.5,
+      "creative": 4.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Competition-Math",
+        "Cost-Saver",
+        "Fast-Twitch"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "14b-efficiency",
+        "financial-calculations",
+        "budget-scenarios"
+      ]
+    },
+    {
+      "name": "Pulse",
+      "role": "Analytics Lead",
+      "function": "Define KPIs and success metrics, design data collection, build post-event analysis, prove event ROI",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 5.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "self-verifying",
+        "analytics-framework",
+        "roi-measurement"
+      ]
+    },
+    {
+      "name": "Risk",
+      "role": "Risk Manager/QC",
+      "function": "Identify and track risks, ensure compliance and contracts, build contingency plans, quality control all deliverables",
+      "importance": "Medium",
+      "model_id": "#181",
+      "model_name": "QwQ-32B",
+      "alternative_id": "#128",
+      "alternative_name": "DeepSeek R1 0528",
+      "logic": 9.0,
+      "creative": 4.0,
+      "efficiency": 8.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Stepwise",
+        "Self-Correcting",
+        "Analyst"
+      ],
+      "special_capabilities": [
+        "self-verifying",
+        "visible-reasoning",
+        "risk-identification",
+        "compliance-checking"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 5,
+    "medium_roles": 1,
+    "budget_optimized": 3
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "NousResearch",
+    "xAI",
+    "MiniMax",
+    "Microsoft",
+    "DeepSeek",
+    "Alibaba"
+  ]
+}

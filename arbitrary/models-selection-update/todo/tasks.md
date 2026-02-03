@@ -1,0 +1,577 @@
+# Session Todo List
+
+**Status:** Completed
+**Created:** 2026-01-27T10:31:53Z
+**Last Updated:** 2026-01-27T10:36:10Z
+
+## Tasks
+
+(all tasks completed)
+
+## Completed
+
+- [x] Model #12 Gemini 3 Flash Preview — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #14 Gemini 3 Pro Preview — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #20 Gemini 2.5 Flash — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #21 Gemini 2.5 Pro — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #19 Gemini 2.5 Flash Lite — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #135 Claude Opus 4.5 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #136 Claude Sonnet 4.5 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #137 Claude Opus 4.1 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #122 DeepSeek V3.2 Speciale — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #126 DeepSeek V3.1 Terminus — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #128 R1 0528 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #130 DeepSeek: R1 Distill Qwen 32B — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #132 R1 Distill Llama 70B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #188 Tongyi DeepResearch 30B A3B — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #2 Seed 1.6 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #208 Cohere: Command A — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #210 Cohere: Command R (08-2024) — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #144 Deep Cogito: Cogito v2.1 671B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #145 Deep Cogito: Cogito V2 Preview Llama 405B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #146 Deep Cogito: Cogito V2 Preview Llama 70B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #202 Llama 4 Maverick — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #203 Llama 4 Scout — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #204 Llama 3.3 70B Instruct — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #3 MiniMax M2.1 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #91 Devstral 2 2512 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #94 Ministral 3 8B 2512 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #95 Ministral 3 3B 2512 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #96 Mistral Large 3 2512 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #98 Mistral Medium 3.1 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #102 Mistral Small 3.2 24B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #149 MoonshotAI: Kimi K2 Thinking — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #151 MoonshotAI: Kimi K2 0905 (exacto) — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #152 MoonshotAI: Kimi K2 0711 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #153 MoonshotAI: Kimi Dev 72B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #191 Hermes 4 70B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #36 Nemotron Nano 9B V2 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #220 GPT-5.2-Codex — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #40 GPT-5.2 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #41 GPT-5.1-Codex-Max — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #42 GPT-5.1 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #54 GPT-5 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #55 GPT-5 Mini — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #57 gpt-oss-120b — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #59 gpt-oss-20b — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #60 o3 Pro — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #62 o4 Mini High — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #63 o3 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #64 o4 Mini — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #65 GPT-4.1 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #66 GPT-4.1 Mini — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #67 GPT-4.1 Nano — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #71 o3 Mini High — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #72 o3 Mini — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #73 o1 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #134 INTELLECT-3 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #160 Qwen3 VL 235B A22B Instruct — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #162 Qwen3 Next 80B A3B Thinking — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #163 Qwen3 Next 80B A3B Instruct — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #166 Qwen3 30B A3B Thinking 2507 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #168 Qwen3 30B A3B Instruct 2507 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #169 Qwen3 235B A22B Thinking 2507 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #170 Qwen3 Coder 480B A35B — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #172 Qwen3 235B A22B Instruct 2507 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #181 QwQ 32B — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #213 Llama 3.3 Euryale 70B — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #190 Step3 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #196 Hunyuan A13B Instruct — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #186 UnslopNemo 12B — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #138 Grok 4.1 Fast — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #139 Grok 4 Fast — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #140 Grok Code Fast 1 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #141 Grok 4 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #142 Grok 3 Mini — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #143 Grok 3 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #5 GLM 4.7 — S-tier 10/10 (prefer for critical/high roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #10 GLM 4.5 — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Model #11 GLM 4.5 Air — A-tier 9.x (use for medium/budget roles)
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Reviewed against report; used for quick-ref and model selection.
+  - **Artifacts:** None
+- [x] Team A Thought's Potential — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team Cupid's Wingmen — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team Diss Track Inc. — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team Keeping It Reel — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team Life's Moments — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team Only Viral — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Accountant's Ledger — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Alpha Desk — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Biohackers — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Brief Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Bureau of Unexplained Significance — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Career Council — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Chef's Table — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Clinical Consult — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Cult Builder — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Customer Success Core — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Dig — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Digital Brain — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Document Digestor — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Dreamers — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Eldercare Navigators — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Explainers — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Foundry — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Ghostwriters — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Gossip Girls — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Green Brief — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Ground Floor — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Happiness Architects — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Heist Crew — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Improv Ensemble — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Incubator — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Infinite Classroom — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Infinite Table — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Intelligence Bureau — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Last Stand — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Ledger Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Legal Repository — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Lens Grinders — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Organization Core — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Oxford Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Panic Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Parenting Hub — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The People Ops — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The People's Court — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Pitching Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Product Bible — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Production — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Project Sink — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Publisher — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Raise — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Red Team — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Research Engine — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Roast Pit — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Second Brain — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Shadow Council — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Shark Tank — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Think Tank — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Tin Foil Hat Society — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Wanderlust Bureau — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The War Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The What-If Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Wiki Gardener — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team The Writers' Room — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+- [x] Team Tough Love — review members; replace non-available/low-perf models; ensure critical roles use S-tier
+  - **Completed:** 2026-01-27T10:36:10Z
+  - **Notes:** Updated member model assignments in complete.json.
+  - **Artifacts:** None
+

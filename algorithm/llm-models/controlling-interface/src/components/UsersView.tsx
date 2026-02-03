@@ -1,5 +1,6 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { AppUser } from '../types';
+import { FONT_SIZE } from '../constants';
 import { UserEditModal } from './UserEditModal';
 import { ChevronDown, MapPin, Briefcase, Calendar, CreditCard, DollarSign, Edit2, ExternalLink } from 'lucide-react';
 
@@ -81,9 +82,9 @@ export function UsersView({ users, activeUserSearchQuery, filters, onUpdateUser 
             {sortedGroups.map(plan => (
                 <div key={plan} className="space-y-6">
                     <div className="flex items-center gap-4">
-                        <h2 className="text-2xl font-display text-white">{plan.toUpperCase()}</h2>
+                        <h2 className={`${FONT_SIZE.XXL} font-display text-white`}>{plan.toUpperCase()}</h2>
                         <div className="h-px flex-1 bg-gradient-to-r from-white/20 to-transparent" />
-                        <span className="font-mono text-white/40">{groupedUsers[plan].length}</span>
+                        <span className={`font-mono text-white/40 ${FONT_SIZE.SM}`}>{groupedUsers[plan].length}</span>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
@@ -101,7 +102,7 @@ export function UsersView({ users, activeUserSearchQuery, filters, onUpdateUser 
             ))}
 
             {filteredUsers.length === 0 && (
-                <div className="text-center py-20 text-white/30 font-mono">
+                <div className={`text-center py-20 text-white/30 font-mono ${FONT_SIZE.SM}`}>
                     NO_USERS_FOUND
                 </div>
             )}
@@ -141,7 +142,7 @@ function UserCard({ user, isExpanded, onToggle, onEdit }: {
                         {user.image_url ? (
                             <img src={user.image_url} alt={user.display_name || ''} className="w-full h-full object-cover" />
                         ) : (
-                            <div className="text-xl font-bold text-white/20">
+                            <div className={`${FONT_SIZE.XL} font-bold text-white/20`}>
                                 {(user.display_name?.[0] || user.email[0])?.toUpperCase()}
                             </div>
                         )}
@@ -150,7 +151,7 @@ function UserCard({ user, isExpanded, onToggle, onEdit }: {
                     {/* Info */}
                     <div className="flex-1 min-w-0">
                         <div className="flex items-center justify-between">
-                            <h3 className="font-medium text-white truncate pr-2">
+                            <h3 className={`font-medium ${FONT_SIZE.MD} text-white truncate pr-2`}>
                                 {user.display_name || 'Unnamed User'}
                             </h3>
                             <div className={`transition-transform duration-300 text-white/40 ${isExpanded ? 'rotate-180' : ''}`}>
@@ -158,14 +159,14 @@ function UserCard({ user, isExpanded, onToggle, onEdit }: {
                             </div>
                         </div>
 
-                        <div className="text-xs text-white/50 truncate font-mono mt-0.5">
+                        <div className={`${FONT_SIZE.XS} text-white/50 truncate font-mono mt-0.5`}>
                             {user.email}
                         </div>
 
                         <div className="flex flex-wrap gap-2 mt-3">
                             {/* Type Badge */}
                             <div className={`
-                                px-1.5 py-0.5 text-[10px] font-bold rounded border uppercase tracking-wider
+                                px-1.5 py-0.5 ${FONT_SIZE.XXS} font-bold rounded border uppercase tracking-wider
                                 ${user.type === 'admin'
                                     ? 'bg-rose-500/10 text-rose-400 border-rose-500/30'
                                     : 'bg-white/5 text-white/40 border-white/10'}
@@ -175,7 +176,7 @@ function UserCard({ user, isExpanded, onToggle, onEdit }: {
 
                             {/* Plan Badge (if needed explicitly, though used for grouping) */}
                             {user.plan_code && user.plan_code !== 'no_plan' && (
-                                <div className="px-1.5 py-0.5 text-[10px] font-bold rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 uppercase tracking-wider">
+                                <div className={`px-1.5 py-0.5 ${FONT_SIZE.XXS} font-bold rounded border border-emerald-500/30 bg-emerald-500/10 text-emerald-400 uppercase tracking-wider`}>
                                     {user.plan_code}
                                 </div>
                             )}
@@ -197,27 +198,27 @@ function UserCard({ user, isExpanded, onToggle, onEdit }: {
                 </div>
 
                 <div className="p-3 rounded bg-white/5 border border-white/10 mb-4 space-y-2">
-                    <div className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-2">Billing Stats</div>
+                    <div className={`${FONT_SIZE.XXS} font-bold text-white/40 uppercase tracking-wider mb-2`}>Billing Stats</div>
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-xs text-white/60">
+                        <div className={`flex items-center gap-2 ${FONT_SIZE.XS} text-white/60`}>
                             <CreditCard size={12} className="text-emerald-400" />
                             Credits
                         </div>
-                        <span className="font-mono text-sm text-white">{user.plan_credits_balance?.toLocaleString() ?? 0}</span>
+                        <span className={`font-mono ${FONT_SIZE.SM} text-white`}>{user.plan_credits_balance?.toLocaleString() ?? 0}</span>
                     </div>
                     <div className="flex items-center justify-between">
-                        <div className="flex items-center gap-2 text-xs text-white/60">
+                        <div className={`flex items-center gap-2 ${FONT_SIZE.XS} text-white/60`}>
                             <DollarSign size={12} className="text-amber-400" />
                             Usage (USD)
                         </div>
-                        <span className="font-mono text-sm text-white">${Number(user.last_period_usage_usd ?? 0).toFixed(2)}</span>
+                        <span className={`font-mono ${FONT_SIZE.SM} text-white`}>${Number(user.last_period_usage_usd ?? 0).toFixed(2)}</span>
                     </div>
                 </div>
 
                 {user.extras && (
                     <div className="mb-4">
-                        <div className="text-[10px] font-bold text-white/40 uppercase tracking-wider mb-1">Extras</div>
-                        <p className="text-xs text-white/60 leading-relaxed bg-black/40 p-2 rounded border border-white/5">
+                        <div className={`${FONT_SIZE.XXS} font-bold text-white/40 uppercase tracking-wider mb-1`}>Extras</div>
+                        <p className={`${FONT_SIZE.XS} text-white/60 leading-relaxed bg-black/40 p-2 rounded border border-white/5`}>
                             {user.extras}
                         </p>
                     </div>
@@ -226,13 +227,13 @@ function UserCard({ user, isExpanded, onToggle, onEdit }: {
                 <div className="flex gap-2 pt-2">
                     <button
                         onClick={(e) => { e.stopPropagation(); onEdit(); }}
-                        className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-xs font-bold rounded bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors"
+                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 ${FONT_SIZE.XS} font-bold rounded bg-white/5 hover:bg-white/10 text-white border border-white/10 transition-colors`}
                     >
                         <Edit2 size={12} />
                         EDIT PROFILE
                     </button>
                     <button
-                        className="flex-1 flex items-center justify-center gap-2 px-3 py-2 text-xs font-bold rounded bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 transition-colors"
+                        className={`flex-1 flex items-center justify-center gap-2 px-3 py-2 ${FONT_SIZE.XS} font-bold rounded bg-primary/10 hover:bg-primary/20 text-primary border border-primary/30 transition-colors`}
                     >
                         <ExternalLink size={12} />
                         SESSIONS
@@ -247,11 +248,11 @@ function Stat({ icon: Icon, label, value }: { icon: any, label: string, value?: 
     if (!value) return null;
     return (
         <div className="space-y-0.5">
-            <div className="flex items-center gap-1.5 text-[10px] font-medium text-white/40 uppercase tracking-wide">
+            <div className={`flex items-center gap-1.5 ${FONT_SIZE.XXS} font-medium text-white/40 uppercase tracking-wide`}>
                 <Icon size={10} />
                 {label}
             </div>
-            <div className="text-xs text-white/80 truncate font-medium">
+            <div className={`${FONT_SIZE.XS} text-white/80 truncate font-medium`}>
                 {value}
             </div>
         </div>

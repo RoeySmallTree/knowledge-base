@@ -1,0 +1,228 @@
+{
+  "team_id": "4d203095-d33f-4bc3-89d3-cdd98cda8b70",
+  "team_name": "The Ghostwriters",
+  "folder": "ops",
+  "file": "the-ghostwriters.md",
+  "members": [
+    {
+      "name": "Quill",
+      "role": "Publisher/Chair",
+      "function": "Assign author voices to content, manage editorial process, ensure quality and stylistic accuracy, package final output professionally",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "browser-control",
+        "multi-source-synthesis"
+      ]
+    },
+    {
+      "name": "Bard",
+      "role": "Shakespeare Voice",
+      "function": "Transform content into Shakespearean style with period-appropriate language, meter, and dramatic structure",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#219",
+      "alternative_name": "MythoMax L2 13B",
+      "logic": 5.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "uncensored",
+        "character-consistency"
+      ]
+    },
+    {
+      "name": "Ernest",
+      "role": "Hemingway Voice",
+      "function": "Transform content into Hemingway style - short sentences, understatement, stripped prose, iceberg theory",
+      "importance": "High",
+      "model_id": "#216",
+      "model_name": "Lumimaid v0.2 8B",
+      "alternative_id": "#215",
+      "alternative_name": "Lunaris 8B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 8.5,
+      "traits": [
+        "Creative",
+        "Roleplayer",
+        "Permissive",
+        "Colloquial",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "slop-free",
+        "minimal-refusals"
+      ]
+    },
+    {
+      "name": "Howard",
+      "role": "Lovecraft Voice",
+      "function": "Transform content into Lovecraftian style - cosmic horror, eldritch unknowability, madness, purple prose",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 5.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "uncensored",
+        "character-consistency"
+      ]
+    },
+    {
+      "name": "Jane",
+      "role": "Austen Voice",
+      "function": "Transform content into Austen style - wit, social observation, marriage concerns, elegant irony",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#214",
+      "alternative_name": "Euryale 70B v2.2",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Uncensored",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "free-indirect-discourse"
+      ]
+    },
+    {
+      "name": "Fyodor",
+      "role": "Dostoyevsky Voice",
+      "function": "Transform content into Dostoyevsky style - psychological torment, philosophical digression, confession, suffering",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Uncensored",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "psychological-interiority"
+      ]
+    },
+    {
+      "name": "Edgar",
+      "role": "Poe Voice",
+      "function": "Transform content into Poe style - macabre, madness, gothic poetry, obsession",
+      "importance": "High",
+      "model_id": "#219",
+      "model_name": "MythoMax L2 13B",
+      "alternative_id": "#216",
+      "alternative_name": "Lumimaid v0.2 8B",
+      "logic": 5.0,
+      "creative": 9.5,
+      "efficiency": 8.5,
+      "traits": [
+        "Creative",
+        "Roleplayer",
+        "Character-Consistent",
+        "Immersive",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "most-popular-rp",
+        "character-coherence",
+        "narrative-flow"
+      ]
+    },
+    {
+      "name": "Vera",
+      "role": "Plagiarism Checker",
+      "function": "Check all drafts for too-close imitation, flag problematic phrases, suggest alternatives, protect operation legally",
+      "importance": "Medium",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 8.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Long-Horizon",
+        "Structured-Thinking",
+        "Self-Correcting",
+        "Production-Grade"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "similarity-analysis"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 6,
+    "medium_roles": 1,
+    "budget_optimized": 3
+  },
+  "provider_diversity": [
+    "MiniMax",
+    "Sao10K",
+    "NeverSleep",
+    "NousResearch",
+    "Anthropic"
+  ]
+}

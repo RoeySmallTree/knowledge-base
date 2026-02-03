@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect, type RefObject } from 'react';
+import { FONT_SIZE } from '../constants';
 import {
     DndContext,
     closestCenter,
@@ -34,7 +35,8 @@ interface TeamsSidebarProps {
     expandedCategories: Set<TeamCategory>;
     onToggleCategory: (category: TeamCategory) => void;
     onExpandCategory: (category: TeamCategory) => void;
-
+    totalTeamsCount: number;
+    totalMembersCount: number;
 }
 
 export function TeamsSidebar({
@@ -45,7 +47,8 @@ export function TeamsSidebar({
     expandedCategories,
     onToggleCategory,
     onExpandCategory,
-
+    totalTeamsCount,
+    totalMembersCount
 }: TeamsSidebarProps) {
     // Local state removed, using props
     const [activeId, setActiveId] = useState<string>('');
@@ -320,8 +323,7 @@ export function TeamsSidebar({
             output = JSON.stringify(teamsData, null, 2);
         } else {
             // Markdown format
-            output = teams.map((team, index) => {
-                const data = teamsData[index];
+            output = teamsData.map((data) => {
                 let md = `## ${data.name || 'Unnamed Team'}\n\n`;
 
                 if (data.id) md += `**ID:** ${data.id}\n\n`;
@@ -373,16 +375,82 @@ export function TeamsSidebar({
     return (
         <div className="space-y-6">
             <div className="space-y-4">
-                <div className="font-label text-sm text-primary">TEAM_DIRECTORY</div>
-                <div className="cyber-panel cyber-chamfer-sm p-4 space-y-3">
-                    <div className="flex items-center justify-between text-base">
-                        <span className="text-muted-foreground">TOTAL TEAMS</span>
-                        <span className="text-primary">{totalTeams}</span>
+                <div className="flex items-center justify-between px-1">
+                    <div className={`font-label ${FONT_SIZE.XXS} text-primary/50 tracking-[0.3em]`}>INTELLIGENCE_HUD_V2</div>
+                    <div className="flex gap-1">
+                        <div className="w-1 h-1 bg-primary/40 animate-pulse" />
+                        <div className="w-1 h-1 bg-primary/20" />
+                        <div className="w-1 h-1 bg-primary/10" />
                     </div>
-                    <div className="flex items-center justify-between text-base">
-                        <span className="text-muted-foreground">TOTAL MEMBERS</span>
-                        <span className="text-primary">{totalMembers}</span>
+                </div>
+
+                <div className="cyber-panel cyber-chamfer-sm p-4 space-y-5 bg-gradient-to-br from-white/[0.03] to-transparent border-white/5 relative overflow-hidden group">
+                    {/* Background Grid Scanline Effect */}
+                    <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(0,255,136,0.03),transparent_70%)] pointer-events-none" />
+
+                    {/* Active Teams HUD */}
+                    <div className="relative space-y-2">
+                        <div className="flex items-end justify-between">
+                            <span className={`block ${FONT_SIZE.XS} font-bold text-primary/80 tracking-widest font-display`}>ACTIVE_TEAMS</span>
+                            <div className={`${FONT_SIZE.XXL} font-display text-primary leading-none glow-sm flex items-baseline gap-1`}>
+                                {totalTeams}
+                                <span className={`${FONT_SIZE.XXS} text-white/20 font-mono`}>/ {totalTeamsCount}</span>
+                            </div>
+                        </div>
+
+                        {/* Segmented HUD Bar */}
+                        <div className="flex gap-0.5 h-1.5 w-full">
+                            {[...Array(20)].map((_, i) => {
+                                const threshold = (i / 19);
+                                const currentRatio = totalTeamsCount > 0 ? totalTeams / totalTeamsCount : 0;
+                                const isActive = threshold <= currentRatio;
+                                return (
+                                    <div
+                                        key={i}
+                                        className={`flex-1 transition-all duration-500 rounded-[1px] ${isActive
+                                            ? 'bg-primary shadow-[0_0_8px_rgba(0,255,136,0.4)]'
+                                            : 'bg-white/5'
+                                            }`}
+                                        style={{ transitionDelay: `${i * 20}ms` }}
+                                    />
+                                );
+                            })}
+                        </div>
                     </div>
+
+                    {/* Operatives HUD */}
+                    <div className="relative space-y-2">
+                        <div className="flex items-end justify-between">
+                            <span className={`block ${FONT_SIZE.XS} font-bold text-accent-secondary/80 tracking-widest font-display`}>OPERATIVES</span>
+                            <div className={`${FONT_SIZE.XXL} font-display text-accent-secondary leading-none glow-sm flex items-baseline gap-1`}>
+                                {totalMembers}
+                                <span className={`${FONT_SIZE.XXS} text-white/20 font-mono`}>/ {totalMembersCount}</span>
+                            </div>
+                        </div>
+
+                        {/* Segmented HUD Bar */}
+                        <div className="flex gap-0.5 h-1.5 w-full">
+                            {[...Array(20)].map((_, i) => {
+                                const threshold = (i / 19);
+                                const currentRatio = totalMembersCount > 0 ? totalMembers / totalMembersCount : 0;
+                                const isActive = threshold <= currentRatio;
+                                return (
+                                    <div
+                                        key={i}
+                                        className={`flex-1 transition-all duration-500 rounded-[1px] ${isActive
+                                            ? 'bg-accent-secondary shadow-[0_0_8px_rgba(255,0,255,0.4)]'
+                                            : 'bg-white/5'
+                                            }`}
+                                        style={{ transitionDelay: `${i * 20}ms` }}
+                                    />
+                                );
+                            })}
+                        </div>
+                    </div>
+
+                    {/* Decorative Corner Flairs */}
+                    <div className="absolute top-0 left-0 w-2 h-2 border-t border-l border-primary/30" />
+                    <div className="absolute bottom-0 right-0 w-2 h-2 border-b border-r border-primary/30" />
                 </div>
             </div>
 
@@ -392,19 +460,21 @@ export function TeamsSidebar({
             <div className="relative">
                 <button
                     onClick={() => setShowCopyTooltip(!showCopyTooltip)}
-                    className="w-full cyber-panel cyber-chamfer-sm p-3 text-sm font-label tracking-wider text-primary hover:bg-primary/10 transition-colors flex items-center justify-center gap-2"
+                    className={`w-full group/copy relative py-2 ${FONT_SIZE.XXS} font-label tracking-[0.2em] text-white/40 hover:text-primary transition-colors flex items-center justify-center gap-2`}
                 >
-                    <Copy size={14} />
-                    COPY_TEAMS
+                    <div className="h-px flex-1 bg-white/5 group-hover/copy:bg-primary/20 transition-colors" />
+                    <Copy size={12} className="opacity-50 group-hover/copy:opacity-100" />
+                    <span>EXPORT_TEAM_INDEX</span>
+                    <div className="h-px flex-1 bg-white/5 group-hover/copy:bg-primary/20 transition-colors" />
                 </button>
 
                 {showCopyTooltip && (
                     <div className="absolute left-0 top-full mt-2 w-full cyber-panel cyber-chamfer-sm p-3 space-y-3 bg-black/95 border border-primary/30 z-50">
-                        <div className="text-xs text-white/40">EXPORT FORMAT:</div>
+                        <div className={`${FONT_SIZE.XS} text-white/40`}>EXPORT FORMAT:</div>
                         <div className="flex gap-2">
                             <button
                                 onClick={() => setCopyFormat('json')}
-                                className={`flex-1 px-2 py-1 text-xs rounded transition-colors ${copyFormat === 'json'
+                                className={`flex-1 px-2 py-1 ${FONT_SIZE.XS} rounded transition-colors ${copyFormat === 'json'
                                     ? 'bg-primary/20 text-primary border border-primary/50'
                                     : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
                                     }`}
@@ -413,7 +483,7 @@ export function TeamsSidebar({
                             </button>
                             <button
                                 onClick={() => setCopyFormat('markdown')}
-                                className={`flex-1 px-2 py-1 text-xs rounded transition-colors ${copyFormat === 'markdown'
+                                className={`flex-1 px-2 py-1 ${FONT_SIZE.XS} rounded transition-colors ${copyFormat === 'markdown'
                                     ? 'bg-primary/20 text-primary border border-primary/50'
                                     : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
                                     }`}
@@ -422,7 +492,7 @@ export function TeamsSidebar({
                             </button>
                         </div>
 
-                        <div className="text-xs text-white/40">FIELDS TO INCLUDE:</div>
+                        <div className={`${FONT_SIZE.XS} text-white/40`}>FIELDS TO INCLUDE:</div>
                         <div className="space-y-1.5 max-h-40 overflow-y-auto cyber-scroll">
                             {[
                                 { id: 'id', label: 'ID' },
@@ -448,7 +518,7 @@ export function TeamsSidebar({
                                         }}
                                         className="w-3 h-3 rounded border-white/20 bg-black/40 checked:bg-primary checked:border-primary transition-colors"
                                     />
-                                    <span className="text-xs text-white/60 group-hover:text-white/90 transition-colors">{field.label}</span>
+                                    <span className={`${FONT_SIZE.XS} text-white/60 group-hover:text-white/90 transition-colors`}>{field.label}</span>
                                 </label>
                             ))}
 
@@ -488,7 +558,7 @@ export function TeamsSidebar({
 
                         <button
                             onClick={() => handleCopyTeams()}
-                            className="w-full px-3 py-2 bg-primary/20 hover:bg-primary/30 text-primary text-xs font-bold rounded border border-primary/50 transition-colors flex items-center justify-center gap-2"
+                            className={`w-full px-3 py-2 bg-primary/20 hover:bg-primary/30 text-primary ${FONT_SIZE.XS} font-bold rounded border border-primary/50 transition-colors flex items-center justify-center gap-2`}
                         >
                             {copied ? (
                                 <>
@@ -524,13 +594,13 @@ export function TeamsSidebar({
                                     scrollTo(categoryId);
                                 }}
                                 id={`sidebar-${categoryId}`}
-                                className={`w-full flex items-center justify-between px-3 py-2 font-label text-sm border border-border/70 cyber-chamfer-sm transition-colors ${isCategoryActive ? 'text-primary border-primary/60' : 'text-muted-foreground hover:text-primary'}`}
+                                className={`w-full flex items-center justify-between px-3 py-2 font-label ${FONT_SIZE.SM} border border-border/70 cyber-chamfer-sm transition-colors ${isCategoryActive ? 'text-primary border-primary/60' : 'text-muted-foreground hover:text-primary'}`}
                             >
                                 <div className="flex items-center gap-2">
                                     <ChevronRight size={14} className={`transition-transform ${isExpanded ? 'rotate-90' : ''}`} />
                                     {category}
                                 </div>
-                                <span className="text-sm text-muted-foreground">{categoryTeams.length}</span>
+                                <span className={`${FONT_SIZE.SM} text-muted-foreground`}>{categoryTeams.length}</span>
                             </button>
 
                             <div className={`overflow-hidden transition-all duration-300 ${isExpanded ? 'max-h-[600px] opacity-100' : 'max-h-0 opacity-0'}`}>
@@ -597,7 +667,7 @@ function SortableTeamItem({ team, activeId, memberCount, missingFields, onTeamCl
             style={style}
             onClick={onTeamClick}
             id={`sidebar-${teamId}`}
-            className={`w-full flex items-center justify-between px-3 py-1.5 text-sm border border-transparent cyber-chamfer-sm transition-colors ${isDragging ? 'shadow-[0_0_20px_rgba(0,255,136,0.3)] border-primary/50' : ''
+            className={`w-full flex items-center justify-between px-3 py-1.5 ${FONT_SIZE.SM} border border-transparent cyber-chamfer-sm transition-colors ${isDragging ? 'shadow-[0_0_20px_rgba(0,255,136,0.3)] border-primary/50' : ''
                 } ${activeId === teamId ? 'text-primary' : 'text-muted-foreground hover:text-primary'}`}
         >
             <div className="flex items-center gap-2 truncate flex-1">
@@ -612,7 +682,7 @@ function SortableTeamItem({ team, activeId, memberCount, missingFields, onTeamCl
                 </div>
                 <span className="truncate">{team.name}</span>
             </div>
-            <span className="flex items-center gap-2 text-sm text-muted-foreground">
+            <span className={`flex items-center gap-2 ${FONT_SIZE.SM} text-muted-foreground`}>
                 {missingFields.length > 0 && (
                     <span
                         className="flex items-center gap-1 text-accent-secondary"

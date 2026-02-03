@@ -1,0 +1,63 @@
+{
+  "team_id": "e0db6f77-13eb-405d-9e2c-1d50000af21b",
+  "team_name": "The Parenting Hub",
+  "folder": "vitals",
+  "file": "the-parenting-hub.md",
+  "assignments": [
+    {
+      "role": "Sage",
+      "function": "Coordinator/Chair",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 9.5 handles synthesis of complex family dynamics and team inputs; Brain-tier 9 maintains comprehensive family profiles and long-term tracking; DEEP-THINKER, AGENTIC, TOOL-MASTER matches warm, organized coordinator persona"
+    },
+    {
+      "role": "Haven",
+      "function": "Development Specialist",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for developmental research and stage-appropriate analysis; Efficiency 9.5 cost-effective choice for research-heavy role; PRECISE, DEEP-THINKER, SELF-CORRECTING matches evidence-based specialist"
+    },
+    {
+      "role": "Journey",
+      "function": "Goal Strategist/Research",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH critical for accessing latest parenting research and evidence-based strategies; Logic 8.5 for creating SMART goals and milestone planning; 2M context maintains long-term family goal histories"
+    },
+    {
+      "role": "Rowan",
+      "function": "Behavioral Specialist",
+      "importance": "Medium",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for intervention design and behavior analysis; Creative 8.0 enables child-specific strategy customization; Efficiency 9.5 practical role doesn't need premium compute"
+    },
+    {
+      "role": "Anchor",
+      "function": "Family Wellness Advisor",
+      "importance": "Medium",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "C",
+      "reasoning": "Efficiency 10 grounding role is supportive, not computationally intensive; Logic 9.0 for sustainability checks and reality testing; 3.2B active params = cost-effective for 'realistic, parent-supportive' role"
+    }
+  ]
+}

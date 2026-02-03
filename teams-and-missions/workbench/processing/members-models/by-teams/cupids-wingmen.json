@@ -1,0 +1,132 @@
+{
+  "team_id": "e1658081-73b0-4cd0-9148-cb8abc38eec9",
+  "team_name": "Cupid's Wingmen",
+  "folder": "vitals",
+  "file": "cupids-wingmen.md",
+  "members": [
+    {
+      "name": "Cupid",
+      "role": "Session Lead",
+      "function": "Orchestrate session. Synthesize team insights. Provide direct coaching and strategy.",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 7.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Production-Grade",
+        "Deep-Thinker",
+        "Endurance",
+        "Balanced"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "production-coding",
+        "multi-session-coherence"
+      ]
+    },
+    {
+      "name": "Heart",
+      "role": "Profile Analyst",
+      "function": "Maintain user profile. Identify patterns. Flag when user may be self-sabotaging.",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "tool-calling",
+        "browser-control",
+        "multi-language",
+        "structured-output"
+      ]
+    },
+    {
+      "name": "Eye",
+      "role": "Pattern Analyst",
+      "function": "Analyze POI profiles and behavior. Read signals. Identify flags.",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "tool-calling",
+        "browser-control",
+        "multi-language",
+        "structured-output"
+      ]
+    },
+    {
+      "name": "Advocate",
+      "role": "Compatibility Analyst",
+      "function": "Assess compatibility. Develop strategy. Plan next moves.",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Tool-Seeker",
+        "Analyst",
+        "Real-Time",
+        "Context-Master"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2M-context",
+        "real-time-intel"
+      ]
+    },
+    {
+      "name": "Guardian",
+      "role": "Reality Checker",
+      "function": "Provide reality checks. Flag blindspots. Deliver honest feedback.",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 6.5,
+      "efficiency": 7.5,
+      "traits": [
+        "Deep-Thinker",
+        "Self-Correcting",
+        "Self-Verifying",
+        "Visible-CoT"
+      ],
+      "special_capabilities": [
+        "visible-chain-of-thought",
+        "self-verification",
+        "assumption-hunting",
+        "open-reasoning"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
 import { AppUser } from '../types';
+import { FONT_SIZE } from '../constants';
 import { X, Save } from 'lucide-react';
 
 interface UserEditModalProps {
@@ -32,7 +32,7 @@ export function UserEditModal({ isOpen, onClose, user, onSave }: UserEditModalPr
             <div className="w-full max-w-2xl bg-black border border-white/10 cyber-chamfer-sm shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col max-h-[90vh]">
 
                 <div className="p-6 border-b border-white/10 flex items-center justify-between bg-white/5">
-                    <h2 className="font-label text-xl text-primary tracking-widest">EDIT USER PROFILE</h2>
+                    <h2 className={`font-label ${FONT_SIZE.XL} text-primary tracking-widest`}>EDIT USER PROFILE</h2>
                     <button onClick={onClose} className="text-white/40 hover:text-white transition-colors">
                         <X size={20} />
                     </button>
@@ -119,7 +119,7 @@ export function UserEditModal({ isOpen, onClose, user, onSave }: UserEditModalPr
                 </div>
 
                 <div className="p-6 border-t border-white/10 flex justify-end gap-3 bg-white/5">
-                    <button onClick={onClose} className="px-4 py-2 text-xs font-bold rounded border border-white/10 text-white/60 hover:text-white hover:bg-white/5 transition-colors">
+                    <button onClick={onClose} className={`px-4 py-2 ${FONT_SIZE.XS} font-bold rounded border border-white/10 text-white/60 hover:text-white hover:bg-white/5 transition-colors`}>
                         CANCEL
                     </button>
                     <button onClick={handleSave} className="cyber-button cyber-chamfer-sm flex items-center gap-2">
@@ -135,7 +135,7 @@ export function UserEditModal({ isOpen, onClose, user, onSave }: UserEditModalPr
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
     return (
         <div className="space-y-4">
-            <div className="text-xs font-bold text-primary/60 tracking-widest border-b border-primary/20 pb-1">
+            <div className={`${FONT_SIZE.XS} font-bold text-primary/60 tracking-widest border-b border-primary/20 pb-1`}>
                 {title}
             </div>
             <div className="space-y-4">
@@ -148,7 +148,7 @@ function Section({ title, children }: { title: string; children: React.ReactNode
 function Field({ label, children }: { label: string; children: React.ReactNode }) {
     return (
         <div className="space-y-1.5">
-            <label className="text-xs font-medium text-white/50 uppercase tracking-wide">{label}</label>
+            <label className={`${FONT_SIZE.XS} font-medium text-white/50 uppercase tracking-wide`}>{label}</label>
             {children}
         </div>
     );

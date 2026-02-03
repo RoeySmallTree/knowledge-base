@@ -1,0 +1,698 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.app_user (
+  id uuid NOT NULL,
+  email text NOT NULL UNIQUE,
+  display_name text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  chat_name text,
+  community_name text NOT NULL,
+  image_url text,
+  location character varying,
+  gender character varying,
+  profession text,
+  extras text,
+  legion_id uuid,
+  type USER-DEFINED NOT NULL DEFAULT 'client'::user_type,
+  CONSTRAINT app_user_pkey PRIMARY KEY (id),
+  CONSTRAINT app_user_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id),
+  CONSTRAINT app_user_legion_id_fkey FOREIGN KEY (legion_id) REFERENCES public.client_legion(id)
+);
+CREATE TABLE public.app_user_billing_state (
+  user_id uuid NOT NULL,
+  paddle_customer_id text,
+  paddle_subscription_id text,
+  current_plan_id uuid,
+  plan_period USER-DEFINED,
+  plan_status USER-DEFINED NOT NULL DEFAULT 'none'::plan_status_type,
+  plan_started_at timestamp with time zone,
+  plan_credits_balance integer NOT NULL DEFAULT 0,
+  boosted_credits_balance integer NOT NULL DEFAULT 0,
+  used_credits_current_period integer NOT NULL DEFAULT 0,
+  last_billing_cycle_started_at timestamp with time zone,
+  next_billing_cycle_starts_at timestamp with time zone,
+  plan_expires_at timestamp with time zone,
+  plan_after_expiration_id uuid,
+  no_plan_since timestamp with time zone,
+  last_event_id text,
+  last_event_occurred_at timestamp with time zone,
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  last_period_usage_usd numeric DEFAULT 0,
+  last_period_usage_credits integer DEFAULT 0,
+  openrouter_user_id text,
+  CONSTRAINT app_user_billing_state_pkey PRIMARY KEY (user_id),
+  CONSTRAINT app_user_billing_state_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id),
+  CONSTRAINT app_user_billing_state_current_plan_id_fkey FOREIGN KEY (current_plan_id) REFERENCES public.billing_plan(id),
+  CONSTRAINT app_user_billing_state_plan_after_expiration_id_fkey FOREIGN KEY (plan_after_expiration_id) REFERENCES public.billing_plan(id)
+);
+CREATE TABLE public.attached_file (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  file_type text NOT NULL,
+  url text NOT NULL,
+  name text NOT NULL,
+  note text,
+  author_member uuid,
+  author_user uuid,
+  version_id uuid,
+  collab_id uuid,
+  added_at_round integer NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT attached_file_pkey PRIMARY KEY (id),
+  CONSTRAINT attached_file_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT attached_file_author_member_fkey FOREIGN KEY (author_member) REFERENCES public.member(id),
+  CONSTRAINT attached_file_author_user_fkey FOREIGN KEY (author_user) REFERENCES public.app_user(id),
+  CONSTRAINT attached_file_version_id_fkey FOREIGN KEY (version_id) REFERENCES public.content_version(id),
+  CONSTRAINT attached_file_collab_id_fkey FOREIGN KEY (collab_id) REFERENCES public.collab(id)
+);
+CREATE TABLE public.billing_config (
+  key text NOT NULL,
+  value text NOT NULL,
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT billing_config_pkey PRIMARY KEY (key)
+);
+CREATE TABLE public.billing_plan (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  code text NOT NULL UNIQUE,
+  name text NOT NULL,
+  description text,
+  paddle_price_id_monthly text UNIQUE,
+  paddle_price_id_annual text UNIQUE,
+  paddle_product_id text,
+  monthly_credits integer NOT NULL DEFAULT 0,
+  max_rollover_months integer NOT NULL DEFAULT 2,
+  price_monthly_cents integer,
+  price_annual_cents integer,
+  features jsonb DEFAULT '[]'::jsonb,
+  is_active boolean DEFAULT true,
+  display_order integer DEFAULT 0,
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT billing_plan_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.billing_webhook_event (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  event_id text NOT NULL UNIQUE,
+  event_type text NOT NULL,
+  occurred_at timestamp with time zone NOT NULL,
+  subscription_id text,
+  user_id uuid,
+  raw_payload jsonb NOT NULL,
+  status USER-DEFINED NOT NULL DEFAULT 'received'::webhook_status_type,
+  processed_at timestamp with time zone,
+  last_error text,
+  retry_count integer DEFAULT 0,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT billing_webhook_event_pkey PRIMARY KEY (id),
+  CONSTRAINT billing_webhook_event_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id)
+);
+CREATE TABLE public.chat_delta (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  round integer NOT NULL,
+  summary text,
+  short_summary text,
+  narrative text,
+  user_related text,
+  is_sticky boolean NOT NULL DEFAULT false,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT chat_delta_pkey PRIMARY KEY (id),
+  CONSTRAINT chat_delta_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.chat_mumble (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  mumble text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  lifespan uuid NOT NULL,
+  CONSTRAINT chat_mumble_pkey PRIMARY KEY (id),
+  CONSTRAINT chat_mumble_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT chat_mumble_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.client_legion (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  manager uuid,
+  name text NOT NULL,
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT client_legion_pkey PRIMARY KEY (id),
+  CONSTRAINT client_legion_manager_fkey FOREIGN KEY (manager) REFERENCES public.app_user(id)
+);
+CREATE TABLE public.collab (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  on_product uuid,
+  on_version uuid,
+  comment text NOT NULL,
+  shortest_summary text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  user_author uuid,
+  member_author uuid,
+  tagged_products ARRAY,
+  tagged_versions ARRAY,
+  tagged_collabs ARRAY,
+  tagged_members ARRAY,
+  tagged_users ARRAY,
+  collab_type USER-DEFINED DEFAULT 'user_independent'::collab_type,
+  lifespan uuid NOT NULL,
+  CONSTRAINT collab_pkey PRIMARY KEY (id),
+  CONSTRAINT collab_refers_to_product_fkey FOREIGN KEY (on_product) REFERENCES public.product(id),
+  CONSTRAINT collab_refers_to_version_fkey FOREIGN KEY (on_version) REFERENCES public.content_version(id),
+  CONSTRAINT collab_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT collab_user_author_fkey FOREIGN KEY (user_author) REFERENCES public.app_user(id),
+  CONSTRAINT collab_member_author_fkey FOREIGN KEY (member_author) REFERENCES public.member(id),
+  CONSTRAINT collab_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.content_version (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  product_id uuid NOT NULL,
+  version_number integer NOT NULL CHECK (version_number > 0),
+  content text NOT NULL,
+  change_summary text NOT NULL DEFAULT ''::text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  content_title text NOT NULL CHECK (char_length(content_title) >= 1 AND char_length(content_title) <= 200),
+  author_member uuid,
+  author_user uuid,
+  lifespan uuid NOT NULL,
+  CONSTRAINT content_version_pkey PRIMARY KEY (id),
+  CONSTRAINT content_version_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(id),
+  CONSTRAINT content_version_author_member_fkey FOREIGN KEY (author_member) REFERENCES public.member(id),
+  CONSTRAINT content_version_author_user_fkey FOREIGN KEY (author_user) REFERENCES public.app_user(id),
+  CONSTRAINT content_version_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.context_request (
+  id uuid NOT NULL,
+  product_id uuid NOT NULL,
+  session_id uuid NOT NULL,
+  versions ARRAY,
+  reason text,
+  created_at timestamp with time zone DEFAULT now(),
+  lifespan uuid NOT NULL,
+  need_per_product ARRAY NOT NULL,
+  need_per_version ARRAY,
+  CONSTRAINT context_request_pkey PRIMARY KEY (id),
+  CONSTRAINT context_request_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(id),
+  CONSTRAINT context_request_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT context_request_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.credit_conversion_config (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  usd_to_credits_rate numeric NOT NULL DEFAULT 100.00,
+  effective_from timestamp with time zone NOT NULL DEFAULT now(),
+  effective_until timestamp with time zone,
+  created_by uuid,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT credit_conversion_config_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.credit_transaction (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  transaction_type USER-DEFINED NOT NULL,
+  amount integer NOT NULL,
+  credit_pool text NOT NULL CHECK (credit_pool = ANY (ARRAY['plan'::text, 'boosted'::text, 'used'::text])),
+  plan_balance_after integer NOT NULL,
+  boosted_balance_after integer NOT NULL,
+  used_balance_after integer NOT NULL,
+  description text,
+  reference_id text,
+  reference_type text,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT credit_transaction_pkey PRIMARY KEY (id),
+  CONSTRAINT credit_transaction_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id)
+);
+CREATE TABLE public.event_log (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  round integer NOT NULL CHECK (round >= 0),
+  step text NOT NULL CHECK (step = ANY (ARRAY['Bootstrap'::text, 'Reflect'::text, 'PlanAssign'::text, 'Write'::text, 'PeerReview'::text, 'Inspection'::text, 'Presentation'::text])),
+  caller text NOT NULL CHECK (caller = ANY (ARRAY['system'::text, 'chair'::text, 'watchdog'::text, 'envoy'::text, 'operative'::text])),
+  idempotency_key text NOT NULL,
+  prompt_tokens integer,
+  output_tokens integer,
+  total_tokens integer,
+  payload_refs ARRAY,
+  error_code text,
+  error_message text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT event_log_pkey PRIMARY KEY (id),
+  CONSTRAINT event_log_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.idempotency_key (
+  key text NOT NULL,
+  session_id uuid NOT NULL,
+  round integer NOT NULL CHECK (round >= 0),
+  step text NOT NULL CHECK (step = ANY (ARRAY['Reflect'::text, 'PlanAssign'::text, 'Write'::text, 'PeerReview'::text, 'Inspection'::text, 'Presentation'::text])),
+  caller text NOT NULL CHECK (caller = ANY (ARRAY['system'::text, 'chair'::text, 'watchdog'::text, 'envoy'::text, 'operative'::text])),
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT idempotency_key_pkey PRIMARY KEY (key),
+  CONSTRAINT idempotency_key_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.llm_debug_log (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid,
+  round integer NOT NULL CHECK (round >= 0),
+  step text NOT NULL CHECK (step = ANY (ARRAY['Reflect'::text, 'PlanAssign'::text, 'Write'::text, 'PeerReview'::text, 'Inspection'::text, 'Presentation'::text])),
+  caller text NOT NULL CHECK (caller = ANY (ARRAY['system'::text, 'chair'::text, 'watchdog'::text, 'envoy'::text, 'operative'::text])),
+  idempotency_key text NOT NULL,
+  text text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT llm_debug_log_pkey PRIMARY KEY (id),
+  CONSTRAINT llm_debug_log_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.llm_models (
+  id integer NOT NULL DEFAULT nextval('llm_models_id_seq'::regclass),
+  vendor_id integer,
+  api_id text NOT NULL UNIQUE,
+  slug text NOT NULL,
+  display_name text NOT NULL,
+  display_order integer DEFAULT 0,
+  description text,
+  capabilities ARRAY NOT NULL DEFAULT '{}'::text[],
+  context_length integer,
+  price_prompt_micro bigint DEFAULT 0,
+  price_completion_micro bigint DEFAULT 0,
+  price_tier smallint DEFAULT 1,
+  fallback_model_id integer,
+  is_active boolean DEFAULT true,
+  last_synced_at timestamp with time zone DEFAULT now(),
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  parameter_count_b numeric,
+  personality_traits ARRAY,
+  professional_traits ARRAY,
+  best_for ARRAY,
+  active_parameter_count_b numeric,
+  creativity_score smallint,
+  logic_score smallint,
+  efficiency_score smallint,
+  model_family text,
+  name_within_family text,
+  CONSTRAINT llm_models_pkey PRIMARY KEY (id),
+  CONSTRAINT llm_models_vendor_id_fkey FOREIGN KEY (vendor_id) REFERENCES public.llm_vendors(id),
+  CONSTRAINT llm_models_fallback_model_id_fkey FOREIGN KEY (fallback_model_id) REFERENCES public.llm_models(id)
+);
+CREATE TABLE public.llm_request (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  member_id uuid NOT NULL,
+  round integer NOT NULL,
+  step text NOT NULL,
+  try integer NOT NULL,
+  user_part text NOT NULL,
+  system_part text NOT NULL,
+  response text NOT NULL,
+  response_type text NOT NULL,
+  model_id integer NOT NULL,
+  error text,
+  duration_ms integer NOT NULL,
+  prompt_tokens_usage integer NOT NULL,
+  output_tokens_usage integer NOT NULL,
+  request_id text NOT NULL,
+  resolved_model text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  input_metadata jsonb NOT NULL DEFAULT '{}'::jsonb,
+  output_metadata jsonb NOT NULL DEFAULT '{}'::jsonb,
+  CONSTRAINT llm_request_pkey PRIMARY KEY (id),
+  CONSTRAINT llm_request_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT llm_request_member_id_fkey FOREIGN KEY (member_id) REFERENCES public.member(id),
+  CONSTRAINT llm_request_model_id_fkey FOREIGN KEY (model_id) REFERENCES public.llm_models(id)
+);
+CREATE TABLE public.llm_vendors (
+  id integer NOT NULL DEFAULT nextval('llm_vendors_id_seq'::regclass),
+  slug text NOT NULL UNIQUE,
+  display_name text NOT NULL,
+  display_order integer DEFAULT 0,
+  is_active boolean DEFAULT true,
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  link text,
+  description text,
+  CONSTRAINT llm_vendors_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.member (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  role text NOT NULL CHECK (role = ANY (ARRAY['operative'::text, 'chair'::text, 'watchdog'::text, 'envoy'::text])),
+  team_role text,
+  color text,
+  characteristics jsonb DEFAULT '{}'::jsonb,
+  life_story text,
+  special_orders text,
+  team_id uuid NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  model_id integer NOT NULL,
+  display_order integer DEFAULT 0,
+  CONSTRAINT member_pkey PRIMARY KEY (id),
+  CONSTRAINT member_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.team(id),
+  CONSTRAINT member_model_id_fkey FOREIGN KEY (model_id) REFERENCES public.llm_models(id)
+);
+CREATE TABLE public.member_session_data (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  member_id uuid NOT NULL,
+  key text NOT NULL,
+  value text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT member_session_data_pkey PRIMARY KEY (id),
+  CONSTRAINT member_session_data_member_id_fkey FOREIGN KEY (member_id) REFERENCES public.member(id)
+);
+CREATE TABLE public.piece_lifespan (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  attaching uuid,
+  receiving uuid,
+  round_created integer NOT NULL,
+  step_created text NOT NULL,
+  round_expired integer,
+  step_expired text,
+  session_id uuid NOT NULL,
+  denoting text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT piece_lifespan_pkey PRIMARY KEY (id),
+  CONSTRAINT piece_lifespan_attaching_fkey FOREIGN KEY (attaching) REFERENCES public.member(id),
+  CONSTRAINT piece_lifespan_receiving_fkey FOREIGN KEY (receiving) REFERENCES public.member(id),
+  CONSTRAINT piece_lifespan_step_created_fkey FOREIGN KEY (step_created) REFERENCES public.step(id),
+  CONSTRAINT piece_lifespan_step_expired_fkey FOREIGN KEY (step_expired) REFERENCES public.step(id),
+  CONSTRAINT piece_lifespan_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.product (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  parent_product_id uuid,
+  order_index integer,
+  name text NOT NULL,
+  description text,
+  definition_of_done text NOT NULL,
+  type USER-DEFINED NOT NULL,
+  is_round_focus boolean NOT NULL DEFAULT false,
+  is_deliverable boolean NOT NULL DEFAULT false,
+  is_read_only boolean NOT NULL DEFAULT false,
+  marked_as USER-DEFINED NOT NULL DEFAULT 'Pending'::marked_as_enum,
+  selected_version_id uuid,
+  content_min_length integer,
+  content_max_length integer,
+  summary text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  metadata jsonb DEFAULT '{}'::jsonb,
+  lifespan uuid NOT NULL,
+  owner_member_id uuid,
+  CONSTRAINT product_pkey PRIMARY KEY (id),
+  CONSTRAINT product_parent_product_id_fkey FOREIGN KEY (parent_product_id) REFERENCES public.product(id),
+  CONSTRAINT product_selected_version_fk FOREIGN KEY (selected_version_id) REFERENCES public.content_version(id),
+  CONSTRAINT product_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT product_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id),
+  CONSTRAINT product_owner_member_id_fkey FOREIGN KEY (owner_member_id) REFERENCES public.member(id)
+);
+CREATE TABLE public.product_audit (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  product_id uuid NOT NULL,
+  change_type text NOT NULL,
+  field text,
+  from_value text,
+  to_value text,
+  round integer NOT NULL,
+  step text NOT NULL,
+  by_member uuid,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT product_audit_pkey PRIMARY KEY (id),
+  CONSTRAINT product_audit_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT product_audit_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(id),
+  CONSTRAINT product_audit_by_member_fkey FOREIGN KEY (by_member) REFERENCES public.member(id)
+);
+CREATE TABLE public.product_read (
+  user_id uuid NOT NULL,
+  session_id uuid NOT NULL,
+  product_id uuid,
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  collabs_read timestamp with time zone,
+  product_seen timestamp with time zone,
+  CONSTRAINT product_read_pkey PRIMARY KEY (id),
+  CONSTRAINT product_read_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id),
+  CONSTRAINT product_read_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT product_read_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(id)
+);
+CREATE TABLE public.reflection_note (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  refers_to_product uuid NOT NULL,
+  refers_to_content_version uuid,
+  note text NOT NULL,
+  following_collab_ids ARRAY DEFAULT '{}'::uuid[],
+  severity integer NOT NULL DEFAULT 5 CHECK (severity >= 1 AND severity <= 10),
+  is_addressed boolean NOT NULL DEFAULT false,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  author_member uuid,
+  author_user uuid,
+  requests text,
+  lifespan uuid NOT NULL,
+  CONSTRAINT reflection_note_pkey PRIMARY KEY (id),
+  CONSTRAINT reflection_note_refers_to_product_fkey FOREIGN KEY (refers_to_product) REFERENCES public.product(id),
+  CONSTRAINT reflection_note_refers_to_content_version_fkey FOREIGN KEY (refers_to_content_version) REFERENCES public.content_version(id),
+  CONSTRAINT reflection_note_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT reflection_note_author_member_fkey FOREIGN KEY (author_member) REFERENCES public.member(id),
+  CONSTRAINT reflection_note_author_user_fkey FOREIGN KEY (author_user) REFERENCES public.app_user(id),
+  CONSTRAINT reflection_note_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.remarks (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  type text NOT NULL,
+  content text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  pinned_to ARRAY DEFAULT '{}'::uuid[],
+  author_member uuid,
+  author_user uuid,
+  lifespan uuid NOT NULL,
+  CONSTRAINT remarks_pkey PRIMARY KEY (id),
+  CONSTRAINT remarks_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT remarks_author_member_fkey FOREIGN KEY (author_member) REFERENCES public.member(id),
+  CONSTRAINT remarks_author_user_fkey FOREIGN KEY (author_user) REFERENCES public.app_user(id),
+  CONSTRAINT remarks_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.repository (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  creator_id uuid NOT NULL,
+  parent uuid,
+  type USER-DEFINED NOT NULL DEFAULT 'personal'::repository_type,
+  legion_id uuid,
+  name text NOT NULL,
+  description text,
+  created_at timestamp with time zone DEFAULT now(),
+  updated_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT repository_pkey PRIMARY KEY (id),
+  CONSTRAINT repository_creator_id_fkey FOREIGN KEY (creator_id) REFERENCES public.app_user(id),
+  CONSTRAINT repository_parent_fkey FOREIGN KEY (parent) REFERENCES public.repository(id),
+  CONSTRAINT repository_legion_id_fkey FOREIGN KEY (legion_id) REFERENCES public.client_legion(id)
+);
+CREATE TABLE public.round_assignment (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  product_id uuid NOT NULL,
+  directive_collab_id uuid NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  lifespan uuid NOT NULL,
+  CONSTRAINT round_assignment_pkey PRIMARY KEY (id),
+  CONSTRAINT round_assignment_product_id_fkey FOREIGN KEY (product_id) REFERENCES public.product(id),
+  CONSTRAINT round_assignment_directive_collab_id_fkey FOREIGN KEY (directive_collab_id) REFERENCES public.collab(id),
+  CONSTRAINT round_assignment_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id),
+  CONSTRAINT round_assignment_lifespan_fkey FOREIGN KEY (lifespan) REFERENCES public.piece_lifespan(id)
+);
+CREATE TABLE public.round_assignment_context_request (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  assignment_id uuid NOT NULL,
+  context_request_id uuid NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT round_assignment_context_request_pkey PRIMARY KEY (id),
+  CONSTRAINT round_assignment_context_request_assignment_id_fkey FOREIGN KEY (assignment_id) REFERENCES public.round_assignment(id),
+  CONSTRAINT round_assignment_context_request_context_request_id_fkey FOREIGN KEY (context_request_id) REFERENCES public.context_request(id)
+);
+CREATE TABLE public.run_lock (
+  session_id uuid NOT NULL,
+  owner text NOT NULL,
+  acquired_at timestamp with time zone NOT NULL DEFAULT now(),
+  expires_at timestamp with time zone NOT NULL,
+  CONSTRAINT run_lock_pkey PRIMARY KEY (session_id),
+  CONSTRAINT run_lock_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.session (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  name text NOT NULL,
+  status text NOT NULL DEFAULT 'Pending'::text CHECK (status = ANY (ARRAY['Pending'::text, 'Live'::text, 'Halted'::text])),
+  halt_reason text,
+  halted_on_step text CHECK (halted_on_step = ANY (ARRAY['Bootstrap'::text, 'Reflect'::text, 'PlanAssign'::text, 'Write'::text, 'PeerReview'::text, 'Inspection'::text, 'Presentation'::text])),
+  access text CHECK (access = ANY (ARRAY['public'::text, 'private'::text])),
+  root_product_id uuid,
+  rounds_left integer NOT NULL DEFAULT 0 CHECK (rounds_left >= 0),
+  current_round integer NOT NULL DEFAULT 0 CHECK (current_round >= 0),
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  mission_charter text,
+  archived_at timestamp with time zone,
+  team_id uuid NOT NULL,
+  error text,
+  round_status text DEFAULT 'idle'::text,
+  legion_id uuid,
+  repository_id uuid,
+  CONSTRAINT session_pkey PRIMARY KEY (id),
+  CONSTRAINT session_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id),
+  CONSTRAINT session_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.team(id),
+  CONSTRAINT session_legion_id_fkey FOREIGN KEY (legion_id) REFERENCES public.client_legion(id),
+  CONSTRAINT session_repository_id_fkey FOREIGN KEY (repository_id) REFERENCES public.repository(id)
+);
+CREATE TABLE public.session_halt_event (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  round integer NOT NULL CHECK (round >= 0),
+  reason text NOT NULL CHECK (reason = ANY (ARRAY['error'::text, 'questionToUser'::text, 'concluded'::text, 'noMoreRounds'::text, 'userHalt'::text])),
+  related_collab_id uuid,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT session_halt_event_pkey PRIMARY KEY (id),
+  CONSTRAINT session_halt_event_related_collab_id_fkey FOREIGN KEY (related_collab_id) REFERENCES public.collab(id),
+  CONSTRAINT session_halt_event_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.session_round (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  round integer NOT NULL CHECK (round >= 0),
+  started_at timestamp with time zone NOT NULL DEFAULT now(),
+  ended_at timestamp with time zone,
+  deltas jsonb NOT NULL DEFAULT '{}'::jsonb,
+  CONSTRAINT session_round_pkey PRIMARY KEY (id),
+  CONSTRAINT session_round_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);
+CREATE TABLE public.step (
+  id text NOT NULL,
+  name text NOT NULL,
+  order_number text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT step_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.subscription (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  plan_code text NOT NULL,
+  status text NOT NULL CHECK (status = ANY (ARRAY['active'::text, 'past_due'::text, 'canceled'::text, 'trialing'::text])),
+  current_cycle_start timestamp with time zone NOT NULL,
+  current_cycle_end timestamp with time zone NOT NULL,
+  tokens_used_in_cycle integer NOT NULL DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT subscription_pkey PRIMARY KEY (id),
+  CONSTRAINT subscription_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id)
+);
+CREATE TABLE public.subscription_history (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  event_type USER-DEFINED NOT NULL,
+  old_plan_id uuid,
+  new_plan_id uuid,
+  old_period USER-DEFINED,
+  new_period USER-DEFINED,
+  old_status USER-DEFINED,
+  new_status USER-DEFINED,
+  plan_credits_before integer,
+  plan_credits_after integer,
+  boosted_credits_before integer,
+  boosted_credits_after integer,
+  used_credits_before integer,
+  used_credits_after integer,
+  metadata jsonb DEFAULT '{}'::jsonb,
+  triggered_by text,
+  created_at timestamp with time zone DEFAULT now(),
+  CONSTRAINT subscription_history_pkey PRIMARY KEY (id),
+  CONSTRAINT subscription_history_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id),
+  CONSTRAINT subscription_history_old_plan_id_fkey FOREIGN KEY (old_plan_id) REFERENCES public.billing_plan(id),
+  CONSTRAINT subscription_history_new_plan_id_fkey FOREIGN KEY (new_plan_id) REFERENCES public.billing_plan(id)
+);
+CREATE TABLE public.tag (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  name text NOT NULL UNIQUE,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  owner_user_id uuid,
+  is_public boolean NOT NULL DEFAULT true,
+  description text,
+  category_default text,
+  CONSTRAINT tag_pkey PRIMARY KEY (id),
+  CONSTRAINT tag_owner_user_id_fkey FOREIGN KEY (owner_user_id) REFERENCES public.app_user(id)
+);
+CREATE TABLE public.tag_prompt (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  tag_id uuid NOT NULL,
+  prompt_snippet text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  nesting text,
+  is_replacing boolean NOT NULL DEFAULT false,
+  type text,
+  CONSTRAINT tag_prompt_pkey PRIMARY KEY (id),
+  CONSTRAINT tag_prompt_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES public.tag(id)
+);
+CREATE TABLE public.team (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  name text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  description text,
+  is_public boolean NOT NULL DEFAULT false,
+  catch_phrase text,
+  category text,
+  quick_starts ARRAY,
+  default_starting_rounds integer CHECK (default_starting_rounds IS NULL OR default_starting_rounds > 0),
+  bootstrap_prompt text,
+  is_saved boolean NOT NULL DEFAULT false,
+  originated_from_team uuid,
+  display_order integer DEFAULT 0,
+  CONSTRAINT team_pkey PRIMARY KEY (id),
+  CONSTRAINT team_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.app_user(id),
+  CONSTRAINT team_originated_from_team_fkey FOREIGN KEY (originated_from_team) REFERENCES public.team(id)
+);
+CREATE TABLE public.team_rating (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  team_share_id uuid NOT NULL,
+  rater_user_id uuid NOT NULL,
+  stars integer NOT NULL CHECK (stars >= 1 AND stars <= 5),
+  comment text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT team_rating_pkey PRIMARY KEY (id),
+  CONSTRAINT team_rating_team_share_id_fkey FOREIGN KEY (team_share_id) REFERENCES public.team_share(id),
+  CONSTRAINT team_rating_rater_user_id_fkey FOREIGN KEY (rater_user_id) REFERENCES public.app_user(id)
+);
+CREATE TABLE public.team_share (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  owner_user_id uuid NOT NULL,
+  team_id uuid NOT NULL,
+  is_public boolean NOT NULL DEFAULT false,
+  slug text UNIQUE,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT team_share_pkey PRIMARY KEY (id),
+  CONSTRAINT team_share_owner_user_id_fkey FOREIGN KEY (owner_user_id) REFERENCES public.app_user(id),
+  CONSTRAINT team_share_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.team(id)
+);
+CREATE TABLE public.team_tag (
+  team_id uuid NOT NULL,
+  tag_id uuid NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT team_tag_pkey PRIMARY KEY (team_id, tag_id),
+  CONSTRAINT team_tag_team_id_fkey FOREIGN KEY (team_id) REFERENCES public.team(id),
+  CONSTRAINT team_tag_tag_id_fkey FOREIGN KEY (tag_id) REFERENCES public.tag(id)
+);
+CREATE TABLE public.usage_event (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  session_id uuid NOT NULL,
+  round integer NOT NULL,
+  step text NOT NULL CHECK (step = ANY (ARRAY['Bootstrap'::text, 'Reflect'::text, 'PlanAssign'::text, 'Write'::text, 'PeerReview'::text, 'Inspection'::text, 'Presentation'::text])),
+  role text NOT NULL,
+  provider text NOT NULL,
+  model text NOT NULL,
+  prompt_tokens integer NOT NULL DEFAULT 0,
+  output_tokens integer NOT NULL DEFAULT 0,
+  total_tokens integer NOT NULL DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT usage_event_pkey PRIMARY KEY (id),
+  CONSTRAINT usage_event_session_id_fkey FOREIGN KEY (session_id) REFERENCES public.session(id)
+);

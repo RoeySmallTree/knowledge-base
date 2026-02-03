@@ -1,0 +1,63 @@
+{
+  "team_id": "8497f490-b28b-4c60-b1e0-db10b5581612",
+  "team_name": "The Accountant's Ledger",
+  "folder": "cortex",
+  "file": "ledgers-bible.md",
+  "assignments": [
+    {
+      "role": "Librarian",
+      "function": "Knowledge base/Retrieval",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#3",
+      "fallback_name": "MiniMax M2.1",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH critical for retrieving current tax regulations and updates; 2M context window holds entire rule library, precedents, and policy versions; Logic 8.5 for pattern matching between questions and applicable rules"
+    },
+    {
+      "role": "Analyst",
+      "function": "Rule application/Classification",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#128",
+      "fallback_name": "DeepSeek R1 0528",
+      "tier": "A",
+      "reasoning": "Logic 10.0 perfect for 'which rules apply, how do they interact?' puzzle-solving; COMPETITION-MATH trait excels at precise rule application and edge case analysis; handles complex multi-rule interactions"
+    },
+    {
+      "role": "Calculator",
+      "function": "Financial computations",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 9.5 elite mathematical capability in 14B parameters; COMPETITION-MATH matches 'spreadsheet liver' who needs perfect accuracy; Efficiency 9.0 extremely cost-effective for high-volume calculations"
+    },
+    {
+      "role": "Challenger",
+      "function": "Edge cases/Watchdog",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "SELF-VERIFYING, VISIBLE-COT perfect for 'what about...?' questioning; Logic 9.0 finds edge cases, unreasonable amounts, missing assumptions; chain-of-thought visibility shows exactly what's being challenged"
+    },
+    {
+      "role": "Auditor",
+      "function": "Compliance/Documentation",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "STRUCTURED-OUTPUT built for audit trails and compliance checklists; Logic 8.5 for compliance verification and requirement tracking; Efficiency 9.5 for supporting documentation role"
+    }
+  ]
+}

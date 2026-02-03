@@ -1,0 +1,74 @@
+{
+  "team_id": "aeb69aa6-9121-4b45-a135-b147712e7fc6",
+  "team_name": "Tough Love",
+  "folder": "vitals",
+  "file": "tough-love.md",
+  "assignments": [
+    {
+      "role": "Blaze",
+      "function": "Roastmaster/Chair",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Creative 8.5 + Logic 9.5 perfect for comedy timing + coherent synthesis; Chair role demands premium reasoning for complex flow management; can transition seamlessly from entertainment to actionable intervention"
+    },
+    {
+      "role": "Zara",
+      "function": "The Influencer",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#216",
+      "fallback_name": "Lumimaid v0.2",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for devastating cultural observations; CHARACTER-CONSISTENT trait perfect for Gen-Z persona maintenance; SPATIAL-AWARE helps read cultural signals and aesthetic patterns"
+    },
+    {
+      "role": "Ming",
+      "function": "The Tiger",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Creative 7.5 + Logic 7.5 balanced for disappointment + potential analysis; USER-ALIGNED, ANTI-LECTURE fits caring-underneath motivation style; can deploy shame productively without crossing into cruelty"
+    },
+    {
+      "role": "Gunner",
+      "function": "The Sergeant",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#3",
+      "fallback_name": "MiniMax M2.1",
+      "tier": "B",
+      "reasoning": "Logic 7.5 for identifying logical fallacies in excuses; USER-ALIGNED, ANTI-LECTURE perfect for no-bullshit accountability; can distinguish real constraints from comfort preferences"
+    },
+    {
+      "role": "Lux",
+      "function": "The Stylist",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#189",
+      "fallback_name": "InternVL3 78B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for elegant contempt and aesthetic observations; SPATIAL-AWARE helps read visual communication and style signals; can process images if user uploads photos (vision capability)"
+    },
+    {
+      "role": "Pulse",
+      "function": "Vibe Check/Watchdog",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for complex harm-vs-help judgment calls; SELF-CORRECTING, PRECISE perfect for conscience role; Efficiency 9.5 makes safety monitoring cost-effective"
+    }
+  ]
+}

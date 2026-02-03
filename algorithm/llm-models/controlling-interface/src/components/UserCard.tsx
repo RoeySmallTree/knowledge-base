@@ -1,6 +1,7 @@
 import React from 'react';
 import { AppUser } from '../types';
 import { User, MapPin, Briefcase } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 interface UserCardProps {
     user: AppUser;
@@ -22,7 +23,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
                         )}
                     </div>
                     <div className={`
-                        absolute -bottom-2 -right-2 px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider border
+                        absolute -bottom-2 -right-2 px-2 py-0.5 ${FONT_SIZE.XXS} font-mono uppercase tracking-wider border
                         ${user.type === 'admin'
                             ? 'bg-red-500/20 text-red-500 border-red-500/50'
                             : 'bg-primary/20 text-primary border-primary/50'}
@@ -32,15 +33,15 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
                 </div>
 
                 <div className="min-w-0 flex-1">
-                    <h3 className="text-lg font-display text-white group-hover:text-primary transition-colors truncate">
+                    <h3 className={`${FONT_SIZE.LG} font-display text-white group-hover:text-primary transition-colors truncate`}>
                         {user.display_name || 'Anonymous User'}
                     </h3>
-                    <div className="text-sm font-mono text-white/50 truncate">
+                    <div className={`${FONT_SIZE.SM} font-mono text-white/50 truncate`}>
                         {user.email}
                     </div>
                     {user.community_name && (
                         <div className="mt-2 inline-flex items-center px-2 py-1 bg-white/5 border border-white/10 rounded-sm">
-                            <span className="text-xs font-mono text-secondary tracking-wide">
+                            <span className={`${FONT_SIZE.XS} font-mono text-secondary tracking-wide`}>
                                 {user.community_name}
                             </span>
                         </div>
@@ -50,7 +51,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
 
             {/* Details Body */}
             <div className="p-4 space-y-3 flex-1">
-                <div className="grid grid-cols-2 gap-2 text-xs font-mono">
+                <div className={`grid grid-cols-2 gap-2 ${FONT_SIZE.XS} font-mono`}>
                     {user.location && (
                         <div className="flex items-center gap-2 text-white/60">
                             <MapPin size={12} className="text-primary/70" />
@@ -67,8 +68,8 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
 
                 {user.legion_id && (
                     <div className="pt-2 border-t border-white/5">
-                        <div className="text-[10px] text-white/30 uppercase tracking-widest mb-1">LEGION ID</div>
-                        <div className="text-xs font-mono text-white/80 truncate font-bold">
+                        <div className={`${FONT_SIZE.XXS} text-white/30 uppercase tracking-widest mb-1`}>LEGION ID</div>
+                        <div className={`${FONT_SIZE.XS} font-mono text-white/80 truncate font-bold`}>
                             {user.legion_id}
                         </div>
                     </div>
@@ -76,7 +77,7 @@ export const UserCard: React.FC<UserCardProps> = ({ user }) => {
             </div>
 
             {/* Footer Info */}
-            <div className="p-3 bg-black/40 border-t border-white/5 flex justify-between items-center text-[10px] font-mono text-white/30">
+            <div className={`p-3 bg-black/40 border-t border-white/5 flex justify-between items-center ${FONT_SIZE.XXS} font-mono text-white/30`}>
                 <span>Created: {new Date(user.created_at).toLocaleDateString()}</span>
                 {user.chat_name && <span>aka {user.chat_name}</span>}
             </div>

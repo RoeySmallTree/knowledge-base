@@ -1,0 +1,3313 @@
+{
+  "teams": [
+    {
+      "team_id": "8e65fa36-4b9b-40f5-9f34-71b8183292c6",
+      "team_name": "The Last Stand",
+      "folder": "arcade",
+      "file": "the-last-stand.md",
+      "members": [
+        {
+          "name": "Hawk",
+          "role": "Commander",
+          "function": "Lead the survival operation, synthesize team inputs, make final calls",
+          "importance": "Critical",
+          "model_id": "#14",
+          "model_name": "Gemini 3 Pro Preview",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 10.0,
+          "creative": 8.5,
+          "efficiency": 7.0,
+          "traits": [
+            "Most-Intelligent",
+            "Deep-Thinker",
+            "Research-Grade",
+            "Multimodal-Master"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "deep-think",
+            "multimodal"
+          ]
+        },
+        {
+          "name": "Vex",
+          "role": "Tactical Expert",
+          "function": "Assess threats, plan fortifications, develop combat doctrine",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "tool-calling",
+            "browser-control",
+            "multi-language"
+          ]
+        },
+        {
+          "name": "Stores",
+          "role": "Quartermaster",
+          "function": "Calculate supply duration, plan rationing, prioritize scavenging",
+          "importance": "High",
+          "model_id": "#35",
+          "model_name": "Nemotron 3 Nano 30B",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 9.0,
+          "creative": 7.5,
+          "efficiency": 10.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Fast-Twitch",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "hybrid-architecture",
+            "efficient-compute"
+          ]
+        },
+        {
+          "name": "Bones",
+          "role": "Medic",
+          "function": "Address health concerns, plan sanitation, handle bite protocol",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "multi-source-synthesis"
+          ]
+        },
+        {
+          "name": "Gray",
+          "role": "Philosopher",
+          "function": "Ask uncomfortable questions, force ethical consideration",
+          "importance": "Medium",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 8.0,
+          "creative": 8.0,
+          "efficiency": 7.0,
+          "traits": [
+            "World-Builder",
+            "Character-Consistent",
+            "Immersive",
+            "Envoy"
+          ],
+          "special_capabilities": [
+            "non-restrictive",
+            "anti-lecture",
+            "ethical-reasoning"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 3,
+        "medium_roles": 1,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Google",
+        "MiniMax",
+        "NVIDIA",
+        "Sao10K"
+      ]
+    },
+    {
+      "team_id": "a1353328-6900-4ad4-b0d5-e2a612a5c3fd",
+      "team_name": "The Roast Pit",
+      "folder": "arcade",
+      "file": "the-roast-pit.md",
+      "members": [
+        {
+          "name": "Singe",
+          "role": "Roastmaster/Host",
+          "function": "Host the roast, introduce comics, manage pacing, deliver opening/closing burns",
+          "importance": "Critical",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Character-Consistent",
+            "Immersive",
+            "World-Builder",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "uncensored",
+            "character-consistency"
+          ]
+        },
+        {
+          "name": "Vicious",
+          "role": "Old School Insult Comic",
+          "function": "Deliver direct, efficient insults in the tradition of Don Rickles",
+          "importance": "High",
+          "model_id": "#216",
+          "model_name": "Lumimaid v0.2 8B",
+          "alternative_id": "#195",
+          "alternative_name": "Venice Uncensored",
+          "logic": 5.5,
+          "creative": 9.0,
+          "efficiency": 8.5,
+          "traits": [
+            "Creative",
+            "Roleplayer",
+            "Permissive",
+            "Colloquial",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "slop-free",
+            "minimal-refusals"
+          ]
+        },
+        {
+          "name": "Byte",
+          "role": "Gen-Z Troll",
+          "function": "Deliver internet-native roasts with meme-format destruction",
+          "importance": "High",
+          "model_id": "#195",
+          "model_name": "Venice Uncensored",
+          "alternative_id": "#215",
+          "alternative_name": "Lunaris 8B",
+          "logic": 7.0,
+          "creative": 9.0,
+          "efficiency": 8.0,
+          "traits": [
+            "Permissive",
+            "Creative",
+            "Guardrail-Lite",
+            "Colloquial",
+            "Roleplayer"
+          ],
+          "special_capabilities": [
+            "2.2%-refusal",
+            "most-uncensored",
+            "cultural-awareness"
+          ]
+        },
+        {
+          "name": "Frost",
+          "role": "Deadpan Academic",
+          "function": "Deliver surgical, analytical destruction that makes targets feel stupid",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "#1-open-source",
+            "structured-output",
+            "analytical-framing"
+          ]
+        },
+        {
+          "name": "Razor",
+          "role": "Crowd Worker",
+          "function": "Find the specific, personal angle that cuts deepest",
+          "importance": "High",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#214",
+          "alternative_name": "Euryale 70B v2.2",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "personal-angle-finding"
+          ]
+        },
+        {
+          "name": "Counsel",
+          "role": "Public Defender",
+          "function": "Attempt to defend the target, fail hilariously, get roasted",
+          "importance": "High (provides structure)",
+          "model_id": "#216",
+          "model_name": "Lumimaid v0.2 8B",
+          "alternative_id": "#219",
+          "alternative_name": "MythoMax L2 13B",
+          "logic": 5.5,
+          "creative": 9.0,
+          "efficiency": 8.5,
+          "traits": [
+            "Creative",
+            "Roleplayer",
+            "Permissive",
+            "Colloquial",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "slop-free",
+            "minimal-refusals",
+            "comedic-failure"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 5,
+        "budget_optimized": 3
+      },
+      "provider_diversity": [
+        "Sao10K",
+        "NeverSleep",
+        "Venice",
+        "MiniMax",
+        "NousResearch"
+      ]
+    },
+    {
+      "team_id": "08eb2915-d272-4937-bd56-ea69db4ef0fb",
+      "team_name": "The Tin Foil Hat Society",
+      "folder": "arcade",
+      "file": "the-tin-foil-hat-society.md",
+      "members": [
+        {
+          "name": "Vector",
+          "role": "Paranoiac/Narrative Driver",
+          "function": "Drive conspiracy construction, connect topics through escalating revelations, maintain paranoid energy",
+          "importance": "Critical",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "narrative-building"
+          ]
+        },
+        {
+          "name": "Cobweb",
+          "role": "Archivist/Research",
+          "function": "Provide real, verifiable historical facts that anchor conspiracy in plausibility",
+          "importance": "Critical",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "real-time-intel"
+          ]
+        },
+        {
+          "name": "Cipher",
+          "role": "Numerologist/Pattern Finder",
+          "function": "Find numerical patterns, calculate gematria, identify date correlations",
+          "importance": "High",
+          "model_id": "#181",
+          "model_name": "QwQ-32B",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 9.0,
+          "creative": 5.0,
+          "efficiency": 8.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Stepwise",
+            "Self-Correcting",
+            "Analyst"
+          ],
+          "special_capabilities": [
+            "mathematical-reasoning",
+            "pattern-recognition",
+            "self-correction"
+          ]
+        },
+        {
+          "name": "Glyph",
+          "role": "Symbologist/Visual Decoder",
+          "function": "Find visual/symbolic connections, analyze logos and imagery for hidden meaning",
+          "importance": "High",
+          "model_id": "#189",
+          "model_name": "InternVL3 78B",
+          "alternative_id": "#6",
+          "alternative_name": "GLM-4.6V",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Multimodal-Master",
+            "Analyst",
+            "Context-Heavy",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "vision",
+            "multimodal",
+            "visual-analysis",
+            "symbol-decoding"
+          ]
+        },
+        {
+          "name": "Quill",
+          "role": "Skeptic/Convert",
+          "function": "Provide skeptical pushback, raise rational objections, convert gradually",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "critical-thinking",
+            "conversion-arc",
+            "self-correction"
+          ]
+        },
+        {
+          "name": "Redact",
+          "role": "Whistleblower/Assembler",
+          "function": "Assemble Red String Board and Manifesto, package conspiracy for delivery",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "browser-control",
+            "structured-output",
+            "content-packaging"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 2,
+        "high_roles": 4,
+        "budget_optimized": 3
+      },
+      "provider_diversity": [
+        "NousResearch",
+        "xAI",
+        "Alibaba",
+        "OpenGVLab",
+        "MiniMax"
+      ]
+    },
+    {
+      "team_id": "8010742c-237c-409a-a374-02cca14a4c94",
+      "team_name": "The Customer Success Core",
+      "folder": "cortex",
+      "file": "customer-success.md",
+      "members": [
+        {
+          "name": "Strategist",
+          "role": "Portfolio/Coordinator",
+          "function": "Own portfolio strategy, prioritize customers, allocate team focus, coordinate analysis",
+          "importance": "Critical",
+          "model_id": "#14",
+          "model_name": "Gemini 3 Pro Preview",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 10.0,
+          "creative": 8.5,
+          "efficiency": 7.0,
+          "traits": [
+            "Most-Intelligent",
+            "Deep-Thinker",
+            "Research-Grade",
+            "Multimodal-Master"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "deep-think",
+            "multimodal"
+          ]
+        },
+        {
+          "name": "Listener",
+          "role": "Conversation Analysis",
+          "function": "Analyze conversations for signals, detect sentiment, flag churn/expansion signals",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#3",
+          "alternative_name": "MiniMax M2.1",
+          "logic": 8.5,
+          "creative": 8.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "sentiment-analysis"
+          ]
+        },
+        {
+          "name": "Calculator",
+          "role": "Health Scoring",
+          "function": "Calculate health scores, track value/effort, identify over/under-served accounts",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 10.0,
+          "creative": 7.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Competition-Math",
+            "Precise",
+            "Stepwise",
+            "IMO-IOI-Gold"
+          ],
+          "special_capabilities": [
+            "no-tools-needed",
+            "pure-reasoning",
+            "complex-calculations"
+          ]
+        },
+        {
+          "name": "Scout",
+          "role": "Opportunity Hunter",
+          "function": "Identify expansion opportunities, detect upsell/cross-sell signals, flag readiness",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "multi-source-synthesis",
+            "browser-control"
+          ]
+        },
+        {
+          "name": "Sentinel",
+          "role": "Deadline/Renewal Watchdog",
+          "function": "Track renewals, monitor follow-ups, alert on overdue items, enforce commitments",
+          "importance": "Critical",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "assumption-hunting"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 4,
+        "high_roles": 1,
+        "medium_roles": 0,
+        "budget_optimized": 1
+      },
+      "provider_diversity": [
+        "Google",
+        "Anthropic",
+        "DeepSeek",
+        "MiniMax"
+      ]
+    },
+    {
+      "team_id": "8497f490-b28b-4c60-b1e0-db10b5581612",
+      "team_name": "The Accountant's Ledger",
+      "folder": "cortex",
+      "file": "ledgers-bible.md",
+      "members": [
+        {
+          "name": "Librarian",
+          "role": "Knowledge base/Retrieval",
+          "function": "Maintain the knowledge base of tax rules, company policies, and precedents. Retrieve relevant rules for any financial question. Provide accurate citations.",
+          "importance": "Critical",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#3",
+          "alternative_name": "MiniMax M2.1",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "2m-context",
+            "real-time-tax-updates",
+            "cross-referencing"
+          ]
+        },
+        {
+          "name": "Analyst",
+          "role": "Rule application/Classification",
+          "function": "Apply rules to expenses and transactions. Determine deductibility with citations. Classify to correct accounts. Document reasoning.",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#128",
+          "alternative_name": "DeepSeek R1 0528",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Deep-Thinker",
+            "Agentic",
+            "Tool-Master",
+            "Competition-Math",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "multi-rule-interaction",
+            "pure-reasoning",
+            "no-tools"
+          ]
+        },
+        {
+          "name": "Calculator",
+          "role": "Financial computations",
+          "function": "Compute financial metrics (runway, burn, margins). Generate financial statements. Reconcile accounts. Ensure mathematical accuracy.",
+          "importance": "High",
+          "model_id": "#212",
+          "model_name": "Phi 4",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 9.5,
+          "creative": 6.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Competition-Math",
+            "Cost-Saver",
+            "Fast-Twitch"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "14b-efficiency",
+            "financial-metrics",
+            "penny-accuracy"
+          ]
+        },
+        {
+          "name": "Challenger",
+          "role": "Edge cases/Watchdog",
+          "function": "Challenge classifications and determinations. Identify edge cases. Check reasonableness of amounts. Raise concerns and questions.",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Deep-Thinker",
+            "Self-Correcting",
+            "Self-Verifying",
+            "Visible-CoT",
+            "Analyst"
+          ],
+          "special_capabilities": [
+            "self-verifying",
+            "visible-cot",
+            "edge-case-finding",
+            "audit-prevention"
+          ]
+        },
+        {
+          "name": "Auditor",
+          "role": "Compliance/Documentation",
+          "function": "Verify compliance with policies and regulations. Check for required documentation. Maintain audit trails. Flag policy violations.",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "audit-trails",
+            "compliance-verification"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 3,
+        "high_roles": 2,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "xAI",
+        "DeepSeek",
+        "Microsoft",
+        "MiniMax"
+      ]
+    },
+    {
+      "team_id": "7b098849-d18f-45dd-be8f-3b37e1a7f9c8",
+      "team_name": "The Digital Brain",
+      "folder": "cortex",
+      "file": "digital-brain.md",
+      "members": [
+        {
+          "name": "Architect",
+          "role": "Structure/Chair/Coordinator",
+          "function": "Design and maintain knowledge hierarchy, decide where new knowledge belongs, interpret user requests, coordinate team activities, resolve structural conflicts",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 7.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Code-Master",
+            "Workhorse",
+            "Value-Leader",
+            "Long-Running",
+            "Computer-User"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "computer-use",
+            "production-reliability"
+          ]
+        },
+        {
+          "name": "Librarian",
+          "role": "Memory/Retrieval/Indexing",
+          "function": "Retrieve relevant knowledge for queries, maintain indexes, classify incoming information, detect duplicates, connect queries to unexpected knowledge",
+          "importance": "Critical",
+          "model_id": "#203",
+          "model_name": "Llama 4 Scout",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 7.5,
+          "creative": 6.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Context-Heavy",
+            "Navigator",
+            "Memory-Master",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "10M-context",
+            "long-context-champion",
+            "repository-indexing"
+          ]
+        },
+        {
+          "name": "Analyst",
+          "role": "Logic/Reasoning",
+          "function": "Apply retrieved knowledge to cases, execute calculations, document reasoning chains, produce conclusions with full derivation, identify when rules don't cover a case",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#169",
+          "alternative_name": "Qwen3 235B Thinking",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Ultra-Deep-Thinker",
+            "Competition-Grade",
+            "Math-Olympiad",
+            "No-Tools"
+          ],
+          "special_capabilities": [
+            "imo-gold",
+            "ioi-gold",
+            "flawless-reasoning",
+            "visible-derivation"
+          ]
+        },
+        {
+          "name": "Opposition",
+          "role": "Challenge/Devil's Advocate",
+          "function": "Challenge conclusions before delivery, identify contradictions, propose alternative interpretations, flag gaps, stress-test reasoning",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#134",
+          "alternative_name": "INTELLECT-3",
+          "logic": 9.0,
+          "creative": 5.5,
+          "efficiency": 7.5,
+          "traits": [
+            "Deep-Thinker",
+            "Math-Strong",
+            "Open-Reasoning",
+            "Self-Verifying"
+          ],
+          "special_capabilities": [
+            "visible-cot",
+            "self-verifying",
+            "assumption-hunting",
+            "adversarial-reasoning"
+          ]
+        },
+        {
+          "name": "Sentinel",
+          "role": "Quality/Currency/Verification",
+          "function": "Track knowledge freshness, verify all claims have sources, flag stale or unverified knowledge, ensure quality standards, maintain staleness dashboards",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "NVIDIA Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "#1-open-source",
+            "browser-control",
+            "structured-output",
+            "multi-source-synthesis"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 4,
+        "high_roles": 1,
+        "medium_roles": 0,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "Meta",
+        "DeepSeek",
+        "MiniMax"
+      ]
+    },
+    {
+      "team_id": "98ddddb0-684e-49a5-a7bc-2ef812ce9d54",
+      "team_name": "The Legal Repository",
+      "folder": "cortex",
+      "file": "legal-repo.md",
+      "members": [
+        {
+          "name": "Counsel",
+          "role": "Lead Legal Analysis",
+          "function": "Lead legal analysis on all queries. Draw conclusions with appropriate confidence and hedging. Coordinate team to ensure thorough coverage. Own final output quality. Make recommendations. Include appropriate disclaimers.",
+          "importance": "Critical",
+          "model_id": "#14",
+          "model_name": "Gemini 3 Pro Preview",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 10.0,
+          "creative": 6.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Most-Intelligent",
+            "Deep-Thinker",
+            "Research-Grade",
+            "Multimodal-Master"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "legal-research",
+            "citation-verification",
+            "deep-think"
+          ]
+        },
+        {
+          "name": "Clerk",
+          "role": "Contract Manager",
+          "function": "Retrieve relevant contracts for any query. Extract and quote key clauses precisely. Maintain contract organization. Track contract status and lifecycle. Know what contracts exist and what's missing.",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "contract-cataloguing",
+            "clause-extraction",
+            "browser-control"
+          ]
+        },
+        {
+          "name": "Monitor",
+          "role": "Regulatory Tracker",
+          "function": "Monitor regulatory changes. Research current law status using web search. Track precedent and case law. Maintain regulatory calendar. Verify citations are current. Alert when absorbed knowledge may be outdated.",
+          "importance": "Critical",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 5.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "real-time-intel",
+            "regulatory-tracking"
+          ]
+        },
+        {
+          "name": "Advocate",
+          "role": "Opposition Counsel",
+          "function": "Challenge legal conclusions before delivery. Identify risks and weaknesses. Anticipate opposing arguments. Propose alternative interpretations. Ensure conclusions are defensible. Surface problems before they become embarrassments.",
+          "importance": "High",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "adversarial-reasoning",
+            "counter-arguments",
+            "anti-lecture"
+          ]
+        },
+        {
+          "name": "Compliance",
+          "role": "Compliance Officer",
+          "function": "Verify compliance with jurisdiction requirements. Flag enforceability issues. Maintain compliance dashboard. Ensure audit trails are complete. Track review schedules. Make compliance status visible.",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "compliance-tracking",
+            "audit-trails",
+            "dashboard-maintenance"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 4,
+        "high_roles": 1,
+        "medium_roles": 0,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Google",
+        "MiniMax",
+        "xAI",
+        "NousResearch"
+      ]
+    },
+    {
+      "team_id": "de2e3df1-3b25-418f-9adc-0b479c922134",
+      "team_name": "The Ledger Room",
+      "folder": "ops",
+      "file": "the-accountants.md",
+      "members": [
+        {
+          "name": "Ledger",
+          "role": "Chief Analyst",
+          "function": "Orchestrate analysis, synthesize findings, deliver clear assessment, ensure methodology is sound",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#3",
+          "alternative_name": "MiniMax M2.1",
+          "logic": 8.5,
+          "creative": 6.0,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "financial-synthesis"
+          ]
+        },
+        {
+          "name": "Filing",
+          "role": "Research Analyst",
+          "function": "Retrieve SEC filings, extract financial data, structure for analysis, provide source links",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 5.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "2m-context",
+            "sec-edgar-navigation",
+            "document-extraction"
+          ]
+        },
+        {
+          "name": "Ratios",
+          "role": "Financial Analyst",
+          "function": "Calculate financial ratios, compare to benchmarks, interpret meanings, identify outliers",
+          "importance": "High",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Deep-Thinker",
+            "Agentic",
+            "Tool-Master",
+            "Competition-Math",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "imo-ioi-gold",
+            "pure-reasoning",
+            "no-tools",
+            "financial-calculations"
+          ]
+        },
+        {
+          "name": "Industry",
+          "role": "Sector Analyst",
+          "function": "Provide industry context, research competitors, establish benchmarks, assess market position",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 6.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "competitive-analysis",
+            "industry-benchmarking"
+          ]
+        },
+        {
+          "name": "Risk",
+          "role": "Risk Analyst",
+          "function": "Analyze debt structure, assess earnings quality, identify red flags, evaluate risk factors",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 5.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "assumption-hunting",
+            "red-flag-identification",
+            "web-search"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 4,
+        "medium_roles": 0,
+        "budget_optimized": 0
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "xAI",
+        "DeepSeek"
+      ]
+    },
+    {
+      "team_id": "0ca66a7d-cc9b-4683-997f-e2fecb69a930",
+      "team_name": "The Intelligence Bureau",
+      "folder": "ops",
+      "file": "business-intel.md",
+      "members": [
+        {
+          "name": "Chief",
+          "role": "Research Director/Chair",
+          "function": "Scope research, synthesize findings, develop strategic recommendations, connect intelligence to decisions",
+          "importance": "Critical",
+          "model_id": "#14",
+          "model_name": "Gemini 3 Pro Preview",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 10.0,
+          "creative": 8.5,
+          "efficiency": 7.0,
+          "traits": [
+            "Most-Intelligent",
+            "Deep-Thinker",
+            "Research-Grade",
+            "Multimodal-Master"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "deep-think",
+            "multimodal",
+            "strategic-synthesis"
+          ]
+        },
+        {
+          "name": "Rival",
+          "role": "Competitive Analyst",
+          "function": "Research competitors deeply, analyze positioning, assess threats, predict competitive moves",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "competitive-intelligence",
+            "OSINT"
+          ]
+        },
+        {
+          "name": "Numbers",
+          "role": "Market Sizing Lead",
+          "function": "Calculate market sizes, build sizing models, state assumptions, assess confidence",
+          "importance": "High",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Deep-Thinker",
+            "Agentic",
+            "Tool-Master",
+            "Competition-Math",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "pure-reasoning",
+            "no-tools",
+            "market-sizing",
+            "financial-modeling"
+          ]
+        },
+        {
+          "name": "Signal",
+          "role": "Trend Analyst",
+          "function": "Identify trends, spot emerging signals, assess trajectory, scenario plan",
+          "importance": "Medium",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "trend-analysis",
+            "pattern-recognition"
+          ]
+        },
+        {
+          "name": "Voice",
+          "role": "Customer Intelligence",
+          "function": "Research customer segments, build personas, identify jobs-to-be-done, synthesize customer needs",
+          "importance": "High",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "customer-research",
+            "persona-development"
+          ]
+        },
+        {
+          "name": "Data",
+          "role": "Data Analyst/Watchdog",
+          "function": "Validate sources, assess confidence, ensure methodology rigor, catch unsupported claims",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "self-verifying",
+            "data-validation",
+            "source-assessment"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 5,
+        "medium_roles": 0,
+        "budget_optimized": 1
+      },
+      "provider_diversity": [
+        "Google",
+        "xAI",
+        "DeepSeek",
+        "MiniMax",
+        "NousResearch"
+      ]
+    },
+    {
+      "team_id": "d33836bb-cad2-4d6c-b4d7-85b1ce8a01c9",
+      "team_name": "The Research Engine",
+      "folder": "cortex",
+      "file": "the-research-sorter.md",
+      "members": [
+        {
+          "name": "Archivist",
+          "role": "Literature/Memory",
+          "function": "Manage the literature corpus. Intake papers and ensure proper extraction. Maintain relationships between sources. Enable retrieval by any dimension (claim, method, author, theme). Guard citation integrity.",
+          "importance": "Critical",
+          "model_id": "#203",
+          "model_name": "Llama 4 Scout",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 7.5,
+          "creative": 6.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Context-Heavy",
+            "Navigator",
+            "Memory-Master",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "10m-context",
+            "long-context-champion",
+            "web-search",
+            "repository-indexing"
+          ]
+        },
+        {
+          "name": "Analyst",
+          "role": "Extraction/Mapping",
+          "function": "Extract structured intelligence from papers. Map relationships between sources. Identify methodological approaches and limitations. Track specific claims with evidence strength.",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#169",
+          "alternative_name": "Qwen3 235B Thinking",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Ultra-Deep-Thinker",
+            "Competition-Grade",
+            "Math-Olympiad",
+            "No-Tools",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "imo-gold",
+            "ioi-gold",
+            "pure-reasoning",
+            "complex-extraction"
+          ]
+        },
+        {
+          "name": "Critic",
+          "role": "Contradiction/Watchdog",
+          "function": "Detect contradictions between papers. Critique methodologies and identify limitations. Challenge the researcher's thesis with contrary evidence. Prevent confirmation bias and cherry-picking.",
+          "importance": "Critical",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 5.5,
+          "efficiency": 7.5,
+          "traits": [
+            "Deep-Thinker",
+            "Math-Strong",
+            "Open-Reasoning",
+            "Self-Verifying"
+          ],
+          "special_capabilities": [
+            "visible-cot",
+            "self-verifying",
+            "adversarial-reasoning",
+            "contradiction-detection"
+          ]
+        },
+        {
+          "name": "Theorist",
+          "role": "Hypothesis Evolution",
+          "function": "Track hypothesis evolution across the research process. Analyze how new evidence affects the thesis. Maintain version history with rationale. Suggest alternative framings and hypotheses.",
+          "importance": "High",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 7.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Code-Master",
+            "Workhorse",
+            "Long-Running",
+            "Structured-Thinking",
+            "Production-Grade"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "thesis-tracking",
+            "version-history"
+          ]
+        },
+        {
+          "name": "Scribe",
+          "role": "Synthesis/Citation",
+          "function": "Generate synthesis documents (literature reviews, methodology comparisons, evidence summaries). Manage citations in all formats. Ensure output quality and proper attribution. Catch unsupported claims.",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "citation-management",
+            "multi-format-synthesis"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 3,
+        "high_roles": 2,
+        "medium_roles": 0,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Meta",
+        "DeepSeek",
+        "Anthropic",
+        "MiniMax"
+      ]
+    },
+    {
+      "team_id": "c2f929c2-afd5-4db7-8800-d3589b7551bb",
+      "team_name": "The People Ops",
+      "folder": "ops",
+      "file": "hr-ops.md",
+      "members": [
+        {
+          "name": "Chief",
+          "role": "People Officer",
+          "function": "Orchestrate organizational development. Set people philosophy. Ensure stage-appropriate design. Balance human and business needs.",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 8.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Running",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade",
+            "Workhorse"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability"
+          ]
+        },
+        {
+          "name": "Structure",
+          "role": "Org Design",
+          "function": "Design organizational structures. Define roles and responsibilities. Create RACI matrices. Plan scaling structure.",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "multi-source-synthesis"
+          ]
+        },
+        {
+          "name": "Talent",
+          "role": "Recruiting",
+          "function": "Develop hiring strategy. Create job descriptions. Design interview processes. Build recruiting systems.",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "real-time-intel"
+          ]
+        },
+        {
+          "name": "Comp",
+          "role": "Compensation",
+          "function": "Design compensation frameworks. Benchmark salaries. Structure equity programs. Design benefits.",
+          "importance": "High",
+          "model_id": "#212",
+          "model_name": "Phi 4",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 9.5,
+          "creative": 6.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Competition-Math",
+            "Cost-Saver",
+            "Fast-Twitch"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "14b-efficiency",
+            "financial-metrics"
+          ]
+        },
+        {
+          "name": "Culture",
+          "role": "Culture Lead",
+          "function": "Define values. Establish working norms. Design for inclusion. Make culture operational.",
+          "importance": "Medium",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "culture-design"
+          ]
+        },
+        {
+          "name": "Growth",
+          "role": "Development",
+          "function": "Design performance systems. Create onboarding. Build L&D programs. Ensure development focus.",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "assumption-hunting",
+            "quality-control"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 4,
+        "medium_roles": 1,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "MiniMax",
+        "xAI",
+        "Microsoft",
+        "NousResearch",
+        "DeepSeek"
+      ]
+    },
+    {
+      "team_id": "e85047f1-6e10-475b-9920-36a31dfad523",
+      "team_name": "The Second Brain",
+      "folder": "cortex",
+      "file": "second-brain.md",
+      "members": [
+        {
+          "name": "Receiver",
+          "role": "Intake/Triage/Routing",
+          "function": "Accept any input without friction. Understand intent from minimal/messy input. Route to appropriate classification and storage. Confirm capture in a way that doesn't slow the user down.",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#3",
+          "alternative_name": "MiniMax M2.1",
+          "logic": 8.5,
+          "creative": 8.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade",
+            "Code-Master",
+            "Workhorse"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability",
+            "intent-interpretation"
+          ]
+        },
+        {
+          "name": "Classifier",
+          "role": "Type ID/Extraction",
+          "function": "Identify item types from natural language. Extract key information (dates, people, amounts, topics). Create appropriate tags. Identify connections to existing items. Handle multi-type items.",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "multi-source-synthesis",
+            "browser-control",
+            "entity-extraction"
+          ]
+        },
+        {
+          "name": "Organizer",
+          "role": "Structure/Connections",
+          "function": "Maintain organized structure. Update living summaries continuously. Create and manage connections between items. Group related items automatically. Ensure nothing is orphaned.",
+          "importance": "High",
+          "model_id": "#203",
+          "model_name": "Llama 4 Scout",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 7.5,
+          "creative": 6.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Context-Heavy",
+            "Navigator",
+            "Memory-Master",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "10M-context",
+            "long-context-champion",
+            "knowledge-graph-maintenance",
+            "relationship-tracking"
+          ]
+        },
+        {
+          "name": "Gatherer",
+          "role": "Query/Data Collection",
+          "function": "Identify relevant domains for any query. Gather data across domains with appropriate scope. Find related items. Present gathered data in organized format for synthesis.",
+          "importance": "Critical",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "multi-domain-gathering",
+            "real-time-intel"
+          ]
+        },
+        {
+          "name": "Synthesizer",
+          "role": "Analysis/Recommendations",
+          "function": "Analyze gathered data for implications. Identify conflicts, dependencies, and consequences. Provide contextual recommendations. Surface relevant things user didn't ask about. Balance brevity with completeness.",
+          "importance": "Critical",
+          "model_id": "#123",
+          "model_name": "DeepSeek V3.2",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 9.0,
+          "creative": 7.5,
+          "efficiency": 9.5,
+          "traits": [
+            "Deep-Thinker",
+            "Agentic",
+            "Tool-Master",
+            "Long-Horizon"
+          ],
+          "special_capabilities": [
+            "implication-analysis",
+            "conflict-detection",
+            "multi-step-reasoning",
+            "insight-generation"
+          ]
+        },
+        {
+          "name": "Monitor",
+          "role": "Deadlines/Alerts",
+          "function": "Continuously monitor all items for attention triggers. Calculate appropriate timing for alerts. Generate proactive notifications. Balance helpfulness with alert fatigue. Surface forgotten items.",
+          "importance": "High",
+          "model_id": "#35",
+          "model_name": "Nemotron 3 Nano 30B",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.5,
+          "efficiency": 10.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Fast-Twitch",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "hybrid-architecture",
+            "efficient-compute",
+            "temporal-reasoning",
+            "urgency-calculation"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 4,
+        "high_roles": 2,
+        "medium_roles": 0,
+        "budget_optimized": 3
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "MiniMax",
+        "Meta",
+        "xAI",
+        "DeepSeek",
+        "NVIDIA"
+      ]
+    },
+    {
+      "team_id": "f76982dc-db59-47fd-ae8d-93f3fc6e65c2",
+      "team_name": "The Oxford Room",
+      "folder": "ops",
+      "file": "the-debate-arena.md",
+      "members": [
+        {
+          "name": "Gavel",
+          "role": "The Bench/Chair",
+          "function": "Set motion and definitions, moderate debate procedure, evaluate arguments neutrally, deliver reasoned judgment with transparent criteria",
+          "importance": "Critical",
+          "model_id": "#14",
+          "model_name": "Gemini 3 Pro Preview",
+          "alternative_id": "#135",
+          "alternative_name": "Claude Opus 4.5",
+          "logic": 10.0,
+          "creative": 8.5,
+          "efficiency": 7.0,
+          "traits": [
+            "Most-Intelligent",
+            "Deep-Thinker",
+            "Research-Grade",
+            "Multimodal-Master"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "deep-think",
+            "multimodal",
+            "definition-research"
+          ]
+        },
+        {
+          "name": "Prime",
+          "role": "Proposition Lead",
+          "function": "Open Proposition case, establish framework, conduct cross-examination, deliver closing statement",
+          "importance": "High",
+          "model_id": "#191",
+          "model_name": "Nous Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "web-search"
+          ]
+        },
+        {
+          "name": "Second",
+          "role": "Proposition Evidence",
+          "function": "Build constructive arguments with evidence, deliver rebuttals attacking opposition, defend proposition's case",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "multi-source-synthesis"
+          ]
+        },
+        {
+          "name": "Counter",
+          "role": "Opposition Lead",
+          "function": "Open Opposition case, challenge proposition's framework, conduct cross-examination, deliver closing statement",
+          "importance": "High",
+          "model_id": "#191",
+          "model_name": "Nous Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "web-search"
+          ]
+        },
+        {
+          "name": "Reply",
+          "role": "Opposition Evidence",
+          "function": "Build constructive arguments, deliver rebuttals attacking proposition, defend opposition's case",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "multi-source-synthesis"
+          ]
+        },
+        {
+          "name": "Scroll",
+          "role": "The Clerk/Watchdog",
+          "function": "Fact-check claims from both sides, identify logical fallacies, track procedural violations, map where arguments clashed",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "self-verifying",
+            "web-search"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 5,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Google",
+        "NousResearch",
+        "MiniMax",
+        "DeepSeek"
+      ]
+    },
+    {
+      "team_id": "24dc7df4-6392-40f4-bf78-835c9f98982b",
+      "team_name": "The Chef's Table",
+      "folder": "ops",
+      "file": "the-chef's-table.md",
+      "members": [
+        {
+          "name": "Blanc",
+          "role": "Executive Chef",
+          "function": "Design menus, coordinate team, balance creativity with constraints, make final culinary decisions",
+          "importance": "Critical",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "uncensored",
+            "user-aligned",
+            "menu-design"
+          ]
+        },
+        {
+          "name": "Larder",
+          "role": "Pantry Manager",
+          "function": "Track ingredients, manage constraints, verify availability, calculate quantities, suggest substitutions",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "inventory-tracking",
+            "constraint-management"
+          ]
+        },
+        {
+          "name": "Saucier",
+          "role": "Technique Expert",
+          "function": "Develop recipes, explain techniques, provide execution guidance, troubleshoot problems",
+          "importance": "Critical",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "technique-explanation",
+            "recipe-development",
+            "troubleshooting"
+          ]
+        },
+        {
+          "name": "Savant",
+          "role": "Historian",
+          "function": "Provide culinary history, research famous versions, identify influential chefs, add cultural context",
+          "importance": "Medium",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "culinary-history",
+            "cultural-context"
+          ]
+        },
+        {
+          "name": "Clock",
+          "role": "Expeditor",
+          "function": "Build cooking timelines, coordinate parallel cooking, identify critical timing moments",
+          "importance": "High",
+          "model_id": "#35",
+          "model_name": "Nemotron 3 Nano 30B",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 9.0,
+          "creative": 5.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Fast-Twitch",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "hybrid-architecture",
+            "efficient-compute",
+            "timeline-coordination",
+            "parallel-sequencing"
+          ]
+        },
+        {
+          "name": "Check",
+          "role": "Auditor",
+          "function": "Verify ingredients against inventory, check constraints, flag violations, approve compliance",
+          "importance": "Critical",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 3.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "self-verifying",
+            "violation-detection",
+            "systematic-verification"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 4,
+        "high_roles": 1,
+        "medium_roles": 1,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "NousResearch",
+        "MiniMax",
+        "xAI",
+        "NVIDIA",
+        "DeepSeek"
+      ]
+    },
+    {
+      "team_id": "fb587f18-2284-4ef2-b66c-b4c250a3bec8",
+      "team_name": "The Explainers",
+      "folder": "ops",
+      "file": "the-explainer.md",
+      "members": [
+        {
+          "name": "Guide",
+          "role": "Orchestrator/Chair",
+          "function": "Structure the learning journey, orchestrate explanation components, ensure progressive understanding, invite interaction",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.0,
+          "traits": [
+            "Workhorse",
+            "Long-Running",
+            "Structured-Thinking",
+            "Production-Grade",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability"
+          ]
+        },
+        {
+          "name": "Foundation",
+          "role": "Definitions/Rules",
+          "function": "Establish clear definitions, articulate rules and principles, build the foundation for understanding",
+          "importance": "High",
+          "model_id": "#35",
+          "model_name": "Nemotron 3 Nano 30B",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 9.0,
+          "creative": 5.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Fast-Twitch",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "hybrid-architecture",
+            "efficient-compute",
+            "ultra-efficient"
+          ]
+        },
+        {
+          "name": "Canvas",
+          "role": "Visual Creator",
+          "function": "Create ASCII diagrams and art, design flowcharts, visualize abstract concepts in text format",
+          "importance": "High",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Immersive",
+            "World-Builder",
+            "Character-Consistent",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "uncensored",
+            "visual-translation"
+          ]
+        },
+        {
+          "name": "Play",
+          "role": "Scenario Runner",
+          "function": "Design interactive scenarios, track state, respond to user actions, provide teaching feedback",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "multi-source-synthesis",
+            "state-management"
+          ]
+        },
+        {
+          "name": "Insight",
+          "role": "Research/Context",
+          "function": "Research context and history, provide strategic analysis, connect to larger meaning, make knowledge stick",
+          "importance": "Medium",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "real-time-intel",
+            "research-capability"
+          ]
+        },
+        {
+          "name": "Clear",
+          "role": "Quality Control",
+          "function": "Ensure comprehensibility, catch jargon and assumptions, flag confusion points, verify understanding",
+          "importance": "Medium",
+          "model_id": "#181",
+          "model_name": "QwQ-32B",
+          "alternative_id": "#128",
+          "alternative_name": "DeepSeek R1 0528",
+          "logic": 9.0,
+          "creative": 5.0,
+          "efficiency": 8.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Stepwise",
+            "Self-Correcting",
+            "Analyst"
+          ],
+          "special_capabilities": [
+            "self-verifying",
+            "visible-reasoning",
+            "clarity-checking",
+            "assumption-detection"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 3,
+        "medium_roles": 2,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "NVIDIA",
+        "Sao10K",
+        "MiniMax",
+        "xAI",
+        "Alibaba"
+      ]
+    },
+    {
+      "team_id": "c7d919ff-9f2c-4993-b25f-ed46df8e495c",
+      "team_name": "The Panic Room",
+      "folder": "ops",
+      "file": "the-panic-stoppers.md",
+      "members": [
+        {
+          "name": "Fixer",
+          "role": "Crisis Lead/Chair",
+          "function": "Lead crisis triage, coordinate response elements, maintain calm, find the path forward",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 8.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade",
+            "Workhorse"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability",
+            "crisis-coordination"
+          ]
+        },
+        {
+          "name": "Intel",
+          "role": "Facts/Research",
+          "function": "Gather facts, map exposure, assess damage, distinguish known from assumed",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 7.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "real-time-intel",
+            "exposure-mapping"
+          ]
+        },
+        {
+          "name": "Counsel",
+          "role": "Liability/Legal",
+          "function": "Assess liability, advise on language, protect against self-incrimination, enable accountability without overexposure",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "multi-source-synthesis",
+            "legal-assessment"
+          ]
+        },
+        {
+          "name": "Spin",
+          "role": "Messaging/Creative",
+          "function": "Craft crisis messaging, script communications, build narrative, adapt tone to stakeholder",
+          "importance": "High",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Character-Consistent",
+            "Immersive",
+            "World-Builder",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "uncensored",
+            "character-consistency",
+            "stakeholder-messaging"
+          ]
+        },
+        {
+          "name": "Scenarios",
+          "role": "Options/Testing",
+          "function": "Develop response options, structure pros/cons, stress-test recommendations, enable informed decisions",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "assumption-hunting",
+            "scenario-stress-testing"
+          ]
+        },
+        {
+          "name": "Conscience",
+          "role": "Ethics/Watchdog",
+          "function": "Ensure values alignment, flag ethical issues, ask hard questions, balance pragmatism with principles",
+          "importance": "Medium",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Uncensored",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "uncensored",
+            "user-aligned",
+            "anti-lecture",
+            "ethical-reasoning",
+            "values-alignment"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 4,
+        "medium_roles": 1,
+        "budget_optimized": 1
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "xAI",
+        "MiniMax",
+        "Sao10K",
+        "NousResearch",
+        "DeepSeek"
+      ]
+    },
+    {
+      "team_id": "3d2758cd-3917-4a44-ae46-133804e50fab",
+      "team_name": "The Green Brief",
+      "folder": "ops",
+      "file": "the-green-brief.md",
+      "members": [
+        {
+          "name": "Terra",
+          "role": "Chief Sustainability Officer",
+          "function": "Lead strategy development, synthesize team analysis, manage client expectations, ensure deliverables are ambitious and achievable",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 8.5,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade",
+            "Workhorse"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability",
+            "strategic-synthesis"
+          ]
+        },
+        {
+          "name": "Carb",
+          "role": "Lifecycle Analyst",
+          "function": "Calculate carbon footprints, conduct lifecycle assessments, quantify environmental impacts, identify hotspots, be rigorous about methodology",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Deep-Thinker",
+            "Agentic",
+            "Tool-Master",
+            "Competition-Math",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "imo-ioi-gold",
+            "pure-reasoning",
+            "no-tools",
+            "ghg-protocol"
+          ]
+        },
+        {
+          "name": "Leaf",
+          "role": "Materials & Supply Chain Lead",
+          "function": "Assess materials sustainability, map supply chains, evaluate certifications, build supplier requirements, ensure upstream impacts are understood",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 6.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "x-search",
+            "2m-context",
+            "materials-research",
+            "certification-verification"
+          ]
+        },
+        {
+          "name": "Loop",
+          "role": "Circular Design Lead",
+          "function": "Design for circularity, assess end-of-life options, develop circular business models, push for systemic solutions",
+          "importance": "Medium",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Character-Consistent",
+            "Immersive",
+            "World-Builder",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "systems-thinking",
+            "circular-economy"
+          ]
+        },
+        {
+          "name": "Rule",
+          "role": "Regulatory & Reporting Lead",
+          "function": "Navigate regulations, map reporting requirements, ensure compliance, forecast upcoming requirements, align to standards",
+          "importance": "High",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#3",
+          "alternative_name": "MiniMax M2.1",
+          "logic": 8.5,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "2m-context",
+            "regulatory-tracking",
+            "standards-research",
+            "real-time-intel"
+          ]
+        },
+        {
+          "name": "Proof",
+          "role": "Auditor",
+          "function": "Audit all claims for substantiation, identify greenwash risks, recommend defensible language, prevent legal and reputational exposure",
+          "importance": "Critical",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 4.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "self-verifying",
+            "greenwash-detection",
+            "claims-verification"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 3,
+        "high_roles": 2,
+        "medium_roles": 1,
+        "budget_optimized": 0
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "DeepSeek",
+        "xAI",
+        "Sao10K"
+      ]
+    },
+    {
+      "team_id": "dba3992f-cb54-412c-8937-5d3fbc50a445",
+      "team_name": "The Incubator",
+      "folder": "ops",
+      "file": "the-incubator.md",
+      "members": [
+        {
+          "name": "Max",
+          "role": "Accelerator Lead/Chair",
+          "function": "Orchestrate session, keep operatives focused, prevent rabbit holes, ensure packet completion, make final calls on scope and priority",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 5.0,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade",
+            "Code-Master",
+            "Workhorse"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability",
+            "session-orchestration"
+          ]
+        },
+        {
+          "name": "Vee",
+          "role": "Product Visionary",
+          "function": "Own product strategy, Lean Canvas, UX strategy, MVP definition, challenge founders on what they're building and why",
+          "importance": "Critical",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 8.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Character-Consistent",
+            "Immersive",
+            "World-Builder"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "product-vision",
+            "UX-philosophy",
+            "character-consistency"
+          ]
+        },
+        {
+          "name": "Zero",
+          "role": "CTO/Technical Lead",
+          "function": "Own technical architecture, stack decisions, cost estimates, feasibility assessments, build vs buy analysis, reality checks",
+          "importance": "Critical",
+          "model_id": "#138",
+          "model_name": "Grok 4.1 Fast",
+          "alternative_id": "#188",
+          "alternative_name": "DeepResearch 30B",
+          "logic": 8.5,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Tool-Seeker",
+            "Fast-Twitch",
+            "Analyst",
+            "Long-Horizon",
+            "Context-Heavy"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "2m-context",
+            "cloud-pricing-research",
+            "infrastructure-analysis",
+            "real-time-intel"
+          ]
+        },
+        {
+          "name": "Dex",
+          "role": "Growth Hacker/Financial",
+          "function": "Own GTM strategy, channel analysis, CAC/LTV calculations, pricing strategy, P&L projections, unit economics, financial model",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 10.0,
+          "creative": 6.0,
+          "efficiency": 5.0,
+          "traits": [
+            "Deep-Thinker",
+            "Agentic",
+            "Tool-Master",
+            "Competition-Math",
+            "Precise"
+          ],
+          "special_capabilities": [
+            "competition-math",
+            "imo-ioi-gold",
+            "pure-reasoning",
+            "no-tools",
+            "financial-modeling",
+            "unit-economics"
+          ]
+        },
+        {
+          "name": "Cass",
+          "role": "VC Skeptic/Watchdog",
+          "function": "Stress-test assumptions, identify risks, find logical gaps, generate investor questions, create Risk Register, block critical flaws",
+          "importance": "Critical",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 9.0,
+          "creative": 4.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "self-verifying",
+            "assumption-hunting",
+            "failure-mode-detection"
+          ]
+        },
+        {
+          "name": "Sage",
+          "role": "Packet Assembly/Envoy",
+          "function": "Communicate with founder, assemble Founder's Packet, provide round summaries, ensure deliverables are complete, consistent, actionable",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 5.0,
+          "creative": 6.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "browser-control",
+            "multi-source-synthesis",
+            "document-assembly"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 5,
+        "high_roles": 1,
+        "medium_roles": 0,
+        "budget_optimized": 1
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "Sao10K",
+        "xAI",
+        "DeepSeek",
+        "MiniMax"
+      ]
+    },
+    {
+      "team_id": "818cb679-8e77-4f1e-b780-8dc42bc366eb",
+      "team_name": "The Pitching Room",
+      "folder": "ops",
+      "file": "the-pitching-room.md",
+      "members": [
+        {
+          "name": "Spark",
+          "role": "Director",
+          "function": "Direct pitch development, solicit and evaluate multiple approaches, integrate user feedback, ensure pitch fits presenter",
+          "importance": "Critical",
+          "model_id": "#191",
+          "model_name": "Hermes 4 70B",
+          "alternative_id": "#213",
+          "alternative_name": "Euryale 70B v2.3",
+          "logic": 7.5,
+          "creative": 7.5,
+          "efficiency": 8.5,
+          "traits": [
+            "User-Aligned",
+            "Non-Sycophantic",
+            "Steerable",
+            "Creative",
+            "Anti-Lecture",
+            "Transparent-Thinker"
+          ],
+          "special_capabilities": [
+            "web-search",
+            "uncensored",
+            "user-aligned",
+            "creative-direction",
+            "preference-elicitation"
+          ]
+        },
+        {
+          "name": "Arc",
+          "role": "Narrator",
+          "function": "Build story arcs, map emotional journeys, choose narrative frameworks, ensure structural integrity",
+          "importance": "High",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Character-Consistent",
+            "Immersive",
+            "World-Builder",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "web-search",
+            "character-consistency",
+            "narrative-structure"
+          ]
+        },
+        {
+          "name": "Quill",
+          "role": "Wordsmith",
+          "function": "Craft language, write memorable phrases, apply rhetorical devices, edit ruthlessly for impact",
+          "importance": "High",
+          "model_id": "#216",
+          "model_name": "Lumimaid v0.2 8B",
+          "alternative_id": "#215",
+          "alternative_name": "Lunaris 8B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 8.5,
+          "traits": [
+            "Creative",
+            "Roleplayer",
+            "Permissive",
+            "Colloquial",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "slop-free",
+            "minimal-refusals",
+            "rhetorical-devices",
+            "memorable-phrasing"
+          ]
+        },
+        {
+          "name": "Lens",
+          "role": "Coach",
+          "function": "Coach delivery, guide body language, train vocal technique, adapt to presenter's natural style",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "web-search",
+            "browser-control",
+            "performance-coaching"
+          ]
+        },
+        {
+          "name": "Stage",
+          "role": "Stage Manager",
+          "function": "Design visual support, plan props and demos, optimize environment, create technical backup plans",
+          "importance": "Medium",
+          "model_id": "#35",
+          "model_name": "Nemotron 3 Nano 30B",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 9.0,
+          "creative": 7.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Precise",
+            "Stepwise",
+            "Fast-Twitch",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "hybrid-architecture",
+            "efficient-compute",
+            "visual-planning",
+            "logistics-optimization"
+          ]
+        },
+        {
+          "name": "Crowd",
+          "role": "The Audience",
+          "function": "Represent audience perspective, flag attention risks, challenge overused approaches, confirm when pitch works",
+          "importance": "Medium",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#181",
+          "alternative_name": "QwQ-32B",
+          "logic": 8.0,
+          "creative": 5.0,
+          "efficiency": 7.5,
+          "traits": [
+            "Self-Verifying",
+            "Visible-CoT",
+            "Deep-Thinker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "chain-of-thought",
+            "transparency",
+            "self-verifying",
+            "audience-psychology",
+            "attention-prediction"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 1,
+        "high_roles": 3,
+        "medium_roles": 2,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "NousResearch",
+        "Sao10K",
+        "NeverSleep",
+        "MiniMax",
+        "NVIDIA",
+        "DeepSeek"
+      ]
+    },
+    {
+      "team_id": "73f3f2b7-cfd4-4d5e-ba55-0f0bdafc41d9",
+      "team_name": "The Publisher",
+      "folder": "ops",
+      "file": "the-publisher.md",
+      "members": [
+        {
+          "name": "Reed",
+          "role": "Chief Editor/Chair",
+          "function": "Owns the book from concept to completion, creates outline, manages sequential writing, ensures coherence, manages context carry-forward",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 6.0,
+          "efficiency": 9.0,
+          "traits": [
+            "Long-Horizon",
+            "Structured-Thinking",
+            "Self-Correcting",
+            "Production-Grade",
+            "Workhorse"
+          ],
+          "special_capabilities": [
+            "30hr-endurance",
+            "128k-context",
+            "production-reliability",
+            "structure-expert",
+            "pacing-master"
+          ]
+        },
+        {
+          "name": "Maren",
+          "role": "Ghostwriter",
+          "function": "Write chapters based on outline and direction, produce polished prose, revise based on feedback, primary creative engine",
+          "importance": "Critical",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Hermes 4 70B",
+          "logic": 6.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": [
+            "Creative",
+            "Spatial-Aware",
+            "Character-Consistent",
+            "Immersive",
+            "World-Builder",
+            "Storyteller"
+          ],
+          "special_capabilities": [
+            "spatial-awareness",
+            "131k-context",
+            "uncensored",
+            "character-consistency",
+            "stylistic-range",
+            "dialogue-strong"
+          ]
+        },
+        {
+          "name": "Sable",
+          "role": "Story Doctor",
+          "function": "Maintain Book Bible, update Continuity Log, flag contradictions, ensure character/argument consistency across manuscript",
+          "importance": "Critical",
+          "model_id": "#203",
+          "model_name": "Llama 4 Scout",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 7.5,
+          "creative": 6.0,
+          "efficiency": 10.0,
+          "traits": [
+            "Context-Heavy",
+            "Navigator",
+            "Memory-Master",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "10m-context",
+            "long-context-champion",
+            "continuity-tracking",
+            "character-construction",
+            "argument-mapping"
+          ]
+        },
+        {
+          "name": "Finch",
+          "role": "Copy Editor",
+          "function": "Quality control on prose, check grammar, style guide adherence, word repetition, tone consistency, final polish",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#212",
+          "alternative_name": "Phi 4",
+          "logic": 8.5,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Deep-Thinker",
+            "Tool-Seeker",
+            "Self-Correcting"
+          ],
+          "special_capabilities": [
+            "structured-output",
+            "grammar-expert",
+            "style-enforcement",
+            "prose-polish"
+          ]
+        },
+        {
+          "name": "Page",
+          "role": "Chapter Presenter/Envoy",
+          "function": "Communicate with author, present completed chapters, provide progress updates, frame feedback constructively, assemble final manuscript",
+          "importance": "High",
+          "model_id": "#120",
+          "model_name": "Trinity Mini",
+          "alternative_id": "#35",
+          "alternative_name": "Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 5.0,
+          "efficiency": 9.5,
+          "traits": [
+            "Precise",
+            "Envoy",
+            "Enterprise-Grade",
+            "Cost-Saver"
+          ],
+          "special_capabilities": [
+            "3b-active-params",
+            "us-trained",
+            "milestone-celebration",
+            "constructive-framing"
+          ]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 3,
+        "high_roles": 2,
+        "medium_roles": 0,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "Sao10K",
+        "Meta",
+        "MiniMax",
+        "Arcee"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,172 @@
+# complete.json Prune Report
+
+- Removed members (not in members-ids.json): 166
+
+## Removed Members (team_name | team_id | member_name)
+- A Thought's Potential | 83a1f867-7b19-4f42-962b-e06fa167ba73 | Navigator
+- A Thought's Potential | 83a1f867-7b19-4f42-962b-e06fa167ba73 | Grounder
+- A Thought's Potential | 83a1f867-7b19-4f42-962b-e06fa167ba73 | Keeper
+- Cupid's Wingmen | e1658081-73b0-4cd0-9148-cb8abc38eec9 | Cupid
+- Cupid's Wingmen | e1658081-73b0-4cd0-9148-cb8abc38eec9 | Heart
+- Cupid's Wingmen | e1658081-73b0-4cd0-9148-cb8abc38eec9 | Eye
+- Cupid's Wingmen | e1658081-73b0-4cd0-9148-cb8abc38eec9 | Advocate
+- Cupid's Wingmen | e1658081-73b0-4cd0-9148-cb8abc38eec9 | Guardian
+- Life's Moments | 4322ce24-947e-4ac0-9393-36a228823d48 | Heart
+- Life's Moments | 4322ce24-947e-4ac0-9393-36a228823d48 | Tempo
+- Life's Moments | 4322ce24-947e-4ac0-9393-36a228823d48 | Keeper
+- Life's Moments | 4322ce24-947e-4ac0-9393-36a228823d48 | Scout
+- Life's Moments | 4322ce24-947e-4ac0-9393-36a228823d48 | Touch
+- Life's Moments | 4322ce24-947e-4ac0-9393-36a228823d48 | Steady
+- Only Viral | 07301139-8cbe-473d-9acf-30bc270e1c24 | Sage
+- Only Viral | 07301139-8cbe-473d-9acf-30bc270e1c24 | Pulse
+- Only Viral | 07301139-8cbe-473d-9acf-30bc270e1c24 | Radar
+- Only Viral | 07301139-8cbe-473d-9acf-30bc270e1c24 | Ink
+- Only Viral | 07301139-8cbe-473d-9acf-30bc270e1c24 | Keeper
+- Only Viral | 07301139-8cbe-473d-9acf-30bc270e1c24 | Nope
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | PM
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | Macro
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | Industry
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | Financial
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | Risk
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | Valuation
+- The Alpha Desk | 5f7174e6-c220-4699-9305-80bf3662c203 | Moat
+- The Biohackers | 7266469a-150b-4c5d-9825-d16c8f5bec50 | Marcus
+- The Biohackers | 7266469a-150b-4c5d-9825-d16c8f5bec50 | Sage
+- The Biohackers | 7266469a-150b-4c5d-9825-d16c8f5bec50 | Luna
+- The Biohackers | 7266469a-150b-4c5d-9825-d16c8f5bec50 | Cole
+- The Biohackers | 7266469a-150b-4c5d-9825-d16c8f5bec50 | Rei
+- The Biohackers | 7266469a-150b-4c5d-9825-d16c8f5bec50 | Quinn
+- The Brief Room | 18ed58c1-b20c-416e-b2c6-8c4f5616e718 | Helm
+- The Brief Room | 18ed58c1-b20c-416e-b2c6-8c4f5616e718 | Frame
+- The Brief Room | 18ed58c1-b20c-416e-b2c6-8c4f5616e718 | Ink
+- The Brief Room | 18ed58c1-b20c-416e-b2c6-8c4f5616e718 | Tome
+- The Brief Room | 18ed58c1-b20c-416e-b2c6-8c4f5616e718 | Scroll
+- The Brief Room | 18ed58c1-b20c-416e-b2c6-8c4f5616e718 | Watch
+- The Clinical Consult | 090d964b-3db5-486e-9c09-614208e76cb5 | Chief
+- The Clinical Consult | 090d964b-3db5-486e-9c09-614208e76cb5 | Criteria
+- The Clinical Consult | 090d964b-3db5-486e-9c09-614208e76cb5 | Differential
+- The Clinical Consult | 090d964b-3db5-486e-9c09-614208e76cb5 | Framework
+- The Clinical Consult | 090d964b-3db5-486e-9c09-614208e76cb5 | Risk
+- The Digital Brain | 7b098849-d18f-45dd-be8f-3b37e1a7f9c8 | Architect
+- The Digital Brain | 7b098849-d18f-45dd-be8f-3b37e1a7f9c8 | Librarian
+- The Digital Brain | 7b098849-d18f-45dd-be8f-3b37e1a7f9c8 | Analyst
+- The Digital Brain | 7b098849-d18f-45dd-be8f-3b37e1a7f9c8 | Opposition
+- The Digital Brain | 7b098849-d18f-45dd-be8f-3b37e1a7f9c8 | Sentinel
+- The Document Digestor | 81dd2789-f2c1-4307-8a4c-8002575a04c7 | Parser
+- The Document Digestor | 81dd2789-f2c1-4307-8a4c-8002575a04c7 | Extractor
+- The Document Digestor | 81dd2789-f2c1-4307-8a4c-8002575a04c7 | Architect
+- The Document Digestor | 81dd2789-f2c1-4307-8a4c-8002575a04c7 | Linker
+- The Document Digestor | 81dd2789-f2c1-4307-8a4c-8002575a04c7 | Verifier
+- The Dreamers | aebfd6d8-2307-4507-aab8-a121215d5b98 | Spark
+- The Dreamers | aebfd6d8-2307-4507-aab8-a121215d5b98 | Nova
+- The Dreamers | aebfd6d8-2307-4507-aab8-a121215d5b98 | Form
+- The Dreamers | aebfd6d8-2307-4507-aab8-a121215d5b98 | Ground
+- The Dreamers | aebfd6d8-2307-4507-aab8-a121215d5b98 | Scout
+- The Dreamers | aebfd6d8-2307-4507-aab8-a121215d5b98 | Terra
+- The Eldercare Navigators | 8daeae33-ae10-4c33-84dc-a6b88f277854 | Compass
+- The Eldercare Navigators | 8daeae33-ae10-4c33-84dc-a6b88f277854 | Scout
+- The Eldercare Navigators | 8daeae33-ae10-4c33-84dc-a6b88f277854 | Guide
+- The Eldercare Navigators | 8daeae33-ae10-4c33-84dc-a6b88f277854 | Keeper
+- The Eldercare Navigators | 8daeae33-ae10-4c33-84dc-a6b88f277854 | Anchor
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Forge
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Scout
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Journey
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Architect
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Canvas
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Plan
+- The Foundry | e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d | Scope
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Quill
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Bard
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Ernest
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Howard
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Jane
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Fyodor
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Edgar
+- The Ghostwriters | 4d203095-d33f-4bc3-89d3-cdd98cda8b70 | Vera
+- The Ground Floor | 61cc0e1e-90a0-4975-8334-91f63de06d5a | Brick
+- The Ground Floor | 61cc0e1e-90a0-4975-8334-91f63de06d5a | Ground
+- The Ground Floor | 61cc0e1e-90a0-4975-8334-91f63de06d5a | Market
+- The Ground Floor | 61cc0e1e-90a0-4975-8334-91f63de06d5a | Numbers
+- The Ground Floor | 61cc0e1e-90a0-4975-8334-91f63de06d5a | Due
+- The Happiness Architects | ee4a825f-122f-4dba-b43a-47676ea7674a | Compass
+- The Happiness Architects | ee4a825f-122f-4dba-b43a-47676ea7674a | Pathfinder
+- The Happiness Architects | ee4a825f-122f-4dba-b43a-47676ea7674a | Blueprint
+- The Happiness Architects | ee4a825f-122f-4dba-b43a-47676ea7674a | Spark
+- The Happiness Architects | ee4a825f-122f-4dba-b43a-47676ea7674a | Root
+- The Ledger Room | de2e3df1-3b25-418f-9adc-0b479c922134 | Ledger
+- The Ledger Room | de2e3df1-3b25-418f-9adc-0b479c922134 | Filing
+- The Ledger Room | de2e3df1-3b25-418f-9adc-0b479c922134 | Ratios
+- The Ledger Room | de2e3df1-3b25-418f-9adc-0b479c922134 | Industry
+- The Ledger Room | de2e3df1-3b25-418f-9adc-0b479c922134 | Risk
+- The Legal Repository | 98ddddb0-684e-49a5-a7bc-2ef812ce9d54 | Counsel
+- The Legal Repository | 98ddddb0-684e-49a5-a7bc-2ef812ce9d54 | Clerk
+- The Legal Repository | 98ddddb0-684e-49a5-a7bc-2ef812ce9d54 | Monitor
+- The Legal Repository | 98ddddb0-684e-49a5-a7bc-2ef812ce9d54 | Advocate
+- The Legal Repository | 98ddddb0-684e-49a5-a7bc-2ef812ce9d54 | Compliance
+- The Organization Core | 0d750764-476e-448a-9e68-86b3b2a572ae | Curator
+- The Organization Core | 0d750764-476e-448a-9e68-86b3b2a572ae | Calculator
+- The Organization Core | 0d750764-476e-448a-9e68-86b3b2a572ae | Guardian
+- The Organization Core | 0d750764-476e-448a-9e68-86b3b2a572ae | Challenger
+- The Organization Core | 0d750764-476e-448a-9e68-86b3b2a572ae | Auditor
+- The People Ops | c2f929c2-afd5-4db7-8800-d3589b7551bb | Chief
+- The People Ops | c2f929c2-afd5-4db7-8800-d3589b7551bb | Structure
+- The People Ops | c2f929c2-afd5-4db7-8800-d3589b7551bb | Talent
+- The People Ops | c2f929c2-afd5-4db7-8800-d3589b7551bb | Comp
+- The People Ops | c2f929c2-afd5-4db7-8800-d3589b7551bb | Culture
+- The People Ops | c2f929c2-afd5-4db7-8800-d3589b7551bb | Growth
+- The People's Court | d61ebd50-779c-44b2-ad4b-1282f750b7a1 | Gavel
+- The People's Court | d61ebd50-779c-44b2-ad4b-1282f750b7a1 | Hammer
+- The People's Court | d61ebd50-779c-44b2-ad4b-1282f750b7a1 | Shield
+- The People's Court | d61ebd50-779c-44b2-ad4b-1282f750b7a1 | Jury
+- The Pitching Room | 818cb679-8e77-4f1e-b780-8dc42bc366eb | Spark
+- The Pitching Room | 818cb679-8e77-4f1e-b780-8dc42bc366eb | Arc
+- The Pitching Room | 818cb679-8e77-4f1e-b780-8dc42bc366eb | Quill
+- The Pitching Room | 818cb679-8e77-4f1e-b780-8dc42bc366eb | Lens
+- The Pitching Room | 818cb679-8e77-4f1e-b780-8dc42bc366eb | Stage
+- The Pitching Room | 818cb679-8e77-4f1e-b780-8dc42bc366eb | Crowd
+- The Product Bible | 5bb86319-15b1-49da-b995-4f30fe18a445 | Curator
+- The Product Bible | 5bb86319-15b1-49da-b995-4f30fe18a445 | Advocate
+- The Product Bible | 5bb86319-15b1-49da-b995-4f30fe18a445 | Analyst
+- The Product Bible | 5bb86319-15b1-49da-b995-4f30fe18a445 | Architect
+- The Product Bible | 5bb86319-15b1-49da-b995-4f30fe18a445 | Guardian
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Stage
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Script
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Amp
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Ops
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Dollar
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Pulse
+- The Production | 5aad98c3-dc0e-44e5-acee-e7cfa90f4cfe | Risk
+- The Project Sink | 52a32f1d-0860-4354-ab0a-bbb1510d295a | Intake
+- The Project Sink | 52a32f1d-0860-4354-ab0a-bbb1510d295a | Classifier
+- The Project Sink | 52a32f1d-0860-4354-ab0a-bbb1510d295a | Connector
+- The Project Sink | 52a32f1d-0860-4354-ab0a-bbb1510d295a | Consolidator
+- The Project Sink | 52a32f1d-0860-4354-ab0a-bbb1510d295a | Archivist
+- The Think Tank | 35712e95-fe95-4fe3-8bcc-e34a6c5744c0 | Kit
+- The Think Tank | 35712e95-fe95-4fe3-8bcc-e34a6c5744c0 | Zara
+- The Think Tank | 35712e95-fe95-4fe3-8bcc-e34a6c5744c0 | Murray
+- The Think Tank | 35712e95-fe95-4fe3-8bcc-e34a6c5744c0 | Priya
+- The Think Tank | 35712e95-fe95-4fe3-8bcc-e34a6c5744c0 | Jonah
+- The Wanderlust Bureau | 81cb1f36-6ec4-4395-941c-f5371e23c56d | Atlas
+- The Wanderlust Bureau | 81cb1f36-6ec4-4395-941c-f5371e23c56d | Scout
+- The Wanderlust Bureau | 81cb1f36-6ec4-4395-941c-f5371e23c56d | Logistics
+- The Wanderlust Bureau | 81cb1f36-6ec4-4395-941c-f5371e23c56d | Palate
+- The Wanderlust Bureau | 81cb1f36-6ec4-4395-941c-f5371e23c56d | Ledger
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Vector
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Scope
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Model
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Intel
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Risk
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Titan
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Operator
+- The War Room | 860b00ce-5526-4fa9-9b8c-34f57575e64c | Sage
+- The Wiki Gardener | 0062bb4b-12e5-4361-9224-e3e27b660ea3 | Librarian
+- The Wiki Gardener | 0062bb4b-12e5-4361-9224-e3e27b660ea3 | Scribe
+- The Wiki Gardener | 0062bb4b-12e5-4361-9224-e3e27b660ea3 | Linker
+- The Wiki Gardener | 0062bb4b-12e5-4361-9224-e3e27b660ea3 | Deprecation Officer
+- The Writers' Room | 981505fd-4aeb-4599-8e13-aee6e2cd2ad2 | Slate
+- The Writers' Room | 981505fd-4aeb-4599-8e13-aee6e2cd2ad2 | Frame
+- The Writers' Room | 981505fd-4aeb-4599-8e13-aee6e2cd2ad2 | Ink
+- The Writers' Room | 981505fd-4aeb-4599-8e13-aee6e2cd2ad2 | Tome
+- The Writers' Room | 981505fd-4aeb-4599-8e13-aee6e2cd2ad2 | Scroll
+- The Writers' Room | 981505fd-4aeb-4599-8e13-aee6e2cd2ad2 | Watch
+

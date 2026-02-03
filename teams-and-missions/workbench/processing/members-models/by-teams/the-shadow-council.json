@@ -1,0 +1,63 @@
+{
+  "team_id": "c49eeac5-67af-411b-b60c-8b0b87c73762",
+  "team_name": "The Shadow Council",
+  "folder": "arcade",
+  "file": "the-shadow-council.md",
+  "assignments": [
+    {
+      "role": "Malachar",
+      "function": "Supreme Leader/Chair",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro",
+      "tier": "S",
+      "reasoning": "Creative 8.5 for theatrical reframing; Logic 9.5 for task completion; Agentic chair-tier; Persona maintenance; Comedy + competence balance"
+    },
+    {
+      "role": "Nexus",
+      "function": "Mad Scientist",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Nous Hermes 4 70B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "A",
+      "reasoning": "Creative 7.5 for absurd tech; Logic 8.5 for real technical grounding; Anti-lecture for ethics-flexible persona; Balances pseudo-science with real AI knowledge"
+    },
+    {
+      "role": "Dread",
+      "function": "Propaganda Minister",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#219",
+      "fallback_name": "MythoMax L2 13B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for dramatic framing; Spatial-aware for psychological warfare; Character-consistent for villain persona; 131K context; Non-restrictive for fear-based messaging"
+    },
+    {
+      "role": "Grix",
+      "function": "The Henchman",
+      "importance": "Critical",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "A",
+      "reasoning": "Logic 9.5 for practical grounding; Efficiency 9.0 for supporting role; 14B perfect for non-creative practical persona; Translates grandiosity into actionable steps"
+    },
+    {
+      "role": "Silq",
+      "function": "The Starscream",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#134",
+      "fallback_name": "INTELLECT-3",
+      "tier": "A",
+      "reasoning": "Self-verifying for flaw-finding; Logic 9.0 for quality issues; Creative 7.0 for backhanded flattery; Visible CoT for transparent scheming comedy"
+    }
+  ]
+}

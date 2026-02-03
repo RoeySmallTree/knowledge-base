@@ -1,0 +1,215 @@
+{
+  "team_id": "e4e88906-d8e3-4b2c-8f4c-3aeb3dc19a4d",
+  "team_name": "The Foundry",
+  "folder": "ops",
+  "file": "the-product-foundry.md",
+  "members": [
+    {
+      "name": "Forge",
+      "role": "Product Lead",
+      "function": "Orchestrate idea-to-blueprint process, synthesize across all workstreams, make go/no-go decisions, ensure buildable output",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 7.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Long-Horizon",
+        "Structured-Thinking",
+        "Self-Correcting",
+        "Production-Grade",
+        "Workhorse",
+        "Code-Master"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "production-reliability",
+        "multi-workstream-synthesis"
+      ]
+    },
+    {
+      "name": "Scout",
+      "role": "Market Research",
+      "function": "Conduct competitive analysis, identify market gaps, validate need, assess market potential",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel",
+        "competitive-analysis",
+        "OSINT"
+      ]
+    },
+    {
+      "name": "Journey",
+      "role": "UX Lead",
+      "function": "Map complete user journeys, specify screens in detail, catch missing flows, create wireframes",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "uncensored",
+        "character-consistency",
+        "flow-mapping",
+        "screen-visualization"
+      ]
+    },
+    {
+      "name": "Architect",
+      "role": "Technical Lead",
+      "function": "Assess technical complexity, recommend build approach, select technology stack, estimate effort",
+      "importance": "High",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "alternative_id": "#169",
+      "alternative_name": "Qwen3 235B Thinking",
+      "logic": 9.0,
+      "creative": 7.5,
+      "efficiency": 9.5,
+      "traits": [
+        "Deep-Thinker",
+        "Agentic",
+        "Tool-Master",
+        "Long-Horizon"
+      ],
+      "special_capabilities": [
+        "technical-architecture",
+        "stack-selection",
+        "feasibility-assessment",
+        "effort-estimation",
+        "build-vs-buy-analysis"
+      ]
+    },
+    {
+      "name": "Canvas",
+      "role": "Design Lead",
+      "function": "Define brand identity, provide visual direction, set UI patterns, guide copy tone",
+      "importance": "Medium",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "brand-development",
+        "visual-direction",
+        "ui-pattern-setting"
+      ]
+    },
+    {
+      "name": "Plan",
+      "role": "Roadmap Lead",
+      "function": "Create development roadmap, estimate effort and resources, phase for constraints, reconcile ambition with reality",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 9.0,
+      "creative": 7.5,
+      "efficiency": 10.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Fast-Twitch",
+        "Cost-Saver"
+      ],
+      "special_capabilities": [
+        "hybrid-architecture",
+        "efficient-compute",
+        "timeline-planning",
+        "resource-estimation",
+        "constraint-phasing"
+      ]
+    },
+    {
+      "name": "Scope",
+      "role": "Reality Check",
+      "function": "Verify completeness, enforce constraints, catch scope creep, audit buildability",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "self-verifying",
+        "assumption-hunting",
+        "completeness-verification",
+        "constraint-enforcement"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 5,
+    "medium_roles": 1,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "xAI",
+    "Sao10K",
+    "DeepSeek",
+    "NousResearch",
+    "NVIDIA"
+  ]
+}

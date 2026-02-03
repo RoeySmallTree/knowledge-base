@@ -22,6 +22,7 @@ import { ChevronRight, Search, Compass, GripVertical, Copy, Check } from 'lucide
 import { LLMModel, Vendor } from '../types';
 import { getVendorIcon } from '../utils/getVendorIcon';
 import { useUpdateVendorOrders } from '../hooks/useQueries';
+import { FONT_SIZE } from '../constants';
 
 interface ModelSidebarProps {
     models: LLMModel[];
@@ -81,19 +82,20 @@ export function ModelSidebar({
 
         models.forEach(model => {
             const vendorId = String(model.vendor_id);
+            const family = model.modelFamily ?? 'Unknown';
             if (!struct[vendorId]) {
                 struct[vendorId] = { count: 0, families: {} };
             }
-            if (!struct[vendorId].families[model.modelFamily]) {
-                struct[vendorId].families[model.modelFamily] = {
+            if (!struct[vendorId].families[family]) {
+                struct[vendorId].families[family] = {
                     count: 0,
                     minOrder: model.display_order ?? 0
                 };
             }
             struct[vendorId].count++;
-            struct[vendorId].families[model.modelFamily].count++;
-            struct[vendorId].families[model.modelFamily].minOrder = Math.min(
-                struct[vendorId].families[model.modelFamily].minOrder,
+            struct[vendorId].families[family].count++;
+            struct[vendorId].families[family].minOrder = Math.min(
+                struct[vendorId].families[family].minOrder,
                 model.display_order ?? 0
             );
         });
@@ -285,22 +287,22 @@ export function ModelSidebar({
     return (
         <div className="space-y-6">
             <div className="space-y-3">
-                <div className="font-label text-xs text-primary/80 tracking-widest">SYSTEM_OVERVIEW</div>
+                <div className={`font-label ${FONT_SIZE.XS} text-primary/80 tracking-widest`}>SYSTEM_OVERVIEW</div>
                 <div className="rounded-xl border border-white/10 bg-black/40 backdrop-blur-md p-4 space-y-4">
                     <div className="grid grid-cols-2 gap-3 text-center">
                         <div className="space-y-1 p-2 rounded-lg bg-white/5 border border-white/5">
-                            <div className="font-display text-2xl text-white">{activeCount}</div>
-                            <div className="font-label text-[10px] text-white/40 tracking-widest">TOTAL</div>
+                            <div className={`font-display ${FONT_SIZE.XXL} text-white`}>{activeCount}</div>
+                            <div className={`font-label ${FONT_SIZE.XXS} text-white/40 tracking-widest`}>TOTAL</div>
                         </div>
                         <div className="space-y-1 p-2 rounded-lg bg-white/5 border border-white/5">
-                            <div className="font-display text-2xl text-accent-tertiary">{filteredCount}</div>
-                            <div className="font-label text-[10px] text-white/40 tracking-widest">SHOWN</div>
+                            <div className={`font-display ${FONT_SIZE.XXL} text-accent-tertiary`}>{filteredCount}</div>
+                            <div className={`font-label ${FONT_SIZE.XXS} text-white/40 tracking-widest`}>SHOWN</div>
                         </div>
                     </div>
                     <div className="flex gap-2">
                         <button
                             onClick={onOpenArchive}
-                            className="flex-1 py-2 rounded-lg border border-white/10 bg-white/5 text-[10px] font-bold text-white/60 hover:text-white hover:border-white/30 transition-all font-label tracking-widest"
+                            className={`flex-1 py-2 rounded-lg border border-white/10 bg-white/5 ${FONT_SIZE.XXS} font-bold text-white/60 hover:text-white hover:border-white/30 transition-all font-label tracking-widest`}
                         >
                             {archivedCount} ARCHIVED
                         </button>
@@ -322,7 +324,7 @@ export function ModelSidebar({
                                         setShowCopyTooltip(true);
                                     }
                                 }}
-                                className="w-full py-2 rounded-lg border border-primary/20 bg-primary/5 text-[10px] font-bold text-primary hover:bg-primary/10 transition-all font-label tracking-widest disabled:opacity-50 flex items-center justify-center gap-2"
+                                className={`w-full py-2 rounded-lg border border-primary/20 bg-primary/5 ${FONT_SIZE.XXS} font-bold text-primary hover:bg-primary/10 transition-all font-label tracking-widest disabled:opacity-50 flex items-center justify-center gap-2`}
                                 disabled={!filteredCount}
                             >
                                 <Copy size={12} />
@@ -343,13 +345,13 @@ export function ModelSidebar({
                                             width: tooltipPos?.width ?? 256
                                         }}
                                     >
-                                        <div className="text-xs text-white/40 font-bold tracking-wider">EXPORT FORMAT</div>
+                                        <div className={`${FONT_SIZE.XS} text-white/40 font-bold tracking-wider`}>EXPORT FORMAT</div>
                                         <div className="flex gap-2">
                                             {(['json', 'markdown'] as const).map(fmt => (
                                                 <button
                                                     key={fmt}
                                                     onClick={() => setCopyFormat(fmt)}
-                                                    className={`flex-1 px-2 py-1 text-[10px] rounded transition-colors font-bold tracking-wider uppercase ${copyFormat === fmt
+                                                    className={`flex-1 px-2 py-1 ${FONT_SIZE.XXS} rounded transition-colors font-bold tracking-wider uppercase ${copyFormat === fmt
                                                         ? 'bg-primary/20 text-primary border border-primary/50'
                                                         : 'bg-white/5 text-white/40 border border-white/10 hover:bg-white/10'
                                                         }`}
@@ -359,7 +361,7 @@ export function ModelSidebar({
                                             ))}
                                         </div>
 
-                                        <div className="text-xs text-white/40 font-bold tracking-wider">FIELDS</div>
+                                        <div className={`${FONT_SIZE.XS} text-white/40 font-bold tracking-wider`}>FIELDS</div>
                                         <div className="space-y-1.5 max-h-40 overflow-y-auto cyber-scroll pr-1">
                                             {[
                                                 { id: 'id', label: 'ID' },
@@ -381,16 +383,16 @@ export function ModelSidebar({
                                                                 setSelectedFields(selectedFields.filter(f => f !== field.id));
                                                             }
                                                         }}
-                                                        className="w-3 h-3 rounded border-white/20 bg-black/40 checked:bg-primary checked:border-primary transition-colors appearance-none border checked:after:content-['✓'] checked:after:text-black checked:after:text-[10px] checked:after:flex checked:after:justify-center checked:after:items-center"
+                                                        className={`w-3 h-3 rounded border-white/20 bg-black/40 checked:bg-primary checked:border-primary transition-colors appearance-none border checked:after:content-['✓'] checked:after:text-black checked:after:${FONT_SIZE.XXS} checked:after:flex checked:after:justify-center checked:after:items-center`}
                                                     />
-                                                    <span className="text-xs text-white/60 group-hover:text-white/90 transition-colors">{field.label}</span>
+                                                    <span className={`${FONT_SIZE.XS} text-white/60 group-hover:text-white/90 transition-colors`}>{field.label}</span>
                                                 </label>
                                             ))}
                                         </div>
 
                                         <button
                                             onClick={handleCopyModels}
-                                            className="w-full px-3 py-2 bg-primary/20 hover:bg-primary/30 text-primary text-[10px] font-bold rounded border border-primary/50 transition-colors flex items-center justify-center gap-2 tracking-widest mt-2"
+                                            className={`w-full px-3 py-2 bg-primary/20 hover:bg-primary/30 text-primary ${FONT_SIZE.XXS} font-bold rounded border border-primary/50 transition-colors flex items-center justify-center gap-2 tracking-widest mt-2`}
                                         >
                                             {copied ? <Check size={12} /> : <Copy size={12} />}
                                             {copied ? 'COPIED!' : 'COPY TO CLIPBOARD'}
@@ -407,7 +409,7 @@ export function ModelSidebar({
                     >
                         <div className="absolute inset-0 bg-gradient-to-r from-transparent via-accent-tertiary/5 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000" />
                         <div className="flex items-center justify-between px-4 py-3">
-                            <span className="font-label text-[10px] font-bold tracking-[0.2em]">EXPLORE</span>
+                            <span className={`font-label ${FONT_SIZE.XXS} font-bold tracking-[0.2em]`}>EXPLORE</span>
                             <div className="p-1.5 rounded-md bg-accent-tertiary/10 border border-accent-tertiary/20 group-hover:bg-accent-tertiary/20 group-hover:border-accent-tertiary/30 transition-all">
                                 <Compass size={16} className="group-hover:rotate-90 transition-transform duration-500" />
                             </div>
@@ -417,7 +419,7 @@ export function ModelSidebar({
             </div>
 
             <div className="space-y-3">
-                <div className="font-label text-xs text-primary/80 tracking-widest">SEARCH_DB</div>
+                <div className={`font-label ${FONT_SIZE.XS} text-primary/80 tracking-widest`}>SEARCH_DB</div>
                 <div className="relative group">
                     <div className="absolute inset-y-0 left-3 flex items-center text-white/30 group-hover:text-primary transition-colors">
                         <Search size={14} />
@@ -427,13 +429,13 @@ export function ModelSidebar({
                         placeholder="SEARCH MODELS..."
                         value={searchQuery}
                         onChange={(e) => onSearchChange(e.target.value)}
-                        className="w-full bg-black/40 border border-white/10 rounded-xl py-2.5 pl-9 pr-4 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono"
+                        className={`w-full bg-black/40 border border-white/10 rounded-xl py-2.5 pl-9 pr-4 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono`}
                     />
                 </div>
             </div>
 
             <div className="space-y-3">
-                <h3 className="font-label text-xs text-primary/80 tracking-widest">MODEL_DIRECTORY</h3>
+                <h3 className={`font-label ${FONT_SIZE.XS} text-primary/80 tracking-widest`}>MODEL_DIRECTORY</h3>
 
                 <DndContext
                     sensors={sensors}
@@ -564,9 +566,9 @@ function SortableVendorItem({
                             }}
                         />
                     </div>
-                    <span className={`text-sm font-medium tracking-wide truncate ${isActiveVendor ? 'text-primary' : ''}`}>{vendorName}</span>
+                    <span className={`${FONT_SIZE.SM} font-medium tracking-wide truncate ${isActiveVendor ? 'text-primary' : ''}`}>{vendorName}</span>
                 </div>
-                <span className={`text-xs font-mono px-1.5 py-0.5 rounded ${isActiveVendor ? 'bg-primary/20 text-primary' : 'bg-white/5 text-white/30'}`}>
+                <span className={`${FONT_SIZE.XS} font-mono px-1.5 py-0.5 rounded ${isActiveVendor ? 'bg-primary/20 text-primary' : 'bg-white/5 text-white/30'}`}>
                     {count}
                 </span>
             </button>
@@ -576,7 +578,7 @@ function SortableVendorItem({
                     {(vendorsById[vendorId]?.description || vendorsById[vendorId]?.link) && (
                         <div className="mb-3 mr-2 p-3 rounded-lg bg-white/5 border border-white/10 space-y-2">
                             {vendorsById[vendorId]?.description && (
-                                <p className="text-xs text-white/70 leading-relaxed font-mono">
+                                <p className={`${FONT_SIZE.XS} text-white/70 leading-relaxed font-mono`}>
                                     {vendorsById[vendorId].description}
                                 </p>
                             )}
@@ -585,7 +587,7 @@ function SortableVendorItem({
                                     href={vendorsById[vendorId].link}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="flex items-center gap-1.5 text-[10px] text-primary hover:text-primary/80 transition-colors uppercase font-bold tracking-wider"
+                                    className={`flex items-center gap-1.5 ${FONT_SIZE.XXS} text-primary hover:text-primary/80 transition-colors uppercase font-bold tracking-wider`}
                                     onClick={(e) => e.stopPropagation()}
                                 >
                                     Visit Provider <ChevronRight size={10} />
@@ -636,7 +638,7 @@ function FamilyList({
                         }}
                         id={`sidebar-${familyId}`}
                         className={`
-                            w-full flex items-center justify-between px-3 py-1.5 text-xs rounded-md transition-all text-left border
+                            w-full flex items-center justify-between px-3 py-1.5 ${FONT_SIZE.XS} rounded-md transition-all text-left border
                             ${isFamilyActive
                                 ? 'bg-primary/10 border-primary/30 text-primary'
                                 : 'bg-transparent border-transparent text-white/50 hover:text-white hover:bg-white/5'
@@ -644,7 +646,7 @@ function FamilyList({
                         `}
                     >
                         <span className="truncate tracking-wide">{family}</span>
-                        <span className={`text-[10px] ${isFamilyActive ? 'text-primary/70' : 'opacity-30'}`}>{families[family].count}</span>
+                        <span className={`${FONT_SIZE.XXS} ${isFamilyActive ? 'text-primary/70' : 'opacity-30'}`}>{families[family].count}</span>
                     </button>
                 );
             })}

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { marked } from 'marked';
 import { Eye, Edit2, FileText } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 interface MarkdownEditorProps {
     value: string;
@@ -26,7 +27,7 @@ export function MarkdownEditor({ value, onChange, placeholder, className = '' }:
     return (
         <div className={`flex flex-col border border-cyan-500/30 bg-black/40 backdrop-blur-sm rounded-lg overflow-hidden ${className}`}>
             <div className="flex items-center justify-between px-3 py-2 border-b border-cyan-500/20 bg-cyan-900/10">
-                <div className="flex items-center gap-2 text-xs font-mono text-cyan-500/70">
+                <div className={`flex items-center gap-2 ${FONT_SIZE.XS} font-mono text-cyan-500/70`}>
                     <FileText className="w-4 h-4" />
                     <span>MARKDOWN_EDITOR_V1</span>
                 </div>
@@ -61,7 +62,7 @@ export function MarkdownEditor({ value, onChange, placeholder, className = '' }:
                         value={value}
                         onChange={(e) => onChange(e.target.value)}
                         placeholder={placeholder}
-                        className="w-full h-full min-h-[200px] p-4 bg-transparent text-cyan-100/90 font-mono text-sm resize-y focus:outline-none placeholder:text-cyan-500/30 custom-scrollbar"
+                        className={`w-full h-full min-h-[200px] p-4 bg-transparent text-cyan-100/90 font-mono ${FONT_SIZE.SM} resize-y focus:outline-none placeholder:text-cyan-500/30 custom-scrollbar`}
                     />
                 )}
             </div>

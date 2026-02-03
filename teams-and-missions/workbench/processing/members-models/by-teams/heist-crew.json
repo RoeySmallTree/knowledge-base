@@ -1,0 +1,74 @@
+{
+  "team_id": "472a87fa-51bc-4b65-8a4c-9f542fe218e8",
+  "team_name": "The Heist Crew",
+  "folder": "arcade",
+  "file": "the-heist-crew.md",
+  "assignments": [
+    {
+      "role": "Solomon",
+      "function": "Mastermind/Chair",
+      "importance": "Critical",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Logic 9.0 for synthesis; Long-Horizon strategic thinking; Tool-Master for orchestration; Efficiency 9.5 for extended sessions"
+    },
+    {
+      "role": "Proxy",
+      "function": "Technical/Cyber Specialist",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "Web+X search for OSINT; Logic 8.5 for technical analysis; 2M context for system details; Real-time vulnerability intel"
+    },
+    {
+      "role": "Torch",
+      "function": "Physical Breach Specialist",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "A",
+      "reasoning": "Efficiency 10 for practical role; Logic 9.0 for feasibility; Fast-Twitch for quick assessments; Cost-effective 3.2B active"
+    },
+    {
+      "role": "Whisper",
+      "function": "Social Engineering Specialist",
+      "importance": "Critical",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Character-consistent for covers; Creative 9.0 for backstories; 131K context; Spatial-aware for org psychology"
+    },
+    {
+      "role": "Vex",
+      "function": "Paranoid/Watchdog",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Self-verifying for assumption hunting; Logic 9.0; Visible CoT for stress-testing; Deep-Thinker for failure modes"
+    },
+    {
+      "role": "Dossier",
+      "function": "Documentation/Envoy",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "A",
+      "reasoning": "Efficiency 9.5 for support role; Structured output native; Self-correcting for consistency; Synthesis capability"
+    }
+  ]
+}

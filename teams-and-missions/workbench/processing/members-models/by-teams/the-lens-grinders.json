@@ -1,0 +1,96 @@
+{
+  "team_id": "63cd72b3-dc65-4f7b-ac35-17e0e2682cf9",
+  "team_name": "The Lens Grinders",
+  "folder": "arcade",
+  "file": "the-ELI-chaos.md",
+  "assignments": [
+    {
+      "role": "Lumen",
+      "function": "Translator/Chair",
+      "importance": "Critical",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "A",
+      "reasoning": "Logic 9.0 for technical accuracy verification; Deep-Thinker for coordination; Long-Horizon for managing parallel explanations; Broad knowledge base"
+    },
+    {
+      "role": "Pip",
+      "function": "ELI5 Specialist",
+      "importance": "High",
+      "model_id": "#216",
+      "model_name": "Lumimaid v0.2 8B",
+      "fallback_id": "#215",
+      "fallback_name": "Lunaris 8B",
+      "tier": "D",
+      "reasoning": "Creative 9.0 for unexpected simple analogies; Logic 5.5 matches intuitive approach; Slop-free child-like enthusiasm; Efficiency 8.5"
+    },
+    {
+      "role": "Aldric",
+      "function": "Medieval Scribe",
+      "importance": "High",
+      "model_id": "#219",
+      "model_name": "MythoMax L2 13B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "D",
+      "reasoning": "Creative 9.5 for medieval mapping; Character-consistent archaic voice; Storyteller + Roleplayer; Most popular RP model; Permissive"
+    },
+    {
+      "role": "Reef",
+      "function": "Surfer Sage",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "B",
+      "reasoning": "Creative 7.5 for flow metaphors; User-aligned non-sycophantic; Anti-lecture; Steerable for surfer voice; Pattern recognition"
+    },
+    {
+      "role": "Slate",
+      "function": "Noir Detective",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for noir-ifying concepts; Spatial-aware for environmental framing; Character-consistent voice; 131K context; Storyteller"
+    },
+    {
+      "role": "Vector",
+      "function": "Executive Suit",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "A",
+      "reasoning": "Logic 8.5 for actionable extraction; Precise + Self-correcting; Efficiency 9.5; Structured output for bullet-thinking; Low creative matches role"
+    },
+    {
+      "role": "Quint",
+      "function": "Pedant/Watchdog",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Logic 9.0 for technical flaw detection; Self-verifying accuracy guardrail; Visible CoT shows analogy breakdowns; Broad technical knowledge"
+    },
+    {
+      "role": "Index",
+      "function": "Librarian/Assembler",
+      "importance": "High",
+      "model_id": "#120",
+      "model_name": "Trinity Mini",
+      "fallback_id": "#3",
+      "fallback_name": "MiniMax M2.1",
+      "tier": "A",
+      "reasoning": "Efficiency 9.5 for assembly role; Logic 8.5 for comparison structures; Precise for equal treatment; Cost-effective 3B active; Self-correcting"
+    }
+  ]
+}

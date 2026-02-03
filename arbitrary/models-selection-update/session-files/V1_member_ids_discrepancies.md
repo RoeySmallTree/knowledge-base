@@ -1,0 +1,267 @@
+# Member ID Match Report
+
+## Summary
+- Updated `member_id` fields in complete.json: **8**
+- Missing in members-ids.json (present in complete.json): **13**
+- Missing in complete.json (present in members-ids.json): **190**
+
+## Duplicate Team Entries in members-ids.json
+- Diss Track Inc.: 6 duplicate member(s) with conflicting IDs
+  - Tempo: 16c1c704-808f-4e71-bf30-1889190d0310 vs 6cc2bad3-e812-47d1-9e58-39370d52948e
+  - Syntax: 2ddd647c-4335-4712-bdb7-c6c09cb59bc8 vs 5656867f-ef01-4989-b9f9-0919cecb0040
+  - Drip: 891a41b2-7fdf-434c-a33b-52fc31e3be9a vs 8bcba449-bc03-49b9-b8e8-4001fbfecfc5
+  - Ghost: b63f949a-d144-446d-9fc6-e5c06d540799 vs 66c410e3-9384-46b6-9fed-ff21a261ae43
+  - Amp: 14786c6c-c0a5-496e-81d9-9cb171495b62 vs ef46fc3c-425e-41f7-bc8b-d0268a004add
+  - Clearance: 77f0eee0-c0e0-48a5-92ea-c62709a9c30e vs ff0450a2-a1b9-4a2f-a1e7-173f50f7a810
+- The Ghostwriters: 8 duplicate member(s) with conflicting IDs
+  - Fyodor: 61278e70-bf07-4c5c-92c2-f56c3bcaf424 vs ed571cf8-299e-4af7-9131-7780b4a94199
+  - Edgar: 6f18339c-7da8-4e9a-9dbb-ec74c27ce90d vs a2d84244-bddd-454a-a211-d08f9378394f
+  - Jane: 73315c3a-5245-4107-a27b-2b6a865c5e8d vs c762840c-9257-4216-a333-bd843b61253b
+  - Quill: 770b36b7-e029-447a-9cc9-7ef7ce4e631b vs 9d8ac0de-33b8-4e8a-b4e1-9887c10cd7d8
+  - Bard: 45b63ea4-4c5c-467b-a294-dc31989f415e vs 652eed7d-7445-442c-b66f-11d645172995
+  - Ernest: 134cf28c-0c29-469c-a29e-336ef43ad447 vs 00f53af8-af38-4d8e-9fcf-7cec5235ba0d
+  - Howard: 5a3e135b-4e5e-459b-b3ae-449d040131d3 vs 1e0b34cb-a26f-4ac1-a0e9-15bedcb2bc2c
+  - Vera: 376aeee2-ef74-4097-9d4f-973cc5a3d3d0 vs e8fb8876-afd0-4bce-a1d8-975a875cfdaf
+- The Infinite Classroom: 15 duplicate member(s) with conflicting IDs
+  - Dean: ca3ff344-2035-4b17-b06a-f9b37443860c vs 44d99dfa-1adc-47ef-ad2b-678d8c36430e
+  - Professor: 82601c12-2890-4f80-ba2f-085b3d7f6592 vs 31e9c315-4bf7-4765-b395-f86f34e4da60
+  - Examiner: 02e01b11-a790-4716-ab79-8761580052a2 vs ecba58f2-1f32-4ea3-b243-62f43c7bd83a
+  - Tutor: 23ab3379-33a1-4e1d-8e8c-ccf52cc42e99 vs bb9f969d-4358-49a4-b0fe-2c7d44a33dc7
+  - Advocate: 783cd279-f62d-4717-88f0-951e817d32c9 vs dbfb7538-baca-4e62-90d9-dcf88c78d742
+  - Examiner: 02e01b11-a790-4716-ab79-8761580052a2 vs 5da4b2a8-7649-49f8-b59a-94ddfe1422f3
+  - Tutor: 23ab3379-33a1-4e1d-8e8c-ccf52cc42e99 vs d00c714a-6ebb-47c6-8bdc-897eca285c8a
+  - Dean: ca3ff344-2035-4b17-b06a-f9b37443860c vs 2a12a6e8-53bf-475a-9280-2b23f0d37589
+  - Professor: 82601c12-2890-4f80-ba2f-085b3d7f6592 vs 21300c0b-6817-460e-9772-5336ad4565e2
+  - Advocate: 783cd279-f62d-4717-88f0-951e817d32c9 vs af37effc-4df7-4fb5-a835-e9d67ee9f00f
+  - Dean: ca3ff344-2035-4b17-b06a-f9b37443860c vs f8168474-bfd5-4f3a-b0c4-e8cac5674d3f
+  - Professor: 82601c12-2890-4f80-ba2f-085b3d7f6592 vs 02b56faa-b5e7-4e13-8962-3f662a5546b1
+  - Examiner: 02e01b11-a790-4716-ab79-8761580052a2 vs 575ed7f6-3e69-4cf1-a606-4dfcf287c5e1
+  - Tutor: 23ab3379-33a1-4e1d-8e8c-ccf52cc42e99 vs 9ef8b6b3-d601-4456-a13e-041b1e7c55db
+  - Advocate: 783cd279-f62d-4717-88f0-951e817d32c9 vs 2db87fed-c7fb-4bb4-a3fe-60e6a935f476
+- The Intelligence Bureau: 18 duplicate member(s) with conflicting IDs
+  - Chief: 046a79f1-4156-46e9-ad9a-97b7036df719 vs 3a803718-6e96-4d1e-81be-f67a574c85e9
+  - Rival: 748da781-7ee7-481c-8401-dd53594ef939 vs a7c15ac7-29a6-4f05-aaf3-d61b9f9e042b
+  - Numbers: 8521057e-4ffe-4f20-abf6-2b4eb150a625 vs b508e89a-46e1-42c8-ab85-ecdfa7804cff
+  - Signal: a79fdd0f-5302-4ed1-bb34-d442db58c751 vs aec7f8a7-27d3-4b83-8fba-002ac5d46263
+  - Voice: 366e04d4-1878-4bde-a3b2-10bd90009c03 vs 339dec4c-03f0-4737-b879-8183489d7765
+  - Data: d4c2e22c-1fda-41f9-bd62-91303e7b8516 vs b52463c3-5f23-42f0-b1e0-f49c102f58c8
+  - Chief: 046a79f1-4156-46e9-ad9a-97b7036df719 vs e02f3a42-8328-4bfa-a6ee-5727a5e450e5
+  - Rival: 748da781-7ee7-481c-8401-dd53594ef939 vs ae81cb8f-ecfd-4b3e-85e9-cfb28b3e828d
+  - Numbers: 8521057e-4ffe-4f20-abf6-2b4eb150a625 vs 5224867a-0ce7-4552-8acf-cc0d42c1ea1d
+  - Signal: a79fdd0f-5302-4ed1-bb34-d442db58c751 vs c7b41b6f-8062-49f3-b76b-e90cd4c2764f
+  - Voice: 366e04d4-1878-4bde-a3b2-10bd90009c03 vs c1193bb4-6049-4661-93db-8171fe97379e
+  - Data: d4c2e22c-1fda-41f9-bd62-91303e7b8516 vs 887e95a2-50d8-4220-870a-8410e65c5379
+  - Chief: 046a79f1-4156-46e9-ad9a-97b7036df719 vs f6353de9-d793-4b7f-ae5e-ddbc5d15081d
+  - Rival: 748da781-7ee7-481c-8401-dd53594ef939 vs e9f94eae-1e94-40f5-9ec9-83866c4a5ed0
+  - Numbers: 8521057e-4ffe-4f20-abf6-2b4eb150a625 vs 2086c512-37ec-48c5-8fc7-0dc316ed617c
+  - Signal: a79fdd0f-5302-4ed1-bb34-d442db58c751 vs b8d788d1-9fb4-4381-807f-8632da1577c1
+  - Voice: 366e04d4-1878-4bde-a3b2-10bd90009c03 vs 84c3f9ce-c662-4a22-95f8-ba4d62b95105
+  - Data: d4c2e22c-1fda-41f9-bd62-91303e7b8516 vs 53a725c3-49eb-4d7a-8ae6-cf5ce2be9749
+
+## Missing in members-ids.json (present in complete.json)
+- Only Viral — Ink
+- Only Viral — Keeper
+- Only Viral — Nope
+- Only Viral — Pulse
+- Only Viral — Radar
+- Only Viral — Sage
+- The Alpha Desk — PM
+- The Brief Room — Frame
+- The Brief Room — Helm
+- The Brief Room — Ink
+- The Brief Room — Scroll
+- The Brief Room — Tome
+- The Brief Room — Watch
+
+## Missing in complete.json (present in members-ids.json)
+- Diss Track Inc. — Amp
+- Diss Track Inc. — Clearance
+- Diss Track Inc. — Drip
+- Diss Track Inc. — Ghost
+- Diss Track Inc. — Syntax
+- Diss Track Inc. — Tempo
+- Keeping It Reel — Bleep
+- Keeping It Reel — Flame
+- Keeping It Reel — Mirror
+- Keeping It Reel — Nova
+- Keeping It Reel — Slash
+- Only The Viral — Ink
+- Only The Viral — Keeper
+- Only The Viral — Nope
+- Only The Viral — Pulse
+- Only The Viral — Radar
+- Only The Viral — Sage
+- The Accountant's Ledger — Analyst
+- The Accountant's Ledger — Auditor
+- The Accountant's Ledger — Calculator
+- The Accountant's Ledger — Challenger
+- The Accountant's Ledger — Librarian
+- The Alpha Desk — PM (Fund Manager)
+- The Brief Room — Bounds
+- The Brief Room — Cite
+- The Brief Room — Pierce
+- The Brief Room — Quill
+- The Brief Room — Stern
+- The Career Council — Analyst
+- The Career Council — Coach
+- The Career Council — Director
+- The Career Council — Researcher
+- The Career Council — Strategist
+- The Chef's Table — Blanc
+- The Chef's Table — Check
+- The Chef's Table — Clock
+- The Chef's Table — Larder
+- The Chef's Table — Saucier
+- The Chef's Table — Savant
+- The Cult Builder — Canon
+- The Cult Builder — Ember
+- The Cult Builder — Ledger
+- The Cult Builder — Oracle
+- The Cult Builder — Scripture
+- The Cult Builder — Veil
+- The Customer Success Core — Calculator
+- The Customer Success Core — Listener
+- The Customer Success Core — Scout
+- The Customer Success Core — Sentinel
+- The Customer Success Core — Strategist
+- The Explainers — Canvas
+- The Explainers — Clear
+- The Explainers — Foundation
+- The Explainers — Guide
+- The Explainers — Insight
+- The Explainers — Play
+- The Gossip Girls — Becca
+- The Gossip Girls — Derek
+- The Gossip Girls — Jade
+- The Gossip Girls — Madison
+- The Gossip Girls — Tiffany
+- The Green Brief — Carb
+- The Green Brief — Leaf
+- The Green Brief — Loop
+- The Green Brief — Proof
+- The Green Brief — Rule
+- The Green Brief — Terra
+- The Heist Crew — Dossier
+- The Heist Crew — Proxy
+- The Heist Crew — Solomon
+- The Heist Crew — Torch
+- The Heist Crew — Vex
+- The Heist Crew — Whisper
+- The Improv Ensemble — Brick
+- The Improv Ensemble — Chaos
+- The Improv Ensemble — Heart
+- The Improv Ensemble — Jazz
+- The Improv Ensemble — Meta
+- The Incubator — Cass
+- The Incubator — Dex
+- The Incubator — Max
+- The Incubator — Sage
+- The Incubator — Vee
+- The Incubator — Zero
+- The Infinite Classroom — Advocate
+- The Infinite Classroom — Dean
+- The Infinite Classroom — Examiner
+- The Infinite Classroom — Professor
+- The Infinite Classroom — Tutor
+- The Infinite Table — Chronicler
+- The Infinite Table — Codex
+- The Infinite Table — Ensemble
+- The Infinite Table — Keeper
+- The Infinite Table — Weaver
+- The Intelligence Bureau — Chief
+- The Intelligence Bureau — Data
+- The Intelligence Bureau — Numbers
+- The Intelligence Bureau — Rival
+- The Intelligence Bureau — Signal
+- The Intelligence Bureau — Voice
+- The Last Stand — Bones
+- The Last Stand — Gray
+- The Last Stand — Hawk
+- The Last Stand — Stores
+- The Last Stand — Vex
+- The Lens Grinders — Aldric
+- The Lens Grinders — Index
+- The Lens Grinders — Lumen
+- The Lens Grinders — Pip
+- The Lens Grinders — Quint
+- The Lens Grinders — Reef
+- The Lens Grinders — Slate
+- The Lens Grinders — Vector
+- The Oxford Room — Counter
+- The Oxford Room — Gavel
+- The Oxford Room — Prime
+- The Oxford Room — Reply
+- The Oxford Room — Scroll
+- The Oxford Room — Second
+- The Panic Room — Conscience
+- The Panic Room — Counsel
+- The Panic Room — Fixer
+- The Panic Room — Intel
+- The Panic Room — Scenarios
+- The Panic Room — Spin
+- The Parenting Hub — Anchor
+- The Parenting Hub — Haven
+- The Parenting Hub — Journey
+- The Parenting Hub — Rowan
+- The Parenting Hub — Sage
+- The Publisher — Finch
+- The Publisher — Maren
+- The Publisher — Page
+- The Publisher — Reed
+- The Publisher — Sable
+- The Raise — Bridge
+- The Raise — Check
+- The Raise — Ledger
+- The Raise — Lens
+- The Raise — Quill
+- The Raise — Raise
+- The Raise — Scout
+- The Red Team — Breach
+- The Red Team — Ghost
+- The Red Team — Mole
+- The Red Team — Rater
+- The Red Team — Vector
+- The Research Engine — Analyst
+- The Research Engine — Archivist
+- The Research Engine — Critic
+- The Research Engine — Scribe
+- The Research Engine — Theorist
+- The Roast Pit — Byte
+- The Roast Pit — Counsel
+- The Roast Pit — Frost
+- The Roast Pit — Razor
+- The Roast Pit — Singe
+- The Roast Pit — Vicious
+- The Second Brain — Classifier
+- The Second Brain — Gatherer
+- The Second Brain — Monitor
+- The Second Brain — Organizer
+- The Second Brain — Receiver
+- The Second Brain — Synthesizer
+- The Shadow Council — Cipher
+- The Shadow Council — Dread
+- The Shadow Council — Grix
+- The Shadow Council — Malachar
+- The Shadow Council — Nexus
+- The Shadow Council — Silq
+- The Shark Tank — Dash
+- The Shark Tank — Marina
+- The Shark Tank — Priya
+- The Shark Tank — Rex
+- The Shark Tank — Victor
+- The Think Tank — Cam
+- The Think Tank — Reeves
+- The Tin Foil Hat Society — Cipher
+- The Tin Foil Hat Society — Cobweb
+- The Tin Foil Hat Society — Glyph
+- The Tin Foil Hat Society — Quill
+- The Tin Foil Hat Society — Redact
+- The Tin Foil Hat Society — Vector
+- The What-If Room — Codex
+- Tough Love — Blaze
+- Tough Love — Gunner
+- Tough Love — Lux
+- Tough Love — Ming
+- Tough Love — Pulse
+- Tough Love — Zara
+

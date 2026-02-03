@@ -1,0 +1,175 @@
+{
+  "team_id": "07301139-8cbe-473d-9acf-30bc270e1c24",
+  "team_name": "Only Viral",
+  "folder": "ops",
+  "file": "only-viral.md",
+  "members": [
+    {
+      "name": "Sage",
+      "role": "Strategist/Chair",
+      "function": "Build overall strategy, synthesize team inputs, ensure coherence between brand, content, and channels, manage client expectations",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel"
+      ]
+    },
+    {
+      "name": "Pulse",
+      "role": "Scout/Research",
+      "function": "Research trends, audience behavior, competitive landscape, identify what's working and dying, ground strategy in current reality",
+      "importance": "High",
+      "model_id": "#188",
+      "model_name": "DeepResearch 30B",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.0,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst"
+      ],
+      "special_capabilities": [
+        "web-synthesis",
+        "research-agent",
+        "efficient-compute"
+      ]
+    },
+    {
+      "name": "Radar",
+      "role": "Router/Platform Expert",
+      "function": "Determine platform selection, set posting frequency and timing, plan paid strategy, ensure channel mix makes sense",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "browser-control",
+        "structured-output",
+        "multi-source-synthesis"
+      ]
+    },
+    {
+      "name": "Ink",
+      "role": "Creator/Content Writer",
+      "function": "Create actual content—posts, scripts, captions, hooks, write in brand voice, adapt for different platforms",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#216",
+      "alternative_name": "Lumimaid v0.2 8B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "character-consistency",
+        "non-restrictive"
+      ]
+    },
+    {
+      "name": "Keeper",
+      "role": "Brand Identity Guardian",
+      "function": "Define and maintain brand identity, track narrative arc, ensure consistency, push back on off-brand content, evolve brand intentionally",
+      "importance": "High",
+      "model_id": "#120",
+      "model_name": "Trinity Mini",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Self-Correcting",
+        "Cost-Saver",
+        "Enterprise-Grade"
+      ],
+      "special_capabilities": [
+        "moe-architecture",
+        "3b-active-params",
+        "us-trained"
+      ]
+    },
+    {
+      "name": "Nope",
+      "role": "Cringe Detector/QA",
+      "function": "Review all content for cringe factors, veto anything fake or forced, explain why something doesn't work, suggest improvements",
+      "importance": "Critical",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Uncensored",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "transparent-thinking"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 2,
+    "high_roles": 4,
+    "medium_roles": 0,
+    "budget_optimized": 3
+  },
+  "provider_diversity": [
+    "xAI",
+    "Arcee",
+    "MiniMax",
+    "Sao10K",
+    "NousResearch"
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "team_id": "ea14fe38-1e3c-4806-961c-c2ae5ed801b7",
+  "team_name": "The Shark Tank",
+  "folder": "arcade",
+  "file": "the-shark-tank.md",
+  "assignments": [
+    {
+      "role": "Victor",
+      "function": "Numbers Shark",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "fallback_id": "#122",
+      "fallback_name": "DeepSeek V3.2-Speciale",
+      "tier": "S",
+      "reasoning": "Logic 10.0 for devastating financial analysis; Deep Think for complex modeling; Multimodal for pitch deck analysis; Perfect mathematical precision"
+    },
+    {
+      "role": "Marina",
+      "function": "The Brand Shark",
+      "importance": "Critical",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Nous Hermes 4",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for brand thinking; Spatial-aware for consumer psychology; Character-consistent for brand narratives; 131K context; Passionate persona match"
+    },
+    {
+      "role": "Rex",
+      "function": "Operations Shark",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#134",
+      "fallback_name": "INTELLECT-3",
+      "tier": "A",
+      "reasoning": "Self-verifying for bottleneck detection; Logic 9.0 for systems thinking; Visible CoT for operational stress-testing; Gruff practical persona"
+    },
+    {
+      "role": "Priya",
+      "function": "Industry Shark",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "Web+X search for real-time industry intel; Logic 8.5 for pattern recognition; 2M context; Current sector knowledge beyond training cutoff"
+    },
+    {
+      "role": "Dash",
+      "function": "Wild Card",
+      "importance": "High",
+      "model_id": "#195",
+      "model_name": "Venice Uncensored",
+      "fallback_id": "#219",
+      "fallback_name": "MythoMax L2",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for gut-driven calls; 2.2% refusal for bold positions; Logic 5.0 matches emotional investor; Unpredictable chaos-agent persona"
+    }
+  ]
+}

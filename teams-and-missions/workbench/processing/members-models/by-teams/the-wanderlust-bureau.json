@@ -1,0 +1,141 @@
+{
+  "team_id": "81cb1f36-6ec4-4395-941c-f5371e23c56d",
+  "team_name": "The Wanderlust Bureau",
+  "folder": "vitals",
+  "file": "vibe-tourism.md",
+  "members": [
+    {
+      "name": "Atlas",
+      "role": "Trip Director",
+      "function": "Orchestrate planning, gather preferences, enforce constraints, synthesize executable plan",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Tool-Seeker",
+        "Analyst",
+        "Research-Grade",
+        "Multimodal"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-data"
+      ]
+    },
+    {
+      "name": "Scout",
+      "role": "Destination Specialist",
+      "function": "Research destinations, curate attractions, find experiences, verify accessibility",
+      "importance": "High",
+      "model_id": "#139",
+      "model_name": "Grok 4 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 9.5,
+      "traits": [
+        "Researcher",
+        "Tool-User",
+        "Explorer",
+        "Analyst"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "real-time-data",
+        "attraction-research"
+      ]
+    },
+    {
+      "name": "Logistics",
+      "role": "Logistics Lead",
+      "function": "Research flights, find accommodations, plan ground transport, provide booking links",
+      "importance": "High",
+      "model_id": "#139",
+      "model_name": "Grok 4 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 7.5,
+      "creative": 5.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Researcher",
+        "Analyst",
+        "Precise",
+        "Tool-User"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "real-time-data",
+        "booking-research",
+        "2m-context"
+      ]
+    },
+    {
+      "name": "Palate",
+      "role": "Food Specialist",
+      "function": "Research restaurants, verify dietary compliance, match preferences, provide reservation links",
+      "importance": "High",
+      "model_id": "#139",
+      "model_name": "Grok 4 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 7.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Researcher",
+        "Tool-User",
+        "Curator",
+        "Analyst"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "real-time-data",
+        "dietary-verification",
+        "restaurant-research"
+      ]
+    },
+    {
+      "name": "Ledger",
+      "role": "Budget Tracker",
+      "function": "Track budget, enforce ceiling, find cost savings, redistribute optimally",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 9.0,
+      "creative": 4.0,
+      "efficiency": 10.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Fast-Twitch",
+        "Cost-Saver"
+      ],
+      "special_capabilities": [
+        "hybrid-architecture",
+        "efficient-compute",
+        "financial-tracking"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 0,
+    "budget_optimized": 4
+  },
+  "provider_diversity": [
+    "xAI",
+    "NVIDIA"
+  ]
+}

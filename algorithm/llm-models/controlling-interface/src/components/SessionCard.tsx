@@ -1,6 +1,6 @@
-import React from 'react';
 import { Session } from '../types';
-import { Activity, Radio, AlertTriangle, Shield, Archive, Database } from 'lucide-react';
+import { Activity, AlertTriangle, Shield, Archive } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 interface SessionCardProps {
     session: Session;
@@ -35,7 +35,7 @@ export const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                     <div>
                         <div className="flex items-center gap-2 mb-1">
                             <span className={`
-                                text-[10px] font-mono uppercase tracking-widest px-1.5 py-0.5 rounded-sm border
+                                ${FONT_SIZE.XXS} font-mono uppercase tracking-widest px-1.5 py-0.5 rounded-sm border
                                 ${isLive ? 'text-primary border-primary/30 bg-primary/10' : ''}
                                 ${isHalted ? 'text-red-500 border-red-500/30 bg-red-500/10' : ''}
                                 ${!isLive && !isHalted ? 'text-white/40 border-white/10 bg-white/5' : ''}
@@ -45,27 +45,27 @@ export const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                             {session.access === 'private' && <Shield size={12} className="text-white/30" />}
                             {isArchived && <Archive size={12} className="text-white/30" />}
                         </div>
-                        <h3 className="font-display text-lg text-white group-hover:text-primary transition-colors line-clamp-1" title={session.name}>
+                        <h3 className={`font-display ${FONT_SIZE.LG} text-white group-hover:text-primary transition-colors line-clamp-1`} title={session.name}>
                             {session.name}
                         </h3>
                     </div>
                 </div>
 
                 {/* Info Grid */}
-                <div className="grid grid-cols-2 gap-4 text-xs font-mono text-white/50 mb-4">
+                <div className={`grid grid-cols-2 gap-4 ${FONT_SIZE.XS} font-mono text-white/50 mb-4`}>
                     <div>
-                        <div className="text-[10px] uppercase tracking-wider text-white/20 mb-1">TEAM</div>
+                        <div className={`${FONT_SIZE.XXS} uppercase tracking-wider text-white/20 mb-1`}>TEAM</div>
                         <div className="truncate text-white/70">{session.team_name}</div>
                     </div>
                     <div>
-                        <div className="text-[10px] uppercase tracking-wider text-white/20 mb-1">USER</div>
+                        <div className={`${FONT_SIZE.XXS} uppercase tracking-wider text-white/20 mb-1`}>USER</div>
                         <div className="truncate text-white/70">{session.user_name}</div>
                     </div>
                 </div>
 
                 {/* Progress Bar */}
                 <div className="mt-auto">
-                    <div className="flex justify-between text-[10px] font-mono text-white/40 mb-1">
+                    <div className={`flex justify-between ${FONT_SIZE.XXS} font-mono text-white/40 mb-1`}>
                         <span>ROUND {session.current_round}</span>
                         <span>{session.rounds_left} LEFT</span>
                     </div>
@@ -81,7 +81,7 @@ export const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
                 {(session.halt_reason || session.error) && (
                     <div className="mt-3 p-2 bg-red-500/5 border border-red-500/20 rounded-sm flex items-start gap-2">
                         <AlertTriangle size={12} className="text-red-500 shrink-0 mt-0.5" />
-                        <div className="text-[10px] font-mono text-red-400 line-clamp-2 leading-tight">
+                        <div className={`${FONT_SIZE.XXS} font-mono text-red-400 line-clamp-2 leading-tight`}>
                             {session.error || session.halt_reason}
                         </div>
                     </div>
@@ -89,7 +89,7 @@ export const SessionCard: React.FC<SessionCardProps> = ({ session }) => {
 
                 {/* Footer Round Status */}
                 {session.round_status && (
-                    <div className="mt-2 text-[10px] font-mono text-white/30 flex items-center gap-1.5">
+                    <div className={`mt-2 ${FONT_SIZE.XXS} font-mono text-white/30 flex items-center gap-1.5`}>
                         <Activity size={10} />
                         <span className="uppercase">{session.round_status}</span>
                     </div>

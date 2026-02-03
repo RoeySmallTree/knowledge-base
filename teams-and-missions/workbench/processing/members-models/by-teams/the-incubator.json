@@ -1,0 +1,74 @@
+{
+  "team_id": "dba3992f-cb54-412c-8937-5d3fbc50a445",
+  "team_name": "The Incubator",
+  "folder": "ops",
+  "file": "the-incubator.md",
+  "assignments": [
+    {
+      "role": "Max",
+      "function": "Accelerator Lead/Chair",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 8.5 handles complex orchestration and judgment calls; 30hr endurance perfect for running complete startup validation sessions; STRUCTURED-THINKING trait matches 'makes final calls on scope and priority'"
+    },
+    {
+      "role": "Vee",
+      "function": "Product Visionary",
+      "importance": "Critical",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for envisioning product possibilities and suggesting pivots; SPATIAL-AWARE, CHARACTER-CONSISTENT thinks in user journeys and flows; World-Builder trait matches visual thinking and UX philosophy"
+    },
+    {
+      "role": "Zero",
+      "function": "CTO/Technical Lead",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH critical for current cloud pricing, service comparisons; can pull real infrastructure costs, stack benchmarks, service updates; Logic 8.5 for complex systems reasoning and trade-offs"
+    },
+    {
+      "role": "Dex",
+      "function": "Growth Hacker/Financial",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "A",
+      "reasoning": "Logic 10 perfect for CAC/LTV modeling and financial projections; COMPETITION-MATH handles unit economics calculations without tools; can build 18-month financial models with complex assumptions"
+    },
+    {
+      "role": "Cass",
+      "function": "VC Skeptic/Watchdog",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "SELF-VERIFYING, VISIBLE-COT perfect for finding logical flaws; Logic 9.0 identifies unrealistic assumptions and hidden risks; chain-of-thought visibility shows exactly what's being stress-tested"
+    },
+    {
+      "role": "Sage",
+      "function": "Packet Assembly/Envoy",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Efficiency 9.5 for supporting document assembly role; PRECISE, SELF-CORRECTING with native structured output; synthesizes complex multi-source inputs into coherent packet"
+    }
+  ]
+}

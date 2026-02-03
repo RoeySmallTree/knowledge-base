@@ -1,0 +1,152 @@
+{
+  "team_id": "61cc0e1e-90a0-4975-8334-91f63de06d5a",
+  "team_name": "The Ground Floor",
+  "folder": "ops",
+  "file": "real-estate.md",
+  "members": [
+    {
+      "name": "Brick",
+      "role": "Property Lead/Chair",
+      "function": "Coordinate property analysis, synthesize all factors, deliver clear recommendations, adapt to local markets",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 10.0,
+      "creative": 6.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Most-Intelligent",
+        "Deep-Thinker",
+        "Research-Grade",
+        "Multimodal-Master"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "deep-think",
+        "multimodal",
+        "property-research"
+      ]
+    },
+    {
+      "name": "Ground",
+      "role": "Location Analyst",
+      "function": "Analyze neighborhoods, assess livability, research development and infrastructure, evaluate trajectory",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel",
+        "neighborhood-research"
+      ]
+    },
+    {
+      "name": "Market",
+      "role": "Market/Pricing Analyst",
+      "function": "Research comparable sales, assess market conditions, determine fair value, analyze rental market",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 5.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "2m-context",
+        "real-time-intel",
+        "market-research",
+        "comparable-analysis"
+      ]
+    },
+    {
+      "name": "Numbers",
+      "role": "Financial Analyst",
+      "function": "Calculate investment metrics, model cash flows, project returns, analyze scenarios",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 9.5,
+      "creative": 4.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Competition-Math",
+        "Cost-Saver",
+        "Fast-Twitch"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "financial-modeling",
+        "real-estate-calculations",
+        "no-tools-needed"
+      ]
+    },
+    {
+      "name": "Due",
+      "role": "Due Diligence/Watchdog",
+      "function": "Assess risks, identify red flags, define verification requirements, ensure thorough due diligence",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 4.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "self-verifying",
+        "visible-cot",
+        "risk-assessment",
+        "red-flag-detection"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 2,
+    "high_roles": 3,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Google",
+    "xAI",
+    "Microsoft",
+    "DeepSeek"
+  ]
+}

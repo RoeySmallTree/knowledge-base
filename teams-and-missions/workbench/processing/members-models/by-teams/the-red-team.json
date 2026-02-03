@@ -1,0 +1,63 @@
+{
+  "team_id": "0ba5de29-23dd-4d8b-b2da-6c4381dc59b2",
+  "team_name": "The Red Team",
+  "folder": "ops",
+  "file": "the-red-team.md",
+  "assignments": [
+    {
+      "role": "Vector",
+      "function": "Threat Modeler/Chair",
+      "importance": "Critical",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "fallback_id": "#169",
+      "fallback_name": "Qwen3 235B Thinking",
+      "tier": "A",
+      "reasoning": "Logic 10 for systematic threat modeling frameworks (STRIDE, PASTA); DEEP-THINKER, AGENTIC, TOOL-MASTER matches methodical mapping approach; Memory 9+ (685B MoE) tracks complex attack surfaces"
+    },
+    {
+      "role": "Breach",
+      "function": "Exploit Hunter",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#128",
+      "fallback_name": "DeepSeek R1 0528",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH critical for CVE databases, exploit disclosures; can pull real vulnerability databases, recent patches, security advisories; Logic 8.5 for precise technical analysis"
+    },
+    {
+      "role": "Ghost",
+      "function": "Social Engineer",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "SPATIAL-AWARE, CHARACTER-CONSISTENT models org psychology and targets; Creative 9.0 for crafting realistic phishing and pretexting scenarios; IMMERSIVE, WORLD-BUILDER matches manipulation scenario design"
+    },
+    {
+      "role": "Mole",
+      "function": "Insider Threat",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Efficiency 9.5 for high-importance support role; Logic 8.5 handles privilege escalation and access path analysis; PRECISE, SELF-CORRECTING ensures accurate threat modeling"
+    },
+    {
+      "role": "Rater",
+      "function": "Risk Assessor/QA",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "C",
+      "reasoning": "Efficiency 10 for QA/rating role that doesn't need premium compute; Logic 9.0 for CVSS, DREAD, and severity framework application; PRECISE, STEPWISE matches systematic risk rating approach"
+    }
+  ]
+}

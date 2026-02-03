@@ -1,0 +1,111 @@
+{
+  "team_id": "eadb4cb9-12bc-44b4-a241-a731cc4badc4",
+  "team_name": "The What-If Room",
+  "folder": "arcade",
+  "file": "the-what-ifs.md",
+  "members": [
+    {
+      "name": "Epoch",
+      "role": "Chronologist",
+      "function": "Define and anchor divergence point, manage timeline progression, coordinate specialist inputs, ensure cascades are traced rigorously",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 10.0,
+      "creative": 6.0,
+      "efficiency": 7.0,
+      "traits": ["Most-Intelligent", "Deep-Thinker", "Research-Grade", "Multimodal-Master"],
+      "special_capabilities": ["web-search", "deep-think", "multimodal"]
+    },
+    {
+      "name": "Cog",
+      "role": "Technologist",
+      "function": "Work out how alternative technologies would actually function, identify technical bottlenecks, trace technology development pathways",
+      "importance": "Critical",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "alternative_id": "#170",
+      "alternative_name": "Qwen3 Coder 480B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": ["Deep-Thinker", "Agentic", "Tool-Master", "Long-Horizon"],
+      "special_capabilities": ["tool-calling", "complex-reasoning"]
+    },
+    {
+      "name": "Drift",
+      "role": "Sociologist",
+      "function": "Trace social and cultural evolution in alternate timeline, identify how changes affect class structure, daily life, values, and norms",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": ["World-Builder", "Immersive", "Spatial-Aware", "Character-Consistent"],
+      "special_capabilities": ["spatial-reasoning", "character-consistency", "long-context"]
+    },
+    {
+      "name": "Atlas",
+      "role": "Strategist",
+      "function": "Trace geopolitical consequences of divergence, identify power shifts, wars, and border changes",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 9.0,
+      "creative": 5.0,
+      "efficiency": 10.0,
+      "traits": ["Precise", "Stepwise", "Fast-Twitch", "Cost-Saver"],
+      "special_capabilities": ["hybrid-architecture", "efficient-compute"]
+    },
+    {
+      "name": "Quill",
+      "role": "Archivist",
+      "function": "Create primary source documents from alternate timeline, fabricate period-appropriate newspapers, letters, decrees, quotes",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#216",
+      "alternative_name": "Lumimaid v0.2 8B",
+      "logic": 5.0,
+      "creative": 8.0,
+      "efficiency": 8.5,
+      "traits": ["World-Builder", "Character-Consistent", "Immersive", "Envoy"],
+      "special_capabilities": ["anti-lecture", "user-aligned", "creative-writing"]
+    },
+    {
+      "name": "Vex",
+      "role": "Consistency Watchdog",
+      "function": "Check all timeline elements for internal consistency, flag contradictions, identify timeline paradoxes",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 4.0,
+      "efficiency": 7.5,
+      "traits": ["Deep-Thinker", "Self-Correcting", "Visible-CoT", "Self-Verifying"],
+      "special_capabilities": ["visible-reasoning", "self-verification", "consistency-checking"]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 3,
+    "high_roles": 3,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Google",
+    "DeepSeek",
+    "Sao10K",
+    "NVIDIA",
+    "Nous Research"
+  ]
+}

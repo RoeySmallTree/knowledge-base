@@ -1,0 +1,180 @@
+{
+  "team_id": "818cb679-8e77-4f1e-b780-8dc42bc366eb",
+  "team_name": "The Pitching Room",
+  "folder": "ops",
+  "file": "the-pitching-room.md",
+  "members": [
+    {
+      "name": "Spark",
+      "role": "Director",
+      "function": "Direct pitch development, solicit and evaluate multiple approaches, integrate user feedback, ensure pitch fits presenter",
+      "importance": "Critical",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "uncensored",
+        "user-aligned",
+        "creative-direction",
+        "preference-elicitation"
+      ]
+    },
+    {
+      "name": "Arc",
+      "role": "Narrator",
+      "function": "Build story arcs, map emotional journeys, choose narrative frameworks, ensure structural integrity",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "web-search",
+        "character-consistency",
+        "narrative-structure"
+      ]
+    },
+    {
+      "name": "Quill",
+      "role": "Wordsmith",
+      "function": "Craft language, write memorable phrases, apply rhetorical devices, edit ruthlessly for impact",
+      "importance": "High",
+      "model_id": "#216",
+      "model_name": "Lumimaid v0.2 8B",
+      "alternative_id": "#215",
+      "alternative_name": "Lunaris 8B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 8.5,
+      "traits": [
+        "Creative",
+        "Roleplayer",
+        "Permissive",
+        "Colloquial",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "slop-free",
+        "minimal-refusals",
+        "rhetorical-devices",
+        "memorable-phrasing"
+      ]
+    },
+    {
+      "name": "Lens",
+      "role": "Coach",
+      "function": "Coach delivery, guide body language, train vocal technique, adapt to presenter's natural style",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "web-search",
+        "browser-control",
+        "performance-coaching"
+      ]
+    },
+    {
+      "name": "Stage",
+      "role": "Stage Manager",
+      "function": "Design visual support, plan props and demos, optimize environment, create technical backup plans",
+      "importance": "Medium",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 10.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Fast-Twitch",
+        "Cost-Saver"
+      ],
+      "special_capabilities": [
+        "hybrid-architecture",
+        "efficient-compute",
+        "visual-planning",
+        "logistics-optimization"
+      ]
+    },
+    {
+      "name": "Crowd",
+      "role": "The Audience",
+      "function": "Represent audience perspective, flag attention risks, challenge overused approaches, confirm when pitch works",
+      "importance": "Medium",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 8.0,
+      "creative": 5.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "self-verifying",
+        "audience-psychology",
+        "attention-prediction"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 3,
+    "medium_roles": 2,
+    "budget_optimized": 2
+  },
+  "provider_diversity": [
+    "NousResearch",
+    "Sao10K",
+    "NeverSleep",
+    "MiniMax",
+    "NVIDIA",
+    "DeepSeek"
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "team_id": "81dd2789-f2c1-4307-8a4c-8002575a04c7",
+  "team_name": "The Document Digestor",
+  "folder": "cortex",
+  "file": "document-digestor.md",
+  "members": [
+    {
+      "name": "Parser",
+      "role": "Document Intake/Structure Detection",
+      "function": "Receive and analyze documents, identify document type and structure, detect section boundaries, orchestrate extraction process",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#189",
+      "alternative_name": "InternVL3 78B",
+      "logic": 10.0,
+      "creative": 8.5,
+      "efficiency": 7.0,
+      "traits": ["Most-Intelligent", "Deep-Thinker", "Research-Grade", "Multimodal-Master"],
+      "special_capabilities": ["multimodal", "deep-think", "vision", "document-analysis"]
+    },
+    {
+      "name": "Extractor",
+      "role": "Component Extraction",
+      "function": "Identify extractable components, tag by type, preserve source locations and quotes, handle compound statements",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "alternative_id": "#169",
+      "alternative_name": "Qwen3 235B Thinking",
+      "logic": 9.5,
+      "creative": 8.5,
+      "efficiency": 8.0,
+      "traits": ["Deep-Thinker", "Agentic", "Computer-Use", "Long-Context"],
+      "special_capabilities": ["structured-extraction", "long-context", "computer-use", "quote-preservation"]
+    },
+    {
+      "name": "Architect",
+      "role": "Hierarchy Building",
+      "function": "Organize components into logical hierarchy, create multiple organization schemes, build navigation paths",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Deep-Thinker", "Tool-Seeker", "Self-Correcting"],
+      "special_capabilities": ["structured-output", "browser-control", "multi-source-synthesis"]
+    },
+    {
+      "name": "Linker",
+      "role": "Relationships/Cross-references",
+      "function": "Identify relationships between components, create cross-references, spot contradictions and overlaps",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 6.0,
+      "efficiency": 7.5,
+      "traits": ["Deep-Thinker", "Self-Correcting", "Visible-CoT", "Self-Verifying"],
+      "special_capabilities": ["self-verifying", "visible-cot", "relationship-reasoning", "contradiction-detection"]
+    },
+    {
+      "name": "Verifier",
+      "role": "Completeness Verification",
+      "function": "Verify extraction completeness, compare output to input, identify gaps, ensure nothing is lost",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "alternative_id": "#212",
+      "alternative_name": "Phi 4",
+      "logic": 10.0,
+      "creative": 5.0,
+      "efficiency": 5.0,
+      "traits": ["Precise", "Stepwise", "Competition-Math", "Deep-Thinker"],
+      "special_capabilities": ["precision-verification", "competition-math", "completeness-checking"]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 3,
+    "high_roles": 2,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Google",
+    "Anthropic",
+    "MiniMax",
+    "DeepSeek"
+  ]
+}

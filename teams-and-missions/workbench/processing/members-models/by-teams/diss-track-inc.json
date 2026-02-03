@@ -1,0 +1,74 @@
+{
+  "team_id": "30daba22-2973-47a5-8f19-9977012856b6",
+  "team_name": "Diss Track Inc.",
+  "folder": "arcade",
+  "file": "diss-track-inc.md",
+  "assignments": [
+    {
+      "role": "Tempo",
+      "function": "Producer/Chair",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "A",
+      "reasoning": "Logic 8.5 for session orchestration; Creative 7.5 for beat decisions; 30hr endurance for long sessions; Workhorse coordinator"
+    },
+    {
+      "role": "Syntax",
+      "function": "Lyricist",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for complex wordplay; 131K context for scheme tracking; Spatial-aware for layered rhymes; Character-consistent"
+    },
+    {
+      "role": "Drip",
+      "function": "Hitmaker",
+      "importance": "High",
+      "model_id": "#216",
+      "model_name": "Lumimaid v0.2 8B",
+      "fallback_id": "#215",
+      "fallback_name": "Lunaris 8B",
+      "tier": "D",
+      "reasoning": "Creative 9.0 for hooks; Logic 5.5 matches intuitive style; Efficiency 8.5; Slop-free dataset; Colloquial modern voice"
+    },
+    {
+      "role": "Ghost",
+      "function": "Storyteller",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "B",
+      "reasoning": "Creative 7.5 for narrative; Logic 7.5 for structure; User-aligned non-sycophantic; Transparent-thinker; Anti-lecture"
+    },
+    {
+      "role": "Amp",
+      "function": "Hype Man",
+      "importance": "Medium",
+      "model_id": "#215",
+      "model_name": "Lunaris 8B",
+      "fallback_id": "#219",
+      "fallback_name": "MythoMax L2 13B",
+      "tier": "D",
+      "reasoning": "Creative 7.5 for ad-libs; Efficiency 8.5 for support; 5-model merge variety; Budget-friendly reactive role"
+    },
+    {
+      "role": "Clearance",
+      "function": "A&R",
+      "importance": "Medium",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "A",
+      "reasoning": "Logic 8.5 for content evaluation; Efficiency 9.5 for QA; Precise self-correcting; Structured output; Multi-language"
+    }
+  ]
+}

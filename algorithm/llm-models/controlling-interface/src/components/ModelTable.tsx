@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import {
     DndContext,
     closestCenter,
@@ -19,9 +19,10 @@ import {
 import { CSS } from '@dnd-kit/utilities';
 
 import { ChevronDown, ChevronRight, GripVertical } from 'lucide-react';
-import { LLMModel, Vendor } from '../types';
+import { LLMModel, Vendor, Team, Member, TeamMember } from '../types';
 import { getVendorIcon } from '../utils/getVendorIcon';
 import { ModelCard } from './ModelCard';
+import { FONT_SIZE } from '../constants';
 import { useUpdateModelsOrder, useUpdateVendorsOrder } from '../hooks/useMutations';
 
 interface ModelTableProps {
@@ -37,8 +38,17 @@ interface ModelTableProps {
 
     onFallbackChange: (modelKey: string, fallbackId: string | null) => void;
     maxPrice: number;
-    maxParams: number;
     maxContext: number;
+    teams: Team[];
+    members: Member[];
+    onNavigateToTeam: (teamId: string) => void;
+    onFilterTeamsByModel: (modelId: number) => void;
+    onTeamUpdate: (updatedTeam: Team, originalId: string) => void;
+    onTeamDelete: (teamId: string) => void;
+    onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
+    onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
+    onMemberDelete: (memberId: string) => void;
+    onMemberCreate: (member: TeamMember) => void;
 }
 
 export function ModelTable({
@@ -54,10 +64,65 @@ export function ModelTable({
 
     onFallbackChange,
     maxPrice,
-    maxParams,
-    maxContext
+    maxContext,
+    teams,
+    members,
+    onNavigateToTeam,
+    onFilterTeamsByModel,
+    onTeamUpdate,
+    onTeamDelete,
+    onTeamDuplicate,
+    onMemberUpdate,
+    onMemberDelete,
+    onMemberCreate,
 }: ModelTableProps) {
     const updateVendorsOrderMutation = useUpdateVendorsOrder();
+
+    // Calculate Usage Map: Dict<ModelID, { count: number, teams: Array<{ id, name, members: [] }> }>
+    const usageMap = useMemo(() => {
+        const map: Record<string, { count: number; teams: (Team & { members: Member[] })[] }> = {};
+
+        // Initialize map for all models
+        models.forEach(m => {
+            if (m.id) {
+                map[String(m.id)] = { count: 0, teams: [] };
+            }
+        });
+
+        // Create a lookup for members by team for efficiency
+        const membersByTeam: Record<string, Member[]> = {};
+        members.forEach(m => {
+            if (!membersByTeam[m.team_id]) membersByTeam[m.team_id] = [];
+            membersByTeam[m.team_id].push(m);
+        });
+
+        // Iterate through members to identify teams using the model
+        members.forEach(member => {
+            if (!member.model_id) return;
+            const modelId = String(member.model_id);
+
+            // Just in case we didn't init this model
+            if (!map[modelId]) {
+                map[modelId] = { count: 0, teams: [] };
+            }
+
+            map[modelId].count++;
+
+            const team = teams.find(t => t.id === member.team_id);
+            if (team) {
+                const existing = map[modelId].teams.find(t => t.id === team.id);
+                // Only add team if not already added for this model
+                if (!existing) {
+                    // Include ALL members of the team, not just the one using it
+                    const teamMembers = membersByTeam[team.id] || [];
+                    const newEntry = { ...team, members: teamMembers };
+                    map[modelId].teams.push(newEntry);
+                }
+            }
+        });
+
+        return map;
+    }, [models, teams, members]);
 
     // Group models by vendor, then by family
     const groupedData = models.reduce((acc, model) => {
@@ -65,10 +130,11 @@ export function ModelTable({
         if (!acc[vendorId]) {
             acc[vendorId] = {};
         }
-        if (!acc[vendorId][model.modelFamily]) {
-            acc[vendorId][model.modelFamily] = [];
+        const family = model.modelFamily ?? 'Unknown';
+        if (!acc[vendorId][family]) {
+            acc[vendorId][family] = [];
         }
-        acc[vendorId][model.modelFamily].push(model);
+        acc[vendorId][family].push(model);
         return acc;
     }, {} as Record<string, Record<string, LLMModel[]>>);
 
@@ -141,8 +207,16 @@ export function ModelTable({
                             onDelete={onDelete}
                             onFallbackChange={onFallbackChange}
                             maxPrice={maxPrice}
-                            maxParams={maxParams}
                             maxContext={maxContext}
+                            usageMap={usageMap}
+                            onNavigateToTeam={onNavigateToTeam}
+                            onFilterTeamsByModel={onFilterTeamsByModel}
+                            onTeamUpdate={onTeamUpdate}
+                            onTeamDelete={onTeamDelete}
+                            onTeamDuplicate={onTeamDuplicate}
+                            onMemberUpdate={onMemberUpdate}
+                            onMemberDelete={onMemberDelete}
+                            onMemberCreate={onMemberCreate}
                         />
                     ))}
                 </SortableContext>
@@ -165,8 +239,16 @@ function SortableVendorGroup({
     onDelete,
     onFallbackChange,
     maxPrice,
-    maxParams,
-    maxContext
+    maxContext,
+    usageMap,
+    onNavigateToTeam,
+    onFilterTeamsByModel,
+    onTeamUpdate,
+    onTeamDelete,
+    onTeamDuplicate,
+    onMemberUpdate,
+    onMemberDelete,
+    onMemberCreate,
 }: {
     vendorId: string,
     vendorName: string,
@@ -181,8 +263,16 @@ function SortableVendorGroup({
     onDelete: (model: LLMModel) => void,
     onFallbackChange: (modelKey: string, fallbackId: string | null) => void,
     maxPrice: number;
-    maxParams: number;
     maxContext: number;
+    usageMap: Record<string, { count: number; teams: (Team & { members: Member[] })[] }>;
+    onNavigateToTeam: (teamId: string) => void;
+    onFilterTeamsByModel: (modelId: number) => void;
+    onTeamUpdate: (updatedTeam: Team, originalId: string) => void;
+    onTeamDelete: (teamId: string) => void;
+    onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
+    onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
+    onMemberDelete: (memberId: string) => void;
+    onMemberCreate: (member: TeamMember) => void;
 }) {
     const {
         attributes,
@@ -215,9 +305,17 @@ function SortableVendorGroup({
                 onDelete={onDelete}
                 onFallbackChange={onFallbackChange}
                 maxPrice={maxPrice}
-                maxParams={maxParams}
                 maxContext={maxContext}
+                usageMap={usageMap}
                 dragHandleProps={{ attributes, listeners }}
+                onNavigateToTeam={onNavigateToTeam}
+                onFilterTeamsByModel={onFilterTeamsByModel}
+                onTeamUpdate={onTeamUpdate}
+                onTeamDelete={onTeamDelete}
+                onTeamDuplicate={onTeamDuplicate}
+                onMemberUpdate={onMemberUpdate}
+                onMemberDelete={onMemberDelete}
+                onMemberCreate={onMemberCreate}
             />
         </div>
     );
@@ -238,9 +336,17 @@ function VendorGroup({
 
     onFallbackChange,
     maxPrice,
-    maxParams,
     maxContext,
-    dragHandleProps
+    usageMap,
+    dragHandleProps,
+    onNavigateToTeam,
+    onFilterTeamsByModel,
+    onTeamUpdate,
+    onTeamDelete,
+    onTeamDuplicate,
+    onMemberUpdate,
+    onMemberDelete,
+    onMemberCreate,
 }: {
     vendorId: string,
     vendorName: string,
@@ -256,8 +362,16 @@ function VendorGroup({
 
     onFallbackChange: (modelKey: string, fallbackId: string | null) => void,
     maxPrice: number;
-    maxParams: number;
     maxContext: number;
+    usageMap: Record<string, { count: number; teams: (Team & { members: Member[] })[] }>;
+    onNavigateToTeam: (teamId: string) => void;
+    onFilterTeamsByModel: (modelId: number) => void;
+    onTeamUpdate: (updatedTeam: Team, originalId: string) => void;
+    onTeamDelete: (teamId: string) => void;
+    onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
+    onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
+    onMemberDelete: (memberId: string) => void;
+    onMemberCreate: (member: TeamMember) => void;
     dragHandleProps?: {
         attributes: any;
         listeners: any;
@@ -304,8 +418,8 @@ function VendorGroup({
                         }}
                     />
                 </div>
-                <h3 className="font-display text-2xl text-foreground tracking-widest">{vendorName}</h3>
-                <span className="font-label text-sm text-muted-foreground">{totalModels} UNITS</span>
+                <h3 className={`font-display ${FONT_SIZE.XXL} text-foreground tracking-widest`}>{vendorName}</h3>
+                <span className={`font-label ${FONT_SIZE.SM} text-muted-foreground`}>{totalModels} UNITS</span>
                 <div className="h-px flex-1 bg-border/60" />
                 <button
                     onClick={(e) => {
@@ -314,7 +428,7 @@ function VendorGroup({
                     }}
                     className="p-1 px-2 rounded hover:bg-white/10 text-primary transition-colors flex items-center justify-center border border-transparent hover:border-primary/30"
                 >
-                    <span className="text-lg leading-none">+</span>
+                    <span className={`${FONT_SIZE.LG} leading-none`}>+</span>
                 </button>
             </div>
 
@@ -338,8 +452,16 @@ function VendorGroup({
 
                             onFallbackChange={onFallbackChange}
                             maxPrice={maxPrice}
-                            maxParams={maxParams}
                             maxContext={maxContext}
+                            usageMap={usageMap}
+                            onNavigateToTeam={onNavigateToTeam}
+                            onFilterTeamsByModel={onFilterTeamsByModel}
+                            onTeamUpdate={onTeamUpdate}
+                            onTeamDelete={onTeamDelete}
+                            onTeamDuplicate={onTeamDuplicate}
+                            onMemberUpdate={onMemberUpdate}
+                            onMemberDelete={onMemberDelete}
+                            onMemberCreate={onMemberCreate}
                         />
                     ))}
                 </div>
@@ -364,8 +486,16 @@ function FamilyGroup({
 
     onFallbackChange,
     maxPrice,
-    maxParams,
-    maxContext
+    maxContext,
+    usageMap,
+    onNavigateToTeam,
+    onFilterTeamsByModel,
+    onTeamUpdate,
+    onTeamDelete,
+    onTeamDuplicate,
+    onMemberUpdate,
+    onMemberDelete,
+    onMemberCreate,
 }: {
     vendorId: string,
     vendorName: string,
@@ -382,8 +512,16 @@ function FamilyGroup({
 
     onFallbackChange: (modelKey: string, fallbackId: string | null) => void,
     maxPrice: number;
-    maxParams: number;
     maxContext: number;
+    usageMap: Record<string, { count: number; teams: (Team & { members: Member[] })[] }>;
+    onNavigateToTeam: (teamId: string) => void;
+    onFilterTeamsByModel: (modelId: number) => void;
+    onTeamUpdate: (updatedTeam: Team, originalId: string) => void;
+    onTeamDelete: (teamId: string) => void;
+    onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
+    onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
+    onMemberDelete: (memberId: string) => void;
+    onMemberCreate: (member: TeamMember) => void;
 }) {
     const [isOpen, setIsOpen] = useState(true);
     const [expandedModelId, setExpandedModelId] = useState<string | null>(null);
@@ -446,8 +584,8 @@ function FamilyGroup({
                 <div className={`border border-border/70 cyber-chamfer-sm px-2 py-1 text-primary ${isOpen ? 'cyber-glow' : 'text-muted-foreground group-hover:text-primary'}`}>
                     {isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                 </div>
-                <h4 className="font-display text-lg text-accent-tertiary">{family}</h4>
-                <span className="font-label text-sm text-muted-foreground">{models.length} MODELS</span>
+                <h4 className={`font-display ${FONT_SIZE.LG} text-accent-tertiary`}>{family}</h4>
+                <span className={`font-label ${FONT_SIZE.SM} text-muted-foreground`}>{models.length} MODELS</span>
                 <div className="h-px flex-1 bg-border/60" />
                 <button
                     onClick={(e) => {
@@ -456,7 +594,7 @@ function FamilyGroup({
                     }}
                     className="p-1 px-1.5 rounded hover:bg-white/10 text-accent-tertiary transition-colors flex items-center justify-center border border-transparent hover:border-accent-tertiary/30"
                 >
-                    <span className="text-sm leading-none">+</span>
+                    <span className={`${FONT_SIZE.SM} leading-none`}>+</span>
                 </button>
             </div>
 
@@ -475,6 +613,7 @@ function FamilyGroup({
                                 {sortedModels.map((model) => {
                                     const modelKey = getModelKey(model);
                                     const isActive = expandedModelId === modelKey;
+                                    const usage = model.id ? usageMap[String(model.id)] : undefined;
                                     return (
                                         <SortableModelCard
                                             key={modelKey}
@@ -490,10 +629,18 @@ function FamilyGroup({
                                             onArchive={onArchive}
                                             onDelete={onDelete}
                                             maxPrice={maxPrice}
-                                            maxParams={maxParams}
                                             maxContext={maxContext}
                                             isActive={isActive}
+                                            usage={usage}
                                             onToggleExpand={() => setExpandedModelId(isActive ? null : modelKey)}
+                                            onNavigateToTeam={onNavigateToTeam}
+                                            onFilterTeamsByModel={onFilterTeamsByModel}
+                                            onTeamUpdate={onTeamUpdate}
+                                            onTeamDelete={onTeamDelete}
+                                            onTeamDuplicate={onTeamDuplicate}
+                                            onMemberUpdate={onMemberUpdate}
+                                            onMemberDelete={onMemberDelete}
+                                            onMemberCreate={onMemberCreate}
                                         />
                                     );
                                 })}
@@ -517,11 +664,19 @@ function FamilyGroup({
                                 onArchive={onArchive}
                                 onDelete={onDelete}
                                 maxPrice={maxPrice}
-                                maxParams={maxParams}
                                 maxContext={maxContext}
                                 isExpanded={true}
                                 isActive={true}
+                                usage={expandedModel.id ? usageMap[String(expandedModel.id)] : undefined}
                                 onToggleExpand={() => setExpandedModelId(null)}
+                                onNavigateToTeam={onNavigateToTeam}
+                                onFilterTeamsByModel={onFilterTeamsByModel}
+                                onTeamUpdate={onTeamUpdate}
+                                onTeamDelete={onTeamDelete}
+                                onTeamDuplicate={onTeamDuplicate}
+                                onMemberUpdate={onMemberUpdate}
+                                onMemberDelete={onMemberDelete}
+                                onMemberCreate={onMemberCreate}
                             />
                         </div>
                     )}
@@ -544,10 +699,18 @@ function SortableModelCard({
     onArchive,
     onDelete,
     maxPrice,
-    maxParams,
     maxContext,
     isActive,
-    onToggleExpand
+    usage,
+    onToggleExpand,
+    onNavigateToTeam,
+    onFilterTeamsByModel,
+    onTeamUpdate,
+    onTeamDelete,
+    onTeamDuplicate,
+    onMemberUpdate,
+    onMemberDelete,
+    onMemberCreate,
 }: {
     model: LLMModel;
     modelKey: string;
@@ -561,10 +724,18 @@ function SortableModelCard({
     onArchive: (model: LLMModel) => void;
     onDelete: (model: LLMModel) => void;
     maxPrice: number;
-    maxParams: number;
     maxContext: number;
     isActive: boolean;
+    usage?: { count: number; teams: (Team & { members: Member[] })[] };
     onToggleExpand: () => void;
+    onNavigateToTeam: (teamId: string) => void;
+    onFilterTeamsByModel: (modelId: number) => void;
+    onTeamUpdate: (updatedTeam: Team, originalId: string) => void;
+    onTeamDelete: (teamId: string) => void;
+    onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
+    onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
+    onMemberDelete: (memberId: string) => void;
+    onMemberCreate: (member: TeamMember) => void;
 }) {
     const {
         attributes,
@@ -610,14 +781,20 @@ function SortableModelCard({
                 onArchive={onArchive}
                 onDelete={onDelete}
                 maxPrice={maxPrice}
-                maxParams={maxParams}
                 maxContext={maxContext}
                 isExpanded={false}
                 isActive={isActive}
+                usage={usage}
                 onToggleExpand={onToggleExpand}
+                onNavigateToTeam={onNavigateToTeam}
+                onFilterTeamsByModel={onFilterTeamsByModel}
+                onTeamUpdate={onTeamUpdate}
+                onTeamDelete={onTeamDelete}
+                onTeamDuplicate={onTeamDuplicate}
+                onMemberUpdate={onMemberUpdate}
+                onMemberDelete={onMemberDelete}
+                onMemberCreate={onMemberCreate}
             />
         </div>
     );
 }
-
-

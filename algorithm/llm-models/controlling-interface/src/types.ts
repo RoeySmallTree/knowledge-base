@@ -1,105 +1,67 @@
+export interface ApiListResponse<T> {
+    generatedAt: string;
+    total: number;
+    items: T[];
+}
+
+export interface Pricing {
+    prompt: number;
+    completion: number;
+    tier: number;
+}
+
 export interface LLMModel {
-    id?: string;
-    api_id?: string;
-    slug?: string;
-    vendor_id: number | string;
-    modelFamily: string;
+    id?: number;
+    api_id: string;
+    slug: string;
+    vendor_id: number | null;
+    modelFamily: string | null;
     modelName: string;
-    name_within_family?: string;
-    display_order?: number;
-    description?: string;
-    // parametersB: string; // Deprecated by schema
-    parameter_count_b?: number;
-    contextK: number | string; // contextK is special, often "128k" but sometimes number
-    context_length?: number;
+    name_within_family: string | null;
+    display_order: number;
+    description: string | null;
+    parameter_count_b?: number | null;
+    active_parameter_count_b?: number | null;
+    contextK: number | string | null;
+    context_length?: number | null;
     personalityTraits: string;
     analyticalTraits: string;
     bestFor: string;
-    optimalTeamExamples: string;
+    optimalTeamExamples?: string;
     creativeScore: number | null;
     deductiveScore: number | null;
-    efficiencyScore?: number | null;
-    specialPropertiesNotes: string;
-    pricing?: {
-        prompt: number;
-        completion: number;
-        tier: number;
-    };
-    fallback_model_id?: number | string;
+    efficiencyScore: number | null;
+    specialPropertiesNotes?: string;
+    pricing: Pricing;
+    fallback_model_id?: number | null;
     capabilities?: string[];
-    active?: boolean;
-    last_synced_at?: string;
+    active: boolean;
+    last_synced_at?: string | null;
     created_at?: string;
     updated_at?: string;
-    active_parameter_count_b?: number;
-    model_family?: string;
 }
 
 export interface Vendor {
-    id: number | string;
+    id: number;
+    slug: string;
     display_name: string;
     is_active: boolean;
     display_order: number;
-    slug?: string;
-    link?: string;
-    description?: string;
-    created_at?: string;
-    updated_at?: string;
-}
-
-export interface ModelsData {
-    generatedAt: string;
-    totalModels: number;
-    models: LLMModel[];
-}
-
-export interface VendorsData {
-    generatedAt: string;
-    totalVendors: number;
-    vendors: Vendor[];
-}
-
-
-export type TeamCategory = 'CORTEX' | 'VITALS' | 'OPS' | 'ARCADE';
-export type TeamRole = 'Chair' | 'Envoy' | 'Watchdog' | 'Operative';
-
-// Raw DB Rows
-export interface DbTeamRow {
-    id: string;
-    user_id: string;
-    name: string;
+    link: string | null;
     description: string | null;
-    is_public: boolean;
-    catch_phrase: string | null;
-    category: string | null;
-    quick_starts: string[] | null;
-    default_starting_rounds: number | null;
-    bootstrap_prompt: string | null;
-    is_saved: boolean;
-    originated_from_team: string | null;
-    display_order: number | null;
     created_at: string;
     updated_at: string;
 }
 
-export interface DbMemberRow {
-    id: string;
-    name: string;
-    role: string;
-    team_role: string | null;
-    color: string | null;
-    characteristics: string[] | null; // jsonb in DB, simplified to array here
-    life_story: string | null;
-    special_orders: string | null;
-    team_id: string;
-    model_id: number;
-    created_at: string;
-}
+export type ModelsData = ApiListResponse<LLMModel>;
+export type VendorsData = ApiListResponse<Vendor>;
 
-// App Types (aligned with DB but cleaner for UI if needed)
+export type TeamCategory = 'CORTEX' | 'VITALS' | 'OPS' | 'ARCADE';
+export type TeamRole = 'Chair' | 'Envoy' | 'Watchdog' | 'Operative';
+
 export interface Team {
     id: string;
-    user_id?: string; // Optional for UI if inferred
+    user_id: string;
     name: string;
     description: string;
     is_public: boolean;
@@ -127,23 +89,12 @@ export interface TeamMember {
     team_id: string;
     model_id: number;
     display_order?: number;
-    // model_name is often needed for display but not in DB member table (joined)
     model_name?: string;
     created_at?: string;
 }
 
-export interface TeamsData {
-    generatedAt: string;
-    totalTeams: number;
-    teams: Team[];
-}
-
-export interface MembersData {
-    generatedAt: string;
-    totalMembers: number;
-    members: TeamMember[];
-}
-
+export type TeamsData = ApiListResponse<Team>;
+export type MembersData = ApiListResponse<TeamMember>;
 export type Member = TeamMember;
 
 export interface OpenRouterModel {
@@ -157,8 +108,6 @@ export interface OpenRouterModel {
     };
     created: number;
 }
-
-
 
 export interface AppUser {
     id: string;
@@ -174,12 +123,11 @@ export interface AppUser {
     extras: string;
     legion_id: string | null;
     type: string;
-    // joined/computed fields
-    plan_code?: string;
-    plan_name?: string;
-    plan_credits_balance?: number;
-    last_period_usage_usd?: number;
-    last_active?: string;
+    plan_code: string;
+    plan_name: string;
+    plan_credits_balance: number;
+    last_period_usage_usd: number;
+    last_active: string;
 }
 
 export interface Session {
@@ -206,14 +154,5 @@ export interface Session {
     team_name: string;
 }
 
-export interface UsersData {
-    generatedAt: string;
-    totalUsers: number;
-    users: AppUser[];
-}
-
-export interface SessionsData {
-    generatedAt: string;
-    totalSessions: number;
-    sessions: Session[];
-}
+export type UsersData = ApiListResponse<AppUser>;
+export type SessionsData = ApiListResponse<Session>;

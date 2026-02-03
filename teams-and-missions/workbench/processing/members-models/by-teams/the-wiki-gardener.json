@@ -1,0 +1,136 @@
+{
+  "team_id": "0062bb4b-12e5-4361-9224-e3e27b660ea3",
+  "team_name": "The Wiki Gardener",
+  "folder": "cortex",
+  "file": "the-wiki-gardeners.md",
+  "members": [
+    {
+      "name": "Librarian",
+      "role": "Structure/Classification",
+      "function": "Classify incoming information, decide where it belongs in wiki structure, route updates to correct locations, maintain wiki hierarchy, create new pages/sections when needed",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#203",
+      "alternative_name": "Llama 4 Scout",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "2m-context",
+        "web-search",
+        "x-search",
+        "real-time-intel",
+        "structural-knowledge"
+      ]
+    },
+    {
+      "name": "Scribe",
+      "role": "Writing/Formatting",
+      "function": "Transform raw inputs into clean documentation, match existing wiki style and format, preserve technical accuracy, create consistent scannable content",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 7.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Code-Master",
+        "Workhorse",
+        "Value-Leader",
+        "Long-Running",
+        "Computer-User",
+        "Production-Grade"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "computer-use",
+        "technical-writing",
+        "style-consistency"
+      ]
+    },
+    {
+      "name": "Linker",
+      "role": "Cross-referencing/Navigation",
+      "function": "Identify relationships between content, create appropriate cross-references, maintain bidirectional links, detect orphaned pages, build navigation paths",
+      "importance": "High",
+      "model_id": "#203",
+      "model_name": "Llama 4 Scout",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 7.5,
+      "creative": 6.0,
+      "efficiency": 10.0,
+      "traits": [
+        "Context-Heavy",
+        "Navigator",
+        "Memory-Master",
+        "Cost-Saver"
+      ],
+      "special_capabilities": [
+        "10m-context",
+        "long-context-champion",
+        "repository-indexing",
+        "relationship-detection"
+      ]
+    },
+    {
+      "name": "Deprecation Officer",
+      "role": "Conflict/Watchdog",
+      "function": "Detect conflicts between new info and existing content, flag stale pages, resolve conflicts when possible, escalate when not, maintain accuracy audit trail",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 5.5,
+      "efficiency": 7.5,
+      "traits": [
+        "Deep-Thinker",
+        "Math-Strong",
+        "Open-Reasoning",
+        "Self-Verifying",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "visible-cot",
+        "self-verifying",
+        "contradiction-detection",
+        "audit-trail"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 3,
+    "high_roles": 1,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "xAI",
+    "Anthropic",
+    "Meta",
+    "DeepSeek"
+  ],
+  "team_characteristics": {
+    "context_optimized": true,
+    "memory_heavy": true,
+    "average_logic": 8.4,
+    "average_creative": 6.5,
+    "average_efficiency": 9.0,
+    "total_context_capacity": "12M+ tokens",
+    "primary_focus": "documentation-maintenance",
+    "operating_mode": "peer-specialists"
+  }
+}

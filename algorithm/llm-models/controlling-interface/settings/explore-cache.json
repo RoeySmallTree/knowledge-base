@@ -21,11 +21,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 40960,
@@ -72,11 +68,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 163840,
@@ -129,11 +121,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 131072,
@@ -182,11 +170,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 128000,
@@ -213,55 +197,6 @@
       "expiration_date": null
     },
     {
-      "id": "mistralai/devstral-2512:free",
-      "canonical_slug": "mistralai/devstral-2512",
-      "hugging_face_id": "mistralai/Devstral-2-123B-Instruct-2512",
-      "name": "Mistral: Devstral 2 2512 (free)",
-      "created": 1765285419,
-      "description": "Devstral 2 is a state-of-the-art open-source model by Mistral AI specializing in agentic coding. It is a 123B-parameter dense transformer model supporting a 256K context window.\n\nDevstral 2 supports exploring codebases and orchestrating changes across multiple files while maintaining architecture-level context. It tracks framework dependencies, detects failures, and retries with corrections—solving challenges like bug fixing and modernizing legacy systems. The model can be fine-tuned to prioritize specific languages or optimize for large enterprise codebases. It is available under a modified MIT license.",
-      "context_length": 262144,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Mistral",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0",
-        "completion": "0"
-      },
-      "top_provider": {
-        "context_length": 262144,
-        "max_completion_tokens": null,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 0.3,
-        "top_p": null,
-        "frequency_penalty": null
-      },
-      "expiration_date": null
-    },
-    {
       "id": "nvidia/nemotron-nano-9b-v2:free",
       "canonical_slug": "nvidia/nemotron-nano-9b-v2",
       "hugging_face_id": "nvidia/NVIDIA-Nemotron-Nano-9B-v2",
@@ -282,11 +217,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 128000,
@@ -304,6 +235,97 @@
         "temperature",
         "tool_choice",
         "tools",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "expiration_date": null
+    },
+    {
+      "id": "upstage/solar-pro-3:free",
+      "canonical_slug": "upstage/solar-pro-3",
+      "hugging_face_id": "",
+      "name": "Upstage: Solar Pro 3 (free)",
+      "created": 1769481200,
+      "description": "Solar Pro 3 is Upstage's powerful Mixture-of-Experts (MoE) language model. With 102B total parameters and 12B active parameters per forward pass, it delivers exceptional performance while maintaining computational efficiency. Optimized for Korean with English and Japanese support.",
+      "context_length": 128000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 128000,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": "2026-03-02"
+    },
+    {
+      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
+      "canonical_slug": "qwen/qwen3-next-80b-a3b-instruct-2509",
+      "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
+      "created": 1757612213,
+      "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual use, while remaining robust on alignment and formatting. Compared with prior Qwen3 instruct variants, it focuses on higher throughput and stability on ultra-long inputs and multi-turn dialogues, making it well-suited for RAG, tool use, and agentic workflows that require consistent final answers rather than visible chain-of-thought.\n\nThe model employs scaling-efficient training and decoding to improve parameter efficiency and inference speed, and has been validated on a broad set of public benchmarks where it reaches or approaches larger Qwen3 systems in several categories while outperforming earlier mid-sized baselines. It is best used as a general assistant, code helper, and long-context task solver in production settings where deterministic, instruction-following outputs are preferred.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
         "top_p"
       ],
       "default_parameters": {},
@@ -330,11 +352,7 @@
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
         "context_length": 32768,
@@ -357,13 +375,13 @@
       "expiration_date": null
     },
     {
-      "id": "qwen/qwen3-next-80b-a3b-instruct:free",
-      "canonical_slug": "qwen/qwen3-next-80b-a3b-instruct-2509",
-      "hugging_face_id": "Qwen/Qwen3-Next-80B-A3B-Instruct",
-      "name": "Qwen: Qwen3 Next 80B A3B Instruct (free)",
-      "created": 1757612213,
-      "description": "Qwen3-Next-80B-A3B-Instruct is an instruction-tuned chat model in the Qwen3-Next series optimized for fast, stable responses without “thinking” traces. It targets complex tasks across reasoning, code generation, knowledge QA, and multilingual use, while remaining robust on alignment and formatting. Compared with prior Qwen3 instruct variants, it focuses on higher throughput and stability on ultra-long inputs and multi-turn dialogues, making it well-suited for RAG, tool use, and agentic workflows that require consistent final answers rather than visible chain-of-thought.\n\nThe model employs scaling-efficient training and decoding to improve parameter efficiency and inference speed, and has been validated on a broad set of public benchmarks where it reaches or approaches larger Qwen3 systems in several categories while outperforming earlier mid-sized baselines. It is best used as a general assistant, code helper, and long-context task solver in production settings where deterministic, instruction-following outputs are preferred.",
-      "context_length": 262144,
+      "id": "arcee-ai/trinity-large-preview:free",
+      "canonical_slug": "arcee-ai/trinity-large-preview",
+      "hugging_face_id": "arcee-ai/Trinity-Large-Preview",
+      "name": "Arcee AI: Trinity Large Preview (free)",
+      "created": 1769552670,
+      "description": "Trinity-Large-Preview is a frontier-scale open-weight language model from Arcee, built as a 400B-parameter sparse Mixture-of-Experts with 13B active parameters per token using 4-of-256 expert routing. \n\nIt excels in creative writing, storytelling, role-play, chat scenarios, and real-time voice assistance, better than your average reasoning model usually can. But we’re also introducing some of our newer agentic performance. It was trained to navigate well in agent harnesses like OpenCode, Cline, and Kilo Code, and to handle complex toolchains and long, constraint-filled prompts. \n\nThe architecture natively supports very long context windows up to 512k tokens, with the Preview API currently served at 128k context using 8-bit quantization for practical deployment. Trinity-Large-Preview reflects Arcee’s efficiency-first design philosophy, offering a production-oriented frontier model with open weights and permissive licensing suitable for real-world applications and experimentation.",
+      "context_length": 131000,
       "architecture": {
         "modality": "text->text",
         "input_modalities": [
@@ -372,37 +390,33 @@
         "output_modalities": [
           "text"
         ],
-        "tokenizer": "Qwen3",
+        "tokenizer": "Other",
         "instruct_type": null
       },
       "pricing": {
         "prompt": "0",
-        "completion": "0",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0"
       },
       "top_provider": {
-        "context_length": 262144,
+        "context_length": 131000,
         "max_completion_tokens": null,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
-        "frequency_penalty",
         "max_tokens",
-        "presence_penalty",
         "response_format",
-        "stop",
         "structured_outputs",
         "temperature",
-        "tool_choice",
         "tools",
         "top_k",
         "top_p"
       ],
-      "default_parameters": {},
+      "default_parameters": {
+        "temperature": 0.8,
+        "top_p": 0.8,
+        "frequency_penalty": null
+      },
       "expiration_date": null
     },
     {
@@ -426,11 +440,7 @@
       },
       "pricing": {
         "prompt": "0.00000002",
-        "completion": "0.00000004",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000004"
       },
       "top_provider": {
         "context_length": 131072,
@@ -441,6 +451,7 @@
       "supported_parameters": [
         "frequency_penalty",
         "max_tokens",
+        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
@@ -479,11 +490,7 @@
       },
       "pricing": {
         "prompt": "0.00000002",
-        "completion": "0.00000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000006"
       },
       "top_provider": {
         "context_length": 131072,
@@ -534,11 +541,7 @@
       },
       "pricing": {
         "prompt": "0.00000002",
-        "completion": "0.0000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000001"
       },
       "top_provider": {
         "context_length": 131072,
@@ -594,11 +597,7 @@
       },
       "pricing": {
         "prompt": "0.00000002",
-        "completion": "0.0000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000001"
       },
       "top_provider": {
         "context_length": 32768,
@@ -627,55 +626,6 @@
       "expiration_date": null
     },
     {
-      "id": "nousresearch/hermes-2-pro-llama-3-8b",
-      "canonical_slug": "nousresearch/hermes-2-pro-llama-3-8b",
-      "hugging_face_id": "NousResearch/Hermes-2-Pro-Llama-3-8B",
-      "name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
-      "created": 1716768000,
-      "description": "Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset, as well as a newly introduced Function Calling and JSON Mode dataset developed in-house.",
-      "context_length": 8192,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "chatml"
-      },
-      "pricing": {
-        "prompt": "0.000000025",
-        "completion": "0.00000008",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 8192,
-        "max_completion_tokens": 2048,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "expiration_date": null
-    },
-    {
       "id": "qwen/qwen2.5-coder-7b-instruct",
       "canonical_slug": "qwen/qwen2.5-coder-7b-instruct",
       "hugging_face_id": "Qwen/Qwen2.5-Coder-7B-Instruct",
@@ -696,11 +646,7 @@
       },
       "pricing": {
         "prompt": "0.00000003",
-        "completion": "0.00000009",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000009"
       },
       "top_provider": {
         "context_length": 32768,
@@ -744,11 +690,7 @@
       },
       "pricing": {
         "prompt": "0.00000003",
-        "completion": "0.00000011",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000011"
       },
       "top_provider": {
         "context_length": 131072,
@@ -797,11 +739,7 @@
       },
       "pricing": {
         "prompt": "0.00000003",
-        "completion": "0.00000011",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000011"
       },
       "top_provider": {
         "context_length": 131072,
@@ -823,8 +761,6 @@
         "stop",
         "structured_outputs",
         "temperature",
-        "tool_choice",
-        "tools",
         "top_k",
         "top_p"
       ],
@@ -852,11 +788,7 @@
       },
       "pricing": {
         "prompt": "0.00000003",
-        "completion": "0.00000011",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000011"
       },
       "top_provider": {
         "context_length": 32768,
@@ -903,11 +835,7 @@
       },
       "pricing": {
         "prompt": "0.00000003",
-        "completion": "0.00000011",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000011"
       },
       "top_provider": {
         "context_length": 32768,
@@ -960,11 +888,7 @@
       },
       "pricing": {
         "prompt": "0.0000000375",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000015"
       },
       "top_provider": {
         "context_length": 128000,
@@ -1056,11 +980,7 @@
       },
       "pricing": {
         "prompt": "0.00000004",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000015"
       },
       "top_provider": {
         "context_length": 96000,
@@ -1113,11 +1033,7 @@
       },
       "pricing": {
         "prompt": "0.00000004",
-        "completion": "0.00000018",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000018"
       },
       "top_provider": {
         "context_length": 131072,
@@ -1176,10 +1092,7 @@
       "pricing": {
         "prompt": "0.00000004",
         "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.00000004"
       },
       "top_provider": {
         "context_length": 131072,
@@ -1233,12 +1146,7 @@
       },
       "pricing": {
         "prompt": "0.000000045",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0"
+        "completion": "0.00000015"
       },
       "top_provider": {
         "context_length": 131072,
@@ -1292,11 +1200,7 @@
       },
       "pricing": {
         "prompt": "0.00000005",
-        "completion": "0.00000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000005"
       },
       "top_provider": {
         "context_length": 8192,
@@ -1342,11 +1246,7 @@
       },
       "pricing": {
         "prompt": "0.00000005",
-        "completion": "0.00000022",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000022"
       },
       "top_provider": {
         "context_length": 131072,
@@ -1400,11 +1300,7 @@
       },
       "pricing": {
         "prompt": "0.00000005",
-        "completion": "0.00000022",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000022"
       },
       "top_provider": {
         "context_length": 16384,
@@ -1453,11 +1349,7 @@
       },
       "pricing": {
         "prompt": "0.00000005",
-        "completion": "0.00000022",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000022"
       },
       "top_provider": {
         "context_length": 40960,
@@ -1507,11 +1399,7 @@
       },
       "pricing": {
         "prompt": "0.00000005",
-        "completion": "0.00000022",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000022"
       },
       "top_provider": {
         "context_length": 262144,
@@ -1542,66 +1430,6 @@
       "expiration_date": null
     },
     {
-      "id": "qwen/qwen3-8b",
-      "canonical_slug": "qwen/qwen3-8b-04-28",
-      "hugging_face_id": "Qwen/Qwen3-8B",
-      "name": "Qwen: Qwen3 8B",
-      "created": 1745876632,
-      "description": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math, coding, and logical inference, and \"non-thinking\" mode for general conversation. The model is fine-tuned for instruction-following, agent integration, creative writing, and multilingual use across 100+ languages and dialects. It natively supports a 32K token context window and can extend to 131K tokens with YaRN scaling.",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Qwen3",
-        "instruct_type": "qwen3"
-      },
-      "pricing": {
-        "prompt": "0.00000005",
-        "completion": "0.00000025",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0"
-      },
-      "top_provider": {
-        "context_length": 32000,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "include_reasoning",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "presence_penalty",
-        "reasoning",
-        "repetition_penalty",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      },
-      "expiration_date": null
-    },
-    {
       "id": "openai/gpt-5-nano",
       "canonical_slug": "openai/gpt-5-nano-2025-08-07",
       "hugging_face_id": "",
@@ -1610,7 +1438,7 @@
       "description": "GPT-5-Nano is the smallest and fastest variant in the GPT-5 system, optimized for developer tools, rapid interactions, and ultra-low latency environments. While limited in reasoning depth compared to its larger counterparts, it retains key instruction-following and safety features. It is the successor to GPT-4.1-nano and offers a lightweight option for cost-sensitive or real-time applications.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -1648,6 +1476,62 @@
       "expiration_date": null
     },
     {
+      "id": "qwen/qwen3-8b",
+      "canonical_slug": "qwen/qwen3-8b-04-28",
+      "hugging_face_id": "Qwen/Qwen3-8B",
+      "name": "Qwen: Qwen3 8B",
+      "created": 1745876632,
+      "description": "Qwen3-8B is a dense 8.2B parameter causal language model from the Qwen3 series, designed for both reasoning-heavy tasks and efficient dialogue. It supports seamless switching between \"thinking\" mode for math, coding, and logical inference, and \"non-thinking\" mode for general conversation. The model is fine-tuned for instruction-following, agent integration, creative writing, and multilingual use across 100+ languages and dialects. It natively supports a 32K token context window and can extend to 131K tokens with YaRN scaling.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": "qwen3"
+      },
+      "pricing": {
+        "prompt": "0.00000005",
+        "completion": "0.0000004",
+        "input_cache_read": "0.00000005"
+      },
+      "top_provider": {
+        "context_length": 32000,
+        "max_completion_tokens": 8192,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
       "id": "gryphe/mythomax-l2-13b",
       "canonical_slug": "gryphe/mythomax-l2-13b",
       "hugging_face_id": "Gryphe/MythoMax-L2-13b",
@@ -1668,15 +1552,11 @@
       },
       "pricing": {
         "prompt": "0.00000006",
-        "completion": "0.00000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000006"
       },
       "top_provider": {
         "context_length": 4096,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 4096,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -1722,15 +1602,11 @@
       },
       "pricing": {
         "prompt": "0.00000006",
-        "completion": "0.00000014",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000014"
       },
       "top_provider": {
         "context_length": 16384,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 16384,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -1773,11 +1649,7 @@
       },
       "pricing": {
         "prompt": "0.00000006",
-        "completion": "0.00000018",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000018"
       },
       "top_provider": {
         "context_length": 131072,
@@ -1828,11 +1700,7 @@
       },
       "pricing": {
         "prompt": "0.00000006",
-        "completion": "0.00000022",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000022"
       },
       "top_provider": {
         "context_length": 40960,
@@ -1843,8 +1711,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "include_reasoning",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -1858,7 +1724,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {
@@ -1889,11 +1754,7 @@
       },
       "pricing": {
         "prompt": "0.00000006",
-        "completion": "0.00000024",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000024"
       },
       "top_provider": {
         "context_length": 262144,
@@ -1947,11 +1808,7 @@
       },
       "pricing": {
         "prompt": "0.00000007",
-        "completion": "0.00000027",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000027"
       },
       "top_provider": {
         "context_length": 160000,
@@ -1986,7 +1843,7 @@
       "description": "Seed 1.6 Flash is an ultra-fast multimodal deep thinking model by ByteDance Seed, supporting both text and visual understanding. It features a 256k context window and can generate outputs of up to 16k tokens.",
       "context_length": 262144,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+video->text",
         "input_modalities": [
           "image",
           "text",
@@ -2000,15 +1857,11 @@
       },
       "pricing": {
         "prompt": "0.000000075",
-        "completion": "0.0000003",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000003"
       },
       "top_provider": {
         "context_length": 262144,
-        "max_completion_tokens": 16384,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -2018,6 +1871,7 @@
         "max_tokens",
         "reasoning",
         "response_format",
+        "stop",
         "structured_outputs",
         "temperature",
         "tool_choice",
@@ -2040,7 +1894,7 @@
       "description": "Gemini 2.0 Flash Lite offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5), all at extremely economical token prices.",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -2057,10 +1911,9 @@
       "pricing": {
         "prompt": "0.000000075",
         "completion": "0.0000003",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "image": "0.000000075",
+        "audio": "0.000000075",
+        "internal_reasoning": "0.0000003"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -2084,7 +1937,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
-      "expiration_date": "2026-02-06"
+      "expiration_date": "2026-03-03"
     },
     {
       "id": "qwen/qwen3-32b",
@@ -2107,11 +1960,7 @@
       },
       "pricing": {
         "prompt": "0.00000008",
-        "completion": "0.00000024",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000024"
       },
       "top_provider": {
         "context_length": 40960,
@@ -2165,10 +2014,6 @@
       "pricing": {
         "prompt": "0.00000008",
         "completion": "0.0000003",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
         "input_cache_read": "0.00000004"
       },
       "top_provider": {
@@ -2216,11 +2061,7 @@
       },
       "pricing": {
         "prompt": "0.00000008",
-        "completion": "0.00000033",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000033"
       },
       "top_provider": {
         "context_length": 262144,
@@ -2268,11 +2109,7 @@
       "pricing": {
         "prompt": "0.00000008",
         "completion": "0.0000004",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0"
+        "input_cache_read": "0.00000008"
       },
       "top_provider": {
         "context_length": 128000,
@@ -2321,12 +2158,7 @@
       },
       "pricing": {
         "prompt": "0.00000008",
-        "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0"
+        "completion": "0.0000005"
       },
       "top_provider": {
         "context_length": 131072,
@@ -2379,11 +2211,7 @@
       },
       "pricing": {
         "prompt": "0.00000008",
-        "completion": "0.00000055",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000055"
       },
       "top_provider": {
         "context_length": 262144,
@@ -2437,11 +2265,7 @@
       },
       "pricing": {
         "prompt": "0.00000009",
-        "completion": "0.00000029",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000029"
       },
       "top_provider": {
         "context_length": 262144,
@@ -2495,10 +2319,7 @@
       "pricing": {
         "prompt": "0.00000009",
         "completion": "0.00000045",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.00000009"
       },
       "top_provider": {
         "context_length": 131072,
@@ -2552,15 +2373,11 @@
       },
       "pricing": {
         "prompt": "0.00000009",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 4096,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -2740,11 +2557,7 @@
       },
       "pricing": {
         "prompt": "0.0000001",
-        "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000002"
       },
       "top_provider": {
         "context_length": 65536,
@@ -2829,7 +2642,7 @@
       "description": "Voxtral Small is an enhancement of Mistral Small 3, incorporating state-of-the-art audio input capabilities while retaining best-in-class text performance. It excels at speech transcription, translation and audio understanding. Input audio is priced at $100 per million seconds.",
       "context_length": 32000,
       "architecture": {
-        "modality": "text->text",
+        "modality": "text+audio->text",
         "input_modalities": [
           "text",
           "audio"
@@ -2893,11 +2706,7 @@
       },
       "pricing": {
         "prompt": "0.0000001",
-        "completion": "0.00000039",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000039"
       },
       "top_provider": {
         "context_length": 32768,
@@ -2922,64 +2731,6 @@
       "expiration_date": null
     },
     {
-      "id": "google/gemini-2.0-flash-001",
-      "canonical_slug": "google/gemini-2.0-flash-001",
-      "hugging_face_id": "",
-      "name": "Google: Gemini 2.0 Flash",
-      "created": 1738769413,
-      "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It introduces notable enhancements in multimodal understanding, coding capabilities, complex instruction following, and function calling. These advancements come together to deliver more seamless and robust agentic experiences.",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "file",
-          "audio",
-          "video"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Gemini",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.0000001",
-        "completion": "0.0000004",
-        "request": "0",
-        "image": "0.0000258",
-        "audio": "0.0000007",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.000000025",
-        "input_cache_write": "0.0000000833"
-      },
-      "top_provider": {
-        "context_length": 1048576,
-        "max_completion_tokens": 8192,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "max_tokens",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": null,
-        "top_p": null,
-        "frequency_penalty": null
-      },
-      "expiration_date": null
-    },
-    {
       "id": "openai/gpt-4.1-nano",
       "canonical_slug": "openai/gpt-4.1-nano-2025-04-14",
       "hugging_face_id": "",
@@ -2988,7 +2739,7 @@
       "description": "For tasks that demand low latency, GPT‑4.1 nano is the fastest and cheapest model in the GPT-4.1 series. It delivers exceptional performance at a small size with its 1 million token context window, and scores 80.1% on MMLU, 50.3% on GPQA, and 9.8% on Aider polyglot coding – even higher than GPT‑4o mini. It’s ideal for tasks like classification or autocompletion.",
       "context_length": 1047576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -3034,7 +2785,7 @@
       "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance across common benchmarks compared to earlier Flash models. By default, \"thinking\" (i.e. multi-pass reasoning) is disabled to prioritize speed, but developers can enable it via the [Reasoning API parameter](https://openrouter.ai/docs/use-cases/reasoning-tokens) to selectively trade off cost for intelligence. ",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -3051,12 +2802,11 @@
       "pricing": {
         "prompt": "0.0000001",
         "completion": "0.0000004",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "image": "0.0000001",
+        "audio": "0.0000003",
+        "internal_reasoning": "0.0000004",
         "input_cache_read": "0.00000001",
-        "input_cache_write": "0.0000000833"
+        "input_cache_write": "0.00000008333333333333334"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -3093,7 +2843,7 @@
       "description": "Gemini 2.5 Flash-Lite is a lightweight reasoning model in the Gemini 2.5 family, optimized for ultra-low latency and cost efficiency. It offers improved throughput, faster token generation, and better performance across common benchmarks compared to earlier Flash models. By default, \"thinking\" (i.e. multi-pass reasoning) is disabled to prioritize speed, but developers can enable it via the [Reasoning API parameter](https://openrouter.ai/docs/use-cases/reasoning-tokens) to selectively trade off cost for intelligence. ",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -3110,16 +2860,15 @@
       "pricing": {
         "prompt": "0.0000001",
         "completion": "0.0000004",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "image": "0.0000001",
+        "audio": "0.0000003",
+        "internal_reasoning": "0.0000004",
         "input_cache_read": "0.00000001",
-        "input_cache_write": "0.0000000833"
+        "input_cache_write": "0.00000008333333333333334"
       },
       "top_provider": {
         "context_length": 1048576,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 65535,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3139,6 +2888,116 @@
       "default_parameters": {
         "temperature": null,
         "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
+      "id": "google/gemini-2.0-flash-001",
+      "canonical_slug": "google/gemini-2.0-flash-001",
+      "hugging_face_id": "",
+      "name": "Google: Gemini 2.0 Flash",
+      "created": 1738769413,
+      "description": "Gemini Flash 2.0 offers a significantly faster time to first token (TTFT) compared to [Gemini Flash 1.5](/google/gemini-flash-1.5), while maintaining quality on par with larger models like [Gemini Pro 1.5](/google/gemini-pro-1.5). It introduces notable enhancements in multimodal understanding, coding capabilities, complex instruction following, and function calling. These advancements come together to deliver more seamless and robust agentic experiences.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image+file+audio+video->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "file",
+          "audio",
+          "video"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Gemini",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000004",
+        "image": "0.0000001",
+        "audio": "0.0000007",
+        "internal_reasoning": "0.0000004",
+        "input_cache_read": "0.000000025",
+        "input_cache_write": "0.00000008333333333333334"
+      },
+      "top_provider": {
+        "context_length": 1048576,
+        "max_completion_tokens": 8192,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "max_tokens",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": "2026-03-31"
+    },
+    {
+      "id": "z-ai/glm-4.7-flash",
+      "canonical_slug": "z-ai/glm-4.7-flash-20260119",
+      "hugging_face_id": "zai-org/GLM-4.7-Flash",
+      "name": "Z.AI: GLM 4.7 Flash",
+      "created": 1768833913,
+      "description": "As a 30B-class SOTA model, GLM-4.7-Flash offers a new option that balances performance and efficiency. It is further optimized for agentic coding use cases, strengthening coding capabilities, long-horizon task planning, and tool collaboration, and has achieved leading performance among open-source models of the same size on several current public benchmark leaderboards.",
+      "context_length": 200000,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.00000043"
+      },
+      "top_provider": {
+        "context_length": 202752,
+        "max_completion_tokens": null,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 0.95,
         "frequency_penalty": null
       },
       "expiration_date": null
@@ -3165,11 +3024,7 @@
       },
       "pricing": {
         "prompt": "0.0000001",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 447376,
@@ -3218,11 +3073,7 @@
       },
       "pricing": {
         "prompt": "0.0000001",
-        "completion": "0.0000008",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000008"
       },
       "top_provider": {
         "context_length": 262144,
@@ -3271,11 +3122,7 @@
       },
       "pricing": {
         "prompt": "0.00000011",
-        "completion": "0.00000038",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000038"
       },
       "top_provider": {
         "context_length": 131072,
@@ -3324,11 +3171,7 @@
       },
       "pricing": {
         "prompt": "0.00000011",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 262144,
@@ -3383,11 +3226,7 @@
       },
       "pricing": {
         "prompt": "0.00000012",
-        "completion": "0.0000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000002"
       },
       "top_provider": {
         "context_length": 65536,
@@ -3419,6 +3258,57 @@
       "expiration_date": null
     },
     {
+      "id": "meta-llama/llama-3.3-70b-instruct",
+      "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
+      "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct",
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "created": 1733506137,
+      "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.\n\nSupported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.\n\n[Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Llama3",
+        "instruct_type": "llama3"
+      },
+      "pricing": {
+        "prompt": "0.00000012",
+        "completion": "0.00000038"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 131072,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "expiration_date": null
+    },
+    {
       "id": "qwen/qwen-2.5-72b-instruct",
       "canonical_slug": "qwen/qwen-2.5-72b-instruct",
       "hugging_face_id": "Qwen/Qwen2.5-72B-Instruct",
@@ -3439,11 +3329,7 @@
       },
       "pricing": {
         "prompt": "0.00000013",
-        "completion": "0.00000052",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000052"
       },
       "top_provider": {
         "context_length": 32768,
@@ -3472,6 +3358,51 @@
       "expiration_date": null
     },
     {
+      "id": "nousresearch/hermes-2-pro-llama-3-8b",
+      "canonical_slug": "nousresearch/hermes-2-pro-llama-3-8b",
+      "hugging_face_id": "NousResearch/Hermes-2-Pro-Llama-3-8B",
+      "name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
+      "created": 1716768000,
+      "description": "Hermes 2 Pro is an upgraded, retrained version of Nous Hermes 2, consisting of an updated and cleaned version of the OpenHermes 2.5 Dataset, as well as a newly introduced Function Calling and JSON Mode dataset developed in-house.",
+      "context_length": 8192,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Llama3",
+        "instruct_type": "chatml"
+      },
+      "pricing": {
+        "prompt": "0.00000014",
+        "completion": "0.00000014"
+      },
+      "top_provider": {
+        "context_length": 8192,
+        "max_completion_tokens": 8192,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "expiration_date": null
+    },
+    {
       "id": "tencent/hunyuan-a13b-instruct",
       "canonical_slug": "tencent/hunyuan-a13b-instruct",
       "hugging_face_id": "tencent/Hunyuan-A13B-Instruct",
@@ -3492,11 +3423,7 @@
       },
       "pricing": {
         "prompt": "0.00000014",
-        "completion": "0.00000057",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000057"
       },
       "top_provider": {
         "context_length": 131072,
@@ -3590,11 +3517,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.00000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000015"
       },
       "top_provider": {
         "context_length": 32768,
@@ -3694,15 +3617,11 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000004",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000004"
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -3749,11 +3668,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000005"
       },
       "top_provider": {
         "context_length": 65536,
@@ -3805,11 +3720,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000005"
       },
       "top_provider": {
         "context_length": 65536,
@@ -3863,10 +3774,7 @@
       "pricing": {
         "prompt": "0.00000015",
         "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.000000075"
       },
       "top_provider": {
         "context_length": 262144,
@@ -3922,11 +3830,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0.0006684",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -3937,7 +3841,6 @@
       "supported_parameters": [
         "frequency_penalty",
         "logit_bias",
-        "logprobs",
         "max_tokens",
         "min_p",
         "presence_penalty",
@@ -3950,7 +3853,6 @@
         "tool_choice",
         "tools",
         "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {},
@@ -4004,7 +3906,7 @@
       "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs.\n\nAs their most advanced small model, it is many multiples more affordable than other recent frontier models, and more than 60% cheaper than [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo). It maintains SOTA intelligence, while being significantly more cost-effective.\n\nGPT-4o mini achieves an 82% score on MMLU and presently ranks higher than GPT-4 on chat preferences [common leaderboards](https://arena.lmsys.org/).\n\nCheck out the [launch announcement](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) to learn more.\n\n#multimodal",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -4056,7 +3958,7 @@
       "description": "GPT-4o mini is OpenAI's newest model after [GPT-4 Omni](/models/openai/gpt-4o), supporting both text and image inputs with text outputs.\n\nAs their most advanced small model, it is many multiples more affordable than other recent frontier models, and more than 60% cheaper than [GPT-3.5 Turbo](/models/openai/gpt-3.5-turbo). It maintains SOTA intelligence, while being significantly more cost-effective.\n\nGPT-4o mini achieves an 82% score on MMLU and presently ranks higher than GPT-4 on chat preferences [common leaderboards](https://arena.lmsys.org/).\n\nCheck out the [launch announcement](https://openai.com/index/gpt-4o-mini-advancing-cost-efficient-intelligence/) to learn more.\n\n#multimodal",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -4120,11 +4022,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 128000,
@@ -4171,11 +4069,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 32768,
@@ -4199,7 +4093,7 @@
         "top_p"
       ],
       "default_parameters": {},
-      "expiration_date": null
+      "expiration_date": "2026-02-16"
     },
     {
       "id": "qwen/qwen3-next-80b-a3b-thinking",
@@ -4222,11 +4116,7 @@
       },
       "pricing": {
         "prompt": "0.00000015",
-        "completion": "0.0000012",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000012"
       },
       "top_provider": {
         "context_length": 128000,
@@ -4281,15 +4171,11 @@
       },
       "pricing": {
         "prompt": "0.00000017",
-        "completion": "0.00000043",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000043"
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -4387,11 +4273,7 @@
       },
       "pricing": {
         "prompt": "0.00000019",
-        "completion": "0.00000087",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000087"
       },
       "top_provider": {
         "context_length": 163840,
@@ -4499,10 +4381,7 @@
       "pricing": {
         "prompt": "0.0000002",
         "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "web_search": "0.005",
         "input_cache_read": "0.00000005"
       },
       "top_provider": {
@@ -4555,10 +4434,7 @@
       "pricing": {
         "prompt": "0.0000002",
         "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "web_search": "0.005",
         "input_cache_read": "0.00000005"
       },
       "top_provider": {
@@ -4656,11 +4532,7 @@
       },
       "pricing": {
         "prompt": "0.0000002",
-        "completion": "0.0000006",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000006"
       },
       "top_provider": {
         "context_length": 65536,
@@ -4712,11 +4584,7 @@
       },
       "pricing": {
         "prompt": "0.0000002",
-        "completion": "0.0000008",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000008"
       },
       "top_provider": {
         "context_length": 163840,
@@ -4770,12 +4638,7 @@
       },
       "pricing": {
         "prompt": "0.0000002",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0"
+        "completion": "0.000001"
       },
       "top_provider": {
         "context_length": 131072,
@@ -4827,11 +4690,7 @@
       },
       "pricing": {
         "prompt": "0.0000002",
-        "completion": "0.0000011",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000011"
       },
       "top_provider": {
         "context_length": 131072,
@@ -4886,10 +4745,7 @@
       "pricing": {
         "prompt": "0.0000002",
         "completion": "0.0000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "web_search": "0.005",
         "input_cache_read": "0.00000002"
       },
       "top_provider": {
@@ -4938,10 +4794,6 @@
       "pricing": {
         "prompt": "0.000000207",
         "completion": "0.000000828",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
         "input_cache_read": "0.0000000414"
       },
       "top_provider": {
@@ -4994,11 +4846,7 @@
       },
       "pricing": {
         "prompt": "0.00000021",
-        "completion": "0.0000019",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000019"
       },
       "top_provider": {
         "context_length": 131072,
@@ -5054,10 +4902,7 @@
       "pricing": {
         "prompt": "0.000000216",
         "completion": "0.0000008",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.000000135"
       },
       "top_provider": {
         "context_length": 131072,
@@ -5091,61 +4936,6 @@
       "expiration_date": null
     },
     {
-      "id": "meta-llama/llama-3.3-70b-instruct",
-      "canonical_slug": "meta-llama/llama-3.3-70b-instruct",
-      "hugging_face_id": "meta-llama/Llama-3.3-70B-Instruct",
-      "name": "Meta: Llama 3.3 70B Instruct",
-      "created": 1733506137,
-      "description": "The Meta Llama 3.3 multilingual large language model (LLM) is a pretrained and instruction tuned generative model in 70B (text in/text out). The Llama 3.3 instruction tuned text only model is optimized for multilingual dialogue use cases and outperforms many of the available open source and closed chat models on common industry benchmarks.\n\nSupported languages: English, German, French, Italian, Portuguese, Hindi, Spanish, and Thai.\n\n[Model Card](https://github.com/meta-llama/llama-models/blob/main/models/llama3_3/MODEL_CARD.md)",
-      "context_length": 131072,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "llama3"
-      },
-      "pricing": {
-        "prompt": "0.00000022",
-        "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 131072,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "logit_bias",
-        "logprobs",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_logprobs",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "expiration_date": null
-    },
-    {
       "id": "qwen/qwen3-235b-a22b",
       "canonical_slug": "qwen/qwen3-235b-a22b-04-28",
       "hugging_face_id": "Qwen/Qwen3-235B-A22B",
@@ -5167,10 +4957,7 @@
       "pricing": {
         "prompt": "0.00000022",
         "completion": "0.00000088",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.00000011"
       },
       "top_provider": {
         "context_length": 131072,
@@ -5223,11 +5010,7 @@
       },
       "pricing": {
         "prompt": "0.00000022",
-        "completion": "0.00000095",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000095"
       },
       "top_provider": {
         "context_length": 262144,
@@ -5280,10 +5063,7 @@
       "pricing": {
         "prompt": "0.00000022",
         "completion": "0.0000018",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.000000022"
       },
       "top_provider": {
         "context_length": 262144,
@@ -5331,11 +5111,7 @@
       },
       "pricing": {
         "prompt": "0.00000023",
-        "completion": "0.0000009",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000009"
       },
       "top_provider": {
         "context_length": 163840,
@@ -5436,11 +5212,7 @@
       },
       "pricing": {
         "prompt": "0.00000025",
-        "completion": "0.00000038",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000038"
       },
       "top_provider": {
         "context_length": 163840,
@@ -5497,11 +5269,7 @@
       },
       "pricing": {
         "prompt": "0.00000025",
-        "completion": "0.00000085",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000085"
       },
       "top_provider": {
         "context_length": 163840,
@@ -5550,11 +5318,7 @@
       },
       "pricing": {
         "prompt": "0.00000025",
-        "completion": "0.00000085",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000085"
       },
       "top_provider": {
         "context_length": 163840,
@@ -5607,11 +5371,7 @@
       },
       "pricing": {
         "prompt": "0.00000025",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.000001"
       },
       "top_provider": {
         "context_length": 128000,
@@ -5660,11 +5420,7 @@
       },
       "pricing": {
         "prompt": "0.00000025",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.000001"
       },
       "top_provider": {
         "context_length": 128000,
@@ -5701,7 +5457,7 @@
       "description": "GPT-5 Mini is a compact version of GPT-5, designed to handle lighter-weight reasoning tasks. It provides the same instruction-following and safety-tuning benefits as GPT-5, but with reduced latency and cost. GPT-5 Mini is the successor to OpenAI's o4-mini model.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -5795,7 +5551,7 @@
       "description": "Seed 1.6 is a general-purpose model released by the ByteDance Seed team. It incorporates multimodal capabilities and adaptive deep thinking with a 256K context window.",
       "context_length": 262144,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+video->text",
         "input_modalities": [
           "image",
           "text",
@@ -5809,11 +5565,7 @@
       },
       "pricing": {
         "prompt": "0.00000025",
-        "completion": "0.000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.000002"
       },
       "top_provider": {
         "context_length": 262144,
@@ -5827,6 +5579,7 @@
         "max_tokens",
         "reasoning",
         "response_format",
+        "stop",
         "structured_outputs",
         "temperature",
         "tool_choice",
@@ -5861,11 +5614,7 @@
       },
       "pricing": {
         "prompt": "0.00000027",
-        "completion": "0.00000041",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000041"
       },
       "top_provider": {
         "context_length": 163840,
@@ -5918,11 +5667,7 @@
       },
       "pricing": {
         "prompt": "0.00000027",
-        "completion": "0.00000041",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000041"
       },
       "top_provider": {
         "context_length": 163840,
@@ -5974,13 +5719,7 @@
       },
       "pricing": {
         "prompt": "0.00000027",
-        "completion": "0.000001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0",
-        "input_cache_write": "0"
+        "completion": "0.000001"
       },
       "top_provider": {
         "context_length": 131072,
@@ -6026,15 +5765,11 @@
       },
       "pricing": {
         "prompt": "0.00000027",
-        "completion": "0.00000112",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000011"
       },
       "top_provider": {
         "context_length": 196608,
-        "max_completion_tokens": 65536,
+        "max_completion_tokens": 196608,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6087,11 +5822,7 @@
       },
       "pricing": {
         "prompt": "0.00000028",
-        "completion": "0.0000011",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000011"
       },
       "top_provider": {
         "context_length": 123000,
@@ -6136,15 +5867,11 @@
       },
       "pricing": {
         "prompt": "0.00000029",
-        "completion": "0.00000029",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000029"
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6187,11 +5914,7 @@
       },
       "pricing": {
         "prompt": "0.00000029",
-        "completion": "0.00000115",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000115"
       },
       "top_provider": {
         "context_length": 131072,
@@ -6233,15 +5956,11 @@
       },
       "pricing": {
         "prompt": "0.0000003",
-        "completion": "0.0000003",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000003"
       },
       "top_provider": {
         "context_length": 65536,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 65536,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6283,15 +6002,11 @@
       },
       "pricing": {
         "prompt": "0.0000003",
-        "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000005"
       },
       "top_provider": {
         "context_length": 131072,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6338,10 +6053,7 @@
       "pricing": {
         "prompt": "0.0000003",
         "completion": "0.0000005",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "web_search": "0.005",
         "input_cache_read": "0.000000075"
       },
       "top_provider": {
@@ -6381,7 +6093,7 @@
       "description": "GLM-4.6V is a large multimodal model designed for high-fidelity visual understanding and long-context reasoning across images, documents, and mixed media. It supports up to 128K tokens, processes complex page layouts and charts directly as visual inputs, and integrates native multimodal function calling to connect perception with downstream tool execution. The model also enables interleaved image-text generation and UI reconstruction workflows, including screenshot-to-HTML synthesis and iterative visual editing.",
       "context_length": 131072,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+video->text",
         "input_modalities": [
           "image",
           "text",
@@ -6395,11 +6107,7 @@
       },
       "pricing": {
         "prompt": "0.0000003",
-        "completion": "0.0000009",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000009"
       },
       "top_provider": {
         "context_length": 131072,
@@ -6501,11 +6209,7 @@
       },
       "pricing": {
         "prompt": "0.0000003",
-        "completion": "0.0000012",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000012"
       },
       "top_provider": {
         "context_length": 163840,
@@ -6553,11 +6257,7 @@
       },
       "pricing": {
         "prompt": "0.0000003",
-        "completion": "0.0000012",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000012"
       },
       "top_provider": {
         "context_length": 163840,
@@ -6605,10 +6305,7 @@
       "pricing": {
         "prompt": "0.0000003",
         "completion": "0.0000012",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.0000003"
       },
       "top_provider": {
         "context_length": 196608,
@@ -6620,7 +6317,6 @@
         "frequency_penalty",
         "include_reasoning",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "reasoning",
         "repetition_penalty",
@@ -6650,7 +6346,7 @@
       "description": "Gemini 2.5 Flash is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater accuracy and nuanced context handling. \n\nAdditionally, Gemini 2.5 Flash is configurable through the \"max tokens for reasoning\" parameter, as described in the documentation (https://openrouter.ai/docs/use-cases/reasoning-tokens#max-tokens-for-reasoning).",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "file",
           "image",
@@ -6667,11 +6363,9 @@
       "pricing": {
         "prompt": "0.0000003",
         "completion": "0.0000025",
-        "request": "0",
-        "image": "0.001238",
+        "image": "0.0000003",
         "audio": "0.000001",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "internal_reasoning": "0.0000025",
         "input_cache_read": "0.00000003",
         "input_cache_write": "0.00000008333333333333334"
       },
@@ -6725,10 +6419,11 @@
       "pricing": {
         "prompt": "0.0000003",
         "completion": "0.0000025",
-        "request": "0",
-        "image": "0.001238",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "image": "0.0000003",
+        "audio": "0.000001",
+        "internal_reasoning": "0.0000025",
+        "input_cache_read": "0.00000003",
+        "input_cache_write": "0.00000008333333333333334"
       },
       "top_provider": {
         "context_length": 32768,
@@ -6760,7 +6455,7 @@
       "description": "Gemini 2.5 Flash Preview September 2025 Checkpoint is Google's state-of-the-art workhorse model, specifically designed for advanced reasoning, coding, mathematics, and scientific tasks. It includes built-in \"thinking\" capabilities, enabling it to provide responses with greater accuracy and nuanced context handling. \n\nAdditionally, Gemini 2.5 Flash is configurable through the \"max tokens for reasoning\" parameter, as described in the documentation (https://openrouter.ai/docs/use-cases/reasoning-tokens#max-tokens-for-reasoning).",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "image",
           "file",
@@ -6777,17 +6472,15 @@
       "pricing": {
         "prompt": "0.0000003",
         "completion": "0.0000025",
-        "request": "0",
-        "image": "0.001238",
+        "image": "0.0000003",
         "audio": "0.000001",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.000000075",
-        "input_cache_write": "0.0000000833"
+        "internal_reasoning": "0.0000025",
+        "input_cache_read": "0.00000003",
+        "input_cache_write": "0.00000008333333333333334"
       },
       "top_provider": {
         "context_length": 1048576,
-        "max_completion_tokens": 65535,
+        "max_completion_tokens": 65536,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -6832,11 +6525,7 @@
       },
       "pricing": {
         "prompt": "0.00000035",
-        "completion": "0.0000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000015"
       },
       "top_provider": {
         "context_length": 202752,
@@ -6894,11 +6583,7 @@
       },
       "pricing": {
         "prompt": "0.00000035",
-        "completion": "0.00000155",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000155"
       },
       "top_provider": {
         "context_length": 131072,
@@ -6951,11 +6636,7 @@
       },
       "pricing": {
         "prompt": "0.00000039",
-        "completion": "0.0000019",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000019"
       },
       "top_provider": {
         "context_length": 262144,
@@ -7006,15 +6687,11 @@
       },
       "pricing": {
         "prompt": "0.0000004",
-        "completion": "0.0000004",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000004"
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7105,11 +6782,7 @@
       },
       "pricing": {
         "prompt": "0.0000004",
-        "completion": "0.0000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000015"
       },
       "top_provider": {
         "context_length": 202752,
@@ -7155,7 +6828,7 @@
       "description": "GPT-4.1 Mini is a mid-sized model delivering performance competitive with GPT-4o at substantially lower latency and cost. It retains a 1 million token context window and scores 45.1% on hard instruction evals, 35.8% on MultiChallenge, and 84.1% on IFEval. Mini also shows strong coding ability (e.g., 31.6% on Aider’s polyglot diff benchmark) and vision understanding, making it suitable for interactive applications with tight performance constraints.",
       "context_length": 1047576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -7213,11 +6886,7 @@
       },
       "pricing": {
         "prompt": "0.0000004",
-        "completion": "0.00000175",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000175"
       },
       "top_provider": {
         "context_length": 262144,
@@ -7274,11 +6943,7 @@
       },
       "pricing": {
         "prompt": "0.0000004",
-        "completion": "0.00000175",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000175"
       },
       "top_provider": {
         "context_length": 163840,
@@ -7532,10 +7197,7 @@
       "pricing": {
         "prompt": "0.00000044",
         "completion": "0.00000176",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "input_cache_read": "0.00000011"
       },
       "top_provider": {
         "context_length": 204800,
@@ -7588,15 +7250,11 @@
       },
       "pricing": {
         "prompt": "0.00000045",
-        "completion": "0.00000065",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000065"
       },
       "top_provider": {
         "context_length": 6144,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 4096,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -7619,6 +7277,60 @@
         "top_p"
       ],
       "default_parameters": {},
+      "expiration_date": null
+    },
+    {
+      "id": "qwen/qwen3-vl-235b-a22b-thinking",
+      "canonical_slug": "qwen/qwen3-vl-235b-a22b-thinking",
+      "hugging_face_id": "Qwen/Qwen3-VL-235B-A22B-Thinking",
+      "name": "Qwen: Qwen3 VL 235B A22B Thinking",
+      "created": 1758668690,
+      "description": "Qwen3-VL-235B-A22B Thinking is a multimodal model that unifies strong text generation with visual understanding across images and video. The Thinking model is optimized for multimodal reasoning in STEM and math. The series emphasizes robust perception (recognition of diverse real-world and synthetic categories), spatial understanding (2D/3D grounding), and long-form visual comprehension, with competitive results on public multimodal benchmarks for both perception and reasoning.\n\nBeyond analysis, Qwen3-VL supports agentic interaction and tool use: it can follow complex instructions over multi-image, multi-turn dialogues; align text to video timelines for precise temporal queries; and operate GUI elements for automation tasks. The models also enable visual coding workflows, turning sketches or mockups into code and assisting with UI debugging, while maintaining strong text-only performance comparable to the flagship Qwen3 language models. This makes Qwen3-VL suitable for production scenarios spanning document AI, multilingual OCR, software/UI assistance, spatial/embodied tasks, and research on vision-language agents.",
+      "context_length": 131072,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Qwen3",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000045",
+        "completion": "0.0000035"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 262144,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "max_tokens",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 0.8,
+        "top_p": 0.95,
+        "frequency_penalty": null
+      },
       "expiration_date": null
     },
     {
@@ -7693,11 +7405,7 @@
       },
       "pricing": {
         "prompt": "0.0000005",
-        "completion": "0.0000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000015"
       },
       "top_provider": {
         "context_length": 262144,
@@ -7783,7 +7491,7 @@
       "description": "Gemini 3 Flash Preview is a high speed, high value thinking model designed for agentic workflows, multi turn chat, and coding assistance. It delivers near Pro level reasoning and tool use performance with substantially lower latency than larger Gemini variants, making it well suited for interactive development, long running agent loops, and collaborative coding tasks. Compared to Gemini 2.5 Flash, it provides broad quality improvements across reasoning, multimodal understanding, and reliability.\n\nThe model supports a 1M token context window and multimodal inputs including text, images, audio, video, and PDFs, with text output. It includes configurable reasoning via thinking levels (minimal, low, medium, high), structured output, tool use, and automatic context caching. Gemini 3 Flash Preview is optimized for users who want strong reasoning and agentic behavior without the cost or latency of full scale frontier models.",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -7800,12 +7508,11 @@
       "pricing": {
         "prompt": "0.0000005",
         "completion": "0.000003",
-        "request": "0",
-        "image": "0",
+        "image": "0.0000005",
         "audio": "0.000001",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000005"
+        "internal_reasoning": "0.000003",
+        "input_cache_read": "0.00000005",
+        "input_cache_write": "0.00000008333333333333334"
       },
       "top_provider": {
         "context_length": 1048576,
@@ -7854,11 +7561,7 @@
       },
       "pricing": {
         "prompt": "0.00000051",
-        "completion": "0.00000074",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000074"
       },
       "top_provider": {
         "context_length": 8192,
@@ -7868,9 +7571,7 @@
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
         "max_tokens",
-        "min_p",
         "presence_penalty",
         "repetition_penalty",
         "response_format",
@@ -7906,11 +7607,7 @@
       },
       "pricing": {
         "prompt": "0.00000057",
-        "completion": "0.00000142",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000142"
       },
       "top_provider": {
         "context_length": 65536,
@@ -7954,12 +7651,7 @@
       },
       "pricing": {
         "prompt": "0.00000057",
-        "completion": "0.0000023",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0"
+        "completion": "0.0000023"
       },
       "top_provider": {
         "context_length": 131072,
@@ -7989,6 +7681,65 @@
       "expiration_date": null
     },
     {
+      "id": "moonshotai/kimi-k2.5",
+      "canonical_slug": "moonshotai/kimi-k2.5-0127",
+      "hugging_face_id": "moonshotai/Kimi-K2.5",
+      "name": "MoonshotAI: Kimi K2.5",
+      "created": 1769487076,
+      "description": "Kimi K2.5 is Moonshot AI's native multimodal model, delivering state-of-the-art visual coding capability and a self-directed agent swarm paradigm. Built on Kimi K2 with continued pretraining over approximately 15T mixed visual and text tokens, it delivers strong performance in general reasoning, visual coding, and agentic tool-calling.",
+      "context_length": 262144,
+      "architecture": {
+        "modality": "text+image->text",
+        "input_modalities": [
+          "text",
+          "image"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Other",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.00000057",
+        "completion": "0.00000285",
+        "input_cache_read": "0.000000095"
+      },
+      "top_provider": {
+        "context_length": 262144,
+        "max_completion_tokens": 262144,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "include_reasoning",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "reasoning",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
       "id": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
       "canonical_slug": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
       "hugging_face_id": "nvidia/Llama-3_1-Nemotron-Ultra-253B-v1",
@@ -8009,11 +7760,7 @@
       },
       "pricing": {
         "prompt": "0.0000006",
-        "completion": "0.0000018",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000018"
       },
       "top_provider": {
         "context_length": 131072,
@@ -8060,12 +7807,7 @@
       "pricing": {
         "prompt": "0.0000006",
         "completion": "0.0000018",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000011",
-        "input_cache_write": "0"
+        "input_cache_read": "0.00000011"
       },
       "top_provider": {
         "context_length": 65536,
@@ -8098,6 +7840,59 @@
       "expiration_date": null
     },
     {
+      "id": "openai/gpt-audio-mini",
+      "canonical_slug": "openai/gpt-audio-mini",
+      "hugging_face_id": "",
+      "name": "OpenAI: GPT Audio Mini",
+      "created": 1768859419,
+      "description": "A cost-efficient version of GPT Audio. The new snapshot features an upgraded decoder for more natural sounding voices and maintains better voice consistency. Input is priced at $0.60 per million tokens and output is priced at $2.40 per million tokens.",
+      "context_length": 128000,
+      "architecture": {
+        "modality": "text+audio->text+audio",
+        "input_modalities": [
+          "text",
+          "audio"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
+        "tokenizer": "GPT",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000006",
+        "completion": "0.0000024",
+        "audio": "0.0000006"
+      },
+      "top_provider": {
+        "context_length": 128000,
+        "max_completion_tokens": 16384,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
       "id": "moonshotai/kimi-k2-0905:exacto",
       "canonical_slug": "moonshotai/kimi-k2-0905",
       "hugging_face_id": "moonshotai/Kimi-K2-Instruct-0905",
@@ -8118,11 +7913,7 @@
       },
       "pricing": {
         "prompt": "0.0000006",
-        "completion": "0.0000025",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000025"
       },
       "top_provider": {
         "context_length": 262144,
@@ -8167,15 +7958,11 @@
       },
       "pricing": {
         "prompt": "0.00000065",
-        "completion": "0.00000065",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000065"
       },
       "top_provider": {
         "context_length": 8192,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 2048,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8187,56 +7974,6 @@
         "stop",
         "structured_outputs",
         "temperature",
-        "top_p"
-      ],
-      "default_parameters": {},
-      "expiration_date": null
-    },
-    {
-      "id": "sao10k/l3.3-euryale-70b",
-      "canonical_slug": "sao10k/l3.3-euryale-70b-v2.3",
-      "hugging_face_id": "Sao10K/L3.3-70B-Euryale-v2.3",
-      "name": "Sao10K: Llama 3.3 Euryale 70B",
-      "created": 1734535928,
-      "description": "Euryale L3.3 70B is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k). It is the successor of [Euryale L3 70B v2.2](/models/sao10k/l3-euryale-70b).",
-      "context_length": 8192,
-      "architecture": {
-        "modality": "text->text",
-        "input_modalities": [
-          "text"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Llama3",
-        "instruct_type": "llama3"
-      },
-      "pricing": {
-        "prompt": "0.00000065",
-        "completion": "0.00000075",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
-      },
-      "top_provider": {
-        "context_length": 131072,
-        "max_completion_tokens": 16384,
-        "is_moderated": false
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "frequency_penalty",
-        "max_tokens",
-        "min_p",
-        "presence_penalty",
-        "repetition_penalty",
-        "response_format",
-        "seed",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "top_k",
         "top_p"
       ],
       "default_parameters": {},
@@ -8263,15 +8000,11 @@
       },
       "pricing": {
         "prompt": "0.00000065",
-        "completion": "0.00000075",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000075"
       },
       "top_provider": {
         "context_length": 32768,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 32768,
         "is_moderated": false
       },
       "per_request_limits": null,
@@ -8288,6 +8021,52 @@
         "temperature",
         "tool_choice",
         "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {},
+      "expiration_date": null
+    },
+    {
+      "id": "sao10k/l3.3-euryale-70b",
+      "canonical_slug": "sao10k/l3.3-euryale-70b-v2.3",
+      "hugging_face_id": "Sao10K/L3.3-70B-Euryale-v2.3",
+      "name": "Sao10K: Llama 3.3 Euryale 70B",
+      "created": 1734535928,
+      "description": "Euryale L3.3 70B is a model focused on creative roleplay from [Sao10k](https://ko-fi.com/sao10k). It is the successor of [Euryale L3 70B v2.2](/models/sao10k/l3-euryale-70b).",
+      "context_length": 8192,
+      "architecture": {
+        "modality": "text->text",
+        "input_modalities": [
+          "text"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Llama3",
+        "instruct_type": "llama3"
+      },
+      "pricing": {
+        "prompt": "0.00000065",
+        "completion": "0.00000075"
+      },
+      "top_provider": {
+        "context_length": 131072,
+        "max_completion_tokens": 16384,
+        "is_moderated": false
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "max_tokens",
+        "min_p",
+        "presence_penalty",
+        "repetition_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
         "top_k",
         "top_p"
       ],
@@ -8315,11 +8094,7 @@
       },
       "pricing": {
         "prompt": "0.00000088",
-        "completion": "0.00000088",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000088"
       },
       "top_provider": {
         "context_length": 32768,
@@ -8350,7 +8125,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
-      "expiration_date": null
+      "expiration_date": "2026-02-04"
     },
     {
       "id": "neversleep/noromaid-20b",
@@ -8373,34 +8148,22 @@
       },
       "pricing": {
         "prompt": "0.000001",
-        "completion": "0.00000175",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000175"
       },
       "top_provider": {
         "context_length": 4096,
-        "max_completion_tokens": null,
+        "max_completion_tokens": 2048,
         "is_moderated": false
       },
       "per_request_limits": null,
       "supported_parameters": [
         "frequency_penalty",
-        "logit_bias",
-        "logprobs",
         "max_tokens",
-        "min_p",
         "presence_penalty",
-        "repetition_penalty",
         "response_format",
-        "seed",
         "stop",
         "structured_outputs",
         "temperature",
-        "top_a",
-        "top_k",
-        "top_logprobs",
         "top_p"
       ],
       "default_parameters": {},
@@ -8427,11 +8190,7 @@
       },
       "pricing": {
         "prompt": "0.000001",
-        "completion": "0.000002",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.000002"
       },
       "top_provider": {
         "context_length": 4095,
@@ -8519,7 +8278,7 @@
       "description": "OpenAI o4-mini-high is the same model as [o4-mini](/openai/o4-mini) with reasoning_effort set to high. \n\nOpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining strong multimodal and agentic capabilities. It supports tool use and demonstrates competitive reasoning and coding performance across benchmarks like AIME (99.5% with Python) and SWE-bench, outperforming its predecessor o3-mini and even approaching o3 in some domains.\n\nDespite its smaller size, o4-mini exhibits high accuracy in STEM tasks, visual problem solving (e.g., MathVista, MMMU), and code editing. It is especially well-suited for high-throughput scenarios where latency or cost is critical. Thanks to its efficient architecture and refined reinforcement learning training, o4-mini can chain tools, generate structured outputs, and solve multi-step tasks with minimal delay—often in under a minute.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -8569,7 +8328,7 @@
       "description": "OpenAI o3-mini-high is the same model as [o3-mini](/openai/o3-mini) with reasoning_effort set to high. \n\no3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding. The model features three adjustable reasoning effort levels and supports key developer capabilities including function calling, structured outputs, and streaming, though it does not include vision processing capabilities.\n\nThe model demonstrates significant improvements over its predecessor, with expert testers preferring its responses 56% of the time and noting a 39% reduction in major errors on complex questions. With medium reasoning effort settings, o3-mini matches the performance of the larger o1 model on challenging reasoning evaluations like AIME and GPQA, while maintaining lower latency and cost.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text->text",
+        "modality": "text+file->text",
         "input_modalities": [
           "text",
           "file"
@@ -8615,7 +8374,7 @@
       "description": "OpenAI o3-mini is a cost-efficient language model optimized for STEM reasoning tasks, particularly excelling in science, mathematics, and coding.\n\nThis model supports the `reasoning_effort` parameter, which can be set to \"high\", \"medium\", or \"low\" to control the thinking time of the model. The default is \"medium\". OpenRouter also offers the model slug `openai/o3-mini-high` to default the parameter to \"high\".\n\nThe model features three adjustable reasoning effort levels and supports key developer capabilities including function calling, structured outputs, and streaming, though it does not include vision processing capabilities.\n\nThe model demonstrates significant improvements over its predecessor, with expert testers preferring its responses 56% of the time and noting a 39% reduction in major errors on complex questions. With medium reasoning effort settings, o3-mini matches the performance of the larger o1 model on challenging reasoning evaluations like AIME and GPQA, while maintaining lower latency and cost.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text->text",
+        "modality": "text+file->text",
         "input_modalities": [
           "text",
           "file"
@@ -8657,7 +8416,7 @@
       "description": "OpenAI o4-mini is a compact reasoning model in the o-series, optimized for fast, cost-efficient performance while retaining strong multimodal and agentic capabilities. It supports tool use and demonstrates competitive reasoning and coding performance across benchmarks like AIME (99.5% with Python) and SWE-bench, outperforming its predecessor o3-mini and even approaching o3 in some domains.\n\nDespite its smaller size, o4-mini exhibits high accuracy in STEM tasks, visual problem solving (e.g., MathVista, MMMU), and code editing. It is especially well-suited for high-throughput scenarios where latency or cost is critical. Thanks to its efficient architecture and refined reinforcement learning training, o4-mini can chain tools, generate structured outputs, and solve multi-step tasks with minimal delay—often in under a minute.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -8715,11 +8474,7 @@
       },
       "pricing": {
         "prompt": "0.00000125",
-        "completion": "0.00000125",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00000125"
       },
       "top_provider": {
         "context_length": 128000,
@@ -8759,7 +8514,7 @@
       "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.\n",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio->text",
         "input_modalities": [
           "file",
           "image",
@@ -8775,11 +8530,10 @@
       "pricing": {
         "prompt": "0.00000125",
         "completion": "0.00001",
-        "request": "0",
-        "image": "0.00516",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000031",
+        "image": "0.00000125",
+        "audio": "0.00000125",
+        "internal_reasoning": "0.00001",
+        "input_cache_read": "0.000000125",
         "input_cache_write": "0.000000375"
       },
       "top_provider": {
@@ -8813,7 +8567,7 @@
       "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -8830,11 +8584,10 @@
       "pricing": {
         "prompt": "0.00000125",
         "completion": "0.00001",
-        "request": "0",
-        "image": "0.00516",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.00000031",
+        "image": "0.00000125",
+        "audio": "0.00000125",
+        "internal_reasoning": "0.00001",
+        "input_cache_read": "0.000000125",
         "input_cache_write": "0.000000375"
       },
       "top_provider": {
@@ -8872,7 +8625,7 @@
       "description": "GPT-5 Chat is designed for advanced, natural, multimodal, and context-aware conversations for enterprise applications.",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "file",
           "image",
@@ -8914,7 +8667,7 @@
       "description": "GPT-5 is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy in high-stakes use cases. It supports test-time routing features and advanced prompt understanding, including user-specified intent like \"think hard about this.\" Improvements include reductions in hallucination, sycophancy, and better performance in coding, writing, and health-related tasks.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -9060,7 +8813,7 @@
       "description": "GPT-5.1 Chat (AKA Instant is the fast, lightweight member of the 5.1 family, optimized for low-latency chat while retaining strong general intelligence. It uses adaptive reasoning to selectively “think” on harder queries, improving accuracy on math, coding, and multi-step tasks without slowing down typical conversations. The model is warmer and more conversational by default, with better instruction following and more stable short-form reasoning. GPT-5.1 Chat is designed for high-throughput, interactive workloads where responsiveness and consistency matter more than deep deliberation.\n",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "file",
           "image",
@@ -9108,7 +8861,7 @@
       "description": "Gemini 2.5 Pro is Google’s state-of-the-art AI model designed for advanced reasoning, coding, mathematics, and scientific tasks. It employs “thinking” capabilities, enabling it to reason through responses with enhanced accuracy and nuanced context handling. Gemini 2.5 Pro achieves top-tier performance on multiple benchmarks, including first-place positioning on the LMArena leaderboard, reflecting superior human-preference alignment and complex problem-solving abilities.",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -9125,10 +8878,9 @@
       "pricing": {
         "prompt": "0.00000125",
         "completion": "0.00001",
-        "request": "0",
-        "image": "0.00516",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "image": "0.00000125",
+        "audio": "0.00000125",
+        "internal_reasoning": "0.00001",
         "input_cache_read": "0.000000125",
         "input_cache_write": "0.000000375"
       },
@@ -9216,7 +8968,7 @@
       "description": "GPT-5.1 is the latest frontier-grade model in the GPT-5 series, offering stronger general-purpose reasoning, improved instruction adherence, and a more natural conversational style compared to GPT-5. It uses adaptive reasoning to allocate computation dynamically, responding quickly to simple queries while spending more depth on complex tasks. The model produces clearer, more grounded explanations with reduced jargon, making it easier to follow even on technical or multi-step problems.\n\nBuilt for broad task coverage, GPT-5.1 delivers consistent gains across math, coding, and structured analysis workloads, with more coherent long-form answers and improved tool-use reliability. It also features refined conversational alignment, enabling warmer, more intuitive responses without compromising precision. GPT-5.1 serves as the primary full-capability successor to GPT-5",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -9312,7 +9064,7 @@
       "description": "GPT-5.2 is the latest frontier-grade model in the GPT-5 series, offering stronger agentic and long context perfomance compared to GPT-5.1. It uses adaptive reasoning to allocate computation dynamically, responding quickly to simple queries while spending more depth on complex tasks.\n\nBuilt for broad task coverage, GPT-5.2 delivers consistent gains across math, coding, sciende, and tool calling workloads, with more coherent long-form answers and improved tool-use reliability.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "file",
           "image",
@@ -9362,7 +9114,7 @@
       "description": "GPT-5.2 Chat (AKA Instant) is the fast, lightweight member of the 5.2 family, optimized for low-latency chat while retaining strong general intelligence. It uses adaptive reasoning to selectively “think” on harder queries, improving accuracy on math, coding, and multi-step tasks without slowing down typical conversations. The model is warmer and more conversational by default, with better instruction following and more stable short-form reasoning. GPT-5.2 Chat is designed for high-throughput, interactive workloads where responsiveness and consistency matter more than deep deliberation.",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "file",
           "image",
@@ -9701,7 +9453,7 @@
       "description": "GPT-4.1 is a flagship large language model optimized for advanced instruction following, real-world software engineering, and long-context reasoning. It supports a 1 million token context window and outperforms GPT-4o and GPT-4.5 across coding (54.6% SWE-bench Verified), instruction compliance (87.4% IFEval), and multimodal understanding benchmarks. It is tuned for precise code diffs, agent reliability, and high recall in large document contexts, making it ideal for agents, IDE tooling, and enterprise knowledge retrieval.",
       "context_length": 1047576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -9747,7 +9499,7 @@
       "description": "o3 is a well-rounded and powerful model across domains. It sets a new standard for math, science, coding, and visual reasoning tasks. It also excels at technical writing and instruction-following. Use it to think through multi-step problems that involve analysis across text, code, and images. ",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -9793,7 +9545,7 @@
       "description": "o4-mini-deep-research is OpenAI's faster, more affordable deep research model—ideal for tackling complex, multi-step research tasks.\n\nNote: This model always uses the 'web_search' tool which adds additional cost.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "file",
           "image",
@@ -9851,7 +9603,7 @@
       "description": "Gemini 3 Pro is Google’s flagship frontier model for high-precision multimodal reasoning, combining strong performance across text, image, video, audio, and code with a 1M-token context window. Reasoning Details must be preserved when using multi-turn tool calling, see our docs here: https://openrouter.ai/docs/use-cases/reasoning-tokens#preserving-reasoning-blocks. It delivers state-of-the-art benchmark results in general reasoning, STEM problem solving, factual QA, and multimodal understanding, including leading scores on LMArena, GPQA Diamond, MathArena Apex, MMMU-Pro, and Video-MMMU. Interactions emphasize depth and interpretability: the model is designed to infer intent with minimal prompting and produce direct, insight-focused responses.\n\nBuilt for advanced development and agentic workflows, Gemini 3 Pro provides robust tool-calling, long-horizon planning stability, and strong zero-shot generation for complex UI, visualization, and coding tasks. It excels at agentic coding (SWE-Bench Verified, Terminal-Bench 2.0), multimodal analysis, and structured long-form tasks such as research synthesis, planning, and interactive learning experiences. Suitable applications include autonomous agents, coding assistants, multimodal analytics, scientific reasoning, and high-context information processing.",
       "context_length": 1048576,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file+audio+video->text",
         "input_modalities": [
           "text",
           "image",
@@ -9868,10 +9620,9 @@
       "pricing": {
         "prompt": "0.000002",
         "completion": "0.000012",
-        "request": "0",
-        "image": "0.008256",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "image": "0.000002",
+        "audio": "0.000002",
+        "internal_reasoning": "0.000012",
         "input_cache_read": "0.0000002",
         "input_cache_write": "0.000000375"
       },
@@ -9925,10 +9676,11 @@
       "pricing": {
         "prompt": "0.000002",
         "completion": "0.000012",
-        "request": "0",
-        "image": "0.067",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "image": "0.000002",
+        "audio": "0.000002",
+        "internal_reasoning": "0.000012",
+        "input_cache_read": "0.0000002",
+        "input_cache_write": "0.000000375"
       },
       "top_provider": {
         "context_length": 65536,
@@ -9963,7 +9715,7 @@
       "description": "GPT-5 Image Mini combines OpenAI's advanced language capabilities, powered by [GPT-5 Mini](https://openrouter.ai/openai/gpt-5-mini), with GPT Image 1 Mini for efficient image generation. This natively multimodal model features superior instruction following, text rendering, and detailed image editing with reduced latency and cost. It excels at high-quality visual creation while maintaining strong text understanding, making it ideal for applications that require both efficient image generation and text processing at scale.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text+image",
+        "modality": "text+image+file->text+image",
         "input_modalities": [
           "file",
           "image",
@@ -10058,16 +9810,17 @@
       "hugging_face_id": "",
       "name": "OpenAI: GPT-4o Audio",
       "created": 1755233061,
-      "description": "The gpt-4o-audio-preview model adds support for audio inputs as prompts. This enhancement allows the model to detect nuances within audio recordings and add depth to generated user experiences. Audio outputs are currently not supported. Audio tokens are priced at $40 per million input audio tokens.",
+      "description": "The gpt-4o-audio-preview model adds support for audio inputs as prompts. This enhancement allows the model to detect nuances within audio recordings and add depth to generated user experiences. Audio outputs are currently not supported. Audio tokens are priced at $40 per million input and $80 per million output audio tokens.",
       "context_length": 128000,
       "architecture": {
-        "modality": "text->text",
+        "modality": "text+audio->text+audio",
         "input_modalities": [
           "audio",
           "text"
         ],
         "output_modalities": [
-          "text"
+          "text",
+          "audio"
         ],
         "tokenizer": "GPT",
         "instruct_type": null
@@ -10099,7 +9852,64 @@
         "top_logprobs",
         "top_p"
       ],
-      "default_parameters": {},
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
+      "id": "openai/gpt-audio",
+      "canonical_slug": "openai/gpt-audio",
+      "hugging_face_id": "",
+      "name": "OpenAI: GPT Audio",
+      "created": 1768862569,
+      "description": "The gpt-audio model is OpenAI's first generally available audio model. The new snapshot features an upgraded decoder for more natural sounding voices and maintains better voice consistency. Audio is priced at $32 per million input tokens and $64 per million output tokens.",
+      "context_length": 128000,
+      "architecture": {
+        "modality": "text+audio->text+audio",
+        "input_modalities": [
+          "text",
+          "audio"
+        ],
+        "output_modalities": [
+          "text",
+          "audio"
+        ],
+        "tokenizer": "GPT",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.0000025",
+        "completion": "0.00001",
+        "audio": "0.000032"
+      },
+      "top_provider": {
+        "context_length": 128000,
+        "max_completion_tokens": 16384,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "frequency_penalty",
+        "logit_bias",
+        "logprobs",
+        "max_tokens",
+        "presence_penalty",
+        "response_format",
+        "seed",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "top_logprobs",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": null,
+        "top_p": null,
+        "frequency_penalty": null
+      },
       "expiration_date": null
     },
     {
@@ -10123,11 +9933,7 @@
       },
       "pricing": {
         "prompt": "0.0000025",
-        "completion": "0.00001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00001"
       },
       "top_provider": {
         "context_length": 256000,
@@ -10159,7 +9965,7 @@
       "description": "The 2024-11-20 version of GPT-4o offers a leveled-up creative writing ability with more natural, engaging, and tailored writing to improve relevance & readability. It’s also better at working with uploaded files, providing deeper insights & more thorough responses.\n\nGPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -10211,7 +10017,7 @@
       "description": "The 2024-08-06 version of GPT-4o offers improved performance in structured outputs, with the ability to supply a JSON schema in the respone_format. Read more [here](https://openai.com/index/introducing-structured-outputs-in-the-api/).\n\nGPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.\n\nFor benchmarking against other models, it was briefly called [\"im-also-a-good-gpt2-chatbot\"](https://twitter.com/LiamFedus/status/1790064963966370209)",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -10226,10 +10032,6 @@
       "pricing": {
         "prompt": "0.0000025",
         "completion": "0.00001",
-        "request": "0",
-        "image": "0.003613",
-        "web_search": "0",
-        "internal_reasoning": "0",
         "input_cache_read": "0.00000125"
       },
       "top_provider": {
@@ -10267,7 +10069,7 @@
       "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.\n\nFor benchmarking against other models, it was briefly called [\"im-also-a-good-gpt2-chatbot\"](https://twitter.com/LiamFedus/status/1790064963966370209)\n\n#multimodal",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -10331,11 +10133,7 @@
       },
       "pricing": {
         "prompt": "0.0000025",
-        "completion": "0.00001",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.00001"
       },
       "top_provider": {
         "context_length": 128000,
@@ -10430,10 +10228,7 @@
       "pricing": {
         "prompt": "0.000003",
         "completion": "0.000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "web_search": "0.005",
         "input_cache_read": "0.00000075"
       },
       "top_provider": {
@@ -10461,63 +10256,6 @@
       "expiration_date": null
     },
     {
-      "id": "anthropic/claude-sonnet-4.5",
-      "canonical_slug": "anthropic/claude-4.5-sonnet-20250929",
-      "hugging_face_id": "",
-      "name": "Anthropic: Claude Sonnet 4.5",
-      "created": 1759161676,
-      "description": "Claude Sonnet 4.5 is Anthropic’s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-bench Verified, with improvements across system design, code security, and specification adherence. The model is designed for extended autonomous operation, maintaining task continuity across sessions and providing fact-based progress tracking.\n\nSonnet 4.5 also introduces stronger agentic capabilities, including improved tool orchestration, speculative parallel execution, and more efficient context and memory management. With enhanced context tracking and awareness of token usage across tool calls, it is particularly well-suited for multi-context and long-running workflows. Use cases span software engineering, cybersecurity, financial analysis, research agents, and other domains requiring sustained reasoning and tool use.",
-      "context_length": 1000000,
-      "architecture": {
-        "modality": "text+image->text",
-        "input_modalities": [
-          "text",
-          "image",
-          "file"
-        ],
-        "output_modalities": [
-          "text"
-        ],
-        "tokenizer": "Claude",
-        "instruct_type": null
-      },
-      "pricing": {
-        "prompt": "0.000003",
-        "completion": "0.000015",
-        "request": "0",
-        "image": "0.0048",
-        "web_search": "0",
-        "internal_reasoning": "0",
-        "input_cache_read": "0.0000003",
-        "input_cache_write": "0.00000375"
-      },
-      "top_provider": {
-        "context_length": 1000000,
-        "max_completion_tokens": 64000,
-        "is_moderated": true
-      },
-      "per_request_limits": null,
-      "supported_parameters": [
-        "include_reasoning",
-        "max_tokens",
-        "reasoning",
-        "response_format",
-        "stop",
-        "structured_outputs",
-        "temperature",
-        "tool_choice",
-        "tools",
-        "top_k",
-        "top_p"
-      ],
-      "default_parameters": {
-        "temperature": 1,
-        "top_p": 1,
-        "frequency_penalty": null
-      },
-      "expiration_date": null
-    },
-    {
       "id": "x-ai/grok-4",
       "canonical_slug": "x-ai/grok-4-07-09",
       "hugging_face_id": "",
@@ -10540,10 +10278,7 @@
       "pricing": {
         "prompt": "0.000003",
         "completion": "0.000015",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0",
+        "web_search": "0.005",
         "input_cache_read": "0.00000075"
       },
       "top_provider": {
@@ -10643,11 +10378,7 @@
       },
       "pricing": {
         "prompt": "0.0000035",
-        "completion": "0.0000035",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.0000035"
       },
       "top_provider": {
         "context_length": 32768,
@@ -10678,7 +10409,7 @@
         "top_p": null,
         "frequency_penalty": null
       },
-      "expiration_date": null
+      "expiration_date": "2026-02-04"
     },
     {
       "id": "openai/chatgpt-4o-latest",
@@ -10736,7 +10467,7 @@
       "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.\n\nFor benchmarking against other models, it was briefly called [\"im-also-a-good-gpt2-chatbot\"](https://twitter.com/LiamFedus/status/1790064963966370209)\n\n#multimodal",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -10799,11 +10530,7 @@
       },
       "pricing": {
         "prompt": "0.000005",
-        "completion": "0.000016",
-        "request": "0",
-        "image": "0",
-        "web_search": "0",
-        "internal_reasoning": "0"
+        "completion": "0.000016"
       },
       "top_provider": {
         "context_length": 128000,
@@ -10840,7 +10567,7 @@
       "description": "Claude Opus 4.5 is Anthropic’s frontier reasoning model optimized for complex software engineering, agentic workflows, and long-horizon computer use. It offers strong multimodal capabilities, competitive performance across real-world coding and reasoning benchmarks, and improved robustness to prompt injection. The model is designed to operate efficiently across varied effort levels, enabling developers to trade off speed, depth, and token usage depending on task requirements. It comes with a new parameter to control token efficiency, which can be accessed using the OpenRouter Verbosity parameter with low, medium, or high.\n\nOpus 4.5 supports advanced tool use, extended context management, and coordinated multi-agent setups, making it well-suited for autonomous research, debugging, multi-step planning, and spreadsheet/browser manipulation. It delivers substantial gains in structured reasoning, execution reliability, and alignment compared to prior Opus generations, while reducing token overhead and improving performance on long-running tasks.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "file",
           "image",
@@ -10855,10 +10582,7 @@
       "pricing": {
         "prompt": "0.000005",
         "completion": "0.000025",
-        "request": "0",
-        "image": "0",
         "web_search": "0.01",
-        "internal_reasoning": "0",
         "input_cache_read": "0.0000005",
         "input_cache_write": "0.00000625"
       },
@@ -10897,7 +10621,7 @@
       "description": "GPT-4o (\"o\" for \"omni\") is OpenAI's latest AI model, supporting both text and image inputs with text outputs. It maintains the intelligence level of [GPT-4 Turbo](/models/openai/gpt-4-turbo) while being twice as fast and 50% more cost-effective. GPT-4o also offers improved performance in processing non-English languages and enhanced visual capabilities.\n\nFor benchmarking against other models, it was briefly called [\"im-also-a-good-gpt2-chatbot\"](https://twitter.com/LiamFedus/status/1790064963966370209)\n\n#multimodal",
       "context_length": 128000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -10948,7 +10672,7 @@
       "description": "[GPT-5](https://openrouter.ai/openai/gpt-5) Image combines OpenAI's GPT-5 model with state-of-the-art image generation capabilities. It offers major improvements in reasoning, code quality, and user experience while incorporating GPT Image 1's superior instruction following, text rendering, and detailed image editing.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text+image",
+        "modality": "text+image+file->text+image",
         "input_modalities": [
           "image",
           "text",
@@ -11152,7 +10876,7 @@
       "description": "o3-deep-research is OpenAI's advanced model for deep research, designed to tackle complex, multi-step research tasks.\n\nNote: This model always uses the 'web_search' tool which adds additional cost.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -11210,7 +10934,7 @@
       "description": "The latest and strongest model family from OpenAI, o1 is designed to spend more time thinking before responding. The o1 model series is trained with large-scale reinforcement learning to reason using chain of thought. \n\nThe o1 models are optimized for math, science, programming, and other STEM-related tasks. They consistently exhibit PhD-level accuracy on benchmarks in physics, chemistry, and biology. Learn more in the [launch announcement](https://openai.com/o1).\n",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -11253,7 +10977,7 @@
       "description": "GPT-5 Pro is OpenAI’s most advanced model, offering major improvements in reasoning, code quality, and user experience. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy in high-stakes use cases. It supports test-time routing features and advanced prompt understanding, including user-specified intent like \"think hard about this.\" Improvements include reductions in hallucination, sycophancy, and better performance in coding, writing, and health-related tasks.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -11302,7 +11026,7 @@
       "description": "The o-series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o3-pro model uses more compute to think harder and provide consistently better answers.\n\nNote that BYOK is required for this model. Set up here: https://openrouter.ai/settings/integrations",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "file",
@@ -11351,7 +11075,7 @@
       "description": "GPT-5.2 Pro is OpenAI’s most advanced model, offering major improvements in agentic coding and long context performance over GPT-5 Pro. It is optimized for complex tasks that require step-by-step reasoning, instruction following, and accuracy in high-stakes use cases. It supports test-time routing features and advanced prompt understanding, including user-specified intent like \"think hard about this.\" Improvements include reductions in hallucination, sycophancy, and better performance in coding, writing, and health-related tasks.",
       "context_length": 400000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -11496,7 +11220,7 @@
       "description": "The o1 series of models are trained with reinforcement learning to think before they answer and perform complex reasoning. The o1-pro model uses more compute to think harder and provide consistently better answers.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "text",
           "image",
@@ -11530,6 +11254,60 @@
       "expiration_date": null
     },
     {
+      "id": "anthropic/claude-sonnet-4.5",
+      "canonical_slug": "anthropic/claude-4.5-sonnet-20250929",
+      "hugging_face_id": "",
+      "name": "Anthropic: Claude Sonnet 4.5",
+      "created": 1759161676,
+      "description": "Claude Sonnet 4.5 is Anthropic’s most advanced Sonnet model to date, optimized for real-world agents and coding workflows. It delivers state-of-the-art performance on coding benchmarks such as SWE-bench Verified, with improvements across system design, code security, and specification adherence. The model is designed for extended autonomous operation, maintaining task continuity across sessions and providing fact-based progress tracking.\n\nSonnet 4.5 also introduces stronger agentic capabilities, including improved tool orchestration, speculative parallel execution, and more efficient context and memory management. With enhanced context tracking and awareness of token usage across tool calls, it is particularly well-suited for multi-context and long-running workflows. Use cases span software engineering, cybersecurity, financial analysis, research agents, and other domains requiring sustained reasoning and tool use.",
+      "context_length": 1000000,
+      "architecture": {
+        "modality": "text+image+file->text",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "output_modalities": [
+          "text"
+        ],
+        "tokenizer": "Claude",
+        "instruct_type": null
+      },
+      "pricing": {
+        "prompt": "0.000003",
+        "completion": "0.000015",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000003",
+        "input_cache_write": "0.00000375"
+      },
+      "top_provider": {
+        "context_length": 1000000,
+        "max_completion_tokens": 64000,
+        "is_moderated": true
+      },
+      "per_request_limits": null,
+      "supported_parameters": [
+        "include_reasoning",
+        "max_tokens",
+        "reasoning",
+        "response_format",
+        "stop",
+        "structured_outputs",
+        "temperature",
+        "tool_choice",
+        "tools",
+        "top_k",
+        "top_p"
+      ],
+      "default_parameters": {
+        "temperature": 1,
+        "top_p": 1,
+        "frequency_penalty": null
+      },
+      "expiration_date": null
+    },
+    {
       "id": "anthropic/claude-opus-4.1",
       "canonical_slug": "anthropic/claude-4.1-opus-20250805",
       "hugging_face_id": "",
@@ -11538,7 +11316,7 @@
       "description": "Claude Opus 4.1 is an updated version of Anthropic’s flagship model, offering improved performance in coding, reasoning, and agentic tasks. It achieves 74.5% on SWE-bench Verified and shows notable gains in multi-file code refactoring, debugging precision, and detail-oriented reasoning. The model supports extended thinking up to 64K tokens and is optimized for tasks involving research, data analysis, and tool-assisted reasoning.",
       "context_length": 200000,
       "architecture": {
-        "modality": "text+image->text",
+        "modality": "text+image+file->text",
         "input_modalities": [
           "image",
           "text",
@@ -11553,10 +11331,7 @@
       "pricing": {
         "prompt": "0.000015",
         "completion": "0.000075",
-        "request": "0",
-        "image": "0.024",
         "web_search": "0.01",
-        "internal_reasoning": "0",
         "input_cache_read": "0.0000015",
         "input_cache_write": "0.00001875"
       },

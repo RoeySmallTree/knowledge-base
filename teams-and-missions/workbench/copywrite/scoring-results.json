@@ -1,0 +1,1467 @@
+{
+  "teamId": "the-cult-builders",
+  "original": "The Cult Builder",
+  "results": [
+    {
+      "model": "anthropic/claude-opus-4.5",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "anthropic/claude-sonnet-4.5",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5.2",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5.2-pro",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-4.1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/o3",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "google/gemini-3-pro-preview",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "google/gemini-2.5-pro",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "google/gemini-2.5-flash",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "deepseek/deepseek-r1-0528",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "meta-llama/llama-4-maverick",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "mistralai/mistral-medium-3.1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "x-ai/grok-4",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "x-ai/grok-3",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "cohere/command-a",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "bytedance-seed/seed-1.6",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "deepseek/deepseek-v3.1-terminus",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "mistralai/devstral-2512:free",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "cohere/command-r-08-2024",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "x-ai/grok-4.1-fast",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "x-ai/grok-4-fast",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "google/gemini-3-flash-preview",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "qwen/qwen3-next-80b-a3b-thinking",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5.2-codex",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5.1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5.1-codex-max",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-5-mini",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/o3-pro",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/o4-mini",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/o4-mini-high",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-oss-120b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/gpt-oss-20b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "mistralai/ministral-8b-2512",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "mistralai/ministral-3b-2512",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "mistralai/mistral-small-3.2-24b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "prime-intellect/intellect-3",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "anthropic/claude-opus-4.1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "deepseek/deepseek-r1-distill-llama-70b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "deepcogito/cogito-v2.1-671b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "deepcogito/cogito-v2-preview-llama-405b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "deepcogito/cogito-v2-preview-llama-70b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "moonshotai/kimi-k2-0905:exacto",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "moonshotai/kimi-dev-72b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "google/gemini-2.5-flash-lite",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/o3-mini",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "z-ai/glm-4.7",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "qwen/qwen3-coder",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "x-ai/grok-code-fast-1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "x-ai/grok-3-mini",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "nousresearch/hermes-4-70b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "meta-llama/llama-4-scout",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 10
+    },
+    {
+      "model": "openai/o1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "mistralai/mistral-large-2512",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b-2507",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "moonshotai/kimi-k2",
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Lost members: 1 missing"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "alibaba/tongyi-deepresearch-30b-a3b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "openai/gpt-4.1-nano",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "z-ai/glm-4.5-air",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "z-ai/glm-4.5",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "qwen/qwen3-235b-a22b-thinking-2507",
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Lost members: 1 missing"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-thinking-2507",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "qwen/qwen3-30b-a3b-instruct-2507",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "thedrummer/unslopnemo-12b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "stepfun-ai/step3",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.6
+    },
+    {
+      "model": "qwen/qwq-32b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "minimax/minimax-m2.1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "deepseek/deepseek-r1-distill-qwen-32b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "qwen/qwen3-next-80b-a3b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 2x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "openai/o3-mini-high",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "sao10k/l3.3-euryale-70b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 2x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "tencent/hunyuan-a13b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "deepseek/deepseek-v3.2-speciale",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "moonshotai/kimi-k2-thinking",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 2x"
+      ],
+      "disqualified": false,
+      "totalScore": 9.2
+    },
+    {
+      "model": "nvidia/nemotron-nano-9b-v2:free",
+      "scores": {
+        "structure": 10,
+        "members": 5,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Lost members: 3 missing"
+      ],
+      "disqualified": false,
+      "totalScore": 9
+    },
+    {
+      "model": "mistralai/voxtral-small-24b-2507",
+      "scores": {
+        "structure": 10,
+        "members": 5,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Lost members: 3 missing"
+      ],
+      "disqualified": false,
+      "totalScore": 9
+    },
+    {
+      "model": "mistralai/pixtral-large-2411",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 4,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 3x"
+      ],
+      "disqualified": false,
+      "totalScore": 8.8
+    },
+    {
+      "model": "moonshotai/kimi-k2-0905",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 8.8
+    },
+    {
+      "model": "inception/mercury-coder",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 8.8
+    },
+    {
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 6
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 1x",
+        "Description too long: 503 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8.8
+    },
+    {
+      "model": "z-ai/glm-4.6v",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 8.8
+    },
+    {
+      "model": "qwen/qwen3-32b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "disqualified": false,
+      "totalScore": 8.8
+    },
+    {
+      "model": "baidu/ernie-4.5-300b-a47b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 5
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 555 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8.6
+    },
+    {
+      "model": "mistralai/codestral-2508",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 5
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 596 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8.6
+    },
+    {
+      "model": "meta-llama/llama-3.1-8b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 6
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 2x",
+        "Description too long: 547 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8.4
+    },
+    {
+      "model": "essentialai/rnj-1-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 4,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "issues": [
+        "Lost members: 1 missing",
+        "Directive violation: \"you/your\" found 3x"
+      ],
+      "disqualified": false,
+      "totalScore": 8.4
+    },
+    {
+      "model": "thedrummer/cydonia-24b-v4.1",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 6
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 2x",
+        "Description too long: 523 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8.4
+    },
+    {
+      "model": "arcee-ai/trinity-mini:free",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 10
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original"
+      ],
+      "disqualified": false,
+      "totalScore": 8.2
+    },
+    {
+      "model": "cohere/command-r-plus-08-2024",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 0
+      },
+      "issues": [
+        "Description too long: 815 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8
+    },
+    {
+      "model": "microsoft/phi-4",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 0
+      },
+      "issues": [
+        "Description too long: 832 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 8
+    },
+    {
+      "model": "sao10k/l3.1-euryale-70b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 1
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 773 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 7.8
+    },
+    {
+      "model": "thedrummer/rocinante-12b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 4
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 601 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 7.6
+    },
+    {
+      "model": "allenai/olmo-3-7b-instruct",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 4,
+        "creativity": 10,
+        "conciseness": 3
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 3x",
+        "Description too long: 677 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 7.4
+    },
+    {
+      "model": "openai/gpt-5-nano",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6.6
+    },
+    {
+      "model": "neversleep/llama-3.1-lumimaid-8b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6.6
+    },
+    {
+      "model": "neversleep/noromaid-20b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 736 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6.6
+    },
+    {
+      "model": "cohere/command-r7b-12-2024",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6.6
+    },
+    {
+      "model": "nousresearch/hermes-3-llama-3.1-70b",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 0,
+        "creativity": 10,
+        "conciseness": 1
+      },
+      "issues": [
+        "Directive violation: \"you/your\" found 5x",
+        "Description too long: 793 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6.2
+    },
+    {
+      "model": "deepseek/deepseek-v3.2",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 0,
+        "conciseness": 2
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "No creative changes - copied original verbatim",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6
+    },
+    {
+      "model": "z-ai/glm-4.6",
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 0,
+        "conciseness": 2
+      },
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "No creative changes - copied original verbatim",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "disqualified": false,
+      "totalScore": 6
+    },
+    {
+      "model": "gryphe/mythomax-l2-13b",
+      "scores": {
+        "structure": 0,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 0
+      },
+      "issues": [
+        "Missing fields: name, catchPhrase, description, members",
+        "DISQUALIFIED: Missing members array"
+      ],
+      "disqualified": true,
+      "totalScore": 0
+    }
+  ]
+}

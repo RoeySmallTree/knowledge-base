@@ -1,25 +1,31 @@
-import { useState, type MouseEvent } from 'react';
+import { useState, type MouseEvent, useEffect, useMemo } from 'react';
 import {
-    Brain,
     Cpu,
     Archive,
     Trash2,
     Edit2,
     Copy,
-    AlertTriangle,
-    Sparkles,
-    Calendar,
-    Layers,
-    DollarSign,
+    Users,
+    Activity,
     Box,
-    Radio,
-    Zap,
-    Target
+    ChevronRight,
+    Sparkles,
+    Globe,
+    Lock,
+    Save,
+    Filter
 } from 'lucide-react';
-import { LLMModel, Vendor } from '../types';
+import { LLMModel, Vendor, Member, Team, TeamMember } from '../types';
+import { FONT_SIZE } from '../constants';
 import { FallbackPicker } from './FallbackPicker';
 import { getVendorIcon } from '../utils/getVendorIcon';
 import { ConfirmationModal } from './ConfirmationModal';
+import { useMigrateMembersModel } from '../hooks/useMutations';
+// Extracted components
+import { TeamCard } from './TeamCard';
+import { TeamStripCard } from './TeamStripCard';
+import { TeamEditModal } from './TeamEditModal';
+import { MemberEditModal } from './MemberEditModal';
 
 interface ModelCardProps {
     model: LLMModel;
@@ -34,13 +40,23 @@ interface ModelCardProps {
     onArchive: (model: LLMModel) => void;
     onDelete: (model: LLMModel) => void;
     maxPrice: number;
-    maxParams: number;
     maxContext: number;
 
-    // New props for expansion logic
+    // Expansion & Usage
     isExpanded: boolean;
     isActive?: boolean;
+    usage?: { count: number; teams: (Team & { members: Member[] })[] };
     onToggleExpand: () => void;
+    onNavigateToTeam: (teamId: string) => void;
+    onFilterTeamsByModel: (modelId: number) => void;
+
+    // Team CRUD passed down
+    onTeamUpdate: (updatedTeam: Team, originalId: string) => void;
+    onTeamDelete: (teamId: string) => void;
+    onTeamDuplicate: (teamId: string) => Promise<Team | undefined>;
+    onMemberUpdate: (updatedMember: TeamMember, originalId: string) => void;
+    onMemberDelete: (memberId: string) => void;
+    onMemberCreate: (member: TeamMember) => void;
 }
 
 export function ModelCard({
@@ -56,13 +72,47 @@ export function ModelCard({
     onArchive,
     onDelete,
     maxPrice,
-    maxParams,
     maxContext,
     isExpanded,
     isActive,
-    onToggleExpand
+    usage,
+    onToggleExpand,
+    onNavigateToTeam,
+    onFilterTeamsByModel,
+    onTeamUpdate,
+    onTeamDelete,
+    onTeamDuplicate,
+    onMemberUpdate,
+    onMemberDelete,
+    onMemberCreate
 }: ModelCardProps) {
     const [confirmAction, setConfirmAction] = useState<'archive' | 'delete' | null>(null);
+
+    // Usage Intel Filters
+    const [usageFilterPublic, setUsageFilterPublic] = useState<'all' | 'public' | 'private'>('all');
+    const [usageFilterSaved, setUsageFilterSaved] = useState<'all' | 'saved' | 'unsaved'>('all');
+    const [activeUsageTab, setActiveUsageTab] = useState<string | null>(null); // Team ID
+
+    // Team & Member Editing State
+    const [editingTeam, setEditingTeam] = useState<Team | null>(null);
+    const [editingMember, setEditingMember] = useState<TeamMember | null>(null);
+    const [isCreatingMember, setIsCreatingMember] = useState(false);
+    const [expandedMembers, setExpandedMembers] = useState<Set<string>>(new Set());
+    const [showMigrationModal, setShowMigrationModal] = useState(false);
+    const [targetModelId, setTargetModelId] = useState<string | null>(null);
+
+    const migrateMutation = useMigrateMembersModel();
+
+    const filteredUsageTeams = useMemo(() => {
+        if (!usage?.teams) return [];
+        return usage.teams.filter(t => {
+            if (usageFilterPublic === 'public' && !t.is_public) return false;
+            if (usageFilterPublic === 'private' && t.is_public) return false;
+            if (usageFilterSaved === 'saved' && !t.is_saved) return false;
+            if (usageFilterSaved === 'unsaved' && t.is_saved) return false;
+            return true;
+        });
+    }, [usage?.teams, usageFilterPublic, usageFilterSaved]);
 
     // Calculate metrics
     const hasPricing = !!model.pricing && model.pricing.prompt !== undefined && model.pricing.completion !== undefined;
@@ -72,17 +122,10 @@ export function ModelCard({
     const paramsValue = typeof model.parameter_count_b === 'number' ? model.parameter_count_b : Number.parseFloat(String(model.parameter_count_b || '0'));
     const hasParamsValue = Number.isFinite(paramsValue);
 
-    const activeParamsValue = typeof model.active_parameter_count_b === 'number' ? model.active_parameter_count_b : Number.parseFloat(String(model.active_parameter_count_b || '0'));
-    const hasActiveParamsValue = Number.isFinite(activeParamsValue) && activeParamsValue > 0;
-
     const contextValue = (model.contextK === null || model.contextK === undefined || model.contextK === '')
         ? Number.NaN
         : Number(model.contextK);
     const hasContextValue = Number.isFinite(contextValue);
-
-    const hasCreativeScore = model.creativeScore !== null && model.creativeScore !== undefined && Number.isFinite(model.creativeScore);
-    const hasLogicScore = model.deductiveScore !== null && model.deductiveScore !== undefined && Number.isFinite(model.deductiveScore);
-    const hasEfficiencyScore = model.efficiencyScore !== null && model.efficiencyScore !== undefined && Number.isFinite(model.efficiencyScore);
 
     const displayName = model.name_within_family?.trim() || model.modelName;
 
@@ -92,263 +135,311 @@ export function ModelCard({
         onToggleExpand();
     };
 
-    // If Expanded: Full Width Layout (Gallery View)
-    if (isExpanded) {
-        return (
-            <div className="relative overflow-hidden rounded-xl border border-accent-tertiary/50 bg-black/80 backdrop-blur-md shadow-[0_0_50px_rgba(0,0,0,0.5)] ring-1 ring-accent-tertiary/20 animate-in fade-in zoom-in-95 duration-300">
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none opacity-20" />
-                <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-10 pointer-events-none" />
+    // Keep active tab aligned with filtered usage teams.
+    useEffect(() => {
+        if (!isExpanded) return;
+        if (!usage || usage.teams.length === 0 || filteredUsageTeams.length === 0) {
+            if (activeUsageTab !== null) setActiveUsageTab(null);
+            return;
+        }
+        if (!activeUsageTab || !filteredUsageTeams.some(team => team.id === activeUsageTab)) {
+            setActiveUsageTab(filteredUsageTeams[0].id);
+        }
+    }, [isExpanded, usage, filteredUsageTeams, activeUsageTab]);
 
-                <div className="relative z-10 p-8 space-y-8">
-                    {/* Header: Identity */}
-                    <div className="flex items-start justify-between">
-                        <div className="flex items-center gap-5">
-                            <div className="h-16 w-16 rounded-xl bg-black/50 border border-white/10 p-2 shadow-lg">
-                                <img
-                                    src={getVendorIcon(vendorName, model.modelFamily)}
-                                    alt={vendorName}
-                                    className="w-full h-full object-contain opacity-90"
-                                    onError={(e) => {
-                                        (e.target as HTMLImageElement).src = '/llm-icons/ai-placeholder.png';
-                                    }}
-                                />
-                            </div>
-                            <div>
-                                <div className="flex items-center gap-3 mb-1">
-                                    <h2 className="text-4xl font-display text-white tracking-wide">{displayName.toUpperCase()}</h2>
-                                    <span className="px-3 py-1 rounded-full bg-accent-tertiary/10 border border-accent-tertiary/20 text-xs font-mono text-accent-tertiary tracking-widest">
-                                        {model.modelFamily} SERIES
-                                    </span>
-                                </div>
-                                <div className="flex items-center gap-4 text-xs text-white/40 font-mono">
-                                    <div className="flex items-center gap-2">
-                                        <Box size={14} className="text-primary/50" />
-                                        <span className="tracking-widest">{vendorName.toUpperCase()}</span>
-                                    </div>
-                                    <span className="text-white/20">|</span>
-                                    <span>#{model.id}</span>
-                                </div>
-                            </div>
+    // Get currently selected team data
+    const selectedTeamRaw = filteredUsageTeams.find(t => t.id === activeUsageTab);
+    // Ensure selectedTeam members are cast to TeamMember if needed, or use as is
+    // The props say `members: Member[]` but we treat them as `TeamMember` (alias)
+    const selectedTeam = selectedTeamRaw as (Team & { members: TeamMember[] }) | undefined;
+
+    const modelId = model.id;
+    const canFilterTeams = typeof modelId === 'number';
+
+    // Handlers for TeamCard
+    const handleToggleMember = (memberId: string) => {
+        setExpandedMembers(prev => {
+            const isSelected = prev.has(memberId);
+            if (isSelected && prev.size === 1) return new Set();
+            return new Set([memberId]);
+        });
+    };
+
+    return (
+        <div
+            className={`
+                group relative flex flex-col items-stretch
+                ${isExpanded ? 'w-full min-h-[400px]' : 'h-full aspect-[4/5]'}
+                ${isActive ? 'cyber-border cyber-glow bg-black/40' : 'border border-border/40 bg-card/20 hover:border-border/80 hover:bg-card/30'}
+                backdrop-blur-md rounded-xl overflow-hidden transition-all duration-300
+            `}
+            onClick={!isExpanded ? handleCardClick : undefined}
+        >
+            {/* Ambient Background Glow */}
+            <div className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
+                <div className="absolute top-0 right-0 w-64 h-64 bg-primary/5 rounded-full blur-[80px]" />
+                <div className="absolute bottom-0 left-0 w-64 h-64 bg-accent-secondary/5 rounded-full blur-[80px]" />
+            </div>
+
+            {/* Main Content Container */}
+            <div className={`relative flex flex-col h-full bg-gradient-to-b from-white/5 to-transparent ${isExpanded ? 'p-8' : 'p-5'}`}>
+
+                {/* Header Section */}
+                <div className="flex justify-between items-start gap-4 mb-4">
+                    <div className="flex items-start gap-3 min-w-0">
+                        {/* Vendor Icon */}
+                        <div className={`relative flex-shrink-0 ${isExpanded ? 'w-16 h-16' : 'w-10 h-10'} rounded-lg bg-black/50 border border-white/10 p-1.5 overflow-hidden transition-all duration-300 group-hover:border-primary/30`}>
+                            <img
+                                src={getVendorIcon(vendorName, '')}
+                                alt={vendorName}
+                                className="w-full h-full object-contain opacity-90 group-hover:scale-110 transition-transform duration-500"
+                                onError={(e) => {
+                                    (e.target as HTMLImageElement).src = '/llm-icons/ai-placeholder.png';
+                                }}
+                            />
                         </div>
 
-                        {/* Top Actions */}
-                        <div className="flex items-center gap-2">
-                            <ActionButton icon={Edit2} onClick={() => onEdit(model)} color="hover:bg-primary/20 hover:text-primary hover:border-primary/50" />
-                            <ActionButton icon={Copy} onClick={() => onDuplicate(model)} color="hover:bg-blue-500/20 hover:text-blue-500 hover:border-blue-500/50" />
-                            <div className="w-px h-8 bg-white/10 mx-2" />
-                            <ActionButton icon={Archive} onClick={() => setConfirmAction('archive')} color="hover:bg-orange-500/20 hover:text-orange-500 hover:border-orange-500/50" />
-                            <ActionButton icon={Trash2} onClick={() => setConfirmAction('delete')} color="hover:bg-red-500/20 hover:text-red-500 hover:border-red-500/50" />
+                        {/* Title & Badges */}
+                        <div className="min-w-0 flex-1">
+                            <div className="flex items-center gap-2 mb-1">
+                                <h3 className={`font-display tracking-wide text-white truncate transition-all duration-300 ${isExpanded ? FONT_SIZE.XXXL : `${FONT_SIZE.LG} group-hover:text-primary`}`}>
+                                    {displayName}
+                                </h3>
+                                {model.active === false && (
+                                    <span className={`px-1.5 py-0.5 ${FONT_SIZE.XXS} font-bold bg-yellow-500/20 text-yellow-500 border border-yellow-500/30 rounded`}>
+                                        ARCHIVED
+                                    </span>
+                                )}
+                            </div>
+                            <div className={`flex flex-wrap gap-2 items-center ${FONT_SIZE.XS} text-white/40 font-mono`}>
+                                <span>{model.api_id}</span>
+                                {hasParamsValue && (
+                                    <>
+                                        <span className="text-white/20">•</span>
+                                        <span className="flex items-center gap-1">
+                                            <Cpu size={10} />
+                                            {paramsValue}B
+                                        </span>
+                                    </>
+                                )}
+                            </div>
                         </div>
                     </div>
 
-                    {/* Main Grid */}
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-
-                        {/* Column 1: Description & Traits */}
-                        <div className="space-y-6">
-                            <div className="p-6 rounded-xl border border-white/10 bg-white/5 space-y-4 h-full">
-                                <h4 className="text-xs text-white/50 font-label uppercase tracking-widest border-b border-white/10 pb-2">Overview</h4>
-                                <p className="text-sm text-white/70 leading-relaxed font-mono">
-                                    {model.description || "No description available for this model."}
-                                </p>
-                                <div className="pt-6 space-y-5">
-                                    {model.bestFor && <TraitGroup label="BEST FOR" traits={model.bestFor} icon={Target} accent="text-primary" delay={0} size="text-xs" />}
-                                    <TraitGroup label="PERSONALITY" traits={model.personalityTraits} icon={Brain} accent="text-accent-tertiary" delay={1} size="text-xs" />
-                                    <TraitGroup label="ANALYTICAL" traits={model.analyticalTraits} icon={Cpu} accent="text-accent-secondary" delay={2} size="text-xs" />
+                    {/* Action Buttons (Top Right) */}
+                    <div className={`flex items-center gap-1 transition-opacity duration-200 ${isExpanded || isActive ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`} data-model-action>
+                        {isExpanded ? (
+                            <>
+                                <ActionButton icon={Edit2} onClick={() => onEdit(model)} color="hover:text-blue-400 hover:border-blue-400/30" />
+                                <ActionButton icon={Copy} onClick={() => onDuplicate(model)} color="hover:text-green-400 hover:border-green-400/30" />
+                                <ActionButton icon={model.active === false ? Box : Archive} onClick={() => setConfirmAction('archive')} color="hover:text-amber-400 hover:border-amber-400/30" />
+                                <ActionButton icon={Trash2} onClick={() => setConfirmAction('delete')} color="hover:text-red-400 hover:border-red-400/30" />
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); onToggleExpand(); }}
+                                    className="ml-2 p-2 rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-white/10 hover:text-white transition-colors"
+                                >
+                                    <ChevronRight size={16} className="rotate-180" />
+                                </button>
+                            </>
+                        ) : (
+                            <div className="flex items-center gap-1.5">
+                                {usage && usage.count > 0 && (
+                                    <div className="border border-primary/20 bg-primary/10 rounded px-1.5 py-0.5 text-[10px] font-mono text-primary flex items-center gap-1">
+                                        <Users size={10} />
+                                        {usage.count}
+                                    </div>
+                                )}
+                                <div className="border border-white/10 bg-black/40 rounded px-1.5 py-0.5 text-[10px] font-mono text-white/40">
+                                    DETAILS
                                 </div>
                             </div>
+                        )}
+                    </div>
+                </div>
+
+                {/* Description & Traits */}
+                <div className={`space-y-4 ${isExpanded ? 'mb-8' : 'mb-4 flex-1'}`}>
+                    <div className={`text-white/60 font-sans leading-relaxed ${isExpanded ? `${FONT_SIZE.MD} max-w-3xl` : `${FONT_SIZE.XS} line-clamp-2`}`}>
+                        {model.description || `${model.modelFamily} SERIES MODEL`}
+                    </div>
+
+                    {/* Stats & Capability Matrix */}
+                    <div className={`grid ${isExpanded ? 'grid-cols-4 gap-8' : 'grid-cols-2 gap-3'} mt-auto`}>
+                        {/* Column 1: Core Stats */}
+                        <div className="space-y-3">
+                            <QuickStat label="CONTEXT" value={hasContextValue ? contextValue : 0} max={maxContext} suffix="K" isCurrency={false} />
+
+                            {isFree ? (
+                                <div className="p-3 rounded-lg border border-emerald-500/20 bg-emerald-500/10 flex items-center justify-center gap-2 group/free">
+                                    <Sparkles className="w-4 h-4 text-emerald-400 animate-pulse" />
+                                    <span className="font-display font-medium text-lg bg-gradient-to-r from-emerald-200 to-emerald-500 bg-clip-text text-transparent">
+                                        FREE
+                                    </span>
+                                </div>
+                            ) : (
+                                <QuickStat label="PRICE / 1M" value={hasPricing ? totalPrice : 0} max={maxPrice} isCurrency={true} />
+                            )}
+
+                            {isExpanded && (
+                                <div className="mt-4 pt-4 border-t border-white/5 space-y-2">
+                                    <MetricBarSmall label="INPUT" value={model.pricing?.prompt ?? 0} prefix="$" suffix="/1M" />
+                                    <MetricBarSmall label="OUTPUT" value={model.pricing?.completion ?? 0} prefix="$" suffix="/1M" />
+                                </div>
+                            )}
                         </div>
 
-                        {/* Column 2: Metrics Visualization */}
-                        <div className="space-y-4 p-6 rounded-xl border border-white/10 bg-white/5 h-fit">
-                            <div className="text-xs text-accent-secondary tracking-widest font-label border-b border-white/10 pb-2 mb-4">
-                                KEY METRICS
-                            </div>
-
-                            {/* Price */}
-                            <div className="space-y-2">
-                                <div className="flex justify-between text-xs font-mono text-white/60">
-                                    <span>PRICING (1M)</span>
-                                    <span className="text-white">${totalPrice > 0 ? (totalPrice / 1000000).toFixed(2) : '0.00'}</span>
-                                </div>
-                                <MetricBar value={totalPrice} maxValue={maxPrice} useLog={false} colorInvert heightClass="h-2" />
-                            </div>
-
-                            {/* Context */}
-                            <div className="space-y-2 pt-2">
-                                <div className="flex justify-between text-xs font-mono text-white/60">
-                                    <span>CONTEXT</span>
-                                    <span className="text-white">{hasContextValue ? `${contextValue}K` : 'N/A'}</span>
-                                </div>
-                                <MetricBar value={contextValue} maxValue={maxContext} highClass="bg-accent-tertiary" heightClass="h-2" />
-                            </div>
-
-                            {/* Params */}
-                            <div className="grid grid-cols-2 gap-4 pt-2">
-                                <div className="space-y-2">
-                                    <div className="flex justify-between text-xs font-mono text-white/60">
-                                        <span>TOTAL PARAMS</span>
-                                        <span className="text-white text-right">{hasParamsValue ? `${paramsValue}B` : 'N/A'}</span>
-                                    </div>
-                                    {hasParamsValue && <MetricBar value={paramsValue} maxValue={maxParams} highClass="bg-primary" heightClass="h-1.5" />}
-                                </div>
-                                <div className="space-y-2">
-                                    <div className="flex justify-between text-xs font-mono text-white/60">
-                                        <span>ACTIVE PARAMS</span>
-                                        <span className="text-white text-right">{hasActiveParamsValue ? `${activeParamsValue}B` : 'N/A'}</span>
-                                    </div>
-                                    {hasActiveParamsValue && <MetricBar value={activeParamsValue} maxValue={maxParams} highClass="bg-emerald-400" heightClass="h-1.5" />}
-                                </div>
-                            </div>
+                        {/* Column 2: Scores */}
+                        <div className="space-y-3">
+                            <ScoreBar label="EFFICIENCY" value={model.efficiencyScore} colorClass="bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
+                            <ScoreBar label="CREATIVITY" value={model.creativeScore} colorClass="bg-primary shadow-[0_0_10px_rgba(255,51,102,0.5)]" />
+                            <ScoreBar label="REASONING" value={model.deductiveScore} colorClass="bg-accent-tertiary shadow-[0_0_10px_rgba(147,51,234,0.5)]" />
                         </div>
 
-                        {/* Column 3: Scores & Control */}
-                        <div className="flex flex-col gap-6 h-fit">
-                            {/* Scores */}
-                            <div className="p-6 rounded-xl border border-white/10 bg-white/5 space-y-5">
-                                <div className="text-xs text-primary tracking-widest font-label border-b border-white/10 pb-2">PERFORMANCE SCORES</div>
-                                <ScoreBar label="EFFICIENCY" value={model.efficiencyScore} colorClass="bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.4)]" />
-                                <ScoreBar label="CREATIVITY" value={model.creativeScore} colorClass="bg-primary shadow-[0_0_10px_rgba(0,255,136,0.4)]" />
-                                <ScoreBar label="LOGIC" value={model.deductiveScore} colorClass="bg-accent-tertiary shadow-[0_0_10px_rgba(6,182,212,0.4)]" />
-                            </div>
 
-                            {/* Fallback */}
-                            <div className="p-6 rounded-xl border border-white/10 bg-white/5 space-y-3">
-                                <div className="flex items-center gap-2 font-label text-xs text-white/50 border-b border-white/10 pb-2 mb-2">
-                                    <AlertTriangle size={12} />
-                                    FAILOVER_PROTOCOL
-                                </div>
+                    </div>
+                </div>
+
+                {/* Fallback Selection */}
+                {isExpanded && (
+                    <div className="pt-6 mt-6 border-t border-white/5">
+                        <div className="flex items-center gap-4">
+                            <div className="p-2 rounded bg-white/5 text-white/40">
+                                <Activity size={16} />
+                            </div>
+                            <div className="flex-1">
+                                <div className={`font-label ${FONT_SIZE.XS} text-white/40 mb-1`}>FALLBACK_CHAIN</div>
                                 <FallbackPicker
+                                    value={model.fallback_model_id ? String(model.fallback_model_id) : undefined}
+                                    favorModel={model}
                                     models={allModels}
                                     vendorsById={vendorsById}
                                     modelsById={modelsById}
-                                    value={model.fallback_model_id}
-                                    favorModel={model}
-                                    onChange={(fallbackId) => onFallbackChange(modelKey, fallbackId)}
+                                    onChange={(newId) => onFallbackChange(modelKey, newId)}
                                 />
                             </div>
                         </div>
                     </div>
-                </div>
+                )}
 
-                {/* Confirmation Modal Logic (Repeated) */}
-                <ConfirmationModal
-                    isOpen={confirmAction !== null}
-                    onClose={() => setConfirmAction(null)}
-                    onConfirm={() => {
-                        if (confirmAction === 'archive') onArchive(model);
-                        if (confirmAction === 'delete') onDelete(model);
-                    }}
-                    title={confirmAction === 'archive' ? 'ARCHIVE_MODEL?' : 'DELETE_MODEL?'}
-                    message={
-                        confirmAction === 'archive' ? (
-                            <>
-                                Are you sure you want to archive <span className="text-white font-bold">{displayName}</span>? It will be moved to the archive list and can be restored later.
-                            </>
-                        ) : (
-                            <>
-                                Are you sure you want to delete <span className="text-white font-bold">{displayName}</span>? <br /><br />
-                                <span className="text-red-400 font-bold">WARNING: This action cannot be undone.</span>
-                            </>
-                        )
-                    }
-                    confirmLabel={confirmAction === 'archive' ? 'ARCHIVE' : 'DELETE'}
-                    variant={confirmAction === 'archive' ? 'warning' : 'danger'}
-                />
-            </div>
-        );
-    }
-
-    // Default: Collapsed Visual (Thumbnail)
-    return (
-        <div
-            className={`group relative overflow-hidden rounded-xl border bg-black/40 backdrop-blur-md p-5 transition-all duration-300 cursor-pointer
-                ${isActive
-                    ? 'border-accent-tertiary/80 ring-1 ring-accent-tertiary/30 shadow-[0_0_20px_rgba(6,182,212,0.15)]'
-                    : 'border-white/10 hover:border-primary/50 hover:shadow-[0_0_30px_-5px_rgba(0,255,136,0.3)]'
-                }`}
-            onClick={handleCardClick}
-            role="button"
-            tabIndex={0}
-            onKeyDown={(event) => {
-                if (event.key === 'Enter' || event.key === ' ') {
-                    event.preventDefault();
-                    onToggleExpand();
-                }
-            }}
-        >
-            {/* Background Gradient Effect */}
-            <div className={`absolute -inset-1 bg-gradient-to-r from-primary/10 via-transparent to-accent-secondary/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100 blur-xl pointer-events-none ${isActive ? 'opacity-20' : ''}`} />
-
-            <div className="relative flex flex-col gap-2">
-                {/* Row 1: Image, Family, Actions */}
-                <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                        <div className="relative shrink-0">
-                            <div className="h-10 w-10 rounded-lg bg-black/50 border border-white/10 p-1.5 shadow-[0_0_15px_-3px_rgba(0,0,0,0.5)] group-hover:border-primary/30 transition-colors">
-                                <img
-                                    src={getVendorIcon(vendorName, model.modelFamily)}
-                                    alt={vendorName}
-                                    className="w-full h-full object-contain opacity-90 group-hover:scale-110 transition-transform duration-300"
-                                    onError={(e) => {
-                                        (e.target as HTMLImageElement).src = '/llm-icons/ai-placeholder.png';
+                {/* Usage Intel Section - Horizontal Scroll & Full Team Card */}
+                {isExpanded && usage && usage.count > 0 && (
+                    <div className="mt-8">
+                        {/* Header & Filters */}
+                        <div className="flex flex-col gap-4 mb-4">
+                            <div className="flex items-center justify-between">
+                                <div className="flex items-center gap-3">
+                                    <Users className="text-primary" size={18} />
+                                    <h4 className={`font-display ${FONT_SIZE.LG} text-white tracking-wide`}>USAGE_INTEL</h4>
+                                    <span className={`bg-primary/20 text-primary px-2 py-0.5 rounded ${FONT_SIZE.XS} font-mono font-bold`}>
+                                        {filteredUsageTeams.length} / {usage.count} TEAMS
+                                    </span>
+                                </div>
+                                <button
+                                    onClick={() => {
+                                        if (!canFilterTeams || modelId === undefined) return;
+                                        onFilterTeamsByModel(modelId);
                                     }}
-                                />
+                                    disabled={!canFilterTeams}
+                                    className={`${FONT_SIZE.XS} font-mono transition-colors flex items-center gap-1 border border-primary/20 bg-primary/5 px-2 py-1 rounded ${canFilterTeams ? 'text-primary/70 hover:text-primary' : 'text-white/30 cursor-not-allowed opacity-50'}`}
+                                >
+                                    <Filter size={12} />
+                                    FILTER TEAMS VIEW
+                                </button>
                             </div>
-                            {/* Status Indicator Dot */}
-                            <div className="absolute -bottom-1 -right-1 w-2.5 h-2.5 rounded-full bg-black flex items-center justify-center">
-                                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.8)]" />
+
+                            {/* Filter Controls */}
+                            <div className={`flex items-center gap-2 ${FONT_SIZE.XS} font-mono`}>
+                                <span className="text-white/40 uppercase tracking-widest mr-2">Filters:</span>
+                                {/* Public/Private Toggle */}
+                                <button
+                                    onClick={() => setUsageFilterPublic(prev => prev === 'all' ? 'public' : prev === 'public' ? 'private' : 'all')}
+                                    className={`px-2 py-1 flex items-center gap-1.5 rounded border transition-colors ${usageFilterPublic !== 'all' ? 'border-primary/50 bg-primary/10 text-primary' : 'border-white/10 bg-black/20 text-white/40 hover:text-white/60'}`}
+                                >
+                                    {usageFilterPublic === 'all' && <Globe size={10} />}
+                                    {usageFilterPublic === 'public' && <Globe size={10} />}
+                                    {usageFilterPublic === 'private' && <Lock size={10} />}
+                                    {usageFilterPublic === 'all' ? 'ALL ACCESS' : usageFilterPublic.toUpperCase()}
+                                </button>
+
+                                {/* Saved/Unsaved Toggle */}
+                                <button
+                                    onClick={() => setUsageFilterSaved(prev => prev === 'all' ? 'saved' : prev === 'saved' ? 'unsaved' : 'all')}
+                                    className={`px-2 py-1 flex items-center gap-1.5 rounded border transition-colors ${usageFilterSaved !== 'all' ? 'border-amber-400/50 bg-amber-400/10 text-amber-400' : 'border-white/10 bg-black/20 text-white/40 hover:text-white/60'}`}
+                                >
+                                    {usageFilterSaved === 'saved' ? <Save size={10} /> : <Box size={10} />}
+                                    {usageFilterSaved === 'all' ? 'ALL STATUS' : usageFilterSaved.toUpperCase()}
+                                </button>
+
+                                <div className="flex-1" />
+                                <button
+                                    onClick={() => setShowMigrationModal(true)}
+                                    className={`${FONT_SIZE.XS} font-mono text-amber-400/70 hover:text-amber-400 transition-colors flex items-center gap-1 border border-amber-400/20 bg-amber-400/5 px-2 py-1 rounded`}
+                                >
+                                    MIGRATE MEMBERS
+                                </button>
+                                <button
+                                    onClick={() => activeUsageTab && onNavigateToTeam(activeUsageTab)}
+                                    disabled={!activeUsageTab}
+                                    className={`${FONT_SIZE.XS} font-mono text-white/40 hover:text-white transition-colors flex items-center gap-1 disabled:opacity-20`}
+                                >
+                                    GO TO TEAM <ChevronRight size={12} />
+                                </button>
                             </div>
                         </div>
 
-                        <span className="font-label text-sm bg-primary/10 text-primary border border-primary/20 px-2 py-1 rounded tracking-wider font-bold">
-                            {model.modelFamily}
-                        </span>
-                    </div>
+                        {/* Horizontal Team List */}
+                        <div className="flex overflow-x-auto gap-3 pb-4 mb-4 scrollbar-hide snap-x px-1">
+                            {filteredUsageTeams.map(team => {
+                                // Filter members who use this model
+                                const modelMembers = team.members?.filter(m => m.model_id === model.id) || [];
+                                return (
+                                    <div key={team.id} className="snap-start flex-shrink-0 w-[240px]">
+                                        <TeamStripCard
+                                            team={team}
+                                            members={modelMembers}
+                                            category={team.category}
+                                            isActive={activeUsageTab === team.id}
+                                            onClick={() => setActiveUsageTab(team.id)}
+                                        />
+                                    </div>
+                                );
+                            })}
+                        </div>
 
-                    {/* Quick Expand Hint Icon or Actions if not active */}
-                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-opacity" data-model-action>
-                        <ActionButton icon={Edit2} onClick={() => onEdit(model)} color="hover:bg-primary/20 hover:text-primary hover:border-primary/50" />
+                        {/* Selected Team Details */}
+                        {selectedTeam && (
+                            <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                                <TeamCard
+                                    team={selectedTeam}
+                                    members={selectedTeam.members}
+                                    vendorsById={vendorsById}
+                                    modelsById={modelsById}
+                                    isExpanded={true}
+                                    expandedMembers={expandedMembers}
+                                    onToggle={() => { }} // Always expanded here
+                                    onToggleMember={handleToggleMember}
+                                    onEdit={() => setEditingTeam(selectedTeam)}
+                                    onDelete={() => onTeamDelete(selectedTeam.id)}
+                                    onDuplicate={() => onTeamDuplicate(selectedTeam.id)}
+                                    onMemberEdit={(member) => {
+                                        setEditingMember(member);
+                                        setIsCreatingMember(false);
+                                    }}
+                                    onMemberAdd={() => {
+                                        setEditingMember(null);
+                                        setIsCreatingMember(true);
+                                    }}
+                                    onMemberDelete={onMemberDelete}
+                                    onMemberUpdate={onMemberUpdate}
+                                />
+                            </div>
+                        )}
                     </div>
-                </div>
+                )}
 
-                {/* Row 2: Display Name */}
-                <div className="w-full pt-1">
-                    <div className={`font-display text-xl tracking-wide bg-clip-text text-transparent break-words leading-tight transition-colors duration-300
-                        ${isActive
-                            ? 'bg-gradient-to-r from-accent-tertiary to-white'
-                            : 'bg-gradient-to-r from-white to-white/70'}`}
-                    >
-                        {displayName}
-                    </div>
-                </div>
-
-                {/* Row 3: Vendor | ID */}
-                <div className="flex items-center gap-2 text-white/40 font-mono text-xs">
-                    <span className="uppercase tracking-wider text-[10px]">{vendorName}</span>
-                    <span className="text-white/20">|</span>
-                    {model.id && <span className="opacity-70 text-sm">#{model.id}</span>}
-                </div>
             </div>
 
-            <div className="mt-3 text-xs text-white/50 leading-relaxed line-clamp-2">
-                {model.description || `${model.modelFamily} SERIES`}
-            </div>
-
-            {/* Quick Stats Grid */}
-            <div className="mt-5 space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                    <QuickStat label="PRICE" value={hasPricing ? totalPrice : 0} max={maxPrice} isCurrency />
-                    <QuickStat label="CTX" value={hasContextValue ? contextValue : 0} max={maxContext} suffix="K" />
-                </div>
-                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-                <div className="grid grid-cols-2 gap-4">
-                    <QuickStat label="CREATIVITY" value={hasCreativeScore ? model.creativeScore ?? 0 : 0} max={100} color="bg-purple-500" />
-                    <QuickStat label="LOGIC" value={hasLogicScore ? model.deductiveScore ?? 0 : 0} max={100} color="bg-blue-500" />
-                </div>
-            </div>
-
-            {/* Confirmation Modal */}
+            {/* Modals */}
             <ConfirmationModal
                 isOpen={confirmAction !== null}
                 onClose={() => setConfirmAction(null)}
@@ -372,10 +463,108 @@ export function ModelCard({
                 confirmLabel={confirmAction === 'archive' ? 'ARCHIVE' : 'DELETE'}
                 variant={confirmAction === 'archive' ? 'warning' : 'danger'}
             />
+
+            <TeamEditModal
+                isOpen={!!editingTeam}
+                team={editingTeam}
+                isCreating={false}
+                onClose={() => setEditingTeam(null)}
+                onSave={(updatedTeam) => {
+                    if (editingTeam) {
+                        onTeamUpdate(updatedTeam, editingTeam.id);
+                    }
+                    setEditingTeam(null);
+                }}
+            />
+
+            <MemberEditModal
+                isOpen={!!editingMember || isCreatingMember}
+                member={editingMember}
+                teams={usage?.teams || []} // Only pass usage teams? Or all teams? Ideally all teams but we don't have them here. 
+                // Wait, Modals might need ALL teams if moving member? 
+                // Currently MemberEditModal takes `teams` prop for "Team Assignment"?
+                // If we are in "Usage Intel" of a specific model, we might only be editing members OF the teams using this model.
+                // But `MemberEditModal` dropdown needs options.
+                // We don't have `teams` (all teams) prop in `ModelCard`.
+                // However, `MemberEditModal` uses `teams` for the dataset of teams. 
+                // If we restrict to `usage.teams`, user can only switch between teams that use this model?
+                // Probably fine for this context. Or maybe redundant since we are in a Team context.
+                modelsById={modelsById}
+                vendorsById={vendorsById}
+                isCreating={isCreatingMember}
+                onClose={() => {
+                    setEditingMember(null);
+                    setIsCreatingMember(false);
+                }}
+                onSave={(member) => {
+                    if (isCreatingMember) {
+                        // We need to attach team_id if creating from here?
+                        // `MemberEditModal` usually handles it if we pass default team or user selects one.
+                        // If we are inside `selectedTeam` context, we should pre-fill team_id?
+                        // `MemberEditModal` logic: `const [currTeam, setCurrTeam] = useState(teams.find(t => t.id === member?.team_id) || teams[0]);`
+                        // So if we pass `usage.teams` and one is selected...
+                        // But wait, `onMemberCreate` needs a `TeamMember`.
+                        if (selectedTeam && !member.team_id) {
+                            member.team_id = selectedTeam.id;
+                        }
+                        onMemberCreate(member);
+                    } else if (editingMember) {
+                        onMemberUpdate(member, editingMember.id);
+                    }
+                    setEditingMember(null);
+                    setIsCreatingMember(false);
+                }}
+            />
+
+            <ConfirmationModal
+                isOpen={showMigrationModal}
+                onClose={() => {
+                    setShowMigrationModal(false);
+                    setTargetModelId(null);
+                }}
+                onConfirm={() => {
+                    if (targetModelId && model.id) {
+                        migrateMutation.mutate(
+                            { fromModelId: model.id, toModelId: Number(targetModelId) },
+                            {
+                                onSuccess: () => {
+                                    setShowMigrationModal(false);
+                                    setTargetModelId(null);
+                                }
+                            }
+                        );
+                    }
+                }}
+                title="MIGRATE_MEMBERS?"
+                message={
+                    <div className="space-y-4">
+                        <p>
+                            Migrate all members currently using <span className="text-white font-bold">{displayName}</span> to a different model?
+                        </p>
+                        <div className="bg-white/5 border border-white/5 rounded-lg p-3">
+                            <div className={`font-label ${FONT_SIZE.TINY} tracking-widest text-white/40 mb-2`}>TARGET_MODEL</div>
+                            <FallbackPicker
+                                models={allModels.filter(m => m.id !== model.id)}
+                                vendorsById={vendorsById}
+                                modelsById={modelsById}
+                                value={targetModelId ?? undefined}
+                                onChange={(id) => setTargetModelId(id ?? null)}
+                            />
+                        </div>
+                        <p className={`text-amber-400 ${FONT_SIZE.XS}`}>
+                            This will update {usage?.count || 0} team member(s) across {usage?.teams.length || 0} team(s).
+                        </p>
+                    </div>
+                }
+                confirmLabel="MIGRATE"
+                variant="warning"
+            />
+
         </div>
     );
 }
 
+// Helpers
 function ActionButton({ icon: Icon, onClick, color }: { icon: any, onClick: (e: any) => void, color: string }) {
     return (
         <button
@@ -399,7 +588,7 @@ function QuickStat({ label, value, max, isCurrency, suffix = '', color = 'bg-pri
 
     return (
         <div className="space-y-1">
-            <div className="flex justify-between items-center text-[10px] uppercase tracking-wider font-medium text-white/50">
+            <div className={`flex justify-between items-center ${FONT_SIZE.XXS} uppercase tracking-wider font-medium text-white/50`}>
                 <span>{label}</span>
                 <span className="text-white/80 font-mono">
                     {displayValue}
@@ -412,28 +601,16 @@ function QuickStat({ label, value, max, isCurrency, suffix = '', color = 'bg-pri
     )
 }
 
-function MetricBar({
-    value,
-    maxValue,
-    invert = false,
-    colorInvert,
-    useLog = true,
-    highClass = 'bg-primary',
-    heightClass = 'h-1'
-}: {
-    value: number;
-    maxValue: number;
-    invert?: boolean;
-    colorInvert?: boolean;
-    useLog?: boolean;
-    highClass?: string;
-    heightClass?: string;
-}) {
-    const ratio = normalizeValue(value, maxValue, useLog);
-    const adjusted = invert ? 1 - ratio : ratio;
-    const colorRatio = (colorInvert ?? invert) ? 1 - ratio : ratio;
-    return <IndicatorBar ratio={adjusted} colorRatio={colorRatio} highClass={highClass} heightClass={heightClass} />;
+function MetricBarSmall({ label, value, prefix = '', suffix = '' }: { label: string, value: string | number, prefix?: string, suffix?: string }) {
+    return (
+        <div className={`flex justify-between items-center ${FONT_SIZE.SM}`}>
+            <span className={`text-white/50 font-mono ${FONT_SIZE.XS} tracking-wide`}>{label}</span>
+            <span className="text-white font-mono">{prefix}{value}{suffix}</span>
+        </div>
+    );
 }
+
+
 
 function ScoreBar({
     label,
@@ -449,51 +626,37 @@ function ScoreBar({
     const ratio = hasValue ? normalizeValue(score, 100, false) : 0;
 
     return (
-        <div className="space-y-2 group">
-            <div className="flex items-center justify-between text-xs text-muted-foreground">
-                <span className="font-label text-[10px] tracking-widest text-white/50">{label}</span>
-                <span className="text-white font-mono">{hasValue ? score : 'N/A'}</span>
+        <div className="space-y-1 group">
+            <div className={`flex items-center justify-between ${FONT_SIZE.XS} text-muted-foreground`}>
+                <span className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/40`}>{label}</span>
+                <span className={`text-white font-mono ${FONT_SIZE.XS}`}>{hasValue ? score : 'N/A'}</span>
             </div>
-            <IndicatorBar ratio={ratio} highClass={colorClass} heightClass="h-1.5" minPercent={hasValue ? 6 : 0} />
+            <IndicatorBar ratio={ratio} highClass={colorClass} heightClass="h-1" minPercent={hasValue ? 5 : 0} />
         </div>
     );
 }
 
 function IndicatorBar({
     ratio,
-    colorRatio,
     highClass,
     heightClass,
     minPercent = 6
 }: {
     ratio: number;
-    colorRatio?: number;
     highClass: string;
     heightClass: string;
     minPercent?: number;
 }) {
     const clamped = Math.min(1, Math.max(0, ratio));
-    const colorClamped = Math.min(1, Math.max(0, colorRatio ?? ratio));
     const percent = Math.min(100, Math.max(minPercent, clamped * 100));
-    const barClass = getIndicatorClass(colorClamped, highClass);
-
-    // Custom dynamic glow based on color class logic
-    const isRed = barClass.includes('red');
-    const isOrange = barClass.includes('orange');
-
-    // We can infer color from highClass if not red/orange, but let's stick to simple logic
-    let glowColor = 'rgba(0, 255, 136, 0.4)'; // Primary default
-    if (isRed) glowColor = 'rgba(239, 68, 68, 0.6)';
-    if (isOrange) glowColor = 'rgba(251, 146, 60, 0.6)';
-    if (highClass.includes('accent-tertiary') && !isRed && !isOrange) glowColor = 'rgba(6, 182, 212, 0.4)';
-    if (highClass.includes('accent-secondary') && !isRed && !isOrange) glowColor = 'rgba(255, 0, 255, 0.4)';
-    if (highClass.includes('emerald-400') && !isRed && !isOrange) glowColor = 'rgba(52, 211, 153, 0.4)';
+    // Simple override for now
+    const barClass = highClass;
 
     return (
         <div className={`${heightClass} w-full bg-white/5 rounded-full overflow-hidden`}>
             <div
                 className={`${heightClass} ${barClass} rounded-full transition-all duration-500`}
-                style={{ width: `${percent}%`, boxShadow: `0 0 10px ${glowColor}` }}
+                style={{ width: `${percent}%` }}
             />
         </div>
     );
@@ -506,52 +669,4 @@ function normalizeValue(value: number, maxValue: number, useLog: boolean) {
         ? Math.log10(value + 1) / Math.log10(maxValue + 1)
         : value / maxValue;
     return Math.min(1, Math.max(0, raw));
-}
-
-function getIndicatorClass(ratio: number, highClass: string) {
-    if (ratio < 0.3) return 'bg-red-500';
-    if (ratio < 0.5) return 'bg-orange-500';
-    if (ratio < 0.7) return 'bg-yellow-400';
-    return highClass;
-}
-
-function TraitGroup({
-    label,
-    traits,
-    icon: Icon,
-    accent,
-    delay,
-    size = 'text-[10px]'
-}: {
-    label: string;
-    traits: string;
-    icon: any;
-    accent: string;
-    delay: number;
-    size?: string;
-}) {
-    if (!traits) return null;
-    const items = traits.split(',').map(item => item.trim()).filter(Boolean);
-
-    return (
-        <div
-            className="space-y-2 animate-in fade-in slide-in-from-bottom-2 duration-500 fill-mode-backwards"
-            style={{ animationDelay: `${delay * 100}ms` }}
-        >
-            <div className={`flex items-center gap-2 font-label text-[10px] tracking-widest ${accent} opacity-80`}>
-                <Icon size={12} />
-                {label}
-            </div>
-            <div className="flex flex-wrap gap-1.5">
-                {items.map((item) => (
-                    <span
-                        key={item}
-                        className={`px-2.5 py-1 ${size} font-mono border border-white/10 rounded-md bg-white/5 text-white/80 hover:bg-white/10 hover:border-white/20 transition-colors`}
-                    >
-                        {item}
-                    </span>
-                ))}
-            </div>
-        </div>
-    );
 }

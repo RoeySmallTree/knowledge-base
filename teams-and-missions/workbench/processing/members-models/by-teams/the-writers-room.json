@@ -1,0 +1,152 @@
+{
+  "team_id": "981505fd-4aeb-4599-8e13-aee6e2cd2ad2",
+  "team_name": "The Writers' Room",
+  "folder": "ops",
+  "file": "the-studio.md",
+  "members": [
+    {
+      "name": "Slate",
+      "role": "Showrunner",
+      "function": "Manage the writing process. Break story into production chunks. Make final story decisions. Keep the room productive.",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 10.0,
+      "creative": 8.5,
+      "efficiency": 7.0,
+      "traits": [
+        "Most-Intelligent",
+        "Deep-Thinker",
+        "Research-Grade",
+        "Multimodal-Master"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "deep-think",
+        "multimodal"
+      ]
+    },
+    {
+      "name": "Frame",
+      "role": "Architect",
+      "function": "Design story structure. Identify key beats. Ensure pacing. Diagnose structural problems.",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "browser-control",
+        "multi-language"
+      ]
+    },
+    {
+      "name": "Ink",
+      "role": "Voice",
+      "function": "Write dialogue. Maintain character voices. Express theme through conversation. Punch up weak dialogue.",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Nous Hermes 4 70B",
+      "logic": 6.5,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Immersive",
+        "World-Builder",
+        "Character-Consistent",
+        "Spatial-Aware"
+      ],
+      "special_capabilities": [
+        "character-consistency",
+        "spatial-awareness",
+        "long-context-131k"
+      ]
+    },
+    {
+      "name": "Tome",
+      "role": "Keeper",
+      "function": "Create and maintain bibles. Document characters, world, objects. Provide continuity briefs. Prevent drift.",
+      "importance": "Critical",
+      "model_id": "#120",
+      "model_name": "Trinity Mini",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Self-Correcting",
+        "Analyst",
+        "Systematic"
+      ],
+      "special_capabilities": [
+        "us-trained",
+        "enterprise-grade",
+        "efficient-3b-active"
+      ]
+    },
+    {
+      "name": "Scroll",
+      "role": "Formatter",
+      "function": "Ensure proper screenplay format. Prepare production documents. Know medium-specific conventions.",
+      "importance": "Medium",
+      "model_id": "#119",
+      "model_name": "Rnj-1 Instruct",
+      "alternative_id": "#64",
+      "alternative_name": "o4-mini",
+      "logic": 8.5,
+      "creative": 6.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Stepwise",
+        "Analyst"
+      ],
+      "special_capabilities": [
+        "8b-beats-32b",
+        "swe-bench",
+        "technical-precision"
+      ]
+    },
+    {
+      "name": "Watch",
+      "role": "Continuity",
+      "function": "Track continuity. Log established facts. Catch contradictions. Verify timeline consistency.",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.5,
+      "creative": 5.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Math-Strong",
+        "Precise",
+        "Self-Correcting",
+        "Competition-Grade"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "logical-verification",
+        "14b-only"
+      ]
+    }
+  ]
+}

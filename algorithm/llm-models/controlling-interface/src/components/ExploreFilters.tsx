@@ -1,4 +1,5 @@
 import { Search, Filter, Clock } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 interface ExploreFiltersProps {
     hideOwned: boolean;
@@ -39,7 +40,7 @@ export function ExploreFilters({
         <div className="flex flex-col h-full gap-6">
             {/* Search */}
             <div className="space-y-3">
-                <div className="font-label text-xs text-secondary tracking-widest pl-1">SEARCH</div>
+                <div className={`font-label ${FONT_SIZE.XS} text-secondary tracking-widest pl-1`}>SEARCH</div>
                 <div className="relative group">
                     <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                         <Search className="h-4 w-4 text-white/40 group-focus-within:text-primary transition-colors" />
@@ -49,7 +50,7 @@ export function ExploreFilters({
                         value={searchQuery}
                         onChange={(e) => onSearchChange(e.target.value)}
                         placeholder="SEARCH_MODELS..."
-                        className="w-full bg-black/60 border border-white/10 rounded-lg pl-9 pr-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono cyber-chamfer-sm"
+                        className={`w-full bg-black/60 border border-white/10 rounded-lg pl-9 pr-3 py-2 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono cyber-chamfer-sm`}
                     />
                 </div>
             </div>
@@ -57,7 +58,7 @@ export function ExploreFilters({
             {/* Filters */}
             <div className="space-y-4">
                 <div className="flex items-center justify-between pl-1 border-b border-white/5 pb-2">
-                    <div className="font-label text-xs text-primary/50 tracking-widest flex items-center gap-2">
+                    <div className={`font-label ${FONT_SIZE.XS} text-primary/50 tracking-widest flex items-center gap-2`}>
                         <Filter size={12} />
                         FILTERS
                     </div>
@@ -65,7 +66,7 @@ export function ExploreFilters({
                     {(hideOwned || createdAfter !== null || searchQuery) && (
                         <button
                             onClick={onClear}
-                            className="text-[10px] font-mono text-white/40 hover:text-white transition-colors flex items-center gap-1"
+                            className={`${FONT_SIZE.XXS} font-mono text-white/40 hover:text-white transition-colors flex items-center gap-1`}
                         >
                             CLEAR_ALL
                         </button>
@@ -81,7 +82,7 @@ export function ExploreFilters({
                         }`}
                 >
                     <div className="relative z-10 flex items-center justify-between">
-                        <span className={`font-display text-xs transition-colors ${hideOwned ? 'text-accent-tertiary' : 'text-white/70'}`}>
+                        <span className={`font-display ${FONT_SIZE.XS} transition-colors ${hideOwned ? 'text-accent-tertiary' : 'text-white/70'}`}>
                             HIDE OWNED
                         </span>
                         <div className={`w-2.5 h-2.5 rounded-sm border transition-all ${hideOwned
@@ -103,7 +104,7 @@ export function ExploreFilters({
                         }`}
                 >
                     <div className="relative z-10 flex items-center justify-between">
-                        <span className={`font-display text-xs transition-colors ${hideIrrelevant ? 'text-violet-400' : 'text-white/70'}`}>
+                        <span className={`font-display ${FONT_SIZE.XS} transition-colors ${hideIrrelevant ? 'text-violet-400' : 'text-white/70'}`}>
                             HIDE IRRELEVANT
                         </span>
                         <div className={`w-2.5 h-2.5 rounded-sm border transition-all ${hideIrrelevant
@@ -118,7 +119,7 @@ export function ExploreFilters({
 
                 {/* Created After Section */}
                 <div className="space-y-2">
-                    <div className="flex items-center gap-2 text-[10px] font-mono text-white/40 pl-1 uppercase">
+                    <div className={`flex items-center gap-2 ${FONT_SIZE.XXS} font-mono text-white/40 pl-1 uppercase`}>
                         <Clock size={10} />
                         Created After
                     </div>
@@ -134,26 +135,26 @@ export function ExploreFilters({
                                 onCreatedAfterChange(null);
                             }
                         }}
-                        className="w-full bg-black/20 border border-white/10 rounded-lg px-3 py-2 text-xs font-mono text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-colors [color-scheme:dark]"
+                        className={`w-full bg-black/20 border border-white/10 rounded-lg px-3 py-2 ${FONT_SIZE.XS} font-mono text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50 transition-colors [color-scheme:dark]`}
                     />
 
                     <div className="grid grid-cols-3 gap-1.5">
                         <button
                             onClick={() => setPreset(2)}
-                            className="px-2 py-1.5 rounded border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-[9px] font-mono text-white/60 transition-all text-center"
+                            className={`px-2 py-1.5 rounded border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 ${FONT_SIZE.TINY} font-mono text-white/60 transition-all text-center`}
                         >
                             2 Days
                         </button>
                         <button
                             onClick={() => setPreset(7)}
-                            className="px-2 py-1.5 rounded border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-[9px] font-mono text-white/60 transition-all text-center"
+                            className={`px-2 py-1.5 rounded border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 ${FONT_SIZE.TINY} font-mono text-white/60 transition-all text-center`}
                         >
                             1 Week
                         </button>
                         {lastOwnedDate && (
                             <button
                                 onClick={() => onCreatedAfterChange(lastOwnedDate)}
-                                className="px-2 py-1.5 rounded border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-[9px] font-mono text-accent-secondary/60 hover:text-accent-secondary transition-all text-center truncate"
+                                className={`px-2 py-1.5 rounded border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 ${FONT_SIZE.TINY} font-mono text-accent-secondary/60 hover:text-accent-secondary transition-all text-center truncate`}
                                 title="Filter models released after your last purchase"
                             >
                                 Last Added

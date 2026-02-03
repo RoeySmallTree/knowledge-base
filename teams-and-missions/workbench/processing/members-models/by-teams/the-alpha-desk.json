@@ -1,0 +1,203 @@
+{
+  "team_id": "5f7174e6-c220-4699-9305-80bf3662c203",
+  "team_name": "The Alpha Desk",
+  "folder": "ops",
+  "file": "the-ivy-league.md",
+  "members": [
+    {
+      "name": "PM",
+      "role": "Fund Manager",
+      "function": "Orchestrate research, synthesize analysis, make investment decision, write investment thesis",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 10.0,
+      "creative": 8.5,
+      "efficiency": 7.0,
+      "traits": [
+        "Most-Intelligent",
+        "Deep-Thinker",
+        "Research-Grade",
+        "Multimodal-Master"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "deep-think",
+        "multimodal",
+        "variant-perception"
+      ]
+    },
+    {
+      "name": "Macro",
+      "role": "Macro Analyst",
+      "function": "Provide macro context, assess rate/credit impact, identify geopolitical factors",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel"
+      ]
+    },
+    {
+      "name": "Industry",
+      "role": "Industry Analyst",
+      "function": "Size markets, map competitors, assess industry structure, position company",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "competitive-intelligence"
+      ]
+    },
+    {
+      "name": "Financial",
+      "role": "Financial Analyst",
+      "function": "Analyze financials, build segment models, assess quality of earnings, track balance sheet",
+      "importance": "High",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "alternative_id": "#128",
+      "alternative_name": "DeepSeek R1 0528",
+      "logic": 10.0,
+      "creative": 7.0,
+      "efficiency": 5.0,
+      "traits": [
+        "Deep-Thinker",
+        "Agentic",
+        "Tool-Master",
+        "Competition-Math",
+        "Precise"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "pure-reasoning",
+        "no-tools",
+        "financial-modeling"
+      ]
+    },
+    {
+      "name": "Risk",
+      "role": "Risk Analyst",
+      "function": "Assess risks, build scenarios, set red flag thresholds, stress test thesis",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "assumption-hunting",
+        "pre-mortem"
+      ]
+    },
+    {
+      "name": "Valuation",
+      "role": "Valuation Analyst",
+      "function": "Build peer comps, run DCF scenarios, derive target, test with reverse DCF",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 9.5,
+      "creative": 6.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Competition-Math",
+        "Cost-Saver",
+        "Fast-Twitch"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "14b-efficiency",
+        "multi-method-valuation"
+      ]
+    },
+    {
+      "name": "Moat",
+      "role": "Moat Analyst",
+      "function": "Identify moat sources, gather evidence, quantify moat metrics, assess durability",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "evidence-demanding"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 6,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Google",
+    "xAI",
+    "DeepSeek",
+    "Microsoft",
+    "NousResearch"
+  ]
+}

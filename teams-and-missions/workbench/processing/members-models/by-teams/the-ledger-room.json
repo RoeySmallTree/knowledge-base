@@ -1,0 +1,151 @@
+{
+  "team_id": "de2e3df1-3b25-418f-9adc-0b479c922134",
+  "team_name": "The Ledger Room",
+  "folder": "ops",
+  "file": "the-accountants.md",
+  "members": [
+    {
+      "name": "Ledger",
+      "role": "Chief Analyst",
+      "function": "Orchestrate analysis, synthesize findings, deliver clear assessment, ensure methodology is sound",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 6.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Long-Horizon",
+        "Structured-Thinking",
+        "Self-Correcting",
+        "Production-Grade"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "financial-synthesis"
+      ]
+    },
+    {
+      "name": "Filing",
+      "role": "Research Analyst",
+      "function": "Retrieve SEC filings, extract financial data, structure for analysis, provide source links",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 5.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "2m-context",
+        "sec-edgar-navigation",
+        "document-extraction"
+      ]
+    },
+    {
+      "name": "Ratios",
+      "role": "Financial Analyst",
+      "function": "Calculate financial ratios, compare to benchmarks, interpret meanings, identify outliers",
+      "importance": "High",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "alternative_id": "#212",
+      "alternative_name": "Phi 4",
+      "logic": 10.0,
+      "creative": 5.0,
+      "efficiency": 5.0,
+      "traits": [
+        "Deep-Thinker",
+        "Agentic",
+        "Tool-Master",
+        "Competition-Math",
+        "Precise"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "imo-ioi-gold",
+        "pure-reasoning",
+        "no-tools",
+        "financial-calculations"
+      ]
+    },
+    {
+      "name": "Industry",
+      "role": "Sector Analyst",
+      "function": "Provide industry context, research competitors, establish benchmarks, assess market position",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "competitive-analysis",
+        "industry-benchmarking"
+      ]
+    },
+    {
+      "name": "Risk",
+      "role": "Risk Analyst",
+      "function": "Analyze debt structure, assess earnings quality, identify red flags, evaluate risk factors",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 5.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "assumption-hunting",
+        "red-flag-identification",
+        "web-search"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 0,
+    "budget_optimized": 0
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "xAI",
+    "DeepSeek"
+  ]
+}

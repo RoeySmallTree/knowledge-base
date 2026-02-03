@@ -1,0 +1,63 @@
+{
+  "team_id": "d33836bb-cad2-4d6c-b4d7-85b1ce8a01c9",
+  "team_name": "The Research Engine",
+  "folder": "cortex",
+  "file": "the-research-sorter.md",
+  "assignments": [
+    {
+      "role": "Archivist",
+      "function": "Literature/Memory",
+      "importance": "Critical",
+      "model_id": "#203",
+      "model_name": "Llama 4 Scout",
+      "fallback_id": "#138",
+      "fallback_name": "Grok 4.1 Fast",
+      "tier": "A",
+      "reasoning": "Memory 10 requirement 10M context window is unmatched; perfect for holding entire literature corpus; Logic 7.5 handles categorization and relationship mapping; WEB-SEARCH capability essential for finding papers"
+    },
+    {
+      "role": "Analyst",
+      "function": "Extraction/Mapping",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#169",
+      "fallback_name": "Qwen3 235B Thinking",
+      "tier": "A",
+      "reasoning": "Logic 9 requirement met with Logic 10 for complex extraction; Brain-tier 9 matches COMPETITION-GRADE reasoning; PRECISE trait fits 'never misses a key finding'; IMO/IOI gold background understands complex academic structures"
+    },
+    {
+      "role": "Critic",
+      "function": "Contradiction/Watchdog",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Logic 10 requirement Logic 9 with SELF-VERIFYING; perfect for 'radar for contradictions'; VISIBLE-COT shows exactly how contradictions are detected; adversarial reasoning is core strength"
+    },
+    {
+      "role": "Theorist",
+      "function": "Hypothesis Evolution",
+      "importance": "High",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 9 + Creative 8 balance needed for 'alternative framings'; LONG-RUNNING trait fits tracking thesis evolution over time; 128K context holds thesis history and all evidence"
+    },
+    {
+      "role": "Scribe",
+      "function": "Synthesis/Citation",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 8 + Creative 7 balance for engaging synthesis; PRECISE trait = 'obsessed with clear, well-cited writing'; STRUCTURED-OUTPUT perfect for bibliography management; Self-Correcting catches unsupported claims"
+    }
+  ]
+}

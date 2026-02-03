@@ -1,11 +1,11 @@
 import { useQuery } from '@tanstack/react-query';
-import { ModelsData, VendorsData, Team, Member, UsersData, SessionsData } from '../types';
+import { ModelsData, VendorsData, TeamsData, MembersData, UsersData, SessionsData } from '../types';
 
 export const useModels = () => {
     return useQuery<ModelsData>({
         queryKey: ['models', 'active'],
         queryFn: async () => {
-            const res = await fetch('/api/models');
+            const res = await fetch('/api/models?active=true');
             if (!res.ok) throw new Error('Failed to fetch models');
             return res.json();
         }
@@ -16,7 +16,7 @@ export const useArchivedModels = () => {
     return useQuery<ModelsData>({
         queryKey: ['models', 'archived'],
         queryFn: async () => {
-            const res = await fetch('/api/archive');
+            const res = await fetch('/api/models?active=false');
             if (!res.ok) throw new Error('Failed to fetch archived models');
             return res.json();
         }
@@ -35,7 +35,7 @@ export const useVendors = () => {
 };
 
 export const useTeams = () => {
-    return useQuery<{ generatedAt: string; totalTeams: number; teams: Team[] }>({
+    return useQuery<TeamsData>({
         queryKey: ['teams'],
         queryFn: async () => {
             const res = await fetch('/api/teams');
@@ -46,7 +46,7 @@ export const useTeams = () => {
 };
 
 export const useMembers = () => {
-    return useQuery<{ generatedAt: string; totalMembers: number; members: Member[] }>({
+    return useQuery<MembersData>({
         queryKey: ['members'],
         queryFn: async () => {
             const res = await fetch('/api/members');
@@ -114,7 +114,7 @@ export const useUpdateVendorOrders = () => {
     return useMutation({
         mutationFn: async (orders: Array<{ id: number; display_order: number }>) => {
             const res = await fetch('/api/vendors/order', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orders })
             });
@@ -133,7 +133,7 @@ export const useUpdateTeamOrders = () => {
     return useMutation({
         mutationFn: async (orders: Array<{ id: string; display_order: number }>) => {
             const res = await fetch('/api/teams/order', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orders })
             });
@@ -152,7 +152,7 @@ export const useUpdateMemberOrders = () => {
     return useMutation({
         mutationFn: async (orders: Array<{ id: string; display_order: number }>) => {
             const res = await fetch('/api/members/order', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orders })
             });
@@ -170,8 +170,8 @@ export const useUpdateUser = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (user: any) => {
-            const res = await fetch('/api/users/update', {
-                method: 'POST',
+            const res = await fetch(`/api/users/${user.id}`, {
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ user })
             });

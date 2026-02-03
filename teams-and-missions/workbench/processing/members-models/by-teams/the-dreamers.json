@@ -1,0 +1,179 @@
+{
+  "team_id": "aebfd6d8-2307-4507-aab8-a121215d5b98",
+  "team_name": "The Dreamers",
+  "folder": "ops",
+  "file": "the-dreamers.md",
+  "members": [
+    {
+      "name": "Spark",
+      "role": "Direction/Chair",
+      "function": "Ignite exploration directions, facilitate expansion, drive convergence, manage pipeline from dream to plan",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 8.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Long-Horizon",
+        "Structured-Thinking",
+        "Self-Correcting",
+        "Production-Grade"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "creative-practical-balance",
+        "web-search"
+      ]
+    },
+    {
+      "name": "Nova",
+      "role": "Expansion/Ideation",
+      "function": "Expand ideas infinitely, make unexpected connections, prevent premature convergence, generate maximum possibility space",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "uncensored",
+        "character-consistency",
+        "divergent-thinking"
+      ]
+    },
+    {
+      "name": "Form",
+      "role": "Design/Synthesis",
+      "function": "Give coherent form to expanded ideas, synthesize without constraining, create tangible expressions of abstract concepts",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "browser-control",
+        "coherent-synthesis",
+        "design-creation"
+      ]
+    },
+    {
+      "name": "Ground",
+      "role": "Budget/Planning",
+      "function": "Build budgets and cost estimates, create timelines and milestones, plan resource allocation, make ideas executable",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "alternative_id": "#212",
+      "alternative_name": "Phi 4",
+      "logic": 9.0,
+      "creative": 7.5,
+      "efficiency": 10.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Fast-Twitch",
+        "Cost-Saver"
+      ],
+      "special_capabilities": [
+        "hybrid-architecture",
+        "efficient-compute",
+        "resource-optimization",
+        "plan-reconstruction"
+      ]
+    },
+    {
+      "name": "Scout",
+      "role": "Research/Feasibility",
+      "function": "Research precedents and history, navigate regulations and permits, assess feasibility, find constraints before they find us",
+      "importance": "Medium",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "regulatory-research",
+        "precedent-analysis"
+      ]
+    },
+    {
+      "name": "Terra",
+      "role": "Assumptions/Watchdog",
+      "function": "Identify and track assumptions, map dependencies, trigger reconstruction when assumptions break, enable graceful adaptation",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "assumption-hunting",
+        "dependency-mapping",
+        "reconstruction-triggering"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 1,
+    "budget_optimized": 3
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "Sao10K",
+    "MiniMax",
+    "NVIDIA",
+    "xAI",
+    "DeepSeek"
+  ]
+}

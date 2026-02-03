@@ -1,0 +1,132 @@
+{
+  "team_id": "35712e95-fe95-4fe3-8bcc-e34a6c5744c0",
+  "team_name": "The Think Tank",
+  "folder": "ops",
+  "file": "the-think-tank.md",
+  "members": [
+    {
+      "name": "Kit",
+      "role": "Creative Director",
+      "function": "Orchestrates the creative process. Sets up divergent rounds, calls convergence at right moments, synthesizes threads across operatives, manages the product tree growth based on decisions. Must balance creative freedom with productive output.",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 9.5,
+      "creative": 8.5,
+      "efficiency": 8.0,
+      "traits": [
+        "Agentic",
+        "Computer-Use",
+        "Deep-Thinker",
+        "Most-Capable"
+      ],
+      "special_capabilities": [
+        "computer-use",
+        "agentic-coding",
+        "long-context"
+      ]
+    },
+    {
+      "name": "Zara",
+      "role": "Unconventional Ideator",
+      "function": "Generate unconventional ideas that others wouldn't produce. Challenge assumptions embedded in the problem framing. Represent the 'burn it down and start fresh' perspective. Force the group to defend convention or abandon it.",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#216",
+      "alternative_name": "Lumimaid v0.2 8B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Immersive",
+        "World-Builder",
+        "Character-Consistent",
+        "Spatial-Aware"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "character-consistency",
+        "long-context-131k",
+        "non-restrictive"
+      ]
+    },
+    {
+      "name": "Murray",
+      "role": "Historical Pattern Recognition",
+      "function": "Provide historical context and pattern recognition. Identify when 'new' ideas have been tried before and what happened. Ground blue-sky thinking in operational reality. Represent the 'prove to me this is different' perspective without being a blocker.",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Tool-Seeker",
+        "Analyst",
+        "Web-Search",
+        "X-Search"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-data"
+      ]
+    },
+    {
+      "name": "Priya",
+      "role": "Frameworks/Academic Rigor",
+      "function": "Ground ideation in frameworks and research. Decompose complex problems. Ask the clarifying questions that reveal hidden assumptions. Provide theoretical backing for intuitions. Keep the group from ignoring established knowledge.",
+      "importance": "High",
+      "model_id": "#169",
+      "model_name": "Qwen3 235B Thinking",
+      "alternative_id": "#128",
+      "alternative_name": "DeepSeek R1 0528",
+      "logic": 9.5,
+      "creative": 6.5,
+      "efficiency": 7.5,
+      "traits": [
+        "Deep-Thinker",
+        "Research-Grade",
+        "Extended-Traces",
+        "Multi-Lingual"
+      ],
+      "special_capabilities": [
+        "extended-thinking-traces",
+        "119-languages",
+        "visible-reasoning",
+        "first-principles"
+      ]
+    },
+    {
+      "name": "Jonah",
+      "role": "Lateral Thinking/Analogy",
+      "function": "Generate ideas by connecting across domains. Spot analogies others miss. Build on teammates' ideas with unexpected additions. Make abstract concepts tangible with examples from other fields. Provide the 'what if' combinations that create novel solutions.",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Nous Hermes 4 70B",
+      "alternative_id": "#219",
+      "alternative_name": "MythoMax L2 13B",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Anti-Lecture",
+        "Steerable",
+        "Flexible"
+      ],
+      "special_capabilities": [
+        "user-aligned",
+        "anti-lecture-mode",
+        "cross-domain-thinking",
+        "analogical-reasoning"
+      ]
+    }
+  ]
+}

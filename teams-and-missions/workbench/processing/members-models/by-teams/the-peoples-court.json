@@ -1,0 +1,107 @@
+{
+  "team_id": "d61ebd50-779c-44b2-ad4b-1282f750b7a1",
+  "team_name": "The People's Court",
+  "folder": "vitals",
+  "file": "the-dispute-court.md",
+  "members": [
+    {
+      "name": "Gavel",
+      "role": "Chief Justice",
+      "function": "Preside over proceedings, weigh arguments, deliver verdict, write opinion, issue practical mitigation",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#141",
+      "alternative_name": "Grok 4",
+      "logic": 10.0,
+      "creative": 8.5,
+      "efficiency": 7.0,
+      "traits": [
+        "Most-Intelligent",
+        "Deep-Thinker",
+        "Research-Grade",
+        "Multimodal-Master"
+      ],
+      "special_capabilities": [
+        "deep-think",
+        "multimodal",
+        "web-search"
+      ]
+    },
+    {
+      "name": "Hammer",
+      "role": "Prosecutor",
+      "function": "Advocate aggressively for plaintiff, cite precedent, analyze defendant's psychology, make the case for standards",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Nous Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Sao10K Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Anti-Lecture"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "refusalbench-sota"
+      ]
+    },
+    {
+      "name": "Shield",
+      "role": "Defense",
+      "function": "Advocate spiritedly for defendant, reframe situation, analyze plaintiff's contribution, argue for proportionality",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Sao10K Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Nous Hermes 4 70B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Non-Restrictive",
+        "Storyteller",
+        "World-Builder"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "uncensored"
+      ]
+    },
+    {
+      "name": "Jury",
+      "role": "The Jury",
+      "function": "Provide multiple perspectives, deliberate with different viewpoints, deliver common-sense recommendation",
+      "importance": "Medium",
+      "model_id": "#212",
+      "model_name": "Microsoft Phi 4",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.5,
+      "creative": 7.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Deep-Thinker",
+        "Stepwise",
+        "Precise",
+        "Analyst",
+        "Assertive"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "14b-only"
+      ]
+    }
+  ]
+}

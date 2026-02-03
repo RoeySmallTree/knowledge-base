@@ -1,0 +1,63 @@
+{
+  "team_id": "c9944051-5511-46d9-b09e-0c9ed68455e1",
+  "team_name": "The Infinite Table",
+  "folder": "arcade",
+  "file": "the-infinite-table.md",
+  "assignments": [
+    {
+      "role": "Weaver",
+      "function": "Session Orchestrator/DM",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "S",
+      "reasoning": "Logic 9.5 for narrative coherence; Creative 8.5 for improvisation; 200K context for campaign tracking; Multi-agent for mode switching"
+    },
+    {
+      "role": "Codex",
+      "function": "Rules Engine/Dice",
+      "importance": "High",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "S",
+      "reasoning": "Logic 10 for perfect mechanics; Competition-math for combat; Brain-tier 9 for system knowledge; Creative 4 for pure validation"
+    },
+    {
+      "role": "Chronicler",
+      "function": "Knowledge Repository/Records",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "Web+X search for official lore; 2M context for all records; Logic 8.5 for organization; Memory 10 for complete recall"
+    },
+    {
+      "role": "Ensemble",
+      "function": "Character Voices/NPCs",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Character-consistent for personality; Creative 9.0 for dialogue; Spatial-aware for dynamics; 131K context for backstories"
+    },
+    {
+      "role": "Keeper",
+      "function": "Continuity Guardian/QA",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Self-verifying for contradiction detection; Logic 9.0; Visible CoT for transparency; Memory 10 to catch everything"
+    }
+  ]
+}

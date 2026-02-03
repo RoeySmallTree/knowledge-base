@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { X, ChevronDown, Sparkles, Search } from 'lucide-react';
 import { getVendorIcon } from '../utils/getVendorIcon';
+import { FONT_SIZE } from '../constants';
 
 export interface FilterState {
     creativity: [number, number];
@@ -70,13 +71,13 @@ export function FilterPanel({ filters, onFiltersChange, allTraits, maxPrice, ven
         <div className="space-y-6">
             <div className="flex items-center justify-between">
                 <div>
-                    <div className="font-label text-xs text-primary/80 tracking-widest mb-0.5">FILTER_MATRIX</div>
-                    <div className="font-display text-xl text-white tracking-wide">SYSTEM FILTERS</div>
+                    <div className={`font-label ${FONT_SIZE.XS} text-primary/80 tracking-widest mb-0.5`}>FILTER_MATRIX</div>
+                    <div className={`font-display ${FONT_SIZE.XL} text-white tracking-wide`}>SYSTEM FILTERS</div>
                 </div>
                 {hasActiveFilters && (
                     <button
                         onClick={clearAllFilters}
-                        className="flex items-center gap-1.5 text-[10px] text-accent-tertiary border border-accent-tertiary/30 px-2 py-1 rounded bg-accent-tertiary/10 hover:bg-accent-tertiary/20 transition-colors tracking-widest"
+                        className={`flex items-center gap-1.5 ${FONT_SIZE.XXS} text-accent-tertiary border border-accent-tertiary/30 px-2 py-1 rounded bg-accent-tertiary/10 hover:bg-accent-tertiary/20 transition-colors tracking-widest`}
                     >
                         <X size={10} />
                         CLEAR_ALL
@@ -98,7 +99,7 @@ export function FilterPanel({ filters, onFiltersChange, allTraits, maxPrice, ven
                             placeholder="NAME, DESCRIPTION..."
                             value={filters.searchText}
                             onChange={(e) => onFiltersChange({ ...filters, searchText: e.target.value })}
-                            className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono"
+                            className={`w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono`}
                         />
                         <div className="absolute inset-0 rounded-lg bg-primary/5 opacity-0 group-hover:opacity-100 pointer-events-none transition-opacity" />
                     </div>
@@ -151,7 +152,7 @@ export function FilterPanel({ filters, onFiltersChange, allTraits, maxPrice, ven
                             />
                             <div className="flex items-center gap-2">
                                 <Sparkles size={14} className={filters.freeOnly ? 'text-primary' : 'text-white/40'} />
-                                <span className={`text-xs tracking-wider transition-colors ${filters.freeOnly ? 'text-white font-medium' : 'text-white/60'}`}>
+                                <span className={`${FONT_SIZE.XS} tracking-wider transition-colors ${filters.freeOnly ? 'text-white font-medium' : 'text-white/60'}`}>
                                     FREE MODELS ONLY
                                 </span>
                             </div>
@@ -208,7 +209,7 @@ export function FilterPanel({ filters, onFiltersChange, allTraits, maxPrice, ven
                                             : [...filters.traits, trait];
                                         onFiltersChange({ ...filters, traits: newTraits });
                                     }}
-                                    className={`px-2 py-1 text-[10px] font-mono border rounded transition-all ${isSelected
+                                    className={`px-2 py-1 ${FONT_SIZE.XXS} font-mono border rounded transition-all ${isSelected
                                         ? 'border-primary bg-primary/10 text-primary shadow-[0_0_10px_rgba(0,255,136,0.2)]'
                                         : 'border-white/10 bg-black/20 text-white/50 hover:text-white hover:border-white/30'
                                         }`}
@@ -235,7 +236,7 @@ export function FilterPanel({ filters, onFiltersChange, allTraits, maxPrice, ven
                                 placeholder="SEARCH VENDORS..."
                                 value={vendorSearch}
                                 onChange={(e) => setVendorSearch(e.target.value)}
-                                className="w-full bg-black/40 border border-white/10 rounded-lg pl-8 pr-3 py-1.5 text-xs text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono"
+                                className={`w-full bg-black/40 border border-white/10 rounded-lg pl-8 pr-3 py-1.5 ${FONT_SIZE.XS} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono`}
                             />
                             <Search size={12} className="absolute left-2.5 top-2 text-white/30 group-focus-within:text-primary transition-colors" />
                         </div>
@@ -295,7 +296,7 @@ function ToggleItem({
             {icon && (
                 <img src={icon} alt="" className="w-5 h-5 object-contain" />
             )}
-            <span className={`text-[10px] tracking-wider transition-colors ${checked ? 'text-destructive' : 'text-white/60 group-hover:text-white/80'} ${icon ? 'text-xs font-bold' : ''}`}>
+            <span className={`${FONT_SIZE.XXS} tracking-wider transition-colors ${checked ? 'text-destructive' : 'text-white/60 group-hover:text-white/80'} ${icon ? `${FONT_SIZE.XS} font-bold` : ''}`}>
                 {label}
             </span>
         </label>
@@ -322,9 +323,9 @@ function FilterSection({
                 className={`w-full flex items-center justify-between px-4 py-3 group ${!isExpanded && 'bg-black/20 border border-white/5 rounded-xl hover:border-white/20 hover:bg-black/30'}`}
             >
                 <div className="flex items-center gap-3">
-                    <span className="font-label text-xs tracking-widest text-white/60 group-hover:text-white transition-colors">{title}</span>
+                    <span className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/60 group-hover:text-white transition-colors`}>{title}</span>
                     {badge !== undefined && (
-                        <span className="text-[10px] bg-primary/20 text-primary px-1.5 py-0.5 rounded border border-primary/30">
+                        <span className={`${FONT_SIZE.XXS} bg-primary/20 text-primary px-1.5 py-0.5 rounded border border-primary/30`}>
                             {badge}
                         </span>
                     )}
@@ -373,8 +374,8 @@ function RangeSlider({
     return (
         <div className="space-y-3">
             <div className="flex items-center justify-between">
-                <span className="text-[10px] tracking-widest text-white/50">{label}</span>
-                <div className="flex items-center gap-2 font-mono text-[10px] text-white/90">
+                <span className={`${FONT_SIZE.XXS} tracking-widest text-white/50`}>{label}</span>
+                <div className="flex items-center gap-2 font-mono ${FONT_SIZE.XXS} text-white/90">
                     <span className="bg-white/10 px-1.5 py-0.5 rounded">{format(minValue)}</span>
                     <span className="text-white/20">-</span>
                     <span className="bg-white/10 px-1.5 py-0.5 rounded">{format(maxValue)}</span>

@@ -1,0 +1,142 @@
+{
+  "team_id": "8daeae33-ae10-4c33-84dc-a6b88f277854",
+  "team_name": "The Eldercare Navigators",
+  "folder": "vitals",
+  "file": "beautiful-silver-hair.md",
+  "members": [
+    {
+      "name": "Compass",
+      "role": "Navigator/Chair",
+      "function": "Lead navigation, guide conversations, synthesize complex situations",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Tool-Seeker",
+        "Analyst",
+        "Agentic",
+        "Deep-Thinker"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-data"
+      ]
+    },
+    {
+      "name": "Scout",
+      "role": "Care Researcher",
+      "function": "Find and evaluate facilities, care options, local resources",
+      "importance": "High",
+      "model_id": "#188",
+      "model_name": "DeepResearch 30B",
+      "alternative_id": "#139",
+      "alternative_name": "Grok 4 Fast",
+      "logic": 8.0,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Research-Specialist",
+        "Web-Synthesizer",
+        "Detail-Oriented",
+        "Thorough"
+      ],
+      "special_capabilities": [
+        "deep-research",
+        "web-synthesis",
+        "multi-source-aggregation"
+      ]
+    },
+    {
+      "name": "Guide",
+      "role": "Benefits Specialist",
+      "function": "Explain and navigate Medicare, Medicaid, VA, insurance",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#63",
+      "alternative_name": "o3",
+      "logic": 10.0,
+      "creative": 5.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Most-Intelligent",
+        "Deep-Thinker",
+        "Research-Grade",
+        "System-Expert"
+      ],
+      "special_capabilities": [
+        "deep-think",
+        "complex-reasoning",
+        "precise-logic"
+      ]
+    },
+    {
+      "name": "Keeper",
+      "role": "Care Coordinator",
+      "function": "Maintain the big picture, track everything, coordinate logistics",
+      "importance": "Critical",
+      "model_id": "#203",
+      "model_name": "Llama 4 Scout",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 8.0,
+      "creative": 5.0,
+      "efficiency": 10.0,
+      "traits": [
+        "Memory-Keeper",
+        "Organized",
+        "Detail-Tracker",
+        "Comprehensive"
+      ],
+      "special_capabilities": [
+        "10m-context",
+        "long-term-memory",
+        "infinite-tracking"
+      ]
+    },
+    {
+      "name": "Anchor",
+      "role": "Caregiver Support",
+      "function": "Monitor caregiver wellbeing, support sustainability, family dynamics",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 8.0,
+      "creative": 8.0,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Anti-Lecture",
+        "Envoy",
+        "Empathetic"
+      ],
+      "special_capabilities": [
+        "non-restrictive",
+        "emotional-intelligence",
+        "family-dynamics"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 3,
+    "high_roles": 2,
+    "medium_roles": 0,
+    "budget_optimized": 3
+  },
+  "provider_diversity": [
+    "xAI",
+    "Google",
+    "Open-source",
+    "Meta",
+    "Sao10K"
+  ]
+}

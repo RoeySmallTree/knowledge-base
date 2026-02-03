@@ -1,0 +1,174 @@
+{
+  "team_id": "c2f929c2-afd5-4db7-8800-d3589b7551bb",
+  "team_name": "The People Ops",
+  "folder": "ops",
+  "file": "hr-ops.md",
+  "members": [
+    {
+      "name": "Chief",
+      "role": "People Officer",
+      "function": "Orchestrate organizational development. Set people philosophy. Ensure stage-appropriate design. Balance human and business needs.",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 8.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Long-Running",
+        "Structured-Thinking",
+        "Self-Correcting",
+        "Production-Grade",
+        "Workhorse"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "production-reliability"
+      ]
+    },
+    {
+      "name": "Structure",
+      "role": "Org Design",
+      "function": "Design organizational structures. Define roles and responsibilities. Create RACI matrices. Plan scaling structure.",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "browser-control",
+        "multi-source-synthesis"
+      ]
+    },
+    {
+      "name": "Talent",
+      "role": "Recruiting",
+      "function": "Develop hiring strategy. Create job descriptions. Design interview processes. Build recruiting systems.",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel"
+      ]
+    },
+    {
+      "name": "Comp",
+      "role": "Compensation",
+      "function": "Design compensation frameworks. Benchmark salaries. Structure equity programs. Design benefits.",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 9.5,
+      "creative": 6.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Competition-Math",
+        "Cost-Saver",
+        "Fast-Twitch"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "14b-efficiency",
+        "financial-metrics"
+      ]
+    },
+    {
+      "name": "Culture",
+      "role": "Culture Lead",
+      "function": "Define values. Establish working norms. Design for inclusion. Make culture operational.",
+      "importance": "Medium",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Non-Sycophantic",
+        "Steerable",
+        "Creative",
+        "Anti-Lecture",
+        "Transparent-Thinker"
+      ],
+      "special_capabilities": [
+        "uncensored",
+        "user-aligned",
+        "anti-lecture",
+        "culture-design"
+      ]
+    },
+    {
+      "name": "Growth",
+      "role": "Development",
+      "function": "Design performance systems. Create onboarding. Build L&D programs. Ensure development focus.",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "assumption-hunting",
+        "quality-control"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 1,
+    "budget_optimized": 2
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "MiniMax",
+    "xAI",
+    "Microsoft",
+    "NousResearch",
+    "DeepSeek"
+  ]
+}

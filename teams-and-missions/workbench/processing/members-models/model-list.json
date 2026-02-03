@@ -1,0 +1,1471 @@
+{
+  "generated_at": "2026-01-23T12:04:45.848Z",
+  "total_models": 77,
+  "active": 77,
+  "tested": 77,
+  "models": [
+    {
+      "id": 128,
+      "api_id": "deepseek/deepseek-r1-0528",
+      "display_name": "R1 0528",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 126,
+      "api_id": "deepseek/deepseek-v3.1-terminus",
+      "display_name": "DeepSeek V3.1 Terminus",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 91,
+      "api_id": "mistralai/devstral-2512:free",
+      "display_name": "Devstral 2 2512",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 2,
+      "api_id": "bytedance-seed/seed-1.6",
+      "display_name": "Seed 1.6",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 210,
+      "api_id": "cohere/command-r-08-2024",
+      "display_name": "Cohere: Command R (08-2024)",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 138,
+      "api_id": "x-ai/grok-4.1-fast",
+      "display_name": "Grok 4.1 Fast",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 139,
+      "api_id": "x-ai/grok-4-fast",
+      "display_name": "xAI: Grok 4 Fast",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 130,
+      "api_id": "deepseek/deepseek-r1-distill-qwen-32b",
+      "display_name": "DeepSeek: R1 Distill Qwen 32B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 12,
+      "api_id": "google/gemini-3-flash-preview",
+      "display_name": "Gemini 3 Flash Preview",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 188,
+      "api_id": "alibaba/tongyi-deepresearch-30b-a3b",
+      "display_name": "Tongyi DeepResearch 30B A3B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 141,
+      "api_id": "x-ai/grok-4",
+      "display_name": "Grok 4",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 162,
+      "api_id": "qwen/qwen3-next-80b-a3b-thinking",
+      "display_name": "Qwen3 Next 80B A3B Thinking",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 163,
+      "api_id": "qwen/qwen3-next-80b-a3b-instruct",
+      "display_name": "Qwen3 Next 80B A3B Instruct",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 21,
+      "api_id": "google/gemini-2.5-pro",
+      "display_name": "Gemini 2.5 Pro",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 220,
+      "api_id": "openai/gpt-5.2-codex",
+      "display_name": "GPT-5.2-Codex",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 42,
+      "api_id": "openai/gpt-5.1",
+      "display_name": "GPT-5.1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 41,
+      "api_id": "openai/gpt-5.1-codex-max",
+      "display_name": "GPT-5.1-Codex-Max",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 36,
+      "api_id": "nvidia/nemotron-nano-9b-v2:free",
+      "display_name": "Nemotron Nano 9B V2",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 5,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 65,
+      "api_id": "openai/gpt-4.1",
+      "display_name": "GPT-4.1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 66,
+      "api_id": "openai/gpt-4.1-mini",
+      "display_name": "GPT-4.1 Mini",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 55,
+      "api_id": "openai/gpt-5-mini",
+      "display_name": "GPT-5 Mini",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 54,
+      "api_id": "openai/gpt-5",
+      "display_name": "GPT-5",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 60,
+      "api_id": "openai/o3-pro",
+      "display_name": "o3 Pro",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 64,
+      "api_id": "openai/o4-mini",
+      "display_name": "o4 Mini",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 62,
+      "api_id": "openai/o4-mini-high",
+      "display_name": "o4 Mini High",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 57,
+      "api_id": "openai/gpt-oss-120b",
+      "display_name": "gpt-oss-120b",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 59,
+      "api_id": "openai/gpt-oss-20b",
+      "display_name": "gpt-oss-20b",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 14,
+      "api_id": "google/gemini-3-pro-preview",
+      "display_name": "Gemini 3 Pro Preview",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 71,
+      "api_id": "openai/o3-mini-high",
+      "display_name": "o3 Mini High",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 204,
+      "api_id": "meta-llama/llama-3.3-70b-instruct",
+      "display_name": "Llama 3.3 70B Instruct",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 213,
+      "api_id": "sao10k/l3.3-euryale-70b",
+      "display_name": " Llama 3.3 Euryale 70B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 67,
+      "api_id": "openai/gpt-4.1-nano",
+      "display_name": "GPT-4.1 Nano",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 196,
+      "api_id": "tencent/hunyuan-a13b-instruct",
+      "display_name": "Hunyuan A13B Instruct",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 73,
+      "api_id": "openai/o1",
+      "display_name": "o1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 96,
+      "api_id": "mistralai/mistral-large-2512",
+      "display_name": "Mistral Large 3 2512",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 98,
+      "api_id": "mistralai/mistral-medium-3.1",
+      "display_name": "Mistral Medium 3.1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 94,
+      "api_id": "mistralai/ministral-8b-2512",
+      "display_name": "Ministral 3 8B 2512",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 95,
+      "api_id": "mistralai/ministral-3b-2512",
+      "display_name": "Ministral 3 3B 2512",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 102,
+      "api_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "display_name": "Mistral Small 3.2 24B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 134,
+      "api_id": "prime-intellect/intellect-3",
+      "display_name": "Prime Intellect: INTELLECT-3",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 122,
+      "api_id": "deepseek/deepseek-v3.2-speciale",
+      "display_name": "DeepSeek V3.2 Speciale",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 136,
+      "api_id": "anthropic/claude-sonnet-4.5",
+      "display_name": "Anthropic: Claude Sonnet 4.5",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 137,
+      "api_id": "anthropic/claude-opus-4.1",
+      "display_name": "Anthropic: Claude Opus 4.1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 132,
+      "api_id": "deepseek/deepseek-r1-distill-llama-70b",
+      "display_name": "R1 Distill Llama 70B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 144,
+      "api_id": "deepcogito/cogito-v2.1-671b",
+      "display_name": "Deep Cogito: Cogito v2.1 671B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 145,
+      "api_id": "deepcogito/cogito-v2-preview-llama-405b",
+      "display_name": "Deep Cogito: Cogito V2 Preview Llama 405B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 146,
+      "api_id": "deepcogito/cogito-v2-preview-llama-70b",
+      "display_name": "Deep Cogito: Cogito V2 Preview Llama 70B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 149,
+      "api_id": "moonshotai/kimi-k2-thinking",
+      "display_name": "MoonshotAI: Kimi K2 Thinking",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 151,
+      "api_id": "moonshotai/kimi-k2-0905:exacto",
+      "display_name": "MoonshotAI: Kimi K2 0905 (exacto)",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 152,
+      "api_id": "moonshotai/kimi-k2",
+      "display_name": "MoonshotAI: Kimi K2 0711",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 153,
+      "api_id": "moonshotai/kimi-dev-72b",
+      "display_name": "MoonshotAI: Kimi Dev 72B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 160,
+      "api_id": "qwen/qwen3-vl-235b-a22b-instruct",
+      "display_name": "Qwen3 VL 235B A22B Instruct",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 135,
+      "api_id": "anthropic/claude-opus-4.5",
+      "display_name": "Anthropic: Claude Opus 4.5",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 63,
+      "api_id": "openai/o3",
+      "display_name": "o3",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 11,
+      "api_id": "z-ai/glm-4.5-air",
+      "display_name": "GLM 4.5 Air",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 20,
+      "api_id": "google/gemini-2.5-flash",
+      "display_name": "Gemini 2.5 Flash",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 40,
+      "api_id": "openai/gpt-5.2",
+      "display_name": "GPT-5.2",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 181,
+      "api_id": "qwen/qwq-32b",
+      "display_name": "QwQ 32B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 3,
+      "api_id": "minimax/minimax-m2.1",
+      "display_name": "MiniMax M2.1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 19,
+      "api_id": "google/gemini-2.5-flash-lite",
+      "display_name": "Gemini 2.5 Flash Lite",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 72,
+      "api_id": "openai/o3-mini",
+      "display_name": "o3 Mini",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 5,
+      "api_id": "z-ai/glm-4.7",
+      "display_name": "GLM 4.7",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 10,
+      "api_id": "z-ai/glm-4.5",
+      "display_name": "GLM 4.5",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 170,
+      "api_id": "qwen/qwen3-coder",
+      "display_name": "Qwen: Qwen3 Coder 480B A35B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 169,
+      "api_id": "qwen/qwen3-235b-a22b-thinking-2507",
+      "display_name": "Qwen: Qwen3 235B A22B Thinking 2507",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 140,
+      "api_id": "x-ai/grok-code-fast-1",
+      "display_name": "Grok Code Fast 1",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 166,
+      "api_id": "qwen/qwen3-30b-a3b-thinking-2507",
+      "display_name": "Qwen3 30B A3B Thinking 2507",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 172,
+      "api_id": "qwen/qwen3-235b-a22b-2507",
+      "display_name": "Qwen3 235B A22B Instruct 2507",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 142,
+      "api_id": "x-ai/grok-3-mini",
+      "display_name": "Grok 3 Mini",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 143,
+      "api_id": "x-ai/grok-3",
+      "display_name": "Grok 3",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 168,
+      "api_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "display_name": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 191,
+      "api_id": "nousresearch/hermes-4-70b",
+      "display_name": "Hermes 4 70B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 186,
+      "api_id": "thedrummer/unslopnemo-12b",
+      "display_name": "TheDrummer: UnslopNemo 12B",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 190,
+      "api_id": "stepfun-ai/step3",
+      "display_name": "StepFun: Step3",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 203,
+      "api_id": "meta-llama/llama-4-scout",
+      "display_name": "Llama 4 Scout",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 202,
+      "api_id": "meta-llama/llama-4-maverick",
+      "display_name": "Llama 4 Maverick",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    },
+    {
+      "id": 208,
+      "api_id": "cohere/command-a",
+      "display_name": "Cohere: Command A",
+      "is_active": true,
+      "ranking": null,
+      "score": null,
+      "tier": null,
+      "isFail": null,
+      "failReason": null,
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "tested": true
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect, useLayoutEffect, useRef, type CSSProperties } from 'react';
 import { createPortal } from 'react-dom';
 import { ChevronDown, ChevronRight } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 import { LLMModel, Vendor } from '../types';
 import { getVendorIcon } from '../utils/getVendorIcon';
 
@@ -86,9 +87,10 @@ export function FallbackPicker({
         const map: Record<string, Record<string, LLMModel[]>> = {};
         models.forEach(model => {
             const vendorId = String(model.vendor_id);
+            const family = model.modelFamily ?? 'Unknown';
             if (!map[vendorId]) map[vendorId] = {};
-            if (!map[vendorId][model.modelFamily]) map[vendorId][model.modelFamily] = [];
-            map[vendorId][model.modelFamily].push(model);
+            if (!map[vendorId][family]) map[vendorId][family] = [];
+            map[vendorId][family].push(model);
         });
         return map;
     }, [models]);
@@ -147,7 +149,7 @@ export function FallbackPicker({
                 ref={triggerRef}
                 className={`flex w-full items-center justify-between gap-2 cyber-input cyber-chamfer-sm ${value ? 'text-primary' : 'text-foreground'}`}
             >
-                <span className="truncate text-sm">{fallbackLabel.toUpperCase()}</span>
+                <span className={`truncate ${FONT_SIZE.SM}`}>{fallbackLabel.toUpperCase()}</span>
                 <ChevronDown size={14} className="text-muted-foreground" />
             </button>
 
@@ -184,7 +186,7 @@ export function FallbackPicker({
                                     <button
                                         type="button"
                                         onClick={(e) => toggleVendor(e, vendorId)}
-                                        className="flex w-full items-center justify-between px-2 py-1 font-label text-sm text-foreground hover:text-primary"
+                                        className={`flex w-full items-center justify-between px-2 py-1 font-label ${FONT_SIZE.SM} text-foreground hover:text-primary`}
                                     >
                                         <span className="flex items-center gap-2">
                                             <ChevronRight size={14} className={`transition-transform ${vendorExpanded ? 'rotate-90' : ''}`} />
@@ -200,7 +202,7 @@ export function FallbackPicker({
                                             </span>
                                             {vendorName}
                                         </span>
-                                        <span className="text-sm text-muted-foreground">{familyNames.length}</span>
+                                        <span className={`${FONT_SIZE.SM} text-muted-foreground`}>{familyNames.length}</span>
                                     </button>
 
                                     {vendorExpanded && (
@@ -219,7 +221,7 @@ export function FallbackPicker({
                                                         <button
                                                             type="button"
                                                             onClick={(e) => toggleFamily(e, vendorId, family)}
-                                                            className="flex w-full items-center justify-between px-2 py-1 text-sm text-muted-foreground hover:text-primary"
+                                                            className={`flex w-full items-center justify-between px-2 py-1 ${FONT_SIZE.SM} text-muted-foreground hover:text-primary`}
                                                         >
                                                             <span className="flex items-center gap-2">
                                                                 <ChevronRight size={12} className={`transition-transform ${familyExpanded ? 'rotate-90' : ''}`} />
@@ -244,7 +246,7 @@ export function FallbackPicker({
                                                                                     setIsOpen(false);
                                                                                 }
                                                                             }}
-                                                                            className="flex w-full items-center justify-between px-2 py-1 text-sm text-foreground hover:text-primary"
+                                                                            className={`flex w-full items-center justify-between px-2 py-1 ${FONT_SIZE.SM} text-foreground hover:text-primary`}
                                                                         >
                                                                             <span className="truncate">{getDisplayName(model)}</span>
                                                                         </button>

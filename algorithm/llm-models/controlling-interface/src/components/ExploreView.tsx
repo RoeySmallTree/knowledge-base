@@ -1,4 +1,5 @@
 import { useState, useMemo } from 'react';
+import { FONT_SIZE } from '../constants';
 import { Compass, ChevronDown, RefreshCw } from 'lucide-react';
 import { ExploreCard } from './ExploreCard';
 import { GlitchIntro } from './GlitchIntro';
@@ -58,7 +59,7 @@ export function ExploreView({ activeModels, ownedApiIds = new Set(), onHideModel
                 <div className="space-y-2">
                     <div className="flex items-center gap-3 text-accent-tertiary">
                         <Compass size={32} />
-                        <h1 className="font-display text-3xl tracking-wide">EXPLORE_MODELS</h1>
+                        <h1 className={`font-display ${FONT_SIZE.XXXL} tracking-wide`}>EXPLORE_MODELS</h1>
                     </div>
                     <p className="font-mono text-white/50 max-w-2xl">
                         Discover available models from OpenRouter endpoint. ({Object.values(groupedModels).reduce((acc, curr) => acc + curr.length, 0)} shown)
@@ -71,7 +72,7 @@ export function ExploreView({ activeModels, ownedApiIds = new Set(), onHideModel
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-black/40 border border-white/10 text-white/60 hover:text-primary hover:border-primary/50 hover:bg-primary/10 transition-all disabled:opacity-50 disabled:cursor-not-allowed group"
                 >
                     <RefreshCw size={16} className={`transition-transform duration-700 ${refreshMutation.isPending ? 'animate-spin' : 'group-hover:rotate-180'}`} />
-                    <span className="font-mono text-xs tracking-wider font-bold">
+                    <span className={`font-mono ${FONT_SIZE.XS} tracking-wider font-bold`}>
                         {refreshMutation.isPending ? 'REFRESHING...' : 'REFRESH CACHE'}
                     </span>
                 </button>
@@ -85,10 +86,10 @@ export function ExploreView({ activeModels, ownedApiIds = new Set(), onHideModel
                             className="w-full flex items-center justify-between p-4 hover:bg-white/5 transition-colors"
                         >
                             <div className="flex items-center gap-3">
-                                <span className={`font-display text-lg tracking-wide ${expandedVendors.has(vendor) ? 'text-accent-tertiary' : 'text-white'}`}>
+                                <span className={`font-display ${FONT_SIZE.LG} tracking-wide ${expandedVendors.has(vendor) ? 'text-accent-tertiary' : 'text-white'}`}>
                                     {vendor.toUpperCase()}
                                 </span>
-                                <span className="px-2 py-0.5 rounded bg-white/5 text-xs font-mono text-white/40">
+                                <span className={`px-2 py-0.5 rounded bg-white/5 ${FONT_SIZE.XS} font-mono text-white/40`}>
                                     {groupedModels[vendor].length}
                                 </span>
                             </div>

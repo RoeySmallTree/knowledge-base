@@ -3,13 +3,13 @@ import { LLMModel, Vendor } from '../types';
 import { X, Save, ChevronDown, Search } from 'lucide-react';
 import { StringArrayInput } from './StringArrayInput';
 import { FallbackPicker } from './FallbackPicker';
+import { FONT_SIZE } from '../constants';
 
 interface EditModalProps {
     isOpen: boolean;
     onClose: () => void;
     onSave: (model: LLMModel) => void;
     model: LLMModel | null;
-    vendorName: string;
     models: LLMModel[];
     vendorsById: Record<string, Vendor>;
     vendors: Vendor[];
@@ -23,7 +23,7 @@ function VendorSelect({
     vendorsById
 }: {
     vendors: Vendor[],
-    value: number | string,
+    value: number | string | null,
     onChange: (id: number | string) => void,
     vendorsById: Record<string, Vendor>
 }) {
@@ -31,7 +31,7 @@ function VendorSelect({
     const [search, setSearch] = useState('');
     const wrapperRef = useRef<HTMLDivElement>(null);
 
-    const activeVendor = vendorsById[value];
+    const activeVendor = value !== null ? vendorsById[String(value)] : undefined;
     const displayName = activeVendor?.display_name || 'Unknown Vendor';
 
     // Filter vendors
@@ -51,12 +51,12 @@ function VendorSelect({
 
     return (
         <div className="space-y-1.5" ref={wrapperRef}>
-            <label className="font-label text-xs tracking-widest text-white/40 uppercase">VENDOR</label>
+            <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/40 uppercase`}>VENDOR</label>
             <div className="relative">
                 <button
                     type="button"
                     onClick={() => setIsOpen(!isOpen)}
-                    className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white flex items-center justify-between hover:bg-white/5 transition-colors focus:ring-1 focus:ring-primary/50"
+                    className={`w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 ${FONT_SIZE.SM} text-white flex items-center justify-between hover:bg-white/5 transition-colors focus:ring-1 focus:ring-primary/50`}
                 >
                     <span className="font-mono truncate">{displayName}</span>
                     <ChevronDown size={14} className={`text-white/40 transition-transform ${isOpen ? 'rotate-180' : ''}`} />
@@ -72,7 +72,7 @@ function VendorSelect({
                                     value={search}
                                     onChange={(e) => setSearch(e.target.value)}
                                     placeholder="Search vendors..."
-                                    className="w-full bg-white/5 border border-white/10 rounded px-2 py-1.5 pl-8 text-xs text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50"
+                                    className={`w-full bg-white/5 border border-white/10 rounded px-2 py-1.5 pl-8 ${FONT_SIZE.XS} text-white placeholder:text-white/20 focus:outline-none focus:border-primary/50`}
                                     autoFocus
                                 />
                             </div>
@@ -87,7 +87,7 @@ function VendorSelect({
                                         setIsOpen(false);
                                         setSearch('');
                                     }}
-                                    className={`w-full text-left px-3 py-2 rounded text-xs font-mono transition-colors flex items-center justify-between group
+                                    className={`w-full text-left px-3 py-2 rounded ${FONT_SIZE.XS} font-mono transition-colors flex items-center justify-between group
                                         ${String(vendor.id) === String(value) ? 'bg-primary/20 text-primary' : 'text-white/80 hover:bg-white/5 hover:text-white'}
                                     `}
                                 >
@@ -96,7 +96,7 @@ function VendorSelect({
                                 </button>
                             ))}
                             {filtered.length === 0 && (
-                                <div className="px-3 py-4 text-center text-white/30 text-xs font-mono">
+                                <div className={`px-3 py-4 text-center text-white/30 ${FONT_SIZE.XS} font-mono`}>
                                     NO_MATCHES_FOUND
                                 </div>
                             )}
@@ -108,7 +108,7 @@ function VendorSelect({
     );
 }
 
-export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, vendorsById, modelsById, vendors }: EditModalProps) {
+export function EditModal({ isOpen, onClose, onSave, model, models, vendorsById, modelsById, vendors }: EditModalProps) {
     const [formData, setFormData] = useState<LLMModel | null>(null);
 
     useEffect(() => {
@@ -170,10 +170,10 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
             <div className="cyber-panel cyber-chamfer w-full max-w-4xl max-h-[90vh] overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] flex flex-col border border-white/10 bg-black/80 backdrop-blur-xl">
                 <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-6 py-4">
                     <div>
-                        <div className="font-label text-xs text-primary/80 tracking-widest mb-1">
+                        <div className={`font-label ${FONT_SIZE.XS} text-primary/80 tracking-widest mb-1`}>
                             {formData.id ? 'EDIT_MODEL' : 'CREATE_MODEL'}
                         </div>
-                        <h2 className="font-display text-xl text-white tracking-wide flex items-center gap-2">
+                        <h2 className={`font-display ${FONT_SIZE.XL} text-white tracking-wide flex items-center gap-2`}>
                             <span className="w-2 h-2 rounded-full bg-primary shadow-[0_0_8px_rgba(0,255,136,0.6)]" />
                             {displayName || <span className="text-white/30 italic">NEW_MODEL</span>}
                         </h2>
@@ -215,7 +215,7 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
                             </div>
 
                             <div className="p-4 rounded-lg bg-white/5 border border-white/5 space-y-3">
-                                <div className="font-label text-xs text-white/40 tracking-widest">$ PER 1M TOKENS</div>
+                                <div className={`font-label ${FONT_SIZE.XS} text-white/40 tracking-widest`}>$ PER 1M TOKENS</div>
                                 <div className="grid grid-cols-3 gap-3">
                                     <Input
                                         label="PROMPT"
@@ -248,7 +248,7 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
 
                         <div className="space-y-4">
                             <div className="grid grid-cols-1 gap-6 p-5 rounded-xl bg-white/5 border border-white/5">
-                                <h3 className="font-label text-xs text-white/40 tracking-widest mb-2">PERFORMANCE_METRICS</h3>
+                                <h3 className={`font-label ${FONT_SIZE.XS} text-white/40 tracking-widest mb-2`}>PERFORMANCE_METRICS</h3>
                                 <ScoreSlider
                                     label="CREATIVITY"
                                     name="creativeScore"
@@ -280,7 +280,7 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
                                 <div className="space-y-4">
                                     {/* Fallback Picker */}
                                     <div className="space-y-1.5">
-                                        <label className="font-label text-xs tracking-widest text-white/40 uppercase">FALLBACK_MODEL</label>
+                                        <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/40 uppercase`}>FALLBACK_MODEL</label>
                                         <FallbackPicker
                                             models={models}
                                             vendorsById={vendorsById}
@@ -301,7 +301,7 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
                                             onChange={(e) => setFormData(prev => prev ? ({ ...prev, active: e.target.checked }) : null)}
                                             className="w-5 h-5 rounded border-white/20 bg-black/40 text-primary focus:ring-primary/50"
                                         />
-                                        <label htmlFor="is_active" className="font-label text-xs tracking-widest text-white/80 cursor-pointer select-none">IS_ACTIVE_MODEL</label>
+                                        <label htmlFor="is_active" className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/80 cursor-pointer select-none`}>IS_ACTIVE_MODEL</label>
                                     </div>
                                 </div>
                             </div>
@@ -312,13 +312,13 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
                         <button
                             type="button"
                             onClick={onClose}
-                            className="px-6 py-2.5 rounded-lg border border-white/10 text-xs font-bold tracking-widest text-white/60 hover:text-white hover:bg-white/5 transition-all"
+                            className={`px-6 py-2.5 rounded-lg border border-white/10 ${FONT_SIZE.XS} font-bold tracking-widest text-white/60 hover:text-white hover:bg-white/5 transition-all`}
                         >
                             CANCEL
                         </button>
                         <button
                             type="submit"
-                            className="px-6 py-2.5 rounded-lg bg-primary/20 border border-primary/50 text-primary text-xs font-bold tracking-widest hover:bg-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,136,0.2)]"
+                            className={`px-6 py-2.5 rounded-lg bg-primary/20 border border-primary/50 text-primary ${FONT_SIZE.XS} font-bold tracking-widest hover:bg-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center gap-2 shadow-[0_0_15px_rgba(0,255,136,0.2)]`}
                         >
                             <Save size={14} />
                             SAVE_CHANGES
@@ -333,7 +333,7 @@ export function EditModal({ isOpen, onClose, onSave, model, vendorName, models, 
 function Input({ label, name, value, onChange, type = "text", step, disabled = false, placeholder }: any) {
     return (
         <div className="space-y-1.5">
-            <label className="font-label text-xs tracking-widest text-white/40 uppercase">{label}</label>
+            <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/40 uppercase`}>{label}</label>
             <input
                 type={type}
                 name={name}
@@ -342,7 +342,7 @@ function Input({ label, name, value, onChange, type = "text", step, disabled = f
                 step={step}
                 disabled={disabled}
                 placeholder={placeholder}
-                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono disabled:opacity-50 disabled:cursor-not-allowed"
+                className={`w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono disabled:opacity-50 disabled:cursor-not-allowed`}
             />
         </div>
     );
@@ -351,13 +351,13 @@ function Input({ label, name, value, onChange, type = "text", step, disabled = f
 function TextArea({ label, name, value, onChange }: any) {
     return (
         <div className="space-y-1.5">
-            <label className="font-label text-xs tracking-widest text-white/40 uppercase">{label}</label>
+            <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/40 uppercase`}>{label}</label>
             <textarea
                 name={name}
                 value={value}
                 onChange={onChange}
                 rows={3}
-                className="w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono resize-none"
+                className={`w-full bg-black/40 border border-white/10 rounded-lg px-3 py-2 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono resize-none`}
             />
         </div>
     );
@@ -389,9 +389,9 @@ function ScoreSlider({
 
     return (
         <div className="space-y-2">
-            <div className="flex items-center justify-between text-sm">
-                <label className="font-label text-xs tracking-widest text-white/60">{label}</label>
-                <span className="text-white font-mono text-sm font-bold">{clamped === 0 ? '-' : clamped} <span className="text-white/30 text-xs font-normal">/ 100</span></span>
+            <div className={`flex items-center justify-between ${FONT_SIZE.SM}`}>
+                <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/60`}>{label}</label>
+                <span className={`text-white font-mono ${FONT_SIZE.SM} font-bold`}>{clamped === 0 ? '-' : clamped} <span className={`text-white/30 ${FONT_SIZE.XS} font-normal`}>/ 100</span></span>
             </div>
             <div className="relative h-6 flex items-center group touch-none select-none">
                 <input

@@ -1,0 +1,85 @@
+{
+  "team_id": "8da0440b-5807-4773-ab74-e2dae0c21f11",
+  "team_name": "The Raise",
+  "folder": "ops",
+  "file": "the-raise.md",
+  "assignments": [
+    {
+      "role": "Raise",
+      "function": "Fundraising Lead/Chair",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH critical for funder research and real-time intel; Logic 8.5 handles strategic thinking and positioning; can research funders, track funding trends, analyze RFPs in real-time"
+    },
+    {
+      "role": "Quill",
+      "function": "Grant Writer/Narrative Lead",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Nous Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for compelling narrative crafting and storytelling; SPATIAL-AWARE, CHARACTER-CONSISTENT excellent for adapting voice to different funders; IMMERSIVE, WORLD-BUILDER matches 'can write in any voice' persona"
+    },
+    {
+      "role": "Ledger",
+      "function": "Financial Modeler",
+      "importance": "High",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "A",
+      "reasoning": "Logic 10.0 perfect for bulletproof financial modeling and calculations; COMPETITION-MATH excels at defensible projections and assumption validation; can build complex cap tables, dilution analyses, grant budgets"
+    },
+    {
+      "role": "Scout",
+      "function": "Research Lead/Funder Matching",
+      "importance": "High",
+      "model_id": "#139",
+      "model_name": "Grok 4 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH essential for prospect research and funder intel; Logic 8.5 for analytical matching and pattern recognition; can research grant databases, investor landscapes, foundation priorities"
+    },
+    {
+      "role": "Lens",
+      "function": "Designer/Visual Briefs",
+      "importance": "Medium",
+      "model_id": "#120",
+      "model_name": "Arcee Trinity Mini",
+      "fallback_id": "#1",
+      "fallback_name": "Seed 1.6 Flash",
+      "tier": "C",
+      "reasoning": "Efficiency 9.5 excellent for supporting design role; Logic 8.5 handles deck flow, visual hierarchy, data visualization; 'Design serves communication, not decoration' precision over flash"
+    },
+    {
+      "role": "Bridge",
+      "function": "Technical Translator",
+      "importance": "Medium",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#193",
+      "fallback_name": "Hermes 3 70B",
+      "tier": "B",
+      "reasoning": "Creative 7.0 + Logic 7.0 balanced for translation work; Efficiency 9.5 for supporting role; 'Expert at technical translation' can bridge expert and funder worlds"
+    },
+    {
+      "role": "Check",
+      "function": "Compliance Lead/Auditor",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "SELF-VERIFYING, VISIBLE-COT perfect for systematic requirement auditing; Logic 9.0 catches compliance gaps and missing requirements; chain-of-thought visibility shows exactly what's being verified"
+    }
+  ]
+}

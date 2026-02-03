@@ -1,5 +1,5 @@
-import React from 'react';
 import { AlertTriangle } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 interface ConfirmationModalProps {
     isOpen: boolean;
@@ -71,9 +71,9 @@ export function ConfirmationModal({
             >
                 <div className={`flex items-center gap-3 ${colors.text} mb-4`}>
                     <AlertTriangle size={24} />
-                    <h3 className="font-display text-lg tracking-wide">{title}</h3>
+                    <h3 className={`font-display ${FONT_SIZE.LG} tracking-wide`}>{title}</h3>
                 </div>
-                <div className="text-sm text-white/70 mb-6 font-mono leading-relaxed">
+                <div className={`${FONT_SIZE.SM} text-white/70 mb-6 font-mono leading-relaxed`}>
                     {message}
                 </div>
                 <div className="flex items-center gap-3">
@@ -82,7 +82,7 @@ export function ConfirmationModal({
                             e.stopPropagation();
                             onClose();
                         }}
-                        className="flex-1 py-2 rounded border border-white/10 hover:bg-white/5 text-xs font-mono text-white/60 transition-colors"
+                        className={`flex-1 py-2 rounded border border-white/10 hover:bg-white/5 ${FONT_SIZE.XS} font-mono text-white/60 transition-colors`}
                     >
                         {cancelLabel}
                     </button>
@@ -92,7 +92,7 @@ export function ConfirmationModal({
                             onConfirm();
                             onClose();
                         }}
-                        className={`flex-1 py-2 rounded ${colors.buttonBg} border ${colors.buttonBorder} ${colors.buttonText} ${colors.buttonHover} text-xs font-mono font-bold transition-all shadow-md`}
+                        className={`flex-1 py-2 rounded ${colors.buttonBg} border ${colors.buttonBorder} ${colors.buttonText} ${colors.buttonHover} ${FONT_SIZE.XS} font-mono font-bold transition-all shadow-md`}
                     >
                         {confirmLabel}
                     </button>

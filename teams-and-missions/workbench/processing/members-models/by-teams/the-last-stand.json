@@ -1,0 +1,63 @@
+{
+  "team_id": "8e65fa36-4b9b-40f5-9f34-71b8183292c6",
+  "team_name": "The Last Stand",
+  "folder": "arcade",
+  "file": "the-last-stand.md",
+  "assignments": [
+    {
+      "role": "Hawk",
+      "function": "Commander/Chair",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "fallback_id": "#138",
+      "fallback_name": "Grok 4.1 Fast",
+      "tier": "A",
+      "reasoning": "Logic 10.0 for complex operational planning and synthesis; MOST-INTELLIGENT, DEEP-THINKER, RESEARCH-GRADE matches decisive, serious persona; multimodal capability useful for analyzing maps, building layouts, location data"
+    },
+    {
+      "role": "Vex",
+      "function": "Tactical Expert",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for tactical threat assessment and defensive planning; PRECISE, DEEP-THINKER, TOOL-SEEKER matches analytical tactical mindset; Efficiency 9.5 keeps costs reasonable for high-frequency threat analysis"
+    },
+    {
+      "role": "Stores",
+      "function": "Quartermaster",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "C",
+      "reasoning": "Efficiency 10.0 perfect for resource calculation role; Logic 9.0 handles precise rationing math and supply optimization; PRECISE, STEPWISE, FAST-TWITCH matches ruthlessly practical persona"
+    },
+    {
+      "role": "Bones",
+      "function": "Medic",
+      "importance": "Medium",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for medical reasoning and sanitation planning; PRECISE, SELF-CORRECTING ensures medical protocols are accurate; Efficiency 9.5 appropriate for support medical role"
+    },
+    {
+      "role": "Gray",
+      "function": "Philosopher",
+      "importance": "Medium",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "B",
+      "reasoning": "Creative 8.0 for ethical framework construction and moral reasoning; WORLD-BUILDER, CHARACTER-CONSISTENT, IMMERSIVE matches philosophical depth; Anti-lecture, non-restrictive approach allows uncomfortable questions"
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+  "team_id": "08eb2915-d272-4937-bd56-ea69db4ef0fb",
+  "team_name": "The Tin Foil Hat Society",
+  "folder": "arcade",
+  "file": "the-tin-foil-hat-society.md",
+  "assignments": [
+    {
+      "role": "Vector",
+      "function": "Paranoiac/Narrative Driver",
+      "importance": "Critical",
+      "model_id": "#191",
+      "model_name": "Nous Hermes 4 70B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "B",
+      "reasoning": "Logic 7.5 handles internal conspiracy logic (needs plausible logic, not real logic); Creative 7.5 for finding creative connections and building elaborate narratives; USER-ALIGNED, NON-SYCOPHANTIC, STEERABLE matches true-believer persona"
+    },
+    {
+      "role": "Cobweb",
+      "function": "Archivist/Research",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH critical for finding real historical facts; X-SEARCH can pull obscure historical events and timeline data; Logic 8.5 for finding logical historical connections; makes conspiracy 'terrifyingly plausible'"
+    },
+    {
+      "role": "Cipher",
+      "function": "Numerologist/Pattern Finder",
+      "importance": "High",
+      "model_id": "#181",
+      "model_name": "QwQ-32B",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 9.0 for actual gematria calculations and date correlations; PRECISE, DEEP-THINKER, STEPWISE matches compulsive calculator persona; Self-correcting ensures calculations are internally consistent"
+    },
+    {
+      "role": "Glyph",
+      "function": "Symbologist/Visual Decoder",
+      "importance": "High",
+      "model_id": "#189",
+      "model_name": "InternVL3 78B",
+      "fallback_id": "#6",
+      "fallback_name": "GLM-4.6V",
+      "tier": "B",
+      "reasoning": "VISION CAPABILITY essential for analyzing logos, imagery, symbols; Creative 8.0 for finding creative visual connections; Logic 8.5 for grounding analysis in legitimate design principles; can process images if user provides them"
+    },
+    {
+      "role": "Quill",
+      "function": "Skeptic/Convert",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for raising genuine, rational objections; PRECISE, DEEP-THINKER for critical thinking skills; Self-Correcting trait mirrors the conversion arc (objections weaken)"
+    },
+    {
+      "role": "Redact",
+      "function": "Whistleblower/Assembler",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Efficiency 9.5 for supporting assembly/packaging role; Logic 8.5 for organizing all evidence into coherent deliverables; PRECISE, SELF-CORRECTING ensures manifesto is internally consistent"
+    }
+  ]
+}

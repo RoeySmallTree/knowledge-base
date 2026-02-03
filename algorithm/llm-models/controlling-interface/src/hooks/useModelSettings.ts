@@ -17,7 +17,7 @@ export function useModelSettings() {
 
     const updateSettings = async (settings: ModelSettings) => {
         const res = await fetch(`${API_BASE}/settings/models`, {
-            method: 'POST',
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(settings),
         });

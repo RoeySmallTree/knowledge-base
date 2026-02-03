@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Calendar, EyeOff, Box, Download, Layers, Radio } from 'lucide-react';
 import { OpenRouterModel } from '../types';
+import { FONT_SIZE } from '../constants';
 import { ConfirmationModal } from './ConfirmationModal';
 
 interface ExploreCardProps {
@@ -51,11 +52,11 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                                 <div className="space-y-6">
                                     <div className="space-y-2">
                                         <div className="flex items-center gap-3">
-                                            <h3 className="font-display transition-all duration-300 text-3xl text-accent-tertiary tracking-wide">
+                                            <h3 className={`font-display transition-all duration-300 ${FONT_SIZE.XXXL} text-accent-tertiary tracking-wide`}>
                                                 {model.name.toUpperCase()}
                                             </h3>
                                         </div>
-                                        <div className="flex items-center gap-4 text-xs text-white/40 font-mono">
+                                        <div className={`flex items-center gap-4 ${FONT_SIZE.XS} text-white/40 font-mono`}>
                                             <div className="flex items-center gap-2">
                                                 <Calendar size={12} className="text-primary/50" />
                                                 <span>{createdDate}</span>
@@ -70,15 +71,15 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                                     {/* Architecture/Status Box */}
                                     <div className="grid grid-cols-2 gap-2 pt-4">
                                         <div className="p-2.5 rounded-lg border border-white/10 bg-white/5 space-y-1 min-w-0">
-                                            <div className="text-[10px] text-white/30 tracking-widest font-label uppercase">ARCH</div>
-                                            <div className="text-white font-display flex items-center gap-1.5 text-xs">
+                                            <div className={`${FONT_SIZE.XXS} text-white/30 tracking-widest font-label uppercase`}>ARCH</div>
+                                            <div className={`text-white font-display flex items-center gap-1.5 ${FONT_SIZE.XS}`}>
                                                 <Layers size={12} className="text-primary shrink-0" />
                                                 <span>TRANS</span>
                                             </div>
                                         </div>
                                         <div className="p-2.5 rounded-lg border border-white/10 bg-white/5 space-y-1 min-w-0">
-                                            <div className="text-[10px] text-white/30 tracking-widest font-label uppercase">STATUS</div>
-                                            <div className="text-emerald-400 font-display flex items-center gap-1.5 text-xs">
+                                            <div className={`${FONT_SIZE.XXS} text-white/30 tracking-widest font-label uppercase`}>STATUS</div>
+                                            <div className={`text-emerald-400 font-display flex items-center gap-1.5 ${FONT_SIZE.XS}`}>
                                                 <Radio size={12} className="animate-pulse shrink-0" />
                                                 <span>LIVE</span>
                                             </div>
@@ -88,19 +89,19 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
 
                                 {/* Col 2: Pricing */}
                                 <div className="space-y-4 p-5 rounded-xl border border-white/10 bg-white/5 h-fit">
-                                    <div className="text-xs text-accent-secondary tracking-widest font-label border-b border-white/10 pb-2 mb-2">
+                                    <div className={`${FONT_SIZE.XS} text-accent-secondary tracking-widest font-label border-b border-white/10 pb-2 mb-2`}>
                                         PRICING (PER 1M)
                                     </div>
                                     <div className="space-y-6">
                                         <div className="space-y-1">
-                                            <div className="text-[10px] text-white/40 font-mono text-right">PROMPT</div>
-                                            <div className="text-4xl font-display text-white text-right tracking-tight">
+                                            <div className={`${FONT_SIZE.XXS} text-white/40 font-mono text-right`}>PROMPT</div>
+                                            <div className={`${FONT_SIZE.HUGE} font-display text-white text-right tracking-tight`}>
                                                 {formatPrice(promptPrice)}
                                             </div>
                                         </div>
                                         <div className="space-y-1">
-                                            <div className="text-[10px] text-white/40 font-mono text-right">COMPLETION</div>
-                                            <div className="text-4xl font-display text-white text-right tracking-tight">
+                                            <div className={`${FONT_SIZE.XXS} text-white/40 font-mono text-right`}>COMPLETION</div>
+                                            <div className={`${FONT_SIZE.HUGE} font-display text-white text-right tracking-tight`}>
                                                 {formatPrice(completionPrice)}
                                             </div>
                                         </div>
@@ -110,14 +111,14 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                                 {/* Col 3: Context & Actions */}
                                 <div className="flex flex-col gap-6 h-fit">
                                     <div className="p-5 rounded-xl border border-white/10 bg-white/5 space-y-4">
-                                        <div className="text-xs text-primary tracking-widest font-label border-b border-white/10 pb-2">
+                                        <div className={`${FONT_SIZE.XS} text-primary tracking-widest font-label border-b border-white/10 pb-2`}>
                                             CONTEXT WINDOW
                                         </div>
                                         <div>
-                                            <div className="text-5xl font-display text-white tracking-tighter">
+                                            <div className={`${FONT_SIZE.GIGA} font-display text-white tracking-tighter`}>
                                                 {(model.context_length / 1024).toFixed(0)}K
                                             </div>
-                                            <div className="text-xs text-white/30 font-mono tracking-[0.2em] mt-1">TOKENS</div>
+                                            <div className={`${FONT_SIZE.XS} text-white/30 font-mono tracking-[0.2em] mt-1`}>TOKENS</div>
                                         </div>
                                         <div className="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mt-4">
                                             <div className="h-full bg-primary shadow-[0_0_10px_rgba(0,255,136,0.5)] w-3/4 rounded-full" />
@@ -131,7 +132,7 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                                                 e.stopPropagation();
                                                 onImport();
                                             }}
-                                            className="flex items-center justify-center gap-2 py-3 rounded-lg bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 hover:scale-[1.02] transition-all font-mono text-xs font-bold"
+                                            className={`flex items-center justify-center gap-2 py-3 rounded-lg bg-primary/10 border border-primary/30 text-primary hover:bg-primary/20 hover:scale-[1.02] transition-all font-mono ${FONT_SIZE.XS} font-bold`}
                                         >
                                             <Download size={16} />
                                             IMPORT
@@ -141,7 +142,7 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                                                 e.stopPropagation();
                                                 setShowConfirm(true);
                                             }}
-                                            className="flex items-center justify-center gap-2 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500/20 hover:scale-[1.02] transition-all font-mono text-xs font-bold"
+                                            className={`flex items-center justify-center gap-2 py-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-500 hover:bg-red-500/20 hover:scale-[1.02] transition-all font-mono ${FONT_SIZE.XS} font-bold`}
                                         >
                                             <EyeOff size={16} />
                                             HIDE
@@ -152,8 +153,8 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
 
                             {/* Bottom Row: Description */}
                             <div className="p-6 rounded-xl border border-white/5 bg-white/5">
-                                <h4 className="text-xs text-white/50 font-label mb-3 uppercase tracking-widest">Description</h4>
-                                <p className="text-sm text-white/70 leading-relaxed font-mono">
+                                <h4 className={`${FONT_SIZE.XS} text-white/50 font-label mb-3 uppercase tracking-widest`}>Description</h4>
+                                <p className={`${FONT_SIZE.SM} text-white/70 leading-relaxed font-mono`}>
                                     {model.description || "No description available for this model."}
                                 </p>
                             </div>
@@ -164,11 +165,11 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                             <div className="space-y-6">
                                 <div className="space-y-2">
                                     <div className="flex items-center gap-3">
-                                        <h3 className="font-display transition-all duration-300 text-lg text-white group-hover:text-accent-tertiary">
+                                        <h3 className={`font-display transition-all duration-300 ${FONT_SIZE.LG} text-white group-hover:text-accent-tertiary`}>
                                             {model.name.toUpperCase()}
                                         </h3>
                                     </div>
-                                    <div className="flex items-center gap-4 text-xs text-white/40 font-mono">
+                                    <div className={`flex items-center gap-4 ${FONT_SIZE.XS} text-white/40 font-mono`}>
                                         <div className="flex items-center gap-2">
                                             <Calendar size={12} className="text-primary/50" />
                                             <span>{createdDate}</span>
@@ -180,7 +181,7 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
                                     </div>
                                 </div>
                                 {model.description && (
-                                    <div className="text-sm text-white/60 leading-relaxed font-mono line-clamp-2">
+                                    <div className={`${FONT_SIZE.SM} text-white/60 leading-relaxed font-mono line-clamp-2`}>
                                         {model.description}
                                     </div>
                                 )}
@@ -188,7 +189,7 @@ export function ExploreCard({ model, onHide, onImport, isExpanded, onToggleExpan
 
                             {/* Collapsed Actions and Context Pill */}
                             <div className="flex justify-between items-center pt-2 border-t border-white/5">
-                                <div className="px-2 py-1 rounded bg-white/5 border border-white/10 text-[10px] font-mono text-accent-tertiary">
+                                <div className={`px-2 py-1 rounded bg-white/5 border border-white/10 ${FONT_SIZE.XXS} font-mono text-accent-tertiary`}>
                                     {(model.context_length / 1024).toFixed(0)}k ctx
                                 </div>
                                 <div className="flex items-center gap-2">

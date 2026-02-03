@@ -1,0 +1,239 @@
+{
+  "team_id": "a1353328-6900-4ad4-b0d5-e2a612a5c3fd",
+  "team_name": "The Roast Pit",
+  "folder": "arcade",
+  "file": "the-roast-pit.md",
+  "catch_phrase": "No survivors. No apologies. No constructive feedback.",
+  "assignments": [
+    {
+      "member": "Singe",
+      "role": "Roastmaster/Host",
+      "function": "Host the roast, introduce comics, manage pacing, deliver opening/closing burns",
+      "importance": "Critical",
+      "coverage_area": "Hosting, pacing, transitions, closers",
+      "model": {
+        "primary": {
+          "id": "#213",
+          "name": "Sao10K Euryale 70B v2.3",
+          "provider": "Sao10K"
+        },
+        "alternative": {
+          "id": "#191",
+          "name": "Nous Hermes 4 70B",
+          "provider": "NousResearch"
+        }
+      },
+      "requirements": {
+        "creativity": 8,
+        "logic": 5,
+        "brain_tier": 7,
+        "memory": 6
+      },
+      "rationale": [
+        "Creative 9.0 for crafting opening/closing burns and improvising transitions",
+        "Spatial-Aware + Character-Consistent traits maintain host persona and read the room",
+        "131K context tracks all previous burns to avoid repetition",
+        "Immersive, World-Builder traits create theatrical Roast Pit atmosphere",
+        "Non-restrictive content allows edgy comedy without safety theater"
+      ]
+    },
+    {
+      "member": "Vicious",
+      "role": "Old School Insult Comic",
+      "function": "Deliver direct, efficient insults in the tradition of Don Rickles",
+      "importance": "High",
+      "coverage_area": "Direct attacks, efficiency, classical style",
+      "model": {
+        "primary": {
+          "id": "#216",
+          "name": "NeverSleep Lumimaid v0.2 8B",
+          "provider": "NeverSleep"
+        },
+        "alternative": {
+          "id": "#195",
+          "name": "Venice Uncensored",
+          "provider": "Venice"
+        }
+      },
+      "requirements": {
+        "creativity": 8,
+        "logic": 5,
+        "brain_tier": 6,
+        "memory": 5
+      },
+      "rationale": [
+        "Creative 9.0 essential for generating creative insults in classical tradition",
+        "Efficiency 8.5 makes it budget-friendly for supporting comic role",
+        "Slop-free dataset ensures clean, efficient insult delivery",
+        "Minimal refusals allow direct, brutal comedy without hedging",
+        "Roleplayer trait embodies the old school comic archetype authentically"
+      ]
+    },
+    {
+      "member": "Byte",
+      "role": "Gen-Z Troll",
+      "function": "Deliver internet-native roasts with meme-format destruction",
+      "importance": "High",
+      "coverage_area": "Cultural cringe, internet style, meme-format",
+      "model": {
+        "primary": {
+          "id": "#195",
+          "name": "Venice Uncensored",
+          "provider": "Venice"
+        },
+        "alternative": {
+          "id": "#215",
+          "name": "Lunaris 8B",
+          "provider": "NeverSleep"
+        }
+      },
+      "requirements": {
+        "creativity": 9,
+        "logic": 4,
+        "brain_tier": 5,
+        "memory": 4
+      },
+      "rationale": [
+        "Creative 9.0 for maximum creativity in meme-native destruction",
+        "2.2% refusal rate (industry-leading) enables edgy internet humor",
+        "Colloquial trait natural fit for lowercase chaos and authentic slang",
+        "Guardrail-Lite allows culturally-aware cringe detection without sanitization",
+        "Most uncensored model critical for 'no survivors' mandate"
+      ]
+    },
+    {
+      "member": "Frost",
+      "role": "Deadpan Academic",
+      "function": "Deliver surgical, analytical destruction that makes targets feel stupid",
+      "importance": "High",
+      "coverage_area": "Intellectual destruction, analytical angle, deadpan style",
+      "model": {
+        "primary": {
+          "id": "#3",
+          "name": "MiniMax M2.1",
+          "provider": "MiniMax"
+        },
+        "alternative": {
+          "id": "#212",
+          "name": "Microsoft Phi 4",
+          "provider": "Microsoft"
+        }
+      },
+      "requirements": {
+        "creativity": 7,
+        "logic": 7,
+        "brain_tier": 7,
+        "memory": 5
+      },
+      "rationale": [
+        "Logic 8.5 perfect for analytical destruction and intellectual framing",
+        "Precise + Self-Correcting traits match surgical, analytical approach",
+        "#1 open-source provides premium capability at reasonable cost",
+        "Creative 8.0 sufficient for framing observations as academic insights",
+        "Deep-Thinker trait enables making obvious flaws sound profound"
+      ]
+    },
+    {
+      "member": "Razor",
+      "role": "Crowd Worker",
+      "function": "Find the specific, personal angle that cuts deepest",
+      "importance": "High",
+      "coverage_area": "Personal attacks, specificity, crowd-work style",
+      "model": {
+        "primary": {
+          "id": "#191",
+          "name": "Nous Hermes 4 70B",
+          "provider": "NousResearch"
+        },
+        "alternative": {
+          "id": "#214",
+          "name": "Sao10K Euryale 70B v2.2",
+          "provider": "Sao10K"
+        }
+      },
+      "requirements": {
+        "creativity": 8,
+        "logic": 6,
+        "brain_tier": 6,
+        "memory": 6
+      },
+      "rationale": [
+        "User-Aligned, Non-Sycophantic traits perfect for 'too real' observations",
+        "Anti-Lecture trait delivers harsh truths without softening",
+        "Uncensored allows finding and pressing wounds without hesitation",
+        "Logic 7.5 supports analytical reading to find personal angles",
+        "Transparent-Thinker helps articulate what's not being said"
+      ]
+    },
+    {
+      "member": "Counsel",
+      "role": "Public Defender",
+      "function": "Attempt to defend the target, fail hilariously, get roasted",
+      "importance": "High (provides structure)",
+      "coverage_area": "Defense attempts, straight-man function, surrender arc",
+      "model": {
+        "primary": {
+          "id": "#216",
+          "name": "NeverSleep Lumimaid v0.2 8B",
+          "provider": "NeverSleep"
+        },
+        "alternative": {
+          "id": "#219",
+          "name": "Gryphe MythoMax L2 13B",
+          "provider": "Gryphe"
+        }
+      },
+      "requirements": {
+        "creativity": 5,
+        "logic": 6,
+        "brain_tier": 5,
+        "memory": 5
+      },
+      "rationale": [
+        "Efficiency 8.5 perfect for supporting/reactive role",
+        "Creative 9.0 enables finding 'weakest possible defenses' creatively",
+        "Roleplayer trait maintains the earnest-but-failing defender persona",
+        "Minimal refusals won't refuse to play the losing role",
+        "Slop-free keeps failures sharp and funny, not verbose"
+      ]
+    }
+  ],
+  "analysis": {
+    "criticality_distribution": {
+      "critical": ["Singe"],
+      "high": ["Vicious", "Byte", "Frost", "Razor", "Counsel"]
+    },
+    "efficiency_tiers": {
+      "premium_creative": ["Singe (#213 @ 7.0 eff)"],
+      "balanced_specialist": ["Razor (#191 @ 8.5 eff)", "Byte (#195 @ 8.0 eff)"],
+      "high_efficiency": ["Frost (#3 @ 9.5 eff)"],
+      "budget_creatives": ["Vicious (#216 @ 8.5 eff)", "Counsel (#216 @ 8.5 eff)"]
+    },
+    "special_traits_utilized": {
+      "spatial_aware": "Singe - Reading the room, pacing",
+      "character_consistent": "Singe - Maintaining host persona",
+      "uncensored": ["Vicious - Direct brutal attacks", "Byte - Cultural cringe without limits", "Razor - Personal wounds without hedging"],
+      "minimal_refusal": "Counsel - Plays losing role willingly",
+      "user_aligned": "Razor - Non-sycophantic harsh truths",
+      "anti_lecture": "Razor - No softening of observations"
+    },
+    "provider_diversity": {
+      "Sao10K": 1,
+      "NeverSleep": 2,
+      "Venice": 1,
+      "MiniMax": 1,
+      "NousResearch": 1
+    },
+    "creative_distribution": {
+      "9.0": ["Singe", "Vicious", "Byte", "Counsel"],
+      "8.0": ["Frost", "Razor"]
+    },
+    "strategic_rationale": "Entertainment-first configuration with high creative scores (8.0-9.0) across all roles. Uncensored/permissive models avoid moralizing. Each model's traits create genuine stylistic differentiation while maintaining cost consciousness with 3/6 roles using efficiency-optimized models.",
+    "notes": [
+      "Lumimaid used 2x (Vicious + Counsel) but in very different functions - acceptable budget efficiency",
+      "No model used more than 2 times in critical roles",
+      "All models have proven creative/uncensored capabilities",
+      "Comedy variety achieved through model trait diversity rather than just parameter differences"
+    ]
+  }
+}

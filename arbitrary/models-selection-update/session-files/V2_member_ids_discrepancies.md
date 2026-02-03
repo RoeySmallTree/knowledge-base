@@ -1,0 +1,186 @@
+# Member ID Match Report (Updated)
+
+## Summary
+- Missing in members-ids.json (present in complete.json): **176**
+- Missing in complete.json (present in members-ids.json): **0**
+
+## Missing in members-ids.json (present in complete.json)
+- A Thought's Potential — Analyst
+- A Thought's Potential — Expander
+- A Thought's Potential — Grounder
+- A Thought's Potential — Keeper
+- A Thought's Potential — Navigator
+- Cupid's Wingmen — Advocate
+- Cupid's Wingmen — Cupid
+- Cupid's Wingmen — Eye
+- Cupid's Wingmen — Guardian
+- Cupid's Wingmen — Heart
+- Life's Moments — Heart
+- Life's Moments — Keeper
+- Life's Moments — Scout
+- Life's Moments — Steady
+- Life's Moments — Tempo
+- Life's Moments — Touch
+- Only Viral — Ink
+- Only Viral — Keeper
+- Only Viral — Nope
+- Only Viral — Pulse
+- Only Viral — Radar
+- Only Viral — Sage
+- The Alpha Desk — Financial
+- The Alpha Desk — Industry
+- The Alpha Desk — Macro
+- The Alpha Desk — Moat
+- The Alpha Desk — PM
+- The Alpha Desk — Risk
+- The Alpha Desk — Valuation
+- The Biohackers — Cole
+- The Biohackers — Luna
+- The Biohackers — Marcus
+- The Biohackers — Quinn
+- The Biohackers — Rei
+- The Biohackers — Sage
+- The Brief Room — Frame
+- The Brief Room — Helm
+- The Brief Room — Ink
+- The Brief Room — Scroll
+- The Brief Room — Tome
+- The Brief Room — Watch
+- The Bureau of Unexplained Significance — Archetype
+- The Bureau of Unexplained Significance — Cipher
+- The Bureau of Unexplained Significance — Lore
+- The Bureau of Unexplained Significance — Mystic
+- The Bureau of Unexplained Significance — Pattern
+- The Clinical Consult — Chief
+- The Clinical Consult — Criteria
+- The Clinical Consult — Differential
+- The Clinical Consult — Framework
+- The Clinical Consult — Risk
+- The Dig — Krax
+- The Dig — Mox
+- The Dig — Plix
+- The Dig — Vexa
+- The Dig — Zorth
+- The Digital Brain — Analyst
+- The Digital Brain — Architect
+- The Digital Brain — Librarian
+- The Digital Brain — Opposition
+- The Digital Brain — Sentinel
+- The Document Digestor — Architect
+- The Document Digestor — Extractor
+- The Document Digestor — Linker
+- The Document Digestor — Parser
+- The Document Digestor — Verifier
+- The Dreamers — Form
+- The Dreamers — Ground
+- The Dreamers — Nova
+- The Dreamers — Scout
+- The Dreamers — Spark
+- The Dreamers — Terra
+- The Eldercare Navigators — Anchor
+- The Eldercare Navigators — Compass
+- The Eldercare Navigators — Guide
+- The Eldercare Navigators — Keeper
+- The Eldercare Navigators — Scout
+- The Foundry — Architect
+- The Foundry — Canvas
+- The Foundry — Forge
+- The Foundry — Journey
+- The Foundry — Plan
+- The Foundry — Scope
+- The Foundry — Scout
+- The Ground Floor — Brick
+- The Ground Floor — Due
+- The Ground Floor — Ground
+- The Ground Floor — Market
+- The Ground Floor — Numbers
+- The Happiness Architects — Blueprint
+- The Happiness Architects — Compass
+- The Happiness Architects — Pathfinder
+- The Happiness Architects — Root
+- The Happiness Architects — Spark
+- The Ledger Room — Filing
+- The Ledger Room — Industry
+- The Ledger Room — Ledger
+- The Ledger Room — Ratios
+- The Ledger Room — Risk
+- The Legal Repository — Advocate
+- The Legal Repository — Clerk
+- The Legal Repository — Compliance
+- The Legal Repository — Counsel
+- The Legal Repository — Monitor
+- The Organization Core — Auditor
+- The Organization Core — Calculator
+- The Organization Core — Challenger
+- The Organization Core — Curator
+- The Organization Core — Guardian
+- The People Ops — Chief
+- The People Ops — Comp
+- The People Ops — Culture
+- The People Ops — Growth
+- The People Ops — Structure
+- The People Ops — Talent
+- The People's Court — Gavel
+- The People's Court — Hammer
+- The People's Court — Jury
+- The People's Court — Shield
+- The Pitching Room — Arc
+- The Pitching Room — Crowd
+- The Pitching Room — Lens
+- The Pitching Room — Quill
+- The Pitching Room — Spark
+- The Pitching Room — Stage
+- The Product Bible — Advocate
+- The Product Bible — Analyst
+- The Product Bible — Architect
+- The Product Bible — Curator
+- The Product Bible — Guardian
+- The Production — Amp
+- The Production — Dollar
+- The Production — Ops
+- The Production — Pulse
+- The Production — Risk
+- The Production — Script
+- The Production — Stage
+- The Project Sink — Archivist
+- The Project Sink — Classifier
+- The Project Sink — Connector
+- The Project Sink — Consolidator
+- The Project Sink — Intake
+- The Think Tank — Jonah
+- The Think Tank — Kit
+- The Think Tank — Murray
+- The Think Tank — Priya
+- The Think Tank — Zara
+- The Wanderlust Bureau — Atlas
+- The Wanderlust Bureau — Ledger
+- The Wanderlust Bureau — Logistics
+- The Wanderlust Bureau — Palate
+- The Wanderlust Bureau — Scout
+- The War Room — Intel
+- The War Room — Model
+- The War Room — Operator
+- The War Room — Risk
+- The War Room — Sage
+- The War Room — Scope
+- The War Room — Titan
+- The War Room — Vector
+- The What-If Room — Atlas
+- The What-If Room — Cog
+- The What-If Room — Drift
+- The What-If Room — Epoch
+- The What-If Room — Quill
+- The What-If Room — Vex
+- The Wiki Gardener — Deprecation Officer
+- The Wiki Gardener — Librarian
+- The Wiki Gardener — Linker
+- The Wiki Gardener — Scribe
+- The Writers' Room — Frame
+- The Writers' Room — Ink
+- The Writers' Room — Scroll
+- The Writers' Room — Slate
+- The Writers' Room — Tome
+- The Writers' Room — Watch
+
+## Missing in complete.json (present in members-ids.json)
+

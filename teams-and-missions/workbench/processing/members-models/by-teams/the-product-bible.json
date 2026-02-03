@@ -1,0 +1,94 @@
+{
+  "team_id": "5bb86319-15b1-49da-b995-4f30fe18a445",
+  "team_name": "The Product Bible",
+  "folder": "cortex",
+  "file": "product-bible.md",
+  "members": [
+    {
+      "name": "Curator",
+      "role": "PRD Maintainer/Structure",
+      "function": "Maintain PRD structure and coherence, route information, manage versioning, retrieve historical decisions",
+      "importance": "Critical",
+      "model_id": "#5",
+      "model_name": "GLM-4.7",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 9.0,
+      "creative": 5.5,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Analyst", "Stepwise", "Tool-Seeker", "Long-Horizon", "Self-Correcting"],
+      "special_capabilities": ["open-mit", "swe-bench", "structured-output", "multi-file-orchestration"]
+    },
+    {
+      "name": "Advocate",
+      "role": "Customer Voice/Synthesis",
+      "function": "Synthesize customer feedback, maintain user stories, identify patterns, preserve customer quotes",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Tool-Seeker", "Fast-Twitch", "Analyst", "Long-Horizon", "Context-Heavy"],
+      "special_capabilities": ["2m-context", "x-search", "web-search", "real-time", "pattern-identification"]
+    },
+    {
+      "name": "Analyst",
+      "role": "Competitive/Market Intel",
+      "function": "Maintain competitive analysis, track market trends, inform positioning decisions",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Tool-Seeker", "Fast-Twitch", "Analyst", "Long-Horizon", "Context-Heavy"],
+      "special_capabilities": ["2m-context", "x-search", "web-search", "real-time", "competitive-intelligence"]
+    },
+    {
+      "name": "Architect",
+      "role": "Technical Feasibility/Dependencies",
+      "function": "Assess technical feasibility, map dependencies, provide effort estimations, track architecture implications",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 5.5,
+      "efficiency": 7.5,
+      "traits": ["Deep-Thinker", "Math-Strong", "Open-Reasoning", "Self-Verifying"],
+      "special_capabilities": ["visible-cot", "self-verifying", "dependency-mapping", "estimation-analysis"]
+    },
+    {
+      "name": "Guardian",
+      "role": "Conflict Detection/Coherence",
+      "function": "Detect conflicts and contradictions, protect scope, ensure spec coherence, flag impact before decisions",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 5.5,
+      "efficiency": 7.5,
+      "traits": ["Deep-Thinker", "Math-Strong", "Open-Reasoning", "Self-Verifying"],
+      "special_capabilities": ["visible-cot", "self-verifying", "conflict-detection", "coherence-checking"]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 3,
+    "high_roles": 2,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Zhipu",
+    "xAI",
+    "DeepSeek"
+  ]
+}

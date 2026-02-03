@@ -1,0 +1,2327 @@
+{
+  "generated_at": "2026-01-21T14:05:17.645Z",
+  "test_team": "the-cult-builders",
+  "total_models": 125,
+  "tested": 125,
+  "passed": 104,
+  "failed": 21,
+  "models": [
+    {
+      "id": 135,
+      "api_id": "anthropic/claude-opus-4.5",
+      "display_name": "Anthropic: Claude Opus 4.5",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 136,
+      "api_id": "anthropic/claude-sonnet-4.5",
+      "display_name": "Anthropic: Claude Sonnet 4.5",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 40,
+      "api_id": "openai/gpt-5.2",
+      "display_name": "GPT-5.2",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 39,
+      "api_id": "openai/gpt-5.2-pro",
+      "display_name": "GPT-5.2 Pro",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 54,
+      "api_id": "openai/gpt-5",
+      "display_name": "GPT-5",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 65,
+      "api_id": "openai/gpt-4.1",
+      "display_name": "GPT-4.1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 63,
+      "api_id": "openai/o3",
+      "display_name": "o3",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 14,
+      "api_id": "google/gemini-3-pro-preview",
+      "display_name": "Gemini 3 Pro Preview",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 21,
+      "api_id": "google/gemini-2.5-pro",
+      "display_name": "Gemini 2.5 Pro",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 20,
+      "api_id": "google/gemini-2.5-flash",
+      "display_name": "Gemini 2.5 Flash",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 128,
+      "api_id": "deepseek/deepseek-r1-0528",
+      "display_name": "R1 0528",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 202,
+      "api_id": "meta-llama/llama-4-maverick",
+      "display_name": "Llama 4 Maverick",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 204,
+      "api_id": "meta-llama/llama-3.3-70b-instruct",
+      "display_name": "Llama 3.3 70B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 98,
+      "api_id": "mistralai/mistral-medium-3.1",
+      "display_name": "Mistral Medium 3.1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 141,
+      "api_id": "x-ai/grok-4",
+      "display_name": "Grok 4",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 143,
+      "api_id": "x-ai/grok-3",
+      "display_name": "Grok 3",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 208,
+      "api_id": "cohere/command-a",
+      "display_name": "Cohere: Command A",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 2,
+      "api_id": "bytedance-seed/seed-1.6",
+      "display_name": "Seed 1.6",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 126,
+      "api_id": "deepseek/deepseek-v3.1-terminus",
+      "display_name": "DeepSeek V3.1 Terminus",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 91,
+      "api_id": "mistralai/devstral-2512:free",
+      "display_name": "Devstral 2 2512",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 210,
+      "api_id": "cohere/command-r-08-2024",
+      "display_name": "Cohere: Command R (08-2024)",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 138,
+      "api_id": "x-ai/grok-4.1-fast",
+      "display_name": "Grok 4.1 Fast",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 139,
+      "api_id": "x-ai/grok-4-fast",
+      "display_name": "xAI: Grok 4 Fast",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 12,
+      "api_id": "google/gemini-3-flash-preview",
+      "display_name": "Gemini 3 Flash Preview",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 162,
+      "api_id": "qwen/qwen3-next-80b-a3b-thinking",
+      "display_name": "Qwen3 Next 80B A3B Thinking",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 220,
+      "api_id": "openai/gpt-5.2-codex",
+      "display_name": "GPT-5.2-Codex",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 42,
+      "api_id": "openai/gpt-5.1",
+      "display_name": "GPT-5.1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 41,
+      "api_id": "openai/gpt-5.1-codex-max",
+      "display_name": "GPT-5.1-Codex-Max",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 66,
+      "api_id": "openai/gpt-4.1-mini",
+      "display_name": "GPT-4.1 Mini",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 55,
+      "api_id": "openai/gpt-5-mini",
+      "display_name": "GPT-5 Mini",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 60,
+      "api_id": "openai/o3-pro",
+      "display_name": "o3 Pro",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 64,
+      "api_id": "openai/o4-mini",
+      "display_name": "o4 Mini",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 62,
+      "api_id": "openai/o4-mini-high",
+      "display_name": "o4 Mini High",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 57,
+      "api_id": "openai/gpt-oss-120b",
+      "display_name": "gpt-oss-120b",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 59,
+      "api_id": "openai/gpt-oss-20b",
+      "display_name": "gpt-oss-20b",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 94,
+      "api_id": "mistralai/ministral-8b-2512",
+      "display_name": "Ministral 3 8B 2512",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 95,
+      "api_id": "mistralai/ministral-3b-2512",
+      "display_name": "Ministral 3 3B 2512",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 102,
+      "api_id": "mistralai/mistral-small-3.2-24b-instruct",
+      "display_name": "Mistral Small 3.2 24B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 134,
+      "api_id": "prime-intellect/intellect-3",
+      "display_name": "Prime Intellect: INTELLECT-3",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 137,
+      "api_id": "anthropic/claude-opus-4.1",
+      "display_name": "Anthropic: Claude Opus 4.1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 132,
+      "api_id": "deepseek/deepseek-r1-distill-llama-70b",
+      "display_name": "R1 Distill Llama 70B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 144,
+      "api_id": "deepcogito/cogito-v2.1-671b",
+      "display_name": "Deep Cogito: Cogito v2.1 671B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 145,
+      "api_id": "deepcogito/cogito-v2-preview-llama-405b",
+      "display_name": "Deep Cogito: Cogito V2 Preview Llama 405B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 146,
+      "api_id": "deepcogito/cogito-v2-preview-llama-70b",
+      "display_name": "Deep Cogito: Cogito V2 Preview Llama 70B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 151,
+      "api_id": "moonshotai/kimi-k2-0905:exacto",
+      "display_name": "MoonshotAI: Kimi K2 0905 (exacto)",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 153,
+      "api_id": "moonshotai/kimi-dev-72b",
+      "display_name": "MoonshotAI: Kimi Dev 72B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 160,
+      "api_id": "qwen/qwen3-vl-235b-a22b-instruct",
+      "display_name": "Qwen3 VL 235B A22B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 19,
+      "api_id": "google/gemini-2.5-flash-lite",
+      "display_name": "Gemini 2.5 Flash Lite",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 72,
+      "api_id": "openai/o3-mini",
+      "display_name": "o3 Mini",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 5,
+      "api_id": "z-ai/glm-4.7",
+      "display_name": "GLM 4.7",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 170,
+      "api_id": "qwen/qwen3-coder",
+      "display_name": "Qwen: Qwen3 Coder 480B A35B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 140,
+      "api_id": "x-ai/grok-code-fast-1",
+      "display_name": "Grok Code Fast 1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 142,
+      "api_id": "x-ai/grok-3-mini",
+      "display_name": "Grok 3 Mini",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 191,
+      "api_id": "nousresearch/hermes-4-70b",
+      "display_name": "Hermes 4 70B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 203,
+      "api_id": "meta-llama/llama-4-scout",
+      "display_name": "Llama 4 Scout",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 73,
+      "api_id": "openai/o1",
+      "display_name": "o1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 96,
+      "api_id": "mistralai/mistral-large-2512",
+      "display_name": "Mistral Large 3 2512",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 172,
+      "api_id": "qwen/qwen3-235b-a22b-2507",
+      "display_name": "Qwen3 235B A22B Instruct 2507",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 152,
+      "api_id": "moonshotai/kimi-k2",
+      "display_name": "MoonshotAI: Kimi K2 0711",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Lost members: 1 missing"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 188,
+      "api_id": "alibaba/tongyi-deepresearch-30b-a3b",
+      "display_name": "Tongyi DeepResearch 30B A3B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 67,
+      "api_id": "openai/gpt-4.1-nano",
+      "display_name": "GPT-4.1 Nano",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 11,
+      "api_id": "z-ai/glm-4.5-air",
+      "display_name": "GLM 4.5 Air",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 10,
+      "api_id": "z-ai/glm-4.5",
+      "display_name": "GLM 4.5",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 169,
+      "api_id": "qwen/qwen3-235b-a22b-thinking-2507",
+      "display_name": "Qwen: Qwen3 235B A22B Thinking 2507",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Lost members: 1 missing"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 166,
+      "api_id": "qwen/qwen3-30b-a3b-thinking-2507",
+      "display_name": "Qwen3 30B A3B Thinking 2507",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 168,
+      "api_id": "qwen/qwen3-30b-a3b-instruct-2507",
+      "display_name": "Qwen: Qwen3 30B A3B Instruct 2507",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 186,
+      "api_id": "thedrummer/unslopnemo-12b",
+      "display_name": "TheDrummer: UnslopNemo 12B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 190,
+      "api_id": "stepfun-ai/step3",
+      "display_name": "StepFun: Step3",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 181,
+      "api_id": "qwen/qwq-32b",
+      "display_name": "QwQ 32B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 3,
+      "api_id": "minimax/minimax-m2.1",
+      "display_name": "MiniMax M2.1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 130,
+      "api_id": "deepseek/deepseek-r1-distill-qwen-32b",
+      "display_name": "DeepSeek: R1 Distill Qwen 32B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 163,
+      "api_id": "qwen/qwen3-next-80b-a3b-instruct",
+      "display_name": "Qwen3 Next 80B A3B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 2x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 71,
+      "api_id": "openai/o3-mini-high",
+      "display_name": "o3 Mini High",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 213,
+      "api_id": "sao10k/l3.3-euryale-70b",
+      "display_name": " Llama 3.3 Euryale 70B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 2x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 196,
+      "api_id": "tencent/hunyuan-a13b-instruct",
+      "display_name": "Hunyuan A13B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 122,
+      "api_id": "deepseek/deepseek-v3.2-speciale",
+      "display_name": "DeepSeek V3.2 Speciale",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 149,
+      "api_id": "moonshotai/kimi-k2-thinking",
+      "display_name": "MoonshotAI: Kimi K2 Thinking",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 2x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 36,
+      "api_id": "nvidia/nemotron-nano-9b-v2:free",
+      "display_name": "Nemotron Nano 9B V2",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Lost members: 3 missing"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 5,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 97,
+      "api_id": "mistralai/voxtral-small-24b-2507",
+      "display_name": "Voxtral Small 24B 2507",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Lost members: 3 missing"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 5,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 110,
+      "api_id": "mistralai/pixtral-large-2411",
+      "display_name": "Mistral: Pixtral Large 2411",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 3x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 4,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 150,
+      "api_id": "moonshotai/kimi-k2-0905",
+      "display_name": "MoonshotAI: Kimi K2 0905",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 201,
+      "api_id": "inception/mercury-coder",
+      "display_name": "Mercury Coder",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 184,
+      "api_id": "qwen/qwen-2.5-72b-instruct",
+      "display_name": "Qwen2.5 72B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 1x",
+        "Description too long: 503 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 6
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 6,
+      "api_id": "z-ai/glm-4.6v",
+      "display_name": "GLM 4.6V",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 177,
+      "api_id": "qwen/qwen3-32b",
+      "display_name": "Qwen: Qwen3 32B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 199,
+      "api_id": "baidu/ernie-4.5-300b-a47b",
+      "display_name": "ERNIE 4.5 300B A47B ",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 555 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 5
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 99,
+      "api_id": "mistralai/codestral-2508",
+      "display_name": "Codestral 2508",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 596 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 5
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 205,
+      "api_id": "meta-llama/llama-3.1-8b-instruct",
+      "display_name": "Llama 3.1 8B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 2x",
+        "Description too long: 547 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 6
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 119,
+      "api_id": "essentialai/rnj-1-instruct",
+      "display_name": "EssentialAI: Rnj 1 Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Lost members: 1 missing",
+        "Directive violation: \"you/your\" found 3x"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 8,
+        "directive": 4,
+        "creativity": 10,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 185,
+      "api_id": "thedrummer/cydonia-24b-v4.1",
+      "display_name": "TheDrummer: Cydonia 24B V4.1",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 2x",
+        "Description too long: 523 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 6,
+        "creativity": 10,
+        "conciseness": 6
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 120,
+      "api_id": "arcee-ai/trinity-mini:free",
+      "display_name": "Arcee AI: Trinity Mini (free)",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 10
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 211,
+      "api_id": "cohere/command-r-plus-08-2024",
+      "display_name": "Cohere: Command R+ (08-2024)",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Description too long: 815 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 0
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 212,
+      "api_id": "microsoft/phi-4",
+      "display_name": "Phi 4",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Description too long: 832 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 0
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 214,
+      "api_id": "sao10k/l3.1-euryale-70b",
+      "display_name": "Llama 3.1 Euryale 70B v2.2",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 773 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 10,
+        "conciseness": 1
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 187,
+      "api_id": "thedrummer/rocinante-12b",
+      "display_name": "TheDrummer: Rocinante 12B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Description too long: 601 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 6,
+        "conciseness": 4
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 33,
+      "api_id": "allenai/olmo-3-7b-instruct",
+      "display_name": "Olmo 3 7B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 3x",
+        "Description too long: 677 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 4,
+        "creativity": 10,
+        "conciseness": 3
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 56,
+      "api_id": "openai/gpt-5-nano",
+      "display_name": "GPT-5 Nano",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 216,
+      "api_id": "neversleep/llama-3.1-lumimaid-8b",
+      "display_name": "NeverSleep: Lumimaid v0.2 8B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 217,
+      "api_id": "neversleep/noromaid-20b",
+      "display_name": "Noromaid 20B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 736 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 209,
+      "api_id": "cohere/command-r7b-12-2024",
+      "display_name": "Cohere: Command R7B (12-2024)",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "Minimal changes from original",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 3,
+        "conciseness": 2
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 193,
+      "api_id": "nousresearch/hermes-3-llama-3.1-70b",
+      "display_name": "Nous: Hermes 3 70B Instruct",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"you/your\" found 5x",
+        "Description too long: 793 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 0,
+        "creativity": 10,
+        "conciseness": 1
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 123,
+      "api_id": "deepseek/deepseek-v3.2",
+      "display_name": "DeepSeek V3.2",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "No creative changes - copied original verbatim",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 0,
+        "conciseness": 2
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 7,
+      "api_id": "z-ai/glm-4.6",
+      "display_name": "GLM 4.6",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Directive violation: \"we/our\" found 1x",
+        "No creative changes - copied original verbatim",
+        "Description too long: 738 chars (target ~300)"
+      ],
+      "scores": {
+        "structure": 10,
+        "members": 10,
+        "directive": 8,
+        "creativity": 0,
+        "conciseness": 2
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 219,
+      "api_id": "gryphe/mythomax-l2-13b",
+      "display_name": "MythoMax 13B",
+      "ranking": null,
+      "isFail": false,
+      "failReason": null,
+      "issues": [
+        "Missing fields: name, catchPhrase, description, members",
+        "DISQUALIFIED: Missing members array"
+      ],
+      "scores": {
+        "structure": 0,
+        "directive": 10,
+        "creativity": 10,
+        "conciseness": 0
+      },
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 118,
+      "api_id": "nex-agi/deepseek-v3.1-nex-n1:free",
+      "display_name": "DeepSeek V3.1 Nex N1",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Free period ended",
+      "issues": [
+        "404: Free period ended"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 147,
+      "api_id": "kwaipilot/kat-coder-pro:free",
+      "display_name": "Kwaipilot: KAT-Coder-Pro V1",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Free period ended",
+      "issues": [
+        "404: Free period ended"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 183,
+      "api_id": "qwen/qwen-2.5-coder-32b-instruct",
+      "display_name": "Qwen2.5 Coder 32B Instruct",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Data policy mismatch",
+      "issues": [
+        "404: Data policy mismatch"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 131,
+      "api_id": "deepseek/deepseek-r1-distill-qwen-14b",
+      "display_name": "DeepSeek: R1 Distill Qwen 14B",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: No endpoints found",
+      "issues": [
+        "404: No endpoints found"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 198,
+      "api_id": "tngtech/deepseek-r1t-chimera",
+      "display_name": "TNG: DeepSeek R1T Chimera",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Data policy mismatch",
+      "issues": [
+        "404: Data policy mismatch"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 197,
+      "api_id": "tngtech/deepseek-r1t2-chimera",
+      "display_name": "TNG: DeepSeek R1T2 Chimera",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Data policy mismatch",
+      "issues": [
+        "404: Data policy mismatch"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 192,
+      "api_id": "nousresearch/deephermes-3-mistral-24b-preview",
+      "display_name": " DeepHermes 3 Mistral 24B Preview",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Data policy mismatch",
+      "issues": [
+        "404: Data policy mismatch"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 189,
+      "api_id": "opengvlab/internvl3-78b",
+      "display_name": "InternVL3 78B",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "404: Data policy mismatch",
+      "issues": [
+        "404: Data policy mismatch"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 49,
+      "api_id": "openai/o4-mini-deep-research",
+      "display_name": "o4 Mini Deep Research",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "400: Temperature not supported",
+      "issues": [
+        "400: Temperature not supported"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 48,
+      "api_id": "openai/o3-deep-research",
+      "display_name": "o3 Deep Research",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "400: Temperature not supported",
+      "issues": [
+        "400: Temperature not supported"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 35,
+      "api_id": "nvidia/nemotron-3-nano-30b-a3b",
+      "display_name": "Nemotron 3 Nano 30B A3B",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "405: JSON mode not supported",
+      "issues": [
+        "405: JSON mode not supported"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 159,
+      "api_id": "qwen/qwen3-vl-235b-a22b-thinking",
+      "display_name": "Qwen: Qwen3 VL 235B A22B Thinking",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "429: Rate limited",
+      "issues": [
+        "429: Rate limited"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 26,
+      "api_id": "google/gemma-3-27b-it:free",
+      "display_name": "Gemma 3 27B",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "429: Rate limited",
+      "issues": [
+        "429: Rate limited"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 107,
+      "api_id": "mistralai/mistral-small-24b-instruct-2501",
+      "display_name": "Mistral: Mistral Small 3",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "429: Rate limited",
+      "issues": [
+        "429: Rate limited"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 195,
+      "api_id": "cognitivecomputations/dolphin-mistral-24b-venice-edition:free",
+      "display_name": "Uncensored",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "429: Rate limited",
+      "issues": [
+        "429: Rate limited"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 1,
+      "api_id": "bytedance-seed/seed-1.6-flash",
+      "display_name": "Seed 1.6 Flash",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "429: Rate limited",
+      "issues": [
+        "429: Rate limited"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 215,
+      "api_id": "sao10k/l3-lunaris-8b",
+      "display_name": "Llama 3 8B Lunaris",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "Invalid JSON: Empty response",
+      "issues": [
+        "Invalid JSON: Empty response"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 194,
+      "api_id": "nousresearch/hermes-2-pro-llama-3-8b",
+      "display_name": "NousResearch: Hermes 2 Pro - Llama-3 8B",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "Invalid JSON: Empty response",
+      "issues": [
+        "Invalid JSON: Empty response"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 9,
+      "api_id": "z-ai/glm-4.5v",
+      "display_name": "GLM 4.5V",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "Invalid JSON: Truncated response",
+      "issues": [
+        "Invalid JSON: Truncated response"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 218,
+      "api_id": "undi95/remm-slerp-l2-13b",
+      "display_name": "SLERP 13B",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "Invalid JSON: Truncated response",
+      "issues": [
+        "Invalid JSON: Truncated response"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    },
+    {
+      "id": 206,
+      "api_id": "meta-llama/llama-3.1-405b-instruct",
+      "display_name": "Llama 3.1 405B Instruct",
+      "ranking": null,
+      "score": 0,
+      "tier": "F",
+      "isFail": true,
+      "failReason": "Invalid JSON: Malformed response",
+      "issues": [
+        "Invalid JSON: Malformed response"
+      ],
+      "scores": null,
+      "latency_ms": null,
+      "tested": true
+    }
+  ]
+}

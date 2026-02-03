@@ -1,0 +1,63 @@
+{
+  "team_id": "8010742c-237c-409a-a374-02cca14a4c94",
+  "team_name": "The Customer Success Core",
+  "folder": "cortex",
+  "file": "customer-success.md",
+  "assignments": [
+    {
+      "role": "Strategist",
+      "function": "Portfolio/Coordinator",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "fallback_id": "#138",
+      "fallback_name": "Grok 4.1 Fast",
+      "tier": "A",
+      "reasoning": "Logic 10.0 + Creative 8.5 handles complex portfolio optimization with strategic creativity; MOST-INTELLIGENT, DEEP-THINKER, RESEARCH-GRADE matches portfolio-optimizer persona; Memory advantage with 2M context"
+    },
+    {
+      "role": "Listener",
+      "function": "Conversation Analysis",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#3",
+      "fallback_name": "MiniMax M2.1",
+      "tier": "A",
+      "reasoning": "Logic 8.5 + Creative 8.5 balanced for nuanced language interpretation; LONG-HORIZON, STRUCTURED-THINKING matches signal detection across long conversations; 30-hour task endurance handles batch processing"
+    },
+    {
+      "role": "Calculator",
+      "function": "Health Scoring",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "A",
+      "reasoning": "Logic 10.0 perfect for precise health score calculations; COMPETITION-MATH, PRECISE, STEPWISE matches systematic scoring approach; specifically built for complex multi-factor calculations"
+    },
+    {
+      "role": "Scout",
+      "function": "Opportunity Hunter",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Logic 8.5 + Creative 8.0 balanced for spotting non-obvious opportunities; Efficiency 9.5 cost-effective for high-importance role; Structured output capability generates clean opportunity reports"
+    },
+    {
+      "role": "Sentinel",
+      "function": "Deadline/Renewal Watchdog",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Logic 9.0 complex deadline reasoning and alert logic; SELF-VERIFYING, VISIBLE-COT perfect for 'never miss a deadline' vigilance; chain-of-thought transparency shows exactly what's being monitored"
+    }
+  ]
+}

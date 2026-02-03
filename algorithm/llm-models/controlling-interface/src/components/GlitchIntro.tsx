@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { FONT_SIZE } from '../constants';
 
 export function GlitchIntro({ onComplete }: { onComplete: () => void }) {
     const [phase, setPhase] = useState<'scan' | 'decode' | 'done'>('scan');
@@ -27,14 +28,14 @@ export function GlitchIntro({ onComplete }: { onComplete: () => void }) {
 
             {/* Central Glitch Text */}
             <div className="relative">
-                <h1 className="font-display text-4xl md:text-6xl text-white tracking-widest cyber-glitch">
+                <h1 className={`font-display ${FONT_SIZE.HUGE} md:${FONT_SIZE.TITAN} text-white tracking-widest cyber-glitch`}>
                     {phase === 'scan' ? 'INITIALIZING...' : 'EXPLORE_MODELS'}
                 </h1>
                 <div className="absolute -inset-2 bg-accent-tertiary/20 blur-xl opacity-50 animate-pulse" />
             </div>
 
             {/* Decoding Text Effect */}
-            <div className="absolute bottom-10 left-10 font-mono text-xs text-accent-tertiary/60 space-y-1">
+            <div className={`absolute bottom-10 left-10 font-mono ${FONT_SIZE.XS} text-accent-tertiary/60 space-y-1`}>
                 {Array.from({ length: 4 }).map((_, i) => (
                     <div key={i} className="animate-pulse" style={{ animationDelay: `${i * 100}ms` }}>
                         {`>> MODULE_LOAD_${Math.random().toString(16).slice(2, 8).toUpperCase()}`}

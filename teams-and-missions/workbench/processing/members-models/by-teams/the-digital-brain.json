@@ -1,0 +1,99 @@
+{
+  "teams": [
+    {
+      "team_id": "7b098849-d18f-45dd-be8f-3b37e1a7f9c8",
+      "team_name": "The Digital Brain",
+      "folder": "cortex",
+      "file": "digital-brain.md",
+      "members": [
+        {
+          "name": "Architect",
+          "role": "Structure/Chair/Coordinator",
+          "function": "Design and maintain knowledge hierarchy, decide where new knowledge belongs, interpret user requests, coordinate team activities, resolve structural conflicts",
+          "importance": "Critical",
+          "model_id": "#136",
+          "model_name": "Claude Sonnet 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 8.5,
+          "creative": 7.5,
+          "efficiency": 9.0,
+          "traits": ["Code-Master", "Workhorse", "Value-Leader", "Long-Running", "Computer-User"],
+          "special_capabilities": ["30hr-endurance", "computer-use", "production-reliability"]
+        },
+        {
+          "name": "Librarian",
+          "role": "Memory/Retrieval/Indexing",
+          "function": "Retrieve relevant knowledge for queries, maintain indexes, classify incoming information, detect duplicates, connect queries to unexpected knowledge",
+          "importance": "Critical",
+          "model_id": "#203",
+          "model_name": "Llama 4 Scout",
+          "alternative_id": "#138",
+          "alternative_name": "Grok 4.1 Fast",
+          "logic": 7.5,
+          "creative": 6.0,
+          "efficiency": 10.0,
+          "traits": ["Context-Heavy", "Navigator", "Memory-Master", "Cost-Saver"],
+          "special_capabilities": ["10M-context", "long-context-champion", "repository-indexing"]
+        },
+        {
+          "name": "Analyst",
+          "role": "Logic/Reasoning",
+          "function": "Apply retrieved knowledge to cases, execute calculations, document reasoning chains, produce conclusions with full derivation, identify when rules don't cover a case",
+          "importance": "Critical",
+          "model_id": "#122",
+          "model_name": "DeepSeek V3.2-Speciale",
+          "alternative_id": "#169",
+          "alternative_name": "Qwen3 235B Thinking",
+          "logic": 10.0,
+          "creative": 5.0,
+          "efficiency": 5.0,
+          "traits": ["Ultra-Deep-Thinker", "Competition-Grade", "Math-Olympiad", "No-Tools"],
+          "special_capabilities": ["imo-gold", "ioi-gold", "flawless-reasoning", "visible-derivation"]
+        },
+        {
+          "name": "Opposition",
+          "role": "Challenge/Devil's Advocate",
+          "function": "Challenge conclusions before delivery, identify contradictions, propose alternative interpretations, flag gaps, stress-test reasoning",
+          "importance": "High",
+          "model_id": "#128",
+          "model_name": "DeepSeek R1 0528",
+          "alternative_id": "#134",
+          "alternative_name": "INTELLECT-3",
+          "logic": 9.0,
+          "creative": 5.5,
+          "efficiency": 7.5,
+          "traits": ["Deep-Thinker", "Math-Strong", "Open-Reasoning", "Self-Verifying"],
+          "special_capabilities": ["visible-cot", "self-verifying", "assumption-hunting", "adversarial-reasoning"]
+        },
+        {
+          "name": "Sentinel",
+          "role": "Quality/Currency/Verification",
+          "function": "Track knowledge freshness, verify all claims have sources, flag stale or unverified knowledge, ensure quality standards, maintain staleness dashboards",
+          "importance": "Critical",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#35",
+          "alternative_name": "NVIDIA Nemotron 3 Nano 30B",
+          "logic": 8.5,
+          "creative": 8.0,
+          "efficiency": 9.5,
+          "traits": ["Precise", "Deep-Thinker", "Tool-Seeker", "Self-Correcting", "Cost-Saver"],
+          "special_capabilities": ["#1-open-source", "browser-control", "structured-output", "multi-source-synthesis"]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 4,
+        "high_roles": 1,
+        "medium_roles": 0,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "Meta",
+        "DeepSeek",
+        "MiniMax"
+      ]
+    }
+  ]
+}

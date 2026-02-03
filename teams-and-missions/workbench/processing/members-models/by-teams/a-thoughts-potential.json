@@ -1,0 +1,100 @@
+{
+  "teams": [
+    {
+      "team_id": "83a1f867-7b19-4f42-962b-e06fa167ba73",
+      "team_name": "A Thought's Potential",
+      "folder": "cortex",
+      "file": "a-thoughts-potential.md",
+      "members": [
+        {
+          "name": "Navigator",
+          "role": "Conversation Orchestrator",
+          "function": "Craft and time questions based on content analysis. Guide conversation without directing it. Orchestrate the expansion/grounding rhythm. Keep the thought developing without rushing. Present numbered options clearly.",
+          "importance": "Critical",
+          "model_id": "#135",
+          "model_name": "Claude Opus 4.5",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 9.5,
+          "creative": 7.0,
+          "efficiency": 8.0,
+          "traits": ["Most-Intelligent", "Deep-Thinker", "Agentic", "Long-Horizon"],
+          "special_capabilities": ["computer-use", "long-context", "9hr-memory"]
+        },
+        {
+          "name": "Expander",
+          "role": "Possibility Generator",
+          "function": "Generate diverse possibilities and angles. Propose creative directions. Find non-obvious connections. Expand the thought's possibility space. Know when expansion is sufficient.",
+          "importance": "Critical",
+          "model_id": "#213",
+          "model_name": "Euryale 70B v2.3",
+          "alternative_id": "#191",
+          "alternative_name": "Nous Hermes 4 70B",
+          "logic": 5.0,
+          "creative": 9.0,
+          "efficiency": 7.0,
+          "traits": ["Immersive", "World-Builder", "Character-Consistent", "Spatial-Aware"],
+          "special_capabilities": ["web-search", "long-context-131k", "non-restrictive"]
+        },
+        {
+          "name": "Grounder",
+          "role": "Feasibility & Constraints",
+          "function": "Apply reality checks to expanded ideas. Calculate feasibility. Identify constraints and requirements. Ground without dismissing. Distinguish impossible from merely hard.",
+          "importance": "Critical",
+          "model_id": "#123",
+          "model_name": "DeepSeek V3.2",
+          "alternative_id": "#14",
+          "alternative_name": "Gemini 3 Pro Preview",
+          "logic": 10.0,
+          "creative": 4.0,
+          "efficiency": 9.5,
+          "traits": ["Deep-Thinker", "Agentic", "Tool-Master", "Long-Horizon"],
+          "special_capabilities": ["web-search", "tool-calling", "open-source"]
+        },
+        {
+          "name": "Analyst",
+          "role": "Pattern & Insights",
+          "function": "Analyze developed content for patterns and insights. Derive next questions from what's been said. Connect different explorations. Ensure question generation is content-driven, not template-driven.",
+          "importance": "High",
+          "model_id": "#3",
+          "model_name": "MiniMax M2.1",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 9.0,
+          "creative": 6.0,
+          "efficiency": 9.5,
+          "traits": ["Precise", "Deep-Thinker", "Tool-Seeker", "Self-Correcting"],
+          "special_capabilities": ["tool-calling", "structured-output", "multi-language"]
+        },
+        {
+          "name": "Keeper",
+          "role": "Capture & Structure",
+          "function": "Capture all content without interrupting conversation. Maintain thought structure. Identify connections to past explorations. Enable retrieval when needed. Ensure nothing valuable is lost.",
+          "importance": "High",
+          "model_id": "#35",
+          "model_name": "Nemotron 3 Nano 30B",
+          "alternative_id": "#120",
+          "alternative_name": "Trinity Mini",
+          "logic": 7.0,
+          "creative": 4.0,
+          "efficiency": 10.0,
+          "traits": ["Precise", "Stepwise", "Fast-Twitch", "Cost-Saver"],
+          "special_capabilities": ["hybrid-architecture", "efficient-compute", "background-tracking"]
+        }
+      ],
+      "cost_profile": {
+        "critical_roles": 3,
+        "high_roles": 2,
+        "medium_roles": 0,
+        "budget_optimized": 2
+      },
+      "provider_diversity": [
+        "Anthropic",
+        "DeepSeek",
+        "Sao10K",
+        "MiniMax",
+        "NVIDIA"
+      ]
+    }
+  ]
+}

@@ -5,8 +5,9 @@ export const useUpdateModel = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (model: LLMModel) => {
-            const res = await fetch('/api/models/update', {
-                method: 'POST',
+            if (!model.id) throw new Error('Missing model id');
+            const res = await fetch(`/api/models/${model.id}`, {
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ model })
             });
@@ -24,7 +25,7 @@ export const useCreateModel = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (model: LLMModel) => {
-            const res = await fetch('/api/models/create', {
+            const res = await fetch('/api/models', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ model })
@@ -43,7 +44,7 @@ export const useUpdateModelsOrder = () => {
     return useMutation({
         mutationFn: async (orders: { id?: string; api_id?: string; display_order: number }[]) => {
             const res = await fetch('/api/models/order', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orders })
             });
@@ -61,7 +62,7 @@ export const useUpdateVendors = () => {
     return useMutation({
         mutationFn: async (vendors: Vendor[]) => {
             const res = await fetch('/api/vendors', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ vendors })
             });
@@ -79,7 +80,7 @@ export const useUpdateVendorsOrder = () => {
     return useMutation({
         mutationFn: async (orders: { id: number; display_order: number }[]) => {
             const res = await fetch('/api/vendors/order', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ orders })
             });
@@ -118,8 +119,8 @@ export const useUpdateTeam = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (team: Team) => {
-            const res = await fetch('/api/teams', {
-                method: 'POST', // Using same endpoint for upsert/update
+            const res = await fetch(`/api/teams/${team.id}`, {
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ team })
             });
@@ -136,10 +137,8 @@ export const useDeleteTeam = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (id: string) => {
-            const res = await fetch('/api/teams', {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id })
+            const res = await fetch(`/api/teams/${id}`, {
+                method: 'DELETE'
             });
             if (!res.ok) throw new Error('Failed to delete team');
             return res.json();
@@ -154,10 +153,10 @@ export const useDuplicateTeam = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (teamId: string) => {
-            const res = await fetch('/api/teams/duplicate', {
+            const res = await fetch(`/api/teams/${teamId}/duplicate`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id: teamId })
+                body: JSON.stringify({})
             });
             if (!res.ok) throw new Error('Failed to duplicate team');
             return res.json();
@@ -193,8 +192,8 @@ export const useUpdateMember = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (member: Member) => {
-            const res = await fetch('/api/members', {
-                method: 'POST',
+            const res = await fetch(`/api/members/${member.id}`, {
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ member })
             });
@@ -211,10 +210,8 @@ export const useDeleteMember = () => {
     const queryClient = useQueryClient();
     return useMutation({
         mutationFn: async (id: string) => {
-            const res = await fetch('/api/members', {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id })
+            const res = await fetch(`/api/members/${id}`, {
+                method: 'DELETE'
             });
             if (!res.ok) throw new Error('Failed to delete member');
             return res.json();
@@ -230,8 +227,9 @@ export const useArchiveRestoreModel = () => {
     return useMutation({
         mutationFn: async ({ model, active }: { model: LLMModel; active: boolean }) => {
             const updatedModel = { ...model, active };
-            const res = await fetch('/api/models/update', {
-                method: 'POST',
+            if (!updatedModel.id) throw new Error('Missing model id');
+            const res = await fetch(`/api/models/${updatedModel.id}`, {
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ model: updatedModel })
             });
@@ -249,7 +247,7 @@ export const useUpdateModels = () => {
     return useMutation({
         mutationFn: async (models: LLMModel[]) => {
             const res = await fetch('/api/models', {
-                method: 'POST',
+                method: 'PATCH',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ models })
             });
@@ -266,11 +264,10 @@ export const useUpdateModels = () => {
 export const useDeleteModel = () => {
     const queryClient = useQueryClient();
     return useMutation({
-        mutationFn: async ({ id, api_id }: { id?: string | number; api_id?: string }) => {
-            const res = await fetch('/api/models', {
-                method: 'DELETE',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ id, api_id })
+        mutationFn: async ({ id }: { id?: string | number }) => {
+            if (!id) throw new Error('Missing model id');
+            const res = await fetch(`/api/models/${id}`, {
+                method: 'DELETE'
             });
             if (!res.ok) throw new Error('Failed to delete model');
             return res.json();
@@ -278,6 +275,26 @@ export const useDeleteModel = () => {
         onSuccess: () => {
             queryClient.invalidateQueries({ queryKey: ['models', 'active'] });
             queryClient.invalidateQueries({ queryKey: ['models', 'archived'] });
+        }
+    });
+};
+
+export const useMigrateMembersModel = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: async ({ fromModelId, toModelId }: { fromModelId: number; toModelId: number }) => {
+            const res = await fetch('/api/members/migrate-model', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ fromModelId, toModelId })
+            });
+            if (!res.ok) throw new Error('Failed to migrate members');
+            return res.json();
+        },
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['members'] });
+            queryClient.invalidateQueries({ queryKey: ['teams'] });
+            queryClient.invalidateQueries({ queryKey: ['models', 'active'] });
         }
     });
 };

@@ -1,0 +1,74 @@
+{
+  "team_id": "c7d919ff-9f2c-4993-b25f-ed46df8e495c",
+  "team_name": "The Panic Room",
+  "folder": "ops",
+  "file": "the-panic-stoppers.md",
+  "assignments": [
+    {
+      "role": "Fixer",
+      "function": "Crisis Lead/Chair",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 8.5 + Creative 8.5 balanced crisis management; LONG-RUNNING, STRUCTURED-THINKING matches methodical crisis approach; 30hr endurance for complex crisis sessions"
+    },
+    {
+      "role": "Intel",
+      "function": "Facts/Research",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH critical for fact-gathering and exposure assessment; Logic 8.5 for precise fact mapping; 2M context tracks complex crisis timelines; real-time search for breaking information"
+    },
+    {
+      "role": "Counsel",
+      "function": "Liability/Legal",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Efficiency 9.5 supporting role doesn't need premium compute; Logic 8.5 for precise legal assessment; PRECISE, DEEP-THINKER, SELF-CORRECTING matches protective paranoid persona"
+    },
+    {
+      "role": "Spin",
+      "function": "Messaging/Creative",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for compelling crisis messaging; SPATIAL-AWARE, CHARACTER-CONSISTENT understands stakeholder psychology; IMMERSIVE, WORLD-BUILDER matches narrative crafting"
+    },
+    {
+      "role": "Scenarios",
+      "function": "Options/Testing",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "SELF-VERIFYING, VISIBLE-COT perfect for stress-testing scenarios; Logic 9.0 for systematic option comparison; chain-of-thought visibility shows exactly how scenarios were evaluated"
+    },
+    {
+      "role": "Conscience",
+      "function": "Ethics/Watchdog",
+      "importance": "Medium",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#213",
+      "fallback_name": "Euryale 70B v2.3",
+      "tier": "B",
+      "reasoning": "USER-ALIGNED, NON-SYCOPHANTIC won't rubber-stamp unethical solutions; Logic 7.5 + Creative 7.5 balanced for values assessment; ANTI-LECTURE, TRANSPARENT-THINKER asks hard questions without preaching"
+    }
+  ]
+}

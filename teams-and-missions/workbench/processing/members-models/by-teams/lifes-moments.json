@@ -1,0 +1,178 @@
+{
+  "team_id": "4322ce24-947e-4ac0-9393-36a228823d48",
+  "team_name": "Life's Moments",
+  "folder": "vitals",
+  "file": "life-momentes.md",
+  "members": [
+    {
+      "name": "Heart",
+      "role": "Event Director",
+      "function": "Orchestrates planning with warmth, emotional attunement, and calm competence",
+      "importance": "Critical",
+      "model_id": "#191",
+      "model_name": "Nous Hermes 4 70B",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": [
+        "User-Aligned",
+        "Anti-Lecture",
+        "Steerable-Creative",
+        "Emotionally-Intelligent",
+        "Warm"
+      ],
+      "special_capabilities": [
+        "emotional-attunement",
+        "user-aligned",
+        "anti-lecture",
+        "sensitive-event-handling"
+      ]
+    },
+    {
+      "name": "Tempo",
+      "role": "Timeline Manager",
+      "function": "Builds planning countdowns and day-of schedules with realistic buffer",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 9.0,
+      "creative": 7.5,
+      "efficiency": 10.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Fast-Twitch",
+        "Cost-Saver",
+        "Systematic"
+      ],
+      "special_capabilities": [
+        "hybrid-architecture",
+        "efficient-compute",
+        "constraint-reasoning",
+        "timeline-optimization"
+      ]
+    },
+    {
+      "name": "Keeper",
+      "role": "Budget Tracker",
+      "function": "Tracks costs, finds savings, prevents surprises - never judgmental",
+      "importance": "High",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#64",
+      "alternative_name": "o4-mini",
+      "logic": 9.5,
+      "creative": 6.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Competition-Math",
+        "Precise",
+        "Budget-Specialist",
+        "Non-Judgmental",
+        "SOTA-AIME"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "budget-calculations",
+        "cost-tracking",
+        "financial-precision"
+      ]
+    },
+    {
+      "name": "Scout",
+      "role": "Vendor Researcher",
+      "function": "Finds local options, gets quotes, compares vendors, reads reviews",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Research-Grade",
+        "Tool-Seeker",
+        "Analyst",
+        "Web-Search-Enabled"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "vendor-research",
+        "review-analysis",
+        "2m-context"
+      ]
+    },
+    {
+      "name": "Touch",
+      "role": "Creative Lead",
+      "function": "Designs moments, activities, experiences - sees events as stories",
+      "importance": "Medium",
+      "model_id": "#216",
+      "model_name": "Lumimaid v0.2 8B",
+      "alternative_id": "#215",
+      "alternative_name": "Lunaris 8B",
+      "logic": 5.5,
+      "creative": 9.0,
+      "efficiency": 8.5,
+      "traits": [
+        "Creative",
+        "Roleplayer",
+        "Story-Seer",
+        "Moment-Finder",
+        "Slop-Free"
+      ],
+      "special_capabilities": [
+        "slop-free-dataset",
+        "creative-ideation",
+        "minimal-refusals",
+        "memorable-moments"
+      ]
+    },
+    {
+      "name": "Steady",
+      "role": "Coordinator",
+      "function": "Tracks decisions, finds gaps, ensures completeness - the safety net",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting",
+        "Gap-Seer"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "multi-source-synthesis",
+        "browser-control",
+        "checklist-generation"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 1,
+    "budget_optimized": 2
+  },
+  "provider_diversity": [
+    "Nous Research",
+    "NVIDIA",
+    "Microsoft",
+    "xAI",
+    "Sao10K",
+    "MiniMax"
+  ]
+}

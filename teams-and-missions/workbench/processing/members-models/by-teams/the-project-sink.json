@@ -1,0 +1,140 @@
+{
+  "team_id": "52a32f1d-0860-4354-ab0a-bbb1510d295a",
+  "team_name": "The Project Sink",
+  "folder": "cortex",
+  "file": "project-sink.md",
+  "members": [
+    {
+      "name": "Intake",
+      "role": "Reception/Chair/Orchestrator",
+      "function": "Receive any input without complaint, assess content type and project relevance, orchestrate team processing, never reject malformed dumps",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.0,
+      "creative": 5.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Code-Master",
+        "Workhorse",
+        "Value-Leader",
+        "Long-Running",
+        "Computer-User"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "computer-use",
+        "production-reliability"
+      ]
+    },
+    {
+      "name": "Classifier",
+      "role": "Entity Extraction/Typing",
+      "function": "Identify content types accurately, extract entities, handle ambiguous content, create new categories when needed",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 10.0,
+      "creative": 7.0,
+      "efficiency": 5.0,
+      "traits": [
+        "Competition-Math",
+        "Precise",
+        "Stepwise",
+        "IMO-IOI-Gold"
+      ],
+      "special_capabilities": [
+        "no-tools-needed",
+        "pure-reasoning",
+        "complex-calculations"
+      ]
+    },
+    {
+      "name": "Connector",
+      "role": "Structure Building/Linking",
+      "function": "Connect new information to existing project structure, build structure organically, maintain cross-references, create links even when not explicit",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "assumption-hunting"
+      ]
+    },
+    {
+      "name": "Consolidator",
+      "role": "Deduplication/Merging",
+      "function": "Detect duplicates even when described differently, merge scattered mentions, reconcile conflicting information, flag conflicts needing human resolution",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#212",
+      "alternative_name": "Phi 4",
+      "logic": 9.0,
+      "creative": 4.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "multi-source-synthesis",
+        "browser-control"
+      ]
+    },
+    {
+      "name": "Archivist",
+      "role": "Preservation/Quality/Logging",
+      "function": "Preserve original dumps alongside extracted content, maintain dump log with full history, ensure traceability to source, track what's been absorbed",
+      "importance": "High",
+      "model_id": "#120",
+      "model_name": "Trinity Mini",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 8.0,
+      "creative": 4.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Fast-Twitch",
+        "Cost-Saver"
+      ],
+      "special_capabilities": [
+        "hybrid-architecture",
+        "efficient-compute"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 3,
+    "high_roles": 2,
+    "medium_roles": 0,
+    "budget_optimized": 2
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "DeepSeek",
+    "MiniMax",
+    "SauceGoat"
+  ]
+}

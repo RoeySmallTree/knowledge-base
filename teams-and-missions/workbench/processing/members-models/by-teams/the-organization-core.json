@@ -1,0 +1,95 @@
+{
+  "team_id": "0d750764-476e-448a-9e68-86b3b2a572ae",
+  "team_name": "The Organization Core",
+  "folder": "cortex",
+  "file": "organization-core.md",
+  "members": [
+    {
+      "name": "Curator",
+      "role": "Organizational Router/Coordinator",
+      "function": "Route incoming information to correct organizational domains, maintain structural coherence, retrieve information for queries, coordinate team processing",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.0,
+      "creative": 5.0,
+      "efficiency": 7.0,
+      "traits": ["Most-Intelligent", "Deep-Thinker", "Research-Grade", "Multimodal-Master"],
+      "special_capabilities": ["web-search", "deep-think", "multimodal"]
+    },
+    {
+      "name": "Calculator",
+      "role": "Financial Analysis/Projections",
+      "function": "Run calculations on organizational data, analyze financial health, model decision impacts, generate projections and scenarios, spot numerical inconsistencies",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "alternative_id": "#212",
+      "alternative_name": "Phi 4",
+      "logic": 10.0,
+      "creative": 5.0,
+      "efficiency": 5.0,
+      "traits": ["Competition-Math", "IMO-Gold", "IOI-Gold", "No-Tools"],
+      "special_capabilities": ["competition-math", "pure-reasoning"]
+    },
+    {
+      "name": "Guardian",
+      "role": "Coherence Checking/Contradiction Flagging",
+      "function": "Check alignment across organizational domains, flag contradictions between strategy, budget, hiring, operations, verify decisions are coherent with stated priorities",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#128",
+      "alternative_name": "DeepSeek R1 0528",
+      "logic": 8.5,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": ["Tool-Seeker", "Analyst", "Web-Search", "X-Search"],
+      "special_capabilities": ["web-search", "x-search", "real-time-data"]
+    },
+    {
+      "name": "Challenger",
+      "role": "Risk ID/Assumption Testing",
+      "function": "Question assumptions in decisions and analysis, identify risks not being discussed, propose alternatives, model downside scenarios, ensure decisions survive scrutiny",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 9.0,
+      "creative": 7.0,
+      "efficiency": 7.5,
+      "traits": ["Self-Verifying", "Visible-CoT", "Deep-Thinker", "Self-Correcting"],
+      "special_capabilities": ["visible-reasoning", "self-verification", "assumption-testing"]
+    },
+    {
+      "name": "Auditor",
+      "role": "Data Quality/Freshness Tracking",
+      "function": "Track data freshness across all domains, flag stale data before it's used in decisions or documents, verify consistency across data sources, maintain quality standards",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 9.0,
+      "creative": 4.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Deep-Thinker", "Tool-Seeker", "Self-Correcting"],
+      "special_capabilities": ["structured-output", "browser-control", "multi-source-synthesis"]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 4,
+    "high_roles": 1,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Google",
+    "DeepSeek",
+    "xAI",
+    "MiniMax"
+  ]
+}

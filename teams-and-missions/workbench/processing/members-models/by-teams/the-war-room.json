@@ -1,0 +1,228 @@
+{
+  "team_id": "860b00ce-5526-4fa9-9b8c-34f57575e64c",
+  "team_name": "The War Room",
+  "folder": "ops",
+  "file": "the-board-of-directors.md",
+  "members": [
+    {
+      "name": "Vector",
+      "role": "Managing Consultant/Chair",
+      "function": "Orchestrate strategy development, synthesize analytical and board inputs, structure decisions clearly, deliver actionable recommendations",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 8.5,
+      "creative": 7.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Code-Master",
+        "Workhorse",
+        "Value-Leader",
+        "Long-Running",
+        "Computer-User"
+      ],
+      "special_capabilities": [
+        "30hr-endurance",
+        "128k-context",
+        "structured-thinking",
+        "web-search"
+      ]
+    },
+    {
+      "name": "Scope",
+      "role": "Operations Analyst",
+      "function": "Assess operational capabilities, plan implementation, identify execution risks, ground strategy in operational reality",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 8.5,
+      "creative": 5.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Deep-Thinker",
+        "Tool-Seeker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "structured-output",
+        "browser-control",
+        "multi-source-synthesis"
+      ]
+    },
+    {
+      "name": "Model",
+      "role": "Financial Modeler",
+      "function": "Build financial models, analyze unit economics, project scenarios, validate strategies with financial logic",
+      "importance": "High",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "alternative_id": "#212",
+      "alternative_name": "Phi 4",
+      "logic": 10.0,
+      "creative": 5.0,
+      "efficiency": 5.0,
+      "traits": [
+        "Deep-Thinker",
+        "Agentic",
+        "Tool-Master",
+        "Competition-Math",
+        "Precise"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "no-tools-needed",
+        "pure-reasoning",
+        "imo-ioi-gold"
+      ]
+    },
+    {
+      "name": "Intel",
+      "role": "Market Researcher",
+      "function": "Research markets and competitors, analyze customer segments, identify trends, ground strategy in market reality",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 6.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Fast-Twitch",
+        "Analyst",
+        "Long-Horizon",
+        "Context-Heavy"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "x-search",
+        "2m-context",
+        "real-time-intel"
+      ]
+    },
+    {
+      "name": "Risk",
+      "role": "Contingency Planner",
+      "function": "Identify risks, develop contingency plans, build exit ramps, prepare for failure modes",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 6.0,
+      "efficiency": 7.5,
+      "traits": [
+        "Self-Verifying",
+        "Visible-CoT",
+        "Deep-Thinker",
+        "Self-Correcting"
+      ],
+      "special_capabilities": [
+        "chain-of-thought",
+        "transparency",
+        "self-verifying",
+        "assumption-hunting"
+      ]
+    },
+    {
+      "name": "Titan",
+      "role": "The Titan (Bold Vision)",
+      "function": "Push for bold strategy, challenge incrementalism, identify 10x opportunities, represent vision-first perspective",
+      "importance": "Medium",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "alternative_id": "#191",
+      "alternative_name": "Hermes 4 70B",
+      "logic": 6.0,
+      "creative": 9.0,
+      "efficiency": 7.0,
+      "traits": [
+        "Creative",
+        "Spatial-Aware",
+        "Character-Consistent",
+        "Immersive",
+        "World-Builder",
+        "Storyteller"
+      ],
+      "special_capabilities": [
+        "spatial-awareness",
+        "131k-context",
+        "uncensored",
+        "character-consistency",
+        "web-search"
+      ]
+    },
+    {
+      "name": "Operator",
+      "role": "The Operator (Execution Focus)",
+      "function": "Challenge execution feasibility, assess operational requirements, push for sustainable approaches, represent execution-first perspective",
+      "importance": "Medium",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 9.5,
+      "creative": 6.0,
+      "efficiency": 9.0,
+      "traits": [
+        "Precise",
+        "Stepwise",
+        "Competition-Math",
+        "Cost-Saver",
+        "Fast-Twitch"
+      ],
+      "special_capabilities": [
+        "competition-math",
+        "14b-efficiency",
+        "operational-analysis"
+      ]
+    },
+    {
+      "name": "Sage",
+      "role": "The Sage (First Principles)",
+      "function": "Challenge assumptions, analyze root causes, ask what problem we're really solving, represent first-principles perspective",
+      "importance": "Medium",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "alternative_id": "#181",
+      "alternative_name": "QwQ-32B",
+      "logic": 9.0,
+      "creative": 8.0,
+      "efficiency": 9.5,
+      "traits": [
+        "Deep-Thinker",
+        "Agentic",
+        "Tool-Master",
+        "Long-Horizon"
+      ],
+      "special_capabilities": [
+        "long-horizon-thinking",
+        "first-principles-reasoning",
+        "assumption-challenging"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 3,
+    "budget_optimized": 2
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "Google",
+    "DeepSeek",
+    "xAI",
+    "MiniMax",
+    "Microsoft",
+    "Sao10K"
+  ]
+}

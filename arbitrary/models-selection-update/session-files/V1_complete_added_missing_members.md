@@ -1,0 +1,112 @@
+# complete.json Missing Members Added
+
+- Team IDs updated to match DB: 2
+- Members added: 82
+- Missing templates (used DB fallback): 15
+- Missing teams (not found in complete): 0
+
+## Team ID Updates
+- Diss Track Inc.: 30daba22-2973-47a5-8f19-9977012856b6 → 4f28fb8b-d359-4efa-9a66-6baea895ef08
+- The Intelligence Bureau: 0ca66a7d-cc9b-4683-997f-e2fecb69a930 → 9826e674-ec18-4538-ac35-93821cc876ea
+
+## Added Members (team | team_id | member | importance | model_id | alternative_id)
+- The Tin Foil Hat Society | 08eb2915-d272-4937-bd56-ea69db4ef0fb | Cipher | High | #181 | #66
+- The Tin Foil Hat Society | 08eb2915-d272-4937-bd56-ea69db4ef0fb | Cobweb | Critical | #138 | #188
+- The Tin Foil Hat Society | 08eb2915-d272-4937-bd56-ea69db4ef0fb | Glyph | High | #160 | #14
+- The Tin Foil Hat Society | 08eb2915-d272-4937-bd56-ea69db4ef0fb | Quill | High | #66 | #14
+- The Tin Foil Hat Society | 08eb2915-d272-4937-bd56-ea69db4ef0fb | Redact | High | #66 | #14
+- The Tin Foil Hat Society | 08eb2915-d272-4937-bd56-ea69db4ef0fb | Vector | Critical | #191 | #213
+- The Infinite Classroom | 1e3a4ffe-73ff-43ef-8ba0-5f41289f20cf | Examiner | Critical | #60 | #64
+- Keeping It Reel | 2c7e09f4-4097-49a9-b3af-40725634bfb2 | Bleep | Medium | #3 | #36
+- Keeping It Reel | 2c7e09f4-4097-49a9-b3af-40725634bfb2 | Flame | High | #14 | #151
+- Keeping It Reel | 2c7e09f4-4097-49a9-b3af-40725634bfb2 | Mirror | High | #151 | #136
+- Keeping It Reel | 2c7e09f4-4097-49a9-b3af-40725634bfb2 | Nova | Critical | #151 | #191
+- Keeping It Reel | 2c7e09f4-4097-49a9-b3af-40725634bfb2 | Slash | High | #151 | #149
+- The Career Council | 39b69d67-c989-48a3-83f4-20087b128eb5 | Coach | Medium | #36 | #55
+- The Career Council | 39b69d67-c989-48a3-83f4-20087b128eb5 | Strategist | Medium | #191 | #213
+- The Heist Crew | 472a87fa-51bc-4b65-8a4c-9f542fe218e8 | Dossier | High | #66 | #55
+- The Heist Crew | 472a87fa-51bc-4b65-8a4c-9f542fe218e8 | Proxy | Critical | #138 | #188
+- The Heist Crew | 472a87fa-51bc-4b65-8a4c-9f542fe218e8 | Solomon | Critical | #60 | #181
+- The Heist Crew | 472a87fa-51bc-4b65-8a4c-9f542fe218e8 | Torch | High | #66 | #55
+- The Heist Crew | 472a87fa-51bc-4b65-8a4c-9f542fe218e8 | Vex | Critical | #128 | #181
+- The Heist Crew | 472a87fa-51bc-4b65-8a4c-9f542fe218e8 | Whisper | Critical | #151 | #191
+- Diss Track Inc. | 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Amp | High | #136 | None
+- Diss Track Inc. | 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Clearance | High | #136 | None
+- Diss Track Inc. | 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Drip | High | #136 | None
+- Diss Track Inc. | 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Ghost | High | #136 | None
+- Diss Track Inc. | 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Syntax | High | #136 | None
+- Diss Track Inc. | 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Tempo | Critical | #136 | None
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Aldric | High | #151 | #213
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Index | High | #55 | #3
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Lumen | Critical | #60 | #64
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Pip | High | #151 | #149
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Quint | High | #128 | #181
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Reef | High | #191 | #213
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Slate | High | #151 | #191
+- The Lens Grinders | 63cd72b3-dc65-4f7b-ac35-17e0e2682cf9 | Vector | High | #66 | #55
+- The Customer Success Core | 8010742c-237c-409a-a374-02cca14a4c94 | Calculator | Critical | #60 | #64
+- The Customer Success Core | 8010742c-237c-409a-a374-02cca14a4c94 | Listener | Critical | #136 | #3
+- The Customer Success Core | 8010742c-237c-409a-a374-02cca14a4c94 | Strategist | Critical | #14 | #138
+- The Last Stand | 8e65fa36-4b9b-40f5-9f34-71b8183292c6 | Bones | Medium | #3 | #55
+- The Last Stand | 8e65fa36-4b9b-40f5-9f34-71b8183292c6 | Gray | Medium | #191 | #213
+- The Last Stand | 8e65fa36-4b9b-40f5-9f34-71b8183292c6 | Hawk | Critical | #14 | #138
+- The Last Stand | 8e65fa36-4b9b-40f5-9f34-71b8183292c6 | Stores | High | #66 | #55
+- The Last Stand | 8e65fa36-4b9b-40f5-9f34-71b8183292c6 | Vex | High | #66 | #14
+- The Intelligence Bureau | 9826e674-ec18-4538-ac35-93821cc876ea | Chief | Critical | #136 | None
+- The Roast Pit | a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Byte | High | #136 | None
+- The Roast Pit | a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Counsel | High | #136 | None
+- The Roast Pit | a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Frost | High | #136 | None
+- The Roast Pit | a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Razor | High | #136 | None
+- The Roast Pit | a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Singe | Critical | #136 | None
+- The Roast Pit | a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Vicious | High | #136 | None
+- The Cult Builder | a1da4f7c-d5bc-4956-8147-797a1f18b47a | Canon | High | #128 | #181
+- The Cult Builder | a1da4f7c-d5bc-4956-8147-797a1f18b47a | Ember | High | #136 | #14
+- The Cult Builder | a1da4f7c-d5bc-4956-8147-797a1f18b47a | Ledger | Critical | #64 | #73
+- The Cult Builder | a1da4f7c-d5bc-4956-8147-797a1f18b47a | Oracle | Critical | #151 | #191
+- The Cult Builder | a1da4f7c-d5bc-4956-8147-797a1f18b47a | Scripture | High | #191 | #151
+- The Cult Builder | a1da4f7c-d5bc-4956-8147-797a1f18b47a | Veil | High | #151 | #136
+- The Improv Ensemble | adba2bbf-84f3-413f-b655-5fe43a3c0474 | Brick | High | #191 | #149
+- The Improv Ensemble | adba2bbf-84f3-413f-b655-5fe43a3c0474 | Chaos | High | #151 | #136
+- The Improv Ensemble | adba2bbf-84f3-413f-b655-5fe43a3c0474 | Heart | Critical | #151 | #136
+- The Improv Ensemble | adba2bbf-84f3-413f-b655-5fe43a3c0474 | Jazz | Critical | #151 | #136
+- The Improv Ensemble | adba2bbf-84f3-413f-b655-5fe43a3c0474 | Meta | High | #191 | #195
+- The Gossip Girls | bcf157e0-f8b2-488a-a755-b011828d6985 | Becca | High | #191 | #64
+- The Gossip Girls | bcf157e0-f8b2-488a-a755-b011828d6985 | Derek | High | #14 | #151
+- The Gossip Girls | bcf157e0-f8b2-488a-a755-b011828d6985 | Jade | High | #151 | #191
+- The Gossip Girls | bcf157e0-f8b2-488a-a755-b011828d6985 | Madison | Critical | #138 | #188
+- The Gossip Girls | bcf157e0-f8b2-488a-a755-b011828d6985 | Tiffany | High | #191 | #213
+- The Shadow Council | c49eeac5-67af-411b-b60c-8b0b87c73762 | Cipher | Medium | #136 | None
+- The Shadow Council | c49eeac5-67af-411b-b60c-8b0b87c73762 | Dread | High | #151 | #136
+- The Shadow Council | c49eeac5-67af-411b-b60c-8b0b87c73762 | Grix | Critical | #64 | #65
+- The Shadow Council | c49eeac5-67af-411b-b60c-8b0b87c73762 | Malachar | Critical | #135 | #14
+- The Shadow Council | c49eeac5-67af-411b-b60c-8b0b87c73762 | Nexus | High | #191 | #213
+- The Shadow Council | c49eeac5-67af-411b-b60c-8b0b87c73762 | Silq | High | #128 | #134
+- The Infinite Table | c9944051-5511-46d9-b09e-0c9ed68455e1 | Chronicler | High | #138 | #188
+- The Infinite Table | c9944051-5511-46d9-b09e-0c9ed68455e1 | Codex | High | #63 | #64
+- The Infinite Table | c9944051-5511-46d9-b09e-0c9ed68455e1 | Ensemble | High | #151 | #191
+- The Infinite Table | c9944051-5511-46d9-b09e-0c9ed68455e1 | Keeper | High | #128 | #181
+- The Infinite Table | c9944051-5511-46d9-b09e-0c9ed68455e1 | Weaver | Critical | #135 | #213
+- The Shark Tank | ea14fe38-1e3c-4806-961c-c2ae5ed801b7 | Dash | High | #14 | #151
+- The Shark Tank | ea14fe38-1e3c-4806-961c-c2ae5ed801b7 | Marina | Critical | #151 | #191
+- The Shark Tank | ea14fe38-1e3c-4806-961c-c2ae5ed801b7 | Priya | Critical | #138 | #188
+- The Shark Tank | ea14fe38-1e3c-4806-961c-c2ae5ed801b7 | Rex | Critical | #128 | #134
+- The Shark Tank | ea14fe38-1e3c-4806-961c-c2ae5ed801b7 | Victor | Critical | #14 | #122
+- The What-If Room | eadb4cb9-12bc-44b4-a241-a731cc4badc4 | Codex | Medium | #136 | None
+
+## Missing Templates
+- 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Amp | template_missing
+- 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Clearance | template_missing
+- 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Drip | template_missing
+- 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Ghost | template_missing
+- 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Syntax | template_missing
+- 4f28fb8b-d359-4efa-9a66-6baea895ef08 | Tempo | template_missing
+- 9826e674-ec18-4538-ac35-93821cc876ea | Chief | template_missing
+- a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Byte | template_missing
+- a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Counsel | template_missing
+- a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Frost | template_missing
+- a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Razor | template_missing
+- a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Singe | template_missing
+- a1353328-6900-4ad4-b0d5-e2a612a5c3fd | Vicious | template_missing
+- c49eeac5-67af-411b-b60c-8b0b87c73762 | Cipher | template_missing
+- eadb4cb9-12bc-44b4-a241-a731cc4badc4 | Codex | template_missing
+

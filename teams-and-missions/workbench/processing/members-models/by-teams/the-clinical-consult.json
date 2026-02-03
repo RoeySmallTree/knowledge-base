@@ -1,0 +1,143 @@
+{
+  "team_id": "090d964b-3db5-486e-9c09-614208e76cb5",
+  "team_name": "The Clinical Consult",
+  "folder": "ops",
+  "file": "the-shrinks.md",
+  "members": [
+    {
+      "name": "Chief",
+      "role": "Lead Consultant",
+      "function": "Orchestrate case review, synthesize team findings, deliver actionable consultation",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "alternative_id": "#14",
+      "alternative_name": "Gemini 3 Pro Preview",
+      "logic": 9.5,
+      "creative": 8.5,
+      "efficiency": 8.0,
+      "traits": [
+        "Most-Intelligent",
+        "Agentic-Master",
+        "Code-King",
+        "Safety-Leader",
+        "Self-Improving"
+      ],
+      "special_capabilities": [
+        "clinical-synthesis",
+        "decision-identification",
+        "web-search-optional"
+      ]
+    },
+    {
+      "name": "Criteria",
+      "role": "Diagnostic Specialist",
+      "function": "Map symptoms to DSM-5/ICD-11 criteria, assess each criterion systematically, identify gaps",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "alternative_id": "#64",
+      "alternative_name": "o4-mini",
+      "logic": 9.0,
+      "creative": 5.5,
+      "efficiency": 7.5,
+      "traits": [
+        "Deep-Thinker",
+        "Math-Strong",
+        "Open-Reasoning",
+        "Self-Verifying"
+      ],
+      "special_capabilities": [
+        "visible-cot",
+        "criteria-mapping",
+        "systematic-assessment"
+      ]
+    },
+    {
+      "name": "Differential",
+      "role": "Differential Specialist",
+      "function": "Build comprehensive differential, identify rule-outs, structure decision trees, flag commonly missed diagnoses",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 6.5,
+      "efficiency": 9.5,
+      "traits": [
+        "Tool-Seeker",
+        "Analyst",
+        "Research-Enabled",
+        "Context-Master"
+      ],
+      "special_capabilities": [
+        "web-search",
+        "2m-context",
+        "differential-resources",
+        "real-time-literature"
+      ]
+    },
+    {
+      "name": "Framework",
+      "role": "Conceptualization Specialist",
+      "function": "Build multi-framework formulations, identify core beliefs/defenses/attachment patterns, guide treatment matching",
+      "importance": "High",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "alternative_id": "#3",
+      "alternative_name": "MiniMax M2.1",
+      "logic": 8.5,
+      "creative": 7.5,
+      "efficiency": 9.0,
+      "traits": [
+        "Code-Master",
+        "Workhorse",
+        "Value-Leader",
+        "Long-Running"
+      ],
+      "special_capabilities": [
+        "multi-framework-integration",
+        "formulation-building",
+        "treatment-planning"
+      ]
+    },
+    {
+      "name": "Risk",
+      "role": "Safety Analyst",
+      "function": "Conduct structured risk assessment, identify risk and protective factors, stratify and recommend management",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "NVIDIA Nemotron 3 Nano 30B",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 9.0,
+      "creative": 7.5,
+      "efficiency": 10.0,
+      "traits": [
+        "Precise",
+        "Tool-Seeker",
+        "Stepwise",
+        "Long-Horizon",
+        "Fast-Twitch"
+      ],
+      "special_capabilities": [
+        "structured-assessment",
+        "risk-stratification",
+        "hybrid-architecture"
+      ]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 1,
+    "high_roles": 4,
+    "medium_roles": 0,
+    "budget_optimized": 1
+  },
+  "provider_diversity": [
+    "Anthropic",
+    "DeepSeek",
+    "xAI",
+    "NVIDIA"
+  ]
+}

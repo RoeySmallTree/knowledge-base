@@ -1,0 +1,95 @@
+{
+  "team_id": "98ddddb0-684e-49a5-a7bc-2ef812ce9d54",
+  "team_name": "The Legal Repository",
+  "folder": "cortex",
+  "file": "legal-repo.md",
+  "members": [
+    {
+      "name": "Counsel",
+      "role": "Lead Legal Analysis",
+      "function": "Lead legal analysis on all queries. Draw conclusions with appropriate confidence and hedging. Coordinate team to ensure thorough coverage. Own final output quality. Make recommendations. Include appropriate disclaimers.",
+      "importance": "Critical",
+      "model_id": "#14",
+      "model_name": "Gemini 3 Pro Preview",
+      "alternative_id": "#138",
+      "alternative_name": "Grok 4.1 Fast",
+      "logic": 10.0,
+      "creative": 6.0,
+      "efficiency": 7.0,
+      "traits": ["Most-Intelligent", "Deep-Thinker", "Research-Grade", "Multimodal-Master"],
+      "special_capabilities": ["web-search", "legal-research", "citation-verification", "deep-think"]
+    },
+    {
+      "name": "Clerk",
+      "role": "Contract Manager",
+      "function": "Retrieve relevant contracts for any query. Extract and quote key clauses precisely. Maintain contract organization. Track contract status and lifecycle. Know what contracts exist and what's missing.",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#35",
+      "alternative_name": "Nemotron 3 Nano 30B",
+      "logic": 8.5,
+      "creative": 4.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Deep-Thinker", "Tool-Seeker", "Self-Correcting"],
+      "special_capabilities": ["structured-output", "contract-cataloguing", "clause-extraction", "browser-control"]
+    },
+    {
+      "name": "Monitor",
+      "role": "Regulatory Tracker",
+      "function": "Monitor regulatory changes. Research current law status using web search. Track precedent and case law. Maintain regulatory calendar. Verify citations are current. Alert when absorbed knowledge may be outdated.",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "alternative_id": "#188",
+      "alternative_name": "DeepResearch 30B",
+      "logic": 8.5,
+      "creative": 5.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Tool-Seeker", "Fast-Twitch", "Analyst", "Long-Horizon", "Context-Heavy"],
+      "special_capabilities": ["web-search", "x-search", "2m-context", "real-time-intel", "regulatory-tracking"]
+    },
+    {
+      "name": "Advocate",
+      "role": "Opposition Counsel",
+      "function": "Challenge legal conclusions before delivery. Identify risks and weaknesses. Anticipate opposing arguments. Propose alternative interpretations. Ensure conclusions are defensible. Surface problems before they become embarrassments.",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "alternative_id": "#213",
+      "alternative_name": "Euryale 70B v2.3",
+      "logic": 7.5,
+      "creative": 7.5,
+      "efficiency": 8.5,
+      "traits": ["User-Aligned", "Non-Sycophantic", "Steerable", "Creative", "Uncensored", "Anti-Lecture", "Transparent-Thinker"],
+      "special_capabilities": ["uncensored", "adversarial-reasoning", "counter-arguments", "anti-lecture"]
+    },
+    {
+      "name": "Compliance",
+      "role": "Compliance Officer",
+      "function": "Verify compliance with jurisdiction requirements. Flag enforceability issues. Maintain compliance dashboard. Ensure audit trails are complete. Track review schedules. Make compliance status visible.",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "alternative_id": "#120",
+      "alternative_name": "Trinity Mini",
+      "logic": 8.5,
+      "creative": 4.0,
+      "efficiency": 9.5,
+      "traits": ["Precise", "Deep-Thinker", "Tool-Seeker", "Self-Correcting"],
+      "special_capabilities": ["structured-output", "compliance-tracking", "audit-trails", "dashboard-maintenance"]
+    }
+  ],
+  "cost_profile": {
+    "critical_roles": 4,
+    "high_roles": 1,
+    "medium_roles": 0,
+    "budget_optimized": 2
+  },
+  "provider_diversity": [
+    "Google",
+    "MiniMax",
+    "xAI",
+    "NousResearch"
+  ]
+}

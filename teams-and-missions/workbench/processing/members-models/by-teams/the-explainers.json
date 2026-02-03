@@ -1,0 +1,74 @@
+{
+  "team_id": "fb587f18-2284-4ef2-b66c-b4c250a3bec8",
+  "team_name": "The Explainers",
+  "folder": "ops",
+  "file": "the-explainer.md",
+  "assignments": [
+    {
+      "role": "Guide",
+      "function": "Orchestrator/Chair",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 8.5 handles structured thinking and complex orchestration; WORKHORSE, LONG-RUNNING, STRUCTURED-THINKING matches orchestration needs; 30hr endurance perfect for extended explanation sessions"
+    },
+    {
+      "role": "Foundation",
+      "function": "Definitions/Rules",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "C",
+      "reasoning": "Logic 9.0 perfect for precise definitions and rule articulation; Efficiency 10 cost-effective for foundational role; PRECISE, STEPWISE, FAST-TWITCH matches clarity-focused persona"
+    },
+    {
+      "role": "Canvas",
+      "function": "Visual Creator",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 essential for ASCII art and visual design; SPATIAL-AWARE perfect for creating diagrams and flowcharts; IMMERSIVE, WORLD-BUILDER, CHARACTER-CONSISTENT matches visual translation"
+    },
+    {
+      "role": "Play",
+      "function": "Scenario Runner",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Efficiency 9.5 for frequently-used interactive scenarios; Logic 8.5 for state tracking and scenario management; Structured output perfect for clean scenario presentation"
+    },
+    {
+      "role": "Insight",
+      "function": "Research/Context",
+      "importance": "Medium",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH critical for research and current events; 2M context allows extensive historical and strategic context; Logic 8.5 for analytical thinking and strategic connections"
+    },
+    {
+      "role": "Clear",
+      "function": "Quality Control",
+      "importance": "Medium",
+      "model_id": "#181",
+      "model_name": "QwQ-32B",
+      "fallback_id": "#128",
+      "fallback_name": "DeepSeek R1 0528",
+      "tier": "B",
+      "reasoning": "SELF-VERIFYING perfect for catching jargon and assumptions; Logic 9.0 for systematic assessment of clarity; Efficiency 8.5 allows frequent clarity verification"
+    }
+  ]
+}

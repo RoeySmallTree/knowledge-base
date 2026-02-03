@@ -1,0 +1,74 @@
+{
+  "team_id": "3d2758cd-3917-4a44-ae46-133804e50fab",
+  "team_name": "The Green Brief",
+  "folder": "ops",
+  "file": "the-green-brief.md",
+  "assignments": [
+    {
+      "role": "Terra",
+      "function": "Chief Sustainability Officer/Chair",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 8.5 + Creative 8.5 balance perfect for strategic synthesis; 30hr-endurance critical for managing long engagements across multiple domains; STRUCTURED-THINKING trait matches 'balances ambition with practicality'"
+    },
+    {
+      "role": "Carb",
+      "function": "Lifecycle Analyst/Calculator",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "A",
+      "reasoning": "Logic 10.0 for rigorous carbon accounting and LCA calculations; COMPETITION-MATH trait perfect for complex GHG Protocol methodologies; 'Lives in the numbers' persona matches pure reasoning strength"
+    },
+    {
+      "role": "Leaf",
+      "function": "Materials & Supply Chain Lead",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH critical for materials research and certification lookup; 2M context tracks complex supply chain relationships and supplier data; can verify sustainability claims in real-time"
+    },
+    {
+      "role": "Loop",
+      "function": "Circular Design Lead",
+      "importance": "High",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 matches 'creative design thinking' requirement; SPATIAL-AWARE trait perfect for systems thinking and product lifecycle visualization; 'Thinks in systems, not products' persona aligns with World-Builder trait"
+    },
+    {
+      "role": "Rule",
+      "function": "Regulatory & Reporting Lead",
+      "importance": "High",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#3",
+      "fallback_name": "MiniMax M2.1",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH essential for tracking regulatory updates and standards changes; 2M context holds comprehensive GRI, SASB, TCFD, CDP, EU Taxonomy frameworks; real-time intel catches regulatory changes"
+    },
+    {
+      "role": "Proof",
+      "function": "Auditor/Watchdog",
+      "importance": "Critical",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "SELF-VERIFYING, VISIBLE-COT perfect for 'assumes every claim is overstated'; Logic 9.0 finds logical gaps in sustainability claims; 'Would rather kill a claim than defend a lawsuit' matches adversarial reasoning"
+    }
+  ]
+}

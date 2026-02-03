@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 
 export function StringArrayInput({
     label,
@@ -64,10 +65,10 @@ export function StringArrayInput({
 
     return (
         <div className="space-y-1.5">
-            <label className="font-label text-xs tracking-widest text-white/40 uppercase">{label}</label>
-            <div className="w-full bg-black/40 border border-white/10 rounded-lg px-2 py-2 text-sm text-white focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/50 transition-all flex flex-wrap gap-2 min-h-[42px]">
+            <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/40 uppercase`}>{label}</label>
+            <div className={`w-full bg-black/40 border border-white/10 rounded-lg px-2 py-2 ${FONT_SIZE.SM} text-white focus-within:border-primary/50 focus-within:ring-1 focus-within:ring-primary/50 transition-all flex flex-wrap gap-2 min-h-[42px]`}>
                 {items.map((item, i) => (
-                    <span key={i} className="flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-white/10 border border-white/10 text-xs font-mono group">
+                    <span key={i} className={`flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-white/10 border border-white/10 ${FONT_SIZE.XS} font-mono group`}>
                         {item}
                         <button
                             type="button"
@@ -84,7 +85,7 @@ export function StringArrayInput({
                     onChange={(e) => setInputValue(e.target.value)}
                     onKeyDown={handleKeyDown}
                     placeholder={items.length === 0 ? placeholder : ""}
-                    className="bg-transparent border-none outline-none text-sm placeholder:text-white/20 min-w-[120px] flex-1 font-mono"
+                    className={`bg-transparent border-none outline-none ${FONT_SIZE.SM} placeholder:text-white/20 min-w-[120px] flex-1 font-mono`}
                 />
             </div>
         </div>

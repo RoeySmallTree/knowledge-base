@@ -1,0 +1,63 @@
+{
+  "team_id": "1e3a4ffe-73ff-43ef-8ba0-5f41289f20cf",
+  "team_name": "The Infinite Classroom",
+  "folder": "vitals",
+  "file": "the-infinite-classroom.md",
+  "assignments": [
+    {
+      "role": "Dean",
+      "function": "Orchestrator/Assessment",
+      "importance": "Critical",
+      "model_id": "#135",
+      "model_name": "Claude Opus 4.5",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Logic 9.5 with Creative 8.5 handles both structured planning AND adaptive curriculum design; AGENTIC-MASTER, SELF-IMPROVING matches role's need to manage expanding product trees; Memory 10 requirement perfectly met"
+    },
+    {
+      "role": "Professor",
+      "function": "Content Creator/Explainer",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#136",
+      "fallback_name": "Claude Sonnet 4.5",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH critical for pulling real-world examples, current events, up-to-date information; Logic 8.5 + Creative 7.0 balances structured explanations with engaging examples; 2M context tracks complex topic relationships"
+    },
+    {
+      "role": "Examiner",
+      "function": "Assessment/Gap Detection",
+      "importance": "Critical",
+      "model_id": "#122",
+      "model_name": "DeepSeek V3.2-Speciale",
+      "fallback_id": "#212",
+      "fallback_name": "Phi 4",
+      "tier": "A",
+      "reasoning": "Logic 10 perfect for creating precise, fair assessments that truly test understanding; COMPETITION-GRADE, NO-TOOLS pure reasoning strength for fair grading without shortcuts; can grade instantly with surgical precision"
+    },
+    {
+      "role": "Tutor",
+      "function": "Remediation/Walkthroughs",
+      "importance": "High",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "B",
+      "reasoning": "Efficiency 9.5 for high-volume remediation content generation; STRUCTURED-OUTPUT perfect for step-by-step walkthroughs and practice problems; Logic 8.5 ensures methodical gap-filling"
+    },
+    {
+      "role": "Advocate",
+      "function": "Learner Protection/Clarity",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Nous Hermes 4 70B",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "B",
+      "reasoning": "Creative 7.5 + Logic 7.5 balances empathy with clear prerequisite tracking; USER-ALIGNED, ANTI-LECTURE perfect for learner advocacy role; Non-sycophantic nature ensures honest feedback about clarity issues"
+    }
+  ]
+}

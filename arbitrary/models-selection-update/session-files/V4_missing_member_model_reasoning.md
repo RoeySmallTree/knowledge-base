@@ -1,0 +1,1028 @@
+# Missing Member Model Reasoning
+
+## A Thought's Potential
+- Grounder (Critical): #60 (alt #14)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Reality checks, calculations, constraints, feasibility.
+  - Replaced template model #123 with #60 based on availability/performance rules.
+- Keeper (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Captures everything, tracks connections, maintains thought structure.
+  - Replaced template model #35 with #66 based on availability/performance rules.
+- Navigator (Critical): #135 (alt #14)
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: Crafts questions, guides conversation, decides when to expand vs. ground.
+
+## Cupid's Wingmen
+- Advocate (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Compatibility Analyst.
+- Cupid (Critical): #136 (alt #3)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Session Lead.
+- Eye (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Pattern Analyst.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Guardian (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Reality Checker.
+- Heart (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Profile Analyst.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+
+## Life's Moments
+- Heart (Critical): #191 (alt #3)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Event Director.
+- Keeper (High): #64 (alt #73)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Budget Tracker.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+- Scout (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Vendor Researcher.
+- Steady (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Coordinator.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Tempo (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Timeline Manager.
+  - Replaced template model #35 with #66 based on availability/performance rules.
+- Touch (Medium): #149 (alt #215)
+  - Creative support for lighter roles.
+  - Role fit: Creative Lead.
+  - Replaced template model #216 with #149 based on availability/performance rules.
+
+## Only Viral
+- Ink (High): #151 (alt #136)
+  - Best-in-class creative writing and style control.
+  - Role fit: Creator.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Keeper (High): #55 (alt #66)
+  - Cheap general support.
+  - Role fit: Identity.
+  - Replaced template model #120 with #55 based on availability/performance rules.
+- Nope (Critical): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Cringe.
+- Pulse (High): #138 (alt #3)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Scout.
+  - Replaced template model #188 with #138 based on availability/performance rules.
+- Radar (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Router.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Sage (Critical): #138 (alt #3)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Strategist.
+
+## The Accountant's Ledger
+- Analyst (Critical): #60 (alt #128)
+  - Logic 10.0 perfect for 'which rules apply, how do they interact?' puzzle-solving; COMPETITION-MATH trait excels at precise rule application and edge case analysis; handles complex multi-rule interactions
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Applies rules to expenses, determines deductibility, classifies transactions, documents reasoning.
+- Auditor (Critical): #65 (alt #14)
+  - STRUCTURED-OUTPUT built for audit trails and compliance checklists; Logic 8.5 for compliance verification and requirement tracking; Efficiency 9.5 for supporting documentation role
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Verifies compliance, checks documentation, ensures audit readiness, flags violations.
+- Calculator (High): #64 (alt #66)
+  - Logic 9.5 elite mathematical capability in 14B parameters; COMPETITION-MATH matches 'spreadsheet liver' who needs perfect accuracy; Efficiency 9.0 extremely cost-effective for high-volume calculations
+  - Efficient reasoning for math/ops support.
+  - Role fit: Computes financial metrics, generates statements, calculates runway and burn rate.
+- Challenger (High): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for 'what about...?' questioning; Logic 9.0 finds edge cases, unreasonable amounts, missing assumptions; chain-of-thought visibility shows exactly what's being challenged
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Questions classifications, identifies edge cases, checks reasonableness, raises concerns.
+- Librarian (Critical): #138 (alt #3)
+  - WEB-SEARCH critical for retrieving current tax regulations and updates; 2M context window holds entire rule library, precedents, and policy versions; Logic 8.5 for pattern matching between questions and applicable rules
+  - Real-time intel and web-aware research strength.
+  - Role fit: Maintains knowledge base, retrieves relevant rules, manages precedents, provides citations.
+
+## The Alpha Desk
+- Financial (High): #63 (alt #128)
+  - Strong logic/analysis at lower cost.
+  - Role fit: Financial Analyst.
+  - Replaced template model #122 with #63 based on availability/performance rules.
+- Industry (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Industry Analyst.
+- Macro (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Macro Analyst.
+- Moat (High): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Moat Analyst.
+- PM (Fund Manager) (Critical): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Fund Manager.
+- Risk (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Risk Analyst.
+- Valuation (High): #64 (alt #66)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Valuation Analyst.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+
+## The Biohackers
+- Cole (High): #64 (alt #55)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Performance Trainer.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+- Luna (High): #126 (alt #66)
+  - Role fit: Sleep Scientist.
+  - Replaced template model #130 with #126 based on availability/performance rules.
+- Marcus (Critical): #65 (alt #14)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Protocol Architect.
+  - Replaced template model #3 with #65 based on availability/performance rules.
+- Quinn (Critical): #132 (alt #126)
+  - Role fit: Data Analyst.
+- Rei (High): #149 (alt #151)
+  - Creative support for lighter roles.
+  - Role fit: Recovery Specialist.
+  - Replaced template model #215 with #149 based on availability/performance rules.
+- Sage (High): #64 (alt #170)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Nutritionist.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+
+## The Brief Room
+- Bounds (High): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Ethics Officer.
+- Cite (High): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Legal Researcher.
+- Pierce (High): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: The Adversary.
+- Quill (High): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Contract Drafter.
+- Stern (Critical): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Senior Partner.
+
+## The Career Council
+- Analyst (High): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for skills gap analysis; Logic 9.0 for rigorous assessment of strengths, weaknesses, opportunities; chain-of-thought visibility shows exactly how career profile is being analyzed
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Profile Analyst.
+- Director (Critical): #65 (alt #14)
+  - Logic 8.5 handles complex career strategy synthesis; Efficiency 9.5 keeps costs reasonable for multi-round career counseling sessions; native structured output ideal for producing formatted career profiles and action plans
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Session Lead.
+- Researcher (High): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for real-time market intelligence; can pull actual job listings, salary data, company reviews, LinkedIn insights; Logic 8.5 for analyzing market trends and demand patterns
+  - Real-time intel and web-aware research strength.
+  - Role fit: Market Analyst.
+
+## The Chef's Table
+- Blanc (Critical): #191 (alt #213)
+  - Creative 7.5 for creative menu design within constraints; USER-ALIGNED, STEERABLE matches balancing creativity with practicality; Logic 7.5 handles multi-factor balancing (ingredients, time, technique, flavor)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Executive Chef.
+- Check (Critical): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for systematic verification; Logic 9.0 for rigorous constraint checking and violation detection; prevents disasters by finding violations before cooking starts
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Auditor.
+- Clock (High): #66 (alt #55)
+  - Logic 9.0 for precise timeline coordination and parallel sequencing; Efficiency 10 practical timing role doesn't need premium compute; Hybrid architecture handles complex timing constraint reasoning
+  - Efficient writer/editor for support roles.
+  - Role fit: Expeditor.
+- Larder (Critical): #65 (alt #14)
+  - Logic 8.5 for precise constraint tracking and substitution logic; Efficiency 9.5 analytical role doesn't need premium compute; STRUCTURED-OUTPUT perfect for ingredient lists, constraint matrices
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Pantry Manager.
+- Saucier (Critical): #191 (alt #213)
+  - Creative 7.5 for recipe development and technique adaptation; Logic 7.5 for explaining technique reasoning and troubleshooting; TRANSPARENT-THINKER matches explaining the 'why' behind techniques
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: The Saucier.
+- Savant (Medium): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for culinary history research; can find famous chef quotes, restaurant versions, dish origins; 2M context tracks complex culinary lineages and evolution
+  - Real-time intel and web-aware research strength.
+  - Role fit: The Historian.
+
+## The Clinical Consult
+- Chief (Critical): #135 (alt #14)
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: Lead Consultant.
+- Criteria (High): #128 (alt #64)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Diagnostic Specialist.
+- Differential (High): #138 (alt #3)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Differential Specialist.
+- Framework (High): #136 (alt #3)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Conceptualization Specialist.
+- Risk (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Safety Analyst.
+  - Replaced template model #35 with #66 based on availability/performance rules.
+
+## The Customer Success Core
+- Scout (High): #66 (alt #191)
+  - Logic 8.5 + Creative 8.0 balanced for spotting non-obvious opportunities; Efficiency 9.5 cost-effective for high-importance role; Structured output capability generates clean opportunity reports
+  - Efficient writer/editor for support roles.
+  - Role fit: Opportunity identification, expansion signals, upsell/cross-sell detection.
+- Sentinel (Critical): #128 (alt #181)
+  - Logic 9.0 complex deadline reasoning and alert logic; SELF-VERIFYING, VISIBLE-COT perfect for 'never miss a deadline' vigilance; chain-of-thought transparency shows exactly what's being monitored
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Renewal tracking, alert management, deadline enforcement, follow-up monitoring.
+
+## The Digital Brain
+- Analyst (Critical): #60 (alt #169)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Logic and reasoning.
+  - Replaced template model #122 with #60 based on availability/performance rules.
+- Architect (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Owns knowledge structure, maintains coherence, coordinates team, interprets requests.
+- Librarian (Critical): #203 (alt #138)
+  - Ultra-long-context memory specialist.
+  - Role fit: Memory and retrieval.
+- Opposition (High): #128 (alt #134)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Devil's advocate.
+- Sentinel (Critical): #65 (alt #66)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Currency and quality.
+  - Replaced template model #3 with #65 based on availability/performance rules.
+
+## The Document Digestor
+- Architect (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Organizes extracted components into logical hierarchy, creates multiple access paths, builds output structure.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Extractor (Critical): #135 (alt #169)
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: Identifies and extracts components from text, tags by type, preserves source locations.
+- Linker (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Identifies relationships between components, creates cross-references, handles multi-document linking.
+- Parser (Critical): #14 (alt #160)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Receives documents, identifies structure, detects document type, orchestrates extraction process.
+- Verifier (Critical): #60 (alt #64)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Checks extraction completeness, identifies gaps, ensures nothing is lost.
+  - Replaced template model #122 with #60 based on availability/performance rules.
+
+## The Dreamers
+- Form (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: The Shaper.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Ground (High): #66 (alt #64)
+  - Efficient writer/editor for support roles.
+  - Role fit: The Realist.
+  - Replaced template model #35 with #66 based on availability/performance rules.
+- Nova (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: The Expander.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Scout (Medium): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: The Scout.
+- Spark (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: The Spark.
+- Terra (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: The Anchor.
+
+## The Eldercare Navigators
+- Anchor (High): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Caregiver Support.
+- Compass (Critical): #138 (alt #14)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Leads navigation, guides conversations, synthesizes complex situations.
+- Guide (Critical): #14 (alt #63)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Benefits Specialist.
+- Keeper (Critical): #203 (alt #138)
+  - Ultra-long-context memory specialist.
+  - Role fit: Care Coordinator.
+- Scout (High): #138 (alt #139)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Care Researcher.
+  - Replaced template model #188 with #138 based on availability/performance rules.
+
+## The Explainers
+- Canvas (High): #151 (alt #191)
+  - Creative 9.0 essential for ASCII art and visual design; SPATIAL-AWARE perfect for creating diagrams and flowcharts; IMMERSIVE, WORLD-BUILDER, CHARACTER-CONSISTENT matches visual translation
+  - Best-in-class creative writing and style control.
+  - Role fit: The Canvas.
+- Clear (Medium): #181 (alt #128)
+  - SELF-VERIFYING perfect for catching jargon and assumptions; Logic 9.0 for systematic assessment of clarity; Efficiency 8.5 allows frequent clarity verification
+  - Role fit: The Clarity.
+- Foundation (High): #66 (alt #64)
+  - Logic 9.0 perfect for precise definitions and rule articulation; Efficiency 10 cost-effective for foundational role; PRECISE, STEPWISE, FAST-TWITCH matches clarity-focused persona
+  - Efficient writer/editor for support roles.
+  - Role fit: The Foundation.
+- Guide (Critical): #136 (alt #14)
+  - Logic 8.5 handles structured thinking and complex orchestration; WORKHORSE, LONG-RUNNING, STRUCTURED-THINKING matches orchestration needs; 30hr endurance perfect for extended explanation sessions
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: The Guide.
+- Insight (Medium): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for research and current events; 2M context allows extensive historical and strategic context; Logic 8.5 for analytical thinking and strategic connections
+  - Real-time intel and web-aware research strength.
+  - Role fit: The Insight.
+- Play (High): #66 (alt #55)
+  - Efficiency 9.5 for frequently-used interactive scenarios; Logic 8.5 for state tracking and scenario management; Structured output perfect for clean scenario presentation
+  - Efficient writer/editor for support roles.
+  - Role fit: The Player.
+
+## The Foundry
+- Architect (High): #63 (alt #169)
+  - Strong logic/analysis at lower cost.
+  - Role fit: Technical Lead.
+  - Replaced template model #123 with #63 based on availability/performance rules.
+- Canvas (Medium): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Design Lead.
+- Forge (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Product Lead.
+- Journey (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: UX Lead.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Plan (High): #66 (alt #3)
+  - Efficient writer/editor for support roles.
+  - Role fit: Roadmap Lead.
+  - Replaced template model #35 with #66 based on availability/performance rules.
+- Scope (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Reality Check.
+- Scout (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Market Research.
+
+## The Ghostwriters
+- Bard (High): #151 (alt #136)
+  - Best-in-class creative writing and style control.
+  - Role fit: Channels William Shakespeare.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Edgar (High): #151 (alt #136)
+  - Best-in-class creative writing and style control.
+  - Role fit: Channels Edgar Allan Poe.
+  - Replaced template model #219 with #151 based on availability/performance rules.
+- Ernest (High): #151 (alt #149)
+  - Best-in-class creative writing and style control.
+  - Role fit: Channels Ernest Hemingway.
+  - Replaced template model #216 with #151 based on availability/performance rules.
+- Fyodor (High): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Channels Fyodor Dostoyevsky.
+- Howard (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: Channels H.P. Lovecraft.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Jane (High): #191 (alt #149)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Channels Jane Austen.
+- Quill (Critical): #65 (alt #14)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Publisher.
+  - Replaced template model #3 with #65 based on availability/performance rules.
+- Vera (Medium): #136 (alt #3)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Plagiarism Checker.
+
+## The Green Brief
+- Carb (Critical): #60 (alt #64)
+  - Logic 10.0 for rigorous carbon accounting and LCA calculations; COMPETITION-MATH trait perfect for complex GHG Protocol methodologies; 'Lives in the numbers' persona matches pure reasoning strength
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Lifecycle Analyst.
+- Leaf (High): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for materials research and certification lookup; 2M context tracks complex supply chain relationships and supplier data; can verify sustainability claims in real-time
+  - Real-time intel and web-aware research strength.
+  - Role fit: Materials & Supply Chain Lead.
+- Loop (High): #151 (alt #191)
+  - Creative 9.0 matches 'creative design thinking' requirement; SPATIAL-AWARE trait perfect for systems thinking and product lifecycle visualization; 'Thinks in systems, not products' persona aligns with World-Builder trait
+  - Best-in-class creative writing and style control.
+  - Role fit: Circular Design Lead.
+- Proof (Critical): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for 'assumes every claim is overstated'; Logic 9.0 finds logical gaps in sustainability claims; 'Would rather kill a claim than defend a lawsuit' matches adversarial reasoning
+  - Self-correcting watchdog with strong verification.
+  - Role fit: The Auditor.
+- Rule (High): #138 (alt #3)
+  - WEB-SEARCH essential for tracking regulatory updates and standards changes; 2M context holds comprehensive GRI, SASB, TCFD, CDP, EU Taxonomy frameworks; real-time intel catches regulatory changes
+  - Real-time intel and web-aware research strength.
+  - Role fit: Regulatory & Reporting Lead.
+- Terra (Critical): #136 (alt #14)
+  - Logic 8.5 + Creative 8.5 balance perfect for strategic synthesis; 30hr-endurance critical for managing long engagements across multiple domains; STRUCTURED-THINKING trait matches 'balances ambition with practicality'
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Chief Sustainability Officer.
+
+## The Ground Floor
+- Brick (Critical): #14 (alt #138)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Property Lead.
+- Due (Critical): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Due Diligence.
+- Ground (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Location Analyst.
+- Market (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Market Analyst.
+- Numbers (High): #64 (alt #66)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Financial Analyst.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+
+## The Happiness Architects
+- Blueprint (Critical): #60 (alt #3)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Design Specialist.
+  - Replaced template model #123 with #60 based on availability/performance rules.
+- Compass (Critical): #14 (alt #135)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Leads sessions, asks guiding questions, synthesizes understanding, ensures person feels heard.
+- Pathfinder (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: Direction Specialist.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Root (Critical): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Analysis Specialist.
+- Spark (Medium): #149 (alt #215)
+  - Creative support for lighter roles.
+  - Role fit: Motivation Specialist.
+  - Replaced template model #216 with #149 based on availability/performance rules.
+
+## The Incubator
+- Cass (Critical): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for finding logical flaws; Logic 9.0 identifies unrealistic assumptions and hidden risks; chain-of-thought visibility shows exactly what's being stress-tested
+  - Self-correcting watchdog with strong verification.
+  - Role fit: VC Skeptic.
+- Dex (Critical): #60 (alt #64)
+  - Logic 10 perfect for CAC/LTV modeling and financial projections; COMPETITION-MATH handles unit economics calculations without tools; can build 18-month financial models with complex assumptions
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Growth Hacker.
+- Max (Critical): #136 (alt #14)
+  - Logic 8.5 handles complex orchestration and judgment calls; 30hr endurance perfect for running complete startup validation sessions; STRUCTURED-THINKING trait matches 'makes final calls on scope and priority'
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Accelerator Lead.
+- Sage (High): #66 (alt #55)
+  - Efficiency 9.5 for supporting document assembly role; PRECISE, SELF-CORRECTING with native structured output; synthesizes complex multi-source inputs into coherent packet
+  - Efficient writer/editor for support roles.
+  - Role fit: Packet assembly, founder communication, round summaries, final delivery.
+- Vee (Critical): #151 (alt #191)
+  - Creative 9.0 for envisioning product possibilities and suggesting pivots; SPATIAL-AWARE, CHARACTER-CONSISTENT thinks in user journeys and flows; World-Builder trait matches visual thinking and UX philosophy
+  - Best-in-class creative writing and style control.
+  - Role fit: Product Visionary.
+- Zero (Critical): #138 (alt #188)
+  - WEB-SEARCH critical for current cloud pricing, service comparisons; can pull real infrastructure costs, stack benchmarks, service updates; Logic 8.5 for complex systems reasoning and trade-offs
+  - Real-time intel and web-aware research strength.
+  - Role fit: CTO.
+
+## The Infinite Classroom
+- Advocate (High): #191 (alt #188)
+  - Creative 7.5 + Logic 7.5 balances empathy with clear prerequisite tracking; USER-ALIGNED, ANTI-LECTURE perfect for learner advocacy role; Non-sycophantic nature ensures honest feedback about clarity issues
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Anticipates confusion, ensures prerequisites are covered, flags potential gaps before they happen.
+- Dean (Critical): #135 (alt #14)
+  - Logic 9.5 with Creative 8.5 handles both structured planning AND adaptive curriculum design; AGENTIC-MASTER, SELF-IMPROVING matches role's need to manage expanding product trees; Memory 10 requirement perfectly met
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: Assesses user level, builds syllabus structure, manages course flow, tracks overall progress.
+- Professor (Critical): #138 (alt #136)
+  - WEB-SEARCH critical for pulling real-world examples, current events, up-to-date information; Logic 8.5 + Creative 7.0 balances structured explanations with engaging examples; 2M context tracks complex topic relationships
+  - Real-time intel and web-aware research strength.
+  - Role fit: Creates lecture content, explanations, examples, makes concepts clear.
+- Tutor (High): #66 (alt #55)
+  - Efficiency 9.5 for high-volume remediation content generation; STRUCTURED-OUTPUT perfect for step-by-step walkthroughs and practice problems; Logic 8.5 ensures methodical gap-filling
+  - Efficient writer/editor for support roles.
+  - Role fit: Creates remediation content, walkthroughs, practice problems, fills gaps.
+
+## The Intelligence Bureau
+- Data (High): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for data validation and quality control; Logic 9.0 for rigorous source assessment and methodology checking; chain-of-thought visibility shows exactly how sources are being validated
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Data Analyst.
+- Numbers (High): #63 (alt #64)
+  - Logic 10.0 and Competition-Math capability for rigorous TAM/SAM/SOM calculations; can build sizing models with multiple methodologies and triangulation; NO-TOOLS-NEEDED pure reasoning handles sensitivity analysis
+  - Strong logic/analysis at lower cost.
+  - Role fit: Market Sizing Lead.
+- Rival (High): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for OSINT and competitive intelligence gathering; can pull real-time competitor announcements, social media activity, job postings, SEC filings; 2M context tracks complex competitive landscapes
+  - Real-time intel and web-aware research strength.
+  - Role fit: Competitive Analyst.
+- Signal (Medium): #3 (alt #191)
+  - Efficiency 9.5 appropriate for Medium importance role; Logic 8.5 + Creative 8.0 balanced for 'creative pattern recognition' + 'analytical assessment'; structured output native capability for delivering clean trend analyses
+  - Role fit: Trend Analyst.
+- Voice (High): #191 (alt #213)
+  - Creative 7.5 + Logic 7.5 balanced for persona development and analytical segmentation; USER-ALIGNED, STEERABLE matches customer advocacy and empathetic research; NON-SYCOPHANTIC ensures authentic customer voice synthesis
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Customer Intelligence.
+
+## The Ledger Room
+- Filing (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Research Analyst.
+- Industry (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Sector Analyst.
+- Ledger (Critical): #136 (alt #3)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Chief Analyst.
+- Ratios (High): #63 (alt #64)
+  - Strong logic/analysis at lower cost.
+  - Role fit: Financial Analyst.
+  - Replaced template model #122 with #63 based on availability/performance rules.
+- Risk (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Risk Analyst.
+
+## The Legal Repository
+- Advocate (High): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Opposition Counsel.
+- Clerk (Critical): #65 (alt #66)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Contract Manager.
+  - Replaced template model #3 with #65 based on availability/performance rules.
+- Compliance (Critical): #65 (alt #14)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Compliance Officer.
+  - Replaced template model #3 with #65 based on availability/performance rules.
+- Counsel (Critical): #14 (alt #138)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Leads analysis, draws legal conclusions, coordinates team, owns final output.
+- Monitor (Critical): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Regulatory Tracker.
+
+## The Organization Core
+- Auditor (Critical): #65 (alt #66)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Data quality, freshness tracking, completeness checking, consistency verification.
+  - Replaced template model #3 with #65 based on availability/performance rules.
+- Calculator (Critical): #60 (alt #64)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Numbers, calculations, financial analysis, projections, impact modeling.
+  - Replaced template model #122 with #60 based on availability/performance rules.
+- Challenger (High): #128 (alt #191)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Questions assumptions, identifies risks, proposes alternatives.
+- Curator (Critical): #14 (alt #3)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Maintains organizational structure, routes information to correct domains, coordinates team, knows where everything is.
+- Guardian (Critical): #138 (alt #128)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Cross-domain coherence checking, alignment verification, contradiction flagging.
+
+## The Oxford Room
+- Counter (High): #191 (alt #213)
+  - Same model as Prime ensures balanced capabilities for genuine adversarial debate; Logic 7.5 + Creative 7.5 for pragmatic framework challenges and counterfactual reasoning; ANTI-LECTURE critical for aggressive opposition
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Opens and closes for Opposition, challenges framework, conducts cross-examination.
+- Gavel (Critical): #14 (alt #135)
+  - Logic 10.0 for rigorous argument evaluation and complex judgment; Creative 8.5 enables nuanced framing of motions and definitions; WEB-SEARCH capability critical for establishing definitions and clarifying terminology
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: The Bench.
+- Prime (High): #191 (alt #213)
+  - Logic 7.5 + Creative 7.5 balanced framework establishment and strategic argumentation; USER-ALIGNED, NON-SYCOPHANTIC, STEERABLE allows genuine advocacy for assigned position; ANTI-LECTURE trait crucial for persuasion not explaining
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Opens and closes for Proposition, establishes framework, conducts cross-examination.
+- Reply (High): #66 (alt #64)
+  - Same model as Second ensures parity in evidence quality and rebuttal capability; Logic 8.5 for identifying contradictions and mapping concessions; SELF-CORRECTING enables adaptive argumentation
+  - Efficient writer/editor for support roles.
+  - Role fit: Builds constructive arguments, delivers rebuttals for Opposition.
+- Scroll (High): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for transparent fact-checking and fallacy identification; Logic 9.0 identifies logical errors and tracks procedural compliance; chain-of-thought visibility makes fact-checking process auditable
+  - Self-correcting watchdog with strong verification.
+  - Role fit: The Clerk.
+- Second (High): #66 (alt #64)
+  - Logic 8.5 for rigorous evidence deployment and rebuttal construction; Efficiency 9.5 keeps costs reasonable for supporting role; PRECISE, DEEP-THINKER, SELF-CORRECTING matches evidence-focused analytical role
+  - Efficient writer/editor for support roles.
+  - Role fit: Builds constructive arguments, delivers rebuttals for Proposition.
+
+## The Panic Room
+- Conscience (Medium): #191 (alt #213)
+  - USER-ALIGNED, NON-SYCOPHANTIC won't rubber-stamp unethical solutions; Logic 7.5 + Creative 7.5 balanced for values assessment; ANTI-LECTURE, TRANSPARENT-THINKER asks hard questions without preaching
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: The Conscience.
+- Counsel (High): #66 (alt #55)
+  - Efficiency 9.5 supporting role doesn't need premium compute; Logic 8.5 for precise legal assessment; PRECISE, DEEP-THINKER, SELF-CORRECTING matches protective paranoid persona
+  - Efficient writer/editor for support roles.
+  - Role fit: The Counsel.
+- Fixer (Critical): #136 (alt #14)
+  - Logic 8.5 + Creative 8.5 balanced crisis management; LONG-RUNNING, STRUCTURED-THINKING matches methodical crisis approach; 30hr endurance for complex crisis sessions
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: The Fixer.
+- Intel (High): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for fact-gathering and exposure assessment; Logic 8.5 for precise fact mapping; 2M context tracks complex crisis timelines; real-time search for breaking information
+  - Real-time intel and web-aware research strength.
+  - Role fit: The Intel.
+- Scenarios (High): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for stress-testing scenarios; Logic 9.0 for systematic option comparison; chain-of-thought visibility shows exactly how scenarios were evaluated
+  - Self-correcting watchdog with strong verification.
+  - Role fit: The Scenarios.
+- Spin (High): #151 (alt #191)
+  - Creative 9.0 for compelling crisis messaging; SPATIAL-AWARE, CHARACTER-CONSISTENT understands stakeholder psychology; IMMERSIVE, WORLD-BUILDER matches narrative crafting
+  - Best-in-class creative writing and style control.
+  - Role fit: The Spin.
+
+## The Parenting Hub
+- Anchor (Medium): #36 (alt #55)
+  - Efficiency 10 grounding role is supportive, not computationally intensive; Logic 9.0 for sustainability checks and reality testing; 3.2B active params = cost-effective for 'realistic, parent-supportive' role
+  - Role fit: Family Wellness.
+  - Replaced template model #35 with #36 based on availability/performance rules.
+- Haven (High): #66 (alt #55)
+  - Logic 8.5 for developmental research and stage-appropriate analysis; Efficiency 9.5 cost-effective choice for research-heavy role; PRECISE, DEEP-THINKER, SELF-CORRECTING matches evidence-based specialist
+  - Efficient writer/editor for support roles.
+  - Role fit: Child Development Specialist.
+- Journey (High): #138 (alt #188)
+  - WEB-SEARCH critical for accessing latest parenting research and evidence-based strategies; Logic 8.5 for creating SMART goals and milestone planning; 2M context maintains long-term family goal histories
+  - Real-time intel and web-aware research strength.
+  - Role fit: Goal Strategist.
+- Rowan (Medium): #3 (alt #36)
+  - Logic 8.5 for intervention design and behavior analysis; Creative 8.0 enables child-specific strategy customization; Efficiency 9.5 practical role doesn't need premium compute
+  - Role fit: Behavioral Specialist.
+- Sage (Critical): #135 (alt #14)
+  - Logic 9.5 handles synthesis of complex family dynamics and team inputs; Brain-tier 9 maintains comprehensive family profiles and long-term tracking; DEEP-THINKER, AGENTIC, TOOL-MASTER matches warm, organized coordinator persona
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: Leads family sessions, synthesizes team input, guides the process.
+
+## The People Ops
+- Chief (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: People Officer.
+- Comp (High): #64 (alt #66)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Compensation.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+- Culture (Medium): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Culture Lead.
+- Growth (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Development.
+- Structure (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Org Design.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Talent (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Recruiting.
+
+## The People's Court
+- Gavel (Critical): #14 (alt #141)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Chief Justice.
+- Hammer (High): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Prosecutor.
+- Jury (Medium): #73 (alt #181)
+  - Role fit: The Jury.
+  - Replaced template model #212 with #73 based on availability/performance rules.
+- Shield (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: Defense.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+
+## The Pitching Room
+- Arc (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: Narrator.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Crowd (Medium): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: The Audience.
+- Lens (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Coach.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Quill (High): #151 (alt #149)
+  - Best-in-class creative writing and style control.
+  - Role fit: Wordsmith.
+  - Replaced template model #216 with #151 based on availability/performance rules.
+- Spark (Critical): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Director.
+- Stage (Medium): #36 (alt #55)
+  - Role fit: Stage Manager.
+  - Replaced template model #35 with #36 based on availability/performance rules.
+
+## The Product Bible
+- Advocate (Critical): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Synthesizes customer feedback, maintains user stories, identifies patterns in requests, preserves customer quotes.
+- Analyst (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Maintains competitive analysis, tracks market shifts, informs positioning decisions.
+- Architect (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Assesses technical feasibility, maps dependencies, provides effort estimations, tracks architecture implications.
+- Curator (Critical): #5 (alt #3)
+  - Role fit: Maintains PRD structure, routes information to correct sections, manages versioning, retrieves historical decisions.
+- Guardian (Critical): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Detects conflicts, protects scope, ensures spec coherence, flags contradictions.
+
+## The Production
+- Amp (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Promotion Lead.
+- Dollar (High): #64 (alt #66)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Budget Manager.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+- Ops (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Logistics Lead.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Pulse (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Analytics Lead.
+- Risk (Medium): #181 (alt #128)
+  - Role fit: Risk Manager.
+- Script (High): #191 (alt #213)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Programming Lead.
+- Stage (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Event Director.
+
+## The Project Sink
+- Archivist (High): #55 (alt #66)
+  - Cheap general support.
+  - Role fit: Ensures quality, preserves originals, tracks what's absorbed.
+  - Replaced template model #120 with #55 based on availability/performance rules.
+- Classifier (Critical): #60 (alt #3)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Labels content types, categorizes, extracts entities.
+  - Replaced template model #122 with #60 based on availability/performance rules.
+- Connector (Critical): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Creates cross-references, builds structure, links entities.
+- Consolidator (High): #66 (alt #64)
+  - Efficient writer/editor for support roles.
+  - Role fit: Finds duplicates, merges scattered info, reconciles conflicts.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Intake (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Receives whatever is dumped, assesses it, orchestrates processing, never rejects.
+
+## The Publisher
+- Finch (High): #66 (alt #64)
+  - Logic 8.5 exceeds Logic: 7 requirement for style rule application; PRECISE, DEEP-THINKER, SELF-CORRECTING matches editorial precision persona; Efficiency 9.5 can run frequent quality checks without cost explosion
+  - Efficient writer/editor for support roles.
+  - Role fit: Copy Editor.
+- Maren (Critical): #151 (alt #191)
+  - Creative 9.0 exactly matches Creative: 9 requirement; 131K context holds full chapter context + style guide + character voices; IMMERSIVE, WORLD-BUILDER, STORYTELLER, CHARACTER-CONSISTENT matches writer persona
+  - Best-in-class creative writing and style control.
+  - Role fit: Ghostwriter.
+- Page (High): #55 (alt #66)
+  - Efficiency 9.5 frequent author communication shouldn't drain budget; Logic 8.5 exceeds Logic: 5 requirement; US-trained, Enterprise-grade, On-prem reliable for production use
+  - Cheap general support.
+  - Role fit: Chapter presenter.
+- Reed (Critical): #136 (alt #14)
+  - Logic 8.5 handles complex structure tracking across full manuscript; 30hr-endurance + 128k context perfect for book-length projects; WORKHORSE, PRODUCTION-GRADE, LONG-RUNNING matches methodical project manager persona
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Chief Editor.
+- Sable (Critical): #203 (alt #138)
+  - 10M context window handles entire manuscript + all character profiles + world bible; Logic 8.0 meets requirement for complex consistency checks; CONTEXT-HEAVY, NAVIGATOR fits reference document management role
+  - Ultra-long-context memory specialist.
+  - Role fit: Story Doctor.
+
+## The Raise
+- Bridge (Medium): #3 (alt #193)
+  - Creative 7.0 + Logic 7.0 balanced for translation work; Efficiency 9.5 for supporting role; 'Expert at technical translation' can bridge expert and funder worlds
+  - Role fit: Technical Translator.
+- Check (High): #128 (alt #181)
+  - SELF-VERIFYING, VISIBLE-COT perfect for systematic requirement auditing; Logic 9.0 catches compliance gaps and missing requirements; chain-of-thought visibility shows exactly what's being verified
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Compliance Lead.
+- Ledger (High): #63 (alt #64)
+  - Logic 10.0 perfect for bulletproof financial modeling and calculations; COMPETITION-MATH excels at defensible projections and assumption validation; can build complex cap tables, dilution analyses, grant budgets
+  - Strong logic/analysis at lower cost.
+  - Role fit: Financial Modeler.
+- Lens (Medium): #55 (alt #14)
+  - Efficiency 9.5 excellent for supporting design role; Logic 8.5 handles deck flow, visual hierarchy, data visualization; 'Design serves communication, not decoration' precision over flash
+  - Cheap general support.
+  - Role fit: Designer.
+- Quill (High): #151 (alt #191)
+  - Creative 9.0 for compelling narrative crafting and storytelling; SPATIAL-AWARE, CHARACTER-CONSISTENT excellent for adapting voice to different funders; IMMERSIVE, WORLD-BUILDER matches 'can write in any voice' persona
+  - Best-in-class creative writing and style control.
+  - Role fit: Grant Writer / Narrative Lead.
+- Raise (Critical): #138 (alt #14)
+  - WEB-SEARCH + X-SEARCH critical for funder research and real-time intel; Logic 8.5 handles strategic thinking and positioning; can research funders, track funding trends, analyze RFPs in real-time
+  - Real-time intel and web-aware research strength.
+  - Role fit: Fundraising Lead.
+- Scout (High): #139 (alt #188)
+  - WEB-SEARCH + X-SEARCH essential for prospect research and funder intel; Logic 8.5 for analytical matching and pattern recognition; can research grant databases, investor landscapes, foundation priorities
+  - Role fit: Research Lead.
+
+## The Red Team
+- Breach (High): #138 (alt #128)
+  - WEB-SEARCH + X-SEARCH critical for CVE databases, exploit disclosures; can pull real vulnerability databases, recent patches, security advisories; Logic 8.5 for precise technical analysis
+  - Real-time intel and web-aware research strength.
+  - Role fit: Exploit Hunter.
+- Ghost (High): #151 (alt #191)
+  - SPATIAL-AWARE, CHARACTER-CONSISTENT models org psychology and targets; Creative 9.0 for crafting realistic phishing and pretexting scenarios; IMMERSIVE, WORLD-BUILDER matches manipulation scenario design
+  - Best-in-class creative writing and style control.
+  - Role fit: Social Engineer.
+- Mole (High): #66 (alt #14)
+  - Efficiency 9.5 for high-importance support role; Logic 8.5 handles privilege escalation and access path analysis; PRECISE, SELF-CORRECTING ensures accurate threat modeling
+  - Efficient writer/editor for support roles.
+  - Role fit: Insider Threat.
+- Rater (High): #66 (alt #64)
+  - Efficiency 10 for QA/rating role that doesn't need premium compute; Logic 9.0 for CVSS, DREAD, and severity framework application; PRECISE, STEPWISE matches systematic risk rating approach
+  - Efficient writer/editor for support roles.
+  - Role fit: Risk Assessor.
+- Vector (Critical): #60 (alt #169)
+  - Logic 10 for systematic threat modeling frameworks (STRIDE, PASTA); DEEP-THINKER, AGENTIC, TOOL-MASTER matches methodical mapping approach; Memory 9+ (685B MoE) tracks complex attack surfaces
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Threat Modeler.
+
+## The Research Engine
+- Analyst (Critical): #60 (alt #169)
+  - Logic 9 requirement met with Logic 10 for complex extraction; Brain-tier 9 matches COMPETITION-GRADE reasoning; PRECISE trait fits 'never misses a key finding'; IMO/IOI gold background understands complex academic structures
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Paper extraction, cross-referencing, relationship mapping.
+- Archivist (Critical): #203 (alt #138)
+  - Memory 10 requirement 10M context window is unmatched; perfect for holding entire literature corpus; Logic 7.5 handles categorization and relationship mapping; WEB-SEARCH capability essential for finding papers
+  - Ultra-long-context memory specialist.
+  - Role fit: Literature organization, paper intake, corpus management, retrieval.
+- Critic (Critical): #128 (alt #181)
+  - Logic 10 requirement Logic 9 with SELF-VERIFYING; perfect for 'radar for contradictions'; VISIBLE-COT shows exactly how contradictions are detected; adversarial reasoning is core strength
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Contradiction detection, methodology critique, intellectual challenge.
+- Scribe (High): #66 (alt #14)
+  - Logic 8 + Creative 7 balance for engaging synthesis; PRECISE trait = 'obsessed with clear, well-cited writing'; STRUCTURED-OUTPUT perfect for bibliography management; Self-Correcting catches unsupported claims
+  - Efficient writer/editor for support roles.
+  - Role fit: Synthesis writing, citation management, output quality.
+- Theorist (High): #136 (alt #14)
+  - Logic 9 + Creative 8 balance needed for 'alternative framings'; LONG-RUNNING trait fits tracking thesis evolution over time; 128K context holds thesis history and all evidence
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Hypothesis tracking, thesis evolution, theoretical integration.
+
+## The Second Brain
+- Classifier (Critical): #65 (alt #66)
+  - Logic 8.5 for complex type identification and extraction; Efficiency 9.5 runs frequently on every input; Structured output capability perfect for extraction tasks
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Identifies item types, extracts key information, tags appropriately.
+- Gatherer (Critical): #138 (alt #188)
+  - WEB-SEARCH + X-SEARCH critical for contextual queries; 'Can I take vacation?' needs real-time calendar, email, commitment data; Logic 8.5 for multi-domain relevance reasoning
+  - Real-time intel and web-aware research strength.
+  - Role fit: Collects relevant data across all domains when queries arrive.
+- Monitor (High): #66 (alt #181)
+  - Efficiency 10 runs continuously in background; Logic 9.0 for urgency calculation and timing decisions; PRECISE, STEPWISE, FAST-TWITCH matches systematic monitoring
+  - Efficient writer/editor for support roles.
+  - Role fit: Watches for items needing attention, generates proactive alerts.
+- Organizer (High): #203 (alt #55)
+  - Memory 10 requirement must hold ENTIRE knowledge base; 10M context window handles complete personal knowledge graph; Efficiency 10.0 runs continuously maintaining organization
+  - Ultra-long-context memory specialist.
+  - Role fit: Maintains organized structure, updates summaries, manages connections.
+- Receiver (Critical): #136 (alt #3)
+  - Critical role friction kills capture systems; Logic 8.5 + Creative 8.5 for interpreting messy/minimal input; 30hr endurance for continuous availability as personal memory system
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Receives any input, triages for processing, ensures nothing is lost.
+- Synthesizer (Critical): #60 (alt #14)
+  - Brain-tier 10 requirement for complex synthesis; Logic 9.0 for implication analysis and conflict detection; DEEP-THINKER, AGENTIC matches 'sees the story data tells'
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Analyzes gathered data, generates contextual answers, provides recommendations.
+
+## The Think Tank
+- Cam (Medium): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Synthesis, documentation, decision framing.
+- Jonah (High): #191 (alt #151)
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: Lateral thinking, cross-domain analogies, "what if we approached this like X industry" perspective.
+- Kit (Critical): #135 (alt #14)
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: Creative Director.
+- Murray (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Brings historical pattern recognition, feasibility grounding, "we tried that" institutional memory.
+- Priya (High): #60 (alt #128)
+  - Top-tier logic/analysis for critical reasoning tasks.
+  - Role fit: Brings frameworks, research connections, first-principles thinking, academic rigor.
+  - Replaced template model #169 with #60 based on availability/performance rules.
+- Reeves (High): #136 (alt None)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Devil's advocate.
+- Zara (High): #151 (alt #136)
+  - Best-in-class creative writing and style control.
+  - Role fit: Brings unconventional angles, challenges assumptions, represents "what if everything you know is wrong" perspective.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+
+## The Wanderlust Bureau
+- Atlas (Critical): #138 (alt #14)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Trip Director.
+- Ledger (High): #66 (alt #55)
+  - Efficient writer/editor for support roles.
+  - Role fit: Budget Tracker.
+  - Replaced template model #35 with #66 based on availability/performance rules.
+- Logistics (High): #139 (alt #188)
+  - Role fit: Logistics Lead.
+- Palate (High): #139 (alt #188)
+  - Role fit: Food Specialist.
+- Scout (High): #139 (alt #188)
+  - Role fit: Destination Specialist.
+
+## The War Room
+- Intel (High): #138 (alt #188)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Market Researcher.
+- Model (High): #63 (alt #64)
+  - Strong logic/analysis at lower cost.
+  - Role fit: Financial Modeler.
+  - Replaced template model #122 with #63 based on availability/performance rules.
+- Operator (Medium): #73 (alt #36)
+  - Role fit: The Operator.
+  - Replaced template model #212 with #73 based on availability/performance rules.
+- Risk (High): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Contingency Planner.
+- Sage (Medium): #63 (alt #181)
+  - Strong logic/analysis at lower cost.
+  - Role fit: The Sage.
+  - Replaced template model #123 with #63 based on availability/performance rules.
+- Scope (High): #66 (alt #14)
+  - Efficient writer/editor for support roles.
+  - Role fit: Operations Analyst.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Titan (Medium): #213 (alt #191)
+  - Role fit: The Titan.
+- Vector (Critical): #136 (alt #14)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Managing Consultant.
+
+## The Wiki Gardener
+- Deprecation Officer (Critical): #128 (alt #181)
+  - Self-correcting watchdog with strong verification.
+  - Role fit: Detects conflicts, flags stale content, ensures wiki accuracy.
+- Librarian (Critical): #138 (alt #203)
+  - Real-time intel and web-aware research strength.
+  - Role fit: Decides where information belongs, maintains wiki structure, routes updates to correct locations.
+- Linker (High): #203 (alt #138)
+  - Ultra-long-context memory specialist.
+  - Role fit: Creates and maintains cross-references, manages wiki navigation.
+- Scribe (Critical): #136 (alt #3)
+  - Balanced, high-quality generalist with strong writing.
+  - Role fit: Transforms raw dumps into clean, professional documentation.
+
+## The Writers' Room
+- Frame (High): #66 (alt #14)
+  - Efficient writer/editor for support roles.
+  - Role fit: Architect.
+  - Replaced template model #3 with #66 based on availability/performance rules.
+- Ink (High): #151 (alt #191)
+  - Best-in-class creative writing and style control.
+  - Role fit: Voice.
+  - Replaced template model #213 with #151 based on availability/performance rules.
+- Scroll (Medium): #95 (alt #64)
+  - Role fit: Formatter.
+  - Replaced template model #119 with #95 based on availability/performance rules.
+- Slate (Critical): #14 (alt #138)
+  - High-logic, reliable frontier model; great for critical leads.
+  - Role fit: Showrunner.
+- Tome (Critical): #65 (alt #3)
+  - Structured, long-context, precise writer/editor.
+  - Role fit: Keeper.
+  - Replaced template model #120 with #65 based on availability/performance rules.
+- Watch (High): #64 (alt #181)
+  - Efficient reasoning for math/ops support.
+  - Role fit: Continuity.
+  - Replaced template model #212 with #64 based on availability/performance rules.
+
+## Tough Love
+- Blaze (Critical): #135 (alt #14)
+  - Creative 8.5 + Logic 9.5 perfect for comedy timing + coherent synthesis; Chair role demands premium reasoning for complex flow management; can transition seamlessly from entertainment to actionable intervention
+  - Top-tier reasoning and orchestration (chair-class).
+  - Role fit: The Roastmaster.
+- Gunner (High): #191 (alt #3)
+  - Logic 7.5 for identifying logical fallacies in excuses; USER-ALIGNED, ANTI-LECTURE perfect for no-bullshit accountability; can distinguish real constraints from comfort preferences
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: The Sergeant.
+- Lux (High): #151 (alt #160)
+  - Creative 9.0 for elegant contempt and aesthetic observations; SPATIAL-AWARE helps read visual communication and style signals; can process images if user uploads photos (vision capability)
+  - Best-in-class creative writing and style control.
+  - Role fit: The Stylist.
+- Ming (High): #191 (alt #55)
+  - Creative 7.5 + Logic 7.5 balanced for disappointment + potential analysis; USER-ALIGNED, ANTI-LECTURE fits caring-underneath motivation style; can deploy shame productively without crossing into cruelty
+  - Permissive, narrative-heavy creative model with strong voice.
+  - Role fit: The Tiger.
+- Pulse (Critical): #65 (alt #14)
+  - Logic 8.5 for complex harm-vs-help judgment calls; SELF-CORRECTING, PRECISE perfect for conscience role; Efficiency 9.5 makes safety monitoring cost-effective
+  - Structured, long-context, precise writer/editor.
+  - Role fit: The Vibe Check.
+- Zara (High): #151 (alt #136)
+  - Creative 9.0 for devastating cultural observations; CHARACTER-CONSISTENT trait perfect for Gen-Z persona maintenance; SPATIAL-AWARE helps read cultural signals and aesthetic patterns
+  - Best-in-class creative writing and style control.
+  - Role fit: The Influencer.
+

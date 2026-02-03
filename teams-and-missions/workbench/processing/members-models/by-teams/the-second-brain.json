@@ -1,0 +1,74 @@
+{
+  "team_id": "e85047f1-6e10-475b-9920-36a31dfad523",
+  "team_name": "The Second Brain",
+  "folder": "cortex",
+  "file": "second-brain.md",
+  "assignments": [
+    {
+      "role": "Receiver",
+      "function": "Intake/Triage/Routing",
+      "importance": "Critical",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#3",
+      "fallback_name": "MiniMax M2.1",
+      "tier": "A",
+      "reasoning": "Critical role friction kills capture systems; Logic 8.5 + Creative 8.5 for interpreting messy/minimal input; 30hr endurance for continuous availability as personal memory system"
+    },
+    {
+      "role": "Classifier",
+      "function": "Type ID/Extraction",
+      "importance": "Critical",
+      "model_id": "#3",
+      "model_name": "MiniMax M2.1",
+      "fallback_id": "#35",
+      "fallback_name": "Nemotron 3 Nano 30B",
+      "tier": "B",
+      "reasoning": "Logic 8.5 for complex type identification and extraction; Efficiency 9.5 runs frequently on every input; Structured output capability perfect for extraction tasks"
+    },
+    {
+      "role": "Organizer",
+      "function": "Structure/Connections",
+      "importance": "High",
+      "model_id": "#203",
+      "model_name": "Llama 4 Scout",
+      "fallback_id": "#120",
+      "fallback_name": "Trinity Mini",
+      "tier": "A",
+      "reasoning": "Memory 10 requirement must hold ENTIRE knowledge base; 10M context window handles complete personal knowledge graph; Efficiency 10.0 runs continuously maintaining organization"
+    },
+    {
+      "role": "Gatherer",
+      "function": "Query/Data Collection",
+      "importance": "Critical",
+      "model_id": "#138",
+      "model_name": "Grok 4.1 Fast",
+      "fallback_id": "#188",
+      "fallback_name": "DeepResearch 30B",
+      "tier": "A",
+      "reasoning": "WEB-SEARCH + X-SEARCH critical for contextual queries; 'Can I take vacation?' needs real-time calendar, email, commitment data; Logic 8.5 for multi-domain relevance reasoning"
+    },
+    {
+      "role": "Synthesizer",
+      "function": "Analysis/Recommendations",
+      "importance": "Critical",
+      "model_id": "#123",
+      "model_name": "DeepSeek V3.2",
+      "fallback_id": "#14",
+      "fallback_name": "Gemini 3 Pro Preview",
+      "tier": "A",
+      "reasoning": "Brain-tier 10 requirement for complex synthesis; Logic 9.0 for implication analysis and conflict detection; DEEP-THINKER, AGENTIC matches 'sees the story data tells'"
+    },
+    {
+      "role": "Monitor",
+      "function": "Deadlines/Alerts",
+      "importance": "High",
+      "model_id": "#35",
+      "model_name": "Nemotron 3 Nano 30B",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "C",
+      "reasoning": "Efficiency 10 runs continuously in background; Logic 9.0 for urgency calculation and timing decisions; PRECISE, STEPWISE, FAST-TWITCH matches systematic monitoring"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { X, Search, Play, Loader2, ChevronRight, ChevronDown } from 'lucide-react';
+import { FONT_SIZE } from '../constants';
 import { Team, TeamCategory, LLMModel, TeamMember } from '../types';
 import { sessionService } from '../services/SessionService';
 import { useMembers } from '../hooks/useQueries';
@@ -81,12 +82,12 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
 
             // 2. Prepare Routing
             const routing: any = {};
-            const teamMembers = membersData?.members.filter(m => m.team_id === selectedTeamId) || [];
+            const teamMembers = membersData?.items.filter(m => m.team_id === selectedTeamId) || [];
             const selectedTeam = teams.find(t => t.id === selectedTeamId);
 
             // Helper to get model string
             const getModelString = (member: TeamMember) => {
-                const model = models.find(m => m.id === String(member.model_id));
+                const model = models.find(m => m.id === member.model_id);
                 // Prefer api_id, fallback to logic or name
                 return model?.api_id || model?.modelName || 'gpt-4-turbo';
             };
@@ -139,7 +140,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                 {/* Header */}
                 <div className="flex items-center justify-between p-6 border-b border-white/10">
                     <div>
-                        <h2 className="text-xl font-display tracking-widest text-white">INITIALIZE SESSION</h2>
+                        <h2 className={`${FONT_SIZE.XL} font-display tracking-widest text-white`}>INITIALIZE SESSION</h2>
                         <div className="flex gap-2 mt-2">
                             <div className={`h-1 w-12 rounded-full transition-colors ${step >= 1 ? 'bg-primary' : 'bg-white/10'}`} />
                             <div className={`h-1 w-12 rounded-full transition-colors ${step >= 2 ? 'bg-primary' : 'bg-white/10'}`} />
@@ -153,7 +154,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                 {/* Content */}
                 <div className="flex-1 overflow-y-auto p-6">
                     {error && (
-                        <div className="mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-500 text-sm font-mono rounded">
+                        <div className={`mb-6 p-4 bg-red-500/10 border border-red-500/20 text-red-500 ${FONT_SIZE.SM} font-mono rounded`}>
                             ERROR: {error}
                         </div>
                     )}
@@ -161,7 +162,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                     {step === 1 ? (
                         <div className="space-y-6">
                             <div className="space-y-2">
-                                <label className="text-xs font-mono text-white/50 uppercase tracking-widest">Session Identity</label>
+                                <label className={`${FONT_SIZE.XS} font-mono text-white/50 uppercase tracking-widest`}>Session Identity</label>
                                 <input
                                     type="text"
                                     placeholder="SESSION_NAME"
@@ -182,9 +183,9 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                             </div>
 
                             <div className="space-y-2">
-                                <label className="text-xs font-mono text-white/50 uppercase tracking-widest">Initial Parameters</label>
+                                <label className={`${FONT_SIZE.XS} font-mono text-white/50 uppercase tracking-widest`}>Initial Parameters</label>
                                 <div className="flex items-center gap-4 p-4 border border-white/5 rounded bg-white/5">
-                                    <span className="text-sm font-mono text-white/70">ROUNDS_TO_EXECUTE</span>
+                                    <span className={`${FONT_SIZE.SM} font-mono text-white/70`}>ROUNDS_TO_EXECUTE</span>
                                     <input
                                         type="number"
                                         min={1}
@@ -205,7 +206,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                                     placeholder="SEARCH_TEAMS..."
                                     value={teamSearch}
                                     onChange={e => setTeamSearch(e.target.value)}
-                                    className="w-full bg-black/50 border border-white/10 rounded p-2 pl-9 text-sm text-white focus:border-primary/50 focus:outline-none font-mono"
+                                    className={`w-full bg-black/50 border border-white/10 rounded p-2 pl-9 ${FONT_SIZE.SM} text-white focus:border-primary/50 focus:outline-none font-mono`}
                                     autoFocus
                                 />
                             </div>
@@ -222,7 +223,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                                                 className="flex items-center gap-2 w-full text-left"
                                             >
                                                 {expandedCategories[category] ? <ChevronDown size={12} className="text-white/30" /> : <ChevronRight size={12} className="text-white/30" />}
-                                                <span className={`text-[10px] tracking-[0.2em] font-bold ${CATEGORY_COLORS[category]}`}>
+                                                <span className={`${FONT_SIZE.XXS} tracking-[0.2em] font-bold ${CATEGORY_COLORS[category]}`}>
                                                     {category}
                                                 </span>
                                                 <div className="h-px flex-1 bg-white/5" />
@@ -242,8 +243,8 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                                                             `}
                                                         >
                                                             <div>
-                                                                <div className="font-display text-sm tracking-wide">{team.name}</div>
-                                                                <div className="text-[10px] font-mono text-white/40 mt-1 line-clamp-1">{team.catch_phrase}</div>
+                                                                <div className={`font-display ${FONT_SIZE.SM} tracking-wide`}>{team.name}</div>
+                                                                <div className={`${FONT_SIZE.XXS} font-mono text-white/40 mt-1 line-clamp-1`}>{team.catch_phrase}</div>
                                                             </div>
                                                             {selectedTeamId === team.id && <div className="w-2 h-2 rounded-full bg-primary shadow-[0_0_5px_rgba(0,255,136,1)]" />}
                                                         </button>
@@ -263,7 +264,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                     {step === 2 ? (
                         <button
                             onClick={() => setStep(1)}
-                            className="px-4 py-2 text-xs font-mono text-white/50 hover:text-white transition-colors"
+                            className={`px-4 py-2 ${FONT_SIZE.XS} font-mono text-white/50 hover:text-white transition-colors`}
                         >
                             ← BACK
                         </button>
@@ -277,7 +278,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                                 if (name) setStep(2);
                                 else setError("Please enter a session name");
                             }}
-                            className="px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded font-mono text-sm transition-all"
+                            className={`px-6 py-2 bg-white/10 hover:bg-white/20 text-white rounded font-mono ${FONT_SIZE.SM} transition-all`}
                         >
                             SELECT TEAM →
                         </button>
@@ -286,7 +287,7 @@ export const CreateSessionModal: React.FC<CreateSessionModalProps> = ({
                             onClick={handleCreate}
                             disabled={isSubmitting || !selectedTeamId}
                             className={`
-                                flex items-center gap-2 px-6 py-2 rounded font-bold tracking-wider text-sm transition-all
+                                flex items-center gap-2 px-6 py-2 rounded font-bold tracking-wider ${FONT_SIZE.SM} transition-all
                                 ${isSubmitting || !selectedTeamId
                                     ? 'bg-white/5 text-white/30 cursor-not-allowed'
                                     : 'bg-primary text-black hover:bg-primary-light hover:scale-105 shadow-[0_0_20px_rgba(0,255,136,0.3)]'}

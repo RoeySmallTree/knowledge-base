@@ -1,0 +1,74 @@
+{
+  "team_id": "a1da4f7c-d5bc-4956-8147-797a1f18b47a",
+  "team_name": "The Cult Builder",
+  "folder": "arcade",
+  "file": "the-cult-builders.md",
+  "assignments": [
+    {
+      "role": "Oracle",
+      "function": "Prophet/Visionary",
+      "importance": "Critical",
+      "model_id": "#213",
+      "model_name": "Euryale 70B v2.3",
+      "fallback_id": "#191",
+      "fallback_name": "Hermes 4 70B",
+      "tier": "B",
+      "reasoning": "Creative 9.0 for mythology; Spatial-aware for belief architecture; 131K context; World-builder; Non-restrictive content"
+    },
+    {
+      "role": "Canon",
+      "function": "Theologian/Doctrinaire",
+      "importance": "High",
+      "model_id": "#128",
+      "model_name": "DeepSeek R1 0528",
+      "fallback_id": "#181",
+      "fallback_name": "QwQ-32B",
+      "tier": "A",
+      "reasoning": "Logic 9.0 for consistency; Self-verifying for paradox resolution; Visible CoT; Deep-thinker; Brain-tier 9.0"
+    },
+    {
+      "role": "Ember",
+      "function": "Recruiter/Influencer",
+      "importance": "High",
+      "model_id": "#136",
+      "model_name": "Claude Sonnet 4.5",
+      "fallback_id": "#193",
+      "fallback_name": "Hermes 3 70B",
+      "tier": "A",
+      "reasoning": "Logic 8.5 for psychology; Creative 7.5 for funnel design; Workhorse for systematic analysis; 30hr endurance"
+    },
+    {
+      "role": "Veil",
+      "function": "Symbolist/Aesthete",
+      "importance": "High",
+      "model_id": "#219",
+      "model_name": "MythoMax L2 13B",
+      "fallback_id": "#216",
+      "fallback_name": "Lumimaid v0.2 8B",
+      "tier": "D",
+      "reasoning": "Creative 9.5 for aesthetic universe; Logic 4.5 matches intuitive role; Most popular RP; Efficiency 8.5"
+    },
+    {
+      "role": "Ledger",
+      "function": "IRS Auditor/Compliance",
+      "importance": "Critical",
+      "model_id": "#212",
+      "model_name": "Phi 4",
+      "fallback_id": "#64",
+      "fallback_name": "o4-mini",
+      "tier": "A",
+      "reasoning": "Logic 9.5 for tax law; Competition-math for regulatory calculation; Efficiency 9.0; Only 14B but competition-level"
+    },
+    {
+      "role": "Scripture",
+      "function": "Scribe/Assembler",
+      "importance": "High",
+      "model_id": "#191",
+      "model_name": "Hermes 4 70B",
+      "fallback_id": "#216",
+      "fallback_name": "Lumimaid v0.2 8B",
+      "tier": "B",
+      "reasoning": "Creative 7.5 for sacred text; Logic 7.5 for compilation; User-aligned; Anti-lecture; Uncensored for authenticity"
+    }
+  ]
+}
