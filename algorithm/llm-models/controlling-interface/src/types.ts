@@ -1,102 +1,53 @@
-export interface ApiListResponse<T> {
-    generatedAt: string;
-    total: number;
-    items: T[];
-}
+// Frontend type definitions
+// Re-exports shared types and adds frontend-specific types
 
-export interface Pricing {
-    prompt: number;
-    completion: number;
-    tier: number;
-}
+import {
+    ApiListResponse,
+    LLMModel as SharedLLMModel,
+    Vendor,
+    Team as SharedTeam,
+    TeamMember as SharedTeamMember,
+    TeamCategory,
+    TeamRole,
+    AppUser,
+    Session,
+    Pricing
+} from './shared/types';
 
-export interface LLMModel {
+// Re-export shared types
+export type { ApiListResponse, Pricing, Vendor, TeamCategory, TeamRole, AppUser, Session };
+
+// Frontend-specific LLMModel type (extends shared with optional fields for partial models)
+export interface LLMModel extends Omit<SharedLLMModel, 'id'> {
     id?: number;
-    api_id: string;
-    slug: string;
-    vendor_id: number | null;
-    modelFamily: string | null;
-    modelName: string;
-    name_within_family: string | null;
-    display_order: number;
-    description: string | null;
-    parameter_count_b?: number | null;
-    active_parameter_count_b?: number | null;
-    contextK: number | string | null;
-    context_length?: number | null;
-    personalityTraits: string;
-    analyticalTraits: string;
-    bestFor: string;
     optimalTeamExamples?: string;
-    creativeScore: number | null;
-    deductiveScore: number | null;
-    efficiencyScore: number | null;
     specialPropertiesNotes?: string;
-    pricing: Pricing;
-    fallback_model_id?: number | null;
-    capabilities?: string[];
-    active: boolean;
-    last_synced_at?: string | null;
-    created_at?: string;
-    updated_at?: string;
 }
 
-export interface Vendor {
-    id: number;
-    slug: string;
-    display_name: string;
-    is_active: boolean;
-    display_order: number;
-    link: string | null;
-    description: string | null;
-    created_at: string;
-    updated_at: string;
-}
-
-export type ModelsData = ApiListResponse<LLMModel>;
-export type VendorsData = ApiListResponse<Vendor>;
-
-export type TeamCategory = 'CORTEX' | 'VITALS' | 'OPS' | 'ARCADE';
-export type TeamRole = 'Chair' | 'Envoy' | 'Watchdog' | 'Operative';
-
-export interface Team {
-    id: string;
-    user_id: string;
-    name: string;
-    description: string;
-    is_public: boolean;
-    catch_phrase: string;
-    category: TeamCategory;
-    quick_starts: string[];
-    default_starting_rounds: number | null;
-    bootstrap_prompt: string | null;
-    is_saved: boolean;
-    originated_from_team: string | null;
+// Frontend-specific Team type (extends shared with optional fields)
+export interface Team extends Omit<SharedTeam, 'display_order' | 'created_at' | 'updated_at'> {
     display_order?: number;
     created_at?: string;
     updated_at?: string;
 }
 
-export interface TeamMember {
-    id: string;
-    name: string;
-    role: TeamRole;
-    team_role: string;
-    color: string | null;
-    characteristics: string[];
-    life_story: string | null;
-    special_orders: string | null;
-    team_id: string;
-    model_id: number;
+// Frontend-specific TeamMember type (extends shared with optional fields)
+export interface TeamMember extends Omit<SharedTeamMember, 'display_order' | 'model_name' | 'created_at'> {
     display_order?: number;
     model_name?: string;
     created_at?: string;
 }
 
+// Type aliases
+export type ModelsData = ApiListResponse<LLMModel>;
+export type VendorsData = ApiListResponse<Vendor>;
 export type TeamsData = ApiListResponse<Team>;
 export type MembersData = ApiListResponse<TeamMember>;
 export type Member = TeamMember;
+export type UsersData = ApiListResponse<AppUser>;
+export type SessionsData = ApiListResponse<Session>;
 
+// Third-party API types (OpenRouter)
 export interface OpenRouterModel {
     id: string;
     name: string;
@@ -108,51 +59,3 @@ export interface OpenRouterModel {
     };
     created: number;
 }
-
-export interface AppUser {
-    id: string;
-    email: string;
-    display_name: string;
-    created_at: string;
-    chat_name: string;
-    community_name: string;
-    image_url: string;
-    location: string;
-    gender: string;
-    profession: string;
-    extras: string;
-    legion_id: string | null;
-    type: string;
-    plan_code: string;
-    plan_name: string;
-    plan_credits_balance: number;
-    last_period_usage_usd: number;
-    last_active: string;
-}
-
-export interface Session {
-    id: string;
-    user_id: string;
-    name: string;
-    status: string;
-    halt_reason: string | null;
-    halted_on_step: string | null;
-    access: string | null;
-    root_product_id: string | null;
-    rounds_left: number;
-    current_round: number;
-    created_at: string;
-    updated_at: string;
-    mission_charter: string | null;
-    archived_at: string | null;
-    team_id: string;
-    error: string | null;
-    round_status: string | null;
-    legion_id: string | null;
-    repository_id: string | null;
-    user_name: string;
-    team_name: string;
-}
-
-export type UsersData = ApiListResponse<AppUser>;
-export type SessionsData = ApiListResponse<Session>;

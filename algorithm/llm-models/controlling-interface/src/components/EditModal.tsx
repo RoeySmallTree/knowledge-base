@@ -118,12 +118,13 @@ export function EditModal({ isOpen, onClose, onSave, model, models, vendorsById,
         }
         setFormData({
             ...model,
-            creativeScore: model.creativeScore ?? 0,
-            deductiveScore: model.deductiveScore ?? 0,
-            efficiencyScore: model.efficiencyScore ?? 0,
+            // Keep null values as null, don't convert to 0
+            creativeScore: model.creativeScore ?? null,
+            deductiveScore: model.deductiveScore ?? null,
+            efficiencyScore: model.efficiencyScore ?? null,
             // Ensure numeric conversions if they come in as strings/undefined
-            parameter_count_b: model.parameter_count_b ?? undefined,
-            active_parameter_count_b: model.active_parameter_count_b ?? undefined
+            parameter_count_b: model.parameter_count_b ?? null,
+            active_parameter_count_b: model.active_parameter_count_b ?? null
         });
     }, [model]);
 
@@ -252,20 +253,23 @@ export function EditModal({ isOpen, onClose, onSave, model, models, vendorsById,
                                 <ScoreSlider
                                     label="CREATIVITY"
                                     name="creativeScore"
-                                    value={formData.creativeScore ?? 0}
+                                    value={formData.creativeScore ?? null}
                                     onChange={handleScoreChange}
+                                    variant="creativity"
                                 />
                                 <ScoreSlider
                                     label="DEDUCTIVE"
                                     name="deductiveScore"
-                                    value={formData.deductiveScore ?? 0}
+                                    value={formData.deductiveScore ?? null}
                                     onChange={handleScoreChange}
+                                    variant="deductive"
                                 />
                                 <ScoreSlider
                                     label="EFFICIENCY"
                                     name="efficiencyScore"
-                                    value={formData.efficiencyScore ?? 0}
+                                    value={formData.efficiencyScore ?? null}
                                     onChange={handleScoreChange}
+                                    variant="efficiency"
                                 />
                             </div>
                             <TextArea label="DESCRIPTION" name="description" value={formData.description ?? ''} onChange={handleChange} />
@@ -288,7 +292,7 @@ export function EditModal({ isOpen, onClose, onSave, model, models, vendorsById,
                                             value={formData.fallback_model_id ?? undefined}
                                             favorModel={formData}
                                             onChange={(fallbackId) => {
-                                                setFormData(prev => prev ? { ...prev, fallback_model_id: fallbackId ? Number(fallbackId) : undefined } : null);
+                                                setFormData(prev => prev ? { ...prev, fallback_model_id: fallbackId ? Number(fallbackId) : null } : null);
                                             }}
                                         />
                                     </div>
@@ -363,35 +367,58 @@ function TextArea({ label, name, value, onChange }: any) {
     );
 }
 
+interface ScoreSliderProps {
+    label: string;
+    name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore';
+    value: number | null;
+    onChange: (name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore', value: number) => void;
+    variant?: 'default' | 'creativity' | 'deductive' | 'efficiency';
+}
+
 function ScoreSlider({
     label,
     name,
     value,
-    onChange
-}: {
-    label: string;
-    name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore';
-    value: number;
-    onChange: (name: 'creativeScore' | 'deductiveScore' | 'efficiencyScore', value: number) => void;
-}) {
-    const clamped = Math.min(100, Math.max(0, value));
+    onChange,
+    variant = 'default'
+}: ScoreSliderProps) {
+    const numericValue = value ?? 0;
+    const clamped = Math.min(100, Math.max(0, numericValue));
 
     const getColor = (val: number) => {
-        if (val === 0) return 'from-white/10 to-white/20'; // Neutral for 0
-        if (val < 30) return 'from-red-500/50 to-red-500';
-        if (val < 50) return 'from-orange-500/50 to-orange-500';
-        if (val < 70) return 'from-yellow-400/50 to-yellow-400';
-        return 'from-primary/50 to-primary';
+        if (val === 0) return 'from-white/10 to-white/20'; // Neutral
+
+        switch (variant) {
+            case 'creativity':
+                // Blue (Stable) -> Purple (Creative)
+                if (val < 30) return 'from-sky-500/50 to-sky-500';
+                if (val < 70) return 'from-indigo-400/50 to-indigo-400';
+                return 'from-violet-500/50 to-violet-500';
+
+            case 'deductive':
+                // Cyan/Blue (Logic)
+                if (val < 30) return 'from-cyan-900/50 to-cyan-700';
+                if (val < 70) return 'from-cyan-600/50 to-cyan-500';
+                return 'from-cyan-400/50 to-cyan-300';
+
+            case 'efficiency':
+            default:
+                // Red (Inefficient) -> Green (Efficient)
+                if (val < 30) return 'from-red-500/50 to-red-500';
+                if (val < 50) return 'from-orange-500/50 to-orange-500';
+                if (val < 70) return 'from-yellow-400/50 to-yellow-400';
+                return 'from-emerald-500/50 to-emerald-400';
+        }
     };
 
     const gradientClass = getColor(clamped);
-    const percentage = clamped; // 0-100 maps directly to %
+    const percentage = clamped;
 
     return (
         <div className="space-y-2">
             <div className={`flex items-center justify-between ${FONT_SIZE.SM}`}>
                 <label className={`font-label ${FONT_SIZE.XS} tracking-widest text-white/60`}>{label}</label>
-                <span className={`text-white font-mono ${FONT_SIZE.SM} font-bold`}>{clamped === 0 ? '-' : clamped} <span className={`text-white/30 ${FONT_SIZE.XS} font-normal`}>/ 100</span></span>
+                <span className={`text-white font-mono ${FONT_SIZE.SM} font-bold`}>{value === null ? '-' : clamped} <span className={`text-white/30 ${FONT_SIZE.XS} font-normal`}>/ 100</span></span>
             </div>
             <div className="relative h-6 flex items-center group touch-none select-none">
                 <input
@@ -422,7 +449,7 @@ function ScoreSlider({
 
 
                 <div
-                    className={`absolute h-4 w-4 bg-white rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] border border-black pointer-events-none transition-all duration-75 z-20 ${clamped === 0 ? 'opacity-50 grayscale' : ''}`}
+                    className={`absolute h-4 w-4 bg-white rounded-full shadow-[0_0_10px_rgba(0,0,0,0.5)] border border-black pointer-events-none transition-all duration-75 z-20 ${value === null ? 'opacity-50 grayscale' : ''}`}
                     style={{ left: `calc(${percentage}% - 8px)` }}
                 />
             </div>

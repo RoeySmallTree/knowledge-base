@@ -1,27 +1,22 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
-import { LLMModel, Team, TeamMember, Vendor, TeamCategory, AppUser } from './types';
-import { useModels, useArchivedModels, useVendors, useTeams, useMembers, useExploreModels, useSessions, useUsers, useUpdateUser } from './hooks/useQueries';
+import { LLMModel, Team, TeamMember, TeamCategory, AppUser } from './types';
+import { useExploreModels, useUpdateUser } from './hooks/useQueries';
 import { useModelSettings } from './hooks/useModelSettings';
 import { FONT_SIZE } from './constants';
 import { useUpdateModel, useCreateModel, useArchiveRestoreModel, useDeleteModel, useUpdateModels, useCreateTeam, useUpdateTeam, useDeleteTeam, useDuplicateTeam, useCreateMember, useUpdateMember, useDeleteMember } from './hooks/useMutations';
-import { ModelTable } from './components/ModelTable';
-import { ModelSidebar } from './components/ModelSidebar';
-import { ExploreSidebar } from './components/ExploreSidebar';
-import { ExploreFilters } from './components/ExploreFilters';
 import { EditModal } from './components/EditModal';
-import { FilterPanel, FilterState } from './components/FilterPanel';
+import { FilterState } from './components/FilterPanel';
 import { ArchivedModal } from './components/ArchivedModal';
-import { TeamsView } from './components/TeamsView';
-import { Loader2, Plus, Search, Compass, AlertTriangle, Box, LayoutGrid, Users, Activity, Tags as TagIcon, ChevronDown, Filter, X } from 'lucide-react';
+import { Compass, Box, LayoutGrid, Users, Activity, Tags as TagIcon } from 'lucide-react';
 import { GlitchLoader } from './components/GlitchLoader';
-import { TeamsSidebar } from './components/TeamsSidebar';
-import { ExploreView } from './components/ExploreView';
-import { UsersView } from './components/UsersView';
-import { SessionsView } from './components/SessionsView';
-import { SessionsSidebar } from './components/SessionsSidebar';
 import { CreateSessionModal } from './components/CreateSessionModal';
-import { UsersSidebar } from './components/UsersSidebar';
-import { FallbackPicker } from './components/FallbackPicker';
+import { ModelsTab } from './components/tabs/ModelsTab';
+import { ExploreTab } from './components/tabs/ExploreTab';
+import { TeamsTab } from './components/tabs/TeamsTab';
+import { UsersTab } from './components/tabs/UsersTab';
+import { SessionsTab } from './components/tabs/SessionsTab';
+import { TagsTab } from './components/tabs/TagsTab';
+import { AppDataProvider, useAppData } from './context/AppDataContext';
 
 
 const STORAGE_KEYS = {
@@ -51,17 +46,28 @@ const writeStorage = (key: string, value: string) => {
 };
 
 function App() {
-    // React Query Hooks
-    const { data: activeModelsData, isLoading: isLoadingModels, error: modelsError } = useModels();
-    const { data: exploreModelsData } = useExploreModels();
-    const { data: archivedModelsData, isLoading: isLoadingArchived } = useArchivedModels();
-    const { data: vendorsData, isLoading: isLoadingVendors } = useVendors();
-    const { data: teamsData, isLoading: isLoadingTeams, error: teamsErrorObj } = useTeams();
-    const { data: membersData, isLoading: isLoadingMembers, error: membersErrorObj } = useMembers();
-    const { data: sessionsData, isLoading: isLoadingSessions, error: sessionsErrorObj } = useSessions();
-    const { data: usersData, isLoading: isLoadingUsers } = useUsers();
+    return (
+        <AppDataProvider>
+            <AppContent />
+        </AppDataProvider>
+    );
+}
 
-    // Mutations
+function AppContent() {
+    const { data: exploreModelsData } = useExploreModels();
+    const {
+        models,
+        archivedModels,
+        vendors,
+        teams,
+        members,
+        sessions,
+        users,
+        vendorsById,
+        modelsById,
+        loading
+    } = useAppData();
+
     // Mutations
     const updateModelMutation = useUpdateModel();
     const createModelMutation = useCreateModel();
@@ -82,25 +88,6 @@ function App() {
 
     const archiveRestoreMutation = useArchiveRestoreModel();
     const deleteModelMutation = useDeleteModel();
-
-    // Derived State & Aliases
-    const data = activeModelsData;
-    const archivedData = archivedModelsData;
-
-    // Safety checks for arrays
-    const models = data?.items || [];
-    const archivedModels = archivedData?.items || [];
-    const vendors = vendorsData?.items || [];
-    const teams = teamsData?.items || [];
-    const members = membersData?.items || [];
-    const sessions = sessionsData?.items || [];
-    const users = usersData?.items || [];
-
-    const loading = isLoadingModels || isLoadingArchived || isLoadingVendors || isLoadingTeams || isLoadingMembers || isLoadingSessions || isLoadingUsers;
-    const error = modelsError ? (modelsError as Error).message : null;
-    const teamsError = teamsErrorObj ? (teamsErrorObj as Error).message : null;
-    const membersError = membersErrorObj ? (membersErrorObj as Error).message : null;
-    const sessionsError = sessionsErrorObj ? (sessionsErrorObj as Error).message : null;
 
     // Explore Logic
     const [hideOwned, setHideOwned] = useState(true);
@@ -175,31 +162,11 @@ function App() {
     }, [models, archivedModels, exploreModelsData, hideOwned, exploreSearchQuery, createdAfter, hideIrrelevant, modelSettings]);
 
 
-    // Memoized Lookups
-    const vendorById = useMemo(() => {
-        const map: Record<string, Vendor> = {};
-        vendors.forEach(vendor => {
-            map[String(vendor.id)] = vendor;
-        });
-        return map;
-    }, [vendors]);
-
     // Helpers
     const getVendorName = (vendorId: number | string | null) =>
         vendorId !== null && vendorId !== undefined
-            ? vendorById[String(vendorId)]?.display_name ?? 'Unknown Vendor'
+            ? vendorsById[String(vendorId)]?.display_name ?? 'Unknown Vendor'
             : 'Unknown Vendor';
-
-    const modelsById = useMemo(() => {
-        const map: Record<string, LLMModel> = {};
-        models.forEach(model => {
-            if (model.id) map[String(model.id)] = model;
-        });
-        archivedModels.forEach(model => {
-            if (model.id) map[String(model.id)] = model;
-        });
-        return map;
-    }, [models, archivedModels]);
 
     const getModelKey = (model: LLMModel) => {
         const idPart = model.id ? String(model.id) : model.modelName;
@@ -289,7 +256,7 @@ function App() {
 
 
 
-    const handleTeamUpdate = (updatedTeam: Team) => {
+    const handleTeamUpdate = (updatedTeam: Team, _originalId?: string) => {
         updateTeamMutation.mutate(updatedTeam);
     };
 
@@ -313,7 +280,7 @@ function App() {
 
 
 
-    const handleMemberUpdate = (updatedMember: TeamMember) => {
+    const handleMemberUpdate = (updatedMember: TeamMember, _originalId?: string) => {
         updateMemberMutation.mutate(updatedMember);
     };
 
@@ -427,15 +394,23 @@ function App() {
             slug: '',
             display_order: 0,
             description: '',
+            capabilities: [],
             contextK: null,
+            context_length: null,
+            parameter_count_b: null,
+            active_parameter_count_b: null,
             personalityTraits: '',
             analyticalTraits: '',
             bestFor: '',
-            creativeScore: 0,
-            deductiveScore: 0,
-            efficiencyScore: 0,
+            creativeScore: null,
+            deductiveScore: null,
+            efficiencyScore: null,
             pricing: { prompt: 0, completion: 0, tier: 1 },
-            active: true
+            fallback_model_id: null,
+            active: true,
+            last_synced_at: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString()
         };
         setEditingModel(newModel);
         setIsModalOpen(true);
@@ -587,7 +562,7 @@ function App() {
 
             return true;
         });
-    }, [models, searchQuery, filters, vendorById, modelIdFilter]);
+    }, [models, searchQuery, filters, vendorsById, modelIdFilter]);
 
     const filteredTeams = useMemo(() => {
         if (!teams.length) return [];
@@ -774,15 +749,23 @@ function App() {
             name_within_family: model.name || '',
             display_order: 0,
             description: model.description || '',
+            capabilities: [],
             contextK,
+            context_length: model.context_length,
+            parameter_count_b: null,
+            active_parameter_count_b: null,
             personalityTraits: '',
             analyticalTraits: '',
             bestFor: '',
-            creativeScore: 0,
-            deductiveScore: 0,
-            efficiencyScore: 0,
+            creativeScore: null,
+            deductiveScore: null,
+            efficiencyScore: null,
             pricing: { prompt: promptPrice, completion: completionPrice, tier: 1 },
+            fallback_model_id: null,
             active: true,
+            last_synced_at: null,
+            created_at: new Date().toISOString(),
+            updated_at: new Date().toISOString(),
             api_id: model.id,
             slug: modelIdParts.pop() || '' // suggested slug
         };
@@ -875,519 +858,132 @@ function App() {
                 </div>
             </header>
 
-            {/* Main Content Area - Full Height Grid */}
-            <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-[280px_minmax(0,1fr)_320px] relative z-10">
-
-                {/* Left Sidebar */}
-                <aside className="hidden lg:flex flex-col min-h-0 border-r border-white/10 bg-black/40 backdrop-blur-sm">
-                    <div ref={leftPanelRef} className="flex-1 overflow-y-auto cyber-scroll p-4">
-                        {activeTab === 'models' && !loading && data && vendorsData && (
-                            <ModelSidebar
-                                models={filteredModels}
-                                vendorsById={vendorById}
-                                searchQuery={searchQuery}
-                                onSearchChange={setSearchQuery}
-
-                                totalModels={data.total ?? models.length}
-                                archivedCount={archivedData?.total ?? archivedModels.length}
-                                onOpenArchive={() => setIsArchiveOpen(true)}
-                                onExplore={() => setActiveTab('explore')}
-                                scrollRootRef={scrollRootRef}
-                            />
-                        )}
-
-                        {activeTab === 'explore' && !loading && (
-                            <ExploreSidebar
-                                total={exploreStats.total}
-                                shown={exploreStats.shown}
-                                owned={exploreStats.owned}
-                            />
-                        )}
-
-                        {activeTab === 'teams' && !loading && teamsData && membersData && (
-                            <TeamsSidebar
-                                teams={filteredTeams}
-                                members={filteredTeamsMembers}
-                                expandedCategories={expandedCategories}
-                                onToggleCategory={handleToggleCategory}
-                                onExpandCategory={handleExpandCategory}
-                                scrollRootRef={scrollRootRef}
-                                navRootRef={leftPanelRef}
-                                totalTeamsCount={teamsData?.total ?? 0}
-                                totalMembersCount={membersData?.total ?? 0}
-                            />
-                        )}
-
-                        {activeTab === 'sessions' && !loading && sessionsData && (
-                            <SessionsSidebar
-                                totalSessions={sessions.length}
-                                searchQuery={sessionSearchQuery}
-                                onSearchChange={setSessionSearchQuery}
-                                statusFilter={sessionStatusFilter}
-                                onStatusChange={setSessionStatusFilter}
-                                onNewSession={() => setIsCreateSessionOpen(true)}
-                            />
-                        )}
-
-                        {activeTab === 'users' && !loading && usersData && (
-                            <UsersSidebar
-                                users={filteredUsers}
-                            />
-                        )}
-
-                        {/* Placeholders for new tabs sidebar content - or empty if none needed yet */}
-                        {(activeTab === 'tags') && (
-                            <div className={`p-4 text-white/30 font-mono ${FONT_SIZE.XS} text-center border border-white/5 rounded-lg border-dashed`}>
-                                NO_INDEXING_DATA
-                            </div>
-                        )}
-                    </div>
-                </aside>
-
-                {/* Center Stage */}
-                <main className="relative h-full min-h-0 bg-black/20">
-                    <div ref={scrollRootRef} data-scroll-root className="h-full min-h-0 overflow-y-auto cyber-scroll px-8 py-8">
-                        {activeTab === 'models' ? (
-                            <div className="relative min-w-0 max-w-7xl mx-auto">
-                                {loading ? (
-                                    <div className="flex h-64 items-center justify-center text-primary">
-                                        <Loader2 className="animate-spin" size={32} />
-                                    </div>
-                                ) : error ? (
-                                    <div className="cyber-panel cyber-chamfer-sm border border-destructive/40 p-6 text-destructive">
-                                        ERROR: {error}
-                                    </div>
-                                ) : (
-                                    <div className="space-y-6">
-                                        {modelIdFilter !== null && (
-                                            <div className="cyber-panel cyber-chamfer-sm p-4 flex items-center justify-between border-primary/30 bg-primary/5">
-                                                <div className="flex items-center gap-3">
-                                                    <Filter className="text-primary" size={20} />
-                                                    <div>
-                                                        <div className={`${FONT_SIZE.XS} text-primary/70 font-mono mb-0.5`}>FILTERING BY MODEL</div>
-                                                        <div className={`${FONT_SIZE.LG} font-display text-white`}>
-                                                            {modelsById[String(modelIdFilter)]?.modelName || 'Unknown Model'}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <button
-                                                    onClick={() => setModelIdFilter(null)}
-                                                    className={`flex items-center gap-2 px-3 py-1.5 rounded border border-white/10 hover:border-white/30 hover:bg-white/5 transition-colors ${FONT_SIZE.SM} text-white/70 hover:text-white`}
-                                                >
-                                                    <X size={14} />
-                                                    CLEAR FILTER
-                                                </button>
-                                            </div>
-                                        )}
-                                        <ModelTable
-                                            models={filteredModels}
-                                            allModels={models}
-                                            vendorsById={vendorById}
-                                            modelsById={modelsById}
-                                            onEdit={(model) => {
-                                                setEditingModel(model);
-                                                setIsModalOpen(true);
-                                            }}
-                                            onDuplicate={handleDuplicateModel}
-                                            onAdd={handleAddModel}
-                                            onArchive={handleArchiveModel}
-                                            onDelete={handleDeleteModel}
-                                            onNavigateToTeam={handleNavigateToTeam}
-                                            onFallbackChange={handleFallbackChange}
-                                            maxPrice={maxPrice}
-                                            maxContext={maxContext}
-                                            teams={teams}
-                                            members={members}
-                                            onTeamUpdate={handleTeamUpdate}
-                                            onTeamDelete={handleTeamDelete}
-                                            onTeamDuplicate={handleTeamDuplicate}
-                                            onMemberUpdate={handleMemberUpdate}
-                                            onMemberDelete={handleMemberDelete}
-                                            onMemberCreate={handleMemberCreate}
-                                            onFilterTeamsByModel={handleFilterTeamsByModel}
-                                        />
-                                    </div>
-                                )}
-                            </div>
-                        ) : activeTab === 'explore' ? (
-                            <div className="h-full">
-                                <ExploreView
-                                    activeModels={filteredExploreModels}
-                                    ownedApiIds={ownedApiIds}
-                                    onHideModel={handleHideModel}
-                                    onImportModel={handleImportModel}
-                                />
-                            </div>
-                        ) : activeTab === 'teams' ? (
-                            <div className="min-h-[50vh] max-w-7xl mx-auto">
-                                {loading ? (
-                                    <div className="flex h-64 items-center justify-center text-primary">
-                                        <Loader2 className="animate-spin" size={32} />
-                                    </div>
-                                ) : error ? (
-                                    <div className="cyber-panel cyber-chamfer-sm border border-destructive/40 p-6 text-destructive">
-                                        ERROR: {error}
-                                    </div>
-                                ) : (
-                                    <>
-                                        {(teamsError || membersError) && (
-                                            <div className={`cyber-panel cyber-chamfer-sm border border-accent-tertiary/40 p-4 ${FONT_SIZE.MD} text-accent-tertiary mb-6`}>
-                                                {teamsError && <div>TEAMS DATA UNAVAILABLE. {teamsError}</div>}
-                                                {membersError && <div>MEMBERS DATA UNAVAILABLE. {membersError}</div>}
-                                            </div>
-                                        )}
-                                        <TeamsView
-                                            teams={filteredTeams}
-                                            members={members}
-                                            modelsById={modelsById}
-                                            vendorsById={vendorById}
-                                            expandedCategories={expandedCategories}
-                                            onToggleCategory={handleToggleCategory}
-                                            onTeamUpdate={handleTeamUpdate}
-                                            onTeamCreate={handleTeamCreate}
-                                            onTeamDelete={handleTeamDelete}
-                                            onTeamDuplicate={handleTeamDuplicate}
-                                            onMemberUpdate={handleMemberUpdate}
-                                            onMemberDelete={handleMemberDelete}
-                                            onMemberCreate={handleMemberCreate}
-                                            createTeamSignal={createTeamSignal}
-                                            modelFilter={teamModelFilter}
-                                            onClearModelFilter={() => setTeamModelFilter(null)}
-                                            onFilterByModel={(modelId) => {
-                                                setActiveTab('models');
-                                                setModelIdFilter(modelId);
-                                            }}
-                                        />
-                                    </>
-                                )}
-                            </div>
-                        ) : activeTab === 'users' ? (
-                            <div className="min-h-[50vh] max-w-7xl mx-auto">
-                                {!loading && usersData ? (
-                                    <UsersView
-                                        users={filteredUsers}
-                                        activeUserSearchQuery={userSearchQuery}
-                                        filters={{
-                                            plans: userPlanFilter,
-                                            types: userTypeFilter
-                                        }}
-                                        onUpdateUser={handleUserUpdate}
-                                    />
-                                ) : (
-                                    <div className="flex h-64 items-center justify-center text-primary">
-                                        <Loader2 className="animate-spin" size={32} />
-                                    </div>
-                                )}
-                            </div>
-                        ) : activeTab === 'tags' ? (
-                            <div className="flex h-64 items-center justify-center text-white/30 font-mono">
-                                COMPONENT_NOT_MOUNTED
-                            </div>
-                        ) : activeTab === 'sessions' ? (
-                            <div className="h-full">
-                                {loading ? (
-                                    <div className="flex h-64 items-center justify-center text-primary">
-                                        <Loader2 className="animate-spin" size={32} />
-                                    </div>
-                                ) : sessionsError ? (
-                                    <div className="cyber-panel cyber-chamfer-sm border border-destructive/40 p-6 text-destructive">
-                                        ERROR: {sessionsError}
-                                    </div>
-                                ) : (
-                                    <SessionsView sessions={filteredSessions} />
-                                )}
-                            </div>
-                        ) : (
-                            <div className="flex h-64 items-center justify-center text-white/30 font-mono">
-                                COMPONENT_NOT_MOUNTED
-                            </div>
-                        )}
-                    </div>
-                </main>
-
-                {/* Right Sidebar */}
-                <aside className="hidden lg:flex flex-col min-h-0 border-l border-white/10 bg-black/40 backdrop-blur-sm">
-                    <div className="flex-1 overflow-y-auto cyber-scroll p-4">
-                        {activeTab === 'models' && !loading && data && vendorsData && (
-                            <FilterPanel
-                                filters={filters}
-                                onFiltersChange={setFilters}
-                                allTraits={allTraits}
-                                maxPrice={maxPrice}
-                                vendors={vendors}
-                            />
-                        )}
-
-                        {activeTab === 'explore' && !loading && (
-                            <ExploreFilters
-                                hideOwned={hideOwned}
-                                onToggleHideOwned={setHideOwned}
-                                hideIrrelevant={hideIrrelevant}
-                                onToggleHideIrrelevant={setHideIrrelevant}
-                                onClear={() => {
-                                    setHideOwned(false);
-                                    setExploreSearchQuery('');
-                                    setCreatedAfter(null);
-                                    setHideIrrelevant(true);
-                                }}
-                                searchQuery={exploreSearchQuery}
-                                onSearchChange={setExploreSearchQuery}
-                                createdAfter={createdAfter}
-                                onCreatedAfterChange={setCreatedAfter}
-                                lastOwnedDate={latestOwnedDate}
-                            />
-                        )}
-
-                        {activeTab === 'teams' && !loading && teamsData && membersData && (
-                            <div className="space-y-6">
-
-                                <div className="flex items-center justify-between">
-                                    <div className={`font-label ${FONT_SIZE.XS} text-secondary tracking-widest pl-1`}>TEAM_INTEL</div>
-                                    {(teamSearchQuery || savedFilter !== 'saved' || publicFilter !== 'all' || missingFieldsFilter.length > 0) && (
-                                        <button
-                                            onClick={() => {
-                                                setTeamSearchQuery('');
-                                                setSavedFilter('saved');
-                                                setPublicFilter('all');
-                                                setMissingFieldsFilter([]);
-                                            }}
-                                            className={`${FONT_SIZE.XXS} text-destructive hover:text-destructive/80 font-bold tracking-wider transition-colors border-b border-destructive/30 hover:border-destructive/60 pb-0.5`}
-                                        >
-                                            CLEAR_FILTERS
-                                        </button>
-                                    )}
-                                </div>
-
-                                <button
-                                    onClick={() => setCreateTeamSignal(prev => prev + 1)}
-                                    className={`w-full py-3 bg-primary/20 border border-primary/50 rounded-lg text-primary font-bold tracking-widest ${FONT_SIZE.XS} hover:bg-primary/30 hover:scale-[1.02] active:scale-[0.98] transition-all flex items-center justify-center gap-2 shadow-[0_0_15px_rgba(0,255,136,0.2)]`}
-                                >
-                                    <Plus size={14} />
-                                    NEW_TEAM
-                                </button>
-
-
-                                <div className="bg-black/40 border border-white/10 cyber-chamfer-sm p-4 space-y-3">
-                                    <div className={`font-label ${FONT_SIZE.XS} text-secondary tracking-widest mb-1`}>MODEL_FILTER</div>
-                                    <div className="relative group">
-                                        <FallbackPicker
-                                            models={models}
-                                            vendorsById={vendorById}
-                                            modelsById={modelsById}
-                                            value={teamModelFilter ?? undefined}
-                                            onChange={(val) => {
-                                                if (val) {
-                                                    handleFilterTeamsByModel(Number(val));
-                                                } else {
-                                                    setTeamModelFilter(null);
-                                                }
-                                            }}
-                                        />
-                                        {teamModelFilter !== null && (
-                                            <button
-                                                onClick={() => setTeamModelFilter(null)}
-                                                className={`absolute -top-6 right-0 ${FONT_SIZE.XXS} text-destructive hover:text-destructive/80 font-bold tracking-wider transition-colors border-b border-destructive/30 hover:border-destructive/60 pb-0.5`}
-                                            >
-                                                CLEAR
-                                            </button>
-                                        )}
-                                    </div>
-                                </div>
-
-                                <div className="bg-black/40 border border-white/10 cyber-chamfer-sm p-4 space-y-3">
-                                    <div className={`font-label ${FONT_SIZE.XS} text-secondary tracking-widest mb-1`}>TEAM_SEARCH</div>
-                                    <div className="relative group">
-                                        <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                            <Search className="h-4 w-4 text-white/40 group-focus-within:text-primary transition-colors" />
-                                        </div>
-                                        <input
-                                            type="text"
-                                            value={teamSearchQuery}
-                                            onChange={(e) => setTeamSearchQuery(e.target.value)}
-                                            placeholder="FILTER_TEAMS..."
-                                            className={`w-full bg-black/60 border border-white/10 rounded-lg pl-9 pr-3 py-2 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono cyber-chamfer-sm`}
-                                        />
-                                    </div>
-                                    <div className={`${FONT_SIZE.XXS} text-white/30 font-mono mt-2 pl-1`}>
-                                        SEARCHES: NAME, CATCH_PHRASE, MEMBER_NAME, ROLE
-                                    </div>
-                                </div>
-
-                                <div className="bg-black/40 border border-white/10 cyber-chamfer-sm p-4 space-y-3">
-                                    <div className={`font-label ${FONT_SIZE.XS} text-secondary tracking-widest mb-1`}>SAVED_STATUS</div>
-                                    <div className="grid grid-cols-3 gap-1 p-1 bg-black/60 rounded-lg border border-white/5">
-                                        {[
-                                            { id: 'saved', label: 'SAVED' },
-                                            { id: 'not-saved', label: 'UNSAVED' },
-                                            { id: 'all', label: 'ALL' }
-                                        ].map((opt) => {
-                                            const isActive = savedFilter === opt.id;
-                                            return (
-                                                <button
-                                                    key={opt.id}
-                                                    onClick={() => setSavedFilter(opt.id as any)}
-                                                    className={`py-1.5 px-2 rounded ${FONT_SIZE.XXS} font-bold tracking-wider transition-all ${isActive
-                                                        ? 'bg-primary/20 text-primary shadow-[0_0_10px_rgba(0,255,136,0.1)] border border-primary/20'
-                                                        : 'text-white/40 hover:text-white/60 hover:bg-white/5'
-                                                        }`}
-                                                >
-                                                    {opt.label}
-                                                </button>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-
-                                <div className="bg-black/40 border border-white/10 cyber-chamfer-sm p-4 space-y-3">
-                                    <div className={`font-label ${FONT_SIZE.XS} text-secondary tracking-widest mb-1`}>PUBLIC_STATUS</div>
-                                    <div className="grid grid-cols-3 gap-1 p-1 bg-black/60 rounded-lg border border-white/5">
-                                        {[
-                                            { id: 'all', label: 'ALL' },
-                                            { id: 'public', label: 'PUBLIC' },
-                                            { id: 'private', label: 'PRIVATE' }
-                                        ].map((opt) => {
-                                            const isActive = publicFilter === opt.id;
-                                            return (
-                                                <button
-                                                    key={opt.id}
-                                                    onClick={() => setPublicFilter(opt.id as any)}
-                                                    className={`py-1.5 px-2 rounded ${FONT_SIZE.XXS} font-bold tracking-wider transition-all ${isActive
-                                                        ? 'bg-primary/20 text-primary shadow-[0_0_10px_rgba(0,255,136,0.1)] border border-primary/20'
-                                                        : 'text-white/40 hover:text-white/60 hover:bg-white/5'
-                                                        }`}
-                                                >
-                                                    {opt.label}
-                                                </button>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-
-                                <div className="bg-black/40 border border-white/10 cyber-chamfer-sm p-4 space-y-3">
-                                    <div className={`font-label ${FONT_SIZE.XS} text-amber-500/80 tracking-widest mb-1 flex items-center gap-2`}>
-                                        <AlertTriangle size={12} />
-                                        DATA_QUALITY
-                                    </div>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {[
-                                            { id: 'chair', label: 'NO_CHAIR' },
-                                            { id: 'watchdog', label: 'NO_WATCHDOG' },
-                                            { id: 'envoy', label: 'NO_ENVOY' },
-                                            { id: 'operatives', label: 'NO_OPS' },
-                                            { id: 'name', label: 'NO_NAME' },
-                                            { id: 'description', label: 'NO_DESC' },
-                                            { id: 'catch_phrase', label: 'NO_PHRASE' },
-                                            { id: 'bootstrap_prompt', label: 'NO_PROMPT' }
-                                        ].map(filter => {
-                                            const isActive = missingFieldsFilter.includes(filter.id);
-                                            return (
-                                                <button
-                                                    key={filter.id}
-                                                    onClick={() => {
-                                                        if (isActive) {
-                                                            setMissingFieldsFilter(current => current.filter(f => f !== filter.id));
-                                                        } else {
-                                                            setMissingFieldsFilter(current => [...current, filter.id]);
-                                                        }
-                                                    }}
-                                                    className={`
-                                                        py-2 px-2 rounded border ${FONT_SIZE.TINY} font-bold tracking-wider transition-all
-                                                        flex items-center justify-center text-center
-                                                        ${isActive
-                                                            ? 'bg-amber-500/10 border-amber-500 text-amber-500 shadow-[0_0_10px_rgba(245,158,11,0.2)]'
-                                                            : 'bg-white/5 border-white/5 text-white/40 hover:bg-white/10 hover:text-white/60'}
-                                                    `}
-                                                >
-                                                    {filter.label}
-                                                </button>
-                                            );
-                                        })}
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-
-                        {activeTab === 'users' && (
-                            <div className="space-y-6">
-                                {/* Search */}
-                                <div className="space-y-2">
-                                    <div className={`flex items-center gap-2 ${FONT_SIZE.XS} font-bold text-primary/60 tracking-widest`}>
-                                        <Search size={14} />
-                                        SEARCH_USERS
-                                    </div>
-                                    <input
-                                        type="text"
-                                        value={userSearchQuery}
-                                        onChange={(e) => setUserSearchQuery(e.target.value)}
-                                        placeholder="SEARCH_NAME_EMAIL..."
-                                        className={`w-full bg-black/60 border border-white/10 rounded-lg pl-3 pr-3 py-2 ${FONT_SIZE.SM} text-white placeholder:text-white/20 focus:border-primary/50 focus:outline-none focus:ring-1 focus:ring-primary/50 transition-all font-mono cyber-chamfer-sm`}
-                                    />
-                                </div>
-
-                                {/* Plan Filter */}
-                                <div className="space-y-3">
-                                    <div className={`${FONT_SIZE.XXS} font-bold text-white/40 mb-1`}>PLAN_TYPE</div>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {['Free', 'Pro', 'Team', 'Enterprise', 'No Plan'].map(plan => (
-                                            <button
-                                                key={plan}
-                                                onClick={() => {
-                                                    if (userPlanFilter.includes(plan)) {
-                                                        setUserPlanFilter(prev => prev.filter(p => p !== plan));
-                                                    } else {
-                                                        setUserPlanFilter(prev => [...prev, plan]);
-                                                    }
-                                                }}
-                                                className={`
-                                                    px-2 py-1.5 ${FONT_SIZE.XXS} font-mono border rounded transition-colors text-left truncate
-                                                    ${userPlanFilter.includes(plan)
-                                                        ? 'border-emerald-500/50 bg-emerald-500/10 text-emerald-400'
-                                                        : 'border-white/10 text-white/40 hover:border-white/20 hover:text-white/60'}
-                                                `}
-                                            >
-                                                {plan.toUpperCase()}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-
-                                {/* Role Filter */}
-                                <div className="space-y-3">
-                                    <div className={`${FONT_SIZE.XXS} font-bold text-white/40 mb-1`}>USER_ROLE</div>
-                                    <div className="grid grid-cols-2 gap-2">
-                                        {['client', 'admin', 'moderator'].map(type => (
-                                            <button
-                                                key={type}
-                                                onClick={() => {
-                                                    if (userTypeFilter.includes(type)) {
-                                                        setUserTypeFilter(prev => prev.filter(t => t !== type));
-                                                    } else {
-                                                        setUserTypeFilter(prev => [...prev, type]);
-                                                    }
-                                                }}
-                                                className={`
-                                                    px-2 py-1.5 ${FONT_SIZE.XXS} font-mono border rounded transition-colors text-left
-                                                    ${userTypeFilter.includes(type)
-                                                        ? 'border-indigo-500/50 bg-indigo-500/10 text-indigo-400'
-                                                        : 'border-white/10 text-white/40 hover:border-white/20 hover:text-white/60'}
-                                                `}
-                                            >
-                                                {type.toUpperCase()}
-                                            </button>
-                                        ))}
-                                    </div>
-                                </div>
-                            </div>
-                        )}
-
-                        {(activeTab === 'tags' || activeTab === 'sessions') && (
-                            <div className={`p-4 text-white/30 font-mono ${FONT_SIZE.XS} text-center border border-white/5 rounded-lg border-dashed`}>
-                                NO_INDEXING_DATA
-                            </div>
-                        )}
-                    </div>
-                </aside>
-            </div>
+            {activeTab === 'models' ? (
+                <ModelsTab
+                    filteredModels={filteredModels}
+                    searchQuery={searchQuery}
+                    onSearchChange={setSearchQuery}
+                    filters={filters}
+                    onFiltersChange={setFilters}
+                    allTraits={allTraits}
+                    maxPrice={maxPrice}
+                    maxContext={maxContext}
+                    modelIdFilter={modelIdFilter}
+                    onClearModelIdFilter={() => setModelIdFilter(null)}
+                    onEditModel={(model) => {
+                        setEditingModel(model);
+                        setIsModalOpen(true);
+                    }}
+                    onDuplicateModel={handleDuplicateModel}
+                    onAddModel={() => handleAddModel('', '')}
+                    onArchiveModel={handleArchiveModel}
+                    onDeleteModel={handleDeleteModel}
+                    onNavigateToTeam={handleNavigateToTeam}
+                    onFallbackChange={handleFallbackChange}
+                    onTeamUpdate={handleTeamUpdate}
+                    onTeamDelete={handleTeamDelete}
+                    onTeamDuplicate={handleTeamDuplicate}
+                    onMemberUpdate={handleMemberUpdate}
+                    onMemberDelete={handleMemberDelete}
+                    onMemberCreate={handleMemberCreate}
+                    onFilterTeamsByModel={handleFilterTeamsByModel}
+                    onOpenArchive={() => setIsArchiveOpen(true)}
+                    onExplore={() => setActiveTab('explore')}
+                    scrollRootRef={scrollRootRef}
+                    leftPanelRef={leftPanelRef}
+                />
+            ) : activeTab === 'explore' ? (
+                <ExploreTab
+                    activeModels={filteredExploreModels}
+                    ownedApiIds={ownedApiIds}
+                    exploreStats={exploreStats}
+                    onHideModel={handleHideModel}
+                    onImportModel={handleImportModel}
+                    hideOwned={hideOwned}
+                    onToggleHideOwned={setHideOwned}
+                    hideIrrelevant={hideIrrelevant}
+                    onToggleHideIrrelevant={setHideIrrelevant}
+                    onClear={() => {
+                        setHideOwned(false);
+                        setExploreSearchQuery('');
+                        setCreatedAfter(null);
+                        setHideIrrelevant(true);
+                    }}
+                    searchQuery={exploreSearchQuery}
+                    onSearchChange={setExploreSearchQuery}
+                    createdAfter={createdAfter}
+                    onCreatedAfterChange={setCreatedAfter}
+                    lastOwnedDate={latestOwnedDate}
+                    scrollRootRef={scrollRootRef}
+                    leftPanelRef={leftPanelRef}
+                />
+            ) : activeTab === 'teams' ? (
+                <TeamsTab
+                    filteredTeams={filteredTeams}
+                    filteredTeamsMembers={filteredTeamsMembers}
+                    expandedCategories={expandedCategories}
+                    onToggleCategory={handleToggleCategory}
+                    onExpandCategory={handleExpandCategory}
+                    onTeamUpdate={handleTeamUpdate}
+                    onTeamCreate={handleTeamCreate}
+                    onTeamDelete={handleTeamDelete}
+                    onTeamDuplicate={handleTeamDuplicate}
+                    onMemberUpdate={handleMemberUpdate}
+                    onMemberDelete={handleMemberDelete}
+                    onMemberCreate={handleMemberCreate}
+                    createTeamSignal={createTeamSignal}
+                    onCreateTeam={() => setCreateTeamSignal(prev => prev + 1)}
+                    teamModelFilter={teamModelFilter}
+                    onClearTeamModelFilter={() => setTeamModelFilter(null)}
+                    onFilterTeamsByModel={handleFilterTeamsByModel}
+                    teamSearchQuery={teamSearchQuery}
+                    onTeamSearchChange={setTeamSearchQuery}
+                    savedFilter={savedFilter}
+                    onSavedFilterChange={setSavedFilter}
+                    publicFilter={publicFilter}
+                    onPublicFilterChange={setPublicFilter}
+                    missingFieldsFilter={missingFieldsFilter}
+                    onMissingFieldsFilterChange={setMissingFieldsFilter}
+                    onClearTeamFilters={() => {
+                        setTeamSearchQuery('');
+                        setSavedFilter('saved');
+                        setPublicFilter('all');
+                        setMissingFieldsFilter([]);
+                    }}
+                    onFilterByModel={(modelId) => {
+                        setActiveTab('models');
+                        setModelIdFilter(modelId);
+                    }}
+                    scrollRootRef={scrollRootRef}
+                    leftPanelRef={leftPanelRef}
+                />
+            ) : activeTab === 'users' ? (
+                <UsersTab
+                    filteredUsers={filteredUsers}
+                    activeUserSearchQuery={userSearchQuery}
+                    onUserSearchChange={setUserSearchQuery}
+                    userPlanFilter={userPlanFilter}
+                    onUserPlanFilterChange={setUserPlanFilter}
+                    userTypeFilter={userTypeFilter}
+                    onUserTypeFilterChange={setUserTypeFilter}
+                    onUpdateUser={handleUserUpdate}
+                    scrollRootRef={scrollRootRef}
+                    leftPanelRef={leftPanelRef}
+                />
+            ) : activeTab === 'sessions' ? (
+                <SessionsTab
+                    filteredSessions={filteredSessions}
+                    sessionSearchQuery={sessionSearchQuery}
+                    onSessionSearchChange={setSessionSearchQuery}
+                    sessionStatusFilter={sessionStatusFilter}
+                    onSessionStatusChange={setSessionStatusFilter}
+                    onNewSession={() => setIsCreateSessionOpen(true)}
+                    scrollRootRef={scrollRootRef}
+                    leftPanelRef={leftPanelRef}
+                />
+            ) : (
+                <TagsTab scrollRootRef={scrollRootRef} leftPanelRef={leftPanelRef} />
+            )}
 
             {/* Modals */}
             <EditModal
@@ -1396,7 +992,7 @@ function App() {
                 onSave={handleSaveModel}
                 model={editingModel}
                 models={models}
-                vendorsById={vendorById}
+                vendorsById={vendorsById}
                 modelsById={modelsById}
                 vendors={vendors}
             />
@@ -1405,7 +1001,7 @@ function App() {
                 isOpen={isArchiveOpen}
                 onClose={() => setIsArchiveOpen(false)}
                 archivedModels={archivedModels}
-                vendorsById={vendorById}
+                vendorsById={vendorsById}
                 onRestore={(model) => {
                     handleRestoreModel(model);
                     setIsArchiveOpen(false);

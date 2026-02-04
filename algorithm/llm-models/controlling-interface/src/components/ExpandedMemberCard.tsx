@@ -81,7 +81,7 @@ export function ExpandedMemberCard({
 
                                 {/* Creative & Logic Score Bars */}
                                 <div className="space-y-2">
-                                    {model.creativeScore !== undefined && model.creativeScore > 0 && (
+                                    {model.creativeScore !== null && model.creativeScore !== undefined && model.creativeScore > 0 && (
                                         <div className="space-y-1">
                                             <div className="flex items-center justify-between">
                                                 <span className={`${FONT_SIZE.XXS} text-white/40 font-mono uppercase`}>Creative</span>
@@ -95,7 +95,7 @@ export function ExpandedMemberCard({
                                             </div>
                                         </div>
                                     )}
-                                    {model.deductiveScore !== undefined && model.deductiveScore > 0 && (
+                                    {model.deductiveScore !== null && model.deductiveScore !== undefined && model.deductiveScore > 0 && (
                                         <div className="space-y-1">
                                             <div className="flex items-center justify-between">
                                                 <span className={`${FONT_SIZE.XXS} text-white/40 font-mono uppercase`}>Deductive</span>
@@ -159,6 +159,6 @@ export function ExpandedMemberCard({
                     </div>
                 )}
             </div>
-        </div>
+        </div >
     );
 }

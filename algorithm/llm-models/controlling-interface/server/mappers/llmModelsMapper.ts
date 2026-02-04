@@ -24,7 +24,7 @@ export const mapDbModelToDto = (row: DbLlmModelRow): LlmModelDto => {
         personalityTraits: joinList(row.personality_traits),
         analyticalTraits: joinList(row.professional_traits),
         bestFor: joinList(row.best_for),
-        creativityScore: row.creativity_score ?? null,
+        creativeScore: row.creativity_score ?? null,
         deductiveScore: row.logic_score ?? null,
         efficiencyScore: row.efficiency_score ?? null,
         pricing: {
@@ -67,7 +67,7 @@ export const mapModelInputToDbUpdate = (model: LlmModelInput) => {
         personality_traits: splitList(model.personalityTraits),
         professional_traits: splitList(model.analyticalTraits),
         best_for: splitList(model.bestFor),
-        creativity_score: toInteger(model.creativityScore),
+        creativity_score: toInteger(model.creativeScore),
         logic_score: toInteger(model.deductiveScore),
         efficiency_score: toInteger(model.efficiencyScore),
         is_active: typeof model.active === 'boolean' ? model.active : undefined

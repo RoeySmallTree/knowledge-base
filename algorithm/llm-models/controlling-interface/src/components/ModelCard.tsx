@@ -13,7 +13,14 @@ import {
     Globe,
     Lock,
     Save,
-    Filter
+    Filter,
+    LayoutGrid,
+    CheckCheck,
+    Terminal,
+    Eye,
+    Zap,
+    Code,
+    Layers
 } from 'lucide-react';
 import { LLMModel, Vendor, Member, Team, TeamMember } from '../types';
 import { FONT_SIZE } from '../constants';
@@ -122,12 +129,14 @@ export function ModelCard({
     const paramsValue = typeof model.parameter_count_b === 'number' ? model.parameter_count_b : Number.parseFloat(String(model.parameter_count_b || '0'));
     const hasParamsValue = Number.isFinite(paramsValue);
 
-    const contextValue = (model.contextK === null || model.contextK === undefined || model.contextK === '')
+    const contextValue = (model.contextK === null || model.contextK === undefined || (typeof model.contextK === 'string' && model.contextK === ''))
         ? Number.NaN
         : Number(model.contextK);
     const hasContextValue = Number.isFinite(contextValue);
 
     const displayName = model.name_within_family?.trim() || model.modelName;
+    const usageTeamsCount = usage?.teams.length ?? 0;
+    const usageMembersCount = usage?.count ?? 0;
 
     const handleCardClick = (event: MouseEvent<HTMLDivElement>) => {
         const target = event.target as HTMLElement;
@@ -212,6 +221,8 @@ export function ModelCard({
                                 )}
                             </div>
                             <div className={`flex flex-wrap gap-2 items-center ${FONT_SIZE.XS} text-white/40 font-mono`}>
+                                <span className="text-white/30">#{model.id}</span>
+                                <span className="text-white/20">•</span>
                                 <span>{model.api_id}</span>
                                 {hasParamsValue && (
                                     <>
@@ -243,12 +254,6 @@ export function ModelCard({
                             </>
                         ) : (
                             <div className="flex items-center gap-1.5">
-                                {usage && usage.count > 0 && (
-                                    <div className="border border-primary/20 bg-primary/10 rounded px-1.5 py-0.5 text-[10px] font-mono text-primary flex items-center gap-1">
-                                        <Users size={10} />
-                                        {usage.count}
-                                    </div>
-                                )}
                                 <div className="border border-white/10 bg-black/40 rounded px-1.5 py-0.5 text-[10px] font-mono text-white/40">
                                     DETAILS
                                 </div>
@@ -293,151 +298,248 @@ export function ModelCard({
                             <ScoreBar label="EFFICIENCY" value={model.efficiencyScore} colorClass="bg-emerald-400 shadow-[0_0_10px_rgba(52,211,153,0.5)]" />
                             <ScoreBar label="CREATIVITY" value={model.creativeScore} colorClass="bg-primary shadow-[0_0_10px_rgba(255,51,102,0.5)]" />
                             <ScoreBar label="REASONING" value={model.deductiveScore} colorClass="bg-accent-tertiary shadow-[0_0_10px_rgba(147,51,234,0.5)]" />
-                        </div>
 
-
-                    </div>
-                </div>
-
-                {/* Fallback Selection */}
-                {isExpanded && (
-                    <div className="pt-6 mt-6 border-t border-white/5">
-                        <div className="flex items-center gap-4">
-                            <div className="p-2 rounded bg-white/5 text-white/40">
-                                <Activity size={16} />
-                            </div>
-                            <div className="flex-1">
-                                <div className={`font-label ${FONT_SIZE.XS} text-white/40 mb-1`}>FALLBACK_CHAIN</div>
-                                <FallbackPicker
-                                    value={model.fallback_model_id ? String(model.fallback_model_id) : undefined}
-                                    favorModel={model}
-                                    models={allModels}
-                                    vendorsById={vendorsById}
-                                    modelsById={modelsById}
-                                    onChange={(newId) => onFallbackChange(modelKey, newId)}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                )}
-
-                {/* Usage Intel Section - Horizontal Scroll & Full Team Card */}
-                {isExpanded && usage && usage.count > 0 && (
-                    <div className="mt-8">
-                        {/* Header & Filters */}
-                        <div className="flex flex-col gap-4 mb-4">
-                            <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-3">
-                                    <Users className="text-primary" size={18} />
-                                    <h4 className={`font-display ${FONT_SIZE.LG} text-white tracking-wide`}>USAGE_INTEL</h4>
-                                    <span className={`bg-primary/20 text-primary px-2 py-0.5 rounded ${FONT_SIZE.XS} font-mono font-bold`}>
-                                        {filteredUsageTeams.length} / {usage.count} TEAMS
-                                    </span>
-                                </div>
-                                <button
-                                    onClick={() => {
-                                        if (!canFilterTeams || modelId === undefined) return;
-                                        onFilterTeamsByModel(modelId);
-                                    }}
-                                    disabled={!canFilterTeams}
-                                    className={`${FONT_SIZE.XS} font-mono transition-colors flex items-center gap-1 border border-primary/20 bg-primary/5 px-2 py-1 rounded ${canFilterTeams ? 'text-primary/70 hover:text-primary' : 'text-white/30 cursor-not-allowed opacity-50'}`}
-                                >
-                                    <Filter size={12} />
-                                    FILTER TEAMS VIEW
-                                </button>
-                            </div>
-
-                            {/* Filter Controls */}
-                            <div className={`flex items-center gap-2 ${FONT_SIZE.XS} font-mono`}>
-                                <span className="text-white/40 uppercase tracking-widest mr-2">Filters:</span>
-                                {/* Public/Private Toggle */}
-                                <button
-                                    onClick={() => setUsageFilterPublic(prev => prev === 'all' ? 'public' : prev === 'public' ? 'private' : 'all')}
-                                    className={`px-2 py-1 flex items-center gap-1.5 rounded border transition-colors ${usageFilterPublic !== 'all' ? 'border-primary/50 bg-primary/10 text-primary' : 'border-white/10 bg-black/20 text-white/40 hover:text-white/60'}`}
-                                >
-                                    {usageFilterPublic === 'all' && <Globe size={10} />}
-                                    {usageFilterPublic === 'public' && <Globe size={10} />}
-                                    {usageFilterPublic === 'private' && <Lock size={10} />}
-                                    {usageFilterPublic === 'all' ? 'ALL ACCESS' : usageFilterPublic.toUpperCase()}
-                                </button>
-
-                                {/* Saved/Unsaved Toggle */}
-                                <button
-                                    onClick={() => setUsageFilterSaved(prev => prev === 'all' ? 'saved' : prev === 'saved' ? 'unsaved' : 'all')}
-                                    className={`px-2 py-1 flex items-center gap-1.5 rounded border transition-colors ${usageFilterSaved !== 'all' ? 'border-amber-400/50 bg-amber-400/10 text-amber-400' : 'border-white/10 bg-black/20 text-white/40 hover:text-white/60'}`}
-                                >
-                                    {usageFilterSaved === 'saved' ? <Save size={10} /> : <Box size={10} />}
-                                    {usageFilterSaved === 'all' ? 'ALL STATUS' : usageFilterSaved.toUpperCase()}
-                                </button>
-
-                                <div className="flex-1" />
-                                <button
-                                    onClick={() => setShowMigrationModal(true)}
-                                    className={`${FONT_SIZE.XS} font-mono text-amber-400/70 hover:text-amber-400 transition-colors flex items-center gap-1 border border-amber-400/20 bg-amber-400/5 px-2 py-1 rounded`}
-                                >
-                                    MIGRATE MEMBERS
-                                </button>
-                                <button
-                                    onClick={() => activeUsageTab && onNavigateToTeam(activeUsageTab)}
-                                    disabled={!activeUsageTab}
-                                    className={`${FONT_SIZE.XS} font-mono text-white/40 hover:text-white transition-colors flex items-center gap-1 disabled:opacity-20`}
-                                >
-                                    GO TO TEAM <ChevronRight size={12} />
-                                </button>
-                            </div>
-                        </div>
-
-                        {/* Horizontal Team List */}
-                        <div className="flex overflow-x-auto gap-3 pb-4 mb-4 scrollbar-hide snap-x px-1">
-                            {filteredUsageTeams.map(team => {
-                                // Filter members who use this model
-                                const modelMembers = team.members?.filter(m => m.model_id === model.id) || [];
-                                return (
-                                    <div key={team.id} className="snap-start flex-shrink-0 w-[240px]">
-                                        <TeamStripCard
-                                            team={team}
-                                            members={modelMembers}
-                                            category={team.category}
-                                            isActive={activeUsageTab === team.id}
-                                            onClick={() => setActiveUsageTab(team.id)}
-                                        />
+                            {usage && (
+                                <div className="pt-3 mt-1 border-t border-white/5 grid grid-cols-2 gap-2">
+                                    <div className="bg-white/5 rounded p-2 flex flex-col items-center justify-center text-center group/stat hover:bg-white/10 transition-colors">
+                                        <span className={`text-white/40 ${FONT_SIZE.XXS} font-mono mb-1`}>TEAMS</span>
+                                        <span className={`text-white font-mono font-bold ${FONT_SIZE.MD} flex items-center gap-1.5 group-hover/stat:text-primary transition-colors`}>
+                                            <LayoutGrid size={12} className="text-primary/70 group-hover/stat:text-primary" />
+                                            {usageTeamsCount}
+                                        </span>
                                     </div>
-                                );
-                            })}
+                                    <div className="bg-white/5 rounded p-2 flex flex-col items-center justify-center text-center group/stat hover:bg-white/10 transition-colors">
+                                        <span className={`text-white/40 ${FONT_SIZE.XXS} font-mono mb-1`}>MEMBERS</span>
+                                        <span className={`text-white font-mono font-bold ${FONT_SIZE.MD} flex items-center gap-1.5 group-hover/stat:text-primary transition-colors`}>
+                                            <Users size={12} className="text-primary/70 group-hover/stat:text-primary" />
+                                            {usageMembersCount}
+                                        </span>
+                                    </div>
+                                </div>
+                            )}
                         </div>
 
-                        {/* Selected Team Details */}
-                        {selectedTeam && (
-                            <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
-                                <TeamCard
-                                    team={selectedTeam}
-                                    members={selectedTeam.members}
-                                    vendorsById={vendorsById}
-                                    modelsById={modelsById}
-                                    isExpanded={true}
-                                    expandedMembers={expandedMembers}
-                                    onToggle={() => { }} // Always expanded here
-                                    onToggleMember={handleToggleMember}
-                                    onEdit={() => setEditingTeam(selectedTeam)}
-                                    onDelete={() => onTeamDelete(selectedTeam.id)}
-                                    onDuplicate={() => onTeamDuplicate(selectedTeam.id)}
-                                    onMemberEdit={(member) => {
-                                        setEditingMember(member);
-                                        setIsCreatingMember(false);
-                                    }}
-                                    onMemberAdd={() => {
-                                        setEditingMember(null);
-                                        setIsCreatingMember(true);
-                                    }}
-                                    onMemberDelete={onMemberDelete}
-                                    onMemberUpdate={onMemberUpdate}
-                                />
+                        {/* Column 3: Capabilities & Focus (Only when expanded) */}
+                        {isExpanded && (
+                            <div className="space-y-4">
+                                {/* Capabilities */}
+                                <div className="space-y-2">
+                                    <h4 className={`${FONT_SIZE.XXS} font-bold text-white/30 uppercase tracking-widest`}>Capabilities</h4>
+                                    <div className="flex flex-wrap gap-2">
+                                        {model.capabilities && model.capabilities.length > 0 ? (
+                                            model.capabilities.map((cap, i) => (
+                                                <CapabilityBadge key={i} capability={cap} />
+                                            ))
+                                        ) : (
+                                            <div className={`${FONT_SIZE.XS} text-white/20 italic`}>Standard text generation</div>
+                                        )}
+                                        {/* Fallback Badge if defined */}
+                                        {model.fallback_model_id && (
+                                            <div className="px-2 py-1 rounded bg-red-500/10 border border-red-500/20 text-red-400 text-[10px] font-mono tracking-wider flex items-center gap-1.5">
+                                                <Zap size={10} />
+                                                FALLBACK
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Best For */}
+                                <div className="space-y-2">
+                                    <h4 className={`${FONT_SIZE.XXS} font-bold text-white/30 uppercase tracking-widest`}>Best For</h4>
+                                    <div className="space-y-1.5">
+                                        {model.bestFor ? (
+                                            model.bestFor.split(',').map((item, i) => (
+                                                <div key={i} className={`flex items-start gap-2 ${FONT_SIZE.XS} text-white/70`}>
+                                                    <span className="text-primary mt-1">
+                                                        <CheckCheck size={12} />
+                                                    </span>
+                                                    <span className="leading-tight">{item.trim()}</span>
+                                                </div>
+                                            ))
+                                        ) : (
+                                            <div className={`${FONT_SIZE.XS} text-white/20 italic`}>General purpose tasks</div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Column 4: Personality Matrix (Only when expanded) */}
+                        {isExpanded && (
+                            <div className="space-y-4">
+                                {/* Personality Traits */}
+                                <div className="space-y-2">
+                                    <h4 className={`${FONT_SIZE.XXS} font-bold text-white/30 uppercase tracking-widest`}>Personality</h4>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {model.personalityTraits ? (
+                                            model.personalityTraits.split(',').slice(0, 6).map((trait, i) => (
+                                                <TraitChip key={i} trait={trait.trim()} type="personality" />
+                                            ))
+                                        ) : (
+                                            <div className={`${FONT_SIZE.XS} text-white/20 italic`}>Neutral persona</div>
+                                        )}
+                                    </div>
+                                </div>
+
+                                {/* Analytical Traits */}
+                                <div className="space-y-2">
+                                    <h4 className={`${FONT_SIZE.XXS} font-bold text-white/30 uppercase tracking-widest`}>Analytical Style</h4>
+                                    <div className="flex flex-wrap gap-1.5">
+                                        {model.analyticalTraits ? (
+                                            model.analyticalTraits.split(',').slice(0, 6).map((trait, i) => (
+                                                <TraitChip key={i} trait={trait.trim()} type="analytical" />
+                                            ))
+                                        ) : (
+                                            <div className={`${FONT_SIZE.XS} text-white/20 italic`}>Standard analysis</div>
+                                        )}
+                                    </div>
+                                </div>
                             </div>
                         )}
                     </div>
-                )}
 
+
+                </div>
             </div>
+
+            {/* Fallback Selection */}
+            {isExpanded && (
+                <div className="pt-6 mt-6 border-t border-white/5">
+                    <div className="flex items-center gap-4">
+                        <div className="p-2 rounded bg-white/5 text-white/40">
+                            <Activity size={16} />
+                        </div>
+                        <div className="flex-1">
+                            <div className={`font-label ${FONT_SIZE.XS} text-white/40 mb-1`}>FALLBACK_CHAIN</div>
+                            <FallbackPicker
+                                value={model.fallback_model_id ? String(model.fallback_model_id) : undefined}
+                                favorModel={model}
+                                models={allModels}
+                                vendorsById={vendorsById}
+                                modelsById={modelsById}
+                                onChange={(newId) => onFallbackChange(modelKey, newId)}
+                            />
+                        </div>
+                    </div>
+                </div>
+            )}
+
+            {/* Usage Intel Section - Horizontal Scroll & Full Team Card */}
+            {isExpanded && usage && usage.count > 0 && (
+                <div className="mt-8">
+                    {/* Header & Filters */}
+                    <div className="flex flex-col gap-4 mb-4">
+                        <div className="flex items-center justify-between">
+                            <div className="flex items-center gap-3">
+                                <Users className="text-primary" size={18} />
+                                <h4 className={`font-display ${FONT_SIZE.LG} text-white tracking-wide`}>USAGE_INTEL</h4>
+                                <span className={`bg-primary/20 text-primary px-2 py-0.5 rounded ${FONT_SIZE.XS} font-mono font-bold`}>
+                                    {filteredUsageTeams.length} / {usage.count} TEAMS
+                                </span>
+                            </div>
+                            <button
+                                onClick={() => {
+                                    if (!canFilterTeams || modelId === undefined) return;
+                                    onFilterTeamsByModel(modelId);
+                                }}
+                                disabled={!canFilterTeams}
+                                className={`${FONT_SIZE.XS} font-mono transition-colors flex items-center gap-1 border border-primary/20 bg-primary/5 px-2 py-1 rounded ${canFilterTeams ? 'text-primary/70 hover:text-primary' : 'text-white/30 cursor-not-allowed opacity-50'}`}
+                            >
+                                <Filter size={12} />
+                                FILTER TEAMS VIEW
+                            </button>
+                        </div>
+
+                        {/* Filter Controls */}
+                        <div className={`flex items-center gap-2 ${FONT_SIZE.XS} font-mono`}>
+                            <span className="text-white/40 uppercase tracking-widest mr-2">Filters:</span>
+                            {/* Public/Private Toggle */}
+                            <button
+                                onClick={() => setUsageFilterPublic(prev => prev === 'all' ? 'public' : prev === 'public' ? 'private' : 'all')}
+                                className={`px-2 py-1 flex items-center gap-1.5 rounded border transition-colors ${usageFilterPublic !== 'all' ? 'border-primary/50 bg-primary/10 text-primary' : 'border-white/10 bg-black/20 text-white/40 hover:text-white/60'}`}
+                            >
+                                {usageFilterPublic === 'all' && <Globe size={10} />}
+                                {usageFilterPublic === 'public' && <Globe size={10} />}
+                                {usageFilterPublic === 'private' && <Lock size={10} />}
+                                {usageFilterPublic === 'all' ? 'ALL ACCESS' : usageFilterPublic.toUpperCase()}
+                            </button>
+
+                            {/* Saved/Unsaved Toggle */}
+                            <button
+                                onClick={() => setUsageFilterSaved(prev => prev === 'all' ? 'saved' : prev === 'saved' ? 'unsaved' : 'all')}
+                                className={`px-2 py-1 flex items-center gap-1.5 rounded border transition-colors ${usageFilterSaved !== 'all' ? 'border-amber-400/50 bg-amber-400/10 text-amber-400' : 'border-white/10 bg-black/20 text-white/40 hover:text-white/60'}`}
+                            >
+                                {usageFilterSaved === 'saved' ? <Save size={10} /> : <Box size={10} />}
+                                {usageFilterSaved === 'all' ? 'ALL STATUS' : usageFilterSaved.toUpperCase()}
+                            </button>
+
+                            <div className="flex-1" />
+                            <button
+                                onClick={() => setShowMigrationModal(true)}
+                                className={`${FONT_SIZE.XS} font-mono text-amber-400/70 hover:text-amber-400 transition-colors flex items-center gap-1 border border-amber-400/20 bg-amber-400/5 px-2 py-1 rounded`}
+                            >
+                                MIGRATE MEMBERS
+                            </button>
+                            <button
+                                onClick={() => activeUsageTab && onNavigateToTeam(activeUsageTab)}
+                                disabled={!activeUsageTab}
+                                className={`${FONT_SIZE.XS} font-mono text-white/40 hover:text-white transition-colors flex items-center gap-1 disabled:opacity-20`}
+                            >
+                                GO TO TEAM <ChevronRight size={12} />
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Horizontal Team List */}
+                    <div className="flex overflow-x-auto gap-3 pb-4 mb-4 scrollbar-hide snap-x px-1">
+                        {filteredUsageTeams.map(team => {
+                            // Filter members who use this model
+                            const modelMembers = team.members?.filter(m => m.model_id === model.id) || [];
+                            return (
+                                <div key={team.id} className="snap-start flex-shrink-0 w-[240px]">
+                                    <TeamStripCard
+                                        team={team}
+                                        members={modelMembers}
+                                        category={team.category}
+                                        isActive={activeUsageTab === team.id}
+                                        onClick={() => setActiveUsageTab(team.id)}
+                                    />
+                                </div>
+                            );
+                        })}
+                    </div>
+
+                    {/* Selected Team Details */}
+                    {selectedTeam && (
+                        <div className="animate-in fade-in slide-in-from-bottom-2 duration-300">
+                            <TeamCard
+                                team={selectedTeam}
+                                members={selectedTeam.members}
+                                vendorsById={vendorsById}
+                                modelsById={modelsById}
+                                isExpanded={true}
+                                expandedMembers={expandedMembers}
+                                onToggle={() => { }} // Always expanded here
+                                onToggleMember={handleToggleMember}
+                                onEdit={() => setEditingTeam(selectedTeam)}
+                                onDelete={() => onTeamDelete(selectedTeam.id)}
+                                onDuplicate={() => onTeamDuplicate(selectedTeam.id)}
+                                onMemberEdit={(member) => {
+                                    setEditingMember(member);
+                                    setIsCreatingMember(false);
+                                }}
+                                onMemberAdd={() => {
+                                    setEditingMember(null);
+                                    setIsCreatingMember(true);
+                                }}
+                                onMemberDelete={onMemberDelete}
+                                onMemberUpdate={onMemberUpdate}
+                            />
+                        </div>
+                    )}
+                </div>
+            )}
+
 
             {/* Modals */}
             <ConfirmationModal
@@ -669,4 +771,50 @@ function normalizeValue(value: number, maxValue: number, useLog: boolean) {
         ? Math.log10(value + 1) / Math.log10(maxValue + 1)
         : value / maxValue;
     return Math.min(1, Math.max(0, raw));
+}
+
+function TraitChip({ trait, type }: { trait: string; type: 'personality' | 'analytical' }) {
+    const isPersonality = type === 'personality';
+    const colorClass = isPersonality
+        ? 'bg-blue-500/10 text-blue-300 border-blue-500/20 hover:bg-blue-500/20'
+        : 'bg-purple-500/10 text-purple-300 border-purple-500/20 hover:bg-purple-500/20';
+
+    return (
+        <span className={`
+            px-2 py-1 rounded text-[10px] font-mono tracking-wide border transition-colors cursor-default
+            ${colorClass}
+        `}>
+            {trait.toUpperCase()}
+        </span>
+    );
+}
+
+function CapabilityBadge({ capability }: { capability: string }) {
+    let icon = <Terminal size={10} />;
+    let label = capability.replace(/_/g, ' ').toUpperCase();
+    let colorClass = 'bg-white/5 text-white/50 border-white/10';
+
+    if (capability.toLowerCase().includes('vision') || capability.toLowerCase().includes('image')) {
+        icon = <Eye size={10} />;
+        colorClass = 'bg-pink-500/10 text-pink-300 border-pink-500/20';
+    } else if (capability.toLowerCase().includes('function') || capability.toLowerCase().includes('tool')) {
+        icon = <Zap size={10} />;
+        colorClass = 'bg-amber-500/10 text-amber-300 border-amber-500/20';
+    } else if (capability.toLowerCase().includes('code') || capability.toLowerCase().includes('json')) {
+        icon = <Code size={10} />;
+        colorClass = 'bg-cyan-500/10 text-cyan-300 border-cyan-500/20';
+    } else if (capability.toLowerCase().includes('context') || capability.toLowerCase().includes('long')) {
+        icon = <Layers size={10} />;
+        colorClass = 'bg-indigo-500/10 text-indigo-300 border-indigo-500/20';
+    }
+
+    return (
+        <div className={`
+            flex items-center gap-1.5 px-2 py-1 rounded border ${colorClass}
+            text-[10px] font-bold tracking-wider
+        `}>
+            {icon}
+            {label}
+        </div>
+    );
 }

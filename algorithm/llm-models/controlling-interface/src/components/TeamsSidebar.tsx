@@ -54,9 +54,9 @@ export function TeamsSidebar({
     const [activeId, setActiveId] = useState<string>('');
     const [showCopyTooltip, setShowCopyTooltip] = useState(false);
     const [copyFormat, setCopyFormat] = useState<'json' | 'markdown'>('json');
-    const [selectedFields, setSelectedFields] = useState<string[]>(['name', 'category', 'description', 'members']);
-    // Default member fields: name, role, team_role
-    const [selectedMemberFields, setSelectedMemberFields] = useState<string[]>(['name', 'role', 'team_role']);
+    const [selectedFields, setSelectedFields] = useState<string[]>(['id', 'name', 'category', 'description', 'members']);
+    // Default member fields include identifiers for portability.
+    const [selectedMemberFields, setSelectedMemberFields] = useState<string[]>(['id', 'name', 'role', 'team_role', 'model_id']);
     const [copied, setCopied] = useState(false);
 
 
@@ -269,6 +269,9 @@ export function TeamsSidebar({
                     case 'id':
                         data.id = team.id;
                         break;
+                    case 'user_id':
+                        data.user_id = team.user_id;
+                        break;
                     case 'name':
                         data.name = team.name;
                         break;
@@ -277,6 +280,9 @@ export function TeamsSidebar({
                         break;
                     case 'description':
                         data.description = team.description || '';
+                        break;
+                    case 'is_public':
+                        data.is_public = team.is_public;
                         break;
                     case 'catch_phrase':
                         data.catch_phrase = team.catch_phrase || '';
@@ -289,6 +295,21 @@ export function TeamsSidebar({
                         break;
                     case 'bootstrap_prompt':
                         data.bootstrap_prompt = team.bootstrap_prompt || '';
+                        break;
+                    case 'is_saved':
+                        data.is_saved = team.is_saved;
+                        break;
+                    case 'originated_from_team':
+                        data.originated_from_team = team.originated_from_team;
+                        break;
+                    case 'display_order':
+                        data.display_order = team.display_order;
+                        break;
+                    case 'created_at':
+                        data.created_at = team.created_at;
+                        break;
+                    case 'updated_at':
+                        data.updated_at = team.updated_at;
                         break;
                     case 'members':
                         data.members = teamMembers.map(m => {
@@ -305,6 +326,9 @@ export function TeamsSidebar({
                                     case 'special_orders': memData.special_orders = m.special_orders; break;
                                     case 'model_id': memData.model_id = m.model_id; break;
                                     case 'team_id': memData.team_id = m.team_id; break;
+                                    case 'display_order': memData.display_order = m.display_order; break;
+                                    case 'model_name': memData.model_name = m.model_name; break;
+                                    case 'created_at': memData.created_at = m.created_at; break;
                                 }
                             });
                             return memData;
@@ -327,7 +351,9 @@ export function TeamsSidebar({
                 let md = `## ${data.name || 'Unnamed Team'}\n\n`;
 
                 if (data.id) md += `**ID:** ${data.id}\n\n`;
+                if (data.user_id) md += `**User ID:** ${data.user_id}\n\n`;
                 if (data.category) md += `**Category:** ${data.category}\n\n`;
+                if (data.is_public !== undefined) md += `**Public:** ${data.is_public}\n\n`;
                 if (data.catch_phrase) md += `**Catch Phrase:** ${data.catch_phrase}\n\n`;
                 if (data.description) md += `**Description:** ${data.description}\n\n`;
                 if (data.default_starting_rounds !== undefined && data.default_starting_rounds !== null) {
@@ -339,6 +365,11 @@ export function TeamsSidebar({
                 if (data.bootstrap_prompt) {
                     md += `**Bootstrap Prompt:**\n\`\`\`\n${data.bootstrap_prompt}\n\`\`\`\n\n`;
                 }
+                if (data.is_saved !== undefined) md += `**Saved:** ${data.is_saved}\n\n`;
+                if (data.originated_from_team) md += `**Originated From:** ${data.originated_from_team}\n\n`;
+                if (data.display_order !== undefined && data.display_order !== null) md += `**Display Order:** ${data.display_order}\n\n`;
+                if (data.created_at) md += `**Created At:** ${data.created_at}\n\n`;
+                if (data.updated_at) md += `**Updated At:** ${data.updated_at}\n\n`;
                 if (data.members && data.members.length > 0) {
                     md += `**Members:**\n`;
                     data.members.forEach((m: any) => {
@@ -346,9 +377,14 @@ export function TeamsSidebar({
                         if (m.id) md += ` [ID: ${m.id}]`;
                         if (m.role) md += ` (${m.role})`;
                         if (m.team_role) md += ` - ${m.team_role}`;
+                        if (m.model_id !== undefined && m.model_id !== null) md += ` [MODEL: ${m.model_id}]`;
+                        if (m.team_id) md += ` [TEAM: ${m.team_id}]`;
                         if (m.life_story) md += `\n  - Life Story: ${m.life_story}`;
                         if (m.special_orders) md += `\n  - Orders: ${m.special_orders}`;
                         if (m.characteristics && m.characteristics.length > 0) md += `\n  - Traits: ${m.characteristics.join(', ')}`;
+                        if (m.display_order !== undefined && m.display_order !== null) md += `\n  - Display Order: ${m.display_order}`;
+                        if (m.model_name) md += `\n  - Model Name: ${m.model_name}`;
+                        if (m.created_at) md += `\n  - Created At: ${m.created_at}`;
                         md += '\n';
                     });
                     md += '\n';
@@ -496,13 +532,20 @@ export function TeamsSidebar({
                         <div className="space-y-1.5 max-h-40 overflow-y-auto cyber-scroll">
                             {[
                                 { id: 'id', label: 'ID' },
+                                { id: 'user_id', label: 'User ID' },
                                 { id: 'name', label: 'Name' },
                                 { id: 'category', label: 'Category' },
                                 { id: 'description', label: 'Description' },
+                                { id: 'is_public', label: 'Public' },
                                 { id: 'catch_phrase', label: 'Catch Phrase' },
                                 { id: 'quick_starts', label: 'Quick Starts' },
                                 { id: 'default_rounds', label: 'Default Rounds' },
                                 { id: 'bootstrap_prompt', label: 'Bootstrap Prompt' },
+                                { id: 'is_saved', label: 'Saved' },
+                                { id: 'originated_from_team', label: 'Originated From' },
+                                { id: 'display_order', label: 'Display Order' },
+                                { id: 'created_at', label: 'Created At' },
+                                { id: 'updated_at', label: 'Updated At' },
                                 { id: 'members', label: 'Members' }
                             ].map(field => (
                                 <label key={field.id} className="flex items-center gap-2 cursor-pointer group">
@@ -531,10 +574,15 @@ export function TeamsSidebar({
                                         { id: 'name', label: 'Name' },
                                         { id: 'role', label: 'Role' },
                                         { id: 'team_role', label: 'Team Role' },
+                                        { id: 'model_id', label: 'Model ID' },
+                                        { id: 'team_id', label: 'Team ID' },
                                         { id: 'life_story', label: 'Life Story' },
                                         { id: 'special_orders', label: 'Special Orders' },
                                         { id: 'characteristics', label: 'Characteristics' },
-                                        { id: 'color', label: 'Color' }
+                                        { id: 'color', label: 'Color' },
+                                        { id: 'display_order', label: 'Display Order' },
+                                        { id: 'model_name', label: 'Model Name' },
+                                        { id: 'created_at', label: 'Created At' }
                                     ].map(field => (
                                         <label key={`member-${field.id}`} className="flex items-center gap-2 cursor-pointer group">
                                             <input

@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import { AppUser } from '../types';
 import { FONT_SIZE } from '../constants';
 import { X, Save } from 'lucide-react';
